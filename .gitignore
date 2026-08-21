@@ -63,3 +63,8 @@ results/phase4/parts/
 # (headline.csv, verdict.csv, commot_mechanism.csv, score_rank_correlation.csv,
 # interactions.csv.gz, ...) carry every number in the report and ARE tracked.
 results/phase4/parts/
+
+# A clone of this project's own GitHub remote, made inside the workspace.
+# The repo root IS /workspace (code/ has ~122 hardcoded /workspace/... paths),
+# so the clone is redundant and must not be tracked recursively.
+senescent_cell_kernels/
