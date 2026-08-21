@@ -28,10 +28,16 @@ tqdm==4.70.0
 commot==0.0.3
 anndata==0.12.19
 
-# --- sender-calling comparison only (BIO_PHASE3 §4) --------------------------
-# Not required to reproduce any figure or headline number; needed only to re-run
-# the caller-disagreement analysis. DeepScence is run with denoise=False because
-# its DCA dependency needs an obsolete TensorFlow stack (see code/_shims/dca).
+# --- sender-calling comparison (BIO_PHASE3 §4) -------------------------------
+# NOT INSTALLED as of 2026-08-21 and not reinstalled after the container reset.
+# Figures regenerate without them (verified: Figures 3 and 4 were rebuilt today
+# in an environment lacking both). But the caller-agreement numbers the README
+# quotes -- the 0.93-1.22x-of-chance overlap, the depth-stratified enrichment --
+# ORIGINATE from analyses that need them, so those cannot be re-derived from raw
+# data in the current environment; only their stored outputs in
+# results/phase3/caller_*.csv are available. Reinstall before touching §4.
+# DeepScence is run with denoise=False because its DCA dependency needs an
+# obsolete TensorFlow stack (see code/_shims/dca).
 scanpy==1.11.5
 pointpats==2.5.5
 leidenalg==0.12.0
