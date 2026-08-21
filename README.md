@@ -12,8 +12,12 @@ Deadline: 2026-08-29 AoE. Full spec in [`SASP_Kernel_Master_Plan.md`](SASP_Kerne
 A senescent cell secretes SASP factors that alter its neighbours, and that
 influence must fall off with distance. This has been shown descriptively
 (Ma et al., *Cell* 2024;187(24):7025–7044.e34, PMID 39500323 — commonly
-miscited as "Zhao et al."; Zhao L is 14th of 47 authors) but never estimated
-as a parameter with error bars,
+miscited as "Zhao et al."; Zhao L is 14th of 47 authors) — and shown on
+**Stereo-seq bins, not segmented cells**: 1,535,191 spots at ~1,450
+genes/spot, in young versus old male mice across nine tissues (CNGB STOMICS
+`STDS0000247`). The closest prior distance-gradient result in this field was
+therefore measured at a resolution that blurs the very distance it reports.
+It has never been estimated as a parameter with error bars,
 never tested against confounder-aware nulls, and never subjected to an
 identifiability analysis — despite contemporaneous benchmarks reporting that
 the class of methods used to make such claims returns comparable interaction
@@ -52,8 +56,9 @@ and annotated.
 
 All numbers are reproducible from `results/`; see the linked reports for method.
 
-**The kernel does not survive the null battery.** Across 160 reportable fits
-(6 admissible sections × 9 receiver types × 7 modules), the surviving fraction
+**The kernel does not survive the null battery.** Across **160 of 315**
+reportable (section × receiver type × module) fits — not every receiver type is
+present in every section — the surviving fraction
 under combined control (N2+N5+N6) is **0.082 [−0.099, 0.249]**, with 35% at or
 below zero. 92% of the naive amplitude is nuisance. Controlled amplitude is
 0.027 response-sd against a naive 0.326.
@@ -61,8 +66,11 @@ below zero. 92% of the naive amplitude is nuisance. Controlled amplitude is
 
 **That is a conclusion, not a failure to detect — because the synthetic study
 calibrates it.** With a *planted* effect, N5 leaves 0.826 [0.734, 0.921]; with
-*no* effect it leaves 0.412. The observed 0.084 is below 100% of the 600
-planted-effect runs and sits at the 23rd percentile of the no-effect runs. The
+*no* effect it leaves 0.412. The observed value under **N5 alone, 0.084** — the
+like-for-like comparison, since the synthetic calibration is N5 — is below 100%
+of the 600 planted-effect runs and sits at the 23rd percentile of the no-effect
+runs. (The **0.082** above is the combined N2+N5+N6 figure; `CS_PHASE3.md` §0
+carries both.) The
 tissue behaves like the synthetic no-effect case.
 
 **The estimator is correct.** With a planted kernel and no nuisance,
@@ -92,10 +100,10 @@ senders at real cell locations within cell type, recovers ~71%.
 
 **The established tools cannot tell this tissue from confetti.** COMMOT (run as
 released software), plus faithful, clearly-labelled reimplementations of the
-CellChat v2, SpaTalk and NCEM-linear statistics, on the six admissible sections
+CellChat v2\*, SpaTalk\* and NCEM-linear\* statistics, on the six admissible sections
 and the four ligand–receptor pairs this panel supports. Of the interactions each
-calls significant on real coordinates, **79 % (COMMOT), 94 % (CellChat) and 79 %
-(SpaTalk) are still called significant after every cell coordinate is
+calls significant on real coordinates, **79 % (COMMOT), 94 % (CellChat\*) and 79 %
+(SpaTalk\*) are still called significant after every cell coordinate is
 permuted** — and their scores rank-correlate at ρ = 0.86–0.98 with their
 real-data values on that same destroyed tissue. The failure is not a weak null:
 there is nothing left in N0 to destroy. The parsimonious reading is that the
@@ -103,13 +111,15 @@ statistic carries little or no spatial information.
 For COMMOT we show the mechanism directly — coordinate permutation replaces its
 entire cell-to-cell communication network (Jaccard 0.015) while conserving
 transported ligand mass to six figures, so the cell-type-level summary it
-actually tests barely moves (ρ = 0.78), and its permutation test holds the
-transport plan fixed. Synthetic positive controls rule out the obvious
+actually tests barely moves (ρ = 0.78 — the per-pair cluster-level Spearman on
+the mechanism tile; the ρ = 0.90 quoted later is the different, all-interaction
+figure over 6,032 interactions), and its permutation test holds the transport
+plan fixed. Synthetic positive controls rule out the obvious
 objection: the same implementations find a planted interaction at p = 0 with
 1-in-16 specificity and lose it correctly when the two cell types are separated —
 but hold the ligand and receptor rates fixed and change only whether the
-receptor⁺ cells are the ones next to the ligand⁺ cells, and CellChat's score is
-identical to six significant figures. NCEM-linear is the only one of the four
+receptor⁺ cells are the ones next to the ligand⁺ cells, and CellChat\*'s score is
+identical to six significant figures. NCEM-linear\* is the only one of the four
 that sees the difference (p = 10⁻³⁹ vs 1.0) and the only one correctly calibrated
 under the nulls, but its reported interaction length scale is not identified.
 Details in [CS_PHASE4](reports/CS_PHASE4.md); Figure 4.
@@ -118,8 +128,10 @@ Details in [CS_PHASE4](reports/CS_PHASE4.md); Figure 4.
 up to 7.9× in synthetic and 4–5× on real tissue.
 
 **The naive real-data curve looks exactly like published gradients** — monotone
-in 32/35 fits, effect 26× the bin SEM — while λ̂ pins to a grid bound in 66% of
-fits, kernel family moves d̂½ by a median 5×, and adjusting for counts, area and
+in 32/35 fits, effect 26× the bin SEM — while λ̂ pins to a grid bound in **63%**
+of fits (200 of 315 on the final admissible set; the 66% figure is the earlier
+naive Phase 2 population), kernel family moves d̂½ by a median 5× naive and
+**4.4× under control**, and adjusting for counts, area and
 density *alone* removes 86% of β̂.
 
 **The one estimand that was cleanly identifiable in synthetic tissue is not
@@ -162,8 +174,8 @@ transcript depth and cell size alone leave 0.288, local density 0.219, kNN
 composition 0.474, anatomy 0.810, segmentation method 0.998. Separately, **66%
 of the unstratified gradient is receiver cell-type composition** — a
 composition-only surrogate, replacing each cell's response with its cell type's
-section mean, reproduces **76%** of the contact amplitude with no signalling
-whatsoever. Stratified within cell type the amplitude falls from +0.260 to
+section mean, reproduces **76%** of the contact amplitude (median; per-module
+ratios span **0.42–1.83**) with no signalling whatsoever. Stratified within cell type the amplitude falls from +0.260 to
 +0.091 response-sd, and two of nine receiver types go *negative*.
 
 **Matched decoys balance beautifully and bound nothing.** |SMD| ≤ 0.033 after
@@ -174,8 +186,9 @@ barely moves either way.
 **The regressor is largely a sender-calling-rate readout.** Across 77
 section × sender-definition combinations, log(median distance to nearest sender)
 on log(sender density) gives slope **−0.524, r² = 0.984** against a Poisson
-prediction of −0.50; Ripley-K at 50 µm is 1.11, so senders are nearly a random
-thinning. Density normalisation does *not* rescue λ̂ (between-section sd of
+prediction of −0.50; Ripley-K at 50 µm is 1.11 at `tierA_p95` (1.26 at
+`cdkn1a_pos`, 1.56 at `senepy_p95`), so senders are nearly a random thinning at
+every caller. Density normalisation does *not* rescue λ̂ (between-section sd of
 log λ̂: 0.726 raw, 0.705 Poisson-normalised). Sender prevalence in turn tracks
 section median transcripts/cell at ρ = +0.94.
 
@@ -216,7 +229,7 @@ remains*, the three ligand–receptor methods' scores still rank-correlate with
 their real-data values at **ρ = 0.90 (COMMOT), 0.98 (CellChat v2\*), 0.86
 (SpaTalk\*)**, and 79% / 94% / 79% of real-data-significant interactions stay
 significant. Their significance *rates* on randomised input match the real ones
-(COMMOT 0.241 vs 0.224; CellChat 0.318 vs 0.283; SpaTalk 0.248 vs 0.247),
+(COMMOT 0.241 vs 0.224; CellChat\* 0.318 vs 0.283; SpaTalk\* 0.248 vs 0.247),
 consistent with CellWHISPER's criterion on senescence-relevant pairs.
 
 **And it replicates under CellWHISPER's *own* null, which we now run.** Their
@@ -225,7 +238,7 @@ type's spatial organisation and destroying only ligand–receptor proximity —
 whereas our N0 permutes across all cells and is strictly more destructive. Under
 their design (`N0_type`), survival is **higher**, as a less destructive null
 should be: **COMMOT 0.811, CellChat v2\* 0.971, SpaTalk\* 0.781** (NCEM linear\*
-0.009). CellChat's significance *rate* is **0.2831 on permuted tissue against
+0.009). CellChat\*'s significance *rate* is **0.2831 on permuted tissue against
 0.2833 on real tissue** — their criterion met to four decimal places — and its
 score ordering is preserved **exactly**, ρ = **1.000**. This removes the
 objection that the earlier numbers came from an unreasonably blunt shuffle:
@@ -235,15 +248,15 @@ We report that these three methods fail CellWHISPER's null — not that
 CellWHISPER passes it here, which would need running their tool.
 
 **The statistic carries little spatial information — and for COMMOT we show the
-mechanism in the published code.** Coordinate permutation replaces 98.7% of the cell-to-cell
-communication network (edge Jaccard 0.012–0.018) while the collective optimal
+mechanism in the published code.** Coordinate permutation replaces **98.5%** of the cell-to-cell
+communication network (edge Jaccard **0.014–0.018**, mean 0.0154) while the collective optimal
 transport **conserves transported ligand mass to seven significant figures**
 (e.g. 863.815754 → 863.815745). Averaging that flow over a sender × receiver
 cell-type block therefore returns ≈ mass × composition, which is geometry-free;
 `cluster_communication` then permutes cell labels with the transport plan held
 fixed, so it never tests space at all. Synthetic positive controls close the
 loop: holding ligand/receptor rates fixed and changing *only* whether receptor⁺
-cells sit beside ligand⁺ cells leaves CellChat's score identical to six
+cells sit beside ligand⁺ cells leaves CellChat\*'s score identical to six
 significant figures and COMMOT's to four. NCEM-linear\* is the only one of the
 four that separates them (p = 10⁻³⁹ vs 1.0) and the only one calibrated under
 these nulls — though its own reported length scale is not identified.
@@ -447,6 +460,26 @@ an FPR claim that one of our own reports explicitly disclaims.
   all cells and is strictly more destructive. We now run the real thing —
   `N0_type` — for all four methods. See [CS_PHASE4](reports/CS_PHASE4.md) §8.
 - ~~Environment drift unverified~~ **Verified.** See the environment note below.
+- ~~Ma et al. described only as a distance-gradient result~~ **Corrected (B2/B3).**
+  It is **Stereo-seq bins, not segmented cells**, and **two age groups**, not a
+  time course. Stated in the opening, and in master plan §4.1 / §7 Rank 3 — which
+  also had the data pointed at GSA rather than CNGB STOMICS. This *helps* the gap
+  argument, so it is now said out loud rather than left implicit.
+- ~~Numeric inconsistencies across reports (M1–M10)~~ **Reconciled in this file.**
+  160 → *160 of 315*; 0.082 vs 0.084 labelled (combined vs N5-alone); grid-rail
+  66% → **63%** (final admissible set); kernel-family 5× naive / **4.4×** under
+  control; edge Jaccard **0.014–0.018**, 98.7% → **98.5%**; Ripley-K given at all
+  three callers; composition surrogate given with its **0.42–1.83** spread; the
+  two different COMMOT ρ's (0.78 mechanism-tile vs 0.90 all-interaction)
+  distinguished; and the `\*` reimplementation marker is now on **every**
+  CellChat\*/SpaTalk\*/NCEM\* mention, per CS_PHASE4 §5.1.
+- ~~Figure 4 plotted call survival against CellWHISPER's FPR line unlabelled~~
+  **Fixed.** The panel now states that our bars are call survival, and that
+  survival equals an FPR only if the shuffle is a true null — the assumption
+  under test. CS_PHASE4 §5 item 7 disclaims the conflation; the figure now
+  carries the disclaimer too.
+- ~~DeepScence and senepy lost with the container~~ **Reinstalled** at the pinned
+  versions; every import in `code/` now resolves except `commot`, by design.
 
 **Still outstanding — these need a human, not another agent:**
 
@@ -461,6 +494,13 @@ an FPR claim that one of our own reports explicitly disclaims.
   via Europe PMC — but its **content is still unread**; nature.com redirects
   anonymous fetches to an auth endpoint and Europe PMC holds metadata only.
   Someone with Nature access must confirm it does not touch the transwell result.
+- **M7 / M11 need a decision, not a lookup.** Cell counts differ by ≤1,100
+  between reports (7259: 128,030 vs 127,386; 7250: 237,982 / 236,906 / 236,905),
+  almost certainly pre- vs post-QC — state the QC rule once and use one number in
+  Methods. And two framing sentences do rhetorical work with no citation
+  (`BIO_PHASE2` §2.3 "that is textbook IFALD"; `BIO_PHASE3` §2.2 "consistent with
+  the aged-liver ductular reaction literature") — the second carries the n = 1
+  52-week sham animal and needs a reference if it reaches the Discussion.
 - **Reference 20 is a meeting abstract**, not a paper (Neretti N, *Innov Aging*
   2024;8(Suppl 1):351 — ~250 words, single author, no methods, not peer
   reviewed), and it is the sole support for the primary/secondary senescence

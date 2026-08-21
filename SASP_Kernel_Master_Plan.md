@@ -181,7 +181,7 @@ For the CS lead, and for the biology collaborator on the modeling terms.
 
 The 2023 *Nature Aging* SenNet review, "Spatial mapping of cellular senescence," is the field's own statement of the problem and is your framing citation. The June 2026 *Cell* package includes a spatial multi-omics atlas of human lymph nodes across ages 18–86 (Farzad et al.), which found senescent-like B cells shifting from interfollicular zones into germinal centers with age. The SenNet portal listed 1,753 public human and mouse datasets across 15 organs and 6 assay types as of January 2026.
 
-**Zhao et al. (*Cell* 2024) is the closest scientific precedent and you must engage with it directly.** They profiled aging mouse tissue across life stages, defined senescence-sensitive spots, and showed that SASP score, TNF signaling, ATP biosynthesis, and cell-cycle genes all vary monotonically with distance from those spots, consistently across organs. Their conclusion, that senescent foci act as epicenters compromising surrounding cells in a distance-dependent manner, is exactly the phenomenon you propose to quantify. Your contribution is quantification with controls, not discovery.
+**Ma et al. (*Cell* 2024) is the closest scientific precedent and you must engage with it directly.** [Corrected 2026-08-21, D7 §B1/B2/B3: cited throughout earlier drafts as "Zhao et al."; the first author is **Ma S** and Zhao L is 14th of 47. The platform is **Stereo-seq, spot/bin level, not single-cell**, and the design is **two age groups (young, old)**, not a time course.] They profiled **young versus old male mice across nine tissues** on Stereo-seq bins, defined senescence-sensitive spots, and showed that SASP score, TNF signaling, ATP biosynthesis, and cell-cycle genes all vary monotonically with distance from those spots, consistently across organs. Their conclusion, that senescent foci act as epicenters compromising surrounding cells in a distance-dependent manner, is exactly the phenomenon you propose to quantify. Your contribution is quantification with controls, not discovery.
 
 ### 4.2 Spatial CCC methods
 
@@ -281,9 +281,11 @@ That last point is the whole opportunity. They had the right data, saw the trend
 
 Specific targets: **Farzad et al. (2026) human lymph node spatial multi-omics, ages 18–86**, from the June 2026 *Cell* package. Lymph node has strong architectural structure, which is a confound but a well-defined one you can control for. Also check lung parenchyma, prefrontal cortex, and liver TMC releases.
 
-### Rank 3 — Zhao et al. mouse aging spatiotemporal atlas
+### Rank 3 — Ma et al. mouse aging atlas
 
-*Cell* 2024. Multiple organs, multiple life stages. This is the study whose gradient you would be re-examining. If deposited at single-cell resolution, reproducing their distance-ranked gradient and then breaking it with matched-decoy controls is your strongest Figure 2. Check the data availability statement; Chinese consortium data is sometimes in GSA rather than GEO.
+*Cell* 2024. Nine tissues, **two age groups (young, old)** — not "multiple life stages". This is the study whose gradient you would be re-examining.
+
+> **Corrected 2026-08-21 (D7 §B2/B3).** This rank was written on two wrong premises. The data are **Stereo-seq at spot/bin level** — 1,535,191 spots at ~1,450 genes/spot — **not single-cell resolution**, so the plan under "If deposited at single-cell resolution, reproducing their distance-ranked gradient … is your strongest Figure 2" **was never executable as written**. And the data are in **CNGB STOMICS DB (`STDS0000247`)**, neither GEO nor GSA. This is in our favour and should be said out loud: the field's closest distance-gradient result was measured at a resolution that blurs distance, which §3 of this plan warns is unsuitable for kernel estimation.
 
 ### Rank 4 — 10x Genomics public Xenium datasets
 

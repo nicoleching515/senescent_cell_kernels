@@ -140,9 +140,13 @@ def main():
         ax.bar(np.arange(len(METHODS)) + (ni - (len(NULLS) - 1) / 2) * w, v, w, color=CCOL[null],
                hatch=CHATCH[null], edgecolor=PAL.INK2, linewidth=0.5)
     ax.axhline(0.90, color=PAL.STATUS["critical"], lw=1.4, ls="--", zorder=5)
-    ax.text(-0.45, 1.20, "CellWHISPER: >90% FPR under THEIR randomisation "
-            "(N0t, the orange bar) \u2014 not N0", fontsize=7.5, ha="left",
+    ax.text(-0.45, 1.32, "CellWHISPER's reported >90% FPR, under the control "
+            "these bars now use (N0t, orange)", fontsize=7.5, ha="left",
             va="center", color=PAL.STATUS["critical"])
+    ax.text(-0.45, 1.20, "Our bars are CALL SURVIVAL, not an FPR: survival "
+            "equals an FPR only if the\nshuffle is a true null \u2014 which is "
+            "the assumption under test (\u00a75).", fontsize=6.4, ha="left",
+            va="center", linespacing=1.35, color=PAL.INK2)
     for ni, null in enumerate(NULLS):
         for mi, m in enumerate(METHODS):
             v = HA.loc[(m, null), "sig_survival"] if (m, null) in HA.index else np.nan
@@ -151,7 +155,7 @@ def main():
                         va="bottom", fontsize=6.4, color=PAL.INK2, rotation=90)
     ax.set_xticks(range(len(METHODS)))
     ax.set_xticklabels(METHODS, fontsize=8.5)
-    ax.set_ylim(0, 1.28)
+    ax.set_ylim(0, 1.42)
     ax.set_ylabel("fraction of real-significant interactions\n"
                   "still significant after shuffling", fontsize=8.5)
     ax.set_title("b   Does the coordinate shuffle change what is CALLED?",
