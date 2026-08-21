@@ -29,13 +29,12 @@ commot==0.0.3
 anndata==0.12.19
 
 # --- sender-calling comparison (BIO_PHASE3 §4) -------------------------------
-# NOT INSTALLED as of 2026-08-21 and not reinstalled after the container reset.
-# Figures regenerate without them (verified: Figures 3 and 4 were rebuilt today
-# in an environment lacking both). But the caller-agreement numbers the README
-# quotes -- the 0.93-1.22x-of-chance overlap, the depth-stratified enrichment --
-# ORIGINATE from analyses that need them, so those cannot be re-derived from raw
-# data in the current environment; only their stored outputs in
-# results/phase3/caller_*.csv are available. Reinstall before touching §4.
+# Restored 2026-08-21 after the container reset; both import cleanly. These were
+# installed and USED in the original session -- their outputs are on disk
+# (data/processed/deepscence_{sbr,sham}.csv) and they produce the
+# senepy_score / deepscence_score columns in results/phase3/caller_*.csv, which
+# is where the README's caller-agreement numbers come from. Figures regenerate
+# without them, but §4 cannot be re-derived from raw data without them.
 # DeepScence is run with denoise=False because its DCA dependency needs an
 # obsolete TensorFlow stack (see code/_shims/dca).
 scanpy==1.11.5
@@ -58,3 +57,11 @@ senepy==1.0.1
 #   2. Phase 1 / the synthetic sweep. Re-run in full under numpy 2.4.6 and
 #      diffed against the stored results — see reports/CS_PHASE1.md and
 #      results/repro_2026-08-21/.
+#
+# Scope of that check, stated so it is not over-read: Phase 1 was re-run in full;
+# Phase 4 had ONE stored COMMOT checkpoint recomputed, not all 72. Phases 2, 3
+# and 5 have NOT been re-executed in the rebuilt environment. Their code and
+# stored results are intact, but they are unverified against these pins.
+#
+# Every import in code/ now resolves except `commot`, which resolves only via
+# code/_shims/np2_compat.py -- by design, see above.
