@@ -1,0 +1,159 @@
+==============================================================================
+T1  SUPERPOSITION vs NEAREST-SENDER  (Section 6.3)
+==============================================================================
+
+synthetic calibration, dAIC(sup - near) per 1,000 cells:
+   planted=nearest       clean      : median     +15.21   correct verdict 1.00 (15 runs)
+   planted=nearest       confounded : median     +17.05   correct verdict 1.00 (15 runs)
+   planted=superposition clean      : median     -57.21   correct verdict 1.00 (15 runs)
+   planted=superposition confounded : median    -250.88   correct verdict 1.00 (15 runs)
+
+real data, per (section x receiver type x module) fit:
+   ctrl     n= 315  dAIC/1k med  -0.0596 [-0.238, +0.005]  superposition wins 0.721  block-bootstrap win frac (median) 0.700
+   ctrl+N2  n= 315  dAIC/1k med  -0.0975 [-0.364, +0.003]  superposition wins 0.733  block-bootstrap win frac (median) nan
+   naive    n= 315  dAIC/1k med  -0.4478 [-2.107, -0.027]  superposition wins 0.784  block-bootstrap win frac (median) 0.840
+
+bound from the PAIRED spatial block bootstrap (same resample of blocks for both bases):
+   ctrl   per-fit 95% CI on dAIC/1k: median [-0.856, +0.236]; excludes 0 in 0.067 of fits; |bound| median 0.92, p90 2.81
+          paired bootstrap win fraction for superposition: median 0.700; decisive (>=0.95) in 0.076, decisive for nearest (<=0.05) in 0.000
+   naive  per-fit 95% CI on dAIC/1k: median [-2.968, +0.275]; excludes 0 in 0.216 of fits; |bound| median 3.12, p90 16.04
+          paired bootstrap win fraction for superposition: median 0.840; decisive (>=0.95) in 0.276, decisive for nearest (<=0.05) in 0.003
+
+amplitude bound (response-sd units, controlled): superposition median -0.0046 IQR [-0.0158, +0.0143] p90 0.0259; nearest median -0.0117
+                          (naive): superposition median +0.0291; nearest median +0.1931
+
+null stability (5 draws per section):
+   N1 n= 1575  dAIC/1k med  -0.0217  superposition wins 0.666   per-draw [0.708, 0.632, 0.654, 0.667, 0.67]
+   N3 n= 1575  dAIC/1k med  -0.0109  superposition wins 0.555   per-draw [0.559, 0.559, 0.54, 0.581, 0.537]
+
+regressor correlation at the two lambda-hats: median 0.656 [0.531, 0.862]
+lambda railed: nearest 0.689  superposition 0.613;  median lambda near 14.2 um, sup 33.4 um
+
+does EITHER kernel beat the covariates-only model? (AIC)
+   ctrl  : nearest  median dAIC vs cov    +2.75, improves in 0.17 of fits
+   ctrl  : superpos median dAIC vs cov    +1.59, improves in 0.35 of fits
+   naive : nearest  median dAIC vs cov   -10.11, improves in 0.78 of fits
+   naive : superpos median dAIC vs cov   -19.93, improves in 0.85 of fits
+   N1    : nearest    +3.05 (0.09) | superpos    +2.47 (0.18)
+   N3    : nearest    +2.30 (0.28) | superpos    +1.94 (0.30)
+
+held-out log-likelihood, leave-one-section-out (Section 24.6):
+   ctrl   folds=252  dLL/cell (sup-near) median +8.102e-07  superposition wins 0.508
+          near  vs covariates-only: median dLL/cell +4.414e-06, beats it in 0.532 of folds
+          sup   vs covariates-only: median dLL/cell +6.842e-06, beats it in 0.548 of folds
+   naive  folds=252  dLL/cell (sup-near) median +2.340e-05  superposition wins 0.544
+          near  vs covariates-only: median dLL/cell +3.031e-04, beats it in 0.754 of folds
+          sup   vs covariates-only: median dLL/cell +4.337e-04, beats it in 0.698 of folds
+
+iid vs spatial block bootstrap SE of the amplitude at the profiled lambda:
+   ctrl   nearest        n=315  SE ratio block/iid median 1.04 [0.97, 1.12] p90 1.20  |  CI excludes 0: iid 0.175  block 0.143
+   ctrl   superposition  n=315  SE ratio block/iid median 1.09 [1.00, 1.21] p90 1.40  |  CI excludes 0: iid 0.368  block 0.308
+   naive  nearest        n=315  SE ratio block/iid median 1.20 [1.10, 1.38] p90 1.57  |  CI excludes 0: iid 0.781  block 0.737
+   naive  superposition  n=315  SE ratio block/iid median 1.40 [1.20, 1.83] p90 2.78  |  CI excludes 0: iid 0.851  block 0.740
+
+==============================================================================
+T2  WINNER'S CURSE
+==============================================================================
+Phase 3 reference: 160/315 fits selected, median SF(N5) 0.0842, SF(N2+N5+N6) 0.0822
+
+selection fraction 0.50  (selection rate 0.421, 20 random splits)
+   SF(N5) | selected on A : in-sample(A) 0.1375 (sd 0.0157)   held-out(B) 0.0794 (sd 0.0249)   gap +0.0581
+   SF(N5) | ALL fits (placebo, no selection): in-sample 0.1552   held-out 0.1534   gap +0.0018
+   placebo-corrected winner's curse = +0.0563
+   SF(N2+N5+N6) | selected: in 0.1337  out 0.0783  gap +0.0554
+
+selection fraction 0.75  (selection rate 0.481, 20 random splits)
+   SF(N5) | selected on A : in-sample(A) 0.0890 (sd 0.0169)   held-out(B) 0.1624 (sd 0.0302)   gap -0.0733
+   SF(N5) | ALL fits (placebo, no selection): in-sample 0.1152   held-out 0.2448   gap -0.1296
+   placebo-corrected winner's curse = +0.0563
+   SF(N2+N5+N6) | selected: in 0.1008  out 0.1574  gap -0.0566
+
+SF(N5) depends on sample size (no selection, median over fits):
+   100 blocks (full)  0.0955
+    50 blocks (half)  0.1565
+    25 blocks (quarter) 0.2471
+
+synthetic replication of the selection rule (Phase 1 sweep):
+   beta_true=0  all       n=  120  SF(N5) 0.4123  SF(N2) 0.7748  SF(N2+N5) 0.3568   (selection rate 0.867)
+   beta_true=0  selected  n=  104  SF(N5) 0.4454  SF(N2) 0.7774  SF(N2+N5) 0.3815   (selection rate 0.867)
+   beta_true=1  all       n= 1150  SF(N5) 0.8252  SF(N2) 0.9507  SF(N2+N5) 0.8311   (selection rate 1.000)
+   beta_true=1  selected  n= 1150  SF(N5) 0.8252  SF(N2) 0.9507  SF(N2+N5) 0.8311   (selection rate 1.000)
+
+==============================================================================
+T3  FIGURE 2a, STRATIFIED
+==============================================================================
+                  contact_amplitude_sd
+ALL RECEIVERS                    0.260
+Biliary/ductular                -0.059
+DC                               0.186
+Endothelial                      0.211
+Hepatocytes                      0.236
+Macrophages                      0.206
+Mesenchymal                      0.081
+Proliferating                    0.185
+T/NK cells                      -0.039
+vSMCs                            0.056
+
+==============================================================================
+T4  KERNEL FAMILIES  (Section 6.2)
+==============================================================================
+
+design=naive  (315 fits, stratified by receiver cell type)
+             AIC_win  med_lam  med_d_half  railed  med_dAIC_vs_cov  beats_no_kernel
+family                                                                             
+exponential    0.143   13.481         9.4   0.635          -10.114            0.778
+gaussian       0.092   13.481        16.0   0.444          -11.560            0.803
+powerlaw       0.063   13.481         6.8   0.556           -9.386            0.721
+spline         0.213      NaN         NaN   0.000           -9.906            0.711
+step           0.489   15.682        15.8   0.083          -14.324            0.911
+
+design=ctrl  (315 fits, stratified by receiver cell type)
+             AIC_win  med_lam  med_d_half  railed  med_dAIC_vs_cov  beats_no_kernel
+family                                                                             
+exponential    0.006   14.178        10.0   0.689            2.751            0.165
+gaussian       0.029   15.682        18.6   0.502            2.202            0.203
+powerlaw       0.000   21.221         4.6   0.711            4.354            0.098
+spline         0.057      NaN         NaN   0.000            6.642            0.137
+step           0.908   15.682        15.8   0.114           -0.569            0.559
+
+d_half spread across families within a fit (max/min): ctrl median 4.36x
+                                                       naive median 3.20x
+
+held-out log-likelihood per family (Section 24.6):
+
+design=naive  (252 leave-one-section-out folds)
+             med_dLL_vs_cov  beats_no_kernel  heldout_win
+family                                                   
+exponential           5.036            0.754        0.083
+gaussian              4.669            0.762        0.111
+powerlaw              5.301            0.770        0.317
+spline                4.071            0.702        0.294
+step                  3.559            0.738        0.194
+
+design=ctrl  (252 leave-one-section-out folds)
+             med_dLL_vs_cov  beats_no_kernel  heldout_win
+family                                                   
+exponential           0.070            0.532        0.143
+gaussian              0.050            0.536        0.163
+powerlaw              0.056            0.532        0.139
+spline               -0.175            0.429        0.317
+step                 -0.176            0.452        0.238
+
+why 'the spline wins 34/35' (CS Phase 2 §8) does not reproduce:
+   phase2_win300_grid3_400  stratified=0  ( 42 fits, naive design): spline wins 0.881, step wins 0.024
+   phase2_win300_grid3_400  stratified=1  (322 fits, naive design): spline wins 0.193, step wins 0.497
+   phase5_win100_grid7_50   stratified=0  ( 42 fits, naive design): spline wins 0.952, step wins 0.024
+   phase5_win100_grid7_50   stratified=1  (315 fits, naive design): spline wins 0.213, step wins 0.489
+
+==============================================================================
+T5  lambda_proximal vs lambda_downstream  (Section 6.4)
+==============================================================================
+        celltype  lam_prox_ctrl  lam_down_ctrl  ratio  ratio_lo  ratio_hi  frac_prox_gt_down  prox_sf_ctrl  down_sf_ctrl
+Biliary/ductular         50.000           50.0  1.000     0.140     3.447              0.078         0.010         0.397
+     Endothelial          7.617           50.0  0.152     0.140     1.897              0.087        -0.101         0.159
+     Hepatocytes         50.000            7.0  7.143     0.140     7.143              0.488         0.225         0.043
+     Macrophages         50.000            7.0  7.143     0.140     7.143              0.571         0.001        -0.512
+     Mesenchymal         28.434            7.0  4.062     0.140     7.143              0.464        -0.025         0.332
+      T/NK cells          9.766            7.0  1.395     0.226     5.067              0.530        -0.104         0.644
+
+grid ratio bounds: [0.140, 7.143]; CIs reaching both bounds: 3/6

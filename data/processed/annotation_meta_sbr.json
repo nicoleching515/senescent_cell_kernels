@@ -1,0 +1,399 @@
+{
+ "assignable": {
+  "Hepatocytes": [
+   "Apoa1",
+   "Apob",
+   "Fga",
+   "Fgb",
+   "Fgg",
+   "Serpinc1",
+   "Hpd",
+   "Orm1",
+   "Agt",
+   "C3",
+   "Pzp",
+   "Cps1",
+   "Otc",
+   "Fah",
+   "Aldh1l1",
+   "Apoa4"
+  ],
+  "Biliary/ductular": [
+   "Sox9",
+   "Epcam",
+   "Pkhd1",
+   "Krt19",
+   "Hnf1b",
+   "Onecut1",
+   "Krt7",
+   "Cftr"
+  ],
+  "Hepatic stellate cells": [
+   "Lrat",
+   "Des",
+   "Reln",
+   "Hgf",
+   "Lhx2",
+   "Rbp1",
+   "Col1a1",
+   "Col1a2",
+   "Pdgfrb"
+  ],
+  "Portal fibroblasts": [
+   "Col1a1",
+   "Col1a2",
+   "Pdgfra",
+   "Thy1",
+   "Eln",
+   "Fbln1",
+   "Fbln2",
+   "Postn",
+   "Lum",
+   "Vcan"
+  ],
+  "LSECs": [
+   "Kdr",
+   "Pecam1",
+   "Cdh5",
+   "Lyve1",
+   "Fcgr2b",
+   "Gata4",
+   "Mrc1",
+   "Eng",
+   "Flt1",
+   "Egfl7"
+  ],
+  "Central venous LSECs": [
+   "Wnt2",
+   "Wnt9b",
+   "Rspo3",
+   "Thbd",
+   "Kit",
+   "Fabp4"
+  ],
+  "Portal endothelial cells": [
+   "Vwf",
+   "Gja5",
+   "Jam2",
+   "Ntn4",
+   "Efnb2",
+   "Sox17",
+   "Dll4",
+   "Epas1"
+  ],
+  "Kupffer cells": [
+   "Adgre1",
+   "Csf1r",
+   "Cd68",
+   "Itgam",
+   "Marco",
+   "Lyz2",
+   "Cd5l",
+   "Slc40a1",
+   "Fcgr1",
+   "Mafb"
+  ],
+  "Inflammatory macs": [
+   "Ccr2",
+   "Itgam",
+   "Lyz2",
+   "Fcgr1",
+   "Cd14",
+   "Nlrp3",
+   "Trem2",
+   "Gpnmb",
+   "Cd9"
+  ],
+  "T/NK cells": [
+   "Cd3e",
+   "Cd3d",
+   "Cd3g",
+   "Cd2",
+   "Lck",
+   "Cd8a",
+   "Cd4",
+   "Il7r",
+   "Themis",
+   "Il2rb",
+   "Ncr1",
+   "Gzma",
+   "Klrb1c",
+   "Klrd1",
+   "Eomes"
+  ],
+  "B-cells": [
+   "Cd79a",
+   "Cd79b",
+   "Ms4a1",
+   "Cd19",
+   "Pax5",
+   "Ighm",
+   "Blnk"
+  ],
+  "Plasma": [
+   "Jchain",
+   "Sdc1",
+   "Prdm1",
+   "Mzb1",
+   "Igkc"
+  ],
+  "DC": [
+   "Flt3",
+   "Itgax",
+   "Cd209a",
+   "Batf3",
+   "Xcr1",
+   "Zbtb46",
+   "Clec9a",
+   "Irf8"
+  ],
+  "vSMCs": [
+   "Acta2",
+   "Myh11",
+   "Tagln",
+   "Cnn1",
+   "Actg2"
+  ],
+  "Pericytes": [
+   "Rgs5",
+   "Notch3",
+   "Kcnj8",
+   "Abcc9",
+   "Cspg4"
+  ],
+  "Mesothelial cells": [
+   "Msln",
+   "Upk3b",
+   "Wt1",
+   "Gpm6a"
+  ],
+  "Proliferating": [
+   "Mki67",
+   "Top2a",
+   "Pcna",
+   "Ccnb1",
+   "Ccna2",
+   "Birc5",
+   "Aurkb",
+   "Cdk1"
+  ]
+ },
+ "merged_label_set": {
+  "Hepatocytes": [
+   "Apoa1",
+   "Apob",
+   "Fga",
+   "Fgb",
+   "Fgg",
+   "Serpinc1",
+   "Hpd",
+   "Orm1",
+   "Agt",
+   "C3",
+   "Pzp",
+   "Cps1",
+   "Otc",
+   "Fah",
+   "Aldh1l1",
+   "Apoa4"
+  ],
+  "Biliary/ductular": [
+   "Sox9",
+   "Epcam",
+   "Pkhd1",
+   "Krt19",
+   "Hnf1b",
+   "Onecut1",
+   "Krt7",
+   "Cftr"
+  ],
+  "T/NK cells": [
+   "Cd3e",
+   "Cd3d",
+   "Cd3g",
+   "Cd2",
+   "Lck",
+   "Cd8a",
+   "Cd4",
+   "Il7r",
+   "Themis",
+   "Il2rb",
+   "Ncr1",
+   "Gzma",
+   "Klrb1c",
+   "Klrd1",
+   "Eomes"
+  ],
+  "B-cells": [
+   "Cd79a",
+   "Cd79b",
+   "Ms4a1",
+   "Cd19",
+   "Pax5",
+   "Ighm",
+   "Blnk"
+  ],
+  "Plasma": [
+   "Jchain",
+   "Sdc1",
+   "Prdm1",
+   "Mzb1",
+   "Igkc"
+  ],
+  "DC": [
+   "Flt3",
+   "Itgax",
+   "Cd209a",
+   "Batf3",
+   "Xcr1",
+   "Zbtb46",
+   "Clec9a",
+   "Irf8"
+  ],
+  "vSMCs": [
+   "Acta2",
+   "Myh11",
+   "Tagln",
+   "Cnn1",
+   "Actg2"
+  ],
+  "Mesothelial cells": [
+   "Msln",
+   "Upk3b",
+   "Wt1",
+   "Gpm6a"
+  ],
+  "Proliferating": [
+   "Mki67",
+   "Top2a",
+   "Pcna",
+   "Ccnb1",
+   "Ccna2",
+   "Birc5",
+   "Aurkb",
+   "Cdk1"
+  ],
+  "Mesenchymal": [
+   "Abcc9",
+   "Col1a1",
+   "Col1a2",
+   "Cspg4",
+   "Des",
+   "Eln",
+   "Fbln1",
+   "Fbln2",
+   "Hgf",
+   "Kcnj8",
+   "Lhx2",
+   "Lrat",
+   "Lum",
+   "Notch3",
+   "Pdgfra",
+   "Pdgfrb",
+   "Postn",
+   "Rbp1",
+   "Reln",
+   "Rgs5",
+   "Thy1",
+   "Vcan"
+  ],
+  "Macrophages": [
+   "Adgre1",
+   "Ccr2",
+   "Cd14",
+   "Cd5l",
+   "Cd68",
+   "Cd9",
+   "Csf1r",
+   "Fcgr1",
+   "Gpnmb",
+   "Itgam",
+   "Lyz2",
+   "Mafb",
+   "Marco",
+   "Nlrp3",
+   "Slc40a1",
+   "Trem2"
+  ],
+  "Endothelial": [
+   "Cdh5",
+   "Dll4",
+   "Efnb2",
+   "Egfl7",
+   "Eng",
+   "Epas1",
+   "Fabp4",
+   "Fcgr2b",
+   "Flt1",
+   "Gata4",
+   "Gja5",
+   "Jam2",
+   "Kdr",
+   "Kit",
+   "Lyve1",
+   "Mrc1",
+   "Ntn4",
+   "Pecam1",
+   "Rspo3",
+   "Sox17",
+   "Thbd",
+   "Vwf",
+   "Wnt2",
+   "Wnt9b"
+  ]
+ },
+ "merge_groups": {
+  "Mesenchymal": [
+   "Hepatic stellate cells",
+   "Portal fibroblasts",
+   "Pericytes"
+  ],
+  "Macrophages": [
+   "Kupffer cells",
+   "Inflammatory macs"
+  ],
+  "Endothelial": [
+   "LSECs",
+   "Central venous LSECs",
+   "Portal endothelial cells"
+  ]
+ },
+ "composition_merged": {
+  "Biliary/ductular": 32804,
+  "Hepatocytes": 30103,
+  "Mesenchymal": 15119,
+  "Macrophages": 13212,
+  "Endothelial": 12963,
+  "Low_quality": 11460,
+  "T/NK cells": 6307,
+  "DC": 2767,
+  "Unknown": 1205,
+  "B-cells": 772,
+  "Proliferating": 674
+ },
+ "dropped_thin": {},
+ "dropped_nonspecific": {
+  "Lymphatic endothelial cells": "measured in GSM9295284: Ccl21a and Mmrn1 mean expression ~0.00 in every cluster; Prox1 is expressed by hepatocytes (0.11-0.19) as highly as anywhere else; Lyve1 and Flt4 peak in the LSEC clusters. No separable lymphatic population exists on this panel."
+ },
+ "params": {
+  "MIN_MARKERS": 4,
+  "MIN_DET": 0.05,
+  "MIN_Z": 0.25,
+  "MIN_MARGIN": 0.2,
+  "LOWQ_FRAC": 0.5,
+  "RES": 1.0
+ },
+ "composition": {
+  "Biliary/ductular": 32804,
+  "Hepatocytes": 30103,
+  "Hepatic stellate cells": 15119,
+  "Kupffer cells": 13212,
+  "LSECs": 12963,
+  "Low_quality": 11460,
+  "T/NK cells": 6307,
+  "DC": 2767,
+  "Unknown": 1205,
+  "B-cells": 772,
+  "Proliferating": 674
+ }
+}

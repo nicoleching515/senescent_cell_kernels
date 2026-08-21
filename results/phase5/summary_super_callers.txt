@@ -1,0 +1,59 @@
+==============================================================================
+T1b  SUPERPOSITION vs NEAREST ACROSS SENDER DEFINITIONS
+==============================================================================
+
+synthetic calibration (unchanged): planted nearest +15.2/+17.0 per 1k, planted superposition -57.2/-250.9, 15/15 correct.
+
+--- tierA_p95  (315 fits, median 6960 senders/section, median 12301 receivers/fit)
+   naive    dAIC/1k med  -0.4478 [-2.107, -0.027]  sup wins 0.784  paired boot win 0.840
+   ctrl     dAIC/1k med  -0.0596 [-0.238, +0.005]  sup wins 0.721  paired boot win 0.700
+   ctrl+N2  dAIC/1k med  -0.0975 [-0.364, +0.003]  sup wins 0.733
+   PAIRED bootstrap CI on dAIC/1k (ctrl): median [-0.856, +0.236]; excludes 0 in 0.067 of fits; |bound| med 0.92 p90 2.81; decisive for sup 0.076, for near 0.000
+   N1 null   dAIC/1k med  -0.0217  sup wins 0.666  per-draw [0.708, 0.632, 0.654, 0.667, 0.67]
+   N3 null   dAIC/1k med  -0.0109  sup wins 0.555  per-draw [0.559, 0.559, 0.54, 0.581, 0.537]
+   vs covariates-only (ctrl, AIC): nearest   +2.75 (improves 0.17) | superposition   +1.59 (improves 0.35)
+      N1: nearest   +3.05 (0.09) | superposition   +2.47 (0.18)
+      N3: nearest   +2.30 (0.28) | superposition   +1.94 (0.30)
+   held-out LL ctrl  folds=252  dLL/cell (sup-near) +8.102e-07  sup wins 0.508  |  near beats cov 0.532, sup beats cov 0.548
+   held-out LL naive folds=252  dLL/cell (sup-near) +2.340e-05  sup wins 0.544  |  near beats cov 0.754, sup beats cov 0.698
+   amplitude (ctrl, response-sd): sup -0.0046, near -0.0117; regressor r 0.656; railed near 0.689 sup 0.613; median lambda near 14.2 sup 33.4 um
+
+--- cdkn1a_pos  (322 fits, median 7696 senders/section, median 11637 receivers/fit)
+   naive    dAIC/1k med  -1.5147 [-4.658, -0.376]  sup wins 0.879  paired boot win 0.970
+   ctrl     dAIC/1k med  -0.3210 [-0.862, -0.033]  sup wins 0.789  paired boot win 0.860
+   ctrl+N2  dAIC/1k med  -0.4860 [-1.461, -0.105]  sup wins 0.848
+   PAIRED bootstrap CI on dAIC/1k (ctrl): median [-1.624, +0.189]; excludes 0 in 0.258 of fits; |bound| med 1.67 p90 5.27; decisive for sup 0.335, for near 0.006
+   N1 null   dAIC/1k med  -0.0184  sup wins 0.638  per-draw [0.646, 0.661, 0.618, 0.624, 0.64]
+   N3 null   dAIC/1k med  -0.0049  sup wins 0.532  per-draw [0.599, 0.55, 0.547, 0.463, 0.5]
+   vs covariates-only (ctrl, AIC): nearest   +1.57 (improves 0.34) | superposition   -3.91 (improves 0.64)
+      N1: nearest   +2.99 (0.10) | superposition   +2.35 (0.21)
+      N3: nearest   +2.21 (0.26) | superposition   +2.07 (0.27)
+   held-out LL ctrl  folds=252  dLL/cell (sup-near) +1.269e-04  sup wins 0.679  |  near beats cov 0.627, sup beats cov 0.663
+   held-out LL naive folds=252  dLL/cell (sup-near) +1.856e-04  sup wins 0.611  |  near beats cov 0.667, sup beats cov 0.659
+   amplitude (ctrl, response-sd): sup +0.0093, near +0.0568; regressor r 0.593; railed near 0.677 sup 0.696; median lambda near 15.3 sup 50.0 um
+
+--- senepy_p95  (315 fits, median 5321 senders/section, median 11945 receivers/fit)
+   naive    dAIC/1k med  -0.6843 [-3.179, -0.096]  sup wins 0.838  paired boot win 0.880
+   ctrl     dAIC/1k med  -0.1542 [-0.665, +0.006]  sup wins 0.733  paired boot win 0.765
+   ctrl+N2  dAIC/1k med  -0.4027 [-1.230, -0.048]  sup wins 0.829
+   PAIRED bootstrap CI on dAIC/1k (ctrl): median [-1.198, +0.224]; excludes 0 in 0.171 of fits; |bound| med 1.28 p90 4.41; decisive for sup 0.225, for near 0.000
+   N1 null   dAIC/1k med  -0.0235  sup wins 0.668  per-draw [0.702, 0.683, 0.641, 0.66, 0.654]
+   N3 null   dAIC/1k med  -0.0031  sup wins 0.525  per-draw [0.565, 0.517, 0.571, 0.463, 0.508]
+   vs covariates-only (ctrl, AIC): nearest   +1.37 (improves 0.38) | superposition   -1.77 (improves 0.61)
+      N1: nearest   +2.94 (0.11) | superposition   +2.21 (0.23)
+      N3: nearest   +2.46 (0.23) | superposition   +2.31 (0.25)
+   held-out LL ctrl  folds=252  dLL/cell (sup-near) +2.366e-05  sup wins 0.603  |  near beats cov 0.611, sup beats cov 0.611
+   held-out LL naive folds=252  dLL/cell (sup-near) +4.885e-05  sup wins 0.599  |  near beats cov 0.651, sup beats cov 0.627
+   amplitude (ctrl, response-sd): sup -0.0110, near -0.0212; regressor r 0.631; railed near 0.692 sup 0.708; median lambda near 12.8 sup 43.0 um
+
+gene-overlap and lambda-railing diagnostics: super_by_caller_diag.csv
+      call            split   n  daic1k_med  sup_win  sup_vs_cov_med  sup_vs_cov_frac  lam_sup_ceiling  lam_sup_floor  lam_sup_ceiling_where_sup_beats_cov  lam_sup_med_where_sup_beats_cov
+ tierA_p95 Cdkn1a_in_module 180     -0.0442   0.7167          1.8512           0.3167              NaN            NaN                                  NaN                              NaN
+ tierA_p95        no_Cdkn1a 135     -0.0771   0.7259          1.1898           0.3926              NaN            NaN                                  NaN                              NaN
+ tierA_p95              ALL 315     -0.0596   0.7206          1.5925           0.3492           0.4063         0.2063                               0.6000                             50.0
+cdkn1a_pos Cdkn1a_in_module 184     -0.2539   0.7772         -2.1473           0.6141              NaN            NaN                                  NaN                              NaN
+cdkn1a_pos        no_Cdkn1a 138     -0.3701   0.8043         -4.9060           0.6739              NaN            NaN                                  NaN                              NaN
+cdkn1a_pos              ALL 322     -0.3210   0.7888         -3.9056           0.6398           0.5124         0.1832                               0.6019                             50.0
+senepy_p95 Cdkn1a_in_module 180     -0.0937   0.7333         -0.5407           0.5500              NaN            NaN                                  NaN                              NaN
+senepy_p95        no_Cdkn1a 135     -0.2672   0.7333         -4.5053           0.6963              NaN            NaN                                  NaN                              NaN
+senepy_p95              ALL 315     -0.1542   0.7333         -1.7669           0.6127           0.4921         0.2159                               0.5648                             50.0

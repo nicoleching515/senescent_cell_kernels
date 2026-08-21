@@ -1,0 +1,497 @@
+% references.bib -- SASP spatial response kernel project
+%
+% Built 2026-08-21 from the Deliverable 7 claim audit
+% (reports/BIO_DELIVERABLE7_CLAIM_AUDIT.md section 1.1), which checked all 30
+% references in SASP_Kernel_Master_Plan.md section 31 against publisher records.
+% Every entry below uses the audit's *corrected* form, not the plan's original.
+%
+% NONE of the 30 was fabricated. 12 verified clean, 5 were incomplete, 13 carried
+% a real error (10 bibliographic, 3 where the cited paper does not say what was
+% attributed to it).
+%
+% Lines beginning "% AUDIT:" carry a flag that survives into the write-up.
+% Two entries MUST NOT be cited as-is -- see neretti2024dissecting and the
+% attribution note on martin2023modelling.
+%
+% bioRxiv note: preprints posted in 2026 use DOI prefix 10.64898, NOT 10.1101.
+% A 10.1101 prefix on a 2026 preprint resolves to nothing.
+
+% ---------------------------------------------------------------- senescence in space
+
+@article{ma2024spatial,
+  author  = {Ma, Shuai and Ji, Zhejun and Zhang, Beibei and others and Qu, Jing and Zhang, Weiqi and Gu, Yingjie and Liu, Guang-Hui},
+  title   = {Spatial transcriptomic landscape unveils immunoglobin-associated senescence as a hallmark of aging},
+  journal = {Cell},
+  year    = {2024},
+  volume  = {187},
+  number  = {24},
+  pages   = {7025--7044.e34},
+  doi     = {10.1016/j.cell.2024.10.019},
+  pmid    = {39500323},
+  note    = {Closest prior work. Data: STOmicsDB STDS0000247},
+}
+% AUDIT (B1): first author is Ma S -- "Zhao L" is 14th of ~50 and this work was
+%   miscited project-wide as "Zhao et al." Platform is Stereo-seq (SPOT-based,
+%   ~50 um bins), NOT single-cell resolution, and it profiles TWO age groups, not
+%   "multiple life stages". The "immunoglobin" spelling is correct as published --
+%   do not fix it.
+% AUDIT (3.1): the distance-gradient content attribution (SASP score, TNF
+%   signalling, ATP biosynthesis and cell-cycle genes all varying monotonically
+%   with distance from senescence-sensitive spots) is SUBSTANTIATED from search
+%   retrievals but was NOT rendered from the publisher page in-session
+%   (cell.com and sciencedirect both returned HTTP 403; the paper is not open
+%   access and is in neither PMC nor Europe PMC). ==> ONE HUMAN MUST OPEN THIS PDF
+%   THROUGH A LIBRARY AND CONFIRM THE FIGURE PANEL BEFORE CAMERA-READY.
+
+@article{gurkar2023spatial,
+  author  = {Gurkar, Aditi U. and Gerencser, Akos A. and Mora, Ana L. and others and Passos, Jo{\~a}o F.},
+  title   = {Spatial mapping of cellular senescence: emerging challenges and opportunities},
+  journal = {Nature Aging},
+  year    = {2023},
+  volume  = {3},
+  number  = {7},
+  pages   = {776--790},
+  doi     = {10.1038/s43587-023-00446-6},
+  pmid    = {37400722},
+  note    = {SenNet review},
+}
+
+@article{karpova2026cellular,
+  author  = {Karpova, Alla and Li, Xiang and Peng, Cheng-Wei and others and Fields, Ryan C. and Ding, Li},
+  title   = {Cellular senescence in human liver under normal aging and cancer},
+  journal = {Cell Genomics},
+  year    = {2026},
+  volume  = {6},
+  number  = {2},
+  pages   = {101133},
+  doi     = {10.1016/j.xgen.2025.101133},
+  pmid    = {41576948},
+  pmcid   = {PMC12903365},
+  note    = {Source of GSE310392, this project's primary dataset},
+}
+% AUDIT (B3-accession): GSE310392 is the MOUSE Xenium arm. The human arm is on the
+%   SenNet portal (WashU provider group) and the mCRC arm on HTAN. All three GEO
+%   accessions in the paper (GSE293958, GSE310392, GSE311064) are mouse. Any
+%   sentence describing our data as human liver aging is wrong.
+
+@article{nguyen2024scdot,
+  author  = {Nguyen, Nam D. and Rosas, Lorena and Khaliullin, Timur and others and Lugo-Martinez, Jose and Bar-Joseph, Ziv},
+  title   = {scDOT: optimal transport for mapping senescent cells in spatial transcriptomics},
+  journal = {Genome Biology},
+  year    = {2024},
+  volume  = {25},
+  number  = {1},
+  pages   = {288},
+  doi     = {10.1186/s13059-024-03426-0},
+  pmid    = {39516853},
+}
+
+@article{farzad2026spatial,
+  author  = {Farzad, Negin and Enninful, Archibald and Lu, Yang and others},
+  title   = {A spatial multi-omics atlas of immunosenescence reveals germinal-center B cell alteration in human lymph nodes},
+  journal = {Cell Press Blue},
+  year    = {2026},
+  volume  = {1},
+  number  = {4},
+  pages   = {100053},
+  doi     = {10.1016/j.cpblue.2026.100053},
+}
+% AUDIT: "Cell Press Blue" is a real journal (Cell Press/Elsevier, ISSN 3051-3839).
+
+@article{suryadevara2026charting,
+  author  = {Suryadevara, Vidyani and Farzad, Negin and Yang, Mei and others and Robbins, Paul and Fan, Rong},
+  title   = {Charting human cellular senescence in aging and disease},
+  journal = {Cell},
+  year    = {2026},
+  volume  = {189},
+  number  = {12},
+  pages   = {3501--3505},
+  doi     = {10.1016/j.cell.2026.05.028},
+  pmid    = {42276030},
+}
+% AUDIT: this is a 5-page item. Confirm whether it is a research article or a
+%   Perspective before citing it as primary evidence.
+
+@article{parvanov2025spatial,
+  author  = {Parvanov, Dimitar and Ganeva, Rumiana and Ruseva, Magdalena and others},
+  title   = {Spatial distribution of senescent cells and their proximity to immune subsets in the human endometrium},
+  journal = {Diagnostics (Basel)},
+  year    = {2025},
+  volume  = {15},
+  number  = {21},
+  pages   = {2679},
+  doi     = {10.3390/diagnostics15212679},
+  pmid    = {41225972},
+}
+% AUDIT (B-year): year is 2025, NOT 2026 as the plan had it. All five
+%   nearest-neighbour distance figures (45+-20, 45+-25, 53+-23, 102+-42,
+%   211+-66 um) verified verbatim. Caveats to carry if cited as calibration:
+%   p16 IHC on serial sections, not transcriptomic; mid-luteal
+%   implantation-window endometrium from 68 IVF patients.
+
+% ---------------------------------------------------------------- senescence detection
+
+@article{qu2025deepscence,
+  author  = {Qu, Yi and Ji, Bing and Dong, Rui and others and Nixon, Andrew B. and Ji, Zhicheng},
+  title   = {Single-cell and spatial detection of senescent cells using DeepScence},
+  journal = {Cell Genomics},
+  year    = {2025},
+  volume  = {5},
+  number  = {12},
+  pages   = {101035},
+  doi     = {10.1016/j.xgen.2025.101035},
+  pmid    = {41061702},
+}
+% AUDIT (B7): if DeepScence results are reported, they must carry the caveat that
+%   we ran it with denoise=False (its DCA autoencoder step disabled), and that our
+%   DeepScence numbers rest on 2 of 11 sections.
+
+@article{anerillas2026sencat,
+  author  = {Anerillas, Carlos and Alt{\'e}s, Gisela and Gresova, Katarina and others and Basisty, Nathan and Gorospe, Myriam},
+  title   = {SenCat: Cataloging human cell senescence through multi-omic profiling of multiple senescent primary cell types},
+  journal = {Molecular Cell},
+  year    = {2026},
+  volume  = {86},
+  number  = {13},
+  pages   = {2605--2616.e8},
+  doi     = {10.1016/j.molcel.2026.05.017},
+  pmid    = {42276073},
+}
+
+@article{sanborn2025senepy,
+  author  = {Sanborn, Mark A. and Wang, Xinge and Gao, Shanshan and Dai, Yang and Rehman, Jalees},
+  title   = {Unveiling the cell-type-specific landscape of cellular senescence through single-cell transcriptomics using SenePy},
+  journal = {Nature Communications},
+  year    = {2025},
+  volume  = {16},
+  number  = {1},
+  pages   = {1884},
+  doi     = {10.1038/s41467-025-57047-7},
+  pmid    = {39987255},
+}
+
+@article{saul2022senmayo,
+  author  = {Saul, Dominik and Kosinsky, Robyn L. and Atkinson, Elizabeth J. and others and Farr, Joshua N. and Khosla, Sundeep},
+  title   = {A new gene set identifies senescent cells and predicts senescence-associated pathways across tissues},
+  journal = {Nature Communications},
+  year    = {2022},
+  volume  = {13},
+  number  = {1},
+  pages   = {4827},
+  doi     = {10.1038/s41467-022-32552-1},
+  pmid    = {35974106},
+}
+% AUDIT: "125 genes, 83 SASP, 20 transmembrane, 22 intracellular" is the paper's
+%   own breakdown and is correct (83+20+22 = 125).
+
+@article{tao2024sencid,
+  author  = {Tao, Wanyu and Yu, Zhengqing and Han, Jing-Dong Jackie},
+  title   = {Single-cell senescence identification reveals senescence heterogeneity, trajectory, and modulators},
+  journal = {Cell Metabolism},
+  year    = {2024},
+  volume  = {36},
+  number  = {5},
+  pages   = {1126--1143.e5},
+  pmid    = {38604170},
+}
+
+@article{hughes2025senpred,
+  author  = {Hughes, Bethany K. and Davis, Andrew and Milligan, Deborah and others and Bishop, Cleo L.},
+  title   = {SenPred},
+  journal = {Genome Medicine},
+  year    = {2025},
+  volume  = {17},
+  number  = {1},
+  pages   = {2},
+  doi     = {10.1186/s13073-024-01418-0},
+  pmid    = {39810225},
+}
+% AUDIT: title is INCOMPLETE here -- the audit confirmed the record but did not
+%   supply the full title. Complete it before camera-ready.
+% AUDIT: the year/DOI mismatch (2025 article, -024- DOI) is NOT an error --
+%   BMC/Springer DOI suffixes encode submission year.
+
+@article{ntintas2026overview,
+  author  = {Ntintas, Odysseas A. and Vagena, Sofia and Pantelis, Panagiotis and Theocharous, George and Petty, Russell and Evangelou, Konstantinos and Gorgoulis, Vassilis G.},
+  title   = {Overview of molecular signatures of senescence and associated resources: pros and cons},
+  journal = {FEBS Open Bio},
+  year    = {2026},
+  volume  = {16},
+  number  = {5},
+  pages   = {821--836},
+  doi     = {10.1002/2211-5463.70134},
+  pmid    = {41045047},
+}
+
+% ---------------------------------------------------------------- SASP and paracrine spread
+
+@article{martin2023modelling,
+  author  = {Martin, Luke and Schumacher, Linus and Chandra, Tamir},
+  title   = {Modelling the dynamics of senescence spread},
+  journal = {Aging Cell},
+  year    = {2023},
+  volume  = {22},
+  number  = {8},
+  pages   = {e13892},
+  doi     = {10.1111/acel.13892},
+  pmid    = {37288475},
+  pmcid   = {PMC10410058},
+}
+% AUDIT (B4b) -- READ THIS BEFORE CITING. The containment PARADOX is correctly
+%   attributed to this paper. The four mechanisms this project repeatedly attached
+%   to it -- rapid degradation, response threshold, immune clearance of senders,
+%   receptor-level refractoriness -- are NOT in it. In the full text "degrad"
+%   occurs zero times and "refractor" occurs zero times; immune clearance appears
+%   only as the mechanism the paper deliberately brackets out. The paper's OWN
+%   three resolutions are: SASP-poor secondary senescent cells acting as a
+%   firebreak; time-delayed induction; secondary cells secreting fewer SASP
+%   molecules than primary ones. The paper also states it "can not determine from
+%   this model whether the spread of senescence is controlled (finite) or
+%   uncontrolled", so do not write that it showed containment fails.
+%   Corrected text: BIO_DELIVERABLE6_DISCUSSION.md section A.3 and A.3(e).
+
+@article{basisty2020proteomic,
+  author  = {Basisty, Nathan and Kale, Abhijit and Jeon, Ok Hee and others and Campisi, Judith and Schilling, Birgit},
+  title   = {A proteomic atlas of senescence-associated secretomes for aging biomarker development},
+  journal = {PLoS Biology},
+  year    = {2020},
+  volume  = {18},
+  number  = {1},
+  pages   = {e3000599},
+  doi     = {10.1371/journal.pbio.3000599},
+  pmid    = {31945054},
+}
+
+@article{acosta2013complex,
+  author  = {Acosta, Juan Carlos and Banito, Ana and Wuestefeld, Torsten and others},
+  title   = {A complex secretory program orchestrated by the inflammasome controls paracrine senescence},
+  journal = {Nature Cell Biology},
+  year    = {2013},
+  volume  = {15},
+  number  = {8},
+  pages   = {978--990},
+  doi     = {10.1038/ncb2784},
+  pmid    = {23770676},
+  pmcid   = {PMC3732483},
+}
+% AUDIT: the plan gave "Paracrine senescence transmission", which is NOT the
+%   paper's title. The transwell / contact-not-required claim is VERIFIED verbatim
+%   from PMC3732483. But see acosta2026correction -- unread.
+
+@article{acosta2026correction,
+  author  = {Acosta, Juan Carlos and Banito, Ana and Wuestefeld, Torsten and others},
+  title   = {Author Correction: A complex secretory program orchestrated by the inflammasome controls paracrine senescence},
+  journal = {Nature Cell Biology},
+  year    = {2026},
+  volume  = {28},
+  number  = {6},
+  pages   = {1343},
+  doi     = {10.1038/s41556-026-01959-z},
+  pmid    = {42050148},
+}
+% AUDIT (S0d): EXISTENCE CONFIRMED (Crossref, Europe PMC, and re-confirmed
+%   2026-08-21). CONTENT NOT READ -- nature.com redirects anonymous fetches to
+%   idp.nature.com and Europe PMC holds metadata only (no abstract, no PMCID, no
+%   full text). ==> A HUMAN WITH NATURE ACCESS MUST READ THIS AND CONFIRM IT DOES
+%   NOT TOUCH THE TRANSWELL RESULT, which is what we cite acosta2013complex for.
+
+@article{russo2026characterizing,
+  author  = {Russo, Tommaso and Riessland, Markus},
+  title   = {Characterizing the SASP-dependent paracrine spreading of senescence between human brain cell types},
+  journal = {Aging Cell},
+  year    = {2026},
+  volume  = {25},
+  number  = {8},
+  pages   = {e70673},
+  doi     = {10.1111/acel.70673},
+  pmid    = {42601837},
+}
+% AUDIT: cite the PEER-REVIEWED version above, not the bioRxiv preprint the plan
+%   listed. The headline molecule set is FOUR, not three -- MIF was omitted -- and
+%   DPP4's role is specifically CXCL12 cleavage. This is the sole support for the
+%   ACKR3/CXCR7 secondary-senescence-competence claim, which is load-bearing for
+%   the one directly measured receiver-side claim in D6 section A.3(d).
+
+@article{meyer2017model,
+  author  = {Meyer, Pascal and Maity, Pallab and Burkovski, Andreas and others and Kestler, Hans A. and Scharffetter-Kochanek, Karin},
+  title   = {A model of the onset of the senescence associated secretory phenotype after DNA damage induced senescence},
+  journal = {PLoS Computational Biology},
+  year    = {2017},
+  volume  = {13},
+  number  = {12},
+  pages   = {e1005741},
+  doi     = {10.1371/journal.pcbi.1005741},
+  pmid    = {29206223},
+}
+
+@misc{neretti2024dissecting,
+  author = {Neretti, Nicola},
+  title  = {Dissecting the heterogeneity of senescence: Profiling primary and secondary senescent states using single-cell and spatial transcriptomics},
+  year   = {2024},
+  note   = {Innovation in Aging 8(Suppl 1):351. GSA Annual Scientific Meeting ABSTRACT},
+  doi    = {10.1093/geroni/igae098.1145},
+}
+% AUDIT (B8) -- DO NOT CITE AS A PAPER. PMC11689308 resolves to a ~250-word
+%   conference abstract: single author, no methods, no data, not peer reviewed.
+%   It is currently the ONLY support for the primary-vs-secondary senescence
+%   distinction, which underwrites Tier B module B7 (secondary_senescence).
+%   ==> REPLACE WITH A PEER-REVIEWED SOURCE, or drop the claim. Note that B7 also
+%   shares 14 of its 38 genes with the Tier A caller (CS_PHASE3 section 7).
+
+% ---------------------------------------------------------------- spatial CCC methods
+
+@article{fischer2023ncem,
+  author  = {Fischer, David S. and Schaar, Anna C. and Theis, Fabian J.},
+  title   = {Modeling intercellular communication in tissues using spatial graphs of cells},
+  journal = {Nature Biotechnology},
+  year    = {2023},
+  volume  = {41},
+  number  = {3},
+  pages   = {332--336},
+  doi     = {10.1038/s41587-022-01467-z},
+  pmid    = {36302986},
+}
+% AUDIT: year is 2023, not 2022 as the DOI suffix suggests.
+
+@article{cang2023commot,
+  author  = {Cang, Zixuan and Zhao, Yanxiang and Almet, Axel A. and others and Atwood, Scott X. and Nie, Qing},
+  title   = {Screening cell-cell communication in spatial transcriptomics via collective optimal transport},
+  journal = {Nature Methods},
+  year    = {2023},
+  volume  = {20},
+  number  = {2},
+  pages   = {218--228},
+  doi     = {10.1038/s41592-022-01728-4},
+  pmid    = {36690742},
+}
+% NOTE (this project): commot 0.0.3, the released package, cannot be IMPORTED under
+%   the numpy version we pin (2.4.6) -- it has `rho = np.Inf` as a default argument.
+%   See code/_shims/np2_compat.py and CS_PHASE4 section 8.
+
+@article{yu2026scild,
+  author  = {Yu, Jiaxin and Zhao, Jun and Ren, Tao and Sun, Duanchen and Wu, Ling-Yun},
+  title   = {Advancing spatial cellular communication inference with ligand diffusion and transport model},
+  journal = {Communications Biology},
+  year    = {2026},
+  volume  = {9},
+  number  = {1},
+  pages   = {133},
+  doi     = {10.1038/s42003-025-09413-w},
+  pmid    = {41501529},
+}
+% AUDIT: the year/DOI mismatch is NOT an error -- Springer manuscript-ID artefact.
+
+@article{shao2022spatalk,
+  author  = {Shao, Xin and Li, Chengyu and Yang, Haihong and others and Xu, Xiaoyan and Fan, Xiaohui},
+  title   = {Knowledge-graph-based cell-cell communication inference for spatially resolved transcriptomic data with SpaTalk},
+  journal = {Nature Communications},
+  year    = {2022},
+  volume  = {13},
+  number  = {1},
+  pages   = {4429},
+  doi     = {10.1038/s41467-022-32111-8},
+  pmid    = {35908020},
+}
+
+@article{gong2026rgast,
+  author  = {Gong, Yuxuan and Yuan, Xin and Yu, Zhaoyang},
+  title   = {Empowering multifaceted analysis of spatial transcriptomics data with RGAST},
+  journal = {Briefings in Bioinformatics},
+  year    = {2026},
+  volume  = {27},
+  number  = {3},
+  pages   = {bbag298},
+  doi     = {10.1093/bib/bbag298},
+}
+% AUDIT (S13): the plan's title/year pairing NEVER EXISTED. bioRxiv v1 (2024-08-10)
+%   has a different title, the cell-cell-communication title is v2 (2025-05-26),
+%   and the published version above is a THIRD title. The published framing is
+%   representation learning benchmarked on spatial DOMAIN IDENTIFICATION, with CCC
+%   as one downstream task -- do not cite it as a CCC method paper.
+
+@misc{wang2026harmonic,
+  author = {Wang, Xiao and Tao, Chenyu and Jiang, Yun and others},
+  title  = {HARMONIC: Histology-aware graph for modeling intercellular communication in spatial transcriptomics},
+  year   = {2026},
+  note   = {bioRxiv 2026.01.22.701166, posted 2026-01-23},
+  doi    = {10.64898/2026.01.22.701166},
+}
+
+% ---------------------------------------------- reliability / calibration / identifiability
+
+@misc{kumar2026cellwhisper,
+  author = {Kumar, Abhishek and Rivera Moctezuma, Fernando and Aggarwal, Bhavya and Zhang, Nan and Coskun, Ahmet F. and Sinha, Saurabh},
+  title  = {CellWHISPER disentangles direct cell-cell communication from structural proximity},
+  year   = {2026},
+  note   = {bioRxiv 2026.01.07.697982, posted 2026-01-08; v2 2026-04-03 (retitled)},
+  doi    = {10.64898/2026.01.07.697982},
+}
+% AUDIT (B9) -- THE MOST CONSEQUENTIAL FINDING IN THE AUDIT. Their randomised
+%   control permutes cell locations WITHIN EACH CELL TYPE, "preserving cell-type-
+%   specific spatial organization and ligand-receptor (LR) expression while
+%   destroying spatial proximity between ligand- and receptor-expressing cells".
+%   It is NOT crude coordinate randomisation. Describing it as such understates
+%   their design and invites the objection that the benchmark was too blunt --
+%   the opposite of the point we want it to make.
+% AUDIT (3.2): the >90% / <5% FPR figures are SUBSTANTIATED by two independent
+%   search retrievals of the primary source, but the full text was NEVER RENDERED
+%   in-session -- bioRxiv returned HTTP 429 to ~15 attempts across 5 URL paths and
+%   two clients, and the preprint is in neither PMC nor Europe PMC full text.
+%   Re-attempted 2026-08-21: still HTTP 429. ==> ONE HUMAN MUST OPEN THIS PDF FROM
+%   AN UNBLOCKED NETWORK. It is the first citation in our opening paragraph.
+% AUDIT: name collision -- "CellWhisperer" (epigen/CellWhisperer, Bock lab,
+%   Nat Biotechnol 2025, doi:10.1038/s41587-025-02857-9) is an UNRELATED multimodal
+%   chat tool for scRNA-seq. Different paper, different capitalisation.
+
+@misc{zhao2026concise,
+  author = {Zhao, Jinyu and Shan, Xiaoyu and Wang, Guanjue and Chu, Tinyi and Lin, Chen and Chang, Rui B. and Zhao, Hongyu},
+  title  = {Spatial co-expression and cell-cell communication inference from spatially resolved transcriptomics with CONCISE},
+  year   = {2026},
+  note   = {bioRxiv 2026.06.22.733860, posted 2026-06-28},
+  doi    = {10.64898/2026.06.22.733860},
+  pmid   = {42395397},
+  pmcid  = {PMC13320749},
+}
+% AUDIT (S16): the a = 0.1 claim is VERIFIED verbatim from the PMC full text. But
+%   their competitors are MERINGUE, SpatialDM, Copulacci and LIANA+ -- spatial
+%   co-expression / bivariate methods -- NOT CellChat/COMMOT/SpaTalk. Do not use
+%   this reference to support a claim about the LR-tool family.
+
+@article{yao2026benchmarking,
+  author  = {Yao, Hong and Mu, Shuang and He, Fang and Fang, Zhixiang},
+  title   = {Benchmarking cell-type-specific spatially variable gene detection methods},
+  journal = {Briefings in Bioinformatics},
+  year    = {2026},
+  volume  = {27},
+  number  = {2},
+  pages   = {bbag190},
+  doi     = {10.1093/bib/bbag190},
+}
+% AUDIT (S17): the "bbag190" suspicion is REFUTED -- BiB IDs run bbad=2023,
+%   bbae=2024, bbaf=2025, bbag=2026, so the ID is correct. The error is the
+%   attributed claim: rotation invariance is exact, but cell-type confounding is a
+%   documented weakness of ONE method (Celina), not an authorial "central open
+%   challenge".
+
+@misc{gu2026identifiability,
+  author = {Gu, Ruiyang and Zhang, Ruo-Zhen and Miles, Christopher E.},
+  title  = {Identifiability limits of physics-informed inference for spatial stochastic dynamics from static snapshots},
+  year   = {2026},
+  note   = {arXiv:2607.01749 [q-bio.QM; physics.bio-ph; stat.ML], submitted 2026-07-02},
+  doi    = {10.48550/arXiv.2607.01749},
+}
+
+% ---------------------------------------------------------------- data resources
+
+@misc{borner2026sennet,
+  author = {B{\"o}rner, Katy and Blood, Philip D. and Silverstein, Jonathan C. and others},
+  title  = {The SenNet Data Portal},
+  year   = {2026},
+  note   = {bioRxiv 2026.02.06.704469},
+  doi    = {10.64898/2026.02.06.704469},
+  pmcid  = {PMC12918883},
+}
+% AUDIT: the "1,753 datasets / 15 organs / 6 assay types as of January 2026"
+%   figures come from THIS PREPRINT, not from the portal (a JavaScript app that
+%   will not corroborate them). Keep the "as of January 2026" qualifier -- v2 of
+%   the preprint already updates the count to 2,041 as of April 2026.

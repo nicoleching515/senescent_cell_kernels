@@ -1,0 +1,85 @@
+section,arm,caller,cell_type,bg_pct,call_pct,enrichment,n_called
+sham,sham,tierA_score,Hepatocytes,55.69,36.669,0.658,4001
+sham,sham,tierA_score,LSECs,15.978,21.666,1.356,2364
+sham,sham,tierA_score,Kupffer cells,8.792,8.743,0.995,954
+sham,sham,tierA_score,Hepatic stellate cells,7.751,6.15,0.793,671
+sham,sham,tierA_score,Biliary/ductular,3.185,5.637,1.769,615
+sham,sham,tierA_score,vSMCs,3.174,5.875,1.851,641
+sham,sham,tierA_score,T/NK cells,1.813,6.855,3.781,748
+sham,sham,tierA_score,Portal endothelial cells,1.496,3.116,2.083,340
+sham,sham,tierA_score,Central venous LSECs,1.117,1.915,1.715,209
+sham,sham,tierA_score,B-cells,0.482,1.521,3.154,166
+sham,sham,tierA_score,Mesothelial cells,0.267,0.266,0.995,29
+sham,sham,tierA_score,Proliferating,0.255,1.586,6.225,173
+sham,sham,senepy_score,Hepatocytes,55.69,14.551,0.261,1332
+sham,sham,senepy_score,LSECs,15.978,1.77,0.111,162
+sham,sham,senepy_score,Kupffer cells,8.792,83.483,9.496,7642
+sham,sham,senepy_score,Hepatic stellate cells,7.751,0.0,0.0,0
+sham,sham,senepy_score,Biliary/ductular,3.185,0.0,0.0,0
+sham,sham,senepy_score,vSMCs,3.174,0.0,0.0,0
+sham,sham,senepy_score,T/NK cells,1.813,0.0,0.0,0
+sham,sham,senepy_score,Portal endothelial cells,1.496,0.0,0.0,0
+sham,sham,senepy_score,Central venous LSECs,1.117,0.098,0.088,9
+sham,sham,senepy_score,B-cells,0.482,0.098,0.204,9
+sham,sham,senepy_score,Mesothelial cells,0.267,0.0,0.0,0
+sham,sham,senepy_score,Proliferating,0.255,0.0,0.0,0
+sham,sham,deepscence_score,Hepatocytes,55.69,1.484,0.027,162
+sham,sham,deepscence_score,LSECs,15.978,24.418,1.528,2665
+sham,sham,deepscence_score,Kupffer cells,8.792,40.599,4.618,4431
+sham,sham,deepscence_score,Hepatic stellate cells,7.751,11.132,1.436,1215
+sham,sham,deepscence_score,Biliary/ductular,3.185,1.219,0.383,133
+sham,sham,deepscence_score,vSMCs,3.174,10.29,3.242,1123
+sham,sham,deepscence_score,T/NK cells,1.813,4.261,2.35,465
+sham,sham,deepscence_score,Portal endothelial cells,1.496,1.878,1.255,205
+sham,sham,deepscence_score,Central venous LSECs,1.117,1.851,1.657,202
+sham,sham,deepscence_score,B-cells,0.482,1.1,2.279,120
+sham,sham,deepscence_score,Mesothelial cells,0.267,0.183,0.686,20
+sham,sham,deepscence_score,Proliferating,0.255,1.585,6.223,173
+sham,sham,cdkn1a_counts,Hepatocytes,55.69,36.706,0.659,584
+sham,sham,cdkn1a_counts,LSECs,15.978,27.027,1.692,430
+sham,sham,cdkn1a_counts,Kupffer cells,8.792,8.988,1.022,143
+sham,sham,cdkn1a_counts,Hepatic stellate cells,7.751,3.583,0.462,57
+sham,sham,cdkn1a_counts,Biliary/ductular,3.185,4.84,1.519,77
+sham,sham,cdkn1a_counts,vSMCs,3.174,5.783,1.822,92
+sham,sham,cdkn1a_counts,T/NK cells,1.813,2.828,1.56,45
+sham,sham,cdkn1a_counts,Portal endothelial cells,1.496,1.823,1.218,29
+sham,sham,cdkn1a_counts,Central venous LSECs,1.117,1.697,1.519,27
+sham,sham,cdkn1a_counts,B-cells,0.482,0.503,1.042,8
+sham,sham,cdkn1a_counts,Mesothelial cells,0.267,0.251,0.941,4
+sham,sham,cdkn1a_counts,Proliferating,0.255,5.971,23.441,95
+sbr,SBR,tierA_score,Biliary/ductular,28.595,34.385,1.203,1972
+sbr,SBR,tierA_score,Hepatocytes,26.24,8.37,0.319,480
+sbr,SBR,tierA_score,Hepatic stellate cells,13.179,9.451,0.717,542
+sbr,SBR,tierA_score,Kupffer cells,11.517,14.246,1.237,817
+sbr,SBR,tierA_score,LSECs,11.3,8.195,0.725,470
+sbr,SBR,tierA_score,T/NK cells,5.498,16.757,3.048,961
+sbr,SBR,tierA_score,DC,2.412,6.051,2.509,347
+sbr,SBR,tierA_score,B-cells,0.673,2.145,3.187,123
+sbr,SBR,tierA_score,Proliferating,0.588,0.401,0.683,23
+sbr,SBR,senepy_score,Biliary/ductular,28.595,0.0,0.0,0
+sbr,SBR,senepy_score,Hepatocytes,26.24,4.167,0.159,132
+sbr,SBR,senepy_score,Hepatic stellate cells,13.179,0.0,0.0,0
+sbr,SBR,senepy_score,Kupffer cells,11.517,95.612,8.302,3029
+sbr,SBR,senepy_score,LSECs,11.3,0.221,0.02,7
+sbr,SBR,senepy_score,T/NK cells,5.498,0.0,0.0,0
+sbr,SBR,senepy_score,DC,2.412,0.0,0.0,0
+sbr,SBR,senepy_score,B-cells,0.673,0.0,0.0,0
+sbr,SBR,senepy_score,Proliferating,0.588,0.0,0.0,0
+sbr,SBR,deepscence_score,Biliary/ductular,28.595,28.365,0.992,1627
+sbr,SBR,deepscence_score,Hepatocytes,26.24,64.505,2.458,3700
+sbr,SBR,deepscence_score,Hepatic stellate cells,13.179,1.22,0.093,70
+sbr,SBR,deepscence_score,Kupffer cells,11.517,0.872,0.076,50
+sbr,SBR,deepscence_score,LSECs,11.3,2.789,0.247,160
+sbr,SBR,deepscence_score,T/NK cells,5.498,0.75,0.136,43
+sbr,SBR,deepscence_score,DC,2.412,0.105,0.043,6
+sbr,SBR,deepscence_score,B-cells,0.673,0.105,0.155,6
+sbr,SBR,deepscence_score,Proliferating,0.588,1.29,2.196,74
+sbr,SBR,cdkn1a_counts,Biliary/ductular,28.595,10.611,0.371,556
+sbr,SBR,cdkn1a_counts,Hepatocytes,26.24,55.363,2.11,2901
+sbr,SBR,cdkn1a_counts,Hepatic stellate cells,13.179,6.66,0.505,349
+sbr,SBR,cdkn1a_counts,Kupffer cells,11.517,7.385,0.641,387
+sbr,SBR,cdkn1a_counts,LSECs,11.3,13.607,1.204,713
+sbr,SBR,cdkn1a_counts,T/NK cells,5.498,2.443,0.444,128
+sbr,SBR,cdkn1a_counts,DC,2.412,1.164,0.483,61
+sbr,SBR,cdkn1a_counts,B-cells,0.673,0.286,0.425,15
+sbr,SBR,cdkn1a_counts,Proliferating,0.588,2.481,4.223,130

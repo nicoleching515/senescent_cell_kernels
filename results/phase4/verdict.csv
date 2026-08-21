@@ -1,0 +1,21 @@
+method,null,score_sf,sig_survival,null_sig_rate,real_sig_rate,n_interactions,n_real_sig,n_rep,verdict
+COMMOT,N0_perm,0.914,0.794,0.2405,0.2236,6032,1349,10,STATISTIC IS NOT SPATIAL: survives complete destruction of the spatial arrangement
+COMMOT,N0_type,0.958,0.811,0.2303,0.2236,6032,1349,10,"SURVIVES CELLWHISPER'S OWN CONTROL: within-cell-type location permutation, which keeps each cell type's spatial organisation and destroys only ligand-receptor proximity"
+COMMOT,N3_lig,0.906,0.806,0.242,0.2299,5629,1294,10,null does not bite: the shuffled tissue still produces the score the method measures
+COMMOT,N3_type,0.909,0.769,0.2274,0.2236,6032,1349,10,null does not bite: the shuffled tissue still produces the score the method measures
+COMMOT,N4_lig,0.912,0.82,0.2455,0.2299,5629,1294,10,null does not bite: the shuffled tissue still produces the score the method measures
+CellChat v2*,N0_perm,0.998,0.945,0.3176,0.2833,6032,1709,25,STATISTIC IS NOT SPATIAL: survives complete destruction of the spatial arrangement
+CellChat v2*,N0_type,1.0,0.971,0.2831,0.2833,6032,1709,100,"SURVIVES CELLWHISPER'S OWN CONTROL: within-cell-type location permutation, which keeps each cell type's spatial organisation and destroys only ligand-receptor proximity"
+CellChat v2*,N3_lig,1.0,0.974,0.2942,0.2887,5629,1625,25,null does not bite: the shuffled tissue still produces the score the method measures
+CellChat v2*,N3_type,0.981,0.913,0.2769,0.2833,6032,1709,25,null does not bite: the shuffled tissue still produces the score the method measures
+CellChat v2*,N4_lig,1.0,0.975,0.2941,0.2887,5629,1625,25,null does not bite: the shuffled tissue still produces the score the method measures
+NCEM linear*,N0_perm,-0.014,0.004,0.0027,0.0144,6032,87,100,this null bites: score and calls both collapse
+NCEM linear*,N0_type,-0.029,0.009,0.0033,0.0144,6032,87,100,this null bites: score and calls both collapse
+NCEM linear*,N3_lig,0.972,0.702,0.0132,0.0149,5629,84,100,null does not bite: the shuffled tissue still produces the score the method measures
+NCEM linear*,N3_type,-0.014,0.08,0.0058,0.0144,6032,87,100,this null bites: score and calls both collapse
+NCEM linear*,N4_lig,0.968,0.701,0.0131,0.0149,5629,84,100,null does not bite: the shuffled tissue still produces the score the method measures
+SpaTalk*,N0_perm,0.943,0.791,0.2481,0.2472,6032,1491,100,STATISTIC IS NOT SPATIAL: survives complete destruction of the spatial arrangement
+SpaTalk*,N0_type,0.941,0.781,0.2422,0.2472,6032,1491,100,"SURVIVES CELLWHISPER'S OWN CONTROL: within-cell-type location permutation, which keeps each cell type's spatial organisation and destroys only ligand-receptor proximity"
+SpaTalk*,N3_lig,0.949,0.814,0.2593,0.2546,5629,1433,100,null does not bite: the shuffled tissue still produces the score the method measures
+SpaTalk*,N3_type,0.952,0.784,0.2408,0.2472,6032,1491,100,null does not bite: the shuffled tissue still produces the score the method measures
+SpaTalk*,N4_lig,0.956,0.82,0.2602,0.2546,5629,1433,100,null does not bite: the shuffled tissue still produces the score the method measures

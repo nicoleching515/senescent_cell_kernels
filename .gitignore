@@ -1,0 +1,65 @@
+# Data — re-downloadable from GEO, and far too large to track.
+# See README "Reproducing the data" for the exact fetch commands.
+data/raw/
+data/interim/
+data/processed/cache/
+# The Phase 3 analysis cache: 166 MB of per-cell .npz, one per section, and fully
+# regenerable by code/sasp_phase3.py from data/raw + the tracked processed tables.
+# The original rule said "cache/", which does not match "cache3/", so this was
+# being tracked by accident.
+data/processed/cache3/
+# Phase 4's cache lives in /tmp by default (code/phase4_data.py CACHE4) and is
+# rebuilt by `python3 code/phase4_data.py`; ignore it if anyone relocates it.
+data/processed/cache4/
+*.h5
+*.h5ad
+*.tar.gz
+*.ome.tif
+*.rds
+
+# Xenium bundles specifically
+**/cell_feature_matrix.h5
+**/cells.parquet
+**/cell_boundaries.parquet
+**/nucleus_boundaries.parquet
+**/transcripts.parquet
+**/morphology.ome.tif
+
+# Fetch/run logs — machine-specific, not results
+logs/
+nohup.out
+
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+env/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Scratch
+/tmp/
+*.tmp
+.__wtest
+
+# Per-cell derived tables — large (~25MB/section) and fully regenerable from
+# code/ + the raw bundles. Summary tables (test3_prevalence_*, composition_*,
+# cluster_*, annotation_meta_*) ARE tracked, since they carry the audit numbers.
+data/processed/celltypes_*.csv
+data/processed/anatomy_*.csv
+data/processed/senders_*.csv
+data/processed/modules_*.csv
+data/processed/deepscence_*.csv
+
+# Phase 4 per-job checkpoints — ~1.5 GB, regenerable by code/phase4_run.py.
+# The aggregated results/phase4/*.csv ARE tracked.
+results/phase4/parts/
+
+# Per-job checkpoint shards — 630 raw job outputs (~650MB), regenerable by
+# re-running code/phase4_*.py. The aggregated tables beside them
+# (headline.csv, verdict.csv, commot_mechanism.csv, score_rank_correlation.csv,
+# interactions.csv.gz, ...) carry every number in the report and ARE tracked.
+results/phase4/parts/

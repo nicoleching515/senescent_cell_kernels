@@ -1,0 +1,152 @@
+### 1. Easy / clean regime sanity check (does recovery work at all?)
+
+regime  n_seeds            lam_naive        beta_naive             lam_nuis         beta_nuis           lam_decoyS       beta_decoyS  cover_naive_iid  cover_naive_blk  maxSMD_after
+  easy       40 43.55 [40.62, 46.49] 1.18 [1.15, 1.22] 29.76 [28.30, 31.23] 1.00 [0.99, 1.02] 44.85 [41.74, 47.96] 1.18 [1.15, 1.22]             0.80             0.60         0.054
+  pure       40 30.53 [29.14, 31.91] 1.01 [0.99, 1.02] 30.48 [29.12, 31.85] 1.01 [0.99, 1.02] 30.59 [29.20, 31.98] 1.01 [0.99, 1.02]             0.95             0.95         0.047
+
+
+### 2. Main grid: clustering x autocorrelation length
+
+
+lambda_hat naive  (rows: kappa, cols: ell/lambda_true)
+ell_over_lambda   0.25   0.50   1.00   2.00   4.00
+clustering                                        
+0.0              29.81  27.95  36.58  47.25  64.14
+1.5              26.62  22.07  26.07  37.51  72.15
+3.0              29.71  22.14  22.11  28.20  44.54
+4.5              33.01  26.94  23.31  25.95  90.75
+
+lambda_hat matched-decoy  (rows: kappa, cols: ell/lambda_true)
+ell_over_lambda   0.25   0.50   1.00   2.00   4.00
+clustering                                        
+0.0              29.77  28.15  35.39  44.53  59.84
+1.5              26.61  22.84  28.28  41.81  71.72
+3.0              29.83  23.79  26.45  38.71  58.95
+4.5              34.13  28.49  27.64  36.00  98.10
+
+lambda_hat nuisance-cond  (rows: kappa, cols: ell/lambda_true)
+ell_over_lambda   0.25   0.50   1.00   2.00   4.00
+clustering                                        
+0.0              22.27  20.06  22.22  26.44  31.46
+1.5              25.00  20.01  21.26  26.18  31.74
+3.0              27.70  21.60  21.65  24.33  30.28
+4.5              30.97  24.17  23.50  23.90  38.00
+
+coverage naive iid CI  (rows: kappa, cols: ell/lambda_true)
+ell_over_lambda  0.25  0.50  1.00  2.00  4.00
+clustering                                   
+0.0              0.93  0.67  0.53  0.00  0.00
+1.5              0.60  0.13  0.40  0.37  0.10
+3.0              0.83  0.33  0.27  0.50  0.33
+4.5              0.73  0.47  0.40  0.33  0.27
+
+coverage naive block CI  (rows: kappa, cols: ell/lambda_true)
+ell_over_lambda  0.25  0.50  1.00  2.00  4.00
+clustering                                   
+0.0              0.97  0.90  0.70  0.00   0.0
+1.5              0.77  0.47  0.80  0.67   0.2
+3.0              0.93  0.70  0.67  0.93   0.8
+4.5              0.90  0.83  0.67  0.80   0.7
+
+coverage decoy block CI  (rows: kappa, cols: ell/lambda_true)
+ell_over_lambda  0.25  0.50  1.00  2.00  4.00
+clustering                                   
+0.0              0.97  0.93  0.73  0.07   0.0
+1.5              0.80  0.47  0.87  0.40   0.1
+3.0              0.97  0.73  0.77  0.77   0.3
+4.5              0.83  0.80  0.97  0.83   0.3
+
+beta_hat naive  (rows: kappa, cols: ell/lambda_true)
+ell_over_lambda  0.25  0.50  1.00  2.00  4.00
+clustering                                   
+0.0              1.41  1.89  2.38  2.78  3.14
+1.5              1.18  1.58  1.84  1.96  2.10
+3.0              1.00  1.40  1.63  1.66  1.57
+4.5              0.94  1.28  1.57  1.64  1.48
+
+beta_hat matched-decoy  (rows: kappa, cols: ell/lambda_true)
+ell_over_lambda  0.25  0.50  1.00  2.00  4.00
+clustering                                   
+0.0              1.41  1.86  2.27  2.53  2.73
+1.5              1.18  1.55  1.72  1.73  1.78
+3.0              1.00  1.32  1.44  1.32  1.28
+4.5              0.92  1.22  1.36  1.28  1.22
+
+block sd / iid SE  (rows: kappa, cols: ell/lambda_true)
+ell_over_lambda  0.25  0.50  1.00  2.00  4.00
+clustering                                   
+0.0              1.51  1.46  1.72  2.15  2.84
+1.5              1.80  1.61  1.90  2.94  5.12
+3.0              2.46  2.69  2.86  7.37  6.42
+4.5              2.39  5.16  4.84  7.94  7.65
+
+max SMD after matching  (rows: kappa, cols: ell/lambda_true)
+ell_over_lambda  0.25  0.50  1.00  2.00  4.00
+clustering                                   
+0.0              0.05  0.05  0.06  0.05  0.05
+1.5              0.05  0.06  0.06  0.06  0.05
+3.0              0.07  0.07  0.05  0.06  0.06
+4.5              0.05  0.06  0.07  0.06  0.06
+
+realized sender Ripley ratio @50um  (rows: kappa, cols: ell/lambda_true)
+ell_over_lambda   0.25   0.50   1.00   2.00   4.00
+clustering                                        
+0.0               1.10   1.32   1.84   2.48   2.95
+1.5               4.22   4.62   5.30   6.32   7.05
+3.0               8.82   9.03   9.54  10.33  10.81
+4.5              10.93  11.17  11.92  12.27  12.56
+
+
+### 3. Sender prevalence (Section 8 Test 3)
+
+            n_senders   med_d  lam_naive  lam_nuis  lam_decoyS  sd_lam_naive  cov_iid  cov_blk  b_naive
+prevalence                                                                                             
+0.005           59.03  175.92      29.62     22.81       29.88         16.83     0.53     0.90     2.02
+0.010          117.67  132.82      25.81     21.20       28.27          5.50     0.43     0.77     1.98
+0.020          235.67  100.08      24.57     21.39       25.77          4.48     0.30     0.73     1.93
+0.050          588.40   61.89      25.47     20.95       28.42          4.52     0.43     0.77     1.86
+0.100         1176.37   40.57      27.45     20.89       28.29          6.25     0.43     0.87     1.87
+0.200         2354.63   23.79      32.63     20.68       30.25          7.07     0.83     0.93     1.99
+0.300         3536.30   16.58      37.27     20.98       31.67          7.42     0.97     0.93     2.22
+
+
+### 4. Confounder strength
+
+               lam_naive  lam_decoyS  lam_nuis  b_naive  b_decoyS  b_nuis  cov_iid    u_s    u_d  u_all    smd
+conf_strength                                                                                                 
+0.00              36.668      40.907    47.601    1.048     1.020   1.000    0.567  0.365  0.357  0.295  0.053
+0.25              31.449      35.142    29.743    1.217     1.133   1.049    0.500  0.464  0.381  0.295  0.059
+0.50              33.161      37.485    30.326    1.334     1.199   1.093    0.400  0.614  0.477  0.296  0.063
+1.00              28.804      37.982    24.151    1.652     1.329   1.312    0.467  0.842  0.528  0.296  0.061
+1.50              30.736      40.392    21.573    2.023     1.556   1.577    0.367  1.096  0.620  0.295  0.055
+2.00              26.675      36.260    19.558    2.613     1.998   1.942    0.633  1.225  0.616  0.295  0.056
+
+
+### 5. Null (beta_true = 0): does any estimator manufacture signal?
+
+                                          b_naive  b_decoyS  b_nuis  lam_naive  sd_b_naive  frac_beta_gt_0p2  cov_beta_naive  cov_beta_decoyS
+clustering conf_strength autocorr_len_um                                                                                                     
+0.0        0.0           7.5                0.632     0.615   0.114    292.398       0.351               0.9           0.267            0.267
+1.5        1.0           30.0               0.889     0.616   0.817     25.059       0.197               1.0           0.033            0.067
+3.0        1.0           120.0              1.024     0.647   0.415    215.687       0.474               1.0           0.200            0.267
+           2.0           120.0              1.855     1.071   0.546    110.883       0.459               1.0           0.033            0.133
+
+
+### 6. N (window size at fixed density)
+
+            n_cells  lam_naive     sd  cov_iid  cov_blk
+window_um                                              
+1000.0      2949.25      33.37  21.03     0.60     0.90
+1414.0      5871.90      25.94   5.19     0.65     0.95
+2000.0     11753.95      25.42   3.61     0.40     0.75
+2828.0     23539.35      29.25   4.03     0.70     0.95
+
+
+### 7. Decoy control cost in TRUE signal (Section 29, objection 6)
+
+                   regime        beta_naive       beta_decoyS retained_vs_naive retained_vs_truth plan_literal_bt_minus_bd u_gap_closed
+     clean, no confounder 1.18 [1.15, 1.22] 1.18 [1.15, 1.22]             1.001 1.18 [1.15, 1.22]        0.48 [0.17, 0.79]         1.15
+clean, no nuisance at all 1.01 [0.99, 1.02] 1.01 [0.99, 1.02]             0.999 1.01 [0.99, 1.02]        0.90 [0.63, 1.17]         0.93
+           ell/lam = 0.25 1.13 [1.09, 1.17] 1.13 [1.09, 1.17]             0.996 1.13 [1.09, 1.17]        0.33 [0.19, 0.48]         0.16
+              ell/lam = 1 1.86 [1.79, 1.92] 1.70 [1.63, 1.77]             0.911 1.70 [1.63, 1.77]        0.61 [0.50, 0.73]         0.27
+              ell/lam = 4 2.07 [1.94, 2.20] 1.75 [1.64, 1.87]             0.844 1.75 [1.64, 1.87]     -1.44 [-1.76, -1.12]         0.49

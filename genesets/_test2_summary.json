@@ -1,0 +1,270 @@
+{
+ "panel_n": 5106,
+ "A_final_strict": [
+  "Atr",
+  "Bcl2",
+  "Ccnb1",
+  "Cdkn1c",
+  "Ehmt2",
+  "Ercc1",
+  "Foxm1",
+  "Foxo3",
+  "H2afx",
+  "Hmga1",
+  "Lmnb2",
+  "Mdm4",
+  "Nfatc1",
+  "Parp1",
+  "Plk3",
+  "Rad51",
+  "Rb1",
+  "Rbl2",
+  "Rif1",
+  "Sesn1",
+  "Terf2",
+  "Tert",
+  "Trp63",
+  "Trp73",
+  "Xrcc5"
+ ],
+ "A_final_noB7": [
+  "Atm",
+  "Atr",
+  "Bax",
+  "Bcl2",
+  "Bcl2l1",
+  "Ccnb1",
+  "Cdkn1c",
+  "Cdkn2b",
+  "Ehmt2",
+  "Ercc1",
+  "Foxm1",
+  "Foxo3",
+  "Glb1",
+  "H2afx",
+  "Hmga1",
+  "Lmnb2",
+  "Mdm2",
+  "Mdm4",
+  "Nfatc1",
+  "Parp1",
+  "Plk3",
+  "Rad51",
+  "Rb1",
+  "Rbl2",
+  "Rif1",
+  "Sesn1",
+  "Sirt1",
+  "Terf2",
+  "Tert",
+  "Trp53bp1",
+  "Trp63",
+  "Trp73",
+  "Xrcc5"
+ ],
+ "B_sizes": {
+  "B1_tnfa_nfkb_proximal": 126,
+  "B2_il6_jak_stat3": 68,
+  "B3_interferon_response": 100,
+  "B4_downstream_arrest": 190,
+  "B5_emt_ecm": 125,
+  "B6_oxidative_stress": 31,
+  "B7_secondary_senescence": 38
+ },
+ "collisions": {
+  "B1_tnfa_nfkb_proximal": [
+   "Ccnd1",
+   "Cdkn1a",
+   "Gadd45a",
+   "Nfe2l2"
+  ],
+  "B3_interferon_response": [
+   "Cdkn1a"
+  ],
+  "B4_downstream_arrest": [
+   "Apex1",
+   "Aurkb",
+   "Birc5",
+   "Brca1",
+   "Brca2",
+   "Bub1",
+   "Cbx5",
+   "Ccna2",
+   "Ccnd1",
+   "Cdc20",
+   "Cdc25a",
+   "Cdk1",
+   "Cdkn1a",
+   "Cdkn1b",
+   "Cdkn2a",
+   "Cdkn2c",
+   "Chek1",
+   "Chek2",
+   "E2f1",
+   "Ezh2",
+   "Hmgb2",
+   "Lbr",
+   "Lmnb1",
+   "Mcm2",
+   "Mki67",
+   "Mre11a",
+   "Nbn",
+   "Pcna",
+   "Plk1",
+   "Rad50",
+   "Rbl1",
+   "Rpa1",
+   "Suv39h1",
+   "Top2a",
+   "Trp53",
+   "Ung",
+   "Xrcc6"
+  ],
+  "B5_emt_ecm": [
+   "Gadd45a"
+  ],
+  "B6_oxidative_stress": [
+   "Cdkn2d",
+   "Nfe2l2",
+   "Sesn2"
+  ],
+  "B7_secondary_senescence": [
+   "Atm",
+   "Bax",
+   "Bcl2l1",
+   "Ccnd1",
+   "Cdkn1a",
+   "Cdkn1b",
+   "Cdkn2a",
+   "Cdkn2b",
+   "Chek2",
+   "Ezh2",
+   "Gadd45a",
+   "Glb1",
+   "Hmgb2",
+   "Lmnb1",
+   "Mdm2",
+   "Sirt1",
+   "Suv39h1",
+   "Trp53",
+   "Trp53bp1"
+  ]
+ },
+ "msigdb": {
+  "HALLMARK_TNFA_SIGNALING_VIA_NFKB": [
+   "MM3860",
+   196,
+   126
+  ],
+  "HALLMARK_IL6_JAK_STAT3_SIGNALING": [
+   "MM3866",
+   85,
+   68
+  ],
+  "HALLMARK_INTERFERON_GAMMA_RESPONSE": [
+   "MM3878",
+   188,
+   94
+  ],
+  "HALLMARK_INTERFERON_ALPHA_RESPONSE": [
+   "MM3877",
+   94,
+   35
+  ],
+  "HALLMARK_E2F_TARGETS": [
+   "MM3886",
+   199,
+   91
+  ],
+  "HALLMARK_G2M_CHECKPOINT": [
+   "MM3868",
+   195,
+   100
+  ],
+  "HALLMARK_MYC_TARGETS_V1": [
+   "MM3887",
+   197,
+   62
+  ],
+  "HALLMARK_EPITHELIAL_MESENCHYMAL_TRANSITION": [
+   "MM3889",
+   194,
+   125
+  ],
+  "HALLMARK_REACTIVE_OXYGEN_SPECIES_PATHWAY": [
+   "MM3895",
+   48,
+   17
+  ],
+  "HALLMARK_P53_PATHWAY": [
+   "MM3896",
+   200,
+   90
+  ],
+  "HALLMARK_INFLAMMATORY_RESPONSE": [
+   "MM3890",
+   197,
+   144
+  ],
+  "HALLMARK_APOPTOSIS": [
+   "MM3869",
+   161,
+   102
+  ],
+  "SAUL_SEN_MAYO": [
+   "MM16098",
+   117,
+   90
+  ],
+  "REACTOME_SENESCENCE_ASSOCIATED_SECRETORY_PHENOTYPE_SASP": [
+   "MM14900",
+   40,
+   23
+  ],
+  "GOBP_CELLULAR_SENESCENCE": [
+   "MM10157",
+   93,
+   57
+  ],
+  "REACTOME_CELLULAR_SENESCENCE": [
+   "MM14901",
+   153,
+   63
+  ],
+  "REACTOME_DNA_DAMAGE_TELOMERE_STRESS_INDUCED_SENESCENCE": [
+   "MM14904",
+   87,
+   22
+  ],
+  "REACTOME_ONCOGENE_INDUCED_SENESCENCE": [
+   "MM14903",
+   17,
+   11
+  ],
+  "GOBP_RESPONSE_TO_OXIDATIVE_STRESS": [
+   "MM4935",
+   442,
+   228
+  ],
+  "GOBP_CELLULAR_RESPONSE_TO_OXIDATIVE_STRESS": [
+   "MM6983",
+   269,
+   149
+  ],
+  "HALLMARK_XENOBIOTIC_METABOLISM": [
+   "MM3891",
+   196,
+   71
+  ],
+  "GOBP_RESPONSE_TO_REACTIVE_OXYGEN_SPECIES": [
+   "MM3954",
+   216,
+   137
+  ],
+  "REACTOME_DETOXIFICATION_OF_REACTIVE_OXYGEN_SPECIES": [
+   "MM14944",
+   34,
+   11
+  ]
+ }
+}

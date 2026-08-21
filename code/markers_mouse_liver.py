@@ -1,0 +1,36 @@
+"""Mouse liver cell-type markers, Xenium Prime Mouse 5K panel.
+
+TAXONOMY SOURCE: the authors' own vocabulary, extracted from the Zenodo deposit
+  data_processing/2.merge_samples/IFALD_mouse/2.Update_cell_type_IFALD_mouse_samples-share.html
+  (objects `mouse.liver.cell.types` and `cell_type_merged`).
+MARKER SOURCE: curated by the biology collaborator (2026-08-20).
+  *** The authors' marker TABLE is NOT in the deposit *** -- their code reads
+  '/diskmnt/Projects/Users/allakarpova/Data/markers/Liver_mouse_markers.txt', an external path.
+  We therefore reuse their cell-type DEFINITIONS but not their literal marker list.
+  Their annotation was also snRNA-seq (whole transcriptome); ours is a 5,106-gene Xenium panel,
+  so only broad types are resolvable.
+"""
+MARKERS = {
+'Hepatocytes':'Apoa1 Apob Fga Fgb Fgg Serpinc1 Hpd Orm1 Agt C3 Pzp Cps1 Otc Fah Aldh1l1 Apoa4'.split(),
+'Cholangiocytes':'Krt19 Krt7 Epcam Sox9 Pkhd1 Onecut1 Hnf1b Cftr Pigr Cldn4 Cldn7 Mmp7'.split(),
+'Hepatic stellate cells':'Lrat Des Reln Hgf Lhx2 Rbp1 Col1a1 Col1a2 Pdgfrb'.split(),
+'Portal fibroblasts':'Col1a1 Col1a2 Pdgfra Thy1 Eln Fbln1 Fbln2 Postn Lum Vcan'.split(),
+'LSECs':'Kdr Pecam1 Cdh5 Lyve1 Fcgr2b Gata4 Mrc1 Eng Flt1 Egfl7'.split(),
+'Kupffer cells':'Adgre1 Csf1r Cd68 Itgam Marco Lyz2 Cd5l Slc40a1 Fcgr1 Mafb'.split(),
+'Inflammatory macs':'Ccr2 Itgam Lyz2 Fcgr1 Cd14 Nlrp3 Trem2 Gpnmb Cd9'.split(),
+'T-cells':'Cd3e Cd3d Cd3g Cd2 Lck Cd8a Cd4 Il7r Themis'.split(),
+'NK cells':'Ncr1 Klrb1c Gzma Gzmb Prf1 Klrk1 Eomes Klrd1 Il2rb'.split(),
+'B-cells':'Cd79a Cd79b Ms4a1 Cd19 Pax5 Ighm Blnk'.split(),
+'Plasma':'Jchain Sdc1 Prdm1 Mzb1 Igkc'.split(),
+'DC':'Flt3 Itgax Cd209a Batf3 Xcr1 Zbtb46 Clec9a Irf8'.split(),
+'Neutrophils':'Ly6g Csf3r Cxcr2'.split(),
+'Mast':'Kit Ms4a2 Tpsb2'.split(),
+'vSMCs':'Acta2 Myh11 Tagln Cnn1 Actg2'.split(),
+'Pericytes':'Rgs5 Notch3 Kcnj8 Abcc9 Cspg4'.split(),
+'Lymphatic endothelial cells':'Prox1 Pdpn Flt4 Ccl21a Mmrn1 Nts'.split(),
+'Mesothelial cells':'Msln Upk3b Wt1 Gpm6a'.split(),
+'Erythroid cells':'Slc4a1 Klf1'.split(),
+'Proliferating':'Mki67 Top2a Pcna Ccnb1 Ccna2 Birc5 Aurkb Cdk1'.split(),
+}
+# Zonation subtypes of hepatocytes/LSECs are assigned post-hoc from the zonation score (D-B),
+# not from clustering, because the panel cannot separate them reliably at this depth.

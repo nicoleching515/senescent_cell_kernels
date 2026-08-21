@@ -1,0 +1,29 @@
+control,method,truth,p_AB,p_CD,p_BA,n_sig,detected,score_AB
+C1 cell-type sensitivity,CellChat v2*,A->B,0.0,1.0,1.0,1,True,
+C1 cell-type sensitivity,SpaTalk*,A->B,0.0,1.0,1.0,1,True,
+C1 cell-type sensitivity,NCEM linear*,A->B,0.4772876347657287,0.6367645728513599,0.4772876347657287,0,False,
+C1 cell-type sensitivity,COMMOT,A->B,0.0,1.0,1.0,1,True,
+C2 spatial sensitivity,CellChat v2*,real (ligand+ adjacent to receptor+),0.58,,,1,False,0.01857650920181841
+C2 spatial sensitivity,SpaTalk*,real (ligand+ adjacent to receptor+),0.676,,,0,False,0.12208255883862712
+C2 spatial sensitivity,NCEM linear*,real (ligand+ adjacent to receptor+),0.3030247007445021,,,2,False,0.005120412522630847
+C2 spatial sensitivity,COMMOT,real (ligand+ adjacent to receptor+),0.755,,,0,False,1.0366328739578813e-05
+C2 spatial sensitivity,CellChat v2*,N3 torus-shifted ligand+,0.56,,,1,False,0.018788724186032172
+C2 spatial sensitivity,SpaTalk*,N3 torus-shifted ligand+,0.66,,,1,False,0.12176140973384347
+C2 spatial sensitivity,NCEM linear*,N3 torus-shifted ligand+,0.9846904248022361,,,0,False,-8.216898214002738e-05
+C2 spatial sensitivity,COMMOT,N3 torus-shifted ligand+,0.795,,,0,False,1.0080872135552804e-05
+C3 within-type spatial coupling,CellChat v2*,coupled (receptor+ B next to ligand+ A),0.0,,,1,True,0.0654470810824155
+C3 within-type spatial coupling,SpaTalk*,coupled (receptor+ B next to ligand+ A),0.0,,,1,True,0.24282768540961663
+C3 within-type spatial coupling,NCEM linear*,coupled (receptor+ B next to ligand+ A),1.0027116840328523e-39,,,1,True,0.0596671910026642
+C3 within-type spatial coupling,COMMOT,coupled (receptor+ B next to ligand+ A),0.0,,,1,True,0.00012450000000000034
+C3 within-type spatial coupling,CellChat v2*,"scattered (same rates, random B cells)",0.0,,,1,True,0.0654470810824155
+C3 within-type spatial coupling,SpaTalk*,"scattered (same rates, random B cells)",0.0,,,1,True,0.21844137223641416
+C3 within-type spatial coupling,NCEM linear*,"scattered (same rates, random B cells)",1.0,,,0,False,0.0025454030103321196
+C3 within-type spatial coupling,COMMOT,"scattered (same rates, random B cells)",0.0,,,1,True,0.00012499999999999995
+C4 between-type geometry,CellChat v2*,interleaved A and B,0.0,,,1,True,0.09682062539075256
+C4 between-type geometry,SpaTalk*,interleaved A and B,0.0,,,1,True,0.259018099369798
+C4 between-type geometry,NCEM linear*,interleaved A and B,0.8489468960359681,,,0,False,0.000980924114084453
+C4 between-type geometry,COMMOT,interleaved A and B,0.0,,,1,True,0.0001301059002306549
+C4 between-type geometry,CellChat v2*,segregated A and B,1.0,,,1,False,0.0
+C4 between-type geometry,SpaTalk*,segregated A and B,1.0,,,0,False,0.0
+C4 between-type geometry,NCEM linear*,segregated A and B,,,,0,False,
+C4 between-type geometry,COMMOT,segregated A and B,1.0,,,5,False,0.0

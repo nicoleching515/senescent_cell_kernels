@@ -1,0 +1,13 @@
+Actr2
+Cnot4
+Gpi1
+Hnrnpk
+Hprt
+Pgk1
+Rab7
+Rack1
+Rpl11
+Sdha
+Tbp
+Vcp
+Ywhaz

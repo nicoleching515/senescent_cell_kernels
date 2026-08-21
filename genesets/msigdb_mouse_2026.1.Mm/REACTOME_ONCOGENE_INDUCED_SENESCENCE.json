@@ -1,0 +1,3 @@
+{
+  "REACTOME_ONCOGENE_INDUCED_SENESCENCE" : {"systematicName":"MM14903","pmid":"","exactSource":"R-MMU-2559585","geneSymbols":["Cdk4","Cdk6","Cdkn2b","Erf","Ets1","Ets2","Id1","Mapk1","Mapk3","Mdm2","Mdm4","Rps27a","Trp53","Uba52","Uba52rt","Ubb","Ubc"],"msigdbURL":"https://www.gsea-msigdb.org/gsea/msigdb/mouse/geneset/REACTOME_ONCOGENE_INDUCED_SENESCENCE","externalDetailsURL":["https://www.reactome.org/content/detail/R-MMU-2559585"],"filteredBySimilarity":[],"externalNamesForSimilarTerms":[],"collection":"M2:CP:REACTOME"}
+}

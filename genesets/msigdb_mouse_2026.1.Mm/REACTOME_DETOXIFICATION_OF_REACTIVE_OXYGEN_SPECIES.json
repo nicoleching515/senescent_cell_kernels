@@ -1,0 +1,3 @@
+{
+  "REACTOME_DETOXIFICATION_OF_REACTIVE_OXYGEN_SPECIES" : {"systematicName":"MM14944","pmid":"","exactSource":"R-MMU-3299685","geneSymbols":["Cat","Ccs","Cyba","Cybb","Cycs","Ero1a","Gm10053","Gpx1","Gpx2","Gpx3","Gpx5","Gpx6","Gpx7","Gpx8","Gsr","Gstp1","Ncf1","Ncf2","Ncf4","Nox4","Nudt2","P4hb","Prdx1","Prdx2","Prdx3","Prdx5","Prdx6","Sod1","Sod2","Sod3","Txn1","Txn2","Txnrd1","Txnrd2"],"msigdbURL":"https://www.gsea-msigdb.org/gsea/msigdb/mouse/geneset/REACTOME_DETOXIFICATION_OF_REACTIVE_OXYGEN_SPECIES","externalDetailsURL":["https://www.reactome.org/content/detail/R-MMU-3299685"],"filteredBySimilarity":[],"externalNamesForSimilarTerms":[],"collection":"M2:CP:REACTOME"}
+}

@@ -1,0 +1,11 @@
+section,arm,score,n,rho_counts,rho_n_genes,rho_cell_area,rho_nucleus_area
+sham,sham,tierA_score,218273,0.0871,0.0716,0.0817,0.0846
+sham,sham,senepy_score,183070,0.1676,0.2346,0.1077,0.0436
+sham,sham,deepscence_score,218273,-0.35,-0.1933,-0.4315,-0.3955
+sham,sham,naive_corescence,218273,0.0704,0.0621,0.0783,0.0625
+sham,sham,cdkn1a_counts,218273,0.0152,0.0343,-0.0085,0.0006
+sbr,SBR,tierA_score,114721,0.0216,0.0371,0.0022,0.0845
+sbr,SBR,senepy_score,63357,0.1814,0.2571,0.1038,0.075
+sbr,SBR,deepscence_score,114721,0.3176,0.2549,0.3197,0.2614
+sbr,SBR,naive_corescence,114721,0.3262,0.2762,0.3482,0.2389
+sbr,SBR,cdkn1a_counts,114721,0.1923,0.1953,0.1804,0.1657

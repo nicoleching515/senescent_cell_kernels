@@ -1,0 +1,139 @@
+panel,method,pair,cond,quantity,value,n_interactions
+a,COMMOT,Ccl2->Ccr2,real,fraction of cell-type pairs called significant,0.17440318302387267,1508
+a,COMMOT,Ccl2->Ccr2,N3_lig,fraction of cell-type pairs called significant,0.16810344827586207,1508
+a,COMMOT,Ccl2->Ccr2,N4_lig,fraction of cell-type pairs called significant,0.17221485411140583,1508
+a,COMMOT,Ccl2->Ccr2,N3_type,fraction of cell-type pairs called significant,0.17486737400530503,1508
+a,COMMOT,Ccl2->Ccr2,N0_perm,fraction of cell-type pairs called significant,0.17506631299734748,1508
+a,COMMOT,Ccl2->Ccr2,N0_type,fraction of cell-type pairs called significant,0.17572944297082227,1508
+a,COMMOT,Il1a->Il1r1,real,fraction of cell-type pairs called significant,0.1312997347480106,1508
+a,COMMOT,Il1a->Il1r1,N3_lig,fraction of cell-type pairs called significant,0.14250663129973476,1508
+a,COMMOT,Il1a->Il1r1,N4_lig,fraction of cell-type pairs called significant,0.14283819628647212,1508
+a,COMMOT,Il1a->Il1r1,N3_type,fraction of cell-type pairs called significant,0.14489389920424403,1508
+a,COMMOT,Il1a->Il1r1,N0_perm,fraction of cell-type pairs called significant,0.14210875331564987,1508
+a,COMMOT,Il1a->Il1r1,N0_type,fraction of cell-type pairs called significant,0.1356763925729443,1508
+a,COMMOT,Tgfb1->Tgfbr1/2,real,fraction of cell-type pairs called significant,0.4290450928381963,1508
+a,COMMOT,Tgfb1->Tgfbr1/2,N3_lig,fraction of cell-type pairs called significant,0.4625331564986737,1508
+a,COMMOT,Tgfb1->Tgfbr1/2,N4_lig,fraction of cell-type pairs called significant,0.47009283819628644,1508
+a,COMMOT,Tgfb1->Tgfbr1/2,N3_type,fraction of cell-type pairs called significant,0.4344827586206897,1508
+a,COMMOT,Tgfb1->Tgfbr1/2,N0_perm,fraction of cell-type pairs called significant,0.47314323607427056,1508
+a,COMMOT,Tgfb1->Tgfbr1/2,N0_type,fraction of cell-type pairs called significant,0.4371352785145889,1508
+a,COMMOT,Tnf->Tnfrsf1a/1b,real,fraction of cell-type pairs called significant,0.15981432360742706,1508
+a,COMMOT,Tnf->Tnfrsf1a/1b,N3_lig,fraction of cell-type pairs called significant,0.17782805429864254,1105
+a,COMMOT,Tnf->Tnfrsf1a/1b,N4_lig,fraction of cell-type pairs called significant,0.17918552036199095,1105
+a,COMMOT,Tnf->Tnfrsf1a/1b,N3_type,fraction of cell-type pairs called significant,0.15517241379310345,1508
+a,COMMOT,Tnf->Tnfrsf1a/1b,N0_perm,fraction of cell-type pairs called significant,0.17181697612732097,1508
+a,COMMOT,Tnf->Tnfrsf1a/1b,N0_type,fraction of cell-type pairs called significant,0.17254641909814328,1508
+a,CellChat v2*,Ccl2->Ccr2,real,fraction of cell-type pairs called significant,0.22347480106100795,1508
+a,CellChat v2*,Ccl2->Ccr2,N3_lig,fraction of cell-type pairs called significant,0.22517241379310346,1508
+a,CellChat v2*,Ccl2->Ccr2,N4_lig,fraction of cell-type pairs called significant,0.22599469496021218,1508
+a,CellChat v2*,Ccl2->Ccr2,N3_type,fraction of cell-type pairs called significant,0.2209283819628647,1508
+a,CellChat v2*,Ccl2->Ccr2,N0_perm,fraction of cell-type pairs called significant,0.23999999999999996,1508
+a,CellChat v2*,Ccl2->Ccr2,N0_type,fraction of cell-type pairs called significant,0.2254310344827586,1508
+a,CellChat v2*,Il1a->Il1r1,real,fraction of cell-type pairs called significant,0.15915119363395225,1508
+a,CellChat v2*,Il1a->Il1r1,N3_lig,fraction of cell-type pairs called significant,0.15946949602122018,1508
+a,CellChat v2*,Il1a->Il1r1,N4_lig,fraction of cell-type pairs called significant,0.15938992042440317,1508
+a,CellChat v2*,Il1a->Il1r1,N3_type,fraction of cell-type pairs called significant,0.1491246684350133,1508
+a,CellChat v2*,Il1a->Il1r1,N0_perm,fraction of cell-type pairs called significant,0.17647214854111407,1508
+a,CellChat v2*,Il1a->Il1r1,N0_type,fraction of cell-type pairs called significant,0.15629310344827588,1508
+a,CellChat v2*,Tgfb1->Tgfbr1/2,real,fraction of cell-type pairs called significant,0.5119363395225465,1508
+a,CellChat v2*,Tgfb1->Tgfbr1/2,N3_lig,fraction of cell-type pairs called significant,0.5309549071618037,1508
+a,CellChat v2*,Tgfb1->Tgfbr1/2,N4_lig,fraction of cell-type pairs called significant,0.5288859416445623,1508
+a,CellChat v2*,Tgfb1->Tgfbr1/2,N3_type,fraction of cell-type pairs called significant,0.5095755968169762,1508
+a,CellChat v2*,Tgfb1->Tgfbr1/2,N0_perm,fraction of cell-type pairs called significant,0.59684350132626,1508
+a,CellChat v2*,Tgfb1->Tgfbr1/2,N0_type,fraction of cell-type pairs called significant,0.5124668435013262,1508
+a,CellChat v2*,Tnf->Tnfrsf1a/1b,real,fraction of cell-type pairs called significant,0.23872679045092837,1508
+a,CellChat v2*,Tnf->Tnfrsf1a/1b,N3_lig,fraction of cell-type pairs called significant,0.24908597285067874,1105
+a,CellChat v2*,Tnf->Tnfrsf1a/1b,N4_lig,fraction of cell-type pairs called significant,0.25038914027149317,1105
+a,CellChat v2*,Tnf->Tnfrsf1a/1b,N3_type,fraction of cell-type pairs called significant,0.22777188328912468,1508
+a,CellChat v2*,Tnf->Tnfrsf1a/1b,N0_perm,fraction of cell-type pairs called significant,0.25726790450928383,1508
+a,CellChat v2*,Tnf->Tnfrsf1a/1b,N0_type,fraction of cell-type pairs called significant,0.23814323607427057,1508
+a,NCEM linear*,Ccl2->Ccr2,real,fraction of cell-type pairs called significant,0.028514588859416445,1508
+a,NCEM linear*,Ccl2->Ccr2,N3_lig,fraction of cell-type pairs called significant,0.027778514588859417,1508
+a,NCEM linear*,Ccl2->Ccr2,N4_lig,fraction of cell-type pairs called significant,0.027480106100795758,1508
+a,NCEM linear*,Ccl2->Ccr2,N3_type,fraction of cell-type pairs called significant,0.008514588859416446,1508
+a,NCEM linear*,Ccl2->Ccr2,N0_perm,fraction of cell-type pairs called significant,0.0060145888594164455,1508
+a,NCEM linear*,Ccl2->Ccr2,N0_type,fraction of cell-type pairs called significant,0.007539787798408489,1508
+a,NCEM linear*,Il1a->Il1r1,real,fraction of cell-type pairs called significant,0.010610079575596816,1508
+a,NCEM linear*,Il1a->Il1r1,N3_lig,fraction of cell-type pairs called significant,0.010576923076923076,1508
+a,NCEM linear*,Il1a->Il1r1,N4_lig,fraction of cell-type pairs called significant,0.010258620689655173,1508
+a,NCEM linear*,Il1a->Il1r1,N3_type,fraction of cell-type pairs called significant,0.008653846153846154,1508
+a,NCEM linear*,Il1a->Il1r1,N0_perm,fraction of cell-type pairs called significant,0.0031366047745358095,1508
+a,NCEM linear*,Il1a->Il1r1,N0_type,fraction of cell-type pairs called significant,0.0034814323607427057,1508
+a,NCEM linear*,Tgfb1->Tgfbr1/2,real,fraction of cell-type pairs called significant,0.012599469496021221,1508
+a,NCEM linear*,Tgfb1->Tgfbr1/2,N3_lig,fraction of cell-type pairs called significant,0.007122015915119365,1508
+a,NCEM linear*,Tgfb1->Tgfbr1/2,N4_lig,fraction of cell-type pairs called significant,0.007334217506631299,1508
+a,NCEM linear*,Tgfb1->Tgfbr1/2,N3_type,fraction of cell-type pairs called significant,0.004131299734748011,1508
+a,NCEM linear*,Tgfb1->Tgfbr1/2,N0_perm,fraction of cell-type pairs called significant,0.0009482758620689655,1508
+a,NCEM linear*,Tgfb1->Tgfbr1/2,N0_type,fraction of cell-type pairs called significant,0.0012533156498673742,1508
+a,NCEM linear*,Tnf->Tnfrsf1a/1b,real,fraction of cell-type pairs called significant,0.005968169761273209,1508
+a,NCEM linear*,Tnf->Tnfrsf1a/1b,N3_lig,fraction of cell-type pairs called significant,0.005085972850678733,1105
+a,NCEM linear*,Tnf->Tnfrsf1a/1b,N4_lig,fraction of cell-type pairs called significant,0.005230769230769231,1105
+a,NCEM linear*,Tnf->Tnfrsf1a/1b,N3_type,fraction of cell-type pairs called significant,0.0018965517241379313,1508
+a,NCEM linear*,Tnf->Tnfrsf1a/1b,N0_perm,fraction of cell-type pairs called significant,0.0008156498673740053,1508
+a,NCEM linear*,Tnf->Tnfrsf1a/1b,N0_type,fraction of cell-type pairs called significant,0.0010212201591511937,1508
+a,SpaTalk*,Ccl2->Ccr2,real,fraction of cell-type pairs called significant,0.1903183023872679,1508
+a,SpaTalk*,Ccl2->Ccr2,N3_lig,fraction of cell-type pairs called significant,0.180736074270557,1508
+a,SpaTalk*,Ccl2->Ccr2,N4_lig,fraction of cell-type pairs called significant,0.18043766578249337,1508
+a,SpaTalk*,Ccl2->Ccr2,N3_type,fraction of cell-type pairs called significant,0.17187002652519895,1508
+a,SpaTalk*,Ccl2->Ccr2,N0_perm,fraction of cell-type pairs called significant,0.17982758620689657,1508
+a,SpaTalk*,Ccl2->Ccr2,N0_type,fraction of cell-type pairs called significant,0.17533156498673738,1508
+a,SpaTalk*,Il1a->Il1r1,real,fraction of cell-type pairs called significant,0.14588859416445624,1508
+a,SpaTalk*,Il1a->Il1r1,N3_lig,fraction of cell-type pairs called significant,0.16120689655172415,1508
+a,SpaTalk*,Il1a->Il1r1,N4_lig,fraction of cell-type pairs called significant,0.16049071618037136,1508
+a,SpaTalk*,Il1a->Il1r1,N3_type,fraction of cell-type pairs called significant,0.15440981432360742,1508
+a,SpaTalk*,Il1a->Il1r1,N0_perm,fraction of cell-type pairs called significant,0.151684350132626,1508
+a,SpaTalk*,Il1a->Il1r1,N0_type,fraction of cell-type pairs called significant,0.1519628647214854,1508
+a,SpaTalk*,Tgfb1->Tgfbr1/2,real,fraction of cell-type pairs called significant,0.47480106100795755,1508
+a,SpaTalk*,Tgfb1->Tgfbr1/2,N3_lig,fraction of cell-type pairs called significant,0.48762599469496015,1508
+a,SpaTalk*,Tgfb1->Tgfbr1/2,N4_lig,fraction of cell-type pairs called significant,0.49149204244031836,1508
+a,SpaTalk*,Tgfb1->Tgfbr1/2,N3_type,fraction of cell-type pairs called significant,0.46954244031830233,1508
+a,SpaTalk*,Tgfb1->Tgfbr1/2,N0_perm,fraction of cell-type pairs called significant,0.48509283819628646,1508
+a,SpaTalk*,Tgfb1->Tgfbr1/2,N0_type,fraction of cell-type pairs called significant,0.4696750663129973,1508
+a,SpaTalk*,Tnf->Tnfrsf1a/1b,real,fraction of cell-type pairs called significant,0.17771883289124668,1508
+a,SpaTalk*,Tnf->Tnfrsf1a/1b,N3_lig,fraction of cell-type pairs called significant,0.18892307692307694,1105
+a,SpaTalk*,Tnf->Tnfrsf1a/1b,N4_lig,fraction of cell-type pairs called significant,0.18966515837104073,1105
+a,SpaTalk*,Tnf->Tnfrsf1a/1b,N3_type,fraction of cell-type pairs called significant,0.16751989389920424,1508
+a,SpaTalk*,Tnf->Tnfrsf1a/1b,N0_perm,fraction of cell-type pairs called significant,0.17584880636604772,1508
+a,SpaTalk*,Tnf->Tnfrsf1a/1b,N0_type,fraction of cell-type pairs called significant,0.1716710875331565,1508
+b,COMMOT,ALL,N3_lig,fraction of real-significant interactions still significant after shuffling,0.8061051004636784,1294
+c,COMMOT,ALL,N3_lig,surviving fraction of the score (median null / real),0.9064233764209648,1294
+b,COMMOT,ALL,N4_lig,fraction of real-significant interactions still significant after shuffling,0.819629057187017,1294
+c,COMMOT,ALL,N4_lig,surviving fraction of the score (median null / real),0.9123577287936204,1294
+b,COMMOT,ALL,N3_type,fraction of real-significant interactions still significant after shuffling,0.7685693106004448,1349
+c,COMMOT,ALL,N3_type,surviving fraction of the score (median null / real),0.9090781965162944,1349
+b,COMMOT,ALL,N0_perm,fraction of real-significant interactions still significant after shuffling,0.7936249073387693,1349
+c,COMMOT,ALL,N0_perm,surviving fraction of the score (median null / real),0.9135612810400544,1349
+b,COMMOT,ALL,N0_type,fraction of real-significant interactions still significant after shuffling,0.8114899925871016,1349
+c,COMMOT,ALL,N0_type,surviving fraction of the score (median null / real),0.9584654250825406,1349
+b,CellChat v2*,ALL,N3_lig,fraction of real-significant interactions still significant after shuffling,0.9737353846153848,1625
+c,CellChat v2*,ALL,N3_lig,surviving fraction of the score (median null / real),1.0,1625
+b,CellChat v2*,ALL,N4_lig,fraction of real-significant interactions still significant after shuffling,0.9753846153846154,1625
+c,CellChat v2*,ALL,N4_lig,surviving fraction of the score (median null / real),1.0,1625
+b,CellChat v2*,ALL,N3_type,fraction of real-significant interactions still significant after shuffling,0.913001755412522,1709
+c,CellChat v2*,ALL,N3_type,surviving fraction of the score (median null / real),0.980556325495264,1709
+b,CellChat v2*,ALL,N0_perm,fraction of real-significant interactions still significant after shuffling,0.9449970743124634,1709
+c,CellChat v2*,ALL,N0_perm,surviving fraction of the score (median null / real),0.9977596326140832,1709
+b,CellChat v2*,ALL,N0_type,fraction of real-significant interactions still significant after shuffling,0.9711117612638972,1709
+c,CellChat v2*,ALL,N0_type,surviving fraction of the score (median null / real),1.0,1709
+b,SpaTalk*,ALL,N3_lig,fraction of real-significant interactions still significant after shuffling,0.8139357990230285,1433
+c,SpaTalk*,ALL,N3_lig,surviving fraction of the score (median null / real),0.9488910458159308,1433
+b,SpaTalk*,ALL,N4_lig,fraction of real-significant interactions still significant after shuffling,0.8204187020237264,1433
+c,SpaTalk*,ALL,N4_lig,surviving fraction of the score (median null / real),0.9557015976028724,1433
+b,SpaTalk*,ALL,N3_type,fraction of real-significant interactions still significant after shuffling,0.7839235412474849,1491
+c,SpaTalk*,ALL,N3_type,surviving fraction of the score (median null / real),0.9524435532462832,1491
+b,SpaTalk*,ALL,N0_perm,fraction of real-significant interactions still significant after shuffling,0.7913145539906102,1491
+c,SpaTalk*,ALL,N0_perm,surviving fraction of the score (median null / real),0.9430756406499232,1491
+b,SpaTalk*,ALL,N0_type,fraction of real-significant interactions still significant after shuffling,0.7811200536552648,1491
+c,SpaTalk*,ALL,N0_type,surviving fraction of the score (median null / real),0.9409225349232444,1491
+b,NCEM linear*,ALL,N3_lig,fraction of real-significant interactions still significant after shuffling,0.7017857142857143,84
+c,NCEM linear*,ALL,N3_lig,surviving fraction of the score (median null / real),0.9723623092354894,84
+b,NCEM linear*,ALL,N4_lig,fraction of real-significant interactions still significant after shuffling,0.7011904761904761,84
+c,NCEM linear*,ALL,N4_lig,surviving fraction of the score (median null / real),0.9682821149196824,84
+b,NCEM linear*,ALL,N3_type,fraction of real-significant interactions still significant after shuffling,0.0798850574712643,87
+c,NCEM linear*,ALL,N3_type,surviving fraction of the score (median null / real),-0.0143909268763772,87
+b,NCEM linear*,ALL,N0_perm,fraction of real-significant interactions still significant after shuffling,0.0044827586206896,87
+c,NCEM linear*,ALL,N0_perm,surviving fraction of the score (median null / real),-0.013948943335165,87
+b,NCEM linear*,ALL,N0_type,fraction of real-significant interactions still significant after shuffling,0.008735632183908,87
+c,NCEM linear*,ALL,N0_type,surviving fraction of the score (median null / real),-0.0289620388098083,87
+c,our SASP kernel estimator (CS_PHASE3),ALL,N3_lig,surviving fraction of the score (median null / real),1.0001,160
+c,our SASP kernel estimator (CS_PHASE3),ALL,N4_lig,surviving fraction of the score (median null / real),0.9641,160
