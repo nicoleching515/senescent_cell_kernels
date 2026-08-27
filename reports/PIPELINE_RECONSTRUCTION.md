@@ -11,7 +11,7 @@
 **This is a RECONSTRUCTION. It is not the original code, and nothing below
 claims otherwise.**
 
-The 2026-08-27 (task 8.7) edits to five files under `code/` were never staged
+The 2026-08-27 (task 8.7) edits to four files under `code/` were never staged
 and were destroyed by `git checkout -- code/`. They are not recoverable:
 
 | check | result |
@@ -40,7 +40,15 @@ into a scratch tree and was diffed against the committed file.
 
 ## 1. What was rebuilt, and from what evidence
 
-Five files. Four independent evidence classes constrained them: the surviving
+Four files — `run_phase3_nulls.py`, `sasp_phase3.py`, `phase2_downstream.py`
+and `summarize_phase3.py`, the four the audit's F-1 table dates to 2026-08-21.
+The other files `CS_PHASE8_M1_RERUN.md:124` lists as changed by 8.7
+(`summarize_caller_coverage.py`, `crossarm_geneset_table.py`,
+`make_figure2bc.py`, `make_phase5_figs.py`) were checked and **do** carry their
+8.7 changes — they were committed in `1351ce8`. `caller_disagree.py` is also
+dated 2026-08-21 but 8.7 changed `caller_disagree_all.py`, not it.
+
+Four independent evidence classes constrained the reconstruction: the surviving
 **callers**, the surviving **result files and their schemas**, the surviving
 **run logs**, and the surviving **cached inputs** (`data/processed/cache3/*.npz`
 and `data/processed/senders_*.csv`, which already carry the per-module columns
@@ -114,8 +122,11 @@ each one.
    `RuntimeWarning` citing **line 699** of the lost file for
    `mean=float(np.nanmean(A[:, bi]))`, and `logs/phase3_perm_c1b.log` cites
    **646** for the same line in the 04:40 version. In this reconstruction that
-   line lands at **715** — independent corroboration that `_perm_c1_job` sits in
-   roughly the right place in a file of roughly the right size (813 lines here).
+   line lands at **721**, in a file of **819** lines — independent corroboration
+   that `_perm_c1_job` sits in roughly the right place in a file of roughly the
+   right size. (The frozen file is 541 lines and has that statement at 451, in
+   `_perm_job`; the lost file therefore had a whole `_perm_c1_job` between them,
+   as reconstructed.)
 
 ---
 
@@ -135,9 +146,14 @@ important to be exact about which is which:
   is `np.random.default_rng(seed + 7*j)`. 1,050,000 candidate seeds
   (`MASTER_SEED + 1000·0 + 7 + Δ`, `Δ ∈ [-350000, 700000)`) were replayed.
   **Exactly one matched: 20560827, i.e. Δ = 300000.**
-* **Validation, out of sample.** The rule `MASTER_SEED + 1000·i + j + 300000`
-  then reproduces the committed `beta_base_lo/hi` exactly for 7260 (seed
-  20561827) and 7001 (seed 20562827) as well — targets not used in the search.
+* **The module term, then, by direct test.** For `emt_ecm` (module index 1) the
+  candidates 5000, 10000, 100000 and 1000000 all fail and **300000 matches**, so
+  the displacement is `PM_SEED_OFFSET × (module index + 1)`, not a constant.
+* **Validation, out of sample.** The full rule
+  `MASTER_SEED + step_i·i + step_j·j + 300000·(module index + 1)` reproduces the
+  committed `beta_naive` and `beta_base_lo/hi` exactly on **21 targets not used
+  in the search** — all seven modules × three sections (7259, 7352 and the
+  over-ceiling 7448) — 21 match, 0 fail.
 * **Corroboration.** With `PM_SEED_OFFSET = 300000`, the five composition-match
   seeds 20260901–05 (= `MASTER_SEED + 81…85`) are unreachable by the per-module
   branch, which is exactly the property `run_phase8_compmatch.py:56` asserts.
@@ -147,7 +163,9 @@ then checked against others. It is flagged here because a reader has a right to
 know that one number in the reconstruction came out of a search rather than out
 of a surviving artefact.
 
-*(module-index term: see §4 row for the `_pm` outputs)*
+And it is checked end to end, not only through the bootstrap it was found
+against: the `perm_nulls_pm.csv` and `perm_nulls_c1_pm.csv` subsets in §4.3
+exercise the same seed through 1,000 permutation draws, and reproduce exactly.
 
 ---
 
@@ -161,14 +179,20 @@ shared column of every row it covers matched to `|Δ| = 0`.
 
 ### 4.1 Leading with what does NOT reproduce bit-identically
 
-**`results/phase3/perm_nulls_var.csv` — DIFFERS, by ≤ 2.2 × 10⁻¹¹ relative.**
+Two files. **Neither difference is attributable to the reconstruction**, and
+both are demonstrated to be floating-point reduction-order noise, not a
+different computation.
 
-| committed | re-run |
+#### (a) `results/phase3/perm_nulls_var.csv` — DIFFERS by ≤ 2.2 × 10⁻¹¹ relative
+
+| | md5 |
 |---|---|
-| md5 `32397d5d6b626bb59924fdbc04669dac` | md5 `3bdade74fcf72b79558f214b9826e2bb` |
+| committed | `32397d5d6b626bb59924fdbc04669dac` |
+| re-run, BLAS pinned to one thread | `3bdade74fcf72b79558f214b9826e2bb` |
+| re-run, BLAS unpinned | `bfed468bf4fcd9927a4009f52c5eb5ab` |
 
-Same shape (315 × 56). 14 of 56 columns differ at all, none by more than float
-noise amplified through a ratio:
+Same shape (315 × 56). Against the committed file, 14 of 56 columns differ at
+all, none by more than float noise amplified through a ratio:
 
 | column | max \|Δ\| | max relative Δ | rows affected |
 |---|---|---|---|
@@ -178,33 +202,65 @@ noise amplified through a ratio:
 | `beta_obs` | 1.04e-16 | 5.5e-14 | 6 |
 | eight others | ≤ 1.1e-15 | ≤ 4.0e-14 | ≤ 61 |
 
-**This difference is not attributable to the reconstruction.** The producer,
-`run_phase3_var.py`, survived and is unmodified; its companion output
-`perm_draws_var.csv` (12,000 × 6 — every drawn shift vector and retention
-fraction) **is bit-identical**, so `_expand`'s seeds and the whole geometry
-stream are exactly right. Only the fitted quantities wobble, and `*_sf_wm` is
-`mean((B0w − B)/B0w)`, a ratio that amplifies a last-bit difference in the
-numerator by four orders of magnitude.
+**Why it is not the reconstruction.** The producer, `run_phase3_var.py`, is one
+of the files that *survived*, and it is unmodified here; the only reconstructed
+thing it touches is `RN._expand`, `RN.SectionFit` and `RN._designs`. Its
+companion output `perm_draws_var.csv` — 12,000 rows, one per (section, null,
+draw), carrying the drawn displacement and the retained-cell fraction — **is
+bit-identical** in both re-runs, so the seeds `_expand` hands it and the entire
+geometry stream are exactly right. Only fitted quantities wobble, and
+`*_sf_wm = mean((B0w − B)/B0w)` is a ratio that amplifies a last-bit difference
+in its numerator by roughly four orders of magnitude.
 
-The likely cause is BLAS threading. `reports/WRITING_PACK.md:971` records the
-producer as `python3 -u code/run_phase3_var.py --stage perm --n-perm 1000
---n-jobs 6 --no-full` — with **no** `OMP_NUM_THREADS/MKL_NUM_THREADS/
-OPENBLAS_NUM_THREADS=1`, unlike `_m1_rerun_stage2.sh:6`, which sets all three
-for every stage it drives. The same effect is directly demonstrable elsewhere in
-this verification: a `stage_main` subset run **unpinned** differs from the
-committed `main_fits.csv` by up to **9.0e-13**, and the *same* subset run
-**pinned** is exact. Corroborating this reading, `WRITING_PACK.md:967` already
-records that the committed `perm_nulls_var.csv` disagrees with the committed
-`perm_nulls_c1.csv` on `beta_obs` by `1.04 × 10⁻¹⁶` — the exact magnitude of the
-`beta_obs` column in the table above — i.e. the wobble is a property of the
-original var run, and this re-run agrees with `perm_nulls_c1.csv` where the
-committed var file does not.
+**What it actually is: BLAS reduction order.** Three runs settle it:
 
-*(An unpinned re-run to confirm this directly is recorded in §4.4.)*
+| run | vs committed | vs pinned run 1 |
+|---|---|---|
+| pinned run 1 | differs ≤ 2.2e-11 | — |
+| pinned run 3 (identical command) | differs ≤ 2.2e-11 | **bit-identical** |
+| unpinned run 2 | differs ≤ 2.4e-10 | differs ≤ 2.1e-10 |
 
-**No result in the project is affected.** `sf_summary_var.csv`'s headline
-medians — N3-var 0.995966, N4-var 0.985068 — are quoted to six decimals; the
-disagreement is at the eleventh.
+So the producer **is** deterministic for a fixed thread configuration, and the
+committed file was written under a third configuration this environment did not
+reproduce. `reports/WRITING_PACK.md:971` records the original invocation as
+`python3 -u code/run_phase3_var.py --stage perm --n-perm 1000 --n-jobs 6
+--no-full`, with none of the three thread limits set — unlike
+`_m1_rerun_stage2.sh:6`, which sets all three for every stage it drives. That is
+consistent with `WRITING_PACK.md:967`'s own observation that the committed
+`perm_nulls_var.csv` disagrees with the committed `perm_nulls_c1.csv` on
+`beta_obs` by `1.04 × 10⁻¹⁶` — the exact magnitude in the table above — i.e. the
+wobble is a property of the original var run, and these re-runs agree with
+`perm_nulls_c1.csv` where the committed var file does not.
+
+**Nothing quoted moves.** Recomputing correction C-5's primary pair from the
+re-run over the same reportable population (n = 153) gives **N3-var
+0.995965880** and **N4-var 0.985067655**, identical to nine decimals to the same
+quantity computed from the committed file, and matching `sf_summary_var.csv`'s
+0.995966 / 0.985068. The disagreement is at the eleventh decimal, in a secondary
+window-matched diagnostic column that no report quotes.
+
+#### (b) `results/phase3/a7_control_probe_fits.csv` — reproduces EXACTLY once run the way it was originally run
+
+This one resolved itself and is included because it identifies the mechanism
+above beyond doubt.
+
+| the same job (7259 × `tierA_p95`, 35 rows × 86 columns) | vs committed |
+|---|---|
+| re-run with `OMP/MKL/OPENBLAS_NUM_THREADS=1` | differs, max \|Δ\| **4.2e-13** |
+| re-run with the thread limits unset | **exact, max \|Δ\| = 0** |
+
+`run_a7_control_probes.py` survived unmodified; the only reconstructed code it
+executes is `SectionFit` and `fit_cell` (which now also writes the `sender_set`
+column the committed file has and the frozen `fit_cell` did not). Unpinned, it
+is bit-exact — so A7 was originally launched without the thread limits (there is
+no committed driver for it; `_m1_rerun_stage5.sh:8` says only "A7 was launched
+earlier in the run"), and the reconstruction of `fit_cell` is exact.
+
+The general lesson, worth recording in the freeze: **this pipeline's outputs are
+bit-reproducible only under the thread configuration they were produced with.**
+The stages driven by `_m1_rerun_stage*.sh` pin all three limits and reproduce
+exactly when pinned; the two stages launched ad hoc do not and reproduce exactly
+only when unpinned.
 
 ### 4.2 Reproduces bit-identically (whole file, equal md5)
 
@@ -243,7 +299,8 @@ seeds are identical to the full run's.
 | `perm_nulls_n7.csv` (1498 × 29) | 1 of 30 — 7352 × `senepy_p95`, seed 20280871 | 49 | **exact**, max \|Δ\| = 0 |
 | `perm_nulls_pm.csv` (315 × 29) | 4 of 42 — 7259 & 7352 × `downstream_arrest` & `emt_ecm` | 28 | **exact**, max \|Δ\| = 0 |
 | `perm_nulls_c1_pm.csv` (595 × 81) | 1 of 42 — 7259 × `downstream_arrest`, seed 20560820 | 13 | **exact**, max \|Δ\| = 0 |
-| `perm_nulls_c1_n7.csv` (2758 × 81) | 1 of 30 — 7352 × `senepy_p95`, seed 20280871 | *(§4.4)* | *(§4.4)* |
+| `perm_nulls_c1_n7.csv` (2758 × 81) | 1 of 30 — 7352 × `senepy_p95`, seed 20280871 | 91 | **exact**, max \|Δ\| = 0 |
+| `a7_control_probe_fits.csv` (825 × 86) | 1 of 22 — 7259 × `tierA_p95`, seed 20260820, run unpinned | 35 | **exact**, max \|Δ\| = 0 (see §4.1b) |
 
 The two `_pm` rows are the ones that depend on the searched constant of §3, and
 they are the strongest check on it: the `perm_nulls_pm` subset exercises the
@@ -255,6 +312,19 @@ counts identical to the committed logs on every job run — 49/42, 49/49, 56/42,
 63/56, 49/42, 49/49 for the six in-band sections (`logs/m1_perm_c1.log`), and
 7/6 for 7259 × `tierApm_p95` × `downstream_arrest` (`logs/m1_perm_c1_pm.log`).
 
+
+---
+
+### 4.4 Not tested
+
+| output | why not |
+|---|---|
+| the other 26 jobs of `perm_nulls_c1_n7.csv` / 29 of `perm_nulls_n7.csv` / 38 of `perm_nulls_pm.csv` / 41 of `perm_nulls_c1_pm.csv` / 293 of `main_fits.csv` | cost. Each `perm_c1` job is 12–70 min; the four files together are 144 jobs. One or four jobs of each were re-run instead, exactly (§4.3). A full re-run is straightforward but was not attempted here |
+| `perm_nulls_var_full200.csv`, `perm_draws_var_full200.csv`, `null_destructiveness_var.csv`, `var_pvalues.csv`, `sf_summary_var.csv`, `summary_phase3_var.txt` | produced by `run_phase3_var.py` / `summarize_phase3_var.py`, both of which survived; the `_expand` path they depend on is exercised by §4.2's `perm_draws_var.csv` |
+| `compmatch_fits*.csv`, `compmatch_reruns*.csv` | `run_phase8_compmatch.py` survived; only its `CompMatchFit(module=)` constructor was broken, and that is verified to build (§5). A full re-run is 48 jobs of 4–8 min and was not attempted |
+| everything under `results/phase5/`, `results/phase4/`, `results/moran/`, `results/phase8_d*/` | those producers were committed on 2026-08-27 and lost nothing |
+| `data/processed/senders_*.csv` | re-deriving them means re-running `phase2_downstream.py`'s scanpy scoring over the h5ads, which writes into `data/processed/`. Instead, the *rule* was verified against the committed columns — see §1.2 and the `b8e74a0` commit message |
+| anything on the H1 arm | out of scope; `data/raw_h1/`, `data/processed_h1/`, `results/phase9_h1/` and `code/h1_*` were not read or written |
 
 ---
 
@@ -343,8 +413,11 @@ not a code defect.
 ## 8. How to re-run the verification
 
 Everything below writes into a scratch tree, never into `results/`. Set the
-three BLAS thread limits — the drivers do (`_m1_rerun_stage2.sh:6`), and it
-matters (§4, note on float determinism).
+three BLAS thread limits — the `_m1_rerun_stage*.sh` drivers do
+(`_m1_rerun_stage2.sh:6`), and it matters: unpinned, `main_fits.csv` reproduces
+only to 9e-13 instead of exactly. The two stages that were launched ad hoc
+rather than from a driver — A7 and `run_phase3_var.py --stage perm` — are the
+exception and must be run **unpinned** to reproduce (§4.1).
 
 ```bash
 export OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1
@@ -391,6 +464,8 @@ was working-tree code that was never committed.
 | `00f1210` | `summarize_phase3.py`: `ALL9_CALLS` in the §6 table, `perm_nulls_pm.csv` in `load()` |
 | `e52ae5f` | the recovered per-module seed rule, `PM_SEED_OFFSET = 300000` × (module index + 1) |
 | `9e6c687` | `code/README.md`: the `perm_c1` stage, the per-module axis, and a pointer here |
+| `0b8ed39` | `perm_c1` draws every null every replicate, so the stream cannot depend on the fit population (a no-op on this battery) |
+| `edd25e2`, and this file's later revisions | this report |
 
 No tag was created or moved. Nothing was pushed.
 
