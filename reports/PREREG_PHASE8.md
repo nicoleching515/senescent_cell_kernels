@@ -374,7 +374,7 @@ be frozen as if it were settled.
 
 | Item | State |
 |---|---|
-| Frozen tag hash | **`926439629a07269a32c93f998da0f6e1cd20933c`** — tag `phase8-frozen`, created 2026-08-27 15:32 UTC. §1 |
+| Frozen tag hash | **`d04691e2692a7be8d1ff676d2fb74ad9d1df049d`** — tag `phase8-frozen`, **RE-CUT 2026-08-27 19:55:58 UTC**. The first cut, `926439629a07269a32c93f998da0f6e1cd20933c` (15:32 UTC), shipped code that could not produce its own results and was replaced; it is an ancestor of the current tag. §1 |
 | Composition-matched rerun protocol | **RESOLVED and FILLED (PI decision D15): freeze both variants.** Implemented as `code/run_phase8_compmatch.py`, run on M1, gated on H1. All four previously-`TBD` fields transcribed from `reports/CS_PHASE8_COMPMATCH.md`. **The protocol is inert (1.6 %) where the same variables as covariates remove 85.4 %** — P23. §3.8 |
 | Fitting window | **RESOLVED (PI decision D16): frozen as `100 µm, fixed`**, with the 99th-percentile rule recorded as provenance. §3.2 |
 | Every pooled number in `results/phase3/caller_coverage_gate.csv` | **PROVISIONAL** — the file currently mixes a pre-C6 2-section base with a post-C6 11-section base. The M1 re-run agent is recomputing both bases under one sender definition and labelling the basis in the output. §13 P1 |
@@ -404,7 +404,7 @@ before the tag (§14 item 6).
 git tag -a phase8-frozen -m "Frozen for human replication, post C1, C7 and the C6 gene-set decision"
 ```
 
-**Tag commit hash: `926439629a07269a32c93f998da0f6e1cd20933c`** (`phase8-frozen`, 2026-08-27 15:32 UTC).
+**Tag commit hash: `d04691e2692a7be8d1ff676d2fb74ad9d1df049d`** (`phase8-frozen`, **re-cut** 2026-08-27 19:55:58 UTC; supersedes `926439629a07269a32c93f998da0f6e1cd20933c` of 15:32 UTC).
 
 This is deliberately left empty. The tag does not exist at the time of writing and inventing a
 hash would be worse than a gap. The PI fills it at the moment of tagging, together with:
@@ -412,7 +412,7 @@ hash would be worse than a gap. The PI fills it at the moment of tagging, togeth
 | Field | Value |
 |---|---|
 | Tag name | `phase8-frozen` |
-| Tag commit hash | **`926439629a07269a32c93f998da0f6e1cd20933c`** |
+| Tag commit hash | **`d04691e2692a7be8d1ff676d2fb74ad9d1df049d`** (re-cut; supersedes `926439629a07269a32c93f998da0f6e1cd20933c`) |
 | Tag date (UTC) | **2026-08-27 15:32 UTC** |
 | Predecessor tag | `pre-c6-genesets` — captures the mouse gene sets **before** the C6 sets were promoted into `genesets/`. Already created (PI decision D5). Its hash: **`c002ddda0d1e6402a85bf96abfcd2d3a6165287f`** |
 
