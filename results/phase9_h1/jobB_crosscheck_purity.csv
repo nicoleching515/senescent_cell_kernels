@@ -1,0 +1,24 @@
+section,our_label_set,our_label,n,modal_depositor_L3,modal_share,second,second_share
+SPLN21,cell_type,Endothelial cells,31609,Sinusoidal endothelial cells (littoral cells),0.7824,Red pulp fibroblasts,0.0444
+SPLN21,cell_type,Erythroid cells,584,Erythroid,0.8116,Sinusoidal endothelial cells (littoral cells),0.0462
+SPLN21,cell_type,Fibroblasts,18932,Red pulp fibroblasts,0.6755,Smooth muscle,0.1099
+SPLN21,cell_type,Follicular B cells,28543,B cells,0.7148,T cells,0.05
+SPLN21,cell_type,Low_quality,24518,Low quality,0.2313,Sinusoidal endothelial cells (littoral cells),0.2011
+SPLN21,cell_type,Monocytes,10418,Monocytes,0.4909,Red pulp macrophages,0.2845
+SPLN21,cell_type,NK cells,6426,NK cells,0.6307,"gdT cells, NK cells, and T cells",0.2208
+SPLN21,cell_type,Neutrophils,19875,Neutrophils,0.6076,Low quality,0.1354
+SPLN21,cell_type,Plasma cells,6440,Plasma cells,0.8017,"Germinal center B cells, proliferating",0.0632
+SPLN21,cell_type,Red pulp macrophages,19217,Red pulp macrophages,0.6817,Smooth muscle,0.0483
+SPLN21,cell_type,Smooth muscle / capsule,6315,Arterial endothelial cells (KDR+ CD34+),0.4063,Marginal zone reticular cells CXCL13+NGFR+MADCAM1-,0.1397
+SPLN21,cell_type,Unknown,21096,T cells,0.3331,"gdT cells, NK cells, and T cells",0.2709
+SPLN21,cell_type,cDC2,2157,Low quality,0.3468,Red pulp macrophages,0.2953
+SPLN21,cell_type_merged,B cells,28543,B cells,0.7148,T cells,0.05
+SPLN21,cell_type_merged,Endothelial,31609,Sinusoidal endothelial cells (littoral cells),0.7824,Red pulp fibroblasts,0.0444
+SPLN21,cell_type_merged,Erythroid cells,584,Erythroid,0.8116,Sinusoidal endothelial cells (littoral cells),0.0462
+SPLN21,cell_type_merged,Low_quality,24518,Low quality,0.2313,Sinusoidal endothelial cells (littoral cells),0.2011
+SPLN21,cell_type_merged,Mono/Mac/DC,31792,Red pulp macrophages,0.5254,Monocytes,0.1653
+SPLN21,cell_type_merged,Neutrophils,19875,Neutrophils,0.6076,Low quality,0.1354
+SPLN21,cell_type_merged,Plasma cells,6440,Plasma cells,0.8017,"Germinal center B cells, proliferating",0.0632
+SPLN21,cell_type_merged,Stromal,25247,Red pulp fibroblasts,0.5173,Smooth muscle,0.1046
+SPLN21,cell_type_merged,T/NK cells,26581,"gdT cells, NK cells, and T cells",0.2683,T cells,0.2662
+SPLN21,cell_type_merged,Unknown,941,White pulp macrophages,0.8002,Low quality,0.0882

@@ -1,0 +1,38 @@
+section,label_source,label,n,mean_pulp_axis,mean_pulp_axis_smooth,median_dist_to_follicle_um
+SPLN21,depositor_L3,Conventional dendritic cells,455,0.116,-0.096,316.7
+SPLN21,depositor_L3,Low quality,16978,-0.11,0.024,328.9
+SPLN21,depositor_L3,Red pulp fibroblasts,19622,0.204,0.258,367.8
+SPLN21,depositor_L3,Neutrophils,15634,0.0,0.104,341.1
+SPLN21,depositor_L3,Plasma cells,8975,0.146,0.161,355.3
+SPLN21,depositor_L3,T cells,11032,-0.634,-0.143,302.5
+SPLN21,depositor_L3,Smooth muscle,9540,0.075,0.066,331.8
+SPLN21,depositor_L3,Monocytes,6216,0.096,0.122,337.1
+SPLN21,depositor_L3,Red pulp macrophages,23257,1.435,0.237,353.6
+SPLN21,depositor_L3,"gdT cells, NK cells, and T cells",9635,-0.23,0.027,322.8
+SPLN21,depositor_L3,Sinusoidal endothelial cells (littoral cells),31779,-0.099,0.141,349.4
+SPLN21,depositor_L3,NK cells,6545,-0.068,0.127,334.6
+SPLN21,depositor_L3,Metamyelocyte/Band Neutrophils DEFA1+,1247,0.05,0.022,319.6
+SPLN21,depositor_L3,B cells,22307,-1.068,-0.778,202.5
+SPLN21,depositor_L3,B cell zone reticular cells CXCL13+MADCAM1+,1555,-0.854,-0.742,192.9
+SPLN21,depositor_L3,Marginal zone reticular cells CXCL13+NGFR+MADCAM1-,1824,0.266,0.159,343.8
+SPLN21,depositor_L3,Erythroid,1427,0.165,0.123,355.9
+SPLN21,depositor_L3,Vascular smooth muscle cells,974,-0.224,-0.139,286.3
+SPLN21,depositor_L3,Arterial endothelial cells (KDR+ CD34+),3057,-0.009,0.162,339.0
+SPLN21,depositor_L3,T cell zone reticular cells CCL21+ CCL19+,1045,-0.83,-0.555,188.8
+SPLN21,depositor_L3,White pulp macrophages,1459,0.497,-0.482,224.0
+SPLN21,depositor_L3,"Germinal center B cells, proliferating",567,-0.819,-0.72,202.8
+SPLN21,depositor_L3,Promyelocyte,417,0.068,0.119,352.5
+SPLN21,depositor_L3,B cell zone reticular cells CXCL13+ MADCAM1+ (FDC),448,-0.547,-0.53,232.6
+SPLN21,jobB_fine,Monocytes,10418,0.234,0.112,336.3
+SPLN21,jobB_fine,Unknown,21096,-0.425,-0.062,304.7
+SPLN21,jobB_fine,Follicular B cells,28543,-1.057,-0.77,204.6
+SPLN21,jobB_fine,Neutrophils,19875,0.046,0.12,340.6
+SPLN21,jobB_fine,Plasma cells,6440,0.061,0.145,349.0
+SPLN21,jobB_fine,Fibroblasts,18932,0.195,0.256,363.5
+SPLN21,jobB_fine,NK cells,6426,-0.048,0.154,336.0
+SPLN21,jobB_fine,Low_quality,24530,-0.023,0.057,338.8
+SPLN21,jobB_fine,Endothelial cells,31609,-0.117,0.154,353.0
+SPLN21,jobB_fine,Red pulp macrophages,19217,1.853,0.309,361.1
+SPLN21,jobB_fine,Smooth muscle / capsule,6315,-0.028,0.064,323.9
+SPLN21,jobB_fine,cDC2,2157,0.348,0.06,333.6
+SPLN21,jobB_fine,Erythroid cells,584,0.119,0.103,340.7

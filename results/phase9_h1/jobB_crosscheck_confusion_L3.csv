@@ -1,0 +1,26 @@
+Level_3_Annotations,section,Endothelial cells,Erythroid cells,Fibroblasts,Follicular B cells,Low_quality,Monocytes,NK cells,Neutrophils,Plasma cells,Red pulp macrophages,Smooth muscle / capsule,Unknown,cDC2
+Arterial endothelial cells (KDR+ CD34+),SPLN21,186,1,60,12,162,16,5,11,5,19,2566,13,1
+B cell zone reticular cells CXCL13+ MADCAM1+ (FDC),SPLN21,3,0,45,257,23,8,0,16,3,6,63,21,3
+B cell zone reticular cells CXCL13+MADCAM1+,SPLN21,2,0,41,1071,33,1,12,14,10,6,206,158,1
+B cells,SPLN21,148,1,72,20402,915,61,26,147,58,59,38,309,71
+Conventional dendritic cells,SPLN21,7,0,8,37,24,314,4,11,16,17,1,15,1
+Erythroid,SPLN21,424,474,22,13,297,8,8,38,13,65,2,45,18
+"Germinal center B cells, proliferating",SPLN21,0,0,0,127,0,0,6,0,407,0,0,27,0
+Low quality,SPLN21,1312,17,1076,979,5671,324,362,2691,73,751,392,2582,748
+Marginal zone reticular cells CXCL13+NGFR+MADCAM1-,SPLN21,37,2,477,13,68,51,1,70,8,162,882,21,32
+Metamyelocyte/Band Neutrophils DEFA1+,SPLN21,211,2,125,145,205,45,31,125,38,130,16,109,65
+Monocytes,SPLN21,128,6,79,130,219,5114,34,204,22,115,11,127,27
+NK cells,SPLN21,319,4,192,231,352,48,4053,207,47,268,29,763,32
+Neutrophils,SPLN21,444,11,242,185,1375,365,70,12077,52,306,20,426,61
+Plasma cells,SPLN21,380,5,341,461,936,143,72,272,5163,585,55,490,72
+Promyelocyte,SPLN21,21,2,25,11,65,25,11,55,124,25,4,29,20
+Red pulp fibroblasts,SPLN21,1403,10,12788,211,1979,341,66,1017,84,904,273,432,114
+Red pulp macrophages,SPLN21,576,1,274,556,3072,2964,83,1331,70,13101,51,541,637
+Sinusoidal endothelial cells (littoral cells),SPLN21,24730,27,113,45,4930,92,39,241,21,765,186,549,41
+Smooth muscle,SPLN21,657,4,2081,1108,2363,233,58,787,87,928,561,578,95
+T cell zone reticular cells CCL21+ CCL19+,SPLN21,7,0,137,266,150,15,6,15,17,20,136,262,14
+T cell zone reticular cells CXCL9+,SPLN21,0,0,1,5,5,86,0,0,1,19,0,16,2
+T cells,SPLN21,382,11,354,1426,876,90,54,290,79,342,41,7028,59
+Vascular smooth muscle cells,SPLN21,0,0,159,1,31,6,0,11,2,9,752,3,0
+White pulp macrophages,SPLN21,8,0,19,299,55,13,6,53,2,144,11,838,11
+"gdT cells, NK cells, and T cells",SPLN21,224,6,201,552,712,55,1419,192,38,471,19,5714,32

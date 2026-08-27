@@ -1,0 +1,4 @@
+section,transcripts_total,assigned,assigned_pct,unassigned_pct,q20_total,q20_pct_of_all,q20_assigned_pct,q20_assigned_in_nucleus_pct,verdict
+SPLN07,27431028,25348827,92.41,7.59,24913162,90.82,92.44,64.21,PASS
+SPLN21,21277179,19837302,93.23,6.77,18112836,85.13,93.18,58.03,PASS
+SPLN30,21088882,19858420,94.17,5.83,18952506,89.87,94.21,76.49,PASS

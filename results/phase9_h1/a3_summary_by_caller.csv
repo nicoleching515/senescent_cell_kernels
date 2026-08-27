@@ -1,0 +1,15 @@
+call,n_strata,n_pass,n_pass_band,n_pass_senders,n_pass_nonsenders,median_prevalence,min_prevalence,max_prevalence,pct_pass,n_types_pass_all_sections
+cdkn1a_pos,64,38,56,43,52,2.738,0.155,13.277,59.4,3
+senepy_p90,64,48,55,52,48,10.001,9.507,10.066,75.0,8
+senepy_p95,64,48,55,49,48,5.001,4.969,5.051,75.0,8
+senepy_p99,64,18,49,24,48,1.002,0.994,1.094,28.1,1
+tierA_p90,64,51,64,58,51,10.002,9.976,10.103,79.7,8
+tierA_p95,64,52,64,53,52,5.002,4.993,5.137,81.2,8
+tierA_p99,64,23,62,24,52,1.0034999999999998,0.991,1.094,35.9,2
+tierApm_p95__downstream_arrest,64,52,64,53,52,5.002,4.993,5.137,81.2,8
+tierApm_p95__emt_ecm,64,52,64,53,52,5.002,4.993,5.137,81.2,8
+tierApm_p95__il6_jak_stat3,64,52,64,53,52,5.002,4.993,5.137,81.2,8
+tierApm_p95__interferon_response,64,52,64,53,52,5.002,4.993,5.137,81.2,8
+tierApm_p95__oxidative_stress,64,52,64,53,52,5.002,4.99,5.137,81.2,8
+tierApm_p95__secondary_senescence,64,52,64,53,52,5.002,4.993,5.137,81.2,8
+tierApm_p95__tnfa_nfkb_proximal,64,52,64,53,52,5.002,4.991,5.137,81.2,8

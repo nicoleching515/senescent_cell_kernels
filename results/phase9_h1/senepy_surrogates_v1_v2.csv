@@ -1,0 +1,24 @@
+cell_type,v1_tissue,v1_cell,v1_hub,v1_size,v1_on_panel,v1_usable,v2_tissue,v2_cell,v2_hub,v2_size,v2_on_panel,v2_usable,same_hub
+Red pulp macrophages,intestine,macrophage,0,3147,940,yes,intestine,macrophage,0,713,244,yes,True
+Monocytes,lung,monocyte,0,351,167,yes,lung,monocyte,0,404,199,yes,True
+cDC1,,,,0,0,no_hub,,,,0,0,no_hub,True
+cDC2,,,,0,0,no_hub,,,,0,0,no_hub,True
+pDC,,,,0,0,no_hub,,,,0,0,no_hub,True
+Follicular B cells,blood,memory b cell,1,1103,267,yes,blood,memory b cell,1,418,100,yes,True
+Marginal zone B cells,blood,memory b cell,1,1103,267,yes,blood,memory b cell,1,418,100,yes,True
+Germinal centre B cells,blood,memory b cell,1,1103,267,yes,blood,memory b cell,1,418,100,yes,True
+CD4 T cells,lung,t cell,0,1053,412,yes,bone marrow,t cell,0,2542,779,yes,False
+CD8 T cells,lung,t cell,0,1053,412,yes,bone marrow,t cell,0,2542,779,yes,False
+NK cells,blood,nk cell,0,242,107,yes,blood,nk cell,0,227,105,yes,True
+Fibroblastic reticular cells,skin,fibroblast,1,1837,481,yes,skin,fibroblast,0,3668,1080,yes,False
+Sinusoidal endothelium,skin,endothelial cell,0,551,164,yes,heart,endothelial cell,0,1001,270,yes,False
+Endothelial cells,skin,endothelial cell,0,551,164,yes,heart,endothelial cell,0,1001,270,yes,False
+Lymphatic endothelium,,,,0,0,no_hub,,,,0,0,no_hub,True
+Smooth muscle / capsule,heart,smooth muscle cell,0,57,27,yes,heart,smooth muscle cell,0,230,72,yes,True
+Pericytes,heart,pericyte,0,49,16,yes,heart,pericyte,0,1249,356,yes,True
+Fibroblasts,skin,fibroblast,1,1837,481,yes,skin,fibroblast,0,3668,1080,yes,False
+Erythroid cells,,,,0,0,no_hub,,,,0,0,no_hub,True
+Megakaryocytes,,,,0,0,no_hub,,,,0,0,no_hub,True
+Neutrophils,blood,neutrophil,0,1265,381,yes,blood,neutrophil,0,812,231,yes,True
+Mesothelial cells,,,,0,0,no_hub,,,,0,0,no_hub,True
+Plasma cells,intestine,plasma cell,0,384,119,yes,intestine,plasma cell,0,96,36,yes,True

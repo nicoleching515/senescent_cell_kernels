@@ -1,0 +1,239 @@
+call,cell_type,n_sections_pass,n_sections,all_sections
+cdkn1a_pos,CD4 T cells,1,2,False
+cdkn1a_pos,CD8 T cells,0,1,False
+cdkn1a_pos,Endothelial cells,6,6,True
+cdkn1a_pos,Erythroid cells,0,2,False
+cdkn1a_pos,Fibroblastic reticular cells,1,2,False
+cdkn1a_pos,Fibroblasts,5,6,False
+cdkn1a_pos,Follicular B cells,4,6,False
+cdkn1a_pos,Germinal centre B cells,1,1,True
+cdkn1a_pos,Megakaryocytes,0,1,False
+cdkn1a_pos,Monocytes,2,5,False
+cdkn1a_pos,NK cells,1,3,False
+cdkn1a_pos,Neutrophils,1,5,False
+cdkn1a_pos,Plasma cells,6,6,True
+cdkn1a_pos,Red pulp macrophages,5,6,False
+cdkn1a_pos,Smooth muscle / capsule,4,6,False
+cdkn1a_pos,cDC1,0,2,False
+cdkn1a_pos,cDC2,1,4,False
+senepy_p90,CD4 T cells,2,2,True
+senepy_p90,CD8 T cells,0,1,False
+senepy_p90,Endothelial cells,6,6,True
+senepy_p90,Erythroid cells,0,2,False
+senepy_p90,Fibroblastic reticular cells,2,2,True
+senepy_p90,Fibroblasts,5,6,False
+senepy_p90,Follicular B cells,6,6,True
+senepy_p90,Germinal centre B cells,1,1,True
+senepy_p90,Megakaryocytes,0,1,False
+senepy_p90,Monocytes,3,5,False
+senepy_p90,NK cells,3,3,True
+senepy_p90,Neutrophils,3,5,False
+senepy_p90,Plasma cells,6,6,True
+senepy_p90,Red pulp macrophages,6,6,True
+senepy_p90,Smooth muscle / capsule,5,6,False
+senepy_p90,cDC1,0,2,False
+senepy_p90,cDC2,0,4,False
+senepy_p95,CD4 T cells,2,2,True
+senepy_p95,CD8 T cells,0,1,False
+senepy_p95,Endothelial cells,6,6,True
+senepy_p95,Erythroid cells,0,2,False
+senepy_p95,Fibroblastic reticular cells,2,2,True
+senepy_p95,Fibroblasts,5,6,False
+senepy_p95,Follicular B cells,6,6,True
+senepy_p95,Germinal centre B cells,1,1,True
+senepy_p95,Megakaryocytes,0,1,False
+senepy_p95,Monocytes,3,5,False
+senepy_p95,NK cells,3,3,True
+senepy_p95,Neutrophils,3,5,False
+senepy_p95,Plasma cells,6,6,True
+senepy_p95,Red pulp macrophages,6,6,True
+senepy_p95,Smooth muscle / capsule,5,6,False
+senepy_p95,cDC1,0,2,False
+senepy_p95,cDC2,0,4,False
+senepy_p99,CD4 T cells,1,2,False
+senepy_p99,CD8 T cells,0,1,False
+senepy_p99,Endothelial cells,6,6,True
+senepy_p99,Erythroid cells,0,2,False
+senepy_p99,Fibroblastic reticular cells,0,2,False
+senepy_p99,Fibroblasts,3,6,False
+senepy_p99,Follicular B cells,1,6,False
+senepy_p99,Germinal centre B cells,0,1,False
+senepy_p99,Megakaryocytes,0,1,False
+senepy_p99,Monocytes,0,5,False
+senepy_p99,NK cells,1,3,False
+senepy_p99,Neutrophils,0,5,False
+senepy_p99,Plasma cells,0,6,False
+senepy_p99,Red pulp macrophages,5,6,False
+senepy_p99,Smooth muscle / capsule,1,6,False
+senepy_p99,cDC1,0,2,False
+senepy_p99,cDC2,0,4,False
+tierA_p90,CD4 T cells,2,2,True
+tierA_p90,CD8 T cells,0,1,False
+tierA_p90,Endothelial cells,6,6,True
+tierA_p90,Erythroid cells,1,2,False
+tierA_p90,Fibroblastic reticular cells,2,2,True
+tierA_p90,Fibroblasts,5,6,False
+tierA_p90,Follicular B cells,6,6,True
+tierA_p90,Germinal centre B cells,1,1,True
+tierA_p90,Megakaryocytes,0,1,False
+tierA_p90,Monocytes,3,5,False
+tierA_p90,NK cells,3,3,True
+tierA_p90,Neutrophils,3,5,False
+tierA_p90,Plasma cells,6,6,True
+tierA_p90,Red pulp macrophages,6,6,True
+tierA_p90,Smooth muscle / capsule,5,6,False
+tierA_p90,cDC1,0,2,False
+tierA_p90,cDC2,2,4,False
+tierA_p95,CD4 T cells,2,2,True
+tierA_p95,CD8 T cells,0,1,False
+tierA_p95,Endothelial cells,6,6,True
+tierA_p95,Erythroid cells,1,2,False
+tierA_p95,Fibroblastic reticular cells,2,2,True
+tierA_p95,Fibroblasts,5,6,False
+tierA_p95,Follicular B cells,6,6,True
+tierA_p95,Germinal centre B cells,1,1,True
+tierA_p95,Megakaryocytes,0,1,False
+tierA_p95,Monocytes,3,5,False
+tierA_p95,NK cells,3,3,True
+tierA_p95,Neutrophils,3,5,False
+tierA_p95,Plasma cells,6,6,True
+tierA_p95,Red pulp macrophages,6,6,True
+tierA_p95,Smooth muscle / capsule,5,6,False
+tierA_p95,cDC1,0,2,False
+tierA_p95,cDC2,3,4,False
+tierA_p99,CD4 T cells,1,2,False
+tierA_p99,CD8 T cells,0,1,False
+tierA_p99,Endothelial cells,6,6,True
+tierA_p99,Erythroid cells,0,2,False
+tierA_p99,Fibroblastic reticular cells,0,2,False
+tierA_p99,Fibroblasts,3,6,False
+tierA_p99,Follicular B cells,6,6,True
+tierA_p99,Germinal centre B cells,0,1,False
+tierA_p99,Megakaryocytes,0,1,False
+tierA_p99,Monocytes,0,5,False
+tierA_p99,NK cells,1,3,False
+tierA_p99,Neutrophils,0,5,False
+tierA_p99,Plasma cells,0,6,False
+tierA_p99,Red pulp macrophages,5,6,False
+tierA_p99,Smooth muscle / capsule,1,6,False
+tierA_p99,cDC1,0,2,False
+tierA_p99,cDC2,0,4,False
+tierApm_p95__downstream_arrest,CD4 T cells,2,2,True
+tierApm_p95__downstream_arrest,CD8 T cells,0,1,False
+tierApm_p95__downstream_arrest,Endothelial cells,6,6,True
+tierApm_p95__downstream_arrest,Erythroid cells,1,2,False
+tierApm_p95__downstream_arrest,Fibroblastic reticular cells,2,2,True
+tierApm_p95__downstream_arrest,Fibroblasts,5,6,False
+tierApm_p95__downstream_arrest,Follicular B cells,6,6,True
+tierApm_p95__downstream_arrest,Germinal centre B cells,1,1,True
+tierApm_p95__downstream_arrest,Megakaryocytes,0,1,False
+tierApm_p95__downstream_arrest,Monocytes,3,5,False
+tierApm_p95__downstream_arrest,NK cells,3,3,True
+tierApm_p95__downstream_arrest,Neutrophils,3,5,False
+tierApm_p95__downstream_arrest,Plasma cells,6,6,True
+tierApm_p95__downstream_arrest,Red pulp macrophages,6,6,True
+tierApm_p95__downstream_arrest,Smooth muscle / capsule,5,6,False
+tierApm_p95__downstream_arrest,cDC1,0,2,False
+tierApm_p95__downstream_arrest,cDC2,3,4,False
+tierApm_p95__emt_ecm,CD4 T cells,2,2,True
+tierApm_p95__emt_ecm,CD8 T cells,0,1,False
+tierApm_p95__emt_ecm,Endothelial cells,6,6,True
+tierApm_p95__emt_ecm,Erythroid cells,1,2,False
+tierApm_p95__emt_ecm,Fibroblastic reticular cells,2,2,True
+tierApm_p95__emt_ecm,Fibroblasts,5,6,False
+tierApm_p95__emt_ecm,Follicular B cells,6,6,True
+tierApm_p95__emt_ecm,Germinal centre B cells,1,1,True
+tierApm_p95__emt_ecm,Megakaryocytes,0,1,False
+tierApm_p95__emt_ecm,Monocytes,3,5,False
+tierApm_p95__emt_ecm,NK cells,3,3,True
+tierApm_p95__emt_ecm,Neutrophils,3,5,False
+tierApm_p95__emt_ecm,Plasma cells,6,6,True
+tierApm_p95__emt_ecm,Red pulp macrophages,6,6,True
+tierApm_p95__emt_ecm,Smooth muscle / capsule,5,6,False
+tierApm_p95__emt_ecm,cDC1,0,2,False
+tierApm_p95__emt_ecm,cDC2,3,4,False
+tierApm_p95__il6_jak_stat3,CD4 T cells,2,2,True
+tierApm_p95__il6_jak_stat3,CD8 T cells,0,1,False
+tierApm_p95__il6_jak_stat3,Endothelial cells,6,6,True
+tierApm_p95__il6_jak_stat3,Erythroid cells,1,2,False
+tierApm_p95__il6_jak_stat3,Fibroblastic reticular cells,2,2,True
+tierApm_p95__il6_jak_stat3,Fibroblasts,5,6,False
+tierApm_p95__il6_jak_stat3,Follicular B cells,6,6,True
+tierApm_p95__il6_jak_stat3,Germinal centre B cells,1,1,True
+tierApm_p95__il6_jak_stat3,Megakaryocytes,0,1,False
+tierApm_p95__il6_jak_stat3,Monocytes,3,5,False
+tierApm_p95__il6_jak_stat3,NK cells,3,3,True
+tierApm_p95__il6_jak_stat3,Neutrophils,3,5,False
+tierApm_p95__il6_jak_stat3,Plasma cells,6,6,True
+tierApm_p95__il6_jak_stat3,Red pulp macrophages,6,6,True
+tierApm_p95__il6_jak_stat3,Smooth muscle / capsule,5,6,False
+tierApm_p95__il6_jak_stat3,cDC1,0,2,False
+tierApm_p95__il6_jak_stat3,cDC2,3,4,False
+tierApm_p95__interferon_response,CD4 T cells,2,2,True
+tierApm_p95__interferon_response,CD8 T cells,0,1,False
+tierApm_p95__interferon_response,Endothelial cells,6,6,True
+tierApm_p95__interferon_response,Erythroid cells,1,2,False
+tierApm_p95__interferon_response,Fibroblastic reticular cells,2,2,True
+tierApm_p95__interferon_response,Fibroblasts,5,6,False
+tierApm_p95__interferon_response,Follicular B cells,6,6,True
+tierApm_p95__interferon_response,Germinal centre B cells,1,1,True
+tierApm_p95__interferon_response,Megakaryocytes,0,1,False
+tierApm_p95__interferon_response,Monocytes,3,5,False
+tierApm_p95__interferon_response,NK cells,3,3,True
+tierApm_p95__interferon_response,Neutrophils,3,5,False
+tierApm_p95__interferon_response,Plasma cells,6,6,True
+tierApm_p95__interferon_response,Red pulp macrophages,6,6,True
+tierApm_p95__interferon_response,Smooth muscle / capsule,5,6,False
+tierApm_p95__interferon_response,cDC1,0,2,False
+tierApm_p95__interferon_response,cDC2,3,4,False
+tierApm_p95__oxidative_stress,CD4 T cells,2,2,True
+tierApm_p95__oxidative_stress,CD8 T cells,0,1,False
+tierApm_p95__oxidative_stress,Endothelial cells,6,6,True
+tierApm_p95__oxidative_stress,Erythroid cells,1,2,False
+tierApm_p95__oxidative_stress,Fibroblastic reticular cells,2,2,True
+tierApm_p95__oxidative_stress,Fibroblasts,5,6,False
+tierApm_p95__oxidative_stress,Follicular B cells,6,6,True
+tierApm_p95__oxidative_stress,Germinal centre B cells,1,1,True
+tierApm_p95__oxidative_stress,Megakaryocytes,0,1,False
+tierApm_p95__oxidative_stress,Monocytes,3,5,False
+tierApm_p95__oxidative_stress,NK cells,3,3,True
+tierApm_p95__oxidative_stress,Neutrophils,3,5,False
+tierApm_p95__oxidative_stress,Plasma cells,6,6,True
+tierApm_p95__oxidative_stress,Red pulp macrophages,6,6,True
+tierApm_p95__oxidative_stress,Smooth muscle / capsule,5,6,False
+tierApm_p95__oxidative_stress,cDC1,0,2,False
+tierApm_p95__oxidative_stress,cDC2,3,4,False
+tierApm_p95__secondary_senescence,CD4 T cells,2,2,True
+tierApm_p95__secondary_senescence,CD8 T cells,0,1,False
+tierApm_p95__secondary_senescence,Endothelial cells,6,6,True
+tierApm_p95__secondary_senescence,Erythroid cells,1,2,False
+tierApm_p95__secondary_senescence,Fibroblastic reticular cells,2,2,True
+tierApm_p95__secondary_senescence,Fibroblasts,5,6,False
+tierApm_p95__secondary_senescence,Follicular B cells,6,6,True
+tierApm_p95__secondary_senescence,Germinal centre B cells,1,1,True
+tierApm_p95__secondary_senescence,Megakaryocytes,0,1,False
+tierApm_p95__secondary_senescence,Monocytes,3,5,False
+tierApm_p95__secondary_senescence,NK cells,3,3,True
+tierApm_p95__secondary_senescence,Neutrophils,3,5,False
+tierApm_p95__secondary_senescence,Plasma cells,6,6,True
+tierApm_p95__secondary_senescence,Red pulp macrophages,6,6,True
+tierApm_p95__secondary_senescence,Smooth muscle / capsule,5,6,False
+tierApm_p95__secondary_senescence,cDC1,0,2,False
+tierApm_p95__secondary_senescence,cDC2,3,4,False
+tierApm_p95__tnfa_nfkb_proximal,CD4 T cells,2,2,True
+tierApm_p95__tnfa_nfkb_proximal,CD8 T cells,0,1,False
+tierApm_p95__tnfa_nfkb_proximal,Endothelial cells,6,6,True
+tierApm_p95__tnfa_nfkb_proximal,Erythroid cells,1,2,False
+tierApm_p95__tnfa_nfkb_proximal,Fibroblastic reticular cells,2,2,True
+tierApm_p95__tnfa_nfkb_proximal,Fibroblasts,5,6,False
+tierApm_p95__tnfa_nfkb_proximal,Follicular B cells,6,6,True
+tierApm_p95__tnfa_nfkb_proximal,Germinal centre B cells,1,1,True
+tierApm_p95__tnfa_nfkb_proximal,Megakaryocytes,0,1,False
+tierApm_p95__tnfa_nfkb_proximal,Monocytes,3,5,False
+tierApm_p95__tnfa_nfkb_proximal,NK cells,3,3,True
+tierApm_p95__tnfa_nfkb_proximal,Neutrophils,3,5,False
+tierApm_p95__tnfa_nfkb_proximal,Plasma cells,6,6,True
+tierApm_p95__tnfa_nfkb_proximal,Red pulp macrophages,6,6,True
+tierApm_p95__tnfa_nfkb_proximal,Smooth muscle / capsule,5,6,False
+tierApm_p95__tnfa_nfkb_proximal,cDC1,0,2,False
+tierApm_p95__tnfa_nfkb_proximal,cDC2,3,4,False

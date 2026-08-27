@@ -1,0 +1,39 @@
+section,label_source,label,n,mean_pulp_axis,mean_pulp_axis_smooth,median_dist_to_follicle_um
+SPLN07,depositor_L3,Low quality,20860,-0.182,0.015,183.9
+SPLN07,depositor_L3,Erythroid,10738,0.571,0.283,179.1
+SPLN07,depositor_L3,Sinusoidal endothelial cells (littoral cells),33880,0.121,0.3,178.8
+SPLN07,depositor_L3,NK cells,7593,-0.012,0.224,169.3
+SPLN07,depositor_L3,Red pulp macrophages,28914,1.415,0.25,172.8
+SPLN07,depositor_L3,Neutrophils,9492,-0.125,0.132,190.0
+SPLN07,depositor_L3,"gdT cells, NK cells, and T cells",6860,-0.119,0.155,171.8
+SPLN07,depositor_L3,T cells,12878,-0.585,-0.13,169.2
+SPLN07,depositor_L3,Promyelocyte,3061,-0.096,0.196,179.5
+SPLN07,depositor_L3,Red pulp fibroblasts,20722,0.211,0.251,178.7
+SPLN07,depositor_L3,B cells,28519,-1.109,-0.766,149.7
+SPLN07,depositor_L3,Plasma cells,8047,-0.042,0.034,175.8
+SPLN07,depositor_L3,Metamyelocyte/Band Neutrophils DEFA1+,7112,0.066,0.171,189.6
+SPLN07,depositor_L3,"Germinal center B cells, proliferating",634,-0.8,-0.672,159.1
+SPLN07,depositor_L3,Monocytes,2753,0.04,0.177,178.9
+SPLN07,depositor_L3,White pulp macrophages,1516,0.2,-0.645,171.0
+SPLN07,depositor_L3,Smooth muscle,7800,-0.144,-0.124,170.4
+SPLN07,depositor_L3,Marginal zone reticular cells CXCL13+NGFR+MADCAM1-,1154,0.146,0.007,176.3
+SPLN07,depositor_L3,B cell zone reticular cells CXCL13+MADCAM1+,2282,-1.049,-0.94,146.4
+SPLN07,depositor_L3,Arterial endothelial cells (KDR+ CD34+),3371,-0.131,0.074,180.1
+SPLN07,depositor_L3,T cell zone reticular cells CCL21+ CCL19+,4914,-0.996,-0.796,180.5
+SPLN07,depositor_L3,Vascular smooth muscle cells,3296,-0.344,-0.237,199.8
+SPLN07,depositor_L3,Conventional dendritic cells,253,-0.042,0.048,154.9
+SPLN07,depositor_L3,B cell zone reticular cells CXCL13+ MADCAM1+ (FDC),660,-0.585,-0.562,145.1
+SPLN07,jobB_fine,CD4 T cells,20146,-0.518,-0.106,167.3
+SPLN07,jobB_fine,Erythroid cells,10247,0.476,0.273,179.5
+SPLN07,jobB_fine,Low_quality,19970,-0.25,-0.049,182.1
+SPLN07,jobB_fine,NK cells,7966,-0.021,0.246,170.2
+SPLN07,jobB_fine,Red pulp macrophages,31667,1.554,0.273,173.3
+SPLN07,jobB_fine,Neutrophils,24323,-0.127,0.144,192.2
+SPLN07,jobB_fine,Endothelial cells,39354,0.12,0.289,178.9
+SPLN07,jobB_fine,Fibroblasts,22982,0.016,0.034,176.3
+SPLN07,jobB_fine,Follicular B cells,37034,-1.053,-0.711,151.4
+SPLN07,jobB_fine,Plasma cells,4735,-0.06,0.092,178.5
+SPLN07,jobB_fine,Unknown,411,-0.813,-0.673,166.1
+SPLN07,jobB_fine,Monocytes,3726,0.13,0.177,181.6
+SPLN07,jobB_fine,Megakaryocytes,684,0.036,0.231,186.8
+SPLN07,jobB_fine,Smooth muscle / capsule,4115,-0.338,-0.215,193.7

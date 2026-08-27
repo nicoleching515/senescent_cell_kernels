@@ -1,0 +1,17 @@
+gene_set,human_full,human_intersected,human_intersected_pct,mouse_full,mouse_intersected,mouse_intersected_pct
+A_SENDER_FINAL_strict,33,26,78.8,33,27,81.8
+B_downstream_arrest,231,138,59.7,190,137,72.1
+B_emt_ecm,113,87,77.0,125,86,68.8
+B_il6_jak_stat3,71,59,83.1,68,58,85.3
+B_interferon_response,126,82,65.1,100,80,80.0
+B_oxidative_stress,36,19,52.8,31,18,58.1
+B_secondary_senescence,116,88,75.9,108,85,78.7
+B_tnfa_nfkb_proximal,120,90,75.0,126,88,69.8
+A_sender_for_downstream_arrest,36,29,80.6,37,30,81.1
+A_sender_for_emt_ecm,79,63,79.7,73,63,86.3
+A_sender_for_il6_jak_stat3,81,64,79.0,74,64,86.5
+A_sender_for_interferon_response,80,63,78.8,73,63,86.3
+A_sender_for_oxidative_stress,79,62,78.5,71,62,87.3
+A_sender_for_secondary_senescence,81,64,79.0,74,64,86.5
+A_sender_for_tnfa_nfkb_proximal,77,60,77.9,70,60,85.7
+E_negative_control_probes,0,0,0.0,0,0,0.0

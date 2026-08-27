@@ -96,3 +96,9 @@ figures/.committed_manifest.json
 # runner-up candidates of reports/PHASE7_H1_SCREEN.md. Same policy as data/raw_h1/.
 # Re-fetch with code/fetch_h1_candidates.sh; see reports/A3_FALLBACK_SCREEN.md.
 data/raw_h1_candidates/
+
+# Phase 9 human-arm intermediates, 2026-08-27. Same policy as data/raw_h1/:
+# large, regenerable from the frozen inputs by code/h1_*.py. Results and
+# reports ARE committed; only the bulk caches are excluded.
+data/processed_h1/
+data/raw_h1_transcripts/

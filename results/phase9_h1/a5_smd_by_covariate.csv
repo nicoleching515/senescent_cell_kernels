@@ -1,0 +1,56 @@
+section,call,covariate,smd_before,smd_after
+SPLN21,tierA_p90,log_dens50,-0.0094,-0.0052
+SPLN21,tierA_p90,log_counts,-0.1801,0.0012
+SPLN21,tierA_p90,zonation,0.0078,-0.0069
+SPLN21,tierA_p90,knn_frac_B cells,0.0136,0.0076
+SPLN21,tierA_p90,knn_frac_Endothelial,-0.0061,-0.0052
+SPLN21,tierA_p90,knn_frac_Erythroid cells,0.0229,-0.0074
+SPLN21,tierA_p90,knn_frac_Mono/Mac/DC,-0.0127,-0.0081
+SPLN21,tierA_p90,knn_frac_Neutrophils,0.0017,-0.0099
+SPLN21,tierA_p90,knn_frac_Plasma cells,-0.0173,0.011
+SPLN21,tierA_p90,knn_frac_Stromal,-0.0112,-0.0048
+SPLN21,tierA_p90,knn_frac_T/NK cells,-0.0392,0.0174
+SPLN21,tierA_p95,log_dens50,-0.0236,-0.0027
+SPLN21,tierA_p95,log_counts,-0.3106,-0.0003
+SPLN21,tierA_p95,zonation,-0.0076,0.0033
+SPLN21,tierA_p95,knn_frac_B cells,0.0085,0.0041
+SPLN21,tierA_p95,knn_frac_Endothelial,-0.0174,-0.0075
+SPLN21,tierA_p95,knn_frac_Erythroid cells,0.019,-0.0054
+SPLN21,tierA_p95,knn_frac_Mono/Mac/DC,-0.0176,-0.0105
+SPLN21,tierA_p95,knn_frac_Neutrophils,0.0143,0.0137
+SPLN21,tierA_p95,knn_frac_Plasma cells,-0.0396,0.0063
+SPLN21,tierA_p95,knn_frac_Stromal,-0.0219,-0.0126
+SPLN21,tierA_p95,knn_frac_T/NK cells,-0.0328,-0.0102
+SPLN21,tierA_p99,log_dens50,-0.0498,-0.0279
+SPLN21,tierA_p99,log_counts,-0.5186,0.0126
+SPLN21,tierA_p99,zonation,-0.0445,0.007
+SPLN21,tierA_p99,knn_frac_B cells,0.0077,0.0289
+SPLN21,tierA_p99,knn_frac_Endothelial,-0.0511,-0.0218
+SPLN21,tierA_p99,knn_frac_Erythroid cells,-0.0233,-0.0318
+SPLN21,tierA_p99,knn_frac_Mono/Mac/DC,-0.0085,0.0015
+SPLN21,tierA_p99,knn_frac_Neutrophils,0.0592,-0.0068
+SPLN21,tierA_p99,knn_frac_Plasma cells,-0.0286,-0.0235
+SPLN21,tierA_p99,knn_frac_Stromal,-0.0559,-0.0212
+SPLN21,tierA_p99,knn_frac_T/NK cells,0.0129,0.0414
+SPLN21,cdkn1a_pos,log_dens50,-0.0668,0.0163
+SPLN21,cdkn1a_pos,log_counts,0.6747,0.002
+SPLN21,cdkn1a_pos,zonation,0.0032,-0.0003
+SPLN21,cdkn1a_pos,knn_frac_B cells,-0.2594,0.0059
+SPLN21,cdkn1a_pos,knn_frac_Endothelial,0.3973,0.0076
+SPLN21,cdkn1a_pos,knn_frac_Erythroid cells,0.0533,0.0039
+SPLN21,cdkn1a_pos,knn_frac_Mono/Mac/DC,0.0392,0.0041
+SPLN21,cdkn1a_pos,knn_frac_Neutrophils,-0.0347,-0.0006
+SPLN21,cdkn1a_pos,knn_frac_Plasma cells,0.0023,-0.0051
+SPLN21,cdkn1a_pos,knn_frac_Stromal,0.0975,-0.0333
+SPLN21,cdkn1a_pos,knn_frac_T/NK cells,-0.0426,0.0147
+SPLN21,senepy_p95,log_dens50,0.0654,-0.0276
+SPLN21,senepy_p95,log_counts,1.4829,0.0216
+SPLN21,senepy_p95,zonation,0.2872,-0.0436
+SPLN21,senepy_p95,knn_frac_B cells,0.0226,-0.0041
+SPLN21,senepy_p95,knn_frac_Endothelial,0.1594,0.005
+SPLN21,senepy_p95,knn_frac_Erythroid cells,-0.03,0.0026
+SPLN21,senepy_p95,knn_frac_Mono/Mac/DC,0.0474,-0.0142
+SPLN21,senepy_p95,knn_frac_Neutrophils,-0.1338,0.0223
+SPLN21,senepy_p95,knn_frac_Plasma cells,-0.0245,0.0014
+SPLN21,senepy_p95,knn_frac_Stromal,0.082,-0.0252
+SPLN21,senepy_p95,knn_frac_T/NK cells,0.0348,0.0031

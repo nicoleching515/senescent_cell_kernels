@@ -1,0 +1,8 @@
+section,n_cells_matrix,n_cells_annotated,pct_annotated,n_annotated_lowquality,pct_lowquality_of_annotated,median_transcripts_annotated,median_transcripts_dropped,median_area_annotated,median_area_dropped,pct_dropped_failing_our_qc,pct_our_qc_pass_among_dropped,pct_our_qc_pass_among_annotated,n_annotated_failing_our_qc,n_levels,n_level3_labels,n_level4_labels
+SPLN07,249420,239167,95.89,457,0.19,79.0,7.0,46.19,18.06,99.93,0.07,95.06,11814,4,25,31
+SPLN14,329371,302488,91.84,876,0.29,60.0,9.0,46.51,20.68,96.45,3.55,93.45,19814,4,25,31
+SPLN21,220435,209089,94.85,598,0.29,65.0,7.0,46.1,20.23,99.89,0.11,93.8,12959,4,25,31
+SPLN24,396173,394493,99.58,894,0.23,274.0,5.0,41.36,30.03,100.0,0.0,99.67,1291,4,25,31
+SPLN30,366199,326986,89.29,1280,0.39,46.0,7.0,46.47,21.77,99.84,0.16,89.15,35471,4,25,30
+SPLN43,331582,298476,90.02,1285,0.43,57.0,8.0,43.85,19.01,99.55,0.45,90.57,28153,4,25,31
+SPLN44,314413,306712,97.55,470,0.15,131.0,8.0,43.53,16.3,99.04,0.96,97.75,6889,4,25,31

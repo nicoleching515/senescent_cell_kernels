@@ -1,0 +1,1513 @@
+section,label_set,cell_type,call,n_all,n_senders_all,n_nonsenders_all,prevalence_pct_all,n_scored,n_senders_scored,n_nonsenders_scored,prevalence_pct_scored,pass_band,pass_senders,pass_nonsenders,passes_A3
+SPLN14,fine,CD8 T cells,tierA_p90,457,46,411,10.066,457,46,411,10.066,True,False,False,False
+SPLN14,fine,Endothelial cells,tierA_p90,50036,5004,45032,10.001,50036,5004,45032,10.001,True,True,True,True
+SPLN14,fine,Fibroblastic reticular cells,tierA_p90,7210,721,6489,10.0,7210,721,6489,10.0,True,True,True,True
+SPLN14,fine,Fibroblasts,tierA_p90,23546,2355,21191,10.002,23546,2355,21191,10.002,True,True,True,True
+SPLN14,fine,Follicular B cells,tierA_p90,51591,5159,46432,10.0,51591,5159,46432,10.0,True,True,True,True
+SPLN14,fine,Monocytes,tierA_p90,6842,685,6157,10.012,6842,685,6157,10.012,True,True,True,True
+SPLN14,fine,Plasma cells,tierA_p90,15929,1593,14336,10.001,15929,1593,14336,10.001,True,True,True,True
+SPLN14,fine,Red pulp macrophages,tierA_p90,27310,2731,24579,10.0,27310,2731,24579,10.0,True,True,True,True
+SPLN14,fine,Smooth muscle / capsule,tierA_p90,10600,1060,9540,10.0,10600,1060,9540,10.0,True,True,True,True
+SPLN14,fine,CD8 T cells,senepy_p90,457,46,411,10.066,457,46,411,10.066,True,False,False,False
+SPLN14,fine,Endothelial cells,senepy_p90,50036,5004,45032,10.001,50036,5004,45032,10.001,True,True,True,True
+SPLN14,fine,Fibroblastic reticular cells,senepy_p90,7210,721,6489,10.0,7210,721,6489,10.0,True,True,True,True
+SPLN14,fine,Fibroblasts,senepy_p90,23546,2355,21191,10.002,23546,2355,21191,10.002,True,True,True,True
+SPLN14,fine,Follicular B cells,senepy_p90,51591,5153,46438,9.988,51591,5153,46438,9.988,True,True,True,True
+SPLN14,fine,Monocytes,senepy_p90,6842,685,6157,10.012,6842,685,6157,10.012,True,True,True,True
+SPLN14,fine,Plasma cells,senepy_p90,15929,1589,14340,9.976,15929,1589,14340,9.976,True,True,True,True
+SPLN14,fine,Red pulp macrophages,senepy_p90,27310,2731,24579,10.0,27310,2731,24579,10.0,True,True,True,True
+SPLN14,fine,Smooth muscle / capsule,senepy_p90,10600,1060,9540,10.0,10600,1060,9540,10.0,True,True,True,True
+SPLN14,fine,CD8 T cells,tierA_p95,457,23,434,5.033,457,23,434,5.033,True,False,False,False
+SPLN14,fine,Endothelial cells,tierA_p95,50036,2502,47534,5.0,50036,2502,47534,5.0,True,True,True,True
+SPLN14,fine,Fibroblastic reticular cells,tierA_p95,7210,361,6849,5.007,7210,361,6849,5.007,True,True,True,True
+SPLN14,fine,Fibroblasts,tierA_p95,23546,1178,22368,5.003,23546,1178,22368,5.003,True,True,True,True
+SPLN14,fine,Follicular B cells,tierA_p95,51591,2580,49011,5.001,51591,2580,49011,5.001,True,True,True,True
+SPLN14,fine,Monocytes,tierA_p95,6842,343,6499,5.013,6842,343,6499,5.013,True,True,True,True
+SPLN14,fine,Plasma cells,tierA_p95,15929,797,15132,5.003,15929,797,15132,5.003,True,True,True,True
+SPLN14,fine,Red pulp macrophages,tierA_p95,27310,1366,25944,5.002,27310,1366,25944,5.002,True,True,True,True
+SPLN14,fine,Smooth muscle / capsule,tierA_p95,10600,530,10070,5.0,10600,530,10070,5.0,True,True,True,True
+SPLN14,fine,CD8 T cells,senepy_p95,457,23,434,5.033,457,23,434,5.033,True,False,False,False
+SPLN14,fine,Endothelial cells,senepy_p95,50036,2502,47534,5.0,50036,2502,47534,5.0,True,True,True,True
+SPLN14,fine,Fibroblastic reticular cells,senepy_p95,7210,361,6849,5.007,7210,361,6849,5.007,True,True,True,True
+SPLN14,fine,Fibroblasts,senepy_p95,23546,1178,22368,5.003,23546,1178,22368,5.003,True,True,True,True
+SPLN14,fine,Follicular B cells,senepy_p95,51591,2578,49013,4.997,51591,2578,49013,4.997,True,True,True,True
+SPLN14,fine,Monocytes,senepy_p95,6842,343,6499,5.013,6842,343,6499,5.013,True,True,True,True
+SPLN14,fine,Plasma cells,senepy_p95,15929,797,15132,5.003,15929,797,15132,5.003,True,True,True,True
+SPLN14,fine,Red pulp macrophages,senepy_p95,27310,1366,25944,5.002,27310,1366,25944,5.002,True,True,True,True
+SPLN14,fine,Smooth muscle / capsule,senepy_p95,10600,530,10070,5.0,10600,530,10070,5.0,True,True,True,True
+SPLN14,fine,CD8 T cells,tierA_p99,457,5,452,1.094,457,5,452,1.094,True,False,False,False
+SPLN14,fine,Endothelial cells,tierA_p99,50036,501,49535,1.001,50036,501,49535,1.001,True,True,True,True
+SPLN14,fine,Fibroblastic reticular cells,tierA_p99,7210,73,7137,1.012,7210,73,7137,1.012,True,False,True,False
+SPLN14,fine,Fibroblasts,tierA_p99,23546,236,23310,1.002,23546,236,23310,1.002,True,True,True,True
+SPLN14,fine,Follicular B cells,tierA_p99,51591,516,51075,1.0,51591,516,51075,1.0,True,True,True,True
+SPLN14,fine,Monocytes,tierA_p99,6842,69,6773,1.008,6842,69,6773,1.008,True,False,True,False
+SPLN14,fine,Plasma cells,tierA_p99,15929,160,15769,1.004,15929,160,15769,1.004,True,False,True,False
+SPLN14,fine,Red pulp macrophages,tierA_p99,27310,274,27036,1.003,27310,274,27036,1.003,True,True,True,True
+SPLN14,fine,Smooth muscle / capsule,tierA_p99,10600,106,10494,1.0,10600,106,10494,1.0,True,False,True,False
+SPLN14,fine,CD8 T cells,senepy_p99,457,5,452,1.094,457,5,452,1.094,True,False,False,False
+SPLN14,fine,Endothelial cells,senepy_p99,50036,501,49535,1.001,50036,501,49535,1.001,True,True,True,True
+SPLN14,fine,Fibroblastic reticular cells,senepy_p99,7210,73,7137,1.012,7210,73,7137,1.012,True,False,True,False
+SPLN14,fine,Fibroblasts,senepy_p99,23546,236,23310,1.002,23546,236,23310,1.002,True,True,True,True
+SPLN14,fine,Follicular B cells,senepy_p99,51591,513,51078,0.994,51591,513,51078,0.994,False,True,True,False
+SPLN14,fine,Monocytes,senepy_p99,6842,69,6773,1.008,6842,69,6773,1.008,True,False,True,False
+SPLN14,fine,Plasma cells,senepy_p99,15929,160,15769,1.004,15929,160,15769,1.004,True,False,True,False
+SPLN14,fine,Red pulp macrophages,senepy_p99,27310,274,27036,1.003,27310,274,27036,1.003,True,True,True,True
+SPLN14,fine,Smooth muscle / capsule,senepy_p99,10600,106,10494,1.0,10600,106,10494,1.0,True,False,True,False
+SPLN14,fine,CD8 T cells,cdkn1a_pos,457,32,425,7.002,457,32,425,7.002,True,False,False,False
+SPLN14,fine,Endothelial cells,cdkn1a_pos,50036,930,49106,1.859,50036,930,49106,1.859,True,True,True,True
+SPLN14,fine,Fibroblastic reticular cells,cdkn1a_pos,7210,181,7029,2.51,7210,181,7029,2.51,True,False,True,False
+SPLN14,fine,Fibroblasts,cdkn1a_pos,23546,400,23146,1.699,23546,400,23146,1.699,True,True,True,True
+SPLN14,fine,Follicular B cells,cdkn1a_pos,51591,376,51215,0.729,51591,376,51215,0.729,False,True,True,False
+SPLN14,fine,Monocytes,cdkn1a_pos,6842,144,6698,2.105,6842,144,6698,2.105,True,False,True,False
+SPLN14,fine,Plasma cells,cdkn1a_pos,15929,382,15547,2.398,15929,382,15547,2.398,True,True,True,True
+SPLN14,fine,Red pulp macrophages,cdkn1a_pos,27310,224,27086,0.82,27310,224,27086,0.82,False,True,True,False
+SPLN14,fine,Smooth muscle / capsule,cdkn1a_pos,10600,285,10315,2.689,10600,285,10315,2.689,True,True,True,True
+SPLN14,fine,CD8 T cells,tierApm_p95__downstream_arrest,457,23,434,5.033,457,23,434,5.033,True,False,False,False
+SPLN14,fine,Endothelial cells,tierApm_p95__downstream_arrest,50036,2502,47534,5.0,50036,2502,47534,5.0,True,True,True,True
+SPLN14,fine,Fibroblastic reticular cells,tierApm_p95__downstream_arrest,7210,361,6849,5.007,7210,361,6849,5.007,True,True,True,True
+SPLN14,fine,Fibroblasts,tierApm_p95__downstream_arrest,23546,1178,22368,5.003,23546,1178,22368,5.003,True,True,True,True
+SPLN14,fine,Follicular B cells,tierApm_p95__downstream_arrest,51591,2580,49011,5.001,51591,2580,49011,5.001,True,True,True,True
+SPLN14,fine,Monocytes,tierApm_p95__downstream_arrest,6842,342,6500,4.999,6842,342,6500,4.999,True,True,True,True
+SPLN14,fine,Plasma cells,tierApm_p95__downstream_arrest,15929,797,15132,5.003,15929,797,15132,5.003,True,True,True,True
+SPLN14,fine,Red pulp macrophages,tierApm_p95__downstream_arrest,27310,1366,25944,5.002,27310,1366,25944,5.002,True,True,True,True
+SPLN14,fine,Smooth muscle / capsule,tierApm_p95__downstream_arrest,10600,530,10070,5.0,10600,530,10070,5.0,True,True,True,True
+SPLN14,fine,CD8 T cells,tierApm_p95__emt_ecm,457,23,434,5.033,457,23,434,5.033,True,False,False,False
+SPLN14,fine,Endothelial cells,tierApm_p95__emt_ecm,50036,2502,47534,5.0,50036,2502,47534,5.0,True,True,True,True
+SPLN14,fine,Fibroblastic reticular cells,tierApm_p95__emt_ecm,7210,361,6849,5.007,7210,361,6849,5.007,True,True,True,True
+SPLN14,fine,Fibroblasts,tierApm_p95__emt_ecm,23546,1178,22368,5.003,23546,1178,22368,5.003,True,True,True,True
+SPLN14,fine,Follicular B cells,tierApm_p95__emt_ecm,51591,2580,49011,5.001,51591,2580,49011,5.001,True,True,True,True
+SPLN14,fine,Monocytes,tierApm_p95__emt_ecm,6842,343,6499,5.013,6842,343,6499,5.013,True,True,True,True
+SPLN14,fine,Plasma cells,tierApm_p95__emt_ecm,15929,797,15132,5.003,15929,797,15132,5.003,True,True,True,True
+SPLN14,fine,Red pulp macrophages,tierApm_p95__emt_ecm,27310,1366,25944,5.002,27310,1366,25944,5.002,True,True,True,True
+SPLN14,fine,Smooth muscle / capsule,tierApm_p95__emt_ecm,10600,530,10070,5.0,10600,530,10070,5.0,True,True,True,True
+SPLN14,fine,CD8 T cells,tierApm_p95__il6_jak_stat3,457,23,434,5.033,457,23,434,5.033,True,False,False,False
+SPLN14,fine,Endothelial cells,tierApm_p95__il6_jak_stat3,50036,2500,47536,4.996,50036,2500,47536,4.996,True,True,True,True
+SPLN14,fine,Fibroblastic reticular cells,tierApm_p95__il6_jak_stat3,7210,361,6849,5.007,7210,361,6849,5.007,True,True,True,True
+SPLN14,fine,Fibroblasts,tierApm_p95__il6_jak_stat3,23546,1178,22368,5.003,23546,1178,22368,5.003,True,True,True,True
+SPLN14,fine,Follicular B cells,tierApm_p95__il6_jak_stat3,51591,2580,49011,5.001,51591,2580,49011,5.001,True,True,True,True
+SPLN14,fine,Monocytes,tierApm_p95__il6_jak_stat3,6842,343,6499,5.013,6842,343,6499,5.013,True,True,True,True
+SPLN14,fine,Plasma cells,tierApm_p95__il6_jak_stat3,15929,797,15132,5.003,15929,797,15132,5.003,True,True,True,True
+SPLN14,fine,Red pulp macrophages,tierApm_p95__il6_jak_stat3,27310,1366,25944,5.002,27310,1366,25944,5.002,True,True,True,True
+SPLN14,fine,Smooth muscle / capsule,tierApm_p95__il6_jak_stat3,10600,530,10070,5.0,10600,530,10070,5.0,True,True,True,True
+SPLN14,fine,CD8 T cells,tierApm_p95__interferon_response,457,23,434,5.033,457,23,434,5.033,True,False,False,False
+SPLN14,fine,Endothelial cells,tierApm_p95__interferon_response,50036,2502,47534,5.0,50036,2502,47534,5.0,True,True,True,True
+SPLN14,fine,Fibroblastic reticular cells,tierApm_p95__interferon_response,7210,361,6849,5.007,7210,361,6849,5.007,True,True,True,True
+SPLN14,fine,Fibroblasts,tierApm_p95__interferon_response,23546,1178,22368,5.003,23546,1178,22368,5.003,True,True,True,True
+SPLN14,fine,Follicular B cells,tierApm_p95__interferon_response,51591,2579,49012,4.999,51591,2579,49012,4.999,True,True,True,True
+SPLN14,fine,Monocytes,tierApm_p95__interferon_response,6842,343,6499,5.013,6842,343,6499,5.013,True,True,True,True
+SPLN14,fine,Plasma cells,tierApm_p95__interferon_response,15929,797,15132,5.003,15929,797,15132,5.003,True,True,True,True
+SPLN14,fine,Red pulp macrophages,tierApm_p95__interferon_response,27310,1366,25944,5.002,27310,1366,25944,5.002,True,True,True,True
+SPLN14,fine,Smooth muscle / capsule,tierApm_p95__interferon_response,10600,530,10070,5.0,10600,530,10070,5.0,True,True,True,True
+SPLN14,fine,CD8 T cells,tierApm_p95__oxidative_stress,457,23,434,5.033,457,23,434,5.033,True,False,False,False
+SPLN14,fine,Endothelial cells,tierApm_p95__oxidative_stress,50036,2501,47535,4.998,50036,2501,47535,4.998,True,True,True,True
+SPLN14,fine,Fibroblastic reticular cells,tierApm_p95__oxidative_stress,7210,361,6849,5.007,7210,361,6849,5.007,True,True,True,True
+SPLN14,fine,Fibroblasts,tierApm_p95__oxidative_stress,23546,1178,22368,5.003,23546,1178,22368,5.003,True,True,True,True
+SPLN14,fine,Follicular B cells,tierApm_p95__oxidative_stress,51591,2580,49011,5.001,51591,2580,49011,5.001,True,True,True,True
+SPLN14,fine,Monocytes,tierApm_p95__oxidative_stress,6842,343,6499,5.013,6842,343,6499,5.013,True,True,True,True
+SPLN14,fine,Plasma cells,tierApm_p95__oxidative_stress,15929,797,15132,5.003,15929,797,15132,5.003,True,True,True,True
+SPLN14,fine,Red pulp macrophages,tierApm_p95__oxidative_stress,27310,1366,25944,5.002,27310,1366,25944,5.002,True,True,True,True
+SPLN14,fine,Smooth muscle / capsule,tierApm_p95__oxidative_stress,10600,530,10070,5.0,10600,530,10070,5.0,True,True,True,True
+SPLN14,fine,CD8 T cells,tierApm_p95__secondary_senescence,457,23,434,5.033,457,23,434,5.033,True,False,False,False
+SPLN14,fine,Endothelial cells,tierApm_p95__secondary_senescence,50036,2500,47536,4.996,50036,2500,47536,4.996,True,True,True,True
+SPLN14,fine,Fibroblastic reticular cells,tierApm_p95__secondary_senescence,7210,361,6849,5.007,7210,361,6849,5.007,True,True,True,True
+SPLN14,fine,Fibroblasts,tierApm_p95__secondary_senescence,23546,1178,22368,5.003,23546,1178,22368,5.003,True,True,True,True
+SPLN14,fine,Follicular B cells,tierApm_p95__secondary_senescence,51591,2580,49011,5.001,51591,2580,49011,5.001,True,True,True,True
+SPLN14,fine,Monocytes,tierApm_p95__secondary_senescence,6842,343,6499,5.013,6842,343,6499,5.013,True,True,True,True
+SPLN14,fine,Plasma cells,tierApm_p95__secondary_senescence,15929,797,15132,5.003,15929,797,15132,5.003,True,True,True,True
+SPLN14,fine,Red pulp macrophages,tierApm_p95__secondary_senescence,27310,1366,25944,5.002,27310,1366,25944,5.002,True,True,True,True
+SPLN14,fine,Smooth muscle / capsule,tierApm_p95__secondary_senescence,10600,530,10070,5.0,10600,530,10070,5.0,True,True,True,True
+SPLN14,fine,CD8 T cells,tierApm_p95__tnfa_nfkb_proximal,457,23,434,5.033,457,23,434,5.033,True,False,False,False
+SPLN14,fine,Endothelial cells,tierApm_p95__tnfa_nfkb_proximal,50036,2502,47534,5.0,50036,2502,47534,5.0,True,True,True,True
+SPLN14,fine,Fibroblastic reticular cells,tierApm_p95__tnfa_nfkb_proximal,7210,361,6849,5.007,7210,361,6849,5.007,True,True,True,True
+SPLN14,fine,Fibroblasts,tierApm_p95__tnfa_nfkb_proximal,23546,1178,22368,5.003,23546,1178,22368,5.003,True,True,True,True
+SPLN14,fine,Follicular B cells,tierApm_p95__tnfa_nfkb_proximal,51591,2580,49011,5.001,51591,2580,49011,5.001,True,True,True,True
+SPLN14,fine,Monocytes,tierApm_p95__tnfa_nfkb_proximal,6842,343,6499,5.013,6842,343,6499,5.013,True,True,True,True
+SPLN14,fine,Plasma cells,tierApm_p95__tnfa_nfkb_proximal,15929,797,15132,5.003,15929,797,15132,5.003,True,True,True,True
+SPLN14,fine,Red pulp macrophages,tierApm_p95__tnfa_nfkb_proximal,27310,1366,25944,5.002,27310,1366,25944,5.002,True,True,True,True
+SPLN14,fine,Smooth muscle / capsule,tierApm_p95__tnfa_nfkb_proximal,10600,530,10070,5.0,10600,530,10070,5.0,True,True,True,True
+SPLN14,merged,B cells,tierA_p90,51591,5159,46432,10.0,51591,5159,46432,10.0,True,True,True,True
+SPLN14,merged,Endothelial,tierA_p90,50036,5004,45032,10.001,50036,5004,45032,10.001,True,True,True,True
+SPLN14,merged,Mono/Mac/DC,tierA_p90,34152,3416,30736,10.002,34152,3416,30736,10.002,True,True,True,True
+SPLN14,merged,Plasma cells,tierA_p90,15929,1593,14336,10.001,15929,1593,14336,10.001,True,True,True,True
+SPLN14,merged,Stromal,tierA_p90,41356,4136,37220,10.001,41356,4136,37220,10.001,True,True,True,True
+SPLN14,merged,T/NK cells,tierA_p90,39158,46,39112,0.117,39158,46,39112,0.117,False,False,True,False
+SPLN14,merged,B cells,senepy_p90,51591,5153,46438,9.988,51591,5153,46438,9.988,True,True,True,True
+SPLN14,merged,Endothelial,senepy_p90,50036,5004,45032,10.001,50036,5004,45032,10.001,True,True,True,True
+SPLN14,merged,Mono/Mac/DC,senepy_p90,34152,3416,30736,10.002,34152,3416,30736,10.002,True,True,True,True
+SPLN14,merged,Plasma cells,senepy_p90,15929,1589,14340,9.976,15929,1589,14340,9.976,True,True,True,True
+SPLN14,merged,Stromal,senepy_p90,41356,4136,37220,10.001,41356,4136,37220,10.001,True,True,True,True
+SPLN14,merged,T/NK cells,senepy_p90,39158,46,39112,0.117,457,46,411,10.066,True,False,False,False
+SPLN14,merged,B cells,tierA_p95,51591,2580,49011,5.001,51591,2580,49011,5.001,True,True,True,True
+SPLN14,merged,Endothelial,tierA_p95,50036,2502,47534,5.0,50036,2502,47534,5.0,True,True,True,True
+SPLN14,merged,Mono/Mac/DC,tierA_p95,34152,1709,32443,5.004,34152,1709,32443,5.004,True,True,True,True
+SPLN14,merged,Plasma cells,tierA_p95,15929,797,15132,5.003,15929,797,15132,5.003,True,True,True,True
+SPLN14,merged,Stromal,tierA_p95,41356,2069,39287,5.003,41356,2069,39287,5.003,True,True,True,True
+SPLN14,merged,T/NK cells,tierA_p95,39158,23,39135,0.059,39158,23,39135,0.059,False,False,True,False
+SPLN14,merged,B cells,senepy_p95,51591,2578,49013,4.997,51591,2578,49013,4.997,True,True,True,True
+SPLN14,merged,Endothelial,senepy_p95,50036,2502,47534,5.0,50036,2502,47534,5.0,True,True,True,True
+SPLN14,merged,Mono/Mac/DC,senepy_p95,34152,1709,32443,5.004,34152,1709,32443,5.004,True,True,True,True
+SPLN14,merged,Plasma cells,senepy_p95,15929,797,15132,5.003,15929,797,15132,5.003,True,True,True,True
+SPLN14,merged,Stromal,senepy_p95,41356,2069,39287,5.003,41356,2069,39287,5.003,True,True,True,True
+SPLN14,merged,T/NK cells,senepy_p95,39158,23,39135,0.059,457,23,434,5.033,True,False,False,False
+SPLN14,merged,B cells,tierA_p99,51591,516,51075,1.0,51591,516,51075,1.0,True,True,True,True
+SPLN14,merged,Endothelial,tierA_p99,50036,501,49535,1.001,50036,501,49535,1.001,True,True,True,True
+SPLN14,merged,Mono/Mac/DC,tierA_p99,34152,343,33809,1.004,34152,343,33809,1.004,True,True,True,True
+SPLN14,merged,Plasma cells,tierA_p99,15929,160,15769,1.004,15929,160,15769,1.004,True,False,True,False
+SPLN14,merged,Stromal,tierA_p99,41356,415,40941,1.003,41356,415,40941,1.003,True,True,True,True
+SPLN14,merged,T/NK cells,tierA_p99,39158,5,39153,0.013,39158,5,39153,0.013,False,False,True,False
+SPLN14,merged,B cells,senepy_p99,51591,513,51078,0.994,51591,513,51078,0.994,False,True,True,False
+SPLN14,merged,Endothelial,senepy_p99,50036,501,49535,1.001,50036,501,49535,1.001,True,True,True,True
+SPLN14,merged,Mono/Mac/DC,senepy_p99,34152,343,33809,1.004,34152,343,33809,1.004,True,True,True,True
+SPLN14,merged,Plasma cells,senepy_p99,15929,160,15769,1.004,15929,160,15769,1.004,True,False,True,False
+SPLN14,merged,Stromal,senepy_p99,41356,415,40941,1.003,41356,415,40941,1.003,True,True,True,True
+SPLN14,merged,T/NK cells,senepy_p99,39158,5,39153,0.013,457,5,452,1.094,True,False,False,False
+SPLN14,merged,B cells,cdkn1a_pos,51591,376,51215,0.729,51591,376,51215,0.729,False,True,True,False
+SPLN14,merged,Endothelial,cdkn1a_pos,50036,930,49106,1.859,50036,930,49106,1.859,True,True,True,True
+SPLN14,merged,Mono/Mac/DC,cdkn1a_pos,34152,368,33784,1.078,34152,368,33784,1.078,True,True,True,True
+SPLN14,merged,Plasma cells,cdkn1a_pos,15929,382,15547,2.398,15929,382,15547,2.398,True,True,True,True
+SPLN14,merged,Stromal,cdkn1a_pos,41356,866,40490,2.094,41356,866,40490,2.094,True,True,True,True
+SPLN14,merged,T/NK cells,cdkn1a_pos,39158,221,38937,0.564,39158,221,38937,0.564,False,True,True,False
+SPLN14,merged,B cells,tierApm_p95__downstream_arrest,51591,2580,49011,5.001,51591,2580,49011,5.001,True,True,True,True
+SPLN14,merged,Endothelial,tierApm_p95__downstream_arrest,50036,2502,47534,5.0,50036,2502,47534,5.0,True,True,True,True
+SPLN14,merged,Mono/Mac/DC,tierApm_p95__downstream_arrest,34152,1708,32444,5.001,34152,1708,32444,5.001,True,True,True,True
+SPLN14,merged,Plasma cells,tierApm_p95__downstream_arrest,15929,797,15132,5.003,15929,797,15132,5.003,True,True,True,True
+SPLN14,merged,Stromal,tierApm_p95__downstream_arrest,41356,2069,39287,5.003,41356,2069,39287,5.003,True,True,True,True
+SPLN14,merged,T/NK cells,tierApm_p95__downstream_arrest,39158,23,39135,0.059,39158,23,39135,0.059,False,False,True,False
+SPLN14,merged,B cells,tierApm_p95__emt_ecm,51591,2580,49011,5.001,51591,2580,49011,5.001,True,True,True,True
+SPLN14,merged,Endothelial,tierApm_p95__emt_ecm,50036,2502,47534,5.0,50036,2502,47534,5.0,True,True,True,True
+SPLN14,merged,Mono/Mac/DC,tierApm_p95__emt_ecm,34152,1709,32443,5.004,34152,1709,32443,5.004,True,True,True,True
+SPLN14,merged,Plasma cells,tierApm_p95__emt_ecm,15929,797,15132,5.003,15929,797,15132,5.003,True,True,True,True
+SPLN14,merged,Stromal,tierApm_p95__emt_ecm,41356,2069,39287,5.003,41356,2069,39287,5.003,True,True,True,True
+SPLN14,merged,T/NK cells,tierApm_p95__emt_ecm,39158,23,39135,0.059,39158,23,39135,0.059,False,False,True,False
+SPLN14,merged,B cells,tierApm_p95__il6_jak_stat3,51591,2580,49011,5.001,51591,2580,49011,5.001,True,True,True,True
+SPLN14,merged,Endothelial,tierApm_p95__il6_jak_stat3,50036,2500,47536,4.996,50036,2500,47536,4.996,True,True,True,True
+SPLN14,merged,Mono/Mac/DC,tierApm_p95__il6_jak_stat3,34152,1709,32443,5.004,34152,1709,32443,5.004,True,True,True,True
+SPLN14,merged,Plasma cells,tierApm_p95__il6_jak_stat3,15929,797,15132,5.003,15929,797,15132,5.003,True,True,True,True
+SPLN14,merged,Stromal,tierApm_p95__il6_jak_stat3,41356,2069,39287,5.003,41356,2069,39287,5.003,True,True,True,True
+SPLN14,merged,T/NK cells,tierApm_p95__il6_jak_stat3,39158,23,39135,0.059,39158,23,39135,0.059,False,False,True,False
+SPLN14,merged,B cells,tierApm_p95__interferon_response,51591,2579,49012,4.999,51591,2579,49012,4.999,True,True,True,True
+SPLN14,merged,Endothelial,tierApm_p95__interferon_response,50036,2502,47534,5.0,50036,2502,47534,5.0,True,True,True,True
+SPLN14,merged,Mono/Mac/DC,tierApm_p95__interferon_response,34152,1709,32443,5.004,34152,1709,32443,5.004,True,True,True,True
+SPLN14,merged,Plasma cells,tierApm_p95__interferon_response,15929,797,15132,5.003,15929,797,15132,5.003,True,True,True,True
+SPLN14,merged,Stromal,tierApm_p95__interferon_response,41356,2069,39287,5.003,41356,2069,39287,5.003,True,True,True,True
+SPLN14,merged,T/NK cells,tierApm_p95__interferon_response,39158,23,39135,0.059,39158,23,39135,0.059,False,False,True,False
+SPLN14,merged,B cells,tierApm_p95__oxidative_stress,51591,2580,49011,5.001,51591,2580,49011,5.001,True,True,True,True
+SPLN14,merged,Endothelial,tierApm_p95__oxidative_stress,50036,2501,47535,4.998,50036,2501,47535,4.998,True,True,True,True
+SPLN14,merged,Mono/Mac/DC,tierApm_p95__oxidative_stress,34152,1709,32443,5.004,34152,1709,32443,5.004,True,True,True,True
+SPLN14,merged,Plasma cells,tierApm_p95__oxidative_stress,15929,797,15132,5.003,15929,797,15132,5.003,True,True,True,True
+SPLN14,merged,Stromal,tierApm_p95__oxidative_stress,41356,2069,39287,5.003,41356,2069,39287,5.003,True,True,True,True
+SPLN14,merged,T/NK cells,tierApm_p95__oxidative_stress,39158,23,39135,0.059,39158,23,39135,0.059,False,False,True,False
+SPLN14,merged,B cells,tierApm_p95__secondary_senescence,51591,2580,49011,5.001,51591,2580,49011,5.001,True,True,True,True
+SPLN14,merged,Endothelial,tierApm_p95__secondary_senescence,50036,2500,47536,4.996,50036,2500,47536,4.996,True,True,True,True
+SPLN14,merged,Mono/Mac/DC,tierApm_p95__secondary_senescence,34152,1709,32443,5.004,34152,1709,32443,5.004,True,True,True,True
+SPLN14,merged,Plasma cells,tierApm_p95__secondary_senescence,15929,797,15132,5.003,15929,797,15132,5.003,True,True,True,True
+SPLN14,merged,Stromal,tierApm_p95__secondary_senescence,41356,2069,39287,5.003,41356,2069,39287,5.003,True,True,True,True
+SPLN14,merged,T/NK cells,tierApm_p95__secondary_senescence,39158,23,39135,0.059,39158,23,39135,0.059,False,False,True,False
+SPLN14,merged,B cells,tierApm_p95__tnfa_nfkb_proximal,51591,2580,49011,5.001,51591,2580,49011,5.001,True,True,True,True
+SPLN14,merged,Endothelial,tierApm_p95__tnfa_nfkb_proximal,50036,2502,47534,5.0,50036,2502,47534,5.0,True,True,True,True
+SPLN14,merged,Mono/Mac/DC,tierApm_p95__tnfa_nfkb_proximal,34152,1709,32443,5.004,34152,1709,32443,5.004,True,True,True,True
+SPLN14,merged,Plasma cells,tierApm_p95__tnfa_nfkb_proximal,15929,797,15132,5.003,15929,797,15132,5.003,True,True,True,True
+SPLN14,merged,Stromal,tierApm_p95__tnfa_nfkb_proximal,41356,2069,39287,5.003,41356,2069,39287,5.003,True,True,True,True
+SPLN14,merged,T/NK cells,tierApm_p95__tnfa_nfkb_proximal,39158,23,39135,0.059,39158,23,39135,0.059,False,False,True,False
+SPLN21,fine,Endothelial cells,tierA_p90,31609,3161,28448,10.0,31609,3161,28448,10.0,True,True,True,True
+SPLN21,fine,Erythroid cells,tierA_p90,584,59,525,10.103,584,59,525,10.103,True,False,False,False
+SPLN21,fine,Fibroblasts,tierA_p90,18932,1894,17038,10.004,18932,1894,17038,10.004,True,True,True,True
+SPLN21,fine,Follicular B cells,tierA_p90,28543,2855,25688,10.002,28543,2855,25688,10.002,True,True,True,True
+SPLN21,fine,Monocytes,tierA_p90,10418,1042,9376,10.002,10418,1042,9376,10.002,True,True,True,True
+SPLN21,fine,NK cells,tierA_p90,6426,643,5783,10.006,6426,643,5783,10.006,True,True,True,True
+SPLN21,fine,Neutrophils,tierA_p90,19875,1988,17887,10.003,19875,1988,17887,10.003,True,True,True,True
+SPLN21,fine,Plasma cells,tierA_p90,6440,644,5796,10.0,6440,644,5796,10.0,True,True,True,True
+SPLN21,fine,Red pulp macrophages,tierA_p90,19217,1921,17296,9.996,19217,1921,17296,9.996,True,True,True,True
+SPLN21,fine,Smooth muscle / capsule,tierA_p90,6315,632,5683,10.008,6315,632,5683,10.008,True,True,True,True
+SPLN21,fine,cDC2,tierA_p90,2157,216,1941,10.014,2157,216,1941,10.014,True,True,False,False
+SPLN21,fine,Endothelial cells,senepy_p90,31609,3161,28448,10.0,31609,3161,28448,10.0,True,True,True,True
+SPLN21,fine,Erythroid cells,senepy_p90,584,0,584,0.0,0,0,0,,False,False,False,False
+SPLN21,fine,Fibroblasts,senepy_p90,18932,1894,17038,10.004,18932,1894,17038,10.004,True,True,True,True
+SPLN21,fine,Follicular B cells,senepy_p90,28543,2851,25692,9.988,28543,2851,25692,9.988,True,True,True,True
+SPLN21,fine,Monocytes,senepy_p90,10418,1042,9376,10.002,10418,1042,9376,10.002,True,True,True,True
+SPLN21,fine,NK cells,senepy_p90,6426,643,5783,10.006,6426,643,5783,10.006,True,True,True,True
+SPLN21,fine,Neutrophils,senepy_p90,19875,1988,17887,10.003,19875,1988,17887,10.003,True,True,True,True
+SPLN21,fine,Plasma cells,senepy_p90,6440,644,5796,10.0,6440,644,5796,10.0,True,True,True,True
+SPLN21,fine,Red pulp macrophages,senepy_p90,19217,1922,17295,10.002,19217,1922,17295,10.002,True,True,True,True
+SPLN21,fine,Smooth muscle / capsule,senepy_p90,6315,632,5683,10.008,6315,632,5683,10.008,True,True,True,True
+SPLN21,fine,cDC2,senepy_p90,2157,0,2157,0.0,0,0,0,,False,False,False,False
+SPLN21,fine,Endothelial cells,tierA_p95,31609,1581,30028,5.002,31609,1581,30028,5.002,True,True,True,True
+SPLN21,fine,Erythroid cells,tierA_p95,584,30,554,5.137,584,30,554,5.137,True,False,False,False
+SPLN21,fine,Fibroblasts,tierA_p95,18932,946,17986,4.997,18932,946,17986,4.997,True,True,True,True
+SPLN21,fine,Follicular B cells,tierA_p95,28543,1428,27115,5.003,28543,1428,27115,5.003,True,True,True,True
+SPLN21,fine,Monocytes,tierA_p95,10418,521,9897,5.001,10418,521,9897,5.001,True,True,True,True
+SPLN21,fine,NK cells,tierA_p95,6426,322,6104,5.011,6426,322,6104,5.011,True,True,True,True
+SPLN21,fine,Neutrophils,tierA_p95,19875,994,18881,5.001,19875,994,18881,5.001,True,True,True,True
+SPLN21,fine,Plasma cells,tierA_p95,6440,322,6118,5.0,6440,322,6118,5.0,True,True,True,True
+SPLN21,fine,Red pulp macrophages,tierA_p95,19217,961,18256,5.001,19217,961,18256,5.001,True,True,True,True
+SPLN21,fine,Smooth muscle / capsule,tierA_p95,6315,316,5999,5.004,6315,316,5999,5.004,True,True,True,True
+SPLN21,fine,cDC2,tierA_p95,2157,108,2049,5.007,2157,108,2049,5.007,True,False,False,False
+SPLN21,fine,Endothelial cells,senepy_p95,31609,1581,30028,5.002,31609,1581,30028,5.002,True,True,True,True
+SPLN21,fine,Erythroid cells,senepy_p95,584,0,584,0.0,0,0,0,,False,False,False,False
+SPLN21,fine,Fibroblasts,senepy_p95,18932,947,17985,5.002,18932,947,17985,5.002,True,True,True,True
+SPLN21,fine,Follicular B cells,senepy_p95,28543,1427,27116,4.999,28543,1427,27116,4.999,True,True,True,True
+SPLN21,fine,Monocytes,senepy_p95,10418,521,9897,5.001,10418,521,9897,5.001,True,True,True,True
+SPLN21,fine,NK cells,senepy_p95,6426,322,6104,5.011,6426,322,6104,5.011,True,True,True,True
+SPLN21,fine,Neutrophils,senepy_p95,19875,994,18881,5.001,19875,994,18881,5.001,True,True,True,True
+SPLN21,fine,Plasma cells,senepy_p95,6440,320,6120,4.969,6440,320,6120,4.969,True,True,True,True
+SPLN21,fine,Red pulp macrophages,senepy_p95,19217,961,18256,5.001,19217,961,18256,5.001,True,True,True,True
+SPLN21,fine,Smooth muscle / capsule,senepy_p95,6315,316,5999,5.004,6315,316,5999,5.004,True,True,True,True
+SPLN21,fine,cDC2,senepy_p95,2157,0,2157,0.0,0,0,0,,False,False,False,False
+SPLN21,fine,Endothelial cells,tierA_p99,31609,317,31292,1.003,31609,317,31292,1.003,True,True,True,True
+SPLN21,fine,Erythroid cells,tierA_p99,584,6,578,1.027,584,6,578,1.027,True,False,False,False
+SPLN21,fine,Fibroblasts,tierA_p99,18932,190,18742,1.004,18932,190,18742,1.004,True,False,True,False
+SPLN21,fine,Follicular B cells,tierA_p99,28543,286,28257,1.002,28543,286,28257,1.002,True,True,True,True
+SPLN21,fine,Monocytes,tierA_p99,10418,105,10313,1.008,10418,105,10313,1.008,True,False,True,False
+SPLN21,fine,NK cells,tierA_p99,6426,65,6361,1.012,6426,65,6361,1.012,True,False,True,False
+SPLN21,fine,Neutrophils,tierA_p99,19875,197,19678,0.991,19875,197,19678,0.991,False,False,True,False
+SPLN21,fine,Plasma cells,tierA_p99,6440,65,6375,1.009,6440,65,6375,1.009,True,False,True,False
+SPLN21,fine,Red pulp macrophages,tierA_p99,19217,193,19024,1.004,19217,193,19024,1.004,True,False,True,False
+SPLN21,fine,Smooth muscle / capsule,tierA_p99,6315,64,6251,1.013,6315,64,6251,1.013,True,False,True,False
+SPLN21,fine,cDC2,tierA_p99,2157,22,2135,1.02,2157,22,2135,1.02,True,False,False,False
+SPLN21,fine,Endothelial cells,senepy_p99,31609,317,31292,1.003,31609,317,31292,1.003,True,True,True,True
+SPLN21,fine,Erythroid cells,senepy_p99,584,0,584,0.0,0,0,0,,False,False,False,False
+SPLN21,fine,Fibroblasts,senepy_p99,18932,190,18742,1.004,18932,190,18742,1.004,True,False,True,False
+SPLN21,fine,Follicular B cells,senepy_p99,28543,286,28257,1.002,28543,286,28257,1.002,True,True,True,True
+SPLN21,fine,Monocytes,senepy_p99,10418,105,10313,1.008,10418,105,10313,1.008,True,False,True,False
+SPLN21,fine,NK cells,senepy_p99,6426,65,6361,1.012,6426,65,6361,1.012,True,False,True,False
+SPLN21,fine,Neutrophils,senepy_p99,19875,199,19676,1.001,19875,199,19676,1.001,True,False,True,False
+SPLN21,fine,Plasma cells,senepy_p99,6440,65,6375,1.009,6440,65,6375,1.009,True,False,True,False
+SPLN21,fine,Red pulp macrophages,senepy_p99,19217,193,19024,1.004,19217,193,19024,1.004,True,False,True,False
+SPLN21,fine,Smooth muscle / capsule,senepy_p99,6315,64,6251,1.013,6315,64,6251,1.013,True,False,True,False
+SPLN21,fine,cDC2,senepy_p99,2157,0,2157,0.0,0,0,0,,False,False,False,False
+SPLN21,fine,Endothelial cells,cdkn1a_pos,31609,1605,30004,5.078,31609,1605,30004,5.078,True,True,True,True
+SPLN21,fine,Erythroid cells,cdkn1a_pos,584,10,574,1.712,584,10,574,1.712,True,False,False,False
+SPLN21,fine,Fibroblasts,cdkn1a_pos,18932,287,18645,1.516,18932,287,18645,1.516,True,True,True,True
+SPLN21,fine,Follicular B cells,cdkn1a_pos,28543,297,28246,1.041,28543,297,28246,1.041,True,True,True,True
+SPLN21,fine,Monocytes,cdkn1a_pos,10418,339,10079,3.254,10418,339,10079,3.254,True,True,True,True
+SPLN21,fine,NK cells,cdkn1a_pos,6426,58,6368,0.903,6426,58,6368,0.903,False,False,True,False
+SPLN21,fine,Neutrophils,cdkn1a_pos,19875,129,19746,0.649,19875,129,19746,0.649,False,False,True,False
+SPLN21,fine,Plasma cells,cdkn1a_pos,6440,252,6188,3.913,6440,252,6188,3.913,True,True,True,True
+SPLN21,fine,Red pulp macrophages,cdkn1a_pos,19217,258,18959,1.343,19217,258,18959,1.343,True,True,True,True
+SPLN21,fine,Smooth muscle / capsule,cdkn1a_pos,6315,176,6139,2.787,6315,176,6139,2.787,True,False,True,False
+SPLN21,fine,cDC2,cdkn1a_pos,2157,40,2117,1.854,2157,40,2117,1.854,True,False,False,False
+SPLN21,fine,Endothelial cells,tierApm_p95__downstream_arrest,31609,1581,30028,5.002,31609,1581,30028,5.002,True,True,True,True
+SPLN21,fine,Erythroid cells,tierApm_p95__downstream_arrest,584,30,554,5.137,584,30,554,5.137,True,False,False,False
+SPLN21,fine,Fibroblasts,tierApm_p95__downstream_arrest,18932,947,17985,5.002,18932,947,17985,5.002,True,True,True,True
+SPLN21,fine,Follicular B cells,tierApm_p95__downstream_arrest,28543,1428,27115,5.003,28543,1428,27115,5.003,True,True,True,True
+SPLN21,fine,Monocytes,tierApm_p95__downstream_arrest,10418,521,9897,5.001,10418,521,9897,5.001,True,True,True,True
+SPLN21,fine,NK cells,tierApm_p95__downstream_arrest,6426,322,6104,5.011,6426,322,6104,5.011,True,True,True,True
+SPLN21,fine,Neutrophils,tierApm_p95__downstream_arrest,19875,994,18881,5.001,19875,994,18881,5.001,True,True,True,True
+SPLN21,fine,Plasma cells,tierApm_p95__downstream_arrest,6440,322,6118,5.0,6440,322,6118,5.0,True,True,True,True
+SPLN21,fine,Red pulp macrophages,tierApm_p95__downstream_arrest,19217,961,18256,5.001,19217,961,18256,5.001,True,True,True,True
+SPLN21,fine,Smooth muscle / capsule,tierApm_p95__downstream_arrest,6315,316,5999,5.004,6315,316,5999,5.004,True,True,True,True
+SPLN21,fine,cDC2,tierApm_p95__downstream_arrest,2157,108,2049,5.007,2157,108,2049,5.007,True,False,False,False
+SPLN21,fine,Endothelial cells,tierApm_p95__emt_ecm,31609,1581,30028,5.002,31609,1581,30028,5.002,True,True,True,True
+SPLN21,fine,Erythroid cells,tierApm_p95__emt_ecm,584,30,554,5.137,584,30,554,5.137,True,False,False,False
+SPLN21,fine,Fibroblasts,tierApm_p95__emt_ecm,18932,947,17985,5.002,18932,947,17985,5.002,True,True,True,True
+SPLN21,fine,Follicular B cells,tierApm_p95__emt_ecm,28543,1428,27115,5.003,28543,1428,27115,5.003,True,True,True,True
+SPLN21,fine,Monocytes,tierApm_p95__emt_ecm,10418,521,9897,5.001,10418,521,9897,5.001,True,True,True,True
+SPLN21,fine,NK cells,tierApm_p95__emt_ecm,6426,322,6104,5.011,6426,322,6104,5.011,True,True,True,True
+SPLN21,fine,Neutrophils,tierApm_p95__emt_ecm,19875,993,18882,4.996,19875,993,18882,4.996,True,True,True,True
+SPLN21,fine,Plasma cells,tierApm_p95__emt_ecm,6440,322,6118,5.0,6440,322,6118,5.0,True,True,True,True
+SPLN21,fine,Red pulp macrophages,tierApm_p95__emt_ecm,19217,961,18256,5.001,19217,961,18256,5.001,True,True,True,True
+SPLN21,fine,Smooth muscle / capsule,tierApm_p95__emt_ecm,6315,316,5999,5.004,6315,316,5999,5.004,True,True,True,True
+SPLN21,fine,cDC2,tierApm_p95__emt_ecm,2157,108,2049,5.007,2157,108,2049,5.007,True,False,False,False
+SPLN21,fine,Endothelial cells,tierApm_p95__il6_jak_stat3,31609,1581,30028,5.002,31609,1581,30028,5.002,True,True,True,True
+SPLN21,fine,Erythroid cells,tierApm_p95__il6_jak_stat3,584,30,554,5.137,584,30,554,5.137,True,False,False,False
+SPLN21,fine,Fibroblasts,tierApm_p95__il6_jak_stat3,18932,947,17985,5.002,18932,947,17985,5.002,True,True,True,True
+SPLN21,fine,Follicular B cells,tierApm_p95__il6_jak_stat3,28543,1428,27115,5.003,28543,1428,27115,5.003,True,True,True,True
+SPLN21,fine,Monocytes,tierApm_p95__il6_jak_stat3,10418,521,9897,5.001,10418,521,9897,5.001,True,True,True,True
+SPLN21,fine,NK cells,tierApm_p95__il6_jak_stat3,6426,322,6104,5.011,6426,322,6104,5.011,True,True,True,True
+SPLN21,fine,Neutrophils,tierApm_p95__il6_jak_stat3,19875,994,18881,5.001,19875,994,18881,5.001,True,True,True,True
+SPLN21,fine,Plasma cells,tierApm_p95__il6_jak_stat3,6440,322,6118,5.0,6440,322,6118,5.0,True,True,True,True
+SPLN21,fine,Red pulp macrophages,tierApm_p95__il6_jak_stat3,19217,961,18256,5.001,19217,961,18256,5.001,True,True,True,True
+SPLN21,fine,Smooth muscle / capsule,tierApm_p95__il6_jak_stat3,6315,316,5999,5.004,6315,316,5999,5.004,True,True,True,True
+SPLN21,fine,cDC2,tierApm_p95__il6_jak_stat3,2157,108,2049,5.007,2157,108,2049,5.007,True,False,False,False
+SPLN21,fine,Endothelial cells,tierApm_p95__interferon_response,31609,1581,30028,5.002,31609,1581,30028,5.002,True,True,True,True
+SPLN21,fine,Erythroid cells,tierApm_p95__interferon_response,584,30,554,5.137,584,30,554,5.137,True,False,False,False
+SPLN21,fine,Fibroblasts,tierApm_p95__interferon_response,18932,947,17985,5.002,18932,947,17985,5.002,True,True,True,True
+SPLN21,fine,Follicular B cells,tierApm_p95__interferon_response,28543,1428,27115,5.003,28543,1428,27115,5.003,True,True,True,True
+SPLN21,fine,Monocytes,tierApm_p95__interferon_response,10418,521,9897,5.001,10418,521,9897,5.001,True,True,True,True
+SPLN21,fine,NK cells,tierApm_p95__interferon_response,6426,322,6104,5.011,6426,322,6104,5.011,True,True,True,True
+SPLN21,fine,Neutrophils,tierApm_p95__interferon_response,19875,994,18881,5.001,19875,994,18881,5.001,True,True,True,True
+SPLN21,fine,Plasma cells,tierApm_p95__interferon_response,6440,322,6118,5.0,6440,322,6118,5.0,True,True,True,True
+SPLN21,fine,Red pulp macrophages,tierApm_p95__interferon_response,19217,961,18256,5.001,19217,961,18256,5.001,True,True,True,True
+SPLN21,fine,Smooth muscle / capsule,tierApm_p95__interferon_response,6315,316,5999,5.004,6315,316,5999,5.004,True,True,True,True
+SPLN21,fine,cDC2,tierApm_p95__interferon_response,2157,108,2049,5.007,2157,108,2049,5.007,True,False,False,False
+SPLN21,fine,Endothelial cells,tierApm_p95__oxidative_stress,31609,1581,30028,5.002,31609,1581,30028,5.002,True,True,True,True
+SPLN21,fine,Erythroid cells,tierApm_p95__oxidative_stress,584,30,554,5.137,584,30,554,5.137,True,False,False,False
+SPLN21,fine,Fibroblasts,tierApm_p95__oxidative_stress,18932,947,17985,5.002,18932,947,17985,5.002,True,True,True,True
+SPLN21,fine,Follicular B cells,tierApm_p95__oxidative_stress,28543,1428,27115,5.003,28543,1428,27115,5.003,True,True,True,True
+SPLN21,fine,Monocytes,tierApm_p95__oxidative_stress,10418,521,9897,5.001,10418,521,9897,5.001,True,True,True,True
+SPLN21,fine,NK cells,tierApm_p95__oxidative_stress,6426,322,6104,5.011,6426,322,6104,5.011,True,True,True,True
+SPLN21,fine,Neutrophils,tierApm_p95__oxidative_stress,19875,992,18883,4.991,19875,992,18883,4.991,True,True,True,True
+SPLN21,fine,Plasma cells,tierApm_p95__oxidative_stress,6440,322,6118,5.0,6440,322,6118,5.0,True,True,True,True
+SPLN21,fine,Red pulp macrophages,tierApm_p95__oxidative_stress,19217,961,18256,5.001,19217,961,18256,5.001,True,True,True,True
+SPLN21,fine,Smooth muscle / capsule,tierApm_p95__oxidative_stress,6315,316,5999,5.004,6315,316,5999,5.004,True,True,True,True
+SPLN21,fine,cDC2,tierApm_p95__oxidative_stress,2157,108,2049,5.007,2157,108,2049,5.007,True,False,False,False
+SPLN21,fine,Endothelial cells,tierApm_p95__secondary_senescence,31609,1581,30028,5.002,31609,1581,30028,5.002,True,True,True,True
+SPLN21,fine,Erythroid cells,tierApm_p95__secondary_senescence,584,30,554,5.137,584,30,554,5.137,True,False,False,False
+SPLN21,fine,Fibroblasts,tierApm_p95__secondary_senescence,18932,947,17985,5.002,18932,947,17985,5.002,True,True,True,True
+SPLN21,fine,Follicular B cells,tierApm_p95__secondary_senescence,28543,1428,27115,5.003,28543,1428,27115,5.003,True,True,True,True
+SPLN21,fine,Monocytes,tierApm_p95__secondary_senescence,10418,521,9897,5.001,10418,521,9897,5.001,True,True,True,True
+SPLN21,fine,NK cells,tierApm_p95__secondary_senescence,6426,322,6104,5.011,6426,322,6104,5.011,True,True,True,True
+SPLN21,fine,Neutrophils,tierApm_p95__secondary_senescence,19875,994,18881,5.001,19875,994,18881,5.001,True,True,True,True
+SPLN21,fine,Plasma cells,tierApm_p95__secondary_senescence,6440,322,6118,5.0,6440,322,6118,5.0,True,True,True,True
+SPLN21,fine,Red pulp macrophages,tierApm_p95__secondary_senescence,19217,961,18256,5.001,19217,961,18256,5.001,True,True,True,True
+SPLN21,fine,Smooth muscle / capsule,tierApm_p95__secondary_senescence,6315,316,5999,5.004,6315,316,5999,5.004,True,True,True,True
+SPLN21,fine,cDC2,tierApm_p95__secondary_senescence,2157,108,2049,5.007,2157,108,2049,5.007,True,False,False,False
+SPLN21,fine,Endothelial cells,tierApm_p95__tnfa_nfkb_proximal,31609,1581,30028,5.002,31609,1581,30028,5.002,True,True,True,True
+SPLN21,fine,Erythroid cells,tierApm_p95__tnfa_nfkb_proximal,584,30,554,5.137,584,30,554,5.137,True,False,False,False
+SPLN21,fine,Fibroblasts,tierApm_p95__tnfa_nfkb_proximal,18932,947,17985,5.002,18932,947,17985,5.002,True,True,True,True
+SPLN21,fine,Follicular B cells,tierApm_p95__tnfa_nfkb_proximal,28543,1428,27115,5.003,28543,1428,27115,5.003,True,True,True,True
+SPLN21,fine,Monocytes,tierApm_p95__tnfa_nfkb_proximal,10418,521,9897,5.001,10418,521,9897,5.001,True,True,True,True
+SPLN21,fine,NK cells,tierApm_p95__tnfa_nfkb_proximal,6426,322,6104,5.011,6426,322,6104,5.011,True,True,True,True
+SPLN21,fine,Neutrophils,tierApm_p95__tnfa_nfkb_proximal,19875,994,18881,5.001,19875,994,18881,5.001,True,True,True,True
+SPLN21,fine,Plasma cells,tierApm_p95__tnfa_nfkb_proximal,6440,322,6118,5.0,6440,322,6118,5.0,True,True,True,True
+SPLN21,fine,Red pulp macrophages,tierApm_p95__tnfa_nfkb_proximal,19217,961,18256,5.001,19217,961,18256,5.001,True,True,True,True
+SPLN21,fine,Smooth muscle / capsule,tierApm_p95__tnfa_nfkb_proximal,6315,316,5999,5.004,6315,316,5999,5.004,True,True,True,True
+SPLN21,fine,cDC2,tierApm_p95__tnfa_nfkb_proximal,2157,108,2049,5.007,2157,108,2049,5.007,True,False,False,False
+SPLN21,merged,B cells,tierA_p90,28543,2855,25688,10.002,28543,2855,25688,10.002,True,True,True,True
+SPLN21,merged,Endothelial,tierA_p90,31609,3161,28448,10.0,31609,3161,28448,10.0,True,True,True,True
+SPLN21,merged,Erythroid cells,tierA_p90,584,59,525,10.103,584,59,525,10.103,True,False,False,False
+SPLN21,merged,Mono/Mac/DC,tierA_p90,31792,3179,28613,9.999,31792,3179,28613,9.999,True,True,True,True
+SPLN21,merged,Neutrophils,tierA_p90,19875,1988,17887,10.003,19875,1988,17887,10.003,True,True,True,True
+SPLN21,merged,Plasma cells,tierA_p90,6440,644,5796,10.0,6440,644,5796,10.0,True,True,True,True
+SPLN21,merged,Stromal,tierA_p90,25247,2526,22721,10.005,25247,2526,22721,10.005,True,True,True,True
+SPLN21,merged,T/NK cells,tierA_p90,26581,643,25938,2.419,26581,643,25938,2.419,True,True,True,True
+SPLN21,merged,B cells,senepy_p90,28543,2851,25692,9.988,28543,2851,25692,9.988,True,True,True,True
+SPLN21,merged,Endothelial,senepy_p90,31609,3161,28448,10.0,31609,3161,28448,10.0,True,True,True,True
+SPLN21,merged,Erythroid cells,senepy_p90,584,0,584,0.0,0,0,0,,False,False,False,False
+SPLN21,merged,Mono/Mac/DC,senepy_p90,31792,2964,28828,9.323,29635,2964,26671,10.002,True,True,True,True
+SPLN21,merged,Neutrophils,senepy_p90,19875,1988,17887,10.003,19875,1988,17887,10.003,True,True,True,True
+SPLN21,merged,Plasma cells,senepy_p90,6440,644,5796,10.0,6440,644,5796,10.0,True,True,True,True
+SPLN21,merged,Stromal,senepy_p90,25247,2526,22721,10.005,25247,2526,22721,10.005,True,True,True,True
+SPLN21,merged,T/NK cells,senepy_p90,26581,643,25938,2.419,6426,643,5783,10.006,True,True,True,True
+SPLN21,merged,B cells,tierA_p95,28543,1428,27115,5.003,28543,1428,27115,5.003,True,True,True,True
+SPLN21,merged,Endothelial,tierA_p95,31609,1581,30028,5.002,31609,1581,30028,5.002,True,True,True,True
+SPLN21,merged,Erythroid cells,tierA_p95,584,30,554,5.137,584,30,554,5.137,True,False,False,False
+SPLN21,merged,Mono/Mac/DC,tierA_p95,31792,1590,30202,5.001,31792,1590,30202,5.001,True,True,True,True
+SPLN21,merged,Neutrophils,tierA_p95,19875,994,18881,5.001,19875,994,18881,5.001,True,True,True,True
+SPLN21,merged,Plasma cells,tierA_p95,6440,322,6118,5.0,6440,322,6118,5.0,True,True,True,True
+SPLN21,merged,Stromal,tierA_p95,25247,1262,23985,4.999,25247,1262,23985,4.999,True,True,True,True
+SPLN21,merged,T/NK cells,tierA_p95,26581,322,26259,1.211,26581,322,26259,1.211,True,True,True,True
+SPLN21,merged,B cells,senepy_p95,28543,1427,27116,4.999,28543,1427,27116,4.999,True,True,True,True
+SPLN21,merged,Endothelial,senepy_p95,31609,1581,30028,5.002,31609,1581,30028,5.002,True,True,True,True
+SPLN21,merged,Erythroid cells,senepy_p95,584,0,584,0.0,0,0,0,,False,False,False,False
+SPLN21,merged,Mono/Mac/DC,senepy_p95,31792,1482,30310,4.662,29635,1482,28153,5.001,True,True,True,True
+SPLN21,merged,Neutrophils,senepy_p95,19875,994,18881,5.001,19875,994,18881,5.001,True,True,True,True
+SPLN21,merged,Plasma cells,senepy_p95,6440,320,6120,4.969,6440,320,6120,4.969,True,True,True,True
+SPLN21,merged,Stromal,senepy_p95,25247,1263,23984,5.003,25247,1263,23984,5.003,True,True,True,True
+SPLN21,merged,T/NK cells,senepy_p95,26581,322,26259,1.211,6426,322,6104,5.011,True,True,True,True
+SPLN21,merged,B cells,tierA_p99,28543,286,28257,1.002,28543,286,28257,1.002,True,True,True,True
+SPLN21,merged,Endothelial,tierA_p99,31609,317,31292,1.003,31609,317,31292,1.003,True,True,True,True
+SPLN21,merged,Erythroid cells,tierA_p99,584,6,578,1.027,584,6,578,1.027,True,False,False,False
+SPLN21,merged,Mono/Mac/DC,tierA_p99,31792,320,31472,1.007,31792,320,31472,1.007,True,True,True,True
+SPLN21,merged,Neutrophils,tierA_p99,19875,197,19678,0.991,19875,197,19678,0.991,False,False,True,False
+SPLN21,merged,Plasma cells,tierA_p99,6440,65,6375,1.009,6440,65,6375,1.009,True,False,True,False
+SPLN21,merged,Stromal,tierA_p99,25247,254,24993,1.006,25247,254,24993,1.006,True,True,True,True
+SPLN21,merged,T/NK cells,tierA_p99,26581,65,26516,0.245,26581,65,26516,0.245,False,False,True,False
+SPLN21,merged,B cells,senepy_p99,28543,286,28257,1.002,28543,286,28257,1.002,True,True,True,True
+SPLN21,merged,Endothelial,senepy_p99,31609,317,31292,1.003,31609,317,31292,1.003,True,True,True,True
+SPLN21,merged,Erythroid cells,senepy_p99,584,0,584,0.0,0,0,0,,False,False,False,False
+SPLN21,merged,Mono/Mac/DC,senepy_p99,31792,298,31494,0.937,29635,298,29337,1.006,True,True,True,True
+SPLN21,merged,Neutrophils,senepy_p99,19875,199,19676,1.001,19875,199,19676,1.001,True,False,True,False
+SPLN21,merged,Plasma cells,senepy_p99,6440,65,6375,1.009,6440,65,6375,1.009,True,False,True,False
+SPLN21,merged,Stromal,senepy_p99,25247,254,24993,1.006,25247,254,24993,1.006,True,True,True,True
+SPLN21,merged,T/NK cells,senepy_p99,26581,65,26516,0.245,6426,65,6361,1.012,True,False,True,False
+SPLN21,merged,B cells,cdkn1a_pos,28543,297,28246,1.041,28543,297,28246,1.041,True,True,True,True
+SPLN21,merged,Endothelial,cdkn1a_pos,31609,1605,30004,5.078,31609,1605,30004,5.078,True,True,True,True
+SPLN21,merged,Erythroid cells,cdkn1a_pos,584,10,574,1.712,584,10,574,1.712,True,False,False,False
+SPLN21,merged,Mono/Mac/DC,cdkn1a_pos,31792,637,31155,2.004,31792,637,31155,2.004,True,True,True,True
+SPLN21,merged,Neutrophils,cdkn1a_pos,19875,129,19746,0.649,19875,129,19746,0.649,False,False,True,False
+SPLN21,merged,Plasma cells,cdkn1a_pos,6440,252,6188,3.913,6440,252,6188,3.913,True,True,True,True
+SPLN21,merged,Stromal,cdkn1a_pos,25247,463,24784,1.834,25247,463,24784,1.834,True,True,True,True
+SPLN21,merged,T/NK cells,cdkn1a_pos,26581,204,26377,0.767,26581,204,26377,0.767,False,True,True,False
+SPLN21,merged,B cells,tierApm_p95__downstream_arrest,28543,1428,27115,5.003,28543,1428,27115,5.003,True,True,True,True
+SPLN21,merged,Endothelial,tierApm_p95__downstream_arrest,31609,1581,30028,5.002,31609,1581,30028,5.002,True,True,True,True
+SPLN21,merged,Erythroid cells,tierApm_p95__downstream_arrest,584,30,554,5.137,584,30,554,5.137,True,False,False,False
+SPLN21,merged,Mono/Mac/DC,tierApm_p95__downstream_arrest,31792,1590,30202,5.001,31792,1590,30202,5.001,True,True,True,True
+SPLN21,merged,Neutrophils,tierApm_p95__downstream_arrest,19875,994,18881,5.001,19875,994,18881,5.001,True,True,True,True
+SPLN21,merged,Plasma cells,tierApm_p95__downstream_arrest,6440,322,6118,5.0,6440,322,6118,5.0,True,True,True,True
+SPLN21,merged,Stromal,tierApm_p95__downstream_arrest,25247,1263,23984,5.003,25247,1263,23984,5.003,True,True,True,True
+SPLN21,merged,T/NK cells,tierApm_p95__downstream_arrest,26581,322,26259,1.211,26581,322,26259,1.211,True,True,True,True
+SPLN21,merged,B cells,tierApm_p95__emt_ecm,28543,1428,27115,5.003,28543,1428,27115,5.003,True,True,True,True
+SPLN21,merged,Endothelial,tierApm_p95__emt_ecm,31609,1581,30028,5.002,31609,1581,30028,5.002,True,True,True,True
+SPLN21,merged,Erythroid cells,tierApm_p95__emt_ecm,584,30,554,5.137,584,30,554,5.137,True,False,False,False
+SPLN21,merged,Mono/Mac/DC,tierApm_p95__emt_ecm,31792,1590,30202,5.001,31792,1590,30202,5.001,True,True,True,True
+SPLN21,merged,Neutrophils,tierApm_p95__emt_ecm,19875,993,18882,4.996,19875,993,18882,4.996,True,True,True,True
+SPLN21,merged,Plasma cells,tierApm_p95__emt_ecm,6440,322,6118,5.0,6440,322,6118,5.0,True,True,True,True
+SPLN21,merged,Stromal,tierApm_p95__emt_ecm,25247,1263,23984,5.003,25247,1263,23984,5.003,True,True,True,True
+SPLN21,merged,T/NK cells,tierApm_p95__emt_ecm,26581,322,26259,1.211,26581,322,26259,1.211,True,True,True,True
+SPLN21,merged,B cells,tierApm_p95__il6_jak_stat3,28543,1428,27115,5.003,28543,1428,27115,5.003,True,True,True,True
+SPLN21,merged,Endothelial,tierApm_p95__il6_jak_stat3,31609,1581,30028,5.002,31609,1581,30028,5.002,True,True,True,True
+SPLN21,merged,Erythroid cells,tierApm_p95__il6_jak_stat3,584,30,554,5.137,584,30,554,5.137,True,False,False,False
+SPLN21,merged,Mono/Mac/DC,tierApm_p95__il6_jak_stat3,31792,1590,30202,5.001,31792,1590,30202,5.001,True,True,True,True
+SPLN21,merged,Neutrophils,tierApm_p95__il6_jak_stat3,19875,994,18881,5.001,19875,994,18881,5.001,True,True,True,True
+SPLN21,merged,Plasma cells,tierApm_p95__il6_jak_stat3,6440,322,6118,5.0,6440,322,6118,5.0,True,True,True,True
+SPLN21,merged,Stromal,tierApm_p95__il6_jak_stat3,25247,1263,23984,5.003,25247,1263,23984,5.003,True,True,True,True
+SPLN21,merged,T/NK cells,tierApm_p95__il6_jak_stat3,26581,322,26259,1.211,26581,322,26259,1.211,True,True,True,True
+SPLN21,merged,B cells,tierApm_p95__interferon_response,28543,1428,27115,5.003,28543,1428,27115,5.003,True,True,True,True
+SPLN21,merged,Endothelial,tierApm_p95__interferon_response,31609,1581,30028,5.002,31609,1581,30028,5.002,True,True,True,True
+SPLN21,merged,Erythroid cells,tierApm_p95__interferon_response,584,30,554,5.137,584,30,554,5.137,True,False,False,False
+SPLN21,merged,Mono/Mac/DC,tierApm_p95__interferon_response,31792,1590,30202,5.001,31792,1590,30202,5.001,True,True,True,True
+SPLN21,merged,Neutrophils,tierApm_p95__interferon_response,19875,994,18881,5.001,19875,994,18881,5.001,True,True,True,True
+SPLN21,merged,Plasma cells,tierApm_p95__interferon_response,6440,322,6118,5.0,6440,322,6118,5.0,True,True,True,True
+SPLN21,merged,Stromal,tierApm_p95__interferon_response,25247,1263,23984,5.003,25247,1263,23984,5.003,True,True,True,True
+SPLN21,merged,T/NK cells,tierApm_p95__interferon_response,26581,322,26259,1.211,26581,322,26259,1.211,True,True,True,True
+SPLN21,merged,B cells,tierApm_p95__oxidative_stress,28543,1428,27115,5.003,28543,1428,27115,5.003,True,True,True,True
+SPLN21,merged,Endothelial,tierApm_p95__oxidative_stress,31609,1581,30028,5.002,31609,1581,30028,5.002,True,True,True,True
+SPLN21,merged,Erythroid cells,tierApm_p95__oxidative_stress,584,30,554,5.137,584,30,554,5.137,True,False,False,False
+SPLN21,merged,Mono/Mac/DC,tierApm_p95__oxidative_stress,31792,1590,30202,5.001,31792,1590,30202,5.001,True,True,True,True
+SPLN21,merged,Neutrophils,tierApm_p95__oxidative_stress,19875,992,18883,4.991,19875,992,18883,4.991,True,True,True,True
+SPLN21,merged,Plasma cells,tierApm_p95__oxidative_stress,6440,322,6118,5.0,6440,322,6118,5.0,True,True,True,True
+SPLN21,merged,Stromal,tierApm_p95__oxidative_stress,25247,1263,23984,5.003,25247,1263,23984,5.003,True,True,True,True
+SPLN21,merged,T/NK cells,tierApm_p95__oxidative_stress,26581,322,26259,1.211,26581,322,26259,1.211,True,True,True,True
+SPLN21,merged,B cells,tierApm_p95__secondary_senescence,28543,1428,27115,5.003,28543,1428,27115,5.003,True,True,True,True
+SPLN21,merged,Endothelial,tierApm_p95__secondary_senescence,31609,1581,30028,5.002,31609,1581,30028,5.002,True,True,True,True
+SPLN21,merged,Erythroid cells,tierApm_p95__secondary_senescence,584,30,554,5.137,584,30,554,5.137,True,False,False,False
+SPLN21,merged,Mono/Mac/DC,tierApm_p95__secondary_senescence,31792,1590,30202,5.001,31792,1590,30202,5.001,True,True,True,True
+SPLN21,merged,Neutrophils,tierApm_p95__secondary_senescence,19875,994,18881,5.001,19875,994,18881,5.001,True,True,True,True
+SPLN21,merged,Plasma cells,tierApm_p95__secondary_senescence,6440,322,6118,5.0,6440,322,6118,5.0,True,True,True,True
+SPLN21,merged,Stromal,tierApm_p95__secondary_senescence,25247,1263,23984,5.003,25247,1263,23984,5.003,True,True,True,True
+SPLN21,merged,T/NK cells,tierApm_p95__secondary_senescence,26581,322,26259,1.211,26581,322,26259,1.211,True,True,True,True
+SPLN21,merged,B cells,tierApm_p95__tnfa_nfkb_proximal,28543,1428,27115,5.003,28543,1428,27115,5.003,True,True,True,True
+SPLN21,merged,Endothelial,tierApm_p95__tnfa_nfkb_proximal,31609,1581,30028,5.002,31609,1581,30028,5.002,True,True,True,True
+SPLN21,merged,Erythroid cells,tierApm_p95__tnfa_nfkb_proximal,584,30,554,5.137,584,30,554,5.137,True,False,False,False
+SPLN21,merged,Mono/Mac/DC,tierApm_p95__tnfa_nfkb_proximal,31792,1590,30202,5.001,31792,1590,30202,5.001,True,True,True,True
+SPLN21,merged,Neutrophils,tierApm_p95__tnfa_nfkb_proximal,19875,994,18881,5.001,19875,994,18881,5.001,True,True,True,True
+SPLN21,merged,Plasma cells,tierApm_p95__tnfa_nfkb_proximal,6440,322,6118,5.0,6440,322,6118,5.0,True,True,True,True
+SPLN21,merged,Stromal,tierApm_p95__tnfa_nfkb_proximal,25247,1263,23984,5.003,25247,1263,23984,5.003,True,True,True,True
+SPLN21,merged,T/NK cells,tierApm_p95__tnfa_nfkb_proximal,26581,322,26259,1.211,26581,322,26259,1.211,True,True,True,True
+SPLN24,fine,CD4 T cells,tierA_p90,31947,3195,28752,10.001,31947,3195,28752,10.001,True,True,True,True
+SPLN24,fine,Endothelial cells,tierA_p90,61790,6179,55611,10.0,61790,6179,55611,10.0,True,True,True,True
+SPLN24,fine,Fibroblasts,tierA_p90,29356,2936,26420,10.001,29356,2936,26420,10.001,True,True,True,True
+SPLN24,fine,Follicular B cells,tierA_p90,69666,6967,62699,10.001,69666,6967,62699,10.001,True,True,True,True
+SPLN24,fine,Germinal centre B cells,tierA_p90,6659,666,5993,10.002,6659,666,5993,10.002,True,True,True,True
+SPLN24,fine,Monocytes,tierA_p90,5018,502,4516,10.004,5018,502,4516,10.004,True,True,False,False
+SPLN24,fine,NK cells,tierA_p90,41189,4119,37070,10.0,41189,4119,37070,10.0,True,True,True,True
+SPLN24,fine,Neutrophils,tierA_p90,11959,1196,10763,10.001,11959,1196,10763,10.001,True,True,True,True
+SPLN24,fine,Plasma cells,tierA_p90,9416,942,8474,10.004,9416,942,8474,10.004,True,True,True,True
+SPLN24,fine,Red pulp macrophages,tierA_p90,21872,2188,19684,10.004,21872,2188,19684,10.004,True,True,True,True
+SPLN24,fine,Smooth muscle / capsule,tierA_p90,15830,1583,14247,10.0,15830,1583,14247,10.0,True,True,True,True
+SPLN24,fine,cDC1,tierA_p90,3884,389,3495,10.015,3884,389,3495,10.015,True,True,False,False
+SPLN24,fine,cDC2,tierA_p90,13623,1363,12260,10.005,13623,1363,12260,10.005,True,True,True,True
+SPLN24,fine,CD4 T cells,senepy_p90,31947,3195,28752,10.001,31947,3195,28752,10.001,True,True,True,True
+SPLN24,fine,Endothelial cells,senepy_p90,61790,6179,55611,10.0,61790,6179,55611,10.0,True,True,True,True
+SPLN24,fine,Fibroblasts,senepy_p90,29356,2936,26420,10.001,29356,2936,26420,10.001,True,True,True,True
+SPLN24,fine,Follicular B cells,senepy_p90,69666,6966,62700,9.999,69666,6966,62700,9.999,True,True,True,True
+SPLN24,fine,Germinal centre B cells,senepy_p90,6659,666,5993,10.002,6659,666,5993,10.002,True,True,True,True
+SPLN24,fine,Monocytes,senepy_p90,5018,502,4516,10.004,5018,502,4516,10.004,True,True,False,False
+SPLN24,fine,NK cells,senepy_p90,41189,4119,37070,10.0,41189,4119,37070,10.0,True,True,True,True
+SPLN24,fine,Neutrophils,senepy_p90,11959,1196,10763,10.001,11959,1196,10763,10.001,True,True,True,True
+SPLN24,fine,Plasma cells,senepy_p90,9416,940,8476,9.983,9416,940,8476,9.983,True,True,True,True
+SPLN24,fine,Red pulp macrophages,senepy_p90,21872,2188,19684,10.004,21872,2188,19684,10.004,True,True,True,True
+SPLN24,fine,Smooth muscle / capsule,senepy_p90,15830,1583,14247,10.0,15830,1583,14247,10.0,True,True,True,True
+SPLN24,fine,cDC1,senepy_p90,3884,0,3884,0.0,0,0,0,,False,False,False,False
+SPLN24,fine,cDC2,senepy_p90,13623,0,13623,0.0,0,0,0,,False,False,False,False
+SPLN24,fine,CD4 T cells,tierA_p95,31947,1598,30349,5.002,31947,1598,30349,5.002,True,True,True,True
+SPLN24,fine,Endothelial cells,tierA_p95,61790,3090,58700,5.001,61790,3090,58700,5.001,True,True,True,True
+SPLN24,fine,Fibroblasts,tierA_p95,29356,1468,27888,5.001,29356,1468,27888,5.001,True,True,True,True
+SPLN24,fine,Follicular B cells,tierA_p95,69666,3484,66182,5.001,69666,3484,66182,5.001,True,True,True,True
+SPLN24,fine,Germinal centre B cells,tierA_p95,6659,333,6326,5.001,6659,333,6326,5.001,True,True,True,True
+SPLN24,fine,Monocytes,tierA_p95,5018,251,4767,5.002,5018,251,4767,5.002,True,True,False,False
+SPLN24,fine,NK cells,tierA_p95,41189,2060,39129,5.001,41189,2060,39129,5.001,True,True,True,True
+SPLN24,fine,Neutrophils,tierA_p95,11959,598,11361,5.0,11959,598,11361,5.0,True,True,True,True
+SPLN24,fine,Plasma cells,tierA_p95,9416,471,8945,5.002,9416,471,8945,5.002,True,True,True,True
+SPLN24,fine,Red pulp macrophages,tierA_p95,21872,1094,20778,5.002,21872,1094,20778,5.002,True,True,True,True
+SPLN24,fine,Smooth muscle / capsule,tierA_p95,15830,792,15038,5.003,15830,792,15038,5.003,True,True,True,True
+SPLN24,fine,cDC1,tierA_p95,3884,195,3689,5.021,3884,195,3689,5.021,True,False,False,False
+SPLN24,fine,cDC2,tierA_p95,13623,682,12941,5.006,13623,682,12941,5.006,True,True,True,True
+SPLN24,fine,CD4 T cells,senepy_p95,31947,1598,30349,5.002,31947,1598,30349,5.002,True,True,True,True
+SPLN24,fine,Endothelial cells,senepy_p95,61790,3089,58701,4.999,61790,3089,58701,4.999,True,True,True,True
+SPLN24,fine,Fibroblasts,senepy_p95,29356,1468,27888,5.001,29356,1468,27888,5.001,True,True,True,True
+SPLN24,fine,Follicular B cells,senepy_p95,69666,3483,66183,5.0,69666,3483,66183,5.0,True,True,True,True
+SPLN24,fine,Germinal centre B cells,senepy_p95,6659,333,6326,5.001,6659,333,6326,5.001,True,True,True,True
+SPLN24,fine,Monocytes,senepy_p95,5018,251,4767,5.002,5018,251,4767,5.002,True,True,False,False
+SPLN24,fine,NK cells,senepy_p95,41189,2060,39129,5.001,41189,2060,39129,5.001,True,True,True,True
+SPLN24,fine,Neutrophils,senepy_p95,11959,598,11361,5.0,11959,598,11361,5.0,True,True,True,True
+SPLN24,fine,Plasma cells,senepy_p95,9416,471,8945,5.002,9416,471,8945,5.002,True,True,True,True
+SPLN24,fine,Red pulp macrophages,senepy_p95,21872,1094,20778,5.002,21872,1094,20778,5.002,True,True,True,True
+SPLN24,fine,Smooth muscle / capsule,senepy_p95,15830,791,15039,4.997,15830,791,15039,4.997,True,True,True,True
+SPLN24,fine,cDC1,senepy_p95,3884,0,3884,0.0,0,0,0,,False,False,False,False
+SPLN24,fine,cDC2,senepy_p95,13623,0,13623,0.0,0,0,0,,False,False,False,False
+SPLN24,fine,CD4 T cells,tierA_p99,31947,320,31627,1.002,31947,320,31627,1.002,True,True,True,True
+SPLN24,fine,Endothelial cells,tierA_p99,61790,618,61172,1.0,61790,618,61172,1.0,True,True,True,True
+SPLN24,fine,Fibroblasts,tierA_p99,29356,294,29062,1.001,29356,294,29062,1.001,True,True,True,True
+SPLN24,fine,Follicular B cells,tierA_p99,69666,697,68969,1.0,69666,697,68969,1.0,True,True,True,True
+SPLN24,fine,Germinal centre B cells,tierA_p99,6659,67,6592,1.006,6659,67,6592,1.006,True,False,True,False
+SPLN24,fine,Monocytes,tierA_p99,5018,51,4967,1.016,5018,51,4967,1.016,True,False,False,False
+SPLN24,fine,NK cells,tierA_p99,41189,412,40777,1.0,41189,412,40777,1.0,True,True,True,True
+SPLN24,fine,Neutrophils,tierA_p99,11959,120,11839,1.003,11959,120,11839,1.003,True,False,True,False
+SPLN24,fine,Plasma cells,tierA_p99,9416,95,9321,1.009,9416,95,9321,1.009,True,False,True,False
+SPLN24,fine,Red pulp macrophages,tierA_p99,21872,219,21653,1.001,21872,219,21653,1.001,True,True,True,True
+SPLN24,fine,Smooth muscle / capsule,tierA_p99,15830,159,15671,1.004,15830,159,15671,1.004,True,False,True,False
+SPLN24,fine,cDC1,tierA_p99,3884,39,3845,1.004,3884,39,3845,1.004,True,False,False,False
+SPLN24,fine,cDC2,tierA_p99,13623,137,13486,1.006,13623,137,13486,1.006,True,False,True,False
+SPLN24,fine,CD4 T cells,senepy_p99,31947,320,31627,1.002,31947,320,31627,1.002,True,True,True,True
+SPLN24,fine,Endothelial cells,senepy_p99,61790,618,61172,1.0,61790,618,61172,1.0,True,True,True,True
+SPLN24,fine,Fibroblasts,senepy_p99,29356,294,29062,1.001,29356,294,29062,1.001,True,True,True,True
+SPLN24,fine,Follicular B cells,senepy_p99,69666,696,68970,0.999,69666,696,68970,0.999,False,True,True,False
+SPLN24,fine,Germinal centre B cells,senepy_p99,6659,67,6592,1.006,6659,67,6592,1.006,True,False,True,False
+SPLN24,fine,Monocytes,senepy_p99,5018,51,4967,1.016,5018,51,4967,1.016,True,False,False,False
+SPLN24,fine,NK cells,senepy_p99,41189,412,40777,1.0,41189,412,40777,1.0,True,True,True,True
+SPLN24,fine,Neutrophils,senepy_p99,11959,120,11839,1.003,11959,120,11839,1.003,True,False,True,False
+SPLN24,fine,Plasma cells,senepy_p99,9416,95,9321,1.009,9416,95,9321,1.009,True,False,True,False
+SPLN24,fine,Red pulp macrophages,senepy_p99,21872,219,21653,1.001,21872,219,21653,1.001,True,True,True,True
+SPLN24,fine,Smooth muscle / capsule,senepy_p99,15830,159,15671,1.004,15830,159,15671,1.004,True,False,True,False
+SPLN24,fine,cDC1,senepy_p99,3884,0,3884,0.0,0,0,0,,False,False,False,False
+SPLN24,fine,cDC2,senepy_p99,13623,0,13623,0.0,0,0,0,,False,False,False,False
+SPLN24,fine,CD4 T cells,cdkn1a_pos,31947,2187,29760,6.846,31947,2187,29760,6.846,True,True,True,True
+SPLN24,fine,Endothelial cells,cdkn1a_pos,61790,5157,56633,8.346,61790,5157,56633,8.346,True,True,True,True
+SPLN24,fine,Fibroblasts,cdkn1a_pos,29356,3751,25605,12.778,29356,3751,25605,12.778,True,True,True,True
+SPLN24,fine,Follicular B cells,cdkn1a_pos,69666,3695,65971,5.304,69666,3695,65971,5.304,True,True,True,True
+SPLN24,fine,Germinal centre B cells,cdkn1a_pos,6659,643,6016,9.656,6659,643,6016,9.656,True,True,True,True
+SPLN24,fine,Monocytes,cdkn1a_pos,5018,367,4651,7.314,5018,367,4651,7.314,True,True,False,False
+SPLN24,fine,NK cells,cdkn1a_pos,41189,1733,39456,4.207,41189,1733,39456,4.207,True,True,True,True
+SPLN24,fine,Neutrophils,cdkn1a_pos,11959,474,11485,3.964,11959,474,11485,3.964,True,True,True,True
+SPLN24,fine,Plasma cells,cdkn1a_pos,9416,717,8699,7.615,9416,717,8699,7.615,True,True,True,True
+SPLN24,fine,Red pulp macrophages,cdkn1a_pos,21872,1582,20290,7.233,21872,1582,20290,7.233,True,True,True,True
+SPLN24,fine,Smooth muscle / capsule,cdkn1a_pos,15830,1752,14078,11.068,15830,1752,14078,11.068,True,True,True,True
+SPLN24,fine,cDC1,cdkn1a_pos,3884,287,3597,7.389,3884,287,3597,7.389,True,True,False,False
+SPLN24,fine,cDC2,cdkn1a_pos,13623,1519,12104,11.15,13623,1519,12104,11.15,True,True,True,True
+SPLN24,fine,CD4 T cells,tierApm_p95__downstream_arrest,31947,1598,30349,5.002,31947,1598,30349,5.002,True,True,True,True
+SPLN24,fine,Endothelial cells,tierApm_p95__downstream_arrest,61790,3090,58700,5.001,61790,3090,58700,5.001,True,True,True,True
+SPLN24,fine,Fibroblasts,tierApm_p95__downstream_arrest,29356,1468,27888,5.001,29356,1468,27888,5.001,True,True,True,True
+SPLN24,fine,Follicular B cells,tierApm_p95__downstream_arrest,69666,3484,66182,5.001,69666,3484,66182,5.001,True,True,True,True
+SPLN24,fine,Germinal centre B cells,tierApm_p95__downstream_arrest,6659,333,6326,5.001,6659,333,6326,5.001,True,True,True,True
+SPLN24,fine,Monocytes,tierApm_p95__downstream_arrest,5018,251,4767,5.002,5018,251,4767,5.002,True,True,False,False
+SPLN24,fine,NK cells,tierApm_p95__downstream_arrest,41189,2060,39129,5.001,41189,2060,39129,5.001,True,True,True,True
+SPLN24,fine,Neutrophils,tierApm_p95__downstream_arrest,11959,598,11361,5.0,11959,598,11361,5.0,True,True,True,True
+SPLN24,fine,Plasma cells,tierApm_p95__downstream_arrest,9416,471,8945,5.002,9416,471,8945,5.002,True,True,True,True
+SPLN24,fine,Red pulp macrophages,tierApm_p95__downstream_arrest,21872,1094,20778,5.002,21872,1094,20778,5.002,True,True,True,True
+SPLN24,fine,Smooth muscle / capsule,tierApm_p95__downstream_arrest,15830,792,15038,5.003,15830,792,15038,5.003,True,True,True,True
+SPLN24,fine,cDC1,tierApm_p95__downstream_arrest,3884,195,3689,5.021,3884,195,3689,5.021,True,False,False,False
+SPLN24,fine,cDC2,tierApm_p95__downstream_arrest,13623,682,12941,5.006,13623,682,12941,5.006,True,True,True,True
+SPLN24,fine,CD4 T cells,tierApm_p95__emt_ecm,31947,1598,30349,5.002,31947,1598,30349,5.002,True,True,True,True
+SPLN24,fine,Endothelial cells,tierApm_p95__emt_ecm,61790,3090,58700,5.001,61790,3090,58700,5.001,True,True,True,True
+SPLN24,fine,Fibroblasts,tierApm_p95__emt_ecm,29356,1468,27888,5.001,29356,1468,27888,5.001,True,True,True,True
+SPLN24,fine,Follicular B cells,tierApm_p95__emt_ecm,69666,3484,66182,5.001,69666,3484,66182,5.001,True,True,True,True
+SPLN24,fine,Germinal centre B cells,tierApm_p95__emt_ecm,6659,333,6326,5.001,6659,333,6326,5.001,True,True,True,True
+SPLN24,fine,Monocytes,tierApm_p95__emt_ecm,5018,251,4767,5.002,5018,251,4767,5.002,True,True,False,False
+SPLN24,fine,NK cells,tierApm_p95__emt_ecm,41189,2060,39129,5.001,41189,2060,39129,5.001,True,True,True,True
+SPLN24,fine,Neutrophils,tierApm_p95__emt_ecm,11959,598,11361,5.0,11959,598,11361,5.0,True,True,True,True
+SPLN24,fine,Plasma cells,tierApm_p95__emt_ecm,9416,471,8945,5.002,9416,471,8945,5.002,True,True,True,True
+SPLN24,fine,Red pulp macrophages,tierApm_p95__emt_ecm,21872,1094,20778,5.002,21872,1094,20778,5.002,True,True,True,True
+SPLN24,fine,Smooth muscle / capsule,tierApm_p95__emt_ecm,15830,792,15038,5.003,15830,792,15038,5.003,True,True,True,True
+SPLN24,fine,cDC1,tierApm_p95__emt_ecm,3884,195,3689,5.021,3884,195,3689,5.021,True,False,False,False
+SPLN24,fine,cDC2,tierApm_p95__emt_ecm,13623,682,12941,5.006,13623,682,12941,5.006,True,True,True,True
+SPLN24,fine,CD4 T cells,tierApm_p95__il6_jak_stat3,31947,1598,30349,5.002,31947,1598,30349,5.002,True,True,True,True
+SPLN24,fine,Endothelial cells,tierApm_p95__il6_jak_stat3,61790,3090,58700,5.001,61790,3090,58700,5.001,True,True,True,True
+SPLN24,fine,Fibroblasts,tierApm_p95__il6_jak_stat3,29356,1468,27888,5.001,29356,1468,27888,5.001,True,True,True,True
+SPLN24,fine,Follicular B cells,tierApm_p95__il6_jak_stat3,69666,3484,66182,5.001,69666,3484,66182,5.001,True,True,True,True
+SPLN24,fine,Germinal centre B cells,tierApm_p95__il6_jak_stat3,6659,333,6326,5.001,6659,333,6326,5.001,True,True,True,True
+SPLN24,fine,Monocytes,tierApm_p95__il6_jak_stat3,5018,251,4767,5.002,5018,251,4767,5.002,True,True,False,False
+SPLN24,fine,NK cells,tierApm_p95__il6_jak_stat3,41189,2060,39129,5.001,41189,2060,39129,5.001,True,True,True,True
+SPLN24,fine,Neutrophils,tierApm_p95__il6_jak_stat3,11959,598,11361,5.0,11959,598,11361,5.0,True,True,True,True
+SPLN24,fine,Plasma cells,tierApm_p95__il6_jak_stat3,9416,471,8945,5.002,9416,471,8945,5.002,True,True,True,True
+SPLN24,fine,Red pulp macrophages,tierApm_p95__il6_jak_stat3,21872,1094,20778,5.002,21872,1094,20778,5.002,True,True,True,True
+SPLN24,fine,Smooth muscle / capsule,tierApm_p95__il6_jak_stat3,15830,792,15038,5.003,15830,792,15038,5.003,True,True,True,True
+SPLN24,fine,cDC1,tierApm_p95__il6_jak_stat3,3884,195,3689,5.021,3884,195,3689,5.021,True,False,False,False
+SPLN24,fine,cDC2,tierApm_p95__il6_jak_stat3,13623,682,12941,5.006,13623,682,12941,5.006,True,True,True,True
+SPLN24,fine,CD4 T cells,tierApm_p95__interferon_response,31947,1598,30349,5.002,31947,1598,30349,5.002,True,True,True,True
+SPLN24,fine,Endothelial cells,tierApm_p95__interferon_response,61790,3090,58700,5.001,61790,3090,58700,5.001,True,True,True,True
+SPLN24,fine,Fibroblasts,tierApm_p95__interferon_response,29356,1468,27888,5.001,29356,1468,27888,5.001,True,True,True,True
+SPLN24,fine,Follicular B cells,tierApm_p95__interferon_response,69666,3484,66182,5.001,69666,3484,66182,5.001,True,True,True,True
+SPLN24,fine,Germinal centre B cells,tierApm_p95__interferon_response,6659,333,6326,5.001,6659,333,6326,5.001,True,True,True,True
+SPLN24,fine,Monocytes,tierApm_p95__interferon_response,5018,251,4767,5.002,5018,251,4767,5.002,True,True,False,False
+SPLN24,fine,NK cells,tierApm_p95__interferon_response,41189,2060,39129,5.001,41189,2060,39129,5.001,True,True,True,True
+SPLN24,fine,Neutrophils,tierApm_p95__interferon_response,11959,598,11361,5.0,11959,598,11361,5.0,True,True,True,True
+SPLN24,fine,Plasma cells,tierApm_p95__interferon_response,9416,471,8945,5.002,9416,471,8945,5.002,True,True,True,True
+SPLN24,fine,Red pulp macrophages,tierApm_p95__interferon_response,21872,1094,20778,5.002,21872,1094,20778,5.002,True,True,True,True
+SPLN24,fine,Smooth muscle / capsule,tierApm_p95__interferon_response,15830,792,15038,5.003,15830,792,15038,5.003,True,True,True,True
+SPLN24,fine,cDC1,tierApm_p95__interferon_response,3884,195,3689,5.021,3884,195,3689,5.021,True,False,False,False
+SPLN24,fine,cDC2,tierApm_p95__interferon_response,13623,682,12941,5.006,13623,682,12941,5.006,True,True,True,True
+SPLN24,fine,CD4 T cells,tierApm_p95__oxidative_stress,31947,1598,30349,5.002,31947,1598,30349,5.002,True,True,True,True
+SPLN24,fine,Endothelial cells,tierApm_p95__oxidative_stress,61790,3090,58700,5.001,61790,3090,58700,5.001,True,True,True,True
+SPLN24,fine,Fibroblasts,tierApm_p95__oxidative_stress,29356,1468,27888,5.001,29356,1468,27888,5.001,True,True,True,True
+SPLN24,fine,Follicular B cells,tierApm_p95__oxidative_stress,69666,3484,66182,5.001,69666,3484,66182,5.001,True,True,True,True
+SPLN24,fine,Germinal centre B cells,tierApm_p95__oxidative_stress,6659,333,6326,5.001,6659,333,6326,5.001,True,True,True,True
+SPLN24,fine,Monocytes,tierApm_p95__oxidative_stress,5018,251,4767,5.002,5018,251,4767,5.002,True,True,False,False
+SPLN24,fine,NK cells,tierApm_p95__oxidative_stress,41189,2060,39129,5.001,41189,2060,39129,5.001,True,True,True,True
+SPLN24,fine,Neutrophils,tierApm_p95__oxidative_stress,11959,598,11361,5.0,11959,598,11361,5.0,True,True,True,True
+SPLN24,fine,Plasma cells,tierApm_p95__oxidative_stress,9416,471,8945,5.002,9416,471,8945,5.002,True,True,True,True
+SPLN24,fine,Red pulp macrophages,tierApm_p95__oxidative_stress,21872,1094,20778,5.002,21872,1094,20778,5.002,True,True,True,True
+SPLN24,fine,Smooth muscle / capsule,tierApm_p95__oxidative_stress,15830,792,15038,5.003,15830,792,15038,5.003,True,True,True,True
+SPLN24,fine,cDC1,tierApm_p95__oxidative_stress,3884,195,3689,5.021,3884,195,3689,5.021,True,False,False,False
+SPLN24,fine,cDC2,tierApm_p95__oxidative_stress,13623,682,12941,5.006,13623,682,12941,5.006,True,True,True,True
+SPLN24,fine,CD4 T cells,tierApm_p95__secondary_senescence,31947,1598,30349,5.002,31947,1598,30349,5.002,True,True,True,True
+SPLN24,fine,Endothelial cells,tierApm_p95__secondary_senescence,61790,3090,58700,5.001,61790,3090,58700,5.001,True,True,True,True
+SPLN24,fine,Fibroblasts,tierApm_p95__secondary_senescence,29356,1468,27888,5.001,29356,1468,27888,5.001,True,True,True,True
+SPLN24,fine,Follicular B cells,tierApm_p95__secondary_senescence,69666,3484,66182,5.001,69666,3484,66182,5.001,True,True,True,True
+SPLN24,fine,Germinal centre B cells,tierApm_p95__secondary_senescence,6659,333,6326,5.001,6659,333,6326,5.001,True,True,True,True
+SPLN24,fine,Monocytes,tierApm_p95__secondary_senescence,5018,251,4767,5.002,5018,251,4767,5.002,True,True,False,False
+SPLN24,fine,NK cells,tierApm_p95__secondary_senescence,41189,2060,39129,5.001,41189,2060,39129,5.001,True,True,True,True
+SPLN24,fine,Neutrophils,tierApm_p95__secondary_senescence,11959,598,11361,5.0,11959,598,11361,5.0,True,True,True,True
+SPLN24,fine,Plasma cells,tierApm_p95__secondary_senescence,9416,471,8945,5.002,9416,471,8945,5.002,True,True,True,True
+SPLN24,fine,Red pulp macrophages,tierApm_p95__secondary_senescence,21872,1094,20778,5.002,21872,1094,20778,5.002,True,True,True,True
+SPLN24,fine,Smooth muscle / capsule,tierApm_p95__secondary_senescence,15830,792,15038,5.003,15830,792,15038,5.003,True,True,True,True
+SPLN24,fine,cDC1,tierApm_p95__secondary_senescence,3884,195,3689,5.021,3884,195,3689,5.021,True,False,False,False
+SPLN24,fine,cDC2,tierApm_p95__secondary_senescence,13623,682,12941,5.006,13623,682,12941,5.006,True,True,True,True
+SPLN24,fine,CD4 T cells,tierApm_p95__tnfa_nfkb_proximal,31947,1598,30349,5.002,31947,1598,30349,5.002,True,True,True,True
+SPLN24,fine,Endothelial cells,tierApm_p95__tnfa_nfkb_proximal,61790,3090,58700,5.001,61790,3090,58700,5.001,True,True,True,True
+SPLN24,fine,Fibroblasts,tierApm_p95__tnfa_nfkb_proximal,29356,1468,27888,5.001,29356,1468,27888,5.001,True,True,True,True
+SPLN24,fine,Follicular B cells,tierApm_p95__tnfa_nfkb_proximal,69666,3484,66182,5.001,69666,3484,66182,5.001,True,True,True,True
+SPLN24,fine,Germinal centre B cells,tierApm_p95__tnfa_nfkb_proximal,6659,333,6326,5.001,6659,333,6326,5.001,True,True,True,True
+SPLN24,fine,Monocytes,tierApm_p95__tnfa_nfkb_proximal,5018,251,4767,5.002,5018,251,4767,5.002,True,True,False,False
+SPLN24,fine,NK cells,tierApm_p95__tnfa_nfkb_proximal,41189,2060,39129,5.001,41189,2060,39129,5.001,True,True,True,True
+SPLN24,fine,Neutrophils,tierApm_p95__tnfa_nfkb_proximal,11959,598,11361,5.0,11959,598,11361,5.0,True,True,True,True
+SPLN24,fine,Plasma cells,tierApm_p95__tnfa_nfkb_proximal,9416,471,8945,5.002,9416,471,8945,5.002,True,True,True,True
+SPLN24,fine,Red pulp macrophages,tierApm_p95__tnfa_nfkb_proximal,21872,1094,20778,5.002,21872,1094,20778,5.002,True,True,True,True
+SPLN24,fine,Smooth muscle / capsule,tierApm_p95__tnfa_nfkb_proximal,15830,792,15038,5.003,15830,792,15038,5.003,True,True,True,True
+SPLN24,fine,cDC1,tierApm_p95__tnfa_nfkb_proximal,3884,195,3689,5.021,3884,195,3689,5.021,True,False,False,False
+SPLN24,fine,cDC2,tierApm_p95__tnfa_nfkb_proximal,13623,682,12941,5.006,13623,682,12941,5.006,True,True,True,True
+SPLN24,merged,B cells,tierA_p90,83711,7633,76078,9.118,83711,7633,76078,9.118,True,True,True,True
+SPLN24,merged,Endothelial,tierA_p90,61790,6179,55611,10.0,61790,6179,55611,10.0,True,True,True,True
+SPLN24,merged,Mono/Mac/DC,tierA_p90,44397,4442,39955,10.005,44397,4442,39955,10.005,True,True,True,True
+SPLN24,merged,Neutrophils,tierA_p90,11959,1196,10763,10.001,11959,1196,10763,10.001,True,True,True,True
+SPLN24,merged,Plasma cells,tierA_p90,9416,942,8474,10.004,9416,942,8474,10.004,True,True,True,True
+SPLN24,merged,Stromal,tierA_p90,45186,4519,40667,10.001,45186,4519,40667,10.001,True,True,True,True
+SPLN24,merged,T/NK cells,tierA_p90,73136,7314,65822,10.001,73136,7314,65822,10.001,True,True,True,True
+SPLN24,merged,B cells,senepy_p90,83711,7632,76079,9.117,76325,7632,68693,9.999,True,True,True,True
+SPLN24,merged,Endothelial,senepy_p90,61790,6179,55611,10.0,61790,6179,55611,10.0,True,True,True,True
+SPLN24,merged,Mono/Mac/DC,senepy_p90,44397,2690,41707,6.059,26890,2690,24200,10.004,True,True,True,True
+SPLN24,merged,Neutrophils,senepy_p90,11959,1196,10763,10.001,11959,1196,10763,10.001,True,True,True,True
+SPLN24,merged,Plasma cells,senepy_p90,9416,940,8476,9.983,9416,940,8476,9.983,True,True,True,True
+SPLN24,merged,Stromal,senepy_p90,45186,4519,40667,10.001,45186,4519,40667,10.001,True,True,True,True
+SPLN24,merged,T/NK cells,senepy_p90,73136,7314,65822,10.001,73136,7314,65822,10.001,True,True,True,True
+SPLN24,merged,B cells,tierA_p95,83711,3817,79894,4.56,83711,3817,79894,4.56,True,True,True,True
+SPLN24,merged,Endothelial,tierA_p95,61790,3090,58700,5.001,61790,3090,58700,5.001,True,True,True,True
+SPLN24,merged,Mono/Mac/DC,tierA_p95,44397,2222,42175,5.005,44397,2222,42175,5.005,True,True,True,True
+SPLN24,merged,Neutrophils,tierA_p95,11959,598,11361,5.0,11959,598,11361,5.0,True,True,True,True
+SPLN24,merged,Plasma cells,tierA_p95,9416,471,8945,5.002,9416,471,8945,5.002,True,True,True,True
+SPLN24,merged,Stromal,tierA_p95,45186,2260,42926,5.002,45186,2260,42926,5.002,True,True,True,True
+SPLN24,merged,T/NK cells,tierA_p95,73136,3658,69478,5.002,73136,3658,69478,5.002,True,True,True,True
+SPLN24,merged,B cells,senepy_p95,83711,3816,79895,4.559,76325,3816,72509,5.0,True,True,True,True
+SPLN24,merged,Endothelial,senepy_p95,61790,3089,58701,4.999,61790,3089,58701,4.999,True,True,True,True
+SPLN24,merged,Mono/Mac/DC,senepy_p95,44397,1345,43052,3.029,26890,1345,25545,5.002,True,True,True,True
+SPLN24,merged,Neutrophils,senepy_p95,11959,598,11361,5.0,11959,598,11361,5.0,True,True,True,True
+SPLN24,merged,Plasma cells,senepy_p95,9416,471,8945,5.002,9416,471,8945,5.002,True,True,True,True
+SPLN24,merged,Stromal,senepy_p95,45186,2259,42927,4.999,45186,2259,42927,4.999,True,True,True,True
+SPLN24,merged,T/NK cells,senepy_p95,73136,3658,69478,5.002,73136,3658,69478,5.002,True,True,True,True
+SPLN24,merged,B cells,tierA_p99,83711,764,82947,0.913,83711,764,82947,0.913,False,True,True,False
+SPLN24,merged,Endothelial,tierA_p99,61790,618,61172,1.0,61790,618,61172,1.0,True,True,True,True
+SPLN24,merged,Mono/Mac/DC,tierA_p99,44397,446,43951,1.005,44397,446,43951,1.005,True,True,True,True
+SPLN24,merged,Neutrophils,tierA_p99,11959,120,11839,1.003,11959,120,11839,1.003,True,False,True,False
+SPLN24,merged,Plasma cells,tierA_p99,9416,95,9321,1.009,9416,95,9321,1.009,True,False,True,False
+SPLN24,merged,Stromal,tierA_p99,45186,453,44733,1.003,45186,453,44733,1.003,True,True,True,True
+SPLN24,merged,T/NK cells,tierA_p99,73136,732,72404,1.001,73136,732,72404,1.001,True,True,True,True
+SPLN24,merged,B cells,senepy_p99,83711,763,82948,0.911,76325,763,75562,1.0,False,True,True,False
+SPLN24,merged,Endothelial,senepy_p99,61790,618,61172,1.0,61790,618,61172,1.0,True,True,True,True
+SPLN24,merged,Mono/Mac/DC,senepy_p99,44397,270,44127,0.608,26890,270,26620,1.004,True,True,True,True
+SPLN24,merged,Neutrophils,senepy_p99,11959,120,11839,1.003,11959,120,11839,1.003,True,False,True,False
+SPLN24,merged,Plasma cells,senepy_p99,9416,95,9321,1.009,9416,95,9321,1.009,True,False,True,False
+SPLN24,merged,Stromal,senepy_p99,45186,453,44733,1.003,45186,453,44733,1.003,True,True,True,True
+SPLN24,merged,T/NK cells,senepy_p99,73136,732,72404,1.001,73136,732,72404,1.001,True,True,True,True
+SPLN24,merged,B cells,cdkn1a_pos,83711,4884,78827,5.834,83711,4884,78827,5.834,True,True,True,True
+SPLN24,merged,Endothelial,cdkn1a_pos,61790,5157,56633,8.346,61790,5157,56633,8.346,True,True,True,True
+SPLN24,merged,Mono/Mac/DC,cdkn1a_pos,44397,3755,40642,8.458,44397,3755,40642,8.458,True,True,True,True
+SPLN24,merged,Neutrophils,cdkn1a_pos,11959,474,11485,3.964,11959,474,11485,3.964,True,True,True,True
+SPLN24,merged,Plasma cells,cdkn1a_pos,9416,717,8699,7.615,9416,717,8699,7.615,True,True,True,True
+SPLN24,merged,Stromal,cdkn1a_pos,45186,5503,39683,12.179,45186,5503,39683,12.179,True,True,True,True
+SPLN24,merged,T/NK cells,cdkn1a_pos,73136,3920,69216,5.36,73136,3920,69216,5.36,True,True,True,True
+SPLN24,merged,B cells,tierApm_p95__downstream_arrest,83711,3817,79894,4.56,83711,3817,79894,4.56,True,True,True,True
+SPLN24,merged,Endothelial,tierApm_p95__downstream_arrest,61790,3090,58700,5.001,61790,3090,58700,5.001,True,True,True,True
+SPLN24,merged,Mono/Mac/DC,tierApm_p95__downstream_arrest,44397,2222,42175,5.005,44397,2222,42175,5.005,True,True,True,True
+SPLN24,merged,Neutrophils,tierApm_p95__downstream_arrest,11959,598,11361,5.0,11959,598,11361,5.0,True,True,True,True
+SPLN24,merged,Plasma cells,tierApm_p95__downstream_arrest,9416,471,8945,5.002,9416,471,8945,5.002,True,True,True,True
+SPLN24,merged,Stromal,tierApm_p95__downstream_arrest,45186,2260,42926,5.002,45186,2260,42926,5.002,True,True,True,True
+SPLN24,merged,T/NK cells,tierApm_p95__downstream_arrest,73136,3658,69478,5.002,73136,3658,69478,5.002,True,True,True,True
+SPLN24,merged,B cells,tierApm_p95__emt_ecm,83711,3817,79894,4.56,83711,3817,79894,4.56,True,True,True,True
+SPLN24,merged,Endothelial,tierApm_p95__emt_ecm,61790,3090,58700,5.001,61790,3090,58700,5.001,True,True,True,True
+SPLN24,merged,Mono/Mac/DC,tierApm_p95__emt_ecm,44397,2222,42175,5.005,44397,2222,42175,5.005,True,True,True,True
+SPLN24,merged,Neutrophils,tierApm_p95__emt_ecm,11959,598,11361,5.0,11959,598,11361,5.0,True,True,True,True
+SPLN24,merged,Plasma cells,tierApm_p95__emt_ecm,9416,471,8945,5.002,9416,471,8945,5.002,True,True,True,True
+SPLN24,merged,Stromal,tierApm_p95__emt_ecm,45186,2260,42926,5.002,45186,2260,42926,5.002,True,True,True,True
+SPLN24,merged,T/NK cells,tierApm_p95__emt_ecm,73136,3658,69478,5.002,73136,3658,69478,5.002,True,True,True,True
+SPLN24,merged,B cells,tierApm_p95__il6_jak_stat3,83711,3817,79894,4.56,83711,3817,79894,4.56,True,True,True,True
+SPLN24,merged,Endothelial,tierApm_p95__il6_jak_stat3,61790,3090,58700,5.001,61790,3090,58700,5.001,True,True,True,True
+SPLN24,merged,Mono/Mac/DC,tierApm_p95__il6_jak_stat3,44397,2222,42175,5.005,44397,2222,42175,5.005,True,True,True,True
+SPLN24,merged,Neutrophils,tierApm_p95__il6_jak_stat3,11959,598,11361,5.0,11959,598,11361,5.0,True,True,True,True
+SPLN24,merged,Plasma cells,tierApm_p95__il6_jak_stat3,9416,471,8945,5.002,9416,471,8945,5.002,True,True,True,True
+SPLN24,merged,Stromal,tierApm_p95__il6_jak_stat3,45186,2260,42926,5.002,45186,2260,42926,5.002,True,True,True,True
+SPLN24,merged,T/NK cells,tierApm_p95__il6_jak_stat3,73136,3658,69478,5.002,73136,3658,69478,5.002,True,True,True,True
+SPLN24,merged,B cells,tierApm_p95__interferon_response,83711,3817,79894,4.56,83711,3817,79894,4.56,True,True,True,True
+SPLN24,merged,Endothelial,tierApm_p95__interferon_response,61790,3090,58700,5.001,61790,3090,58700,5.001,True,True,True,True
+SPLN24,merged,Mono/Mac/DC,tierApm_p95__interferon_response,44397,2222,42175,5.005,44397,2222,42175,5.005,True,True,True,True
+SPLN24,merged,Neutrophils,tierApm_p95__interferon_response,11959,598,11361,5.0,11959,598,11361,5.0,True,True,True,True
+SPLN24,merged,Plasma cells,tierApm_p95__interferon_response,9416,471,8945,5.002,9416,471,8945,5.002,True,True,True,True
+SPLN24,merged,Stromal,tierApm_p95__interferon_response,45186,2260,42926,5.002,45186,2260,42926,5.002,True,True,True,True
+SPLN24,merged,T/NK cells,tierApm_p95__interferon_response,73136,3658,69478,5.002,73136,3658,69478,5.002,True,True,True,True
+SPLN24,merged,B cells,tierApm_p95__oxidative_stress,83711,3817,79894,4.56,83711,3817,79894,4.56,True,True,True,True
+SPLN24,merged,Endothelial,tierApm_p95__oxidative_stress,61790,3090,58700,5.001,61790,3090,58700,5.001,True,True,True,True
+SPLN24,merged,Mono/Mac/DC,tierApm_p95__oxidative_stress,44397,2222,42175,5.005,44397,2222,42175,5.005,True,True,True,True
+SPLN24,merged,Neutrophils,tierApm_p95__oxidative_stress,11959,598,11361,5.0,11959,598,11361,5.0,True,True,True,True
+SPLN24,merged,Plasma cells,tierApm_p95__oxidative_stress,9416,471,8945,5.002,9416,471,8945,5.002,True,True,True,True
+SPLN24,merged,Stromal,tierApm_p95__oxidative_stress,45186,2260,42926,5.002,45186,2260,42926,5.002,True,True,True,True
+SPLN24,merged,T/NK cells,tierApm_p95__oxidative_stress,73136,3658,69478,5.002,73136,3658,69478,5.002,True,True,True,True
+SPLN24,merged,B cells,tierApm_p95__secondary_senescence,83711,3817,79894,4.56,83711,3817,79894,4.56,True,True,True,True
+SPLN24,merged,Endothelial,tierApm_p95__secondary_senescence,61790,3090,58700,5.001,61790,3090,58700,5.001,True,True,True,True
+SPLN24,merged,Mono/Mac/DC,tierApm_p95__secondary_senescence,44397,2222,42175,5.005,44397,2222,42175,5.005,True,True,True,True
+SPLN24,merged,Neutrophils,tierApm_p95__secondary_senescence,11959,598,11361,5.0,11959,598,11361,5.0,True,True,True,True
+SPLN24,merged,Plasma cells,tierApm_p95__secondary_senescence,9416,471,8945,5.002,9416,471,8945,5.002,True,True,True,True
+SPLN24,merged,Stromal,tierApm_p95__secondary_senescence,45186,2260,42926,5.002,45186,2260,42926,5.002,True,True,True,True
+SPLN24,merged,T/NK cells,tierApm_p95__secondary_senescence,73136,3658,69478,5.002,73136,3658,69478,5.002,True,True,True,True
+SPLN24,merged,B cells,tierApm_p95__tnfa_nfkb_proximal,83711,3817,79894,4.56,83711,3817,79894,4.56,True,True,True,True
+SPLN24,merged,Endothelial,tierApm_p95__tnfa_nfkb_proximal,61790,3090,58700,5.001,61790,3090,58700,5.001,True,True,True,True
+SPLN24,merged,Mono/Mac/DC,tierApm_p95__tnfa_nfkb_proximal,44397,2222,42175,5.005,44397,2222,42175,5.005,True,True,True,True
+SPLN24,merged,Neutrophils,tierApm_p95__tnfa_nfkb_proximal,11959,598,11361,5.0,11959,598,11361,5.0,True,True,True,True
+SPLN24,merged,Plasma cells,tierApm_p95__tnfa_nfkb_proximal,9416,471,8945,5.002,9416,471,8945,5.002,True,True,True,True
+SPLN24,merged,Stromal,tierApm_p95__tnfa_nfkb_proximal,45186,2260,42926,5.002,45186,2260,42926,5.002,True,True,True,True
+SPLN24,merged,T/NK cells,tierApm_p95__tnfa_nfkb_proximal,73136,3658,69478,5.002,73136,3658,69478,5.002,True,True,True,True
+SPLN30,fine,CD4 T cells,tierA_p90,37997,3796,34201,9.99,37997,3796,34201,9.99,True,True,True,True
+SPLN30,fine,Endothelial cells,tierA_p90,49023,4903,44120,10.001,49023,4903,44120,10.001,True,True,True,True
+SPLN30,fine,Fibroblasts,tierA_p90,3939,394,3545,10.003,3939,394,3545,10.003,True,True,False,False
+SPLN30,fine,Follicular B cells,tierA_p90,61482,6148,55334,10.0,61482,6148,55334,10.0,True,True,True,True
+SPLN30,fine,Monocytes,tierA_p90,3809,380,3429,9.976,3809,380,3429,9.976,True,True,False,False
+SPLN30,fine,Neutrophils,tierA_p90,1287,129,1158,10.023,1287,129,1158,10.023,True,False,False,False
+SPLN30,fine,Plasma cells,tierA_p90,16431,1643,14788,9.999,16431,1643,14788,9.999,True,True,True,True
+SPLN30,fine,Red pulp macrophages,tierA_p90,31747,3175,28572,10.001,31747,3175,28572,10.001,True,True,True,True
+SPLN30,fine,Smooth muscle / capsule,tierA_p90,28033,2804,25229,10.002,28033,2804,25229,10.002,True,True,True,True
+SPLN30,fine,CD4 T cells,senepy_p90,37997,3800,34197,10.001,37997,3800,34197,10.001,True,True,True,True
+SPLN30,fine,Endothelial cells,senepy_p90,49023,4903,44120,10.001,49023,4903,44120,10.001,True,True,True,True
+SPLN30,fine,Fibroblasts,senepy_p90,3939,394,3545,10.003,3939,394,3545,10.003,True,True,False,False
+SPLN30,fine,Follicular B cells,senepy_p90,61482,5845,55637,9.507,61482,5845,55637,9.507,True,True,True,True
+SPLN30,fine,Monocytes,senepy_p90,3809,380,3429,9.976,3809,380,3429,9.976,True,True,False,False
+SPLN30,fine,Neutrophils,senepy_p90,1287,129,1158,10.023,1287,129,1158,10.023,True,False,False,False
+SPLN30,fine,Plasma cells,senepy_p90,16431,1641,14790,9.987,16431,1641,14790,9.987,True,True,True,True
+SPLN30,fine,Red pulp macrophages,senepy_p90,31747,3173,28574,9.995,31747,3173,28574,9.995,True,True,True,True
+SPLN30,fine,Smooth muscle / capsule,senepy_p90,28033,2801,25232,9.992,28033,2801,25232,9.992,True,True,True,True
+SPLN30,fine,CD4 T cells,tierA_p95,37997,1900,36097,5.0,37997,1900,36097,5.0,True,True,True,True
+SPLN30,fine,Endothelial cells,tierA_p95,49023,2451,46572,5.0,49023,2451,46572,5.0,True,True,True,True
+SPLN30,fine,Fibroblasts,tierA_p95,3939,197,3742,5.001,3939,197,3742,5.001,True,False,False,False
+SPLN30,fine,Follicular B cells,tierA_p95,61482,3075,58407,5.001,61482,3075,58407,5.001,True,True,True,True
+SPLN30,fine,Monocytes,tierA_p95,3809,191,3618,5.014,3809,191,3618,5.014,True,False,False,False
+SPLN30,fine,Neutrophils,tierA_p95,1287,65,1222,5.051,1287,65,1222,5.051,True,False,False,False
+SPLN30,fine,Plasma cells,tierA_p95,16431,822,15609,5.003,16431,822,15609,5.003,True,True,True,True
+SPLN30,fine,Red pulp macrophages,tierA_p95,31747,1588,30159,5.002,31747,1588,30159,5.002,True,True,True,True
+SPLN30,fine,Smooth muscle / capsule,tierA_p95,28033,1402,26631,5.001,28033,1402,26631,5.001,True,True,True,True
+SPLN30,fine,CD4 T cells,senepy_p95,37997,1900,36097,5.0,37997,1900,36097,5.0,True,True,True,True
+SPLN30,fine,Endothelial cells,senepy_p95,49023,2452,46571,5.002,49023,2452,46571,5.002,True,True,True,True
+SPLN30,fine,Fibroblasts,senepy_p95,3939,197,3742,5.001,3939,197,3742,5.001,True,False,False,False
+SPLN30,fine,Follicular B cells,senepy_p95,61482,3073,58409,4.998,61482,3073,58409,4.998,True,True,True,True
+SPLN30,fine,Monocytes,senepy_p95,3809,191,3618,5.014,3809,191,3618,5.014,True,False,False,False
+SPLN30,fine,Neutrophils,senepy_p95,1287,65,1222,5.051,1287,65,1222,5.051,True,False,False,False
+SPLN30,fine,Plasma cells,senepy_p95,16431,821,15610,4.997,16431,821,15610,4.997,True,True,True,True
+SPLN30,fine,Red pulp macrophages,senepy_p95,31747,1587,30160,4.999,31747,1587,30160,4.999,True,True,True,True
+SPLN30,fine,Smooth muscle / capsule,senepy_p95,28033,1402,26631,5.001,28033,1402,26631,5.001,True,True,True,True
+SPLN30,fine,CD4 T cells,tierA_p99,37997,379,37618,0.997,37997,379,37618,0.997,False,True,True,False
+SPLN30,fine,Endothelial cells,tierA_p99,49023,491,48532,1.002,49023,491,48532,1.002,True,True,True,True
+SPLN30,fine,Fibroblasts,tierA_p99,3939,40,3899,1.015,3939,40,3899,1.015,True,False,False,False
+SPLN30,fine,Follicular B cells,tierA_p99,61482,615,60867,1.0,61482,615,60867,1.0,True,True,True,True
+SPLN30,fine,Monocytes,tierA_p99,3809,39,3770,1.024,3809,39,3770,1.024,True,False,False,False
+SPLN30,fine,Neutrophils,tierA_p99,1287,13,1274,1.01,1287,13,1274,1.01,True,False,False,False
+SPLN30,fine,Plasma cells,tierA_p99,16431,165,16266,1.004,16431,165,16266,1.004,True,False,True,False
+SPLN30,fine,Red pulp macrophages,tierA_p99,31747,318,31429,1.002,31747,318,31429,1.002,True,True,True,True
+SPLN30,fine,Smooth muscle / capsule,tierA_p99,28033,281,27752,1.002,28033,281,27752,1.002,True,True,True,True
+SPLN30,fine,CD4 T cells,senepy_p99,37997,379,37618,0.997,37997,379,37618,0.997,False,True,True,False
+SPLN30,fine,Endothelial cells,senepy_p99,49023,491,48532,1.002,49023,491,48532,1.002,True,True,True,True
+SPLN30,fine,Fibroblasts,senepy_p99,3939,40,3899,1.015,3939,40,3899,1.015,True,False,False,False
+SPLN30,fine,Follicular B cells,senepy_p99,61482,612,60870,0.995,61482,612,60870,0.995,False,True,True,False
+SPLN30,fine,Monocytes,senepy_p99,3809,39,3770,1.024,3809,39,3770,1.024,True,False,False,False
+SPLN30,fine,Neutrophils,senepy_p99,1287,13,1274,1.01,1287,13,1274,1.01,True,False,False,False
+SPLN30,fine,Plasma cells,senepy_p99,16431,165,16266,1.004,16431,165,16266,1.004,True,False,True,False
+SPLN30,fine,Red pulp macrophages,senepy_p99,31747,318,31429,1.002,31747,318,31429,1.002,True,True,True,True
+SPLN30,fine,Smooth muscle / capsule,senepy_p99,28033,281,27752,1.002,28033,281,27752,1.002,True,True,True,True
+SPLN30,fine,CD4 T cells,cdkn1a_pos,37997,176,37821,0.463,37997,176,37821,0.463,False,False,True,False
+SPLN30,fine,Endothelial cells,cdkn1a_pos,49023,1215,47808,2.478,49023,1215,47808,2.478,True,True,True,True
+SPLN30,fine,Fibroblasts,cdkn1a_pos,3939,80,3859,2.031,3939,80,3859,2.031,True,False,False,False
+SPLN30,fine,Follicular B cells,cdkn1a_pos,61482,388,61094,0.631,61482,388,61094,0.631,False,True,True,False
+SPLN30,fine,Monocytes,cdkn1a_pos,3809,52,3757,1.365,3809,52,3757,1.365,True,False,False,False
+SPLN30,fine,Neutrophils,cdkn1a_pos,1287,2,1285,0.155,1287,2,1285,0.155,False,False,False,False
+SPLN30,fine,Plasma cells,cdkn1a_pos,16431,441,15990,2.684,16431,441,15990,2.684,True,True,True,True
+SPLN30,fine,Red pulp macrophages,cdkn1a_pos,31747,451,31296,1.421,31747,451,31296,1.421,True,True,True,True
+SPLN30,fine,Smooth muscle / capsule,cdkn1a_pos,28033,458,27575,1.634,28033,458,27575,1.634,True,True,True,True
+SPLN30,fine,CD4 T cells,tierApm_p95__downstream_arrest,37997,1900,36097,5.0,37997,1900,36097,5.0,True,True,True,True
+SPLN30,fine,Endothelial cells,tierApm_p95__downstream_arrest,49023,2452,46571,5.002,49023,2452,46571,5.002,True,True,True,True
+SPLN30,fine,Fibroblasts,tierApm_p95__downstream_arrest,3939,197,3742,5.001,3939,197,3742,5.001,True,False,False,False
+SPLN30,fine,Follicular B cells,tierApm_p95__downstream_arrest,61482,3075,58407,5.001,61482,3075,58407,5.001,True,True,True,True
+SPLN30,fine,Monocytes,tierApm_p95__downstream_arrest,3809,191,3618,5.014,3809,191,3618,5.014,True,False,False,False
+SPLN30,fine,Neutrophils,tierApm_p95__downstream_arrest,1287,65,1222,5.051,1287,65,1222,5.051,True,False,False,False
+SPLN30,fine,Plasma cells,tierApm_p95__downstream_arrest,16431,822,15609,5.003,16431,822,15609,5.003,True,True,True,True
+SPLN30,fine,Red pulp macrophages,tierApm_p95__downstream_arrest,31747,1588,30159,5.002,31747,1588,30159,5.002,True,True,True,True
+SPLN30,fine,Smooth muscle / capsule,tierApm_p95__downstream_arrest,28033,1402,26631,5.001,28033,1402,26631,5.001,True,True,True,True
+SPLN30,fine,CD4 T cells,tierApm_p95__emt_ecm,37997,1899,36098,4.998,37997,1899,36098,4.998,True,True,True,True
+SPLN30,fine,Endothelial cells,tierApm_p95__emt_ecm,49023,2452,46571,5.002,49023,2452,46571,5.002,True,True,True,True
+SPLN30,fine,Fibroblasts,tierApm_p95__emt_ecm,3939,197,3742,5.001,3939,197,3742,5.001,True,False,False,False
+SPLN30,fine,Follicular B cells,tierApm_p95__emt_ecm,61482,3075,58407,5.001,61482,3075,58407,5.001,True,True,True,True
+SPLN30,fine,Monocytes,tierApm_p95__emt_ecm,3809,191,3618,5.014,3809,191,3618,5.014,True,False,False,False
+SPLN30,fine,Neutrophils,tierApm_p95__emt_ecm,1287,65,1222,5.051,1287,65,1222,5.051,True,False,False,False
+SPLN30,fine,Plasma cells,tierApm_p95__emt_ecm,16431,822,15609,5.003,16431,822,15609,5.003,True,True,True,True
+SPLN30,fine,Red pulp macrophages,tierApm_p95__emt_ecm,31747,1588,30159,5.002,31747,1588,30159,5.002,True,True,True,True
+SPLN30,fine,Smooth muscle / capsule,tierApm_p95__emt_ecm,28033,1402,26631,5.001,28033,1402,26631,5.001,True,True,True,True
+SPLN30,fine,CD4 T cells,tierApm_p95__il6_jak_stat3,37997,1900,36097,5.0,37997,1900,36097,5.0,True,True,True,True
+SPLN30,fine,Endothelial cells,tierApm_p95__il6_jak_stat3,49023,2452,46571,5.002,49023,2452,46571,5.002,True,True,True,True
+SPLN30,fine,Fibroblasts,tierApm_p95__il6_jak_stat3,3939,197,3742,5.001,3939,197,3742,5.001,True,False,False,False
+SPLN30,fine,Follicular B cells,tierApm_p95__il6_jak_stat3,61482,3075,58407,5.001,61482,3075,58407,5.001,True,True,True,True
+SPLN30,fine,Monocytes,tierApm_p95__il6_jak_stat3,3809,191,3618,5.014,3809,191,3618,5.014,True,False,False,False
+SPLN30,fine,Neutrophils,tierApm_p95__il6_jak_stat3,1287,65,1222,5.051,1287,65,1222,5.051,True,False,False,False
+SPLN30,fine,Plasma cells,tierApm_p95__il6_jak_stat3,16431,822,15609,5.003,16431,822,15609,5.003,True,True,True,True
+SPLN30,fine,Red pulp macrophages,tierApm_p95__il6_jak_stat3,31747,1588,30159,5.002,31747,1588,30159,5.002,True,True,True,True
+SPLN30,fine,Smooth muscle / capsule,tierApm_p95__il6_jak_stat3,28033,1402,26631,5.001,28033,1402,26631,5.001,True,True,True,True
+SPLN30,fine,CD4 T cells,tierApm_p95__interferon_response,37997,1900,36097,5.0,37997,1900,36097,5.0,True,True,True,True
+SPLN30,fine,Endothelial cells,tierApm_p95__interferon_response,49023,2451,46572,5.0,49023,2451,46572,5.0,True,True,True,True
+SPLN30,fine,Fibroblasts,tierApm_p95__interferon_response,3939,197,3742,5.001,3939,197,3742,5.001,True,False,False,False
+SPLN30,fine,Follicular B cells,tierApm_p95__interferon_response,61482,3075,58407,5.001,61482,3075,58407,5.001,True,True,True,True
+SPLN30,fine,Monocytes,tierApm_p95__interferon_response,3809,191,3618,5.014,3809,191,3618,5.014,True,False,False,False
+SPLN30,fine,Neutrophils,tierApm_p95__interferon_response,1287,65,1222,5.051,1287,65,1222,5.051,True,False,False,False
+SPLN30,fine,Plasma cells,tierApm_p95__interferon_response,16431,822,15609,5.003,16431,822,15609,5.003,True,True,True,True
+SPLN30,fine,Red pulp macrophages,tierApm_p95__interferon_response,31747,1588,30159,5.002,31747,1588,30159,5.002,True,True,True,True
+SPLN30,fine,Smooth muscle / capsule,tierApm_p95__interferon_response,28033,1402,26631,5.001,28033,1402,26631,5.001,True,True,True,True
+SPLN30,fine,CD4 T cells,tierApm_p95__oxidative_stress,37997,1896,36101,4.99,37997,1896,36101,4.99,True,True,True,True
+SPLN30,fine,Endothelial cells,tierApm_p95__oxidative_stress,49023,2452,46571,5.002,49023,2452,46571,5.002,True,True,True,True
+SPLN30,fine,Fibroblasts,tierApm_p95__oxidative_stress,3939,197,3742,5.001,3939,197,3742,5.001,True,False,False,False
+SPLN30,fine,Follicular B cells,tierApm_p95__oxidative_stress,61482,3075,58407,5.001,61482,3075,58407,5.001,True,True,True,True
+SPLN30,fine,Monocytes,tierApm_p95__oxidative_stress,3809,191,3618,5.014,3809,191,3618,5.014,True,False,False,False
+SPLN30,fine,Neutrophils,tierApm_p95__oxidative_stress,1287,65,1222,5.051,1287,65,1222,5.051,True,False,False,False
+SPLN30,fine,Plasma cells,tierApm_p95__oxidative_stress,16431,822,15609,5.003,16431,822,15609,5.003,True,True,True,True
+SPLN30,fine,Red pulp macrophages,tierApm_p95__oxidative_stress,31747,1588,30159,5.002,31747,1588,30159,5.002,True,True,True,True
+SPLN30,fine,Smooth muscle / capsule,tierApm_p95__oxidative_stress,28033,1402,26631,5.001,28033,1402,26631,5.001,True,True,True,True
+SPLN30,fine,CD4 T cells,tierApm_p95__secondary_senescence,37997,1900,36097,5.0,37997,1900,36097,5.0,True,True,True,True
+SPLN30,fine,Endothelial cells,tierApm_p95__secondary_senescence,49023,2452,46571,5.002,49023,2452,46571,5.002,True,True,True,True
+SPLN30,fine,Fibroblasts,tierApm_p95__secondary_senescence,3939,197,3742,5.001,3939,197,3742,5.001,True,False,False,False
+SPLN30,fine,Follicular B cells,tierApm_p95__secondary_senescence,61482,3075,58407,5.001,61482,3075,58407,5.001,True,True,True,True
+SPLN30,fine,Monocytes,tierApm_p95__secondary_senescence,3809,191,3618,5.014,3809,191,3618,5.014,True,False,False,False
+SPLN30,fine,Neutrophils,tierApm_p95__secondary_senescence,1287,65,1222,5.051,1287,65,1222,5.051,True,False,False,False
+SPLN30,fine,Plasma cells,tierApm_p95__secondary_senescence,16431,822,15609,5.003,16431,822,15609,5.003,True,True,True,True
+SPLN30,fine,Red pulp macrophages,tierApm_p95__secondary_senescence,31747,1588,30159,5.002,31747,1588,30159,5.002,True,True,True,True
+SPLN30,fine,Smooth muscle / capsule,tierApm_p95__secondary_senescence,28033,1402,26631,5.001,28033,1402,26631,5.001,True,True,True,True
+SPLN30,fine,CD4 T cells,tierApm_p95__tnfa_nfkb_proximal,37997,1900,36097,5.0,37997,1900,36097,5.0,True,True,True,True
+SPLN30,fine,Endothelial cells,tierApm_p95__tnfa_nfkb_proximal,49023,2451,46572,5.0,49023,2451,46572,5.0,True,True,True,True
+SPLN30,fine,Fibroblasts,tierApm_p95__tnfa_nfkb_proximal,3939,197,3742,5.001,3939,197,3742,5.001,True,False,False,False
+SPLN30,fine,Follicular B cells,tierApm_p95__tnfa_nfkb_proximal,61482,3075,58407,5.001,61482,3075,58407,5.001,True,True,True,True
+SPLN30,fine,Monocytes,tierApm_p95__tnfa_nfkb_proximal,3809,191,3618,5.014,3809,191,3618,5.014,True,False,False,False
+SPLN30,fine,Neutrophils,tierApm_p95__tnfa_nfkb_proximal,1287,65,1222,5.051,1287,65,1222,5.051,True,False,False,False
+SPLN30,fine,Plasma cells,tierApm_p95__tnfa_nfkb_proximal,16431,822,15609,5.003,16431,822,15609,5.003,True,True,True,True
+SPLN30,fine,Red pulp macrophages,tierApm_p95__tnfa_nfkb_proximal,31747,1588,30159,5.002,31747,1588,30159,5.002,True,True,True,True
+SPLN30,fine,Smooth muscle / capsule,tierApm_p95__tnfa_nfkb_proximal,28033,1402,26631,5.001,28033,1402,26631,5.001,True,True,True,True
+SPLN30,merged,B cells,tierA_p90,61482,6148,55334,10.0,61482,6148,55334,10.0,True,True,True,True
+SPLN30,merged,Endothelial,tierA_p90,49023,4903,44120,10.001,49023,4903,44120,10.001,True,True,True,True
+SPLN30,merged,Mono/Mac/DC,tierA_p90,35556,3555,32001,9.998,35556,3555,32001,9.998,True,True,True,True
+SPLN30,merged,Neutrophils,tierA_p90,1287,129,1158,10.023,1287,129,1158,10.023,True,False,False,False
+SPLN30,merged,Plasma cells,tierA_p90,16431,1643,14788,9.999,16431,1643,14788,9.999,True,True,True,True
+SPLN30,merged,Stromal,tierA_p90,31972,3198,28774,10.003,31972,3198,28774,10.003,True,True,True,True
+SPLN30,merged,T/NK cells,tierA_p90,37997,3796,34201,9.99,37997,3796,34201,9.99,True,True,True,True
+SPLN30,merged,B cells,senepy_p90,61482,5845,55637,9.507,61482,5845,55637,9.507,True,True,True,True
+SPLN30,merged,Endothelial,senepy_p90,49023,4903,44120,10.001,49023,4903,44120,10.001,True,True,True,True
+SPLN30,merged,Mono/Mac/DC,senepy_p90,35556,3553,32003,9.993,35556,3553,32003,9.993,True,True,True,True
+SPLN30,merged,Neutrophils,senepy_p90,1287,129,1158,10.023,1287,129,1158,10.023,True,False,False,False
+SPLN30,merged,Plasma cells,senepy_p90,16431,1641,14790,9.987,16431,1641,14790,9.987,True,True,True,True
+SPLN30,merged,Stromal,senepy_p90,31972,3195,28777,9.993,31972,3195,28777,9.993,True,True,True,True
+SPLN30,merged,T/NK cells,senepy_p90,37997,3800,34197,10.001,37997,3800,34197,10.001,True,True,True,True
+SPLN30,merged,B cells,tierA_p95,61482,3075,58407,5.001,61482,3075,58407,5.001,True,True,True,True
+SPLN30,merged,Endothelial,tierA_p95,49023,2451,46572,5.0,49023,2451,46572,5.0,True,True,True,True
+SPLN30,merged,Mono/Mac/DC,tierA_p95,35556,1779,33777,5.003,35556,1779,33777,5.003,True,True,True,True
+SPLN30,merged,Neutrophils,tierA_p95,1287,65,1222,5.051,1287,65,1222,5.051,True,False,False,False
+SPLN30,merged,Plasma cells,tierA_p95,16431,822,15609,5.003,16431,822,15609,5.003,True,True,True,True
+SPLN30,merged,Stromal,tierA_p95,31972,1599,30373,5.001,31972,1599,30373,5.001,True,True,True,True
+SPLN30,merged,T/NK cells,tierA_p95,37997,1900,36097,5.0,37997,1900,36097,5.0,True,True,True,True
+SPLN30,merged,B cells,senepy_p95,61482,3073,58409,4.998,61482,3073,58409,4.998,True,True,True,True
+SPLN30,merged,Endothelial,senepy_p95,49023,2452,46571,5.002,49023,2452,46571,5.002,True,True,True,True
+SPLN30,merged,Mono/Mac/DC,senepy_p95,35556,1778,33778,5.001,35556,1778,33778,5.001,True,True,True,True
+SPLN30,merged,Neutrophils,senepy_p95,1287,65,1222,5.051,1287,65,1222,5.051,True,False,False,False
+SPLN30,merged,Plasma cells,senepy_p95,16431,821,15610,4.997,16431,821,15610,4.997,True,True,True,True
+SPLN30,merged,Stromal,senepy_p95,31972,1599,30373,5.001,31972,1599,30373,5.001,True,True,True,True
+SPLN30,merged,T/NK cells,senepy_p95,37997,1900,36097,5.0,37997,1900,36097,5.0,True,True,True,True
+SPLN30,merged,B cells,tierA_p99,61482,615,60867,1.0,61482,615,60867,1.0,True,True,True,True
+SPLN30,merged,Endothelial,tierA_p99,49023,491,48532,1.002,49023,491,48532,1.002,True,True,True,True
+SPLN30,merged,Mono/Mac/DC,tierA_p99,35556,357,35199,1.004,35556,357,35199,1.004,True,True,True,True
+SPLN30,merged,Neutrophils,tierA_p99,1287,13,1274,1.01,1287,13,1274,1.01,True,False,False,False
+SPLN30,merged,Plasma cells,tierA_p99,16431,165,16266,1.004,16431,165,16266,1.004,True,False,True,False
+SPLN30,merged,Stromal,tierA_p99,31972,321,31651,1.004,31972,321,31651,1.004,True,True,True,True
+SPLN30,merged,T/NK cells,tierA_p99,37997,379,37618,0.997,37997,379,37618,0.997,False,True,True,False
+SPLN30,merged,B cells,senepy_p99,61482,612,60870,0.995,61482,612,60870,0.995,False,True,True,False
+SPLN30,merged,Endothelial,senepy_p99,49023,491,48532,1.002,49023,491,48532,1.002,True,True,True,True
+SPLN30,merged,Mono/Mac/DC,senepy_p99,35556,357,35199,1.004,35556,357,35199,1.004,True,True,True,True
+SPLN30,merged,Neutrophils,senepy_p99,1287,13,1274,1.01,1287,13,1274,1.01,True,False,False,False
+SPLN30,merged,Plasma cells,senepy_p99,16431,165,16266,1.004,16431,165,16266,1.004,True,False,True,False
+SPLN30,merged,Stromal,senepy_p99,31972,321,31651,1.004,31972,321,31651,1.004,True,True,True,True
+SPLN30,merged,T/NK cells,senepy_p99,37997,379,37618,0.997,37997,379,37618,0.997,False,True,True,False
+SPLN30,merged,B cells,cdkn1a_pos,61482,388,61094,0.631,61482,388,61094,0.631,False,True,True,False
+SPLN30,merged,Endothelial,cdkn1a_pos,49023,1215,47808,2.478,49023,1215,47808,2.478,True,True,True,True
+SPLN30,merged,Mono/Mac/DC,cdkn1a_pos,35556,503,35053,1.415,35556,503,35053,1.415,True,True,True,True
+SPLN30,merged,Neutrophils,cdkn1a_pos,1287,2,1285,0.155,1287,2,1285,0.155,False,False,False,False
+SPLN30,merged,Plasma cells,cdkn1a_pos,16431,441,15990,2.684,16431,441,15990,2.684,True,True,True,True
+SPLN30,merged,Stromal,cdkn1a_pos,31972,538,31434,1.683,31972,538,31434,1.683,True,True,True,True
+SPLN30,merged,T/NK cells,cdkn1a_pos,37997,176,37821,0.463,37997,176,37821,0.463,False,False,True,False
+SPLN30,merged,B cells,tierApm_p95__downstream_arrest,61482,3075,58407,5.001,61482,3075,58407,5.001,True,True,True,True
+SPLN30,merged,Endothelial,tierApm_p95__downstream_arrest,49023,2452,46571,5.002,49023,2452,46571,5.002,True,True,True,True
+SPLN30,merged,Mono/Mac/DC,tierApm_p95__downstream_arrest,35556,1779,33777,5.003,35556,1779,33777,5.003,True,True,True,True
+SPLN30,merged,Neutrophils,tierApm_p95__downstream_arrest,1287,65,1222,5.051,1287,65,1222,5.051,True,False,False,False
+SPLN30,merged,Plasma cells,tierApm_p95__downstream_arrest,16431,822,15609,5.003,16431,822,15609,5.003,True,True,True,True
+SPLN30,merged,Stromal,tierApm_p95__downstream_arrest,31972,1599,30373,5.001,31972,1599,30373,5.001,True,True,True,True
+SPLN30,merged,T/NK cells,tierApm_p95__downstream_arrest,37997,1900,36097,5.0,37997,1900,36097,5.0,True,True,True,True
+SPLN30,merged,B cells,tierApm_p95__emt_ecm,61482,3075,58407,5.001,61482,3075,58407,5.001,True,True,True,True
+SPLN30,merged,Endothelial,tierApm_p95__emt_ecm,49023,2452,46571,5.002,49023,2452,46571,5.002,True,True,True,True
+SPLN30,merged,Mono/Mac/DC,tierApm_p95__emt_ecm,35556,1779,33777,5.003,35556,1779,33777,5.003,True,True,True,True
+SPLN30,merged,Neutrophils,tierApm_p95__emt_ecm,1287,65,1222,5.051,1287,65,1222,5.051,True,False,False,False
+SPLN30,merged,Plasma cells,tierApm_p95__emt_ecm,16431,822,15609,5.003,16431,822,15609,5.003,True,True,True,True
+SPLN30,merged,Stromal,tierApm_p95__emt_ecm,31972,1599,30373,5.001,31972,1599,30373,5.001,True,True,True,True
+SPLN30,merged,T/NK cells,tierApm_p95__emt_ecm,37997,1899,36098,4.998,37997,1899,36098,4.998,True,True,True,True
+SPLN30,merged,B cells,tierApm_p95__il6_jak_stat3,61482,3075,58407,5.001,61482,3075,58407,5.001,True,True,True,True
+SPLN30,merged,Endothelial,tierApm_p95__il6_jak_stat3,49023,2452,46571,5.002,49023,2452,46571,5.002,True,True,True,True
+SPLN30,merged,Mono/Mac/DC,tierApm_p95__il6_jak_stat3,35556,1779,33777,5.003,35556,1779,33777,5.003,True,True,True,True
+SPLN30,merged,Neutrophils,tierApm_p95__il6_jak_stat3,1287,65,1222,5.051,1287,65,1222,5.051,True,False,False,False
+SPLN30,merged,Plasma cells,tierApm_p95__il6_jak_stat3,16431,822,15609,5.003,16431,822,15609,5.003,True,True,True,True
+SPLN30,merged,Stromal,tierApm_p95__il6_jak_stat3,31972,1599,30373,5.001,31972,1599,30373,5.001,True,True,True,True
+SPLN30,merged,T/NK cells,tierApm_p95__il6_jak_stat3,37997,1900,36097,5.0,37997,1900,36097,5.0,True,True,True,True
+SPLN30,merged,B cells,tierApm_p95__interferon_response,61482,3075,58407,5.001,61482,3075,58407,5.001,True,True,True,True
+SPLN30,merged,Endothelial,tierApm_p95__interferon_response,49023,2451,46572,5.0,49023,2451,46572,5.0,True,True,True,True
+SPLN30,merged,Mono/Mac/DC,tierApm_p95__interferon_response,35556,1779,33777,5.003,35556,1779,33777,5.003,True,True,True,True
+SPLN30,merged,Neutrophils,tierApm_p95__interferon_response,1287,65,1222,5.051,1287,65,1222,5.051,True,False,False,False
+SPLN30,merged,Plasma cells,tierApm_p95__interferon_response,16431,822,15609,5.003,16431,822,15609,5.003,True,True,True,True
+SPLN30,merged,Stromal,tierApm_p95__interferon_response,31972,1599,30373,5.001,31972,1599,30373,5.001,True,True,True,True
+SPLN30,merged,T/NK cells,tierApm_p95__interferon_response,37997,1900,36097,5.0,37997,1900,36097,5.0,True,True,True,True
+SPLN30,merged,B cells,tierApm_p95__oxidative_stress,61482,3075,58407,5.001,61482,3075,58407,5.001,True,True,True,True
+SPLN30,merged,Endothelial,tierApm_p95__oxidative_stress,49023,2452,46571,5.002,49023,2452,46571,5.002,True,True,True,True
+SPLN30,merged,Mono/Mac/DC,tierApm_p95__oxidative_stress,35556,1779,33777,5.003,35556,1779,33777,5.003,True,True,True,True
+SPLN30,merged,Neutrophils,tierApm_p95__oxidative_stress,1287,65,1222,5.051,1287,65,1222,5.051,True,False,False,False
+SPLN30,merged,Plasma cells,tierApm_p95__oxidative_stress,16431,822,15609,5.003,16431,822,15609,5.003,True,True,True,True
+SPLN30,merged,Stromal,tierApm_p95__oxidative_stress,31972,1599,30373,5.001,31972,1599,30373,5.001,True,True,True,True
+SPLN30,merged,T/NK cells,tierApm_p95__oxidative_stress,37997,1896,36101,4.99,37997,1896,36101,4.99,True,True,True,True
+SPLN30,merged,B cells,tierApm_p95__secondary_senescence,61482,3075,58407,5.001,61482,3075,58407,5.001,True,True,True,True
+SPLN30,merged,Endothelial,tierApm_p95__secondary_senescence,49023,2452,46571,5.002,49023,2452,46571,5.002,True,True,True,True
+SPLN30,merged,Mono/Mac/DC,tierApm_p95__secondary_senescence,35556,1779,33777,5.003,35556,1779,33777,5.003,True,True,True,True
+SPLN30,merged,Neutrophils,tierApm_p95__secondary_senescence,1287,65,1222,5.051,1287,65,1222,5.051,True,False,False,False
+SPLN30,merged,Plasma cells,tierApm_p95__secondary_senescence,16431,822,15609,5.003,16431,822,15609,5.003,True,True,True,True
+SPLN30,merged,Stromal,tierApm_p95__secondary_senescence,31972,1599,30373,5.001,31972,1599,30373,5.001,True,True,True,True
+SPLN30,merged,T/NK cells,tierApm_p95__secondary_senescence,37997,1900,36097,5.0,37997,1900,36097,5.0,True,True,True,True
+SPLN30,merged,B cells,tierApm_p95__tnfa_nfkb_proximal,61482,3075,58407,5.001,61482,3075,58407,5.001,True,True,True,True
+SPLN30,merged,Endothelial,tierApm_p95__tnfa_nfkb_proximal,49023,2451,46572,5.0,49023,2451,46572,5.0,True,True,True,True
+SPLN30,merged,Mono/Mac/DC,tierApm_p95__tnfa_nfkb_proximal,35556,1779,33777,5.003,35556,1779,33777,5.003,True,True,True,True
+SPLN30,merged,Neutrophils,tierApm_p95__tnfa_nfkb_proximal,1287,65,1222,5.051,1287,65,1222,5.051,True,False,False,False
+SPLN30,merged,Plasma cells,tierApm_p95__tnfa_nfkb_proximal,16431,822,15609,5.003,16431,822,15609,5.003,True,True,True,True
+SPLN30,merged,Stromal,tierApm_p95__tnfa_nfkb_proximal,31972,1599,30373,5.001,31972,1599,30373,5.001,True,True,True,True
+SPLN30,merged,T/NK cells,tierApm_p95__tnfa_nfkb_proximal,37997,1900,36097,5.0,37997,1900,36097,5.0,True,True,True,True
+SPLN43,fine,Endothelial cells,tierA_p90,56471,5647,50824,10.0,56471,5647,50824,10.0,True,True,True,True
+SPLN43,fine,Fibroblastic reticular cells,tierA_p90,5695,570,5125,10.009,5695,570,5125,10.009,True,True,True,True
+SPLN43,fine,Fibroblasts,tierA_p90,21564,2157,19407,10.003,21564,2157,19407,10.003,True,True,True,True
+SPLN43,fine,Follicular B cells,tierA_p90,45873,4588,41285,10.002,45873,4588,41285,10.002,True,True,True,True
+SPLN43,fine,Neutrophils,tierA_p90,2688,269,2419,10.007,2688,269,2419,10.007,True,True,False,False
+SPLN43,fine,Plasma cells,tierA_p90,9861,986,8875,9.999,9861,986,8875,9.999,True,True,True,True
+SPLN43,fine,Red pulp macrophages,tierA_p90,25453,2546,22907,10.003,25453,2546,22907,10.003,True,True,True,True
+SPLN43,fine,Smooth muscle / capsule,tierA_p90,1496,150,1346,10.027,1496,150,1346,10.027,True,False,False,False
+SPLN43,fine,cDC2,tierA_p90,13625,1363,12262,10.004,13625,1363,12262,10.004,True,True,True,True
+SPLN43,fine,Endothelial cells,senepy_p90,56471,5647,50824,10.0,56471,5647,50824,10.0,True,True,True,True
+SPLN43,fine,Fibroblastic reticular cells,senepy_p90,5695,570,5125,10.009,5695,570,5125,10.009,True,True,True,True
+SPLN43,fine,Fibroblasts,senepy_p90,21564,2157,19407,10.003,21564,2157,19407,10.003,True,True,True,True
+SPLN43,fine,Follicular B cells,senepy_p90,45873,4587,41286,9.999,45873,4587,41286,9.999,True,True,True,True
+SPLN43,fine,Neutrophils,senepy_p90,2688,269,2419,10.007,2688,269,2419,10.007,True,True,False,False
+SPLN43,fine,Plasma cells,senepy_p90,9861,984,8877,9.979,9861,984,8877,9.979,True,True,True,True
+SPLN43,fine,Red pulp macrophages,senepy_p90,25453,2545,22908,9.999,25453,2545,22908,9.999,True,True,True,True
+SPLN43,fine,Smooth muscle / capsule,senepy_p90,1496,150,1346,10.027,1496,150,1346,10.027,True,False,False,False
+SPLN43,fine,cDC2,senepy_p90,13625,0,13625,0.0,0,0,0,,False,False,False,False
+SPLN43,fine,Endothelial cells,tierA_p95,56471,2823,53648,4.999,56471,2823,53648,4.999,True,True,True,True
+SPLN43,fine,Fibroblastic reticular cells,tierA_p95,5695,285,5410,5.004,5695,285,5410,5.004,True,True,True,True
+SPLN43,fine,Fibroblasts,tierA_p95,21564,1079,20485,5.004,21564,1079,20485,5.004,True,True,True,True
+SPLN43,fine,Follicular B cells,tierA_p95,45873,2294,43579,5.001,45873,2294,43579,5.001,True,True,True,True
+SPLN43,fine,Neutrophils,tierA_p95,2688,135,2553,5.022,2688,135,2553,5.022,True,False,False,False
+SPLN43,fine,Plasma cells,tierA_p95,9861,493,9368,4.999,9861,493,9368,4.999,True,True,True,True
+SPLN43,fine,Red pulp macrophages,tierA_p95,25453,1273,24180,5.001,25453,1273,24180,5.001,True,True,True,True
+SPLN43,fine,Smooth muscle / capsule,tierA_p95,1496,75,1421,5.013,1496,75,1421,5.013,True,False,False,False
+SPLN43,fine,cDC2,tierA_p95,13625,681,12944,4.998,13625,681,12944,4.998,True,True,True,True
+SPLN43,fine,Endothelial cells,senepy_p95,56471,2824,53647,5.001,56471,2824,53647,5.001,True,True,True,True
+SPLN43,fine,Fibroblastic reticular cells,senepy_p95,5695,285,5410,5.004,5695,285,5410,5.004,True,True,True,True
+SPLN43,fine,Fibroblasts,senepy_p95,21564,1079,20485,5.004,21564,1079,20485,5.004,True,True,True,True
+SPLN43,fine,Follicular B cells,senepy_p95,45873,2292,43581,4.996,45873,2292,43581,4.996,True,True,True,True
+SPLN43,fine,Neutrophils,senepy_p95,2688,135,2553,5.022,2688,135,2553,5.022,True,False,False,False
+SPLN43,fine,Plasma cells,senepy_p95,9861,493,9368,4.999,9861,493,9368,4.999,True,True,True,True
+SPLN43,fine,Red pulp macrophages,senepy_p95,25453,1273,24180,5.001,25453,1273,24180,5.001,True,True,True,True
+SPLN43,fine,Smooth muscle / capsule,senepy_p95,1496,75,1421,5.013,1496,75,1421,5.013,True,False,False,False
+SPLN43,fine,cDC2,senepy_p95,13625,0,13625,0.0,0,0,0,,False,False,False,False
+SPLN43,fine,Endothelial cells,tierA_p99,56471,565,55906,1.001,56471,565,55906,1.001,True,True,True,True
+SPLN43,fine,Fibroblastic reticular cells,tierA_p99,5695,57,5638,1.001,5695,57,5638,1.001,True,False,True,False
+SPLN43,fine,Fibroblasts,tierA_p99,21564,216,21348,1.002,21564,216,21348,1.002,True,True,True,True
+SPLN43,fine,Follicular B cells,tierA_p99,45873,459,45414,1.001,45873,459,45414,1.001,True,True,True,True
+SPLN43,fine,Neutrophils,tierA_p99,2688,27,2661,1.004,2688,27,2661,1.004,True,False,False,False
+SPLN43,fine,Plasma cells,tierA_p99,9861,99,9762,1.004,9861,99,9762,1.004,True,False,True,False
+SPLN43,fine,Red pulp macrophages,tierA_p99,25453,255,25198,1.002,25453,255,25198,1.002,True,True,True,True
+SPLN43,fine,Smooth muscle / capsule,tierA_p99,1496,15,1481,1.003,1496,15,1481,1.003,True,False,False,False
+SPLN43,fine,cDC2,tierA_p99,13625,137,13488,1.006,13625,137,13488,1.006,True,False,True,False
+SPLN43,fine,Endothelial cells,senepy_p99,56471,565,55906,1.001,56471,565,55906,1.001,True,True,True,True
+SPLN43,fine,Fibroblastic reticular cells,senepy_p99,5695,57,5638,1.001,5695,57,5638,1.001,True,False,True,False
+SPLN43,fine,Fibroblasts,senepy_p99,21564,216,21348,1.002,21564,216,21348,1.002,True,True,True,True
+SPLN43,fine,Follicular B cells,senepy_p99,45873,458,45415,0.998,45873,458,45415,0.998,False,True,True,False
+SPLN43,fine,Neutrophils,senepy_p99,2688,27,2661,1.004,2688,27,2661,1.004,True,False,False,False
+SPLN43,fine,Plasma cells,senepy_p99,9861,99,9762,1.004,9861,99,9762,1.004,True,False,True,False
+SPLN43,fine,Red pulp macrophages,senepy_p99,25453,255,25198,1.002,25453,255,25198,1.002,True,True,True,True
+SPLN43,fine,Smooth muscle / capsule,senepy_p99,1496,15,1481,1.003,1496,15,1481,1.003,True,False,False,False
+SPLN43,fine,cDC2,senepy_p99,13625,0,13625,0.0,0,0,0,,False,False,False,False
+SPLN43,fine,Endothelial cells,cdkn1a_pos,56471,703,55768,1.245,56471,703,55768,1.245,True,True,True,True
+SPLN43,fine,Fibroblastic reticular cells,cdkn1a_pos,5695,219,5476,3.845,5695,219,5476,3.845,True,True,True,True
+SPLN43,fine,Fibroblasts,cdkn1a_pos,21564,786,20778,3.645,21564,786,20778,3.645,True,True,True,True
+SPLN43,fine,Follicular B cells,cdkn1a_pos,45873,827,45046,1.803,45873,827,45046,1.803,True,True,True,True
+SPLN43,fine,Neutrophils,cdkn1a_pos,2688,13,2675,0.484,2688,13,2675,0.484,False,False,False,False
+SPLN43,fine,Plasma cells,cdkn1a_pos,9861,499,9362,5.06,9861,499,9362,5.06,True,True,True,True
+SPLN43,fine,Red pulp macrophages,cdkn1a_pos,25453,395,25058,1.552,25453,395,25058,1.552,True,True,True,True
+SPLN43,fine,Smooth muscle / capsule,cdkn1a_pos,1496,93,1403,6.217,1496,93,1403,6.217,True,False,False,False
+SPLN43,fine,cDC2,cdkn1a_pos,13625,157,13468,1.152,13625,157,13468,1.152,True,False,True,False
+SPLN43,fine,Endothelial cells,tierApm_p95__downstream_arrest,56471,2824,53647,5.001,56471,2824,53647,5.001,True,True,True,True
+SPLN43,fine,Fibroblastic reticular cells,tierApm_p95__downstream_arrest,5695,285,5410,5.004,5695,285,5410,5.004,True,True,True,True
+SPLN43,fine,Fibroblasts,tierApm_p95__downstream_arrest,21564,1079,20485,5.004,21564,1079,20485,5.004,True,True,True,True
+SPLN43,fine,Follicular B cells,tierApm_p95__downstream_arrest,45873,2294,43579,5.001,45873,2294,43579,5.001,True,True,True,True
+SPLN43,fine,Neutrophils,tierApm_p95__downstream_arrest,2688,135,2553,5.022,2688,135,2553,5.022,True,False,False,False
+SPLN43,fine,Plasma cells,tierApm_p95__downstream_arrest,9861,493,9368,4.999,9861,493,9368,4.999,True,True,True,True
+SPLN43,fine,Red pulp macrophages,tierApm_p95__downstream_arrest,25453,1273,24180,5.001,25453,1273,24180,5.001,True,True,True,True
+SPLN43,fine,Smooth muscle / capsule,tierApm_p95__downstream_arrest,1496,75,1421,5.013,1496,75,1421,5.013,True,False,False,False
+SPLN43,fine,cDC2,tierApm_p95__downstream_arrest,13625,682,12943,5.006,13625,682,12943,5.006,True,True,True,True
+SPLN43,fine,Endothelial cells,tierApm_p95__emt_ecm,56471,2824,53647,5.001,56471,2824,53647,5.001,True,True,True,True
+SPLN43,fine,Fibroblastic reticular cells,tierApm_p95__emt_ecm,5695,285,5410,5.004,5695,285,5410,5.004,True,True,True,True
+SPLN43,fine,Fibroblasts,tierApm_p95__emt_ecm,21564,1079,20485,5.004,21564,1079,20485,5.004,True,True,True,True
+SPLN43,fine,Follicular B cells,tierApm_p95__emt_ecm,45873,2294,43579,5.001,45873,2294,43579,5.001,True,True,True,True
+SPLN43,fine,Neutrophils,tierApm_p95__emt_ecm,2688,135,2553,5.022,2688,135,2553,5.022,True,False,False,False
+SPLN43,fine,Plasma cells,tierApm_p95__emt_ecm,9861,493,9368,4.999,9861,493,9368,4.999,True,True,True,True
+SPLN43,fine,Red pulp macrophages,tierApm_p95__emt_ecm,25453,1273,24180,5.001,25453,1273,24180,5.001,True,True,True,True
+SPLN43,fine,Smooth muscle / capsule,tierApm_p95__emt_ecm,1496,75,1421,5.013,1496,75,1421,5.013,True,False,False,False
+SPLN43,fine,cDC2,tierApm_p95__emt_ecm,13625,682,12943,5.006,13625,682,12943,5.006,True,True,True,True
+SPLN43,fine,Endothelial cells,tierApm_p95__il6_jak_stat3,56471,2824,53647,5.001,56471,2824,53647,5.001,True,True,True,True
+SPLN43,fine,Fibroblastic reticular cells,tierApm_p95__il6_jak_stat3,5695,285,5410,5.004,5695,285,5410,5.004,True,True,True,True
+SPLN43,fine,Fibroblasts,tierApm_p95__il6_jak_stat3,21564,1078,20486,4.999,21564,1078,20486,4.999,True,True,True,True
+SPLN43,fine,Follicular B cells,tierApm_p95__il6_jak_stat3,45873,2294,43579,5.001,45873,2294,43579,5.001,True,True,True,True
+SPLN43,fine,Neutrophils,tierApm_p95__il6_jak_stat3,2688,135,2553,5.022,2688,135,2553,5.022,True,False,False,False
+SPLN43,fine,Plasma cells,tierApm_p95__il6_jak_stat3,9861,493,9368,4.999,9861,493,9368,4.999,True,True,True,True
+SPLN43,fine,Red pulp macrophages,tierApm_p95__il6_jak_stat3,25453,1273,24180,5.001,25453,1273,24180,5.001,True,True,True,True
+SPLN43,fine,Smooth muscle / capsule,tierApm_p95__il6_jak_stat3,1496,75,1421,5.013,1496,75,1421,5.013,True,False,False,False
+SPLN43,fine,cDC2,tierApm_p95__il6_jak_stat3,13625,682,12943,5.006,13625,682,12943,5.006,True,True,True,True
+SPLN43,fine,Endothelial cells,tierApm_p95__interferon_response,56471,2824,53647,5.001,56471,2824,53647,5.001,True,True,True,True
+SPLN43,fine,Fibroblastic reticular cells,tierApm_p95__interferon_response,5695,285,5410,5.004,5695,285,5410,5.004,True,True,True,True
+SPLN43,fine,Fibroblasts,tierApm_p95__interferon_response,21564,1079,20485,5.004,21564,1079,20485,5.004,True,True,True,True
+SPLN43,fine,Follicular B cells,tierApm_p95__interferon_response,45873,2294,43579,5.001,45873,2294,43579,5.001,True,True,True,True
+SPLN43,fine,Neutrophils,tierApm_p95__interferon_response,2688,135,2553,5.022,2688,135,2553,5.022,True,False,False,False
+SPLN43,fine,Plasma cells,tierApm_p95__interferon_response,9861,493,9368,4.999,9861,493,9368,4.999,True,True,True,True
+SPLN43,fine,Red pulp macrophages,tierApm_p95__interferon_response,25453,1273,24180,5.001,25453,1273,24180,5.001,True,True,True,True
+SPLN43,fine,Smooth muscle / capsule,tierApm_p95__interferon_response,1496,75,1421,5.013,1496,75,1421,5.013,True,False,False,False
+SPLN43,fine,cDC2,tierApm_p95__interferon_response,13625,682,12943,5.006,13625,682,12943,5.006,True,True,True,True
+SPLN43,fine,Endothelial cells,tierApm_p95__oxidative_stress,56471,2824,53647,5.001,56471,2824,53647,5.001,True,True,True,True
+SPLN43,fine,Fibroblastic reticular cells,tierApm_p95__oxidative_stress,5695,285,5410,5.004,5695,285,5410,5.004,True,True,True,True
+SPLN43,fine,Fibroblasts,tierApm_p95__oxidative_stress,21564,1079,20485,5.004,21564,1079,20485,5.004,True,True,True,True
+SPLN43,fine,Follicular B cells,tierApm_p95__oxidative_stress,45873,2294,43579,5.001,45873,2294,43579,5.001,True,True,True,True
+SPLN43,fine,Neutrophils,tierApm_p95__oxidative_stress,2688,135,2553,5.022,2688,135,2553,5.022,True,False,False,False
+SPLN43,fine,Plasma cells,tierApm_p95__oxidative_stress,9861,493,9368,4.999,9861,493,9368,4.999,True,True,True,True
+SPLN43,fine,Red pulp macrophages,tierApm_p95__oxidative_stress,25453,1273,24180,5.001,25453,1273,24180,5.001,True,True,True,True
+SPLN43,fine,Smooth muscle / capsule,tierApm_p95__oxidative_stress,1496,75,1421,5.013,1496,75,1421,5.013,True,False,False,False
+SPLN43,fine,cDC2,tierApm_p95__oxidative_stress,13625,682,12943,5.006,13625,682,12943,5.006,True,True,True,True
+SPLN43,fine,Endothelial cells,tierApm_p95__secondary_senescence,56471,2824,53647,5.001,56471,2824,53647,5.001,True,True,True,True
+SPLN43,fine,Fibroblastic reticular cells,tierApm_p95__secondary_senescence,5695,285,5410,5.004,5695,285,5410,5.004,True,True,True,True
+SPLN43,fine,Fibroblasts,tierApm_p95__secondary_senescence,21564,1078,20486,4.999,21564,1078,20486,4.999,True,True,True,True
+SPLN43,fine,Follicular B cells,tierApm_p95__secondary_senescence,45873,2294,43579,5.001,45873,2294,43579,5.001,True,True,True,True
+SPLN43,fine,Neutrophils,tierApm_p95__secondary_senescence,2688,135,2553,5.022,2688,135,2553,5.022,True,False,False,False
+SPLN43,fine,Plasma cells,tierApm_p95__secondary_senescence,9861,493,9368,4.999,9861,493,9368,4.999,True,True,True,True
+SPLN43,fine,Red pulp macrophages,tierApm_p95__secondary_senescence,25453,1273,24180,5.001,25453,1273,24180,5.001,True,True,True,True
+SPLN43,fine,Smooth muscle / capsule,tierApm_p95__secondary_senescence,1496,75,1421,5.013,1496,75,1421,5.013,True,False,False,False
+SPLN43,fine,cDC2,tierApm_p95__secondary_senescence,13625,682,12943,5.006,13625,682,12943,5.006,True,True,True,True
+SPLN43,fine,Endothelial cells,tierApm_p95__tnfa_nfkb_proximal,56471,2824,53647,5.001,56471,2824,53647,5.001,True,True,True,True
+SPLN43,fine,Fibroblastic reticular cells,tierApm_p95__tnfa_nfkb_proximal,5695,285,5410,5.004,5695,285,5410,5.004,True,True,True,True
+SPLN43,fine,Fibroblasts,tierApm_p95__tnfa_nfkb_proximal,21564,1079,20485,5.004,21564,1079,20485,5.004,True,True,True,True
+SPLN43,fine,Follicular B cells,tierApm_p95__tnfa_nfkb_proximal,45873,2294,43579,5.001,45873,2294,43579,5.001,True,True,True,True
+SPLN43,fine,Neutrophils,tierApm_p95__tnfa_nfkb_proximal,2688,135,2553,5.022,2688,135,2553,5.022,True,False,False,False
+SPLN43,fine,Plasma cells,tierApm_p95__tnfa_nfkb_proximal,9861,493,9368,4.999,9861,493,9368,4.999,True,True,True,True
+SPLN43,fine,Red pulp macrophages,tierApm_p95__tnfa_nfkb_proximal,25453,1273,24180,5.001,25453,1273,24180,5.001,True,True,True,True
+SPLN43,fine,Smooth muscle / capsule,tierApm_p95__tnfa_nfkb_proximal,1496,75,1421,5.013,1496,75,1421,5.013,True,False,False,False
+SPLN43,fine,cDC2,tierApm_p95__tnfa_nfkb_proximal,13625,680,12945,4.991,13625,680,12945,4.991,True,True,True,True
+SPLN43,merged,B cells,tierA_p90,45873,4588,41285,10.002,45873,4588,41285,10.002,True,True,True,True
+SPLN43,merged,Endothelial,tierA_p90,56471,5647,50824,10.0,56471,5647,50824,10.0,True,True,True,True
+SPLN43,merged,Mono/Mac/DC,tierA_p90,39078,3909,35169,10.003,39078,3909,35169,10.003,True,True,True,True
+SPLN43,merged,Neutrophils,tierA_p90,2688,269,2419,10.007,2688,269,2419,10.007,True,True,False,False
+SPLN43,merged,Plasma cells,tierA_p90,9861,986,8875,9.999,9861,986,8875,9.999,True,True,True,True
+SPLN43,merged,Stromal,tierA_p90,28755,2877,25878,10.005,28755,2877,25878,10.005,True,True,True,True
+SPLN43,merged,T/NK cells,tierA_p90,24815,0,24815,0.0,24815,0,24815,0.0,False,False,True,False
+SPLN43,merged,B cells,senepy_p90,45873,4587,41286,9.999,45873,4587,41286,9.999,True,True,True,True
+SPLN43,merged,Endothelial,senepy_p90,56471,5647,50824,10.0,56471,5647,50824,10.0,True,True,True,True
+SPLN43,merged,Mono/Mac/DC,senepy_p90,39078,2545,36533,6.513,25453,2545,22908,9.999,True,True,True,True
+SPLN43,merged,Neutrophils,senepy_p90,2688,269,2419,10.007,2688,269,2419,10.007,True,True,False,False
+SPLN43,merged,Plasma cells,senepy_p90,9861,984,8877,9.979,9861,984,8877,9.979,True,True,True,True
+SPLN43,merged,Stromal,senepy_p90,28755,2877,25878,10.005,28755,2877,25878,10.005,True,True,True,True
+SPLN43,merged,T/NK cells,senepy_p90,24815,0,24815,0.0,0,0,0,,False,False,False,False
+SPLN43,merged,B cells,tierA_p95,45873,2294,43579,5.001,45873,2294,43579,5.001,True,True,True,True
+SPLN43,merged,Endothelial,tierA_p95,56471,2823,53648,4.999,56471,2823,53648,4.999,True,True,True,True
+SPLN43,merged,Mono/Mac/DC,tierA_p95,39078,1954,37124,5.0,39078,1954,37124,5.0,True,True,True,True
+SPLN43,merged,Neutrophils,tierA_p95,2688,135,2553,5.022,2688,135,2553,5.022,True,False,False,False
+SPLN43,merged,Plasma cells,tierA_p95,9861,493,9368,4.999,9861,493,9368,4.999,True,True,True,True
+SPLN43,merged,Stromal,tierA_p95,28755,1439,27316,5.004,28755,1439,27316,5.004,True,True,True,True
+SPLN43,merged,T/NK cells,tierA_p95,24815,0,24815,0.0,24815,0,24815,0.0,False,False,True,False
+SPLN43,merged,B cells,senepy_p95,45873,2292,43581,4.996,45873,2292,43581,4.996,True,True,True,True
+SPLN43,merged,Endothelial,senepy_p95,56471,2824,53647,5.001,56471,2824,53647,5.001,True,True,True,True
+SPLN43,merged,Mono/Mac/DC,senepy_p95,39078,1273,37805,3.258,25453,1273,24180,5.001,True,True,True,True
+SPLN43,merged,Neutrophils,senepy_p95,2688,135,2553,5.022,2688,135,2553,5.022,True,False,False,False
+SPLN43,merged,Plasma cells,senepy_p95,9861,493,9368,4.999,9861,493,9368,4.999,True,True,True,True
+SPLN43,merged,Stromal,senepy_p95,28755,1439,27316,5.004,28755,1439,27316,5.004,True,True,True,True
+SPLN43,merged,T/NK cells,senepy_p95,24815,0,24815,0.0,0,0,0,,False,False,False,False
+SPLN43,merged,B cells,tierA_p99,45873,459,45414,1.001,45873,459,45414,1.001,True,True,True,True
+SPLN43,merged,Endothelial,tierA_p99,56471,565,55906,1.001,56471,565,55906,1.001,True,True,True,True
+SPLN43,merged,Mono/Mac/DC,tierA_p99,39078,392,38686,1.003,39078,392,38686,1.003,True,True,True,True
+SPLN43,merged,Neutrophils,tierA_p99,2688,27,2661,1.004,2688,27,2661,1.004,True,False,False,False
+SPLN43,merged,Plasma cells,tierA_p99,9861,99,9762,1.004,9861,99,9762,1.004,True,False,True,False
+SPLN43,merged,Stromal,tierA_p99,28755,288,28467,1.002,28755,288,28467,1.002,True,True,True,True
+SPLN43,merged,T/NK cells,tierA_p99,24815,0,24815,0.0,24815,0,24815,0.0,False,False,True,False
+SPLN43,merged,B cells,senepy_p99,45873,458,45415,0.998,45873,458,45415,0.998,False,True,True,False
+SPLN43,merged,Endothelial,senepy_p99,56471,565,55906,1.001,56471,565,55906,1.001,True,True,True,True
+SPLN43,merged,Mono/Mac/DC,senepy_p99,39078,255,38823,0.653,25453,255,25198,1.002,True,True,True,True
+SPLN43,merged,Neutrophils,senepy_p99,2688,27,2661,1.004,2688,27,2661,1.004,True,False,False,False
+SPLN43,merged,Plasma cells,senepy_p99,9861,99,9762,1.004,9861,99,9762,1.004,True,False,True,False
+SPLN43,merged,Stromal,senepy_p99,28755,288,28467,1.002,28755,288,28467,1.002,True,True,True,True
+SPLN43,merged,T/NK cells,senepy_p99,24815,0,24815,0.0,0,0,0,,False,False,False,False
+SPLN43,merged,B cells,cdkn1a_pos,45873,827,45046,1.803,45873,827,45046,1.803,True,True,True,True
+SPLN43,merged,Endothelial,cdkn1a_pos,56471,703,55768,1.245,56471,703,55768,1.245,True,True,True,True
+SPLN43,merged,Mono/Mac/DC,cdkn1a_pos,39078,552,38526,1.413,39078,552,38526,1.413,True,True,True,True
+SPLN43,merged,Neutrophils,cdkn1a_pos,2688,13,2675,0.484,2688,13,2675,0.484,False,False,False,False
+SPLN43,merged,Plasma cells,cdkn1a_pos,9861,499,9362,5.06,9861,499,9362,5.06,True,True,True,True
+SPLN43,merged,Stromal,cdkn1a_pos,28755,1098,27657,3.818,28755,1098,27657,3.818,True,True,True,True
+SPLN43,merged,T/NK cells,cdkn1a_pos,24815,174,24641,0.701,24815,174,24641,0.701,False,False,True,False
+SPLN43,merged,B cells,tierApm_p95__downstream_arrest,45873,2294,43579,5.001,45873,2294,43579,5.001,True,True,True,True
+SPLN43,merged,Endothelial,tierApm_p95__downstream_arrest,56471,2824,53647,5.001,56471,2824,53647,5.001,True,True,True,True
+SPLN43,merged,Mono/Mac/DC,tierApm_p95__downstream_arrest,39078,1955,37123,5.003,39078,1955,37123,5.003,True,True,True,True
+SPLN43,merged,Neutrophils,tierApm_p95__downstream_arrest,2688,135,2553,5.022,2688,135,2553,5.022,True,False,False,False
+SPLN43,merged,Plasma cells,tierApm_p95__downstream_arrest,9861,493,9368,4.999,9861,493,9368,4.999,True,True,True,True
+SPLN43,merged,Stromal,tierApm_p95__downstream_arrest,28755,1439,27316,5.004,28755,1439,27316,5.004,True,True,True,True
+SPLN43,merged,T/NK cells,tierApm_p95__downstream_arrest,24815,0,24815,0.0,24815,0,24815,0.0,False,False,True,False
+SPLN43,merged,B cells,tierApm_p95__emt_ecm,45873,2294,43579,5.001,45873,2294,43579,5.001,True,True,True,True
+SPLN43,merged,Endothelial,tierApm_p95__emt_ecm,56471,2824,53647,5.001,56471,2824,53647,5.001,True,True,True,True
+SPLN43,merged,Mono/Mac/DC,tierApm_p95__emt_ecm,39078,1955,37123,5.003,39078,1955,37123,5.003,True,True,True,True
+SPLN43,merged,Neutrophils,tierApm_p95__emt_ecm,2688,135,2553,5.022,2688,135,2553,5.022,True,False,False,False
+SPLN43,merged,Plasma cells,tierApm_p95__emt_ecm,9861,493,9368,4.999,9861,493,9368,4.999,True,True,True,True
+SPLN43,merged,Stromal,tierApm_p95__emt_ecm,28755,1439,27316,5.004,28755,1439,27316,5.004,True,True,True,True
+SPLN43,merged,T/NK cells,tierApm_p95__emt_ecm,24815,0,24815,0.0,24815,0,24815,0.0,False,False,True,False
+SPLN43,merged,B cells,tierApm_p95__il6_jak_stat3,45873,2294,43579,5.001,45873,2294,43579,5.001,True,True,True,True
+SPLN43,merged,Endothelial,tierApm_p95__il6_jak_stat3,56471,2824,53647,5.001,56471,2824,53647,5.001,True,True,True,True
+SPLN43,merged,Mono/Mac/DC,tierApm_p95__il6_jak_stat3,39078,1955,37123,5.003,39078,1955,37123,5.003,True,True,True,True
+SPLN43,merged,Neutrophils,tierApm_p95__il6_jak_stat3,2688,135,2553,5.022,2688,135,2553,5.022,True,False,False,False
+SPLN43,merged,Plasma cells,tierApm_p95__il6_jak_stat3,9861,493,9368,4.999,9861,493,9368,4.999,True,True,True,True
+SPLN43,merged,Stromal,tierApm_p95__il6_jak_stat3,28755,1438,27317,5.001,28755,1438,27317,5.001,True,True,True,True
+SPLN43,merged,T/NK cells,tierApm_p95__il6_jak_stat3,24815,0,24815,0.0,24815,0,24815,0.0,False,False,True,False
+SPLN43,merged,B cells,tierApm_p95__interferon_response,45873,2294,43579,5.001,45873,2294,43579,5.001,True,True,True,True
+SPLN43,merged,Endothelial,tierApm_p95__interferon_response,56471,2824,53647,5.001,56471,2824,53647,5.001,True,True,True,True
+SPLN43,merged,Mono/Mac/DC,tierApm_p95__interferon_response,39078,1955,37123,5.003,39078,1955,37123,5.003,True,True,True,True
+SPLN43,merged,Neutrophils,tierApm_p95__interferon_response,2688,135,2553,5.022,2688,135,2553,5.022,True,False,False,False
+SPLN43,merged,Plasma cells,tierApm_p95__interferon_response,9861,493,9368,4.999,9861,493,9368,4.999,True,True,True,True
+SPLN43,merged,Stromal,tierApm_p95__interferon_response,28755,1439,27316,5.004,28755,1439,27316,5.004,True,True,True,True
+SPLN43,merged,T/NK cells,tierApm_p95__interferon_response,24815,0,24815,0.0,24815,0,24815,0.0,False,False,True,False
+SPLN43,merged,B cells,tierApm_p95__oxidative_stress,45873,2294,43579,5.001,45873,2294,43579,5.001,True,True,True,True
+SPLN43,merged,Endothelial,tierApm_p95__oxidative_stress,56471,2824,53647,5.001,56471,2824,53647,5.001,True,True,True,True
+SPLN43,merged,Mono/Mac/DC,tierApm_p95__oxidative_stress,39078,1955,37123,5.003,39078,1955,37123,5.003,True,True,True,True
+SPLN43,merged,Neutrophils,tierApm_p95__oxidative_stress,2688,135,2553,5.022,2688,135,2553,5.022,True,False,False,False
+SPLN43,merged,Plasma cells,tierApm_p95__oxidative_stress,9861,493,9368,4.999,9861,493,9368,4.999,True,True,True,True
+SPLN43,merged,Stromal,tierApm_p95__oxidative_stress,28755,1439,27316,5.004,28755,1439,27316,5.004,True,True,True,True
+SPLN43,merged,T/NK cells,tierApm_p95__oxidative_stress,24815,0,24815,0.0,24815,0,24815,0.0,False,False,True,False
+SPLN43,merged,B cells,tierApm_p95__secondary_senescence,45873,2294,43579,5.001,45873,2294,43579,5.001,True,True,True,True
+SPLN43,merged,Endothelial,tierApm_p95__secondary_senescence,56471,2824,53647,5.001,56471,2824,53647,5.001,True,True,True,True
+SPLN43,merged,Mono/Mac/DC,tierApm_p95__secondary_senescence,39078,1955,37123,5.003,39078,1955,37123,5.003,True,True,True,True
+SPLN43,merged,Neutrophils,tierApm_p95__secondary_senescence,2688,135,2553,5.022,2688,135,2553,5.022,True,False,False,False
+SPLN43,merged,Plasma cells,tierApm_p95__secondary_senescence,9861,493,9368,4.999,9861,493,9368,4.999,True,True,True,True
+SPLN43,merged,Stromal,tierApm_p95__secondary_senescence,28755,1438,27317,5.001,28755,1438,27317,5.001,True,True,True,True
+SPLN43,merged,T/NK cells,tierApm_p95__secondary_senescence,24815,0,24815,0.0,24815,0,24815,0.0,False,False,True,False
+SPLN43,merged,B cells,tierApm_p95__tnfa_nfkb_proximal,45873,2294,43579,5.001,45873,2294,43579,5.001,True,True,True,True
+SPLN43,merged,Endothelial,tierApm_p95__tnfa_nfkb_proximal,56471,2824,53647,5.001,56471,2824,53647,5.001,True,True,True,True
+SPLN43,merged,Mono/Mac/DC,tierApm_p95__tnfa_nfkb_proximal,39078,1953,37125,4.998,39078,1953,37125,4.998,True,True,True,True
+SPLN43,merged,Neutrophils,tierApm_p95__tnfa_nfkb_proximal,2688,135,2553,5.022,2688,135,2553,5.022,True,False,False,False
+SPLN43,merged,Plasma cells,tierApm_p95__tnfa_nfkb_proximal,9861,493,9368,4.999,9861,493,9368,4.999,True,True,True,True
+SPLN43,merged,Stromal,tierApm_p95__tnfa_nfkb_proximal,28755,1439,27316,5.004,28755,1439,27316,5.004,True,True,True,True
+SPLN43,merged,T/NK cells,tierApm_p95__tnfa_nfkb_proximal,24815,0,24815,0.0,24815,0,24815,0.0,False,False,True,False
+SPLN44,fine,Endothelial cells,tierA_p90,53815,5382,48433,10.001,53815,5382,48433,10.001,True,True,True,True
+SPLN44,fine,Erythroid cells,tierA_p90,6476,648,5828,10.006,6476,648,5828,10.006,True,True,True,True
+SPLN44,fine,Fibroblasts,tierA_p90,18170,1817,16353,10.0,18170,1817,16353,10.0,True,True,True,True
+SPLN44,fine,Follicular B cells,tierA_p90,40376,4038,36338,10.001,40376,4038,36338,10.001,True,True,True,True
+SPLN44,fine,Megakaryocytes,tierA_p90,761,76,685,9.987,761,76,685,9.987,True,False,False,False
+SPLN44,fine,Monocytes,tierA_p90,18272,1828,16444,10.004,18272,1828,16444,10.004,True,True,True,True
+SPLN44,fine,NK cells,tierA_p90,5894,590,5304,10.01,5894,590,5304,10.01,True,True,True,True
+SPLN44,fine,Neutrophils,tierA_p90,6343,635,5708,10.011,6343,635,5708,10.011,True,True,True,True
+SPLN44,fine,Plasma cells,tierA_p90,12423,1243,11180,10.006,12423,1243,11180,10.006,True,True,True,True
+SPLN44,fine,Red pulp macrophages,tierA_p90,29565,2957,26608,10.002,29565,2957,26608,10.002,True,True,True,True
+SPLN44,fine,Smooth muscle / capsule,tierA_p90,14117,1412,12705,10.002,14117,1412,12705,10.002,True,True,True,True
+SPLN44,fine,cDC1,tierA_p90,1270,127,1143,10.0,1270,127,1143,10.0,True,False,False,False
+SPLN44,fine,cDC2,tierA_p90,5553,556,4997,10.013,5553,556,4997,10.013,True,True,False,False
+SPLN44,fine,Endothelial cells,senepy_p90,53815,5382,48433,10.001,53815,5382,48433,10.001,True,True,True,True
+SPLN44,fine,Erythroid cells,senepy_p90,6476,0,6476,0.0,0,0,0,,False,False,False,False
+SPLN44,fine,Fibroblasts,senepy_p90,18170,1817,16353,10.0,18170,1817,16353,10.0,True,True,True,True
+SPLN44,fine,Follicular B cells,senepy_p90,40376,4038,36338,10.001,40376,4038,36338,10.001,True,True,True,True
+SPLN44,fine,Megakaryocytes,senepy_p90,761,0,761,0.0,0,0,0,,False,False,False,False
+SPLN44,fine,Monocytes,senepy_p90,18272,1828,16444,10.004,18272,1828,16444,10.004,True,True,True,True
+SPLN44,fine,NK cells,senepy_p90,5894,590,5304,10.01,5894,590,5304,10.01,True,True,True,True
+SPLN44,fine,Neutrophils,senepy_p90,6343,635,5708,10.011,6343,635,5708,10.011,True,True,True,True
+SPLN44,fine,Plasma cells,senepy_p90,12423,1242,11181,9.998,12423,1242,11181,9.998,True,True,True,True
+SPLN44,fine,Red pulp macrophages,senepy_p90,29565,2957,26608,10.002,29565,2957,26608,10.002,True,True,True,True
+SPLN44,fine,Smooth muscle / capsule,senepy_p90,14117,1412,12705,10.002,14117,1412,12705,10.002,True,True,True,True
+SPLN44,fine,cDC1,senepy_p90,1270,0,1270,0.0,0,0,0,,False,False,False,False
+SPLN44,fine,cDC2,senepy_p90,5553,0,5553,0.0,0,0,0,,False,False,False,False
+SPLN44,fine,Endothelial cells,tierA_p95,53815,2691,51124,5.0,53815,2691,51124,5.0,True,True,True,True
+SPLN44,fine,Erythroid cells,tierA_p95,6476,324,6152,5.003,6476,324,6152,5.003,True,True,True,True
+SPLN44,fine,Fibroblasts,tierA_p95,18170,909,17261,5.003,18170,909,17261,5.003,True,True,True,True
+SPLN44,fine,Follicular B cells,tierA_p95,40376,2019,38357,5.0,40376,2019,38357,5.0,True,True,True,True
+SPLN44,fine,Megakaryocytes,tierA_p95,761,38,723,4.993,761,38,723,4.993,True,False,False,False
+SPLN44,fine,Monocytes,tierA_p95,18272,914,17358,5.002,18272,914,17358,5.002,True,True,True,True
+SPLN44,fine,NK cells,tierA_p95,5894,295,5599,5.005,5894,295,5599,5.005,True,True,True,True
+SPLN44,fine,Neutrophils,tierA_p95,6343,318,6025,5.013,6343,318,6025,5.013,True,True,True,True
+SPLN44,fine,Plasma cells,tierA_p95,12423,622,11801,5.007,12423,622,11801,5.007,True,True,True,True
+SPLN44,fine,Red pulp macrophages,tierA_p95,29565,1479,28086,5.003,29565,1479,28086,5.003,True,True,True,True
+SPLN44,fine,Smooth muscle / capsule,tierA_p95,14117,706,13411,5.001,14117,706,13411,5.001,True,True,True,True
+SPLN44,fine,cDC1,tierA_p95,1270,64,1206,5.039,1270,64,1206,5.039,True,False,False,False
+SPLN44,fine,cDC2,tierA_p95,5553,278,5275,5.006,5553,278,5275,5.006,True,True,True,True
+SPLN44,fine,Endothelial cells,senepy_p95,53815,2691,51124,5.0,53815,2691,51124,5.0,True,True,True,True
+SPLN44,fine,Erythroid cells,senepy_p95,6476,0,6476,0.0,0,0,0,,False,False,False,False
+SPLN44,fine,Fibroblasts,senepy_p95,18170,909,17261,5.003,18170,909,17261,5.003,True,True,True,True
+SPLN44,fine,Follicular B cells,senepy_p95,40376,2019,38357,5.0,40376,2019,38357,5.0,True,True,True,True
+SPLN44,fine,Megakaryocytes,senepy_p95,761,0,761,0.0,0,0,0,,False,False,False,False
+SPLN44,fine,Monocytes,senepy_p95,18272,914,17358,5.002,18272,914,17358,5.002,True,True,True,True
+SPLN44,fine,NK cells,senepy_p95,5894,295,5599,5.005,5894,295,5599,5.005,True,True,True,True
+SPLN44,fine,Neutrophils,senepy_p95,6343,318,6025,5.013,6343,318,6025,5.013,True,True,True,True
+SPLN44,fine,Plasma cells,senepy_p95,12423,622,11801,5.007,12423,622,11801,5.007,True,True,True,True
+SPLN44,fine,Red pulp macrophages,senepy_p95,29565,1479,28086,5.003,29565,1479,28086,5.003,True,True,True,True
+SPLN44,fine,Smooth muscle / capsule,senepy_p95,14117,706,13411,5.001,14117,706,13411,5.001,True,True,True,True
+SPLN44,fine,cDC1,senepy_p95,1270,0,1270,0.0,0,0,0,,False,False,False,False
+SPLN44,fine,cDC2,senepy_p95,5553,0,5553,0.0,0,0,0,,False,False,False,False
+SPLN44,fine,Endothelial cells,tierA_p99,53815,539,53276,1.002,53815,539,53276,1.002,True,True,True,True
+SPLN44,fine,Erythroid cells,tierA_p99,6476,65,6411,1.004,6476,65,6411,1.004,True,False,True,False
+SPLN44,fine,Fibroblasts,tierA_p99,18170,182,17988,1.002,18170,182,17988,1.002,True,False,True,False
+SPLN44,fine,Follicular B cells,tierA_p99,40376,404,39972,1.001,40376,404,39972,1.001,True,True,True,True
+SPLN44,fine,Megakaryocytes,tierA_p99,761,8,753,1.051,761,8,753,1.051,True,False,False,False
+SPLN44,fine,Monocytes,tierA_p99,18272,183,18089,1.002,18272,183,18089,1.002,True,False,True,False
+SPLN44,fine,NK cells,tierA_p99,5894,59,5835,1.001,5894,59,5835,1.001,True,False,True,False
+SPLN44,fine,Neutrophils,tierA_p99,6343,64,6279,1.009,6343,64,6279,1.009,True,False,True,False
+SPLN44,fine,Plasma cells,tierA_p99,12423,125,12298,1.006,12423,125,12298,1.006,True,False,True,False
+SPLN44,fine,Red pulp macrophages,tierA_p99,29565,296,29269,1.001,29565,296,29269,1.001,True,True,True,True
+SPLN44,fine,Smooth muscle / capsule,tierA_p99,14117,142,13975,1.006,14117,142,13975,1.006,True,False,True,False
+SPLN44,fine,cDC1,tierA_p99,1270,13,1257,1.024,1270,13,1257,1.024,True,False,False,False
+SPLN44,fine,cDC2,tierA_p99,5553,56,5497,1.008,5553,56,5497,1.008,True,False,True,False
+SPLN44,fine,Endothelial cells,senepy_p99,53815,539,53276,1.002,53815,539,53276,1.002,True,True,True,True
+SPLN44,fine,Erythroid cells,senepy_p99,6476,0,6476,0.0,0,0,0,,False,False,False,False
+SPLN44,fine,Fibroblasts,senepy_p99,18170,182,17988,1.002,18170,182,17988,1.002,True,False,True,False
+SPLN44,fine,Follicular B cells,senepy_p99,40376,403,39973,0.998,40376,403,39973,0.998,False,True,True,False
+SPLN44,fine,Megakaryocytes,senepy_p99,761,0,761,0.0,0,0,0,,False,False,False,False
+SPLN44,fine,Monocytes,senepy_p99,18272,183,18089,1.002,18272,183,18089,1.002,True,False,True,False
+SPLN44,fine,NK cells,senepy_p99,5894,59,5835,1.001,5894,59,5835,1.001,True,False,True,False
+SPLN44,fine,Neutrophils,senepy_p99,6343,64,6279,1.009,6343,64,6279,1.009,True,False,True,False
+SPLN44,fine,Plasma cells,senepy_p99,12423,125,12298,1.006,12423,125,12298,1.006,True,False,True,False
+SPLN44,fine,Red pulp macrophages,senepy_p99,29565,296,29269,1.001,29565,296,29269,1.001,True,True,True,True
+SPLN44,fine,Smooth muscle / capsule,senepy_p99,14117,142,13975,1.006,14117,142,13975,1.006,True,False,True,False
+SPLN44,fine,cDC1,senepy_p99,1270,0,1270,0.0,0,0,0,,False,False,False,False
+SPLN44,fine,cDC2,senepy_p99,5553,0,5553,0.0,0,0,0,,False,False,False,False
+SPLN44,fine,Endothelial cells,cdkn1a_pos,53815,5505,48310,10.229,53815,5505,48310,10.229,True,True,True,True
+SPLN44,fine,Erythroid cells,cdkn1a_pos,6476,182,6294,2.81,6476,182,6294,2.81,True,False,True,False
+SPLN44,fine,Fibroblasts,cdkn1a_pos,18170,1242,16928,6.835,18170,1242,16928,6.835,True,True,True,True
+SPLN44,fine,Follicular B cells,cdkn1a_pos,40376,1402,38974,3.472,40376,1402,38974,3.472,True,True,True,True
+SPLN44,fine,Megakaryocytes,cdkn1a_pos,761,50,711,6.57,761,50,711,6.57,True,False,False,False
+SPLN44,fine,Monocytes,cdkn1a_pos,18272,2426,15846,13.277,18272,2426,15846,13.277,True,True,True,True
+SPLN44,fine,NK cells,cdkn1a_pos,5894,125,5769,2.121,5894,125,5769,2.121,True,False,True,False
+SPLN44,fine,Neutrophils,cdkn1a_pos,6343,137,6206,2.16,6343,137,6206,2.16,True,False,True,False
+SPLN44,fine,Plasma cells,cdkn1a_pos,12423,1394,11029,11.221,12423,1394,11029,11.221,True,True,True,True
+SPLN44,fine,Red pulp macrophages,cdkn1a_pos,29565,786,28779,2.659,29565,786,28779,2.659,True,True,True,True
+SPLN44,fine,Smooth muscle / capsule,cdkn1a_pos,14117,1625,12492,11.511,14117,1625,12492,11.511,True,True,True,True
+SPLN44,fine,cDC1,cdkn1a_pos,1270,129,1141,10.157,1270,129,1141,10.157,True,False,False,False
+SPLN44,fine,cDC2,cdkn1a_pos,5553,177,5376,3.187,5553,177,5376,3.187,True,False,True,False
+SPLN44,fine,Endothelial cells,tierApm_p95__downstream_arrest,53815,2691,51124,5.0,53815,2691,51124,5.0,True,True,True,True
+SPLN44,fine,Erythroid cells,tierApm_p95__downstream_arrest,6476,324,6152,5.003,6476,324,6152,5.003,True,True,True,True
+SPLN44,fine,Fibroblasts,tierApm_p95__downstream_arrest,18170,909,17261,5.003,18170,909,17261,5.003,True,True,True,True
+SPLN44,fine,Follicular B cells,tierApm_p95__downstream_arrest,40376,2019,38357,5.0,40376,2019,38357,5.0,True,True,True,True
+SPLN44,fine,Megakaryocytes,tierApm_p95__downstream_arrest,761,38,723,4.993,761,38,723,4.993,True,False,False,False
+SPLN44,fine,Monocytes,tierApm_p95__downstream_arrest,18272,914,17358,5.002,18272,914,17358,5.002,True,True,True,True
+SPLN44,fine,NK cells,tierApm_p95__downstream_arrest,5894,295,5599,5.005,5894,295,5599,5.005,True,True,True,True
+SPLN44,fine,Neutrophils,tierApm_p95__downstream_arrest,6343,318,6025,5.013,6343,318,6025,5.013,True,True,True,True
+SPLN44,fine,Plasma cells,tierApm_p95__downstream_arrest,12423,622,11801,5.007,12423,622,11801,5.007,True,True,True,True
+SPLN44,fine,Red pulp macrophages,tierApm_p95__downstream_arrest,29565,1479,28086,5.003,29565,1479,28086,5.003,True,True,True,True
+SPLN44,fine,Smooth muscle / capsule,tierApm_p95__downstream_arrest,14117,706,13411,5.001,14117,706,13411,5.001,True,True,True,True
+SPLN44,fine,cDC1,tierApm_p95__downstream_arrest,1270,64,1206,5.039,1270,64,1206,5.039,True,False,False,False
+SPLN44,fine,cDC2,tierApm_p95__downstream_arrest,5553,278,5275,5.006,5553,278,5275,5.006,True,True,True,True
+SPLN44,fine,Endothelial cells,tierApm_p95__emt_ecm,53815,2691,51124,5.0,53815,2691,51124,5.0,True,True,True,True
+SPLN44,fine,Erythroid cells,tierApm_p95__emt_ecm,6476,324,6152,5.003,6476,324,6152,5.003,True,True,True,True
+SPLN44,fine,Fibroblasts,tierApm_p95__emt_ecm,18170,909,17261,5.003,18170,909,17261,5.003,True,True,True,True
+SPLN44,fine,Follicular B cells,tierApm_p95__emt_ecm,40376,2019,38357,5.0,40376,2019,38357,5.0,True,True,True,True
+SPLN44,fine,Megakaryocytes,tierApm_p95__emt_ecm,761,38,723,4.993,761,38,723,4.993,True,False,False,False
+SPLN44,fine,Monocytes,tierApm_p95__emt_ecm,18272,914,17358,5.002,18272,914,17358,5.002,True,True,True,True
+SPLN44,fine,NK cells,tierApm_p95__emt_ecm,5894,295,5599,5.005,5894,295,5599,5.005,True,True,True,True
+SPLN44,fine,Neutrophils,tierApm_p95__emt_ecm,6343,318,6025,5.013,6343,318,6025,5.013,True,True,True,True
+SPLN44,fine,Plasma cells,tierApm_p95__emt_ecm,12423,622,11801,5.007,12423,622,11801,5.007,True,True,True,True
+SPLN44,fine,Red pulp macrophages,tierApm_p95__emt_ecm,29565,1479,28086,5.003,29565,1479,28086,5.003,True,True,True,True
+SPLN44,fine,Smooth muscle / capsule,tierApm_p95__emt_ecm,14117,706,13411,5.001,14117,706,13411,5.001,True,True,True,True
+SPLN44,fine,cDC1,tierApm_p95__emt_ecm,1270,64,1206,5.039,1270,64,1206,5.039,True,False,False,False
+SPLN44,fine,cDC2,tierApm_p95__emt_ecm,5553,278,5275,5.006,5553,278,5275,5.006,True,True,True,True
+SPLN44,fine,Endothelial cells,tierApm_p95__il6_jak_stat3,53815,2691,51124,5.0,53815,2691,51124,5.0,True,True,True,True
+SPLN44,fine,Erythroid cells,tierApm_p95__il6_jak_stat3,6476,324,6152,5.003,6476,324,6152,5.003,True,True,True,True
+SPLN44,fine,Fibroblasts,tierApm_p95__il6_jak_stat3,18170,909,17261,5.003,18170,909,17261,5.003,True,True,True,True
+SPLN44,fine,Follicular B cells,tierApm_p95__il6_jak_stat3,40376,2019,38357,5.0,40376,2019,38357,5.0,True,True,True,True
+SPLN44,fine,Megakaryocytes,tierApm_p95__il6_jak_stat3,761,38,723,4.993,761,38,723,4.993,True,False,False,False
+SPLN44,fine,Monocytes,tierApm_p95__il6_jak_stat3,18272,914,17358,5.002,18272,914,17358,5.002,True,True,True,True
+SPLN44,fine,NK cells,tierApm_p95__il6_jak_stat3,5894,295,5599,5.005,5894,295,5599,5.005,True,True,True,True
+SPLN44,fine,Neutrophils,tierApm_p95__il6_jak_stat3,6343,318,6025,5.013,6343,318,6025,5.013,True,True,True,True
+SPLN44,fine,Plasma cells,tierApm_p95__il6_jak_stat3,12423,622,11801,5.007,12423,622,11801,5.007,True,True,True,True
+SPLN44,fine,Red pulp macrophages,tierApm_p95__il6_jak_stat3,29565,1479,28086,5.003,29565,1479,28086,5.003,True,True,True,True
+SPLN44,fine,Smooth muscle / capsule,tierApm_p95__il6_jak_stat3,14117,706,13411,5.001,14117,706,13411,5.001,True,True,True,True
+SPLN44,fine,cDC1,tierApm_p95__il6_jak_stat3,1270,64,1206,5.039,1270,64,1206,5.039,True,False,False,False
+SPLN44,fine,cDC2,tierApm_p95__il6_jak_stat3,5553,278,5275,5.006,5553,278,5275,5.006,True,True,True,True
+SPLN44,fine,Endothelial cells,tierApm_p95__interferon_response,53815,2691,51124,5.0,53815,2691,51124,5.0,True,True,True,True
+SPLN44,fine,Erythroid cells,tierApm_p95__interferon_response,6476,324,6152,5.003,6476,324,6152,5.003,True,True,True,True
+SPLN44,fine,Fibroblasts,tierApm_p95__interferon_response,18170,909,17261,5.003,18170,909,17261,5.003,True,True,True,True
+SPLN44,fine,Follicular B cells,tierApm_p95__interferon_response,40376,2019,38357,5.0,40376,2019,38357,5.0,True,True,True,True
+SPLN44,fine,Megakaryocytes,tierApm_p95__interferon_response,761,38,723,4.993,761,38,723,4.993,True,False,False,False
+SPLN44,fine,Monocytes,tierApm_p95__interferon_response,18272,914,17358,5.002,18272,914,17358,5.002,True,True,True,True
+SPLN44,fine,NK cells,tierApm_p95__interferon_response,5894,295,5599,5.005,5894,295,5599,5.005,True,True,True,True
+SPLN44,fine,Neutrophils,tierApm_p95__interferon_response,6343,318,6025,5.013,6343,318,6025,5.013,True,True,True,True
+SPLN44,fine,Plasma cells,tierApm_p95__interferon_response,12423,622,11801,5.007,12423,622,11801,5.007,True,True,True,True
+SPLN44,fine,Red pulp macrophages,tierApm_p95__interferon_response,29565,1479,28086,5.003,29565,1479,28086,5.003,True,True,True,True
+SPLN44,fine,Smooth muscle / capsule,tierApm_p95__interferon_response,14117,706,13411,5.001,14117,706,13411,5.001,True,True,True,True
+SPLN44,fine,cDC1,tierApm_p95__interferon_response,1270,64,1206,5.039,1270,64,1206,5.039,True,False,False,False
+SPLN44,fine,cDC2,tierApm_p95__interferon_response,5553,278,5275,5.006,5553,278,5275,5.006,True,True,True,True
+SPLN44,fine,Endothelial cells,tierApm_p95__oxidative_stress,53815,2691,51124,5.0,53815,2691,51124,5.0,True,True,True,True
+SPLN44,fine,Erythroid cells,tierApm_p95__oxidative_stress,6476,324,6152,5.003,6476,324,6152,5.003,True,True,True,True
+SPLN44,fine,Fibroblasts,tierApm_p95__oxidative_stress,18170,909,17261,5.003,18170,909,17261,5.003,True,True,True,True
+SPLN44,fine,Follicular B cells,tierApm_p95__oxidative_stress,40376,2019,38357,5.0,40376,2019,38357,5.0,True,True,True,True
+SPLN44,fine,Megakaryocytes,tierApm_p95__oxidative_stress,761,38,723,4.993,761,38,723,4.993,True,False,False,False
+SPLN44,fine,Monocytes,tierApm_p95__oxidative_stress,18272,914,17358,5.002,18272,914,17358,5.002,True,True,True,True
+SPLN44,fine,NK cells,tierApm_p95__oxidative_stress,5894,295,5599,5.005,5894,295,5599,5.005,True,True,True,True
+SPLN44,fine,Neutrophils,tierApm_p95__oxidative_stress,6343,318,6025,5.013,6343,318,6025,5.013,True,True,True,True
+SPLN44,fine,Plasma cells,tierApm_p95__oxidative_stress,12423,622,11801,5.007,12423,622,11801,5.007,True,True,True,True
+SPLN44,fine,Red pulp macrophages,tierApm_p95__oxidative_stress,29565,1479,28086,5.003,29565,1479,28086,5.003,True,True,True,True
+SPLN44,fine,Smooth muscle / capsule,tierApm_p95__oxidative_stress,14117,706,13411,5.001,14117,706,13411,5.001,True,True,True,True
+SPLN44,fine,cDC1,tierApm_p95__oxidative_stress,1270,64,1206,5.039,1270,64,1206,5.039,True,False,False,False
+SPLN44,fine,cDC2,tierApm_p95__oxidative_stress,5553,278,5275,5.006,5553,278,5275,5.006,True,True,True,True
+SPLN44,fine,Endothelial cells,tierApm_p95__secondary_senescence,53815,2691,51124,5.0,53815,2691,51124,5.0,True,True,True,True
+SPLN44,fine,Erythroid cells,tierApm_p95__secondary_senescence,6476,324,6152,5.003,6476,324,6152,5.003,True,True,True,True
+SPLN44,fine,Fibroblasts,tierApm_p95__secondary_senescence,18170,909,17261,5.003,18170,909,17261,5.003,True,True,True,True
+SPLN44,fine,Follicular B cells,tierApm_p95__secondary_senescence,40376,2019,38357,5.0,40376,2019,38357,5.0,True,True,True,True
+SPLN44,fine,Megakaryocytes,tierApm_p95__secondary_senescence,761,38,723,4.993,761,38,723,4.993,True,False,False,False
+SPLN44,fine,Monocytes,tierApm_p95__secondary_senescence,18272,914,17358,5.002,18272,914,17358,5.002,True,True,True,True
+SPLN44,fine,NK cells,tierApm_p95__secondary_senescence,5894,295,5599,5.005,5894,295,5599,5.005,True,True,True,True
+SPLN44,fine,Neutrophils,tierApm_p95__secondary_senescence,6343,318,6025,5.013,6343,318,6025,5.013,True,True,True,True
+SPLN44,fine,Plasma cells,tierApm_p95__secondary_senescence,12423,622,11801,5.007,12423,622,11801,5.007,True,True,True,True
+SPLN44,fine,Red pulp macrophages,tierApm_p95__secondary_senescence,29565,1479,28086,5.003,29565,1479,28086,5.003,True,True,True,True
+SPLN44,fine,Smooth muscle / capsule,tierApm_p95__secondary_senescence,14117,706,13411,5.001,14117,706,13411,5.001,True,True,True,True
+SPLN44,fine,cDC1,tierApm_p95__secondary_senescence,1270,64,1206,5.039,1270,64,1206,5.039,True,False,False,False
+SPLN44,fine,cDC2,tierApm_p95__secondary_senescence,5553,278,5275,5.006,5553,278,5275,5.006,True,True,True,True
+SPLN44,fine,Endothelial cells,tierApm_p95__tnfa_nfkb_proximal,53815,2691,51124,5.0,53815,2691,51124,5.0,True,True,True,True
+SPLN44,fine,Erythroid cells,tierApm_p95__tnfa_nfkb_proximal,6476,324,6152,5.003,6476,324,6152,5.003,True,True,True,True
+SPLN44,fine,Fibroblasts,tierApm_p95__tnfa_nfkb_proximal,18170,909,17261,5.003,18170,909,17261,5.003,True,True,True,True
+SPLN44,fine,Follicular B cells,tierApm_p95__tnfa_nfkb_proximal,40376,2019,38357,5.0,40376,2019,38357,5.0,True,True,True,True
+SPLN44,fine,Megakaryocytes,tierApm_p95__tnfa_nfkb_proximal,761,38,723,4.993,761,38,723,4.993,True,False,False,False
+SPLN44,fine,Monocytes,tierApm_p95__tnfa_nfkb_proximal,18272,914,17358,5.002,18272,914,17358,5.002,True,True,True,True
+SPLN44,fine,NK cells,tierApm_p95__tnfa_nfkb_proximal,5894,295,5599,5.005,5894,295,5599,5.005,True,True,True,True
+SPLN44,fine,Neutrophils,tierApm_p95__tnfa_nfkb_proximal,6343,318,6025,5.013,6343,318,6025,5.013,True,True,True,True
+SPLN44,fine,Plasma cells,tierApm_p95__tnfa_nfkb_proximal,12423,622,11801,5.007,12423,622,11801,5.007,True,True,True,True
+SPLN44,fine,Red pulp macrophages,tierApm_p95__tnfa_nfkb_proximal,29565,1479,28086,5.003,29565,1479,28086,5.003,True,True,True,True
+SPLN44,fine,Smooth muscle / capsule,tierApm_p95__tnfa_nfkb_proximal,14117,706,13411,5.001,14117,706,13411,5.001,True,True,True,True
+SPLN44,fine,cDC1,tierApm_p95__tnfa_nfkb_proximal,1270,64,1206,5.039,1270,64,1206,5.039,True,False,False,False
+SPLN44,fine,cDC2,tierApm_p95__tnfa_nfkb_proximal,5553,278,5275,5.006,5553,278,5275,5.006,True,True,True,True
+SPLN44,merged,B cells,tierA_p90,40376,4038,36338,10.001,40376,4038,36338,10.001,True,True,True,True
+SPLN44,merged,Endothelial,tierA_p90,53815,5382,48433,10.001,53815,5382,48433,10.001,True,True,True,True
+SPLN44,merged,Erythroid cells,tierA_p90,6476,648,5828,10.006,6476,648,5828,10.006,True,True,True,True
+SPLN44,merged,Megakaryocytes,tierA_p90,761,76,685,9.987,761,76,685,9.987,True,False,False,False
+SPLN44,merged,Mono/Mac/DC,tierA_p90,54660,5468,49192,10.004,54660,5468,49192,10.004,True,True,True,True
+SPLN44,merged,Neutrophils,tierA_p90,6343,635,5708,10.011,6343,635,5708,10.011,True,True,True,True
+SPLN44,merged,Plasma cells,tierA_p90,12423,1243,11180,10.006,12423,1243,11180,10.006,True,True,True,True
+SPLN44,merged,Stromal,tierA_p90,32287,3229,29058,10.001,32287,3229,29058,10.001,True,True,True,True
+SPLN44,merged,T/NK cells,tierA_p90,33482,590,32892,1.762,33482,590,32892,1.762,True,True,True,True
+SPLN44,merged,B cells,senepy_p90,40376,4038,36338,10.001,40376,4038,36338,10.001,True,True,True,True
+SPLN44,merged,Endothelial,senepy_p90,53815,5382,48433,10.001,53815,5382,48433,10.001,True,True,True,True
+SPLN44,merged,Erythroid cells,senepy_p90,6476,0,6476,0.0,0,0,0,,False,False,False,False
+SPLN44,merged,Megakaryocytes,senepy_p90,761,0,761,0.0,0,0,0,,False,False,False,False
+SPLN44,merged,Mono/Mac/DC,senepy_p90,54660,4785,49875,8.754,47837,4785,43052,10.003,True,True,True,True
+SPLN44,merged,Neutrophils,senepy_p90,6343,635,5708,10.011,6343,635,5708,10.011,True,True,True,True
+SPLN44,merged,Plasma cells,senepy_p90,12423,1242,11181,9.998,12423,1242,11181,9.998,True,True,True,True
+SPLN44,merged,Stromal,senepy_p90,32287,3229,29058,10.001,32287,3229,29058,10.001,True,True,True,True
+SPLN44,merged,T/NK cells,senepy_p90,33482,590,32892,1.762,5894,590,5304,10.01,True,True,True,True
+SPLN44,merged,B cells,tierA_p95,40376,2019,38357,5.0,40376,2019,38357,5.0,True,True,True,True
+SPLN44,merged,Endothelial,tierA_p95,53815,2691,51124,5.0,53815,2691,51124,5.0,True,True,True,True
+SPLN44,merged,Erythroid cells,tierA_p95,6476,324,6152,5.003,6476,324,6152,5.003,True,True,True,True
+SPLN44,merged,Megakaryocytes,tierA_p95,761,38,723,4.993,761,38,723,4.993,True,False,False,False
+SPLN44,merged,Mono/Mac/DC,tierA_p95,54660,2735,51925,5.004,54660,2735,51925,5.004,True,True,True,True
+SPLN44,merged,Neutrophils,tierA_p95,6343,318,6025,5.013,6343,318,6025,5.013,True,True,True,True
+SPLN44,merged,Plasma cells,tierA_p95,12423,622,11801,5.007,12423,622,11801,5.007,True,True,True,True
+SPLN44,merged,Stromal,tierA_p95,32287,1615,30672,5.002,32287,1615,30672,5.002,True,True,True,True
+SPLN44,merged,T/NK cells,tierA_p95,33482,295,33187,0.881,33482,295,33187,0.881,False,True,True,False
+SPLN44,merged,B cells,senepy_p95,40376,2019,38357,5.0,40376,2019,38357,5.0,True,True,True,True
+SPLN44,merged,Endothelial,senepy_p95,53815,2691,51124,5.0,53815,2691,51124,5.0,True,True,True,True
+SPLN44,merged,Erythroid cells,senepy_p95,6476,0,6476,0.0,0,0,0,,False,False,False,False
+SPLN44,merged,Megakaryocytes,senepy_p95,761,0,761,0.0,0,0,0,,False,False,False,False
+SPLN44,merged,Mono/Mac/DC,senepy_p95,54660,2393,52267,4.378,47837,2393,45444,5.002,True,True,True,True
+SPLN44,merged,Neutrophils,senepy_p95,6343,318,6025,5.013,6343,318,6025,5.013,True,True,True,True
+SPLN44,merged,Plasma cells,senepy_p95,12423,622,11801,5.007,12423,622,11801,5.007,True,True,True,True
+SPLN44,merged,Stromal,senepy_p95,32287,1615,30672,5.002,32287,1615,30672,5.002,True,True,True,True
+SPLN44,merged,T/NK cells,senepy_p95,33482,295,33187,0.881,5894,295,5599,5.005,True,True,True,True
+SPLN44,merged,B cells,tierA_p99,40376,404,39972,1.001,40376,404,39972,1.001,True,True,True,True
+SPLN44,merged,Endothelial,tierA_p99,53815,539,53276,1.002,53815,539,53276,1.002,True,True,True,True
+SPLN44,merged,Erythroid cells,tierA_p99,6476,65,6411,1.004,6476,65,6411,1.004,True,False,True,False
+SPLN44,merged,Megakaryocytes,tierA_p99,761,8,753,1.051,761,8,753,1.051,True,False,False,False
+SPLN44,merged,Mono/Mac/DC,tierA_p99,54660,548,54112,1.003,54660,548,54112,1.003,True,True,True,True
+SPLN44,merged,Neutrophils,tierA_p99,6343,64,6279,1.009,6343,64,6279,1.009,True,False,True,False
+SPLN44,merged,Plasma cells,tierA_p99,12423,125,12298,1.006,12423,125,12298,1.006,True,False,True,False
+SPLN44,merged,Stromal,tierA_p99,32287,324,31963,1.003,32287,324,31963,1.003,True,True,True,True
+SPLN44,merged,T/NK cells,tierA_p99,33482,59,33423,0.176,33482,59,33423,0.176,False,False,True,False
+SPLN44,merged,B cells,senepy_p99,40376,403,39973,0.998,40376,403,39973,0.998,False,True,True,False
+SPLN44,merged,Endothelial,senepy_p99,53815,539,53276,1.002,53815,539,53276,1.002,True,True,True,True
+SPLN44,merged,Erythroid cells,senepy_p99,6476,0,6476,0.0,0,0,0,,False,False,False,False
+SPLN44,merged,Megakaryocytes,senepy_p99,761,0,761,0.0,0,0,0,,False,False,False,False
+SPLN44,merged,Mono/Mac/DC,senepy_p99,54660,479,54181,0.876,47837,479,47358,1.001,True,True,True,True
+SPLN44,merged,Neutrophils,senepy_p99,6343,64,6279,1.009,6343,64,6279,1.009,True,False,True,False
+SPLN44,merged,Plasma cells,senepy_p99,12423,125,12298,1.006,12423,125,12298,1.006,True,False,True,False
+SPLN44,merged,Stromal,senepy_p99,32287,324,31963,1.003,32287,324,31963,1.003,True,True,True,True
+SPLN44,merged,T/NK cells,senepy_p99,33482,59,33423,0.176,5894,59,5835,1.001,True,False,True,False
+SPLN44,merged,B cells,cdkn1a_pos,40376,1402,38974,3.472,40376,1402,38974,3.472,True,True,True,True
+SPLN44,merged,Endothelial,cdkn1a_pos,53815,5505,48310,10.229,53815,5505,48310,10.229,True,True,True,True
+SPLN44,merged,Erythroid cells,cdkn1a_pos,6476,182,6294,2.81,6476,182,6294,2.81,True,False,True,False
+SPLN44,merged,Megakaryocytes,cdkn1a_pos,761,50,711,6.57,761,50,711,6.57,True,False,False,False
+SPLN44,merged,Mono/Mac/DC,cdkn1a_pos,54660,3518,51142,6.436,54660,3518,51142,6.436,True,True,True,True
+SPLN44,merged,Neutrophils,cdkn1a_pos,6343,137,6206,2.16,6343,137,6206,2.16,True,False,True,False
+SPLN44,merged,Plasma cells,cdkn1a_pos,12423,1394,11029,11.221,12423,1394,11029,11.221,True,True,True,True
+SPLN44,merged,Stromal,cdkn1a_pos,32287,2867,29420,8.88,32287,2867,29420,8.88,True,True,True,True
+SPLN44,merged,T/NK cells,cdkn1a_pos,33482,701,32781,2.094,33482,701,32781,2.094,True,True,True,True
+SPLN44,merged,B cells,tierApm_p95__downstream_arrest,40376,2019,38357,5.0,40376,2019,38357,5.0,True,True,True,True
+SPLN44,merged,Endothelial,tierApm_p95__downstream_arrest,53815,2691,51124,5.0,53815,2691,51124,5.0,True,True,True,True
+SPLN44,merged,Erythroid cells,tierApm_p95__downstream_arrest,6476,324,6152,5.003,6476,324,6152,5.003,True,True,True,True
+SPLN44,merged,Megakaryocytes,tierApm_p95__downstream_arrest,761,38,723,4.993,761,38,723,4.993,True,False,False,False
+SPLN44,merged,Mono/Mac/DC,tierApm_p95__downstream_arrest,54660,2735,51925,5.004,54660,2735,51925,5.004,True,True,True,True
+SPLN44,merged,Neutrophils,tierApm_p95__downstream_arrest,6343,318,6025,5.013,6343,318,6025,5.013,True,True,True,True
+SPLN44,merged,Plasma cells,tierApm_p95__downstream_arrest,12423,622,11801,5.007,12423,622,11801,5.007,True,True,True,True
+SPLN44,merged,Stromal,tierApm_p95__downstream_arrest,32287,1615,30672,5.002,32287,1615,30672,5.002,True,True,True,True
+SPLN44,merged,T/NK cells,tierApm_p95__downstream_arrest,33482,295,33187,0.881,33482,295,33187,0.881,False,True,True,False
+SPLN44,merged,B cells,tierApm_p95__emt_ecm,40376,2019,38357,5.0,40376,2019,38357,5.0,True,True,True,True
+SPLN44,merged,Endothelial,tierApm_p95__emt_ecm,53815,2691,51124,5.0,53815,2691,51124,5.0,True,True,True,True
+SPLN44,merged,Erythroid cells,tierApm_p95__emt_ecm,6476,324,6152,5.003,6476,324,6152,5.003,True,True,True,True
+SPLN44,merged,Megakaryocytes,tierApm_p95__emt_ecm,761,38,723,4.993,761,38,723,4.993,True,False,False,False
+SPLN44,merged,Mono/Mac/DC,tierApm_p95__emt_ecm,54660,2735,51925,5.004,54660,2735,51925,5.004,True,True,True,True
+SPLN44,merged,Neutrophils,tierApm_p95__emt_ecm,6343,318,6025,5.013,6343,318,6025,5.013,True,True,True,True
+SPLN44,merged,Plasma cells,tierApm_p95__emt_ecm,12423,622,11801,5.007,12423,622,11801,5.007,True,True,True,True
+SPLN44,merged,Stromal,tierApm_p95__emt_ecm,32287,1615,30672,5.002,32287,1615,30672,5.002,True,True,True,True
+SPLN44,merged,T/NK cells,tierApm_p95__emt_ecm,33482,295,33187,0.881,33482,295,33187,0.881,False,True,True,False
+SPLN44,merged,B cells,tierApm_p95__il6_jak_stat3,40376,2019,38357,5.0,40376,2019,38357,5.0,True,True,True,True
+SPLN44,merged,Endothelial,tierApm_p95__il6_jak_stat3,53815,2691,51124,5.0,53815,2691,51124,5.0,True,True,True,True
+SPLN44,merged,Erythroid cells,tierApm_p95__il6_jak_stat3,6476,324,6152,5.003,6476,324,6152,5.003,True,True,True,True
+SPLN44,merged,Megakaryocytes,tierApm_p95__il6_jak_stat3,761,38,723,4.993,761,38,723,4.993,True,False,False,False
+SPLN44,merged,Mono/Mac/DC,tierApm_p95__il6_jak_stat3,54660,2735,51925,5.004,54660,2735,51925,5.004,True,True,True,True
+SPLN44,merged,Neutrophils,tierApm_p95__il6_jak_stat3,6343,318,6025,5.013,6343,318,6025,5.013,True,True,True,True
+SPLN44,merged,Plasma cells,tierApm_p95__il6_jak_stat3,12423,622,11801,5.007,12423,622,11801,5.007,True,True,True,True
+SPLN44,merged,Stromal,tierApm_p95__il6_jak_stat3,32287,1615,30672,5.002,32287,1615,30672,5.002,True,True,True,True
+SPLN44,merged,T/NK cells,tierApm_p95__il6_jak_stat3,33482,295,33187,0.881,33482,295,33187,0.881,False,True,True,False
+SPLN44,merged,B cells,tierApm_p95__interferon_response,40376,2019,38357,5.0,40376,2019,38357,5.0,True,True,True,True
+SPLN44,merged,Endothelial,tierApm_p95__interferon_response,53815,2691,51124,5.0,53815,2691,51124,5.0,True,True,True,True
+SPLN44,merged,Erythroid cells,tierApm_p95__interferon_response,6476,324,6152,5.003,6476,324,6152,5.003,True,True,True,True
+SPLN44,merged,Megakaryocytes,tierApm_p95__interferon_response,761,38,723,4.993,761,38,723,4.993,True,False,False,False
+SPLN44,merged,Mono/Mac/DC,tierApm_p95__interferon_response,54660,2735,51925,5.004,54660,2735,51925,5.004,True,True,True,True
+SPLN44,merged,Neutrophils,tierApm_p95__interferon_response,6343,318,6025,5.013,6343,318,6025,5.013,True,True,True,True
+SPLN44,merged,Plasma cells,tierApm_p95__interferon_response,12423,622,11801,5.007,12423,622,11801,5.007,True,True,True,True
+SPLN44,merged,Stromal,tierApm_p95__interferon_response,32287,1615,30672,5.002,32287,1615,30672,5.002,True,True,True,True
+SPLN44,merged,T/NK cells,tierApm_p95__interferon_response,33482,295,33187,0.881,33482,295,33187,0.881,False,True,True,False
+SPLN44,merged,B cells,tierApm_p95__oxidative_stress,40376,2019,38357,5.0,40376,2019,38357,5.0,True,True,True,True
+SPLN44,merged,Endothelial,tierApm_p95__oxidative_stress,53815,2691,51124,5.0,53815,2691,51124,5.0,True,True,True,True
+SPLN44,merged,Erythroid cells,tierApm_p95__oxidative_stress,6476,324,6152,5.003,6476,324,6152,5.003,True,True,True,True
+SPLN44,merged,Megakaryocytes,tierApm_p95__oxidative_stress,761,38,723,4.993,761,38,723,4.993,True,False,False,False
+SPLN44,merged,Mono/Mac/DC,tierApm_p95__oxidative_stress,54660,2735,51925,5.004,54660,2735,51925,5.004,True,True,True,True
+SPLN44,merged,Neutrophils,tierApm_p95__oxidative_stress,6343,318,6025,5.013,6343,318,6025,5.013,True,True,True,True
+SPLN44,merged,Plasma cells,tierApm_p95__oxidative_stress,12423,622,11801,5.007,12423,622,11801,5.007,True,True,True,True
+SPLN44,merged,Stromal,tierApm_p95__oxidative_stress,32287,1615,30672,5.002,32287,1615,30672,5.002,True,True,True,True
+SPLN44,merged,T/NK cells,tierApm_p95__oxidative_stress,33482,295,33187,0.881,33482,295,33187,0.881,False,True,True,False
+SPLN44,merged,B cells,tierApm_p95__secondary_senescence,40376,2019,38357,5.0,40376,2019,38357,5.0,True,True,True,True
+SPLN44,merged,Endothelial,tierApm_p95__secondary_senescence,53815,2691,51124,5.0,53815,2691,51124,5.0,True,True,True,True
+SPLN44,merged,Erythroid cells,tierApm_p95__secondary_senescence,6476,324,6152,5.003,6476,324,6152,5.003,True,True,True,True
+SPLN44,merged,Megakaryocytes,tierApm_p95__secondary_senescence,761,38,723,4.993,761,38,723,4.993,True,False,False,False
+SPLN44,merged,Mono/Mac/DC,tierApm_p95__secondary_senescence,54660,2735,51925,5.004,54660,2735,51925,5.004,True,True,True,True
+SPLN44,merged,Neutrophils,tierApm_p95__secondary_senescence,6343,318,6025,5.013,6343,318,6025,5.013,True,True,True,True
+SPLN44,merged,Plasma cells,tierApm_p95__secondary_senescence,12423,622,11801,5.007,12423,622,11801,5.007,True,True,True,True
+SPLN44,merged,Stromal,tierApm_p95__secondary_senescence,32287,1615,30672,5.002,32287,1615,30672,5.002,True,True,True,True
+SPLN44,merged,T/NK cells,tierApm_p95__secondary_senescence,33482,295,33187,0.881,33482,295,33187,0.881,False,True,True,False
+SPLN44,merged,B cells,tierApm_p95__tnfa_nfkb_proximal,40376,2019,38357,5.0,40376,2019,38357,5.0,True,True,True,True
+SPLN44,merged,Endothelial,tierApm_p95__tnfa_nfkb_proximal,53815,2691,51124,5.0,53815,2691,51124,5.0,True,True,True,True
+SPLN44,merged,Erythroid cells,tierApm_p95__tnfa_nfkb_proximal,6476,324,6152,5.003,6476,324,6152,5.003,True,True,True,True
+SPLN44,merged,Megakaryocytes,tierApm_p95__tnfa_nfkb_proximal,761,38,723,4.993,761,38,723,4.993,True,False,False,False
+SPLN44,merged,Mono/Mac/DC,tierApm_p95__tnfa_nfkb_proximal,54660,2735,51925,5.004,54660,2735,51925,5.004,True,True,True,True
+SPLN44,merged,Neutrophils,tierApm_p95__tnfa_nfkb_proximal,6343,318,6025,5.013,6343,318,6025,5.013,True,True,True,True
+SPLN44,merged,Plasma cells,tierApm_p95__tnfa_nfkb_proximal,12423,622,11801,5.007,12423,622,11801,5.007,True,True,True,True
+SPLN44,merged,Stromal,tierApm_p95__tnfa_nfkb_proximal,32287,1615,30672,5.002,32287,1615,30672,5.002,True,True,True,True
+SPLN44,merged,T/NK cells,tierApm_p95__tnfa_nfkb_proximal,33482,295,33187,0.881,33482,295,33187,0.881,False,True,True,False

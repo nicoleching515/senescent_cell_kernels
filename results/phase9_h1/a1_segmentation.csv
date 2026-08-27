@@ -1,0 +1,22 @@
+section,segmentation_method,n,pct
+SPLN07,Segmented by interior stain (18S),149869,60.09
+SPLN07,Segmented by boundary stain (ATP1A1+CD45+E-Cadherin),96730,38.78
+SPLN07,Segmented by nucleus expansion of 5.0µm,2821,1.13
+SPLN14,Segmented by interior stain (18S),193543,58.76
+SPLN14,Segmented by boundary stain (ATP1A1+CD45+E-Cadherin),131990,40.07
+SPLN14,Segmented by nucleus expansion of 5.0µm,3838,1.17
+SPLN21,Segmented by interior stain (18S),147619,66.97
+SPLN21,Segmented by boundary stain (ATP1A1+CD45+E-Cadherin),69958,31.74
+SPLN21,Segmented by nucleus expansion of 5.0µm,2858,1.3
+SPLN24,Segmented by interior stain (18S),276195,69.72
+SPLN24,Segmented by boundary stain (ATP1A1+CD45+E-Cadherin),114944,29.01
+SPLN24,Segmented by nucleus expansion of 5.0µm,5034,1.27
+SPLN30,Segmented by interior stain (18S),188249,51.41
+SPLN30,Segmented by boundary stain (ATP1A1+CD45+E-Cadherin),173652,47.42
+SPLN30,Segmented by nucleus expansion of 5.0µm,4298,1.17
+SPLN43,Segmented by interior stain (18S),188399,56.82
+SPLN43,Segmented by boundary stain (ATP1A1+CD45+E-Cadherin),135370,40.83
+SPLN43,Segmented by nucleus expansion of 5.0µm,7813,2.36
+SPLN44,Segmented by interior stain (18S),205639,65.4
+SPLN44,Segmented by boundary stain (ATP1A1+CD45+E-Cadherin),101696,32.34
+SPLN44,Segmented by nucleus expansion of 5.0µm,7078,2.25
