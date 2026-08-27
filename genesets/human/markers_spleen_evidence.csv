@@ -1,0 +1,266 @@
+cell_type,gene,n_pmid,n_labels_claiming,kept,tierB_member,scope,pmids
+Red pulp macrophages,APOC1,1,1,yes,no,spleen-only (37 rows),32351704.0
+Red pulp macrophages,APOE,3,1,yes,no,spleen-only (37 rows),31892341.0;32351704.0;34872616.0
+Red pulp macrophages,C1QA,1,2,yes,no,spleen-only (37 rows),34872616.0
+Red pulp macrophages,C1QB,1,2,yes,no,spleen-only (37 rows),34872616.0
+Red pulp macrophages,CD163,1,1,yes,no,spleen-only (37 rows),24470386.0
+Red pulp macrophages,CD33,1,3,yes,no,spleen-only (37 rows),31610266.0
+Red pulp macrophages,CD5L,3,1,yes,no,spleen-only (37 rows),31892341.0;32351704.0;34872616.0
+Red pulp macrophages,CD68,2,1,yes,no,spleen-only (37 rows),15736047.0;31610266.0
+Red pulp macrophages,FCGR1A,1,2,yes,yes,spleen-only (37 rows),24470386.0
+Red pulp macrophages,FCGR2A,1,1,yes,no,spleen-only (37 rows),31610266.0
+Red pulp macrophages,FOLR2,1,1,yes,no,spleen-only (37 rows),33203700.0
+Red pulp macrophages,HMOX1,2,1,yes,yes,spleen-only (37 rows),32351704.0;34872616.0
+Red pulp macrophages,LGMN,1,1,yes,no,spleen-only (37 rows),32351704.0
+Red pulp macrophages,MARCO,1,1,yes,no,spleen-only (37 rows),32351704.0
+Red pulp macrophages,MRC1,2,2,yes,no,spleen-only (37 rows),24470386.0;32351704.0
+Red pulp macrophages,SLC40A1,1,1,no_below_cap,no,spleen-only (37 rows),32351704.0
+Monocytes,C5AR1,1,1,yes,no,spleen-only (19 rows),31474513.0
+Monocytes,CD14,4,4,no_promiscuous,yes,spleen-only (19 rows),28429166.0;31892341.0;32351704.0;34872616.0
+Monocytes,FCAR,1,2,yes,no,spleen-only (19 rows),31474513.0
+Monocytes,FCN1,2,1,yes,no,spleen-only (19 rows),31892341.0;34872616.0
+Monocytes,S100A12,1,2,yes,no,spleen-only (19 rows),34872616.0
+Monocytes,VCAN,2,1,yes,yes,spleen-only (19 rows),31892341.0;34872616.0
+cDC1,CLEC9A,2,1,yes,no,spleen-only (10 rows),31892341.0;32351704.0
+cDC1,PTTG1,1,2,yes,yes,spleen-only (10 rows),32351704.0
+cDC1,THBD,1,1,yes,no,spleen-only (10 rows),34872616.0
+cDC1,XCR1,1,1,yes,no,spleen-only (10 rows),31892341.0
+cDC2,C1QA,1,2,yes,no,spleen-only (17 rows),34872616.0
+cDC2,C1QB,1,2,yes,no,spleen-only (17 rows),34872616.0
+cDC2,CD1C,3,1,yes,no,spleen-only (17 rows),31892341.0;32351704.0;34872616.0
+cDC2,CLEC10A,2,1,yes,no,spleen-only (17 rows),31892341.0;34872616.0
+cDC2,FCER1A,2,1,yes,no,spleen-only (17 rows),32351704.0;34872616.0
+pDC,BCL11A,1,1,yes,no,spleen-only (11 rows),32351704.0
+pDC,CCDC50,1,1,yes,no,spleen-only (11 rows),32351704.0
+pDC,CLEC4C,1,1,yes,no,spleen-only (11 rows),31892341.0
+pDC,IRF7,1,1,yes,yes,spleen-only (11 rows),32351704.0
+pDC,IRF8,1,1,yes,yes,spleen-only (11 rows),32351704.0
+pDC,LILRA4,1,1,yes,no,spleen-only (11 rows),32351704.0
+pDC,SPIB,1,1,yes,no,spleen-only (11 rows),32351704.0
+pDC,TCF4,1,1,yes,no,spleen-only (11 rows),32351704.0
+Follicular B cells,CD19,1,3,yes,no,spleen-only (22 rows),34872616.0
+Follicular B cells,CD27,1,2,yes,no,spleen-only (22 rows),31892341.0
+Follicular B cells,CD79A,1,3,yes,no,spleen-only (22 rows),34872616.0
+Follicular B cells,CD79B,1,2,yes,no,spleen-only (22 rows),34872616.0
+Follicular B cells,FCER2,2,2,yes,no,spleen-only (22 rows),31892341.0;32351704.0
+Follicular B cells,IL4R,2,1,yes,yes,spleen-only (22 rows),31892341.0;32351704.0
+Follicular B cells,MS4A1,1,3,yes,no,spleen-only (22 rows),34872616.0
+Follicular B cells,TCL1A,3,1,yes,no,spleen-only (22 rows),31892341.0;32351704.0;34872616.0
+Follicular B cells,TNFRSF13B,1,2,yes,no,spleen-only (22 rows),31892341.0
+Marginal zone B cells,CD180,1,1,yes,no,ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (6 spleen rows),
+Marginal zone B cells,CR2,1,2,yes,no,ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (6 spleen rows),
+Marginal zone B cells,EBF1,1,1,yes,no,ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (6 spleen rows),
+Marginal zone B cells,FCRL4,1,1,yes,no,ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (6 spleen rows),
+Marginal zone B cells,ITGAE,1,1,yes,no,ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (6 spleen rows),
+Marginal zone B cells,NOTCH2,1,1,yes,yes,ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (6 spleen rows),
+Marginal zone B cells,PAX5,1,1,yes,no,ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (6 spleen rows),
+Marginal zone B cells,TNFRSF13C,1,1,yes,no,ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (6 spleen rows),
+Germinal centre B cells,AICDA,3,1,yes,no,ALL-TISSUE FALLBACK >=2 PMID (0 spleen rows),;32194545.0;32703953.0
+Germinal centre B cells,BCL6,2,1,yes,yes,ALL-TISSUE FALLBACK >=2 PMID (0 spleen rows),;34597589.0
+Germinal centre B cells,MME,2,2,yes,no,ALL-TISSUE FALLBACK >=2 PMID (0 spleen rows),33208941.0;34597589.0
+Germinal centre B cells,PTTG1,2,2,yes,yes,ALL-TISSUE FALLBACK >=2 PMID (0 spleen rows),32686767.0;35216676.0
+Plasma cells,JCHAIN,3,1,yes,no,spleen-only (34 rows),31892341.0;32351704.0;34872616.0
+Plasma cells,MZB1,1,1,yes,no,spleen-only (34 rows),34872616.0
+Plasma cells,XBP1,2,1,yes,no,spleen-only (34 rows),31892341.0;34872616.0
+CD4 T cells,CCR7,1,4,no_promiscuous,no,spleen-only (37 rows),32351704.0
+CD4 T cells,CD3D,1,3,yes,no,spleen-only (37 rows),34872616.0
+CD4 T cells,CD3E,2,2,yes,no,spleen-only (37 rows),31892341.0;34872616.0
+CD4 T cells,CD4,4,2,yes,no,spleen-only (37 rows),31610266.0;31892341.0;34678650.0;34872616.0
+CD4 T cells,CD40LG,1,1,yes,no,spleen-only (37 rows),32351704.0
+CD4 T cells,CXCR5,2,2,yes,no,spleen-only (37 rows),31892341.0;32351704.0
+CD4 T cells,ICOS,1,1,yes,no,spleen-only (37 rows),31892341.0
+CD4 T cells,IL7R,1,3,yes,yes,spleen-only (37 rows),34872616.0
+CD4 T cells,LEF1,1,2,yes,no,spleen-only (37 rows),32351704.0
+CD4 T cells,MAL,1,2,yes,no,spleen-only (37 rows),32351704.0
+CD4 T cells,MYC,1,2,yes,yes,spleen-only (37 rows),32351704.0
+CD4 T cells,PDCD1,1,1,yes,no,spleen-only (37 rows),31892341.0
+CD4 T cells,SELL,1,4,no_promiscuous,yes,spleen-only (37 rows),32351704.0
+CD4 T cells,SOCS3,1,2,yes,yes,spleen-only (37 rows),32351704.0
+CD4 T cells,TCF7,1,2,yes,no,spleen-only (37 rows),32351704.0
+CD4 T cells,TRAC,1,2,yes,no,spleen-only (37 rows),34872616.0
+CD8 T cells,CCR7,1,4,no_promiscuous,no,spleen-only (42 rows),32351704.0
+CD8 T cells,CD3D,1,3,yes,no,spleen-only (42 rows),34872616.0
+CD8 T cells,CD3E,2,2,yes,no,spleen-only (42 rows),31892341.0;34872616.0
+CD8 T cells,CD8A,5,2,yes,no,spleen-only (42 rows),31610266.0;31892341.0;32351704.0;34678650.0;34872616.0
+CD8 T cells,CD8B,2,1,yes,no,spleen-only (42 rows),32351704.0;34872616.0
+CD8 T cells,CXCR3,1,2,yes,no,spleen-only (42 rows),32351704.0
+CD8 T cells,GZMA,1,1,yes,yes,spleen-only (42 rows),31610266.0
+CD8 T cells,IL7R,1,3,yes,yes,spleen-only (42 rows),34872616.0
+CD8 T cells,ITGA1,1,2,yes,no,spleen-only (42 rows),32351704.0
+CD8 T cells,LEF1,1,2,yes,no,spleen-only (42 rows),32351704.0
+CD8 T cells,MAL,1,2,yes,no,spleen-only (42 rows),32351704.0
+CD8 T cells,MYC,1,2,yes,yes,spleen-only (42 rows),32351704.0
+CD8 T cells,PRF1,1,2,yes,no,spleen-only (42 rows),31610266.0
+CD8 T cells,SELL,1,4,no_promiscuous,yes,spleen-only (42 rows),32351704.0
+CD8 T cells,SOCS3,1,2,yes,yes,spleen-only (42 rows),32351704.0
+CD8 T cells,TCF7,1,2,yes,no,spleen-only (42 rows),32351704.0
+CD8 T cells,TRAC,1,2,yes,no,spleen-only (42 rows),34872616.0
+CD8 T cells,TRDC,1,1,no_below_cap,no,spleen-only (42 rows),34872616.0
+NK cells,B3GAT1,1,1,yes,no,spleen-only (37 rows),35173710.0
+NK cells,CCL4,1,1,yes,yes,spleen-only (37 rows),34872616.0
+NK cells,CCL5,1,2,yes,yes,spleen-only (37 rows),34872616.0
+NK cells,CCR7,1,4,no_promiscuous,no,spleen-only (37 rows),32351704.0
+NK cells,CD160,1,1,yes,no,spleen-only (37 rows),31892341.0
+NK cells,CD247,1,1,yes,no,spleen-only (37 rows),34872616.0
+NK cells,CD7,1,1,yes,no,spleen-only (37 rows),34872616.0
+NK cells,CST7,1,1,yes,no,spleen-only (37 rows),34872616.0
+NK cells,CX3CR1,2,1,yes,no,spleen-only (37 rows),32351704.0;35173710.0
+NK cells,CXCR3,1,2,yes,no,spleen-only (37 rows),32351704.0
+NK cells,CXCR6,1,1,yes,no,spleen-only (37 rows),32351704.0
+NK cells,FCGR3A,2,2,yes,no,spleen-only (37 rows),31892341.0;35173710.0
+NK cells,GNLY,1,1,no_below_cap,no,spleen-only (37 rows),34872616.0
+NK cells,GZMB,1,1,no_below_cap,no,spleen-only (37 rows),34872616.0
+NK cells,GZMK,1,1,no_below_cap,no,spleen-only (37 rows),34872616.0
+NK cells,ITGA5,1,1,no_below_cap,yes,spleen-only (37 rows),35173710.0
+NK cells,KLRC2,1,1,no_below_cap,no,spleen-only (37 rows),35173710.0
+NK cells,KLRD1,2,2,yes,no,spleen-only (37 rows),34872616.0;35173710.0
+NK cells,KLRF1,2,1,yes,no,spleen-only (37 rows),32351704.0;34872616.0
+NK cells,KLRK1,1,1,no_below_cap,yes,spleen-only (37 rows),35173710.0
+NK cells,NCAM1,2,1,yes,no,spleen-only (37 rows),31892341.0;32351704.0
+NK cells,NCR1,2,1,yes,no,spleen-only (37 rows),31892341.0;33272899.0
+NK cells,NKG7,1,1,no_below_cap,no,spleen-only (37 rows),34872616.0
+NK cells,PRF1,1,2,no_below_cap,no,spleen-only (37 rows),34872616.0
+NK cells,SELL,1,4,no_promiscuous,yes,spleen-only (37 rows),35173710.0
+Follicular dendritic cells,CR1,2,2,yes,no,ALL-TISSUE FALLBACK >=2 PMID (3 spleen rows),14720144.0;17367608.0
+Follicular dendritic cells,CR2,4,2,yes,no,ALL-TISSUE FALLBACK >=2 PMID (3 spleen rows),30952970.0;32473779.0;35043389.0;35145509.0
+Follicular dendritic cells,FCER2,2,2,yes,no,ALL-TISSUE FALLBACK >=2 PMID (3 spleen rows),17367608.0;30952970.0
+Fibroblastic reticular cells,ACTA2,1,4,no_promiscuous,yes,ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (0 spleen rows),30179601.0
+Fibroblastic reticular cells,CCL21,1,2,yes,no,ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (0 spleen rows),34489433.0
+Fibroblastic reticular cells,CD36,1,1,yes,yes,ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (0 spleen rows),30179601.0
+Fibroblastic reticular cells,MFAP5,1,1,yes,yes,ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (0 spleen rows),32763913.0
+Fibroblastic reticular cells,PDPN,1,3,yes,no,ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (0 spleen rows),34489433.0
+Sinusoidal endothelium,CLEC4M,1,1,yes,no,ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (0 spleen rows),33446637.0
+Sinusoidal endothelium,DNASE1L3,1,1,yes,no,ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (0 spleen rows),33446637.0
+Sinusoidal endothelium,F8,1,1,yes,no,ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (0 spleen rows),33446637.0
+Sinusoidal endothelium,FCGR2B,1,1,yes,no,ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (0 spleen rows),33446637.0
+Sinusoidal endothelium,FCN2,1,1,yes,no,ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (0 spleen rows),33446637.0
+Sinusoidal endothelium,FCN3,1,1,yes,no,ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (0 spleen rows),33446637.0
+Sinusoidal endothelium,MRC1,1,2,yes,no,ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (0 spleen rows),33446637.0
+Sinusoidal endothelium,OIT3,1,1,yes,no,ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (0 spleen rows),33446637.0
+Sinusoidal endothelium,STAB2,1,1,yes,no,ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (0 spleen rows),33446637.0
+Endothelial cells,CD34,1,4,no_promiscuous,no,spleen-only (11 rows),31610266.0
+Endothelial cells,ITGA1,1,2,yes,no,spleen-only (11 rows),34872616.0
+Endothelial cells,PCDH17,1,1,yes,no,spleen-only (11 rows),34872616.0
+Endothelial cells,PECAM1,1,4,no_promiscuous,yes,spleen-only (11 rows),31610266.0
+Endothelial cells,PROX1,1,2,yes,no,spleen-only (11 rows),34872616.0
+Endothelial cells,VWF,1,1,yes,no,spleen-only (11 rows),34872616.0
+Lymphatic endothelium,CCL21,3,2,yes,no,ALL-TISSUE FALLBACK >=2 PMID (0 spleen rows),31209336.0;34663877.0;35013299.0
+Lymphatic endothelium,FLT4,6,1,yes,no,ALL-TISSUE FALLBACK >=2 PMID (0 spleen rows),20028387.0;27172947.0;32403949.0;32439707.0;33212097.0;35169075.0
+Lymphatic endothelium,LYVE1,5,2,yes,no,ALL-TISSUE FALLBACK >=2 PMID (0 spleen rows),20028387.0;32439707.0;32457396.0;33053333.0;33212097.0
+Lymphatic endothelium,PDPN,5,3,yes,no,ALL-TISSUE FALLBACK >=2 PMID (0 spleen rows),32403949.0;33212097.0;33457092.0;34697289.0;35154475.0
+Smooth muscle / capsule,ACTA2,31,4,no_promiscuous,yes,ALL-TISSUE FALLBACK >=2 PMID (0 spleen rows),24885410.0;30674341.0;31067475.0;31209336.0;31320652.0;31340668.0;31350876.0;31582141.0;32060101.0;32079746.0;32107344.0;32344053.0;32726565.0;32961131.0;32971526.0;32981416.0;33208946.0;33287869.0;33928785.0;33936064.0;34346740.0;34380013.0;34663877.0;34687145.0;34694145.0;34815310.0;34912121.0;35013299.0;35126365.0;35192691.0;35262195.0
+Smooth muscle / capsule,CNN1,8,2,yes,no,ALL-TISSUE FALLBACK >=2 PMID (0 spleen rows),28830992.0;31462402.0;33208946.0;33685511.0;34346740.0;34694145.0;34921160.0;35084939.0
+Smooth muscle / capsule,DES,6,1,yes,no,ALL-TISSUE FALLBACK >=2 PMID (0 spleen rows),31010835.0;31462402.0;32832599.0;33208946.0;34173975.0;34282151.0
+Smooth muscle / capsule,MYH11,17,3,yes,no,ALL-TISSUE FALLBACK >=2 PMID (0 spleen rows),28830992.0;30713072.0;31320652.0;31340668.0;31350876.0;32066986.0;32971526.0;32981416.0;33622705.0;33682422.0;33936064.0;34380013.0;34584087.0;34663877.0;34694145.0;34795664.0;35084939.0
+Smooth muscle / capsule,MYLK,5,1,yes,yes,ALL-TISSUE FALLBACK >=2 PMID (0 spleen rows),32396864.0;33622705.0;33936064.0;34663877.0;35126365.0
+Smooth muscle / capsule,NOTCH3,4,1,yes,no,ALL-TISSUE FALLBACK >=2 PMID (0 spleen rows),31928944.0;32981416.0;32988401.0;35258704.0
+Smooth muscle / capsule,PLN,3,1,yes,no,ALL-TISSUE FALLBACK >=2 PMID (0 spleen rows),31320652.0;32832599.0;33397933.0
+Pericytes,ABCC9,2,1,yes,no,ALL-TISSUE FALLBACK >=2 PMID (0 spleen rows),32961131.0;35084939.0
+Pericytes,ANPEP,3,2,yes,yes,ALL-TISSUE FALLBACK >=2 PMID (0 spleen rows),24158496.0;32586411.0;33308315.0
+Pericytes,CD248,2,1,yes,no,ALL-TISSUE FALLBACK >=2 PMID (0 spleen rows),32961131.0;33308315.0
+Pericytes,CD34,3,4,no_promiscuous,no,ALL-TISSUE FALLBACK >=2 PMID (0 spleen rows),;21572381.0;25177794.0
+Pericytes,CD44,2,2,yes,yes,ALL-TISSUE FALLBACK >=2 PMID (0 spleen rows),24158496.0;32509378.0
+Pericytes,CSPG4,16,1,yes,no,ALL-TISSUE FALLBACK >=2 PMID (0 spleen rows),22370001.0;24158496.0;24401806.0;25336400.0;25360079.0;27547374.0;28376684.0;32040933.0;32918942.0;32961131.0;33017217.0;33208946.0;33332768.0;33597545.0;33780024.0;34793438.0
+Pericytes,KCNJ8,3,1,yes,no,ALL-TISSUE FALLBACK >=2 PMID (0 spleen rows),32961131.0;35084939.0;35154475.0
+Pericytes,MCAM,19,2,yes,no,ALL-TISSUE FALLBACK >=2 PMID (0 spleen rows),;21572381.0;23244588.0;24158496.0;25177794.0;25336400.0;27547374.0;28376684.0;32488016.0;32504559.0;32580941.0;33413690.0;33597545.0;33780024.0;33950524.0;34400611.0;34489433.0;34611125.0;35320046.0
+Pericytes,NT5E,2,1,yes,yes,ALL-TISSUE FALLBACK >=2 PMID (0 spleen rows),24158496.0;32509378.0
+Pericytes,PDGFRB,15,2,yes,yes,ALL-TISSUE FALLBACK >=2 PMID (0 spleen rows),30747918.0;31935371.0;32060101.0;32832599.0;32961131.0;32976581.0;33017217.0;33208946.0;33238152.0;33597545.0;33975634.0;34281603.0;34282151.0;34322886.0;34390642.0
+Pericytes,PECAM1,2,4,no_promiscuous,yes,ALL-TISSUE FALLBACK >=2 PMID (0 spleen rows),;21572381.0
+Pericytes,RGS5,17,2,yes,no,ALL-TISSUE FALLBACK >=2 PMID (0 spleen rows),31010835.0;31712411.0;32060101.0;32832599.0;32961131.0;33238152.0;33258803.0;33303760.0;33332768.0;33413690.0;33723434.0;33950524.0;33975634.0;34489433.0;34745098.0;35304249.0;35464471.0
+Pericytes,SMN1,2,1,yes,no,ALL-TISSUE FALLBACK >=2 PMID (0 spleen rows),24401806.0;33413690.0
+Pericytes,THY1,4,1,yes,yes,ALL-TISSUE FALLBACK >=2 PMID (0 spleen rows),24158496.0;24401806.0;32509378.0;33017217.0
+Fibroblasts,COL11A1,1,2,yes,yes,spleen-only (13 rows),31610266.0
+Fibroblasts,COL4A1,1,1,yes,yes,spleen-only (13 rows),34872616.0
+Fibroblasts,CXCL13,1,1,yes,yes,spleen-only (13 rows),34872616.0
+Fibroblasts,IGFBP2,1,1,yes,yes,spleen-only (13 rows),34872616.0
+Fibroblasts,PTGDS,1,1,yes,no,spleen-only (13 rows),34872616.0
+Erythroid cells,GYPA,15,1,yes,no,ALL-TISSUE FALLBACK >=2 PMID (10 spleen rows),;24511371.0;25870831.0;28614297.0;31601799.0;31964880.0;32470390.0;32614947.0;33242413.0;33352111.0;33597545.0;33728669.0;34516827.0;34811504.0;35048186.0
+Erythroid cells,HBG1,5,1,yes,no,ALL-TISSUE FALLBACK >=2 PMID (10 spleen rows),28830992.0;32470390.0;32961131.0;33352111.0;33597545.0
+Erythroid cells,SLC4A1,2,1,yes,no,ALL-TISSUE FALLBACK >=2 PMID (10 spleen rows),32470390.0;34872616.0
+Erythroid cells,SPI1,2,1,yes,no,ALL-TISSUE FALLBACK >=2 PMID (10 spleen rows),;34691592.0
+Erythroid cells,TFRC,11,2,yes,yes,ALL-TISSUE FALLBACK >=2 PMID (10 spleen rows),;14634974.0;25870831.0;31070582.0;32690901.0;32939086.0;33242413.0;34021930.0;34083792.0;34516827.0;34921133.0
+Megakaryocytes,CAVIN2,1,1,yes,no,ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (10 spleen rows),32351704.0
+Megakaryocytes,CCL5,1,2,yes,yes,ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (10 spleen rows),32554932.0
+Megakaryocytes,CD14,1,4,no_promiscuous,yes,ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (10 spleen rows),26541609.0
+Megakaryocytes,CD33,1,3,yes,no,ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (10 spleen rows),26541609.0
+Megakaryocytes,CD34,1,4,no_promiscuous,no,ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (10 spleen rows),25532425.0
+Megakaryocytes,CD79A,1,3,yes,no,ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (10 spleen rows),33363531.0
+Megakaryocytes,CPA3,1,1,yes,no,ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (10 spleen rows),33783985.0
+Megakaryocytes,FLI1,1,1,yes,no,ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (10 spleen rows),33352111.0
+Megakaryocytes,FUT4,1,2,yes,yes,ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (10 spleen rows),26541609.0
+Megakaryocytes,GP1BA,1,1,yes,no,ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (10 spleen rows),33340451.0
+Megakaryocytes,GP5,1,1,yes,no,ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (10 spleen rows),
+Megakaryocytes,IL3RA,1,2,yes,yes,ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (10 spleen rows),
+Megakaryocytes,ITGA2B,17,2,yes,no,ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (10 spleen rows),;18436865.0;23508472.0;24879588.0;30093597.0;30643249.0;31048353.0;31178255.0;31395745.0;32351704.0;32614947.0;32690901.0;33296687.0;33301706.0;33340451.0;33352111.0;33384332.0
+Megakaryocytes,ITGA6,1,1,yes,no,ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (10 spleen rows),
+Megakaryocytes,ITGAV,1,1,yes,yes,ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (10 spleen rows),
+Megakaryocytes,ITGB3,4,1,yes,yes,ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (10 spleen rows),;23508472.0;25532425.0;31048353.0
+Megakaryocytes,MPL,1,1,no_below_cap,no,ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (10 spleen rows),
+Megakaryocytes,NECTIN2,1,1,no_below_cap,no,ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (10 spleen rows),
+Megakaryocytes,PECAM1,1,4,no_promiscuous,yes,ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (10 spleen rows),
+Megakaryocytes,POU5F1,1,1,no_below_cap,no,ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (10 spleen rows),22952951.0
+Megakaryocytes,PTPRJ,1,1,no_below_cap,no,ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (10 spleen rows),34042332.0
+Megakaryocytes,SELP,2,1,yes,yes,ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (10 spleen rows),;33340451.0
+Megakaryocytes,SOX2,1,1,no_below_cap,no,ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (10 spleen rows),22952951.0
+Megakaryocytes,SPARC,1,1,no_below_cap,yes,ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (10 spleen rows),32351704.0
+Neutrophils,ALPL,3,1,no_below_cap,no,ALL-TISSUE FALLBACK >=2 PMID (5 spleen rows),30093597.0;32603604.0;34054812.0
+Neutrophils,ANPEP,4,2,yes,yes,ALL-TISSUE FALLBACK >=2 PMID (5 spleen rows),;24504953.0;30898857.0;32161403.0
+Neutrophils,ARG1,2,1,no_below_cap,no,ALL-TISSUE FALLBACK >=2 PMID (5 spleen rows),30093597.0;34782790.0
+Neutrophils,BST1,2,1,no_below_cap,no,ALL-TISSUE FALLBACK >=2 PMID (5 spleen rows),;34054812.0
+Neutrophils,CAMP,2,1,no_below_cap,no,ALL-TISSUE FALLBACK >=2 PMID (5 spleen rows),33296687.0;34349096.0
+Neutrophils,CCR7,3,4,no_promiscuous,no,ALL-TISSUE FALLBACK >=2 PMID (5 spleen rows),32912924.0;34026328.0;34267752.0
+Neutrophils,CD101,2,1,no_below_cap,no,ALL-TISSUE FALLBACK >=2 PMID (5 spleen rows),32912924.0;33841435.0
+Neutrophils,CD14,7,4,no_promiscuous,yes,ALL-TISSUE FALLBACK >=2 PMID (5 spleen rows),;25799053.0;31209336.0;32814027.0;32912924.0;33242413.0;35095871.0
+Neutrophils,CD177,4,1,yes,no,ALL-TISSUE FALLBACK >=2 PMID (5 spleen rows),;33326802.0;34296378.0;34707085.0
+Neutrophils,CD34,2,4,no_promiscuous,no,ALL-TISSUE FALLBACK >=2 PMID (5 spleen rows),32161403.0;32912924.0
+Neutrophils,CD44,2,2,no_below_cap,yes,ALL-TISSUE FALLBACK >=2 PMID (5 spleen rows),;25799053.0
+Neutrophils,CD55,3,1,no_below_cap,yes,ALL-TISSUE FALLBACK >=2 PMID (5 spleen rows),;34721400.0;35322584.0
+Neutrophils,CD86,2,1,no_below_cap,yes,ALL-TISSUE FALLBACK >=2 PMID (5 spleen rows),32912924.0;35251050.0
+Neutrophils,CD93,2,1,no_below_cap,no,ALL-TISSUE FALLBACK >=2 PMID (5 spleen rows),;34054812.0
+Neutrophils,CEACAM3,2,1,no_below_cap,no,ALL-TISSUE FALLBACK >=2 PMID (5 spleen rows),31942077.0;34054812.0
+Neutrophils,CEACAM8,33,1,yes,no,ALL-TISSUE FALLBACK >=2 PMID (5 spleen rows),;15754803.0;19820230.0;25729037.0;25799053.0;26970376.0;27708229.0;30962246.0;31040119.0;31258530.0;31353807.0;31402918.0;31610266.0;31615816.0;31702112.0;31860339.0;32114386.0;32499656.0;32753728.0;32810438.0;32814027.0;32818801.0;32912924.0;33044746.0;33841435.0;33959124.0;34128959.0;34267752.0;34464357.0;34731593.0;34914922.0;35251050.0;35338085.0
+Neutrophils,CLC,2,1,no_below_cap,no,ALL-TISSUE FALLBACK >=2 PMID (5 spleen rows),30093597.0;34389613.0
+Neutrophils,CR1,2,2,no_below_cap,no,ALL-TISSUE FALLBACK >=2 PMID (5 spleen rows),;32912924.0
+Neutrophils,CSF3R,15,1,yes,yes,ALL-TISSUE FALLBACK >=2 PMID (5 spleen rows),;30093597.0;31524634.0;32603604.0;32685004.0;33326802.0;33657410.0;33986743.0;34054812.0;34128959.0;34603282.0;34782790.0;34914922.0;35111153.0;35377806.0
+Neutrophils,ELANE,5,1,yes,no,ALL-TISSUE FALLBACK >=2 PMID (5 spleen rows),32311026.0;33296687.0;34782790.0;35186442.0;35358095.0
+Neutrophils,ENPP3,2,1,no_below_cap,no,ALL-TISSUE FALLBACK >=2 PMID (5 spleen rows),25799053.0;32912924.0
+Neutrophils,FCGR3A,31,2,yes,no,ALL-TISSUE FALLBACK >=2 PMID (5 spleen rows),;2196350.0;23260596.0;25799053.0;26970376.0;30898857.0;31402908.0;31524634.0;31907005.0;32161403.0;32810438.0;32810439.0;32814027.0;32818801.0;32912924.0;32983174.0;33326802.0;33584717.0;33813036.0;33841435.0;33868315.0;33986743.0;34012444.0;34233737.0;34330889.0;34407944.0;34721400.0;34731593.0;35048186.0;35095871.0;35186442.0
+Neutrophils,FCGR3B,18,1,yes,no,ALL-TISSUE FALLBACK >=2 PMID (5 spleen rows),24504953.0;25170899.0;30093597.0;31754025.0;31942077.0;32923142.0;33208946.0;33296687.0;34054812.0;34128959.0;34132762.0;34330889.0;34618691.0;34914922.0;35111153.0;35154475.0;35186442.0;35219893.0
+Neutrophils,FPR1,5,1,yes,yes,ALL-TISSUE FALLBACK >=2 PMID (5 spleen rows),2319438.0;30093597.0;32685004.0;33326802.0;34054812.0
+Neutrophils,FPR2,4,1,yes,no,ALL-TISSUE FALLBACK >=2 PMID (5 spleen rows),30093597.0;33326802.0;34054812.0;34228647.0
+Neutrophils,FUT4,26,2,yes,yes,ALL-TISSUE FALLBACK >=2 PMID (5 spleen rows),;16836616.0;23260596.0;25799053.0;27867036.0;31040119.0;31402908.0;32161403.0;32193378.0;32497024.0;32699134.0;32810438.0;32810439.0;32818801.0;32912924.0;32983107.0;33016928.0;33242413.0;33429418.0;33584717.0;33746955.0;33841435.0;34184758.0;34197832.0;34253573.0;34836966.0
+Neutrophils,G0S2,3,1,no_below_cap,yes,ALL-TISSUE FALLBACK >=2 PMID (5 spleen rows),30093597.0;32810439.0;34054812.0
+Neutrophils,IL1R2,4,1,yes,yes,ALL-TISSUE FALLBACK >=2 PMID (5 spleen rows),30093597.0;32603604.0;32810439.0;34228647.0
+Neutrophils,IL1RN,2,1,no_below_cap,no,ALL-TISSUE FALLBACK >=2 PMID (5 spleen rows),30093597.0;32810439.0
+Neutrophils,IL3RA,4,2,yes,yes,ALL-TISSUE FALLBACK >=2 PMID (5 spleen rows),25799053.0;32912924.0;34616409.0;34731593.0
+Neutrophils,ITGA2B,2,2,no_below_cap,no,ALL-TISSUE FALLBACK >=2 PMID (5 spleen rows),32912924.0;34484199.0
+Neutrophils,ITGAM,5,1,yes,no,ALL-TISSUE FALLBACK >=2 PMID (5 spleen rows),34026328.0;34267752.0;34721400.0;34804043.0;35108499.0
+Neutrophils,KCNJ15,3,1,no_below_cap,no,ALL-TISSUE FALLBACK >=2 PMID (5 spleen rows),30093597.0;31942077.0;34054812.0
+Neutrophils,MME,12,2,yes,no,ALL-TISSUE FALLBACK >=2 PMID (5 spleen rows),;31945345.0;32810438.0;32818801.0;32912924.0;33584717.0;33841435.0;34054812.0;34721400.0;34731593.0;35095871.0;35216673.0
+Neutrophils,MMP9,2,1,no_below_cap,yes,ALL-TISSUE FALLBACK >=2 PMID (5 spleen rows),30093597.0;34782790.0
+Neutrophils,MPO,14,1,yes,yes,ALL-TISSUE FALLBACK >=2 PMID (5 spleen rows),10213270.0;18825001.0;1978685.0;31819035.0;32492433.0;33296687.0;33352111.0;34184758.0;34349096.0;34782790.0;34971568.0;35120600.0;35186442.0;35358095.0
+Neutrophils,PRTN3,4,1,no_below_cap,no,ALL-TISSUE FALLBACK >=2 PMID (5 spleen rows),31353807.0;32492433.0;33352111.0;35186442.0
+Neutrophils,RSAD2,2,1,no_below_cap,yes,ALL-TISSUE FALLBACK >=2 PMID (5 spleen rows),32810439.0;34782790.0
+Neutrophils,SELL,7,4,no_promiscuous,yes,ALL-TISSUE FALLBACK >=2 PMID (5 spleen rows),;30093597.0;32912924.0;33868315.0;34721400.0;35095871.0;35186442.0
+Neutrophils,SPN,4,1,no_below_cap,no,ALL-TISSUE FALLBACK >=2 PMID (5 spleen rows),;32810438.0;33841435.0;35216673.0
+Neutrophils,TFRC,2,2,no_below_cap,yes,ALL-TISSUE FALLBACK >=2 PMID (5 spleen rows),32814027.0;32912924.0
+Neutrophils,TNFRSF10C,3,1,no_below_cap,yes,ALL-TISSUE FALLBACK >=2 PMID (5 spleen rows),30093597.0;31942077.0;34054812.0
+Mesothelial cells,ACTA2,1,4,no_promiscuous,yes,ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (0 spleen rows),33406409.0
+Mesothelial cells,ADAM28,1,1,yes,no,ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (0 spleen rows),33406409.0
+Mesothelial cells,ADAMDEC1,1,1,yes,no,ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (0 spleen rows),33406409.0
+Mesothelial cells,CDH2,1,1,yes,yes,ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (0 spleen rows),33784014.0
+Mesothelial cells,CENPF,1,1,yes,yes,ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (0 spleen rows),33406409.0
+Mesothelial cells,GATA6,1,1,yes,no,ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (0 spleen rows),33406409.0
+Mesothelial cells,GREM2,1,1,yes,no,ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (0 spleen rows),33406409.0
+Mesothelial cells,HPGD,1,1,yes,no,ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (0 spleen rows),33406409.0
+Mesothelial cells,IL18,1,1,yes,yes,ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (0 spleen rows),33406409.0
+Mesothelial cells,MSLN,2,1,yes,no,ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (0 spleen rows),33208946.0;33597545.0
+Mesothelial cells,MYH11,1,3,yes,no,ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (0 spleen rows),33406409.0
+Mesothelial cells,PDPN,1,3,yes,no,ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (0 spleen rows),32690901.0
+Mesothelial cells,PRG4,1,1,yes,no,ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (0 spleen rows),33597545.0
+Mesothelial cells,SOX6,1,1,yes,no,ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (0 spleen rows),33406409.0
+Mesothelial cells,UPK3B,5,1,yes,no,ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (0 spleen rows),21984916.0;33208946.0;33597545.0;33784014.0;34663877.0
+Mesothelial cells,WT1,2,1,yes,no,ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (0 spleen rows),33208946.0;34663877.0
+Proliferating cells,CD3D,1,3,yes,no,spleen-only (12 rows),34872616.0
+Proliferating cells,IL7R,1,3,yes,yes,spleen-only (12 rows),34872616.0
+Proliferating cells,TUBB,1,1,yes,yes,spleen-only (12 rows),31892341.0

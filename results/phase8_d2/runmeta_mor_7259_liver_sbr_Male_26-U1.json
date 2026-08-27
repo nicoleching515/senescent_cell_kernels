@@ -1,0 +1,32 @@
+{
+ "section": "7259_liver_sbr_Male_26-U1",
+ "config": "mor",
+ "n_cells": 127386,
+ "n_genes": 4845,
+ "denoise": false,
+ "random_state": 0,
+ "anchor": "published_CDKN1A",
+ "panel": "ortholog_mapped_MGI_1to1",
+ "min_counts_per_cell": 20,
+ "mor_min_detect_frac": 0.05,
+ "mor_genes_in_estimator": 2033,
+ "mor_cells_fallback_to_libsize": 0,
+ "mor_sf_p01": 0.8779408424273567,
+ "mor_sf_p99": 1.7079414603904948,
+ "mor_sf_spearman_vs_mapped_counts": 0.8413,
+ "direction_log": {
+  "corr_metrics": [
+   "0.12533815",
+   "0.1231996"
+  ],
+  "reverse_log": [
+   true,
+   false
+  ],
+  "node": 0,
+  "reverse": true,
+  "correlation": 0.006914203055202961
+ },
+ "minutes": 44.13,
+ "total_minutes": 44.45
+}

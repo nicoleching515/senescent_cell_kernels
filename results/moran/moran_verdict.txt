@@ -1,0 +1,58 @@
+MORAN'S I vs THE A7 DISTANCE KERNEL -- M1 (mouse), 11 sections, n=83392/93197... cells
+primary weights: knn6 row-standardised.  Moran's I pooled as a section-clustered mean [95%% CI].
+A7 amplitude = beta/sd_y, same responses, same cells, section-clustered mean.
+
+field                  kind                 Moran I (raw)     Moran I (ct-centred)         A7 naive beta/sd
+neg_control_probe      control    +0.0058 [+0.0033,+0.0083]  +0.0054 [+0.0027,+0.0080]  -0.0225 [-0.0527,+0.0078]
+neg_control_codeword   control    +0.0421 [+0.0281,+0.0561]  +0.0391 [+0.0246,+0.0536]  -0.0604 [-0.1085,-0.0123]
+genomic_control        control    +0.0042 [+0.0022,+0.0062]  +0.0040 [+0.0019,+0.0062]  -0.0307 [-0.0558,-0.0056]
+all_controls           control    +0.0455 [+0.0302,+0.0609]  +0.0424 [+0.0265,+0.0583]  -0.0744 [-0.1306,-0.0182]
+neg_probe_rate         control    +0.0047 [-0.0010,+0.0105]  +0.0043 [-0.0013,+0.0098]  +0.0113 [-0.0085,+0.0310]
+downstream_arrest      module     +0.0852 [+0.0645,+0.1058]  +0.0587 [+0.0440,+0.0733]  +0.0989 [+0.0279,+0.1700]
+emt_ecm                module     +0.2437 [+0.1910,+0.2964]  +0.1431 [+0.1111,+0.1751]  +0.3437 [+0.2558,+0.4315]
+il6_jak_stat3          module     +0.1205 [+0.0769,+0.1640]  +0.1001 [+0.0748,+0.1255]  +0.5159 [+0.3915,+0.6403]
+interferon_response    module     +0.1719 [+0.1343,+0.2095]  +0.1382 [+0.1096,+0.1668]  +0.3944 [+0.2693,+0.5196]
+oxidative_stress       module     +0.1502 [+0.1085,+0.1918]  +0.0810 [+0.0659,+0.0961]  -0.2160 [-0.2948,-0.1372]
+secondary_senescence   module     +0.0872 [+0.0648,+0.1096]  +0.0721 [+0.0567,+0.0874]  +0.2270 [+0.1263,+0.3277]
+tnfa_nfkb_proximal     module     +0.1903 [+0.1190,+0.2616]  +0.1695 [+0.1085,+0.2306]  +0.5728 [+0.4231,+0.7226]
+cell_area              technical  +0.0855 [+0.0640,+0.1071]  +0.0696 [+0.0539,+0.0852]     +nan [+nan,+nan]
+density_50um           technical  +0.9483 [+0.9362,+0.9605]  +0.8664 [+0.8468,+0.8861]     +nan [+nan,+nan]
+transcript_counts      technical  +0.1375 [+0.1100,+0.1651]  +0.1320 [+0.0937,+0.1702]     +nan [+nan,+nan]
+unassigned_codeword    technical  +0.2098 [+0.1555,+0.2642]  +0.2039 [+0.1470,+0.2607]     +nan [+nan,+nan]
+
+Rank agreement across the 12 control+module fields, |Moran I| vs |A7 naive amplitude|:
+  raw        Spearman rho = +0.895 (p = 8.37e-05)
+  ct-centred Spearman rho = +0.944 (p = 3.93e-06)
+
+Within the 5 control responses x 11 sections (55 pairs): Spearman rho = +0.155 (p = 0.259)
+
+DISCORDANCE TEST -- can a field be flat by Moran's I and carry a
+distance-to-sender gradient?  'near zero' = |I| below the median
+Gene Expression feature (0.00999) under knn6.
+field                  section                         Moran I   A7 naive  CI excl 0
+genomic_control        7361_liver_sbr_Male_2-U1       +0.00660    -0.0603       0.31
+genomic_control        7448_liver_sbr_Male_10-U1      +0.00223    -0.0834       0.33
+neg_control_probe      7001_liver_sham_Male_52-U1     +0.00575    +0.0509       0.47
+neg_control_probe      7239_liver_sbr_Male_52-U1      +0.00790    -0.1240       0.33
+neg_control_probe      7248_liver_sham_Male_26-U1     +0.00706    -0.0311       0.50
+neg_control_probe      7250_liver_sham_Male_26-U1     +0.00377    -0.0465       0.29
+neg_control_probe      7259_liver_sbr_Male_26-U1      +0.00095    +0.0232       0.29
+neg_control_probe      7260_liver_sbr_Male_26-U1      +0.00336    +0.0008       0.33
+neg_control_probe      7361_liver_sbr_Male_2-U1       +0.00677    -0.0187       0.31
+neg_control_probe      7435_liver_sham_Male_10-U1     +0.00967    -0.0199       0.29
+neg_probe_rate         7001_liver_sham_Male_52-U1     -0.00125    +0.0626       0.41
+neg_probe_rate         7248_liver_sham_Male_26-U1     +0.00118    -0.0214       0.29
+neg_probe_rate         7352_liver_sham_Male_2-U1      +0.00803    -0.0132       0.29
+neg_probe_rate         7450_liver_sbr_Male_10-U1      +0.00085    +0.0331       0.36
+  14 discordant section x response cells out of 55.
+
+
+SPARSITY-MATCHED GENE COMPARISON (primary weights knn6, all sections pooled)
+  a control feature's near-zero I is only evidence of 'no spatial
+  trend' if a GENE of the same sparsity would have shown one.
+feature class                       n    med cts      med I    n genes    med cts      med I
+Negative Control Probe            440       21.0   -0.00012       4495       32.0   -0.00018
+Negative Control Codeword        6699        7.0   -0.00004       1179       18.0   -0.00012
+Genomic Control                   231       63.0   -0.00029       8735       62.0   -0.00025
+Unassigned Codeword             85866        6.0   -0.00004        763       15.0   -0.00011
+

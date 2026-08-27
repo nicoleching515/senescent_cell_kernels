@@ -1,0 +1,95 @@
+/workspace/code/senepy_coverage_human.py:26: DeprecationWarning: numpy.core.numeric is deprecated and has been renamed to numpy._core.numeric. The numpy._core namespace contains private NumPy internals and its use is discouraged, as NumPy internals can change without warning in any release. In practice, most real-world usage of numpy.core is to access functionality in the public NumPy API. If that is the case, use the public NumPy API. If not, you are using NumPy internals. If you would still like to access an internal attribute, use numpy._core.numeric._frombuffer.
+  meta = pickle.load(open(D + '6_HUMAN_HUBS_METADATA_FILTERED.pickle', 'rb'))
+====================================================================================================
+SenePy 1.0.1 human hub inventory (bundled with the installed package)
+====================================================================================================
+hubs: 65   tissues: 10   (tissue, cell) pairs: 47
+tissues: blood, bone marrow, heart, hippocampus, intestine, kidney, liver, lung, skin, tongue
+
+*** SPLEEN HUBS: NONE. SenePy ships no spleen signature. ***
+
+Hubs for immune or stromal cell types, best hub per (tissue, cell):
+tissue         cell                           hub    size  on-panel
+skin           granular cell                    0    4370      1287
+intestine      macrophage                       0    3147       940
+lung           basal cell                       0    2047       559
+lung           club cell                        0    1747       530
+skin           fibroblast                       1    1837       482
+skin           immune cell                      0    1337       481
+lung           fibroblast                       0    1834       479
+skin           basal cell                       0    1713       479
+lung           t cell                           0    1053       412
+blood          neutrophil                       0    1265       381
+hippocampus    ependymal cell                   0    1559       363
+hippocampus    choroid plexus cells             0    1495       362
+skin           mitotic cell                     0    1089       318
+tongue         basal cell                       0     991       276
+bone marrow    t cell                           1     838       270
+blood          memory b cell                    1    1103       267
+skin           hair follicle                    0     905       238
+lung           monocyte                         0     351       167
+skin           endothelial cell                 0     551       164
+intestine      plasma cell                      0     384       119
+blood          nk cell                          0     242       107
+heart          lymphoid cell                    0     223       106
+skin           spinous cell                     1     381       104
+lung           ciliated epithelial cell         0     311        99
+lung           type ii pneumocyte               0     208        86
+hippocampus    excitatory neuron                0     390        85
+intestine      epithelial cell                  1     237        80
+lung           macrophage                       1     161        74
+blood          t cell                           3     147        73
+lung           endothelial cell                 0     145        72
+kidney         macrophage                       1     209        69
+blood          naive b cell                     0     178        68
+hippocampus    endothelial cells                0     165        51
+liver          macrophage                       0     112        51
+hippocampus    microglia                        0     133        35
+blood          monocyte                         1      75        31
+heart          neuronal cell                    0      85        27
+heart          smooth muscle cell               0      57        27
+kidney         epithelial cell                  0      50        22
+heart          endothelial cell                 1      41        17
+heart          pericyte                         0      49        16
+heart          fibroblast                       0      49        14
+liver          t cell                           0      25        13
+heart          cardiomyocyte                    0      49        11
+kidney         endothelial cell                 0      20        11
+heart          adipocyte                        0      23         5
+liver          endothelial cell                 3       7         4
+
+### Spleen label set vs SenePy human hubs ###
+spleen cell type               best surrogate hub (tissue / cell)      on-panel usable?
+Red pulp macrophages           intestine / macrophage (hub 0)               940 yes
+Monocytes                      lung / monocyte (hub 0)                      167 yes
+cDC1                           NONE -- SenePy has no hub for this type         - NO
+cDC2                           NONE -- SenePy has no hub for this type         - NO
+pDC                            NONE -- SenePy has no hub for this type         - NO
+Follicular B cells             blood / memory b cell (hub 1)                267 yes
+Marginal zone B cells          blood / memory b cell (hub 1)                267 yes
+Germinal centre B cells        blood / memory b cell (hub 1)                267 yes
+CD4 T cells                    lung / t cell (hub 0)                        412 yes
+CD8 T cells                    lung / t cell (hub 0)                        412 yes
+NK cells                       blood / nk cell (hub 0)                      107 yes
+Fibroblastic reticular cells   skin / fibroblast (hub 1)                    482 yes
+Sinusoidal endothelium         skin / endothelial cell (hub 0)              164 yes
+Endothelial cells              skin / endothelial cell (hub 0)              164 yes
+Lymphatic endothelium          NONE -- SenePy has no hub for this type         - NO
+Smooth muscle / capsule        heart / smooth muscle cell (hub 0)            27 yes
+Pericytes                      heart / pericyte (hub 0)                      16 yes
+Fibroblasts                    skin / fibroblast (hub 1)                    482 yes
+Erythroid cells                NONE -- SenePy has no hub for this type         - NO
+Megakaryocytes                 NONE -- SenePy has no hub for this type         - NO
+Neutrophils                    blood / neutrophil (hub 0)                   381 yes
+Mesothelial cells              NONE -- SenePy has no hub for this type         - NO
+Plasma cells                   intestine / plasma cell (hub 0)              119 yes  (label dropped anyway)
+Follicular dendritic cells     NONE -- SenePy has no hub for this type         - NO  (label dropped anyway)
+Proliferating cells            skin / mitotic cell (hub 0)                  318 yes  (label dropped anyway)
+
+### Verdict ###
+  SenePy ships NO spleen hub. Every hub above is a CROSS-TISSUE SURROGATE.
+  The mouse arm used TISSUE-MATCHED Liver hubs; the human arm cannot.
+  Of the 22 assignable spleen labels: 15 have a usable surrogate hub (>= 10 on-panel genes),
+  7 have no SenePy hub of any tissue.
+
+Written to /workspace/results/phase7_jobA/senepy_spleen_coverage.{csv,json}

@@ -1,0 +1,13 @@
+section,arm,A,B,n,n_A,n_B,n_both,jaccard,chance,ratio
+sham,sham,tierA_score,senepy_score,183070,9177,9181,452,0.02524,0.0257,0.982
+sham,sham,tierA_score,deepscence_score,218273,10957,10961,610,0.02863,0.02582,1.109
+sham,sham,tierA_score,cdkn1a_counts,218273,10957,1514,83,0.0067,0.00614,1.092
+sham,sham,senepy_score,deepscence_score,183070,9181,9181,990,0.05699,0.0265,2.15
+sham,sham,senepy_score,cdkn1a_counts,183070,9181,1237,85,0.00823,0.006,1.37
+sham,sham,deepscence_score,cdkn1a_counts,218273,10961,1514,217,0.0177,0.0062,2.854
+sbr,SBR,tierA_score,senepy_score,63357,3184,3185,173,0.02792,0.02583,1.081
+sbr,SBR,tierA_score,deepscence_score,114721,5767,5768,381,0.03416,0.026,1.314
+sbr,SBR,tierA_score,cdkn1a_counts,114721,5767,2218,161,0.02058,0.01425,1.444
+sbr,SBR,senepy_score,deepscence_score,63357,3185,3185,61,0.00967,0.02538,0.381
+sbr,SBR,senepy_score,cdkn1a_counts,63357,3185,1320,65,0.01464,0.01495,0.98
+sbr,SBR,deepscence_score,cdkn1a_counts,114721,5768,2218,168,0.02149,0.01426,1.506

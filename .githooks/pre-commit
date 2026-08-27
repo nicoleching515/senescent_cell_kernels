@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+# Phase 8 hazard B6 — the section-11 disjointness gate must run after ANY
+# gene-set or panel change, not only at freeze time.
+#
+# `B_oxidative_stress` clears the >=30 floor by one gene on the mouse arm (31),
+# and that gene (`Junb`) comes from the 100-gene custom add-on. Under the
+# stock-panel-only definition it sits AT the floor. So a commit that touches a
+# gene set or a panel file cannot be allowed through without the gate firing.
+#
+# Installed by:  git -C /workspace config core.hooksPath .githooks
+# Bypass (do not, without the PI):  git commit --no-verify
+set -u
+ROOT="$(git rev-parse --show-toplevel)"
+STAGED="$(git diff --cached --name-only)"
+
+if ! printf '%s\n' "$STAGED" | grep -qE '^(genesets/|XeniumPrimeMouse5Kpan_tissue_pathways_metadata\.csv$|GSE310392_Q6VTXC_mMulti_100g_gene_list\.csv\.gz$)'; then
+  exit 0
+fi
+
+echo "pre-commit: gene sets or a panel file are staged -- running the section-11 gate on both arms."
+PY="${SASP_PYTHON:-}"
+if [ -z "$PY" ]; then
+  # Prefer the interpreter that carries the scientific stack. The gate itself is
+  # stdlib-only, but preferring a full interpreter means it keeps working if the
+  # gate ever grows a numpy dependency. envs/sasp311 is the persistent fallback.
+  if python3 -c "import sys" >/dev/null 2>&1; then PY="python3";
+  elif [ -x "$ROOT/envs/sasp311/bin/python" ]; then PY="$ROOT/envs/sasp311/bin/python";
+  else PY="python"; fi
+fi
+"$PY" "$ROOT/code/gate_genesets_guard.py" || {
+  echo ""
+  echo "COMMIT BLOCKED: the section-11 disjointness gate FAILED on the staged gene sets." >&2
+  echo "Fix the sets, or re-run 'python3 code/gate_genesets_guard.py' to see which assertion broke." >&2
+  exit 1
+}
+echo "pre-commit: gate PASS."
+exit 0

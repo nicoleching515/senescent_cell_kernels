@@ -1,0 +1,11 @@
+tier_A_set,n_A_on_panel,B1_tnfa_nfkb_proximal,B2_il6_jak_stat3,B3_interferon_response,B4_downstream_arrest,B5_emt_ecm,B6_oxidative_stress,B7_secondary_senescence,total_memberships
+A0_pre_disjointness,74,4,0,1,37,1,3,0,46
+"A_S10_16_mouse (variant, FAILED)",13,2,0,1,7,1,0,0,11
+A_sender_for_tnfa_nfkb_proximal (sensitivity),70,0,0,0,35,0,2,0,37
+A_sender_for_il6_jak_stat3 (sensitivity),74,4,0,1,37,1,3,0,46
+A_sender_for_interferon_response (sensitivity),73,3,0,0,36,1,3,0,43
+A_sender_for_downstream_arrest (sensitivity),37,2,0,0,0,1,3,0,6
+A_sender_for_emt_ecm (sensitivity),73,3,0,1,37,0,3,0,44
+A_sender_for_oxidative_stress (sensitivity),71,3,0,1,37,1,0,0,42
+A_sender_for_secondary_senescence (sensitivity),74,4,0,1,37,1,3,0,46
+A_SENDER_FINAL_strict (PRIMARY),33,0,0,0,0,0,0,0,0

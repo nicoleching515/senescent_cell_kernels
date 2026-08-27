@@ -1,0 +1,6 @@
+candidate,n,n_tierA,n_tierB,n_tierC,a6_compartments,genes
+E2a_erythroid,5,0,1,0,D_spleen_red_pulp,GYPA HBG1 SLC4A1 SPI1 TFRC
+E2b_smooth_muscle_capsule,6,0,1,0,D_spleen_capsule_trabecula,CNN1 DES MYH11 MYLK NOTCH3 PLN
+E2c_pericyte,12,0,5,0,D_spleen_capsule_trabecula,ABCC9 ANPEP CD248 CD44 CSPG4 KCNJ8 MCAM NT5E PDGFRB RGS5 SMN1 THY1
+E2d_structural_union,18,0,6,0,D_spleen_capsule_trabecula,ABCC9 ANPEP CD248 CD44 CNN1 CSPG4 DES KCNJ8 MCAM MYH11 MYLK NOTCH3 NT5E PDGFRB PLN RGS5 SMN1 THY1
+E2e_sinusoidal_endothelium,9,0,0,0,D_spleen_red_pulp,CLEC4M DNASE1L3 F8 FCGR2B FCN2 FCN3 MRC1 OIT3 STAB2

@@ -1,0 +1,49 @@
+====================================================================================================
+A6 SPLEEN COMPARTMENT MARKER SETS (gene side of the specification)
+====================================================================================================
+D_spleen_white_pulp_tzone        24 genes from CD4 T cells, CD8 T cells, Fibroblastic reticular cells     
+     CCL21 CD36 CD3D CD3E CD4 CD40LG CD8A CD8B CXCR3 CXCR5 GZMA ICOS IL7R ITGA1 LEF1 MAL MFAP5 MYC PDCD1 PDPN PRF1 SOCS3 TCF7 TRAC
+D_spleen_white_pulp_follicle     13 genes from Follicular B cells, Germinal centre B cells                
+     AICDA BCL6 CD19 CD27 CD79A CD79B FCER2 IL4R MME MS4A1 PTTG1 TCL1A TNFRSF13B
+D_spleen_marginal_zone            8 genes from Marginal zone B cells                                      
+     CD180 CR2 EBF1 FCRL4 ITGAE NOTCH2 PAX5 TNFRSF13C
+D_spleen_red_pulp                28 genes from Red pulp macrophages, Sinusoidal endothelium, Erythroid cells 
+     APOC1 APOE C1QA C1QB CD163 CD33 CD5L CD68 CLEC4M DNASE1L3 F8 FCGR1A FCGR2A FCGR2B FCN2 FCN3 FOLR2 GYPA HBG1 HMOX1 LGMN MARCO MRC1 OIT3 SLC4A1 SPI1 STAB2 TFRC
+D_spleen_capsule_trabecula       18 genes from Smooth muscle / capsule, Pericytes                         
+     ABCC9 ANPEP CD248 CD44 CNN1 CSPG4 DES KCNJ8 MCAM MYH11 MYLK NOTCH3 NT5E PDGFRB PLN RGS5 SMN1 THY1
+
+### Compartment x compartment overlap (must be small or the axis is not separable) ###
+compartment                     C1    C2    C3    C4    C5    
+C1 D_spleen_white_pulp_tzone    24    0     0     0     0     
+C2 D_spleen_white_pulp_follicle 0     13    0     0     0     
+C3 D_spleen_marginal_zone       0     0     8     0     0     
+C4 D_spleen_red_pulp            0     0     0     28    0     
+C5 D_spleen_capsule_trabecula   0     0     0     0     18    
+
+### Over-adjustment audit: compartment genes that are also Tier A / B / C ###
+  D_spleen_white_pulp_tzone        A:0  B:6  C:0   CD36 GZMA IL7R MFAP5 MYC SOCS3
+  D_spleen_white_pulp_follicle     A:0  B:3  C:0   BCL6 IL4R PTTG1
+  D_spleen_marginal_zone           A:0  B:1  C:0   NOTCH2
+  D_spleen_red_pulp                A:0  B:3  C:0   FCGR1A HMOX1 TFRC
+  D_spleen_capsule_trabecula       A:0  B:6  C:0   ANPEP CD44 MYLK NT5E PDGFRB THY1
+  (Tier A and Tier C are 0 by construction -- the guard is applied in the marker build.
+   Tier B members are FLAGGED, not removed: see build_markers_human_spleen.py.)
+
+====================================================================================================
+TIER E2 CANDIDATES -- "a cell-type identity program unrelated to inflammation"
+====================================================================================================
+The mouse arm's E2 (hepatocyte identity) FAILED: its score correlated with the zonation
+axis at r = -0.67, worse than 99%% of random size-matched sets (genesets/README.md sec 6).
+The decisive test for any candidate here is the same correlation against the A6 axis, and
+that test NEEDS EXPRESSION -- it is post-freeze. What can be decided now is whether a
+candidate is confounded with the A6 axis BY CONSTRUCTION, i.e. whether its own genes are
+the compartment definition.
+
+candidate                          n    A    B    C  in which A6 compartment
+E2a_erythroid                      5    0    1    0  D_spleen_red_pulp
+E2b_smooth_muscle_capsule          6    0    1    0  D_spleen_capsule_trabecula
+E2c_pericyte                      12    0    5    0  D_spleen_capsule_trabecula
+E2d_structural_union              18    0    6    0  D_spleen_capsule_trabecula
+E2e_sinusoidal_endothelium         9    0    0    0  D_spleen_red_pulp
+
+Written: 5 D_spleen_*.txt in /workspace/genesets/human ; /workspace/results/phase7_jobA/tierE2_candidates.csv

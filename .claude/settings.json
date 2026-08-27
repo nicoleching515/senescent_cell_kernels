@@ -1,0 +1,17 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit|NotebookEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/workspace/code/hook_geneset_gate.sh",
+            "timeout": 120,
+            "statusMessage": "Re-running the section-11 disjointness gate"
+          }
+        ]
+      }
+    ]
+  }
+}

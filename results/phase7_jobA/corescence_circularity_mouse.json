@@ -1,0 +1,441 @@
+{
+ "source": "/usr/local/lib/python3.11/dist-packages/DeepScence/data/coreGS_v2.csv",
+ "n_occ_ge5": 39,
+ "mouse_panel": 5097,
+ "convention_to_cite": "fallback",
+ "n_on_panel_strict": 31,
+ "n_on_panel_fallback": 33,
+ "fallback_extra": [
+  "CDKN2B",
+  "CXCL1"
+ ],
+ "off_mouse_panel": [
+  "CXCL8",
+  "HMGB1",
+  "IGFBP5",
+  "IGFBP7",
+  "MIF",
+  "TNFRSF10C"
+ ],
+ "configurations": {
+  "pre_C6": {
+   "strict": {
+    "n_in_any_B": 24,
+    "n_on_panel": 31,
+    "frac": 0.7742,
+    "genes_in_any_B": [
+     "BRCA1",
+     "BUB1B",
+     "CCL2",
+     "CCNA2",
+     "CDK1",
+     "CDKN1A",
+     "CDKN2A",
+     "FAS",
+     "FGF2",
+     "GDF15",
+     "HELLS",
+     "HMGB2",
+     "ICAM1",
+     "IGFBP2",
+     "IGFBP3",
+     "IL1A",
+     "IL6",
+     "JUN",
+     "LMNB1",
+     "MDM2",
+     "SERPINE1",
+     "STAT1",
+     "TGFB1",
+     "VEGFA"
+    ],
+    "per_module": {
+     "tnfa_nfkb_proximal": [
+      "CDKN1A",
+      "ICAM1",
+      "IL1A",
+      "IL6",
+      "JUN",
+      "SERPINE1",
+      "VEGFA"
+     ],
+     "il6_jak_stat3": [
+      "FAS",
+      "IL6",
+      "JUN",
+      "STAT1",
+      "TGFB1"
+     ],
+     "interferon_response": [
+      "CDKN1A",
+      "FAS",
+      "ICAM1",
+      "IL6",
+      "STAT1"
+     ],
+     "downstream_arrest": [
+      "BRCA1",
+      "BUB1B",
+      "CCNA2",
+      "CDK1",
+      "CDKN1A",
+      "CDKN2A",
+      "HELLS",
+      "HMGB2",
+      "LMNB1",
+      "TGFB1"
+     ],
+     "emt_ecm": [
+      "FAS",
+      "FGF2",
+      "IGFBP2",
+      "IGFBP3",
+      "IL6",
+      "JUN",
+      "SERPINE1",
+      "TGFB1",
+      "VEGFA"
+     ],
+     "oxidative_stress": [],
+     "secondary_senescence": [
+      "CCL2",
+      "CDKN1A",
+      "CDKN2A",
+      "GDF15",
+      "HMGB2",
+      "IGFBP3",
+      "IL1A",
+      "IL6",
+      "LMNB1",
+      "MDM2",
+      "SERPINE1",
+      "TGFB1"
+     ]
+    }
+   },
+   "fallback": {
+    "n_in_any_B": 26,
+    "n_on_panel": 33,
+    "frac": 0.7879,
+    "genes_in_any_B": [
+     "BRCA1",
+     "BUB1B",
+     "CCL2",
+     "CCNA2",
+     "CDK1",
+     "CDKN1A",
+     "CDKN2A",
+     "CDKN2B",
+     "CXCL1",
+     "FAS",
+     "FGF2",
+     "GDF15",
+     "HELLS",
+     "HMGB2",
+     "ICAM1",
+     "IGFBP2",
+     "IGFBP3",
+     "IL1A",
+     "IL6",
+     "JUN",
+     "LMNB1",
+     "MDM2",
+     "SERPINE1",
+     "STAT1",
+     "TGFB1",
+     "VEGFA"
+    ],
+    "per_module": {
+     "tnfa_nfkb_proximal": [
+      "CDKN1A",
+      "CXCL1",
+      "ICAM1",
+      "IL1A",
+      "IL6",
+      "JUN",
+      "SERPINE1",
+      "VEGFA"
+     ],
+     "il6_jak_stat3": [
+      "FAS",
+      "IL6",
+      "JUN",
+      "STAT1",
+      "TGFB1"
+     ],
+     "interferon_response": [
+      "CDKN1A",
+      "FAS",
+      "ICAM1",
+      "IL6",
+      "STAT1"
+     ],
+     "downstream_arrest": [
+      "BRCA1",
+      "BUB1B",
+      "CCNA2",
+      "CDK1",
+      "CDKN1A",
+      "CDKN2A",
+      "HELLS",
+      "HMGB2",
+      "LMNB1",
+      "TGFB1"
+     ],
+     "emt_ecm": [
+      "FAS",
+      "FGF2",
+      "IGFBP2",
+      "IGFBP3",
+      "IL6",
+      "JUN",
+      "SERPINE1",
+      "TGFB1",
+      "VEGFA"
+     ],
+     "oxidative_stress": [],
+     "secondary_senescence": [
+      "CCL2",
+      "CDKN1A",
+      "CDKN2A",
+      "CDKN2B",
+      "CXCL1",
+      "GDF15",
+      "HMGB2",
+      "IGFBP3",
+      "IL1A",
+      "IL6",
+      "LMNB1",
+      "MDM2",
+      "SERPINE1",
+      "TGFB1"
+     ]
+    }
+   }
+  },
+  "C6_promoted": {
+   "strict": {
+    "n_in_any_B": 28,
+    "n_on_panel": 31,
+    "frac": 0.9032,
+    "genes_in_any_B": [
+     "AXL",
+     "BRCA1",
+     "BUB1B",
+     "CCL2",
+     "CCNA2",
+     "CDK1",
+     "CDKN1A",
+     "CDKN2A",
+     "EGFR",
+     "FAS",
+     "FGF2",
+     "GDF15",
+     "HELLS",
+     "HMGB2",
+     "ICAM1",
+     "IGF1",
+     "IGFBP1",
+     "IGFBP2",
+     "IGFBP3",
+     "IL1A",
+     "IL6",
+     "JUN",
+     "LMNB1",
+     "SERPINE1",
+     "STAT1",
+     "TGFB1",
+     "VEGFA",
+     "WNT2"
+    ],
+    "per_module": {
+     "tnfa_nfkb_proximal": [
+      "CDKN1A",
+      "ICAM1",
+      "IL1A",
+      "IL6",
+      "JUN",
+      "SERPINE1",
+      "VEGFA"
+     ],
+     "il6_jak_stat3": [
+      "FAS",
+      "IL6",
+      "JUN",
+      "STAT1",
+      "TGFB1"
+     ],
+     "interferon_response": [
+      "CDKN1A",
+      "FAS",
+      "ICAM1",
+      "IL6",
+      "STAT1"
+     ],
+     "downstream_arrest": [
+      "BRCA1",
+      "BUB1B",
+      "CCNA2",
+      "CDK1",
+      "CDKN1A",
+      "CDKN2A",
+      "HELLS",
+      "HMGB2",
+      "LMNB1",
+      "TGFB1"
+     ],
+     "emt_ecm": [
+      "FAS",
+      "FGF2",
+      "IGFBP2",
+      "IGFBP3",
+      "IL6",
+      "JUN",
+      "SERPINE1",
+      "TGFB1",
+      "VEGFA"
+     ],
+     "oxidative_stress": [],
+     "secondary_senescence": [
+      "AXL",
+      "CCL2",
+      "EGFR",
+      "FAS",
+      "FGF2",
+      "GDF15",
+      "ICAM1",
+      "IGF1",
+      "IGFBP1",
+      "IGFBP2",
+      "IGFBP3",
+      "IL1A",
+      "IL6",
+      "JUN",
+      "SERPINE1",
+      "VEGFA",
+      "WNT2"
+     ]
+    }
+   },
+   "fallback": {
+    "n_in_any_B": 29,
+    "n_on_panel": 33,
+    "frac": 0.8788,
+    "genes_in_any_B": [
+     "AXL",
+     "BRCA1",
+     "BUB1B",
+     "CCL2",
+     "CCNA2",
+     "CDK1",
+     "CDKN1A",
+     "CDKN2A",
+     "CXCL1",
+     "EGFR",
+     "FAS",
+     "FGF2",
+     "GDF15",
+     "HELLS",
+     "HMGB2",
+     "ICAM1",
+     "IGF1",
+     "IGFBP1",
+     "IGFBP2",
+     "IGFBP3",
+     "IL1A",
+     "IL6",
+     "JUN",
+     "LMNB1",
+     "SERPINE1",
+     "STAT1",
+     "TGFB1",
+     "VEGFA",
+     "WNT2"
+    ],
+    "per_module": {
+     "tnfa_nfkb_proximal": [
+      "CDKN1A",
+      "CXCL1",
+      "ICAM1",
+      "IL1A",
+      "IL6",
+      "JUN",
+      "SERPINE1",
+      "VEGFA"
+     ],
+     "il6_jak_stat3": [
+      "FAS",
+      "IL6",
+      "JUN",
+      "STAT1",
+      "TGFB1"
+     ],
+     "interferon_response": [
+      "CDKN1A",
+      "FAS",
+      "ICAM1",
+      "IL6",
+      "STAT1"
+     ],
+     "downstream_arrest": [
+      "BRCA1",
+      "BUB1B",
+      "CCNA2",
+      "CDK1",
+      "CDKN1A",
+      "CDKN2A",
+      "HELLS",
+      "HMGB2",
+      "LMNB1",
+      "TGFB1"
+     ],
+     "emt_ecm": [
+      "FAS",
+      "FGF2",
+      "IGFBP2",
+      "IGFBP3",
+      "IL6",
+      "JUN",
+      "SERPINE1",
+      "TGFB1",
+      "VEGFA"
+     ],
+     "oxidative_stress": [],
+     "secondary_senescence": [
+      "AXL",
+      "CCL2",
+      "CXCL1",
+      "EGFR",
+      "FAS",
+      "FGF2",
+      "GDF15",
+      "ICAM1",
+      "IGF1",
+      "IGFBP1",
+      "IGFBP2",
+      "IGFBP3",
+      "IL1A",
+      "IL6",
+      "JUN",
+      "SERPINE1",
+      "VEGFA",
+      "WNT2"
+     ]
+    }
+   }
+  }
+ },
+ "crosscheck": {
+  "n8_disjointness_corescence_on_panel": 33,
+  "n8_disjointness_per_module_preC6": {
+   "downstream_arrest": 10,
+   "emt_ecm": 9,
+   "il6_jak_stat3": 5,
+   "interferon_response": 5,
+   "oxidative_stress": 0,
+   "secondary_senescence": 14,
+   "tnfa_nfkb_proximal": 8
+  },
+  "source": "results/phase3/n8_disjointness_*.csv @ HEAD (committed)"
+ }
+}

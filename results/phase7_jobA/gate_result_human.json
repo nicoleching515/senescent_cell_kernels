@@ -1,0 +1,307 @@
+{
+ "panel_n": 5093,
+ "msigdb_release": "2026.1.Hs",
+ "per_module_gate_pass": true,
+ "msigdb_fetched": "2026-08-27",
+ "gate": {
+  "A_PHASE7_S10_16": {
+   "n_A_raw": 14,
+   "assert_A_ge15": false,
+   "assert_B_ge30": true,
+   "assert_disjoint": false,
+   "removed": {
+    "tnfa_nfkb_proximal": [
+     "CDKN1A",
+     "GADD45A"
+    ],
+    "interferon_response": [
+     "CDKN1A"
+    ],
+    "downstream_arrest": [
+     "CDKN1A",
+     "CDKN2A",
+     "CHEK1",
+     "CHEK2",
+     "H2AFX",
+     "HMGB2",
+     "LMNB1",
+     "TP53"
+    ],
+    "emt_ecm": [
+     "GADD45A"
+    ]
+   },
+   "n_removed": 9,
+   "n_A_final": 5,
+   "A_final": [
+    "ATM",
+    "ATR",
+    "CDKN2B",
+    "MDM2",
+    "TP53BP1"
+   ],
+   "recheck_A_ge15": false,
+   "verdict": "FAIL",
+   "B_sizes": {
+    "tnfa_nfkb_proximal": 120,
+    "il6_jak_stat3": 71,
+    "interferon_response": 126,
+    "downstream_arrest": 231,
+    "emt_ecm": 113,
+    "oxidative_stress": 36,
+    "secondary_senescence": 116
+   }
+  },
+  "A_ported": {
+   "n_A_raw": 81,
+   "assert_A_ge15": true,
+   "assert_B_ge30": true,
+   "assert_disjoint": false,
+   "removed": {
+    "tnfa_nfkb_proximal": [
+     "CCND1",
+     "CDKN1A",
+     "GADD45A",
+     "NFE2L2"
+    ],
+    "interferon_response": [
+     "CDKN1A"
+    ],
+    "downstream_arrest": [
+     "APEX1",
+     "AURKB",
+     "BIRC5",
+     "BRCA1",
+     "BRCA2",
+     "BUB1",
+     "CBX5",
+     "CCNA2",
+     "CCNB2",
+     "CCND1",
+     "CDC20",
+     "CDC25A",
+     "CDK1",
+     "CDKN1A",
+     "CDKN1B",
+     "CDKN2A",
+     "CHAF1A",
+     "CHEK1",
+     "CHEK2",
+     "E2F1",
+     "EZH2",
+     "H2AFX",
+     "HMGA1",
+     "HMGB2",
+     "LMNB1",
+     "MCM2",
+     "MCM3",
+     "MCM4",
+     "MCM5",
+     "MCM6",
+     "MCM7",
+     "MKI67",
+     "MRE11",
+     "NBN",
+     "PCNA",
+     "PLK1",
+     "RAD50",
+     "RPA1",
+     "RRM2",
+     "SUV39H1",
+     "TOP2A",
+     "TP53",
+     "TYMS",
+     "UNG",
+     "XRCC6"
+    ],
+    "emt_ecm": [
+     "GADD45A",
+     "MCM7"
+    ],
+    "oxidative_stress": [
+     "NFE2L2",
+     "SESN2"
+    ]
+   },
+   "n_removed": 48,
+   "n_A_final": 33,
+   "A_final": [
+    "ATM",
+    "ATR",
+    "BAX",
+    "BCL2",
+    "BCL2L1",
+    "CCNB1",
+    "CDKN1C",
+    "CDKN2B",
+    "DDB2",
+    "EHMT2",
+    "ERCC1",
+    "FOXM1",
+    "FOXO3",
+    "GADD45G",
+    "GLB1",
+    "MDC1",
+    "MDM2",
+    "MDM4",
+    "NFATC1",
+    "PARP1",
+    "PHLDA3",
+    "RAD51",
+    "RB1",
+    "RBL2",
+    "SIRT1",
+    "TERF2",
+    "TERT",
+    "TNFRSF10B",
+    "TP53BP1",
+    "TP63",
+    "TP73",
+    "XPC",
+    "XRCC5"
+   ],
+   "recheck_A_ge15": true,
+   "verdict": "PASS",
+   "B_sizes": {
+    "tnfa_nfkb_proximal": 120,
+    "il6_jak_stat3": 71,
+    "interferon_response": 126,
+    "downstream_arrest": 231,
+    "emt_ecm": 113,
+    "oxidative_stress": 36,
+    "secondary_senescence": 116
+   }
+  }
+ },
+ "per_module_sender_sizes": {
+  "tnfa_nfkb_proximal": 77,
+  "il6_jak_stat3": 81,
+  "interferon_response": 80,
+  "downstream_arrest": 36,
+  "emt_ecm": 79,
+  "oxidative_stress": 79,
+  "secondary_senescence": 81
+ },
+ "B_sizes": {
+  "tnfa_nfkb_proximal": 120,
+  "il6_jak_stat3": 71,
+  "interferon_response": 126,
+  "downstream_arrest": 231,
+  "emt_ecm": 113,
+  "oxidative_stress": 36,
+  "secondary_senescence": 116
+ },
+ "corescence": {
+  "source": "/usr/local/lib/python3.11/dist-packages/DeepScence/data/coreGS_v2.csv",
+  "n_occ_ge5": 39,
+  "n_on_panel": 33,
+  "frozen_n_in_any_B": 29,
+  "frozen_frac": 0.8788,
+  "superseded_n_in_any_B": 25,
+  "superseded_frac": 0.7576,
+  "genes_in_any_B_frozen": [
+   "AXL",
+   "BRCA1",
+   "BUB1B",
+   "CCL2",
+   "CCNA2",
+   "CDK1",
+   "CDKN1A",
+   "CDKN2A",
+   "CXCL8",
+   "EGFR",
+   "FAS",
+   "FGF2",
+   "GDF15",
+   "HELLS",
+   "HMGB2",
+   "ICAM1",
+   "IGF1",
+   "IGFBP1",
+   "IGFBP2",
+   "IGFBP3",
+   "IL1A",
+   "IL6",
+   "LMNB1",
+   "SERPINE1",
+   "STAT1",
+   "TGFB1",
+   "TNFRSF10C",
+   "VEGFA",
+   "WNT2"
+  ],
+  "per_module_frozen": {
+   "tnfa_nfkb_proximal": [
+    "CCL2",
+    "CDKN1A",
+    "ICAM1",
+    "IL1A",
+    "IL6",
+    "SERPINE1",
+    "VEGFA"
+   ],
+   "il6_jak_stat3": [
+    "FAS",
+    "IL6",
+    "STAT1",
+    "TGFB1"
+   ],
+   "interferon_response": [
+    "CCL2",
+    "CDKN1A",
+    "FAS",
+    "ICAM1",
+    "IL6",
+    "STAT1"
+   ],
+   "downstream_arrest": [
+    "BRCA1",
+    "BUB1B",
+    "CCNA2",
+    "CDK1",
+    "CDKN1A",
+    "CDKN2A",
+    "HELLS",
+    "HMGB2",
+    "LMNB1",
+    "TGFB1"
+   ],
+   "emt_ecm": [
+    "CXCL8",
+    "FAS",
+    "FGF2",
+    "IGFBP2",
+    "IGFBP3",
+    "IL6",
+    "SERPINE1",
+    "TGFB1",
+    "VEGFA"
+   ],
+   "oxidative_stress": [],
+   "secondary_senescence": [
+    "AXL",
+    "CCL2",
+    "CXCL8",
+    "EGFR",
+    "FAS",
+    "FGF2",
+    "GDF15",
+    "ICAM1",
+    "IGF1",
+    "IGFBP1",
+    "IGFBP2",
+    "IGFBP3",
+    "IL1A",
+    "IL6",
+    "SERPINE1",
+    "TNFRSF10C",
+    "VEGFA",
+    "WNT2"
+   ]
+  },
+  "mouse_arm_reference": "26/33 = 79%",
+  "mouse_arm_reference_C6": "29/33 = 88%",
+  "mouse_arm_source": "code/corescence_circularity.py -> results/phase7_jobA/corescence_circularity_mouse.json",
+  "cite": "frozen"
+ }
+}

@@ -1,0 +1,115 @@
+#!/usr/bin/env python3
+"""
+Phase 7 Job A -- write the FROZEN manifest for genesets/human/.
+
+Makes it self-evident on disk which files the frozen pipeline uses. Rule:
+
+    genesets/human/*.txt            FROZEN. These are the files the pipeline reads.
+    genesets/human/variants/*.txt   REPORTED BUT NOT USED. Superseded or failed definitions
+                                    kept because Phase 7 section 23 / C6 and section 11 require
+                                    them to be reported alongside.
+
+Emits FROZEN_MANIFEST.csv (machine-readable: role, n, sha256) and FROZEN_MANIFEST.md.
+Run LAST, after every other build script.  python3 /workspace/code/freeze_manifest_human.py
+"""
+import csv, hashlib, os, sys
+from collections import OrderedDict
+sys.path.insert(0, '/workspace/code')
+import human_symbols as HS
+
+HUM = '/workspace/genesets/human'
+VAR = HUM + '/variants'
+FREEZE_DATE = '2026-08-27'
+
+ROLE = OrderedDict([
+ ('A_SENDER_FINAL_strict',      ('A', 'PRIMARY sender definition (PI decision %s)' % FREEZE_DATE)),
+ ('A_sender_for_',              ('A', 'PRE-REGISTERED SENSITIVITY: per-module sender set')),
+ ('A_core_arrest',              ('A', 'component subset of the primary, post-disjointness')),
+ ('A_proliferation_down',       ('A', 'component subset of the primary, post-disjointness')),
+ ('A_nuclear_chromatin',        ('A', 'component subset of the primary, post-disjointness')),
+ ('A_dna_damage_response',      ('A', 'component subset of the primary, post-disjointness')),
+ ('A_senescence_curated_nonsecreted', ('A', 'component subset of the primary, post-disjointness')),
+ ('A6_SenMayo_arrest_reference',('A', 'reference comparison set, not a sender definition')),
+ ('B_',                         ('B', 'FROZEN response module (1 of 7)')),
+ ('C_',                         ('C', 'FROZEN ligand / receptor list')),
+ ('D_nuisance_covariates',      ('D', 'FROZEN covariate NAMES (not genes)')),
+ ('D_spleen_',                  ('D', 'FROZEN A6 compartment marker set (red/white pulp axis)')),
+ ('D_landmark_vessel_stroma',   ('D', 'FROZEN vascular/stromal landmark set')),
+ ('E_negative_control_probes',  ('E', 'FROZEN control features -- audit test A7')),
+ ('E_negative_control_codewords',('E', 'FROZEN control features -- audit test A7')),
+ ('E_genomic_controls',         ('E', 'FROZEN control features -- audit test A7')),
+ ('E_housekeeping',             ('E', 'FROZEN housekeeping control (thin: report as such)')),
+])
+VARIANT_ROLE = {
+ 'A_PHASE7_S10_16':  'REPORTED, FAILED the section 11 gate (14 on-panel, 5 survive). NOT USED.',
+ 'A_SENDER_FINAL_noB7': 'REPORTED. Identical to the primary now that B7 is disjoint by construction.',
+ 'A_SENDER_FINAL_noB4_noB7': 'REPORTED. Partial-removal sensitivity set. NOT USED.',
+ 'B_secondary_senescence_v1_curated_ported':
+     'SUPERSEDED B7. Required to be reported by section 23 / C6. NOT USED.',
+ 'B_secondary_senescence_C6_minusA_s10':
+     "C6-as-written against the section 10 caller: 24 genes, FAILS >=30. NOT USED.",
+ 'B_secondary_senescence_C6_minusA_ported':
+     "C6-as-written against the ported caller: 12 genes, FAILS >=30. NOT USED.",
+ 'B_secondary_senescence_C6_sourced_s10':
+     'Re-sourced against the section 10 caller. NOT USED (that caller failed the gate).',
+ 'B_secondary_senescence_C6_sourced_ported':
+     'Identical to the FROZEN B_secondary_senescence; kept as the audit trail of how it was built.',
+}
+
+def role_of(name):
+    for k, v in ROLE.items():
+        if name.startswith(k):
+            return v
+    return ('?', 'UNCLASSIFIED -- add a role in freeze_manifest_human.py')
+
+def sha(path):
+    return hashlib.sha256(open(path, 'rb').read()).hexdigest()[:16]
+
+rows = []
+for d, frozen in ((HUM, True), (VAR, False)):
+    for f in sorted(os.listdir(d)):
+        if not f.endswith('.txt'):
+            continue
+        name, path = f[:-4], os.path.join(d, f)
+        g = [l.strip() for l in open(path) if l.strip()]
+        tier, role = role_of(name) if frozen else (name[0], VARIANT_ROLE.get(name, 'variant'))
+        genes = name != 'D_nuisance_covariates' and not name.startswith(
+            ('E_negative', 'E_genomic'))
+        rows.append(dict(file=os.path.relpath(path, '/workspace'), tier=tier,
+                         status='FROZEN' if frozen else 'variant (reported, not used)',
+                         n=len(g), n_on_panel=len(set(g) & HS.PANEL) if genes else 'n/a',
+                         sha256_16=sha(path), role=role))
+
+with open(HUM + '/FROZEN_MANIFEST.csv', 'w', newline='') as fh:
+    w = csv.DictWriter(fh, fieldnames=['file', 'tier', 'status', 'n', 'n_on_panel',
+                                       'sha256_16', 'role'])
+    w.writeheader()
+    for r in rows:
+        w.writerow(r)
+
+nf = sum(1 for r in rows if r['status'] == 'FROZEN')
+with open(HUM + '/FROZEN_MANIFEST.md', 'w') as fh:
+    fh.write('# FROZEN gene sets — human arm H1 (GSE326743)\n\n')
+    fh.write('**Frozen %s.** Generated by `code/freeze_manifest_human.py`; do not hand-edit.\n\n'
+             % FREEZE_DATE)
+    fh.write('> **Rule:** every `.txt` directly in `genesets/human/` is FROZEN and is what the\n'
+             '> pipeline reads. Everything in `genesets/human/variants/` is reported but **not\n'
+             '> used** — superseded or failed definitions kept because Phase 7 §11 and §23/C6\n'
+             '> require them to be reported alongside.\n\n')
+    fh.write('Primary sender definition: **`A_SENDER_FINAL_strict.txt` (33 genes)**.\n'
+             'Pre-registered sensitivity: the seven **`A_sender_for_<module>.txt`** sets.\n'
+             'Rebuild: `build_genesets_human.py` -> `rebuild_b7_secondary_senescence.py` -> '
+             '`build_markers_human_spleen.py` -> `spec_a6_compartments_human.py` -> '
+             '`gate_disjointness_human.py` -> `freeze_manifest_human.py`.\n\n')
+    for status in ('FROZEN', 'variant (reported, not used)'):
+        fh.write('## %s (%d files)\n\n' % (status, sum(1 for r in rows if r['status'] == status)))
+        fh.write('| file | tier | n | on-panel | sha256[:16] | role |\n|---|---|---|---|---|---|\n')
+        for r in rows:
+            if r['status'] == status:
+                fh.write('| `%s` | %s | %d | %s | `%s` | %s |\n'
+                         % (r['file'], r['tier'], r['n'], r['n_on_panel'], r['sha256_16'], r['role']))
+        fh.write('\n')
+print('FROZEN files: %d ; variants: %d' % (nf, len(rows) - nf))
+print('wrote %s/FROZEN_MANIFEST.{md,csv}' % HUM)
+unc = [r['file'] for r in rows if r['tier'] == '?']
+print('UNCLASSIFIED: %s' % (unc or 'none'))

@@ -1,0 +1,21 @@
+tier,set,mouse_preC6,mouse_C6,human_preC6,human_C6,orthologue_intersected_mouse_C6,orthologue_intersected_human_C6,note
+A,A0 candidate pool (pre-disjointness),74,74,81,81,64,64,unchanged by C6 -- C6 only changes B7
+A,A_SENDER_FINAL_strict (PRIMARY),25,33,21,33,27,26,C6 raises both arms to 33
+A,A_sender_for_tnfa_nfkb_proximal (sensitivity),,70,,77,60,60,
+A,A_sender_for_il6_jak_stat3 (sensitivity),,74,,81,64,64,
+A,A_sender_for_interferon_response (sensitivity),,73,,80,63,63,
+A,A_sender_for_downstream_arrest (sensitivity),,37,,36,30,29,
+A,A_sender_for_emt_ecm (sensitivity),,73,,79,63,63,
+A,A_sender_for_oxidative_stress (sensitivity),,71,,79,62,62,
+A,A_sender_for_secondary_senescence (sensitivity),,74,,81,64,64,
+B,B_tnfa_nfkb_proximal,126,126,120,120,88,90,unchanged by C6
+B,B_il6_jak_stat3,68,68,71,71,58,59,unchanged by C6
+B,B_interferon_response,100,100,126,126,80,82,unchanged by C6
+B,B_downstream_arrest,190,190,231,231,137,138,unchanged by C6
+B,B_emt_ecm,125,125,113,113,86,87,unchanged by C6
+B,B_oxidative_stress,31,31,36,36,18,19,unchanged by C6
+B,B_secondary_senescence,38,108,35,116,85,88,RE-SOURCED by C6
+C,C_ligands,14,14,13,13,9,9,CXCL8/CXCR1 human-only; CXCL1/MMP3/TIMP1 mouse-only
+C,C_receptors,15,15,15,15,14,15,
+E,E_housekeeping_planA,1,1,1,1,1,1,fails in BOTH arms
+E,E_housekeeping_expanded,13,13,8,8,5,5,human is thinner (8 vs 13)

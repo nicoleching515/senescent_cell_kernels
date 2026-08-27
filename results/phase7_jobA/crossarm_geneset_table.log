@@ -1,0 +1,76 @@
+============================================================================================================
+CROSS-ARM GENE SET TABLE -- M1 (GSE310392, mouse liver) vs H1 (GSE326743, human spleen)
+============================================================================================================
+Panels: mouse 5097 genes (5,106 Gene Expression features minus 9 genotyping probes) ; human 5093 genes
+Ortholog map (MGI, pinned): 18782 rows, one per mouse gene, onto 17609 distinct human symbols (431 human symbols receive more than one mouse gene -- the map is many-to-one, not 1:1).
+  4845 of 5097 mouse panel genes have a row in the map; 2435 of those map onto the human panel, and they land on 2425 DISTINCT human symbols.
+ORTHOLOG-INTERSECTED PANEL (test A8): 2425 genes (human symbols).
+  Mouse-panel genes with NO human ortholog in the map: 252
+  Human-panel genes not reachable from the mouse panel: 2668
+
+### Tier A and Tier B, mouse vs human, before and after C6 ###
+set                                             mouse_pre mouse_C6  human_pre human_C6     orth_M     orth_H
+------------------------------------------------------------------------------------------------------------
+A0 candidate pool (pre-disjointness)                   74       74         81       81         64         64
+A_SENDER_FINAL_strict (PRIMARY)                        25       33         21       33         27         26
+A_sender_for_tnfa_nfkb_proximal (sensitivity)                   70                  77         60         60
+A_sender_for_il6_jak_stat3 (sensitivity)                        74                  81         64         64
+A_sender_for_interferon_response (sensitivity)                  73                  80         63         63
+A_sender_for_downstream_arrest (sensitivity)                    37                  36         30         29
+A_sender_for_emt_ecm (sensitivity)                              73                  79         63         63
+A_sender_for_oxidative_stress (sensitivity)                     71                  79         62         62
+A_sender_for_secondary_senescence (sensitivity)                  74                  81         64         64
+B_tnfa_nfkb_proximal                                  126      126        120      120         88         90
+B_il6_jak_stat3                                        68       68         71       71         58         59
+B_interferon_response                                 100      100        126      126         80         82
+B_downstream_arrest                                   190      190        231      231        137        138
+B_emt_ecm                                             125      125        113      113         86         87
+B_oxidative_stress                                     31       31         36       36         18         19
+B_secondary_senescence                                 38      108         35      116         85         88
+C_ligands                                              14       14         13       13          9          9
+C_receptors                                            15       15         15       15         14         15
+E_housekeeping_planA                                    1        1          1        1          1          1
+E_housekeeping_expanded                                13       13          8        8          5          5
+
+============================================================================================================
+ASYMMETRY AUDIT -- where the arms cannot be made identical
+============================================================================================================
+
+SAUL_SEN_MAYO
+  mouse MM16098 n=117   human M45803 n=124
+  mouse mapped to human symbols via the pinned MGI map: 111 of 117 (6 have no 1:1 ortholog)
+  overlap of the mapped mouse set with the human set: 110
+  human-only members: 14   mouse-only (after mapping): 1
+  -> THE TWO SPECIES VERSIONS ARE NOT TRANSLATIONS OF EACH OTHER.
+
+REACTOME_SENESCENCE_ASSOCIATED_SECRETORY_PHENOTYPE_SASP
+  mouse MM14900 n= 40   human M27187 n=111
+  mouse mapped to human symbols via the pinned MGI map: 38 of 40 (2 have no 1:1 ortholog)
+  overlap of the mapped mouse set with the human set: 38
+  human-only members: 73   mouse-only (after mapping): 0
+  -> THE TWO SPECIES VERSIONS ARE NOT TRANSLATIONS OF EACH OTHER.
+
+FROZEN B7, arm to arm
+  mouse 108   human 116
+  mouse B7 mapped to human symbols: 104 ; overlap with human B7: 85 by the pinned map, 88 after the map-gap correction (gaps: Ccl3 Cxcl2 Cxcl3) ; on the ortholog-intersected panel: mouse 85 / human 88
+
+FROZEN A_SENDER_FINAL_strict, arm to arm
+  mouse 33   human 33   (identical size, NOT identical membership)
+  mouse mapped to human symbols: 31 ; overlap with the human set: 26 by the pinned map
+  MGI-MAP GAPS (on BOTH arms, the pinned map lacks the row): Cdkn2b
+  -> SHARED, map-gap corrected: 27 of 33
+  mouse-only, complete (6 = 33 - 27): HMGA1 LMNB2 PLK3 RIF1 SESN1 H2afx
+    of which mapped: HMGA1 LMNB2 PLK3 RIF1 SESN1 ; unmapped and genuinely mouse-only: H2afx
+  human-only, real (6): DDB2 GADD45G MDC1 PHLDA3 TNFRSF10B XPC
+  human-only, raw (uncorrected, DO NOT QUOTE): CDKN2B DDB2 GADD45G MDC1 PHLDA3 TNFRSF10B XPC
+
+Tier C, both directions
+  mouse ligands 14 -> mapped 11 ; human ligands 13
+  human-only ligands (raw): CXCL2 CXCL5 CXCL8 IL1B
+    of which MGI-MAP GAPS (gene is on BOTH panels, the pinned map lacks the row): CXCL2 CXCL5
+    of which REAL arm asymmetries: CXCL8 IL1B
+  mouse-only ligands (after mapping): MMP3 TIMP1
+  CXCL8 in the MGI ortholog map at all? NO -- no mouse ortholog exists
+  mouse-only ligands, complete (3 = 14 - 11): MMP3 TIMP1 Cxcl1
+
+Written to /workspace/results/phase7_jobA/crossarm_geneset_table.{csv,json}

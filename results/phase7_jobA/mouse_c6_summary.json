@@ -1,0 +1,279 @@
+{
+ "panel_features": 5106,
+ "panel_genes": 5097,
+ "genotyping_probes": [
+  "Brca1_del_ex5-6_ALT_inv",
+  "Brca1_ex1-4_ex7-23_WT",
+  "Jak2_ALT_1940:TT",
+  "Jak2_WT_1940",
+  "Kras_ALT_235:GA",
+  "Kras_ALT_235:GT",
+  "Kras_WT_235",
+  "Pkd1_del_ex2-4_ALT_inv",
+  "Pkd1_ex1_splice_to_ex5-46_WT"
+ ],
+ "msigdb": "2026.1.Mm (pinned 2026-08-20)",
+ "msigdb_bad_archive_files": [
+  "FRIDMAN_SENESCENCE_DN.json",
+  "FRIDMAN_SENESCENCE_UP.json",
+  "WP_NRF2_PATHWAY.json"
+ ],
+ "A0": [
+  "Apex1",
+  "Atm",
+  "Atr",
+  "Aurkb",
+  "Bax",
+  "Bcl2",
+  "Bcl2l1",
+  "Birc5",
+  "Brca1",
+  "Brca2",
+  "Bub1",
+  "Cbx5",
+  "Ccna2",
+  "Ccnb1",
+  "Ccnd1",
+  "Cdc20",
+  "Cdc25a",
+  "Cdk1",
+  "Cdkn1a",
+  "Cdkn1b",
+  "Cdkn1c",
+  "Cdkn2a",
+  "Cdkn2b",
+  "Cdkn2c",
+  "Cdkn2d",
+  "Chek1",
+  "Chek2",
+  "E2f1",
+  "Ehmt2",
+  "Ercc1",
+  "Ezh2",
+  "Foxm1",
+  "Foxo3",
+  "Gadd45a",
+  "Glb1",
+  "H2afx",
+  "Hmga1",
+  "Hmgb2",
+  "Lbr",
+  "Lmnb1",
+  "Lmnb2",
+  "Mcm2",
+  "Mdm2",
+  "Mdm4",
+  "Mki67",
+  "Mre11a",
+  "Nbn",
+  "Nfatc1",
+  "Nfe2l2",
+  "Parp1",
+  "Pcna",
+  "Plk1",
+  "Plk3",
+  "Rad50",
+  "Rad51",
+  "Rb1",
+  "Rbl1",
+  "Rbl2",
+  "Rif1",
+  "Rpa1",
+  "Sesn1",
+  "Sesn2",
+  "Sirt1",
+  "Suv39h1",
+  "Terf2",
+  "Tert",
+  "Top2a",
+  "Trp53",
+  "Trp53bp1",
+  "Trp63",
+  "Trp73",
+  "Ung",
+  "Xrcc5",
+  "Xrcc6"
+ ],
+ "A_S10_16_on_panel": [
+  "Atm",
+  "Atr",
+  "Cdkn1a",
+  "Cdkn2a",
+  "Cdkn2b",
+  "Chek1",
+  "Chek2",
+  "Gadd45a",
+  "Hmgb2",
+  "Lmnb1",
+  "Mdm2",
+  "Trp53",
+  "Trp53bp1"
+ ],
+ "A_SENDER_FINAL_strict": [
+  "Atm",
+  "Atr",
+  "Bax",
+  "Bcl2",
+  "Bcl2l1",
+  "Ccnb1",
+  "Cdkn1c",
+  "Cdkn2b",
+  "Ehmt2",
+  "Ercc1",
+  "Foxm1",
+  "Foxo3",
+  "Glb1",
+  "H2afx",
+  "Hmga1",
+  "Lmnb2",
+  "Mdm2",
+  "Mdm4",
+  "Nfatc1",
+  "Parp1",
+  "Plk3",
+  "Rad51",
+  "Rb1",
+  "Rbl2",
+  "Rif1",
+  "Sesn1",
+  "Sirt1",
+  "Terf2",
+  "Tert",
+  "Trp53bp1",
+  "Trp63",
+  "Trp73",
+  "Xrcc5"
+ ],
+ "A_per_module_sizes": {
+  "B1_tnfa_nfkb_proximal": 70,
+  "B2_il6_jak_stat3": 74,
+  "B3_interferon_response": 73,
+  "B4_downstream_arrest": 37,
+  "B5_emt_ecm": 73,
+  "B6_oxidative_stress": 71,
+  "B7_secondary_senescence": 74
+ },
+ "B_sizes": {
+  "B1_tnfa_nfkb_proximal": 126,
+  "B2_il6_jak_stat3": 68,
+  "B3_interferon_response": 100,
+  "B4_downstream_arrest": 190,
+  "B5_emt_ecm": 125,
+  "B6_oxidative_stress": 31,
+  "B7_secondary_senescence": 108
+ },
+ "B_prov": {
+  "B1_tnfa_nfkb_proximal": [
+   "HALLMARK_TNFA_SIGNALING_VIA_NFKB"
+  ],
+  "B2_il6_jak_stat3": [
+   "HALLMARK_IL6_JAK_STAT3_SIGNALING"
+  ],
+  "B3_interferon_response": [
+   "HALLMARK_INTERFERON_GAMMA_RESPONSE",
+   "HALLMARK_INTERFERON_ALPHA_RESPONSE"
+  ],
+  "B4_downstream_arrest": [
+   "HALLMARK_E2F_TARGETS",
+   "HALLMARK_G2M_CHECKPOINT",
+   "HALLMARK_MYC_TARGETS_V1"
+  ],
+  "B5_emt_ecm": [
+   "HALLMARK_EPITHELIAL_MESENCHYMAL_TRANSITION"
+  ],
+  "B6_oxidative_stress": [
+   "HALLMARK_REACTIVE_OXYGEN_SPECIES_PATHWAY",
+   "REACTOME_DETOXIFICATION_OF_REACTIVE_OXYGEN_SPECIES",
+   "CUR_NRF2_targets"
+  ],
+  "B7_secondary_senescence": [
+   "SAUL_SEN_MAYO",
+   "REACTOME_SENESCENCE_ASSOCIATED_SECRETORY_PHENOTYPE_SASP",
+   "minus Tier A caller pool A0 (C6, adopted)"
+  ]
+ },
+ "B7_v1_curated_n": 38,
+ "B7_sourced_full_n": 113,
+ "gate": [
+  {
+   "arm": "mouse",
+   "tierA": "A_S10_16_mouse",
+   "n_A": 13,
+   "A_ge15": false,
+   "B_ge30": true,
+   "n_removed": 8,
+   "n_A_final": 5,
+   "verdict": "FAIL"
+  },
+  {
+   "arm": "mouse",
+   "tierA": "A_ported(A0)",
+   "n_A": 74,
+   "A_ge15": true,
+   "B_ge30": true,
+   "n_removed": 41,
+   "n_A_final": 33,
+   "verdict": "PASS"
+  }
+ ],
+ "per_module_gate_pass": true,
+ "margins": [
+  {
+   "arm": "mouse",
+   "module": "B1_tnfa_nfkb_proximal",
+   "n_authoritative": 126,
+   "margin_authoritative": 96,
+   "n_csv_only": 119,
+   "margin_csv_only": 89
+  },
+  {
+   "arm": "mouse",
+   "module": "B2_il6_jak_stat3",
+   "n_authoritative": 68,
+   "margin_authoritative": 38,
+   "n_csv_only": 65,
+   "margin_csv_only": 35
+  },
+  {
+   "arm": "mouse",
+   "module": "B3_interferon_response",
+   "n_authoritative": 100,
+   "margin_authoritative": 70,
+   "n_csv_only": 97,
+   "margin_csv_only": 67
+  },
+  {
+   "arm": "mouse",
+   "module": "B4_downstream_arrest",
+   "n_authoritative": 190,
+   "margin_authoritative": 160,
+   "n_csv_only": 189,
+   "margin_csv_only": 159
+  },
+  {
+   "arm": "mouse",
+   "module": "B5_emt_ecm",
+   "n_authoritative": 125,
+   "margin_authoritative": 95,
+   "n_csv_only": 115,
+   "margin_csv_only": 85
+  },
+  {
+   "arm": "mouse",
+   "module": "B6_oxidative_stress",
+   "n_authoritative": 31,
+   "margin_authoritative": 1,
+   "n_csv_only": 30,
+   "margin_csv_only": 0
+  },
+  {
+   "arm": "mouse",
+   "module": "B7_secondary_senescence",
+   "n_authoritative": 108,
+   "margin_authoritative": 78,
+   "n_csv_only": 104,
+   "margin_csv_only": 74
+  }
+ ],
+ "panel_csv_only": 5006
+}

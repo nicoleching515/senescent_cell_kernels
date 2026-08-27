@@ -1,0 +1,22 @@
+asked_symbol,resolved_to,route
+BMAL1,ARNTL,HGNC approved symbol -> ENSG00000133794 -> panel legacy symbol
+Cdkn2b,CDKN2B,NOT in MGI map; upper-case form is a known HGNC symbol
+Cxcl1,CXCL1,NOT in MGI map; upper-case form is a known HGNC symbol
+Cxcl2,CXCL2,NOT in MGI map; upper-case form is a known HGNC symbol
+EPRS1,EPRS,HGNC approved symbol -> ENSG00000136628 -> panel legacy symbol
+Eef1a1,EEF1A1,NOT in MGI map; upper-case form is a known HGNC symbol
+Gsta3,GSTA3,NOT in MGI map; upper-case form is a known HGNC symbol
+Gstm1,GSTM1,NOT in MGI map; upper-case form is a known HGNC symbol
+H2AX,H2AFX,HGNC approved symbol -> ENSG00000188486 -> panel legacy symbol
+H2afx,H2AFX,NOT in MGI map; upper-case form is a known HGNC symbol
+H3-3B,H3F3B,HGNC approved symbol -> ENSG00000132475 -> panel legacy symbol
+HPRT,HPRT1,HGNC previous symbol -> ENSG00000165704
+Hist1h1c,HIST1H1C,NOT in MGI map; upper-case form is a known HGNC symbol
+Hprt,HPRT,NOT in MGI map; upper-case form is a known HGNC symbol
+PHB1,PHB,HGNC approved symbol -> ENSG00000167085 -> panel legacy symbol
+RIGI,DDX58,HGNC approved symbol -> ENSG00000107201 -> panel legacy symbol
+Rplp0,RPLP0,NOT in MGI map; upper-case form is a known HGNC symbol
+Tnfrsf10b,TNFRSF10B,NOT in MGI map; upper-case form is a known HGNC symbol
+Tp53inp1,TP53INP1,NOT in MGI map; upper-case form is a known HGNC symbol
+Trim22,TRIM22,NOT in MGI map; upper-case form is a known HGNC symbol
+WARS1,WARS,HGNC approved symbol -> ENSG00000140105 -> panel legacy symbol

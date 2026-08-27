@@ -1,0 +1,13 @@
+section,arm,A,B,n,n_strata,n_A,n_B,n_both,exp_both_marginal,ratio_marginal,exp_both_stratified,sd_both_stratified,ratio_stratified,z
+sham,sham,tierA_score,senepy_score,183070,60,9180,9181,429,460.38,0.932,460.45,20.385,0.932,-1.54
+sham,sham,tierA_score,deepscence_score,218273,120,10961,10961,573,550.43,1.041,550.52,22.291,1.041,1.01
+sham,sham,tierA_score,cdkn1a_counts,218273,120,10961,1514,73,76.03,0.96,76.16,8.461,0.959,-0.37
+sham,sham,senepy_score,deepscence_score,183070,60,9181,9181,990,460.43,2.15,460.5,20.386,2.15,25.97
+sham,sham,senepy_score,cdkn1a_counts,183070,60,9181,1237,85,62.04,1.37,62.09,7.643,1.369,3.0
+sham,sham,deepscence_score,cdkn1a_counts,218273,120,10961,1514,217,76.03,2.854,76.18,8.462,2.849,16.64
+sbr,SBR,tierA_score,senepy_score,63357,50,3185,3185,151,160.11,0.943,160.12,12.022,0.943,-0.76
+sbr,SBR,tierA_score,deepscence_score,114721,90,5765,5768,354,289.86,1.221,289.92,16.177,1.221,3.96
+sbr,SBR,tierA_score,cdkn1a_counts,114721,90,5765,2218,118,111.46,1.059,111.59,10.164,1.057,0.63
+sbr,SBR,senepy_score,deepscence_score,63357,50,3185,3185,61,160.11,0.381,160.12,12.022,0.381,-8.24
+sbr,SBR,senepy_score,cdkn1a_counts,63357,50,3185,1320,65,66.36,0.98,66.37,7.832,0.979,-0.18
+sbr,SBR,deepscence_score,cdkn1a_counts,114721,90,5768,2218,168,111.52,1.506,111.64,10.166,1.505,5.54

@@ -1,0 +1,128 @@
+==============================================================================
+1. PERMUTATION COUNTS  (Sec 24.3 audit trail)
+==============================================================================
+  perm_nulls.csv             n_perm=[np.int64(1000)] calls=tierA_p95                                                  2026-08-27 06:13
+  perm_nulls_c1.csv          n_perm=[np.int64(1000)] calls=tierA_p95                                                  2026-08-27 06:25
+  perm_nulls_c1_n7.csv       n_perm=[np.int64(1000)] calls=cdkn1a_pos,senepy_p95,senepy_p99,tierA_p90,tierA_p99       2026-08-27 07:47
+  perm_nulls_c1_pm.csv       n_perm=[np.int64(1000)] calls=tierApm_p95                                                2026-08-27 09:04
+  perm_nulls_n7.csv          n_perm=[np.int64(1000)] calls=cdkn1a_pos,senepy_p95,senepy_p99,tierA_p90,tierA_p99       2026-08-27 07:29
+  perm_nulls_pm.csv          n_perm=[np.int64(1000)] calls=tierApm_p95                                                2026-08-27 09:06
+  perm_nulls_var.csv         n_perm=[np.int64(1000)] calls=tierA_p95                                                  2026-08-27 07:07
+  perm_nulls_var_full200.csv n_perm=[np.int64(200)] calls=tierA_p95                                                  2026-08-27 07:37
+
+==============================================================================
+2. PINNED FILES
+==============================================================================
+  results/phase3/perm_nulls.csv            d906394958dbe1b99981756290c511fa  SUPERSEDED (was 3b77aa1bba0712c205c5d9356654fb71)
+  results/phase3/sf_summary.csv            a5ccc9b0e81f4c335e8039e975ec1975  SUPERSEDED (was 69e3a1d3f60060deddcceba9896a7d31)
+  results/phase3/summary_phase3.txt        dc92ddc6605eef52f6359aeab4e16fd7  SUPERSEDED (was ecf86b9ca5460f31290e2f4c9e822ea2)
+  data/processed/deepscence_sham.csv       8c4c52f5c1c7649d8c17d07010cc780c  UNCHANGED
+  data/processed/deepscence_sbr.csv        b557e3dfb8eff517d040757c73f0a660  UNCHANGED
+
+==============================================================================
+3. HEADLINE VECTOR, pre-C6 vs post-C6  (same extractor, both trees)
+==============================================================================
+  quantity                       pre-C6        post-C6      delta
+  ----------------------------------------------------------------
+  n_fits                       315.0000       315.0000    +0.0000
+  n_reportable                 160.0000       153.0000    -7.0000
+  naive_amp_med                  0.3262         0.3288    +0.0026
+  ctrl_amp_med                   0.0272         0.0288    +0.0016
+  ctrl_amp_se_med                0.0725         0.0654    -0.0071
+  power80_bound                  0.2032         0.1833    -0.0199
+  ctrl_pos_and_sig              15.0000        13.0000    -2.0000
+  SF_N2                          0.9428         0.9516    +0.0087
+  SF_N5                          0.0842         0.1150    +0.0308
+  SF_N6                          0.4863         0.4708    -0.0154
+  SF_zon                         0.8427         0.8429    +0.0002
+  SF_N5+N6                       0.0824         0.0844    +0.0020
+  SF_N2+N5+N6                    0.0822         0.0885    +0.0063
+  SF_N8                          0.9246         0.9156    -0.0091
+  N1                             0.7160         0.7074    -0.0087
+  N1_full                        0.9870         0.9890    +0.0020
+  N3                             1.0001         0.9989    -0.0012
+  N4                             0.9641         0.9472    -0.0169
+  lam_railed_frac                0.6349         0.6000    -0.0349
+  poisson_slope                 -0.5243        -0.5249    -0.0006
+  poisson_r2                     0.9837         0.9843    +0.0006
+  ripley_ratio_med               1.0951         1.1237    +0.0286
+  c1_N3_tile                     0.9745         0.9706    -0.0039
+  c1_N3_occ                      0.3488         0.3024    -0.0465
+  c1_N3_occ15                    0.9514         0.9398    -0.0116
+  c1_N3_swap                     0.7207         0.6948    -0.0260
+  c1_N3_snap                     0.9880         0.9934    +0.0054
+  c1_N3_orig                     1.0016         1.0011    -0.0005
+  c1_N4_tile                     0.9618         0.9243    -0.0375
+  c1_N4_occ                      0.2729         0.1833    -0.0896
+  c1_N4_occ15                    0.8955         0.8831    -0.0124
+  c1_N4_swap                     0.9690         0.9457    -0.0233
+  c1_N4_orig                     0.9598         0.9520    -0.0078
+  c1_N3_swap_fullsf              0.9990         1.0027    +0.0036
+  ctrl_amp_iqr           [-0.0284  0.0898] -> [-0.0066  0.0845]
+  SF_N2+N5+N6_iqr        [-0.0992  0.2487] -> [-0.0166  0.2338]
+
+==============================================================================
+4. THE SECOND PRE-REGISTERED TIER A VARIANT
+==============================================================================
+  call             rep      b/sd     SF_N5 SF_N2N5N6
+  tierA_p90        181     0.392     0.122     0.094
+  tierApm_p90      185     0.381     0.108     0.086
+  tierA_p95        153     0.329     0.115     0.088
+  tierApm_p95      160     0.297     0.136     0.096
+  tierA_p99         93     0.320     0.207     0.188
+  tierApm_p99       92     0.320     0.243     0.193
+
+==============================================================================
+5. FIGURE STATE
+==============================================================================
+  CHANGED: figures/figure2a.pdf
+  CHANGED: figures/figure2a.png
+  CHANGED: figures/figure2a_amplitudes.csv
+  CHANGED: figures/figure2a_stratified_curves.csv
+  CHANGED: figures/figure2b.pdf
+  CHANGED: figures/figure2b.png
+  CHANGED: figures/figure2c.pdf
+  CHANGED: figures/figure2c.png
+  CHANGED: figures/figure2d.pdf
+  CHANGED: figures/figure2d.png
+  CHANGED: figures/figure3.pdf
+  CHANGED: figures/figure3.png
+  CHANGED: figures/figure4.pdf
+  CHANGED: figures/figure4.png
+  CHANGED: figures/figure4_data.csv
+  
+  Committed figures are held until task 8.7 regenerates them from the frozen configuration.
+  Restore with:  git checkout -- figures/
+  guard exit code: 1
+  51f9a93c4ae3004cd2b60d031f67764d  fig_phase3_caller_depth.png  09:07
+  cb22425e055a2149c0d4e73d67636dba  fig_phase3_composition.png  09:07
+  6e2f06632dc9f7690b8b8f0a63a890ae  fig_phase3_tierC_identifiability.png  09:07
+  1eaa67c094eb2916f3f041dbf4c94566  figure1.png  05:58
+  332fbca7b7e8eb69b08abb5beab184dd  figure2a.png  09:07
+  fbe42009f8d73d96af6921c4e404369e  figure2b.png  09:07
+  9519bcef8f2f749790f35786129f0666  figure2c.png  09:07
+  a63bb8ff710699dc1dfb36f456e82c1a  figure2d.png  09:07
+  b1e791607f0d7c82fa7f6084cacdb21e  figure2e.png  09:07
+  668225a45adf56a9486ff013c0e70109  figure3.png  09:07
+  d44fac63411d6c30a42c40894a287f17  figure4.png  09:07
+  dd04448b03db7d86c13b6b3c4211aca7  figure4_supp_commot_mechanism.png  21:40
+  4aa21200671b9d9a576608877d3c2020  figure4_supp_ncem_lengthscale.png  21:40
+  9d5b5b4a1c5835e63283cd39ac88703d  figure_gs1_intersection_matrix.png  06:06
+  b23d34c82183a364fe546030a4252d9c  figure_gs2_crossarm_symmetry.png  06:57
+  7f15f1b59e3bd2792ba74c2274fde749  figure_gs3_corescence_circularity.png  06:55
+  44e4ca2dad2650dbbc578049644234ed  figure_gs4_senepy_coverage.png  06:06
+  a77a3aaf8c10037d241f914a44e8fe01  figure_phase8_callers.png  09:08
+  205191aab7d42791f1035aebb19f5a52  figure_phase8_d3.png  09:07
+
+  data CSVs beside each figure:
+    figures/figure1_data.csv                                   15:51
+    figures/figure3_data.csv                                   09:07
+    figures/figure4_data.csv                                   09:07
+    figures/figure_gs1_intersection_matrix_data.csv            06:06
+    figures/figure_gs2_crossarm_symmetry_data.csv              06:57
+    figures/figure_gs3_corescence_circularity_data.csv         06:55
+    figures/figure_gs4_senepy_coverage_data.csv                06:06
+    results/phase3/figure2b_data.csv                           09:07
+    results/phase3/figure2c_data.csv                           09:07
+    results/phase3/figure2d_data.csv                           09:07
+    results/phase3/figure2e_data.csv                           09:07

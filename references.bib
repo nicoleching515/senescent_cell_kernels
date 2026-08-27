@@ -15,11 +15,28 @@
 %
 % bioRxiv note: preprints posted in 2026 use DOI prefix 10.64898, NOT 10.1101.
 % A 10.1101 prefix on a 2026 preprint resolves to nothing.
+%
+% ------------------------------------------------------------------ 2026-08-27
+% SECOND AUDIT PASS (reports/CITATION_AUDIT.md). Two things the D7 pass did not
+% check:
+%   (a) AUTHOR GIVEN NAMES. The D7 pass verified journal/volume/pages/DOI but not
+%       forenames. 19 of the 30 entries carried at least one invented forename
+%       (e.g. "Martin, Luke" for Lucy Martin; "Kumar, Abhishek" for Anurendra
+%       Kumar; "Yao, Hong and Mu, Shuang and He, Fang and Fang, Zhixiang" for
+%       Hui Yao, Shuai Mu, Fei He, Zhaoyuan Fang). All corrected above against
+%       BOTH the Crossref deposit and the NCBI PubMed record, which agree.
+%       If you add an entry, copy the forenames; do not recall them.
+%   (b) WHAT A CITED TOOL'S NULL ACTUALLY IS. See the kumar2026cellwhisper block:
+%       CellWHISPER is not the source of the torus-shift null and never was.
+% New in this pass: a spatial-statistics / spatial-confounding block at the end
+% of the file. The file previously contained zero spatial-statistics methods
+% papers, which for a project about a spatially structured covariate that is
+% collinear with a spatially structured exposure is a hole, not a gap.
 
 % ---------------------------------------------------------------- senescence in space
 
 @article{ma2024spatial,
-  author  = {Ma, Shuai and Ji, Zhejun and Zhang, Beibei and others and Qu, Jing and Zhang, Weiqi and Gu, Yingjie and Liu, Guang-Hui},
+  author  = {Ma, Shuai and Ji, Zhejun and Zhang, Bin and others and Qu, Jing and Zhang, Weiqi and Gu, Ying and Liu, Guang-Hui},
   title   = {Spatial transcriptomic landscape unveils immunoglobin-associated senescence as a hallmark of aging},
   journal = {Cell},
   year    = {2024},
@@ -57,7 +74,7 @@
 }
 
 @article{karpova2026cellular,
-  author  = {Karpova, Alla and Li, Xiang and Peng, Cheng-Wei and others and Fields, Ryan C. and Ding, Li},
+  author  = {Karpova, Alla and Li, Xiang and Peng, Chien-Wei and others and Fields, Ryan C. and Ding, Li},
   title   = {Cellular senescence in human liver under normal aging and cancer},
   journal = {Cell Genomics},
   year    = {2026},
@@ -87,7 +104,7 @@
 }
 
 @article{farzad2026spatial,
-  author  = {Farzad, Negin and Enninful, Archibald and Lu, Yang and others},
+  author  = {Farzad, Negin and Enninful, Archibald and Lu, Yao and others},
   title   = {A spatial multi-omics atlas of immunosenescence reveals germinal-center B cell alteration in human lymph nodes},
   journal = {Cell Press Blue},
   year    = {2026},
@@ -99,7 +116,7 @@
 % AUDIT: "Cell Press Blue" is a real journal (Cell Press/Elsevier, ISSN 3051-3839).
 
 @article{suryadevara2026charting,
-  author  = {Suryadevara, Vidyani and Farzad, Negin and Yang, Mei and others and Robbins, Paul and Fan, Rong},
+  author  = {Suryadevara, Vidyani and Farzad, Negin and Yang, Mingyu and others and Robbins, Paul and Fan, Rong},
   title   = {Charting human cellular senescence in aging and disease},
   journal = {Cell},
   year    = {2026},
@@ -111,10 +128,14 @@
 }
 % AUDIT: this is a 5-page item. Confirm whether it is a research article or a
 %   Perspective before citing it as primary evidence.
+% AUDIT (CIT-4, 2026-08-27) -- RESOLVED. PubMed (PMID 42276030) carries
+%   PublicationType "Review" alongside "Journal Article", and the abstract is a
+%   four-sentence overview with no data. It is a REVIEW/PERSPECTIVE.
+%   Do not cite it as primary evidence for any measurement.
 
 @article{parvanov2025spatial,
-  author  = {Parvanov, Dimitar and Ganeva, Rumiana and Ruseva, Magdalena and others},
-  title   = {Spatial distribution of senescent cells and their proximity to immune subsets in the human endometrium},
+  author  = {Parvanov, Dimitar and Ganeva, Rumiana and Ruseva, Margarita and others},
+  title   = {Spatial Distribution of Senescent Cells and Their Proximity to Immune Subsets in the Human Endometrium During the Implantation Window},
   journal = {Diagnostics (Basel)},
   year    = {2025},
   volume  = {15},
@@ -132,7 +153,7 @@
 % ---------------------------------------------------------------- senescence detection
 
 @article{qu2025deepscence,
-  author  = {Qu, Yi and Ji, Bing and Dong, Rui and others and Nixon, Andrew B. and Ji, Zhicheng},
+  author  = {Qu, Yilong and Ji, Beijie and Dong, Runze and others and Nixon, Andrew B. and Ji, Zhicheng},
   title   = {Single-cell and spatial detection of senescent cells using DeepScence},
   journal = {Cell Genomics},
   year    = {2025},
@@ -159,7 +180,7 @@
 }
 
 @article{sanborn2025senepy,
-  author  = {Sanborn, Mark A. and Wang, Xinge and Gao, Shanshan and Dai, Yang and Rehman, Jalees},
+  author  = {Sanborn, Mark A. and Wang, Xinge and Gao, Shang and Dai, Yang and Rehman, Jalees},
   title   = {Unveiling the cell-type-specific landscape of cellular senescence through single-cell transcriptomics using SenePy},
   journal = {Nature Communications},
   year    = {2025},
@@ -192,12 +213,13 @@
   volume  = {36},
   number  = {5},
   pages   = {1126--1143.e5},
+  doi     = {10.1016/j.cmet.2024.03.009},
   pmid    = {38604170},
 }
 
 @article{hughes2025senpred,
   author  = {Hughes, Bethany K. and Davis, Andrew and Milligan, Deborah and others and Bishop, Cleo L.},
-  title   = {SenPred},
+  title   = {SenPred: a single-cell RNA sequencing-based machine learning pipeline to classify deeply senescent dermal fibroblast cells for the detection of an in vivo senescent cell burden},
   journal = {Genome Medicine},
   year    = {2025},
   volume  = {17},
@@ -212,7 +234,7 @@
 %   BMC/Springer DOI suffixes encode submission year.
 
 @article{ntintas2026overview,
-  author  = {Ntintas, Odysseas A. and Vagena, Sofia and Pantelis, Panagiotis and Theocharous, George and Petty, Russell and Evangelou, Konstantinos and Gorgoulis, Vassilis G.},
+  author  = {Ntintas, Orestis A. and Vagena, Sylvia and Pantelis, Pavlos and Theocharous, Giorgos and Petty, Russel and Evangelou, Konstantinos and Gorgoulis, Vassilis G.},
   title   = {Overview of molecular signatures of senescence and associated resources: pros and cons},
   journal = {FEBS Open Bio},
   year    = {2026},
@@ -226,7 +248,7 @@
 % ---------------------------------------------------------------- SASP and paracrine spread
 
 @article{martin2023modelling,
-  author  = {Martin, Luke and Schumacher, Linus and Chandra, Tamir},
+  author  = {Martin, Lucy and Schumacher, Linus and Chandra, Tamir},
   title   = {Modelling the dynamics of senescence spread},
   journal = {Aging Cell},
   year    = {2023},
@@ -296,7 +318,7 @@
 %   NOT TOUCH THE TRANSWELL RESULT, which is what we cite acosta2013complex for.
 
 @article{russo2026characterizing,
-  author  = {Russo, Tommaso and Riessland, Markus},
+  author  = {Russo, Taylor and Riessland, Markus},
   title   = {Characterizing the SASP-dependent paracrine spreading of senescence between human brain cell types},
   journal = {Aging Cell},
   year    = {2026},
@@ -313,7 +335,7 @@
 %   the one directly measured receiver-side claim in D6 section A.3(d).
 
 @article{meyer2017model,
-  author  = {Meyer, Pascal and Maity, Pallab and Burkovski, Andreas and others and Kestler, Hans A. and Scharffetter-Kochanek, Karin},
+  author  = {Meyer, Patrick and Maity, Pallab and Burkovski, Andre and others and Kestler, Hans A. and Scharffetter-Kochanek, Karin},
   title   = {A model of the onset of the senescence associated secretory phenotype after DNA damage induced senescence},
   journal = {PLoS Computational Biology},
   year    = {2017},
@@ -369,7 +391,7 @@
 %   See code/_shims/np2_compat.py and CS_PHASE4 section 8.
 
 @article{yu2026scild,
-  author  = {Yu, Jiaxin and Zhao, Jun and Ren, Tao and Sun, Duanchen and Wu, Ling-Yun},
+  author  = {Yu, Jiating and Zhao, Jinyue and Ren, Tao and Sun, Duanchen and Wu, Ling-Yun},
   title   = {Advancing spatial cellular communication inference with ligand diffusion and transport model},
   journal = {Communications Biology},
   year    = {2026},
@@ -382,7 +404,7 @@
 % AUDIT: the year/DOI mismatch is NOT an error -- Springer manuscript-ID artefact.
 
 @article{shao2022spatalk,
-  author  = {Shao, Xin and Li, Chengyu and Yang, Haihong and others and Xu, Xiaoyan and Fan, Xiaohui},
+  author  = {Shao, Xin and Li, Chengyu and Yang, Haihong and others and Xu, Xiao and Fan, Xiaohui},
   title   = {Knowledge-graph-based cell-cell communication inference for spatially resolved transcriptomic data with SpaTalk},
   journal = {Nature Communications},
   year    = {2022},
@@ -394,7 +416,7 @@
 }
 
 @article{gong2026rgast,
-  author  = {Gong, Yuxuan and Yuan, Xin and Yu, Zhaoyang},
+  author  = {Gong, Yuqiao and Yuan, Xin and Yu, Zhangsheng},
   title   = {Empowering multifaceted analysis of spatial transcriptomics data with RGAST},
   journal = {Briefings in Bioinformatics},
   year    = {2026},
@@ -410,8 +432,8 @@
 %   as one downstream task -- do not cite it as a CCC method paper.
 
 @misc{wang2026harmonic,
-  author = {Wang, Xiao and Tao, Chenyu and Jiang, Yun and others},
-  title  = {HARMONIC: Histology-aware graph for modeling intercellular communication in spatial transcriptomics},
+  author = {Wang, Xiaofei and Tao, Chenyang and Jiang, Yixuan and others and Mou, Yonggao and Li, Chao},
+  title  = {Histology-Aware Graph for Modeling Intercellular Communication in Spatial Transcriptomics},
   year   = {2026},
   note   = {bioRxiv 2026.01.22.701166, posted 2026-01-23},
   doi    = {10.64898/2026.01.22.701166},
@@ -420,7 +442,7 @@
 % ---------------------------------------------- reliability / calibration / identifiability
 
 @misc{kumar2026cellwhisper,
-  author = {Kumar, Abhishek and Rivera Moctezuma, Fernando and Aggarwal, Bhavya and Zhang, Nan and Coskun, Ahmet F. and Sinha, Saurabh},
+  author = {Kumar, Anurendra and Rivera, Felix and Aggarwal, Bhavay and Zhang, Nicholas and Coskun, Ahmet F. and Sinha, Saurabh},
   title  = {CellWHISPER disentangles direct cell-cell communication from structural proximity},
   year   = {2026},
   note   = {bioRxiv 2026.01.07.697982, posted 2026-01-08; v2 2026-04-03 (retitled)},
@@ -433,18 +455,40 @@
 %   It is NOT crude coordinate randomisation. Describing it as such understates
 %   their design and invites the objection that the benchmark was too blunt --
 %   the opposite of the point we want it to make.
-% AUDIT (3.2): the >90% / <5% FPR figures are SUBSTANTIATED by two independent
-%   search retrievals of the primary source, but the full text was NEVER RENDERED
-%   in-session -- bioRxiv returned HTTP 429 to ~15 attempts across 5 URL paths and
-%   two clients, and the preprint is in neither PMC nor Europe PMC full text.
-%   Re-attempted 2026-08-21: still HTTP 429. ==> ONE HUMAN MUST OPEN THIS PDF FROM
-%   AN UNBLOCKED NETWORK. It is the first citation in our opening paragraph.
+% AUDIT (CIT-1, 2026-08-27) -- DO NOT CITE THIS PAPER FOR THE TORUS-SHIFT NULL.
+%   v1 full text rendered in-session on 2026-08-27 (biorxiv.org/content/
+%   10.64898/2026.01.07.697982v1.full). Verbatim: "To assess significance,
+%   CellWHISPER shuffles locations among cells of same type (preserving cell-type
+%   expression and spatial distributions), recomputes N_ijkl and uses the
+%   resulting null to compute a z-score." The strings "torus", "toroidal" and
+%   "wraparound" DO NOT OCCUR anywhere in the paper, and it uses no negative
+%   control probes or blank barcodes. Their null is THIS PROJECT'S N1
+%   (cell-type-stratified permutation), NOT N3. The torus/random-shift null is
+%   Lotwick & Silverman (1982); its rectangular-window requirement and its
+%   liberality are Mrkvicka et al. (2021). See lotwick1982methods and
+%   mrkvicka2021revisiting below.
+% AUDIT (3.2) -- RESOLVED 2026-08-27. The >90% / <5% figures were previously
+%   substantiated only from search summaries; the v1 full text has now been
+%   rendered and the sentence reads verbatim: "CellChat v2, COMMOT, and SpaTalk
+%   predict similar numbers of interactions on real (blue) and randomized
+%   (orange) data, indicating poor specificity and false positive rates (FPR)
+%   >90%. In contrast, CellWHISPER produced markedly fewer interactions on
+%   randomized data compared to real data, suggesting FPR < 5%."
+%   NOTE THE FORM OF THE ARGUMENT: it is an INTERACTION-COUNT RATIO between real
+%   and permuted input from which the authors INFER an FPR. It is not a measured
+%   type-I error against a nominal level. Always write "reported comparable
+%   interaction counts on permuted coordinates, implying FPR >90%", never "a
+%   measured FPR of >90%".
+% AUDIT (CIT-2, 2026-08-27): author given names were wrong in every earlier
+%   version of this entry (Abhishek/Fernando/Bhavya/Nan). Corrected above from
+%   the Crossref deposit and the bioRxiv API: Anurendra Kumar, Felix Rivera
+%   (Moctezuma), Bhavay Aggarwal, Nicholas Zhang, Ahmet F. Coskun, Saurabh Sinha.
 % AUDIT: name collision -- "CellWhisperer" (epigen/CellWhisperer, Bock lab,
 %   Nat Biotechnol 2025, doi:10.1038/s41587-025-02857-9) is an UNRELATED multimodal
 %   chat tool for scRNA-seq. Different paper, different capitalisation.
 
 @misc{zhao2026concise,
-  author = {Zhao, Jinyu and Shan, Xiaoyu and Wang, Guanjue and Chu, Tinyi and Lin, Chen and Chang, Rui B. and Zhao, Hongyu},
+  author = {Zhao, Jia and Shan, Xinning and Wang, Gefei and Chu, Tinyi and Lin, Chen and Chang, Rui and Zhao, Hongyu},
   title  = {Spatial co-expression and cell-cell communication inference from spatially resolved transcriptomics with CONCISE},
   year   = {2026},
   note   = {bioRxiv 2026.06.22.733860, posted 2026-06-28},
@@ -458,7 +502,7 @@
 %   this reference to support a claim about the LR-tool family.
 
 @article{yao2026benchmarking,
-  author  = {Yao, Hong and Mu, Shuang and He, Fang and Fang, Zhixiang},
+  author  = {Yao, Hui and Mu, Shuai and He, Fei and Fang, Zhaoyuan},
   title   = {Benchmarking cell-type-specific spatially variable gene detection methods},
   journal = {Briefings in Bioinformatics},
   year    = {2026},
@@ -474,7 +518,7 @@
 %   challenge".
 
 @misc{gu2026identifiability,
-  author = {Gu, Ruiyang and Zhang, Ruo-Zhen and Miles, Christopher E.},
+  author = {Gu, Rujie and Zhang, Ray Zirui and Miles, Christopher E.},
   title  = {Identifiability limits of physics-informed inference for spatial stochastic dynamics from static snapshots},
   year   = {2026},
   note   = {arXiv:2607.01749 [q-bio.QM; physics.bio-ph; stat.ML], submitted 2026-07-02},
@@ -485,9 +529,9 @@
 
 @misc{borner2026sennet,
   author = {B{\"o}rner, Katy and Blood, Philip D. and Silverstein, Jonathan C. and others},
-  title  = {The SenNet Data Portal},
+  title  = {SenNet Portal: Build, Optimization and Usage},
   year   = {2026},
-  note   = {bioRxiv 2026.02.06.704469},
+  note   = {bioRxiv 2026.02.06.704469, v1 posted 2026-02-10; v2 2026-05-04},
   doi    = {10.64898/2026.02.06.704469},
   pmcid  = {PMC12918883},
 }
@@ -495,3 +539,268 @@
 %   figures come from THIS PREPRINT, not from the portal (a JavaScript app that
 %   will not corroborate them). Keep the "as of January 2026" qualifier -- v2 of
 %   the preprint already updates the count to 2,041 as of April 2026.
+% AUDIT (CIT-3, 2026-08-27) -- THE 1,753 / JANUARY 2026 FIGURE IS NOT VERIFIABLE.
+%   The bioRxiv API abstract for BOTH v1 (2026-02-10) and v2 (2026-05-04) reads
+%   "As of April 2026, the portal hosts 2,041 publicly available human and mouse
+%   datasets across 15 organs using 6 general assay types." No version whose
+%   abstract we can retrieve states 1,753, and no version states January 2026.
+%   ==> either cite "2,041 as of April 2026" (verifiable from the abstract) or
+%   drop the count. The plan's SS4.1 still says 1,753 / January 2026: UNVERIFIED.
+% AUDIT (CIT-3b): the title was recorded here as "The SenNet Data Portal", which
+%   is not the deposited title. Corrected above from Crossref and the bioRxiv API.
+
+% ============================================================================
+% SPATIAL STATISTICS: RANDOM-SHIFT NULLS AND SPATIAL CONFOUNDING
+% Added 2026-08-27 (reports/CITATION_AUDIT.md, Task 2). Every entry below was
+% verified from a retrieved source; the "SUPPORTS" line states the specific
+% claim in this project it is for, so nothing here is decorative.
+% ============================================================================
+
+@article{lotwick1982methods,
+  author  = {Lotwick, H. W. and Silverman, B. W.},
+  title   = {Methods for Analysing Spatial Processes of Several Types of Points},
+  journal = {Journal of the Royal Statistical Society, Series B (Methodological)},
+  year    = {1982},
+  volume  = {44},
+  number  = {3},
+  pages   = {406--413},
+  doi     = {10.1111/j.2517-6161.1982.tb01221.x},
+}
+% SUPPORTS: the ORIGIN of the random-shift / toroidal null (this project's N3).
+%   This -- not CellWHISPER -- is what N3 should cite.
+% VERIFICATION: bibliographic record confirmed from Crossref (JRSS-B 44(3):
+%   406-413, 1982) and the Wiley landing page. The attribution of the random
+%   shift to this paper is confirmed from Mrkvicka et al. (2021) SS1, which
+%   states "In point process literature the random shift approach was suggested
+%   already in Lotwick & Silverman (1982) who claim on p.410 that '... it seems
+%   intuitively that any statistics calculated after wrapping onto the torus will
+%   show less discrepancy from independence, and therefore that spurious
+%   significance should not be introduced.'"
+% NOT VERIFIED: the JRSS-B full text itself was NOT rendered (JSTOR/Wiley
+%   paywall). The p.410 quotation above is Mrkvicka's, quoted from the primary.
+%   The published abstract mentions only second-moment estimation and empty-space
+%   methods, so do not attribute anything beyond the toroidal shift to it from
+%   the abstract alone.
+
+@article{mrkvicka2021revisiting,
+  author  = {Mrkvi{\v c}ka, Tom{\'a}{\v s} and Dvo{\v r}{\'a}k, Ji{\v r}{\'i} and Gonz{\'a}lez, Jonatan A. and Mateu, Jorge},
+  title   = {Revisiting the random shift approach for testing in spatial statistics},
+  journal = {Spatial Statistics},
+  year    = {2021},
+  volume  = {42},
+  pages   = {100430},
+  doi     = {10.1016/j.spasta.2020.100430},
+  note    = {arXiv:1911.00240},
+}
+% SUPPORTS: (1) that the torus correction is LIBERAL, and why -- it "makes a
+%   crack in the autocorrelation structure"; (2) that torus shifts assume a
+%   RECTANGULAR window; (3) THE DIRECT OBJECTION TO OUR TILING CHOICE, and this
+%   is the sentence to answer in the paper, quoted verbatim from SS2.1.4 "Shape
+%   of the observation window": "The random shift approach with torus correction
+%   assumes a rectangular observation window. While it is possible to extend the
+%   approach to windows which are finite unions of (aligned) rectangles, such a
+%   procedure would increase the amount of cracks in the autocorrelation
+%   structure. Subsequently, it would increase the liberality of the test of
+%   independence using random shifts with torus correction. The approaches using
+%   minus correction and variance correction can be applied in case of general
+%   (compact) observation windows."; (4) the VARIANCE CORRECTION as the standard
+%   remedy for irregular windows -- compute T_i on W_i = W and (W + v_i), then
+%   standardize, because "the values T_0,...,T_N are now computed from different
+%   amounts of data ... and hence are not directly comparable".
+% VERIFICATION: full text extracted from arXiv:1911.00240 PDF in-session
+%   2026-08-27; all four quotations above are verbatim from that PDF (SS1,
+%   SS2.1.1, SS2.1.3, SS2.1.4). Bibliographic record confirmed from Crossref.
+% CAUTION: the phrase "can also be used for irregular windows", quoted in
+%   reports/NOVELTY_ASSESSMENT.md SSU2, is a PARAPHRASE, not this paper's wording.
+%   The paper's wording is "can be applied in case of general (compact)
+%   observation windows". Use the paper's wording.
+
+@article{hodges2010adding,
+  author  = {Hodges, James S. and Reich, Brian J.},
+  title   = {Adding Spatially-Correlated Errors Can Mess Up the Fixed Effect You Love},
+  journal = {The American Statistician},
+  year    = {2010},
+  volume  = {64},
+  number  = {4},
+  pages   = {325--334},
+  doi     = {10.1198/tast.2010.10052},
+}
+% SUPPORTS: the naming of this project's core problem. A spatially structured
+%   exposure (distance-to-nearest-sender) that is collinear with a spatially
+%   structured random field is the textbook SPATIAL CONFOUNDING setting, and this
+%   is the paper that named it and proposed restricted spatial regression.
+%   Cite it in Methods where N5/N6 are introduced.
+% VERIFICATION: bibliographic record confirmed from Crossref (Amer. Statist.
+%   64(4):325-334, doi 10.1198/tast.2010.10052).
+% NOT VERIFIED: the full text and abstract were NOT rendered (Taylor & Francis
+%   returns 403; Semantic Scholar holds no abstract for this DOI). Its content is
+%   confirmed only INDIRECTLY, from Dupont et al. (2022), whose introduction
+%   cites it as "spatial confounding is widely acknowledged as an issue that
+%   affects spatial models in general (see, eg, Hodges and Reich, 2010; Paciorek,
+%   2010)". Treat the specific technical content as second-hand until a human
+%   opens it.
+
+@article{dupont2022spatialplus,
+  author  = {Dupont, Emiko and Wood, Simon N. and Augustin, Nicole H.},
+  title   = {Spatial+: A novel approach to spatial confounding},
+  journal = {Biometrics},
+  year    = {2022},
+  volume  = {78},
+  number  = {4},
+  pages   = {1279--1290},
+  doi     = {10.1111/biom.13656},
+  pmcid   = {PMC10084199},
+}
+% SUPPORTS: the modern remedy, and the sentence that makes our N5 design legible
+%   to a statistician. Verbatim from the abstract (PMC10084199): spatial
+%   confounding is when "collinearity between covariates and spatial effects can
+%   lead to significant bias in effect estimates", and Spatial+ "reduces the
+%   sensitivity of the estimates to smoothing by replacing the covariates by
+%   their residuals after spatial dependence has been regressed away."
+%   That residualise-the-covariate move is what N6 (receiver-baseline
+%   conditioning) does in this project, and saying so costs one sentence.
+% VERIFICATION: abstract rendered from PMC10084199 in-session 2026-08-27;
+%   bibliographic record confirmed from Crossref.
+
+@article{khan2022restricted,
+  author  = {Khan, Kori and Calder, Catherine A.},
+  title   = {Restricted Spatial Regression Methods: Implications for Inference},
+  journal = {Journal of the American Statistical Association},
+  year    = {2022},
+  volume  = {117},
+  number  = {537},
+  pages   = {482--494},
+  doi     = {10.1080/01621459.2020.1788949},
+}
+% SUPPORTS: the reason we do NOT simply orthogonalise the kernel against the
+%   spatial field. Verbatim from the abstract: "our results and the accompanying
+%   simulations suggest that RSR methods will typically perform worse than
+%   nonspatial methods", and "the problems with RSR models cannot be fixed with a
+%   selection of 'better' spatial basis vectors or dimension reduction
+%   techniques." This is the citation for one Limitations sentence, not more.
+% VERIFICATION: abstract retrieved from the Semantic Scholar Graph API for this
+%   DOI, 2026-08-27; bibliographic record confirmed from Crossref.
+
+@article{zimmerman2022deconfounding,
+  author  = {Zimmerman, Dale L. and Ver Hoef, Jay M.},
+  title   = {On Deconfounding Spatial Confounding in Linear Models},
+  journal = {The American Statistician},
+  year    = {2022},
+  volume  = {76},
+  number  = {2},
+  pages   = {159--167},
+  doi     = {10.1080/00031305.2021.1946149},
+}
+% SUPPORTS: the same Limitations sentence as khan2022restricted, from the
+%   frequentist side -- deconfounding by restriction gives inference for the
+%   fixed effects that is inferior both to the original spatial model and to the
+%   nonspatial model, and gives inferior predictive inference.
+% VERIFICATION: bibliographic record confirmed from Crossref (Amer. Statist.
+%   76(2):159-167). Content confirmed from search-result summaries of the
+%   publisher page and the Semantic Scholar record; the Taylor & Francis full
+%   text was NOT rendered (403). Cite alongside khan2022restricted, not alone.
+
+@book{baddeley2015spatial,
+  author    = {Baddeley, Adrian and Rubak, Ege and Turner, Rolf},
+  title     = {Spatial Point Patterns: Methodology and Applications with R},
+  publisher = {Chapman and Hall/CRC},
+  year      = {2015},
+  doi       = {10.1201/b19708},
+}
+% SUPPORTS: the software-level statement of the constraint, which is the fastest
+%   way to answer objection O3. The spatstat.random help page for rshift.ppp
+%   states verbatim: "The window must be a rectangle. Toroidal shifts are
+%   undefined if the window is non-rectangular." Our tissue windows are not
+%   rectangles, which is exactly the situation N3-occ ran into.
+% VERIFICATION: the rshift.ppp help text was rendered in-session 2026-08-27 from
+%   search.r-project.org/CRAN/refmans/spatstat.random and rdrr.io, and the
+%   sentence is verbatim from it. The BOOK's bibliographic record is confirmed
+%   from Crossref, but the book's own text was not consulted -- if you want to
+%   cite the constraint, cite the rshift documentation (below), not the book.
+
+@misc{spatstat2026rshift,
+  author = {Baddeley, Adrian and Rubak, Ege and Turner, Rolf},
+  title  = {{rshift.ppp}: Randomly Shift a Point Pattern ({spatstat.random} reference manual)},
+  year   = {2026},
+  note   = {"The window must be a rectangle. Toroidal shifts are undefined if the window is non-rectangular." Retrieved 2026-08-27 from https://search.r-project.org/CRAN/refmans/spatstat.random/html/rshift.ppp.html},
+}
+% SUPPORTS: as above. Cite this, not the book, for the rectangular-window
+%   requirement. NOTE: the help page as retrieved carries NO references section,
+%   so it does not itself attribute the toroidal shift to Lotwick & Silverman --
+%   that attribution comes from mrkvicka2021revisiting.
+
+@article{lipsitch2010negative,
+  author  = {Lipsitch, Marc and Tchetgen Tchetgen, Eric and Cohen, Ted},
+  title   = {Negative controls: a tool for detecting confounding and bias in observational studies},
+  journal = {Epidemiology},
+  year    = {2010},
+  volume  = {21},
+  number  = {3},
+  pages   = {383--388},
+  doi     = {10.1097/EDE.0b013e3181d61eeb},
+  pmid    = {20335814},
+  pmcid   = {PMC3053408},
+}
+% SUPPORTS: the correct framing for the A7 test. A7 refits the identical
+%   distance-to-sender kernel with negative-control-probe counts as the response
+%   -- that is a NEGATIVE CONTROL OUTCOME for the estimand itself, and this is
+%   the paper that formalises the construction. Verbatim from the abstract: "We
+%   distinguish 2 types of negative controls (exposure controls and outcome
+%   controls), describe examples of each type from the epidemiologic literature,
+%   and identify the conditions for the use of such negative controls to detect
+%   confounding."
+%   This framing is what separates A7 from the prior art in moses2023voyager and
+%   ren2025systematic, which compute a GENERIC spatial statistic (Moran's I) on
+%   negative controls rather than refitting the model under test.
+% VERIFICATION: abstract and full record retrieved from the NCBI PubMed API
+%   (PMID 20335814), 2026-08-27. Note there is a published erratum,
+%   Epidemiology 21(4):589, doi 10.1097/EDE.0b013e3181e4bfd7 -- CONTENT NOT READ.
+
+% ------------------------------------------- negative controls in spatial omics
+% These two are NOT spatial-statistics methods papers. They are here because they
+% are the prior art for the negative-control-probe diagnostic, and the claim
+% "nobody in this literature reports it" (reports/SUBMISSION_PATCH_2026-08-29.md
+% SS6) is FALSE while they exist. See reports/NOVELTY_ASSESSMENT.md SSU1.
+
+@misc{moses2023voyager,
+  author = {Moses, Lambda and Einarsson, P{\'e}tur Helgi and Jackson, Kayla C. and Luebbert, Laura and Booeshaghi, A. Sina and Antonsson, Sindri Emmanuel and Bray, Nicolas and Melsted, P{\'a}ll and Pachter, Lior},
+  title  = {Voyager: exploratory single-cell genomics data analysis with geospatial statistics},
+  year   = {2023},
+  note   = {bioRxiv 2023.07.20.549945, v2 posted 2023-08-20; PMC10461913. STILL A PREPRINT as of 2026-08-27 -- cite as a preprint},
+  doi    = {10.1101/2023.07.20.549945},
+}
+% SUPPORTS: the closest prior art to Finding 1, and it must be cited approvingly,
+%   not ignored. Verbatim from the Xenium vignette (vig5_xenium.html, retrieved
+%   2026-08-27): "As expected, generally the negative controls are tightly
+%   clustered around 0, while the real genes have positive Moran's I, which means
+%   there is generally no technical artifact spatial trend." And on the mechanism
+%   this project rediscovers: "Generally there are more negative control spots in
+%   the region with higher cell and transcript density, but especially regions
+%   with high cell density, which is not surprising."
+%   OUR DEFENCE, which has to be stated explicitly: a near-zero GLOBAL Moran's I
+%   does not preclude a projection onto one specific covariate. Report our own
+%   Moran's I on the controls next to the kernel amplitude so the reader can see
+%   the two tests disagree.
+% VERIFICATION: bioRxiv API record and the vignette both retrieved 2026-08-27.
+%   Publication status re-checked: Crossref returns only the posted-content
+%   record; there is no journal version.
+
+@article{ren2025systematic,
+  author  = {Ren, Pengfei and Zhang, Rui and Wang, Yunfeng and others and Zhang, Zongxu},
+  title   = {Systematic benchmarking of high-throughput subcellular spatial transcriptomics platforms across human tumors},
+  journal = {Nature Communications},
+  year    = {2025},
+  volume  = {16},
+  doi     = {10.1038/s41467-025-64292-3},
+  pmcid   = {PMC12534522},
+}
+% SUPPORTS: the peer-reviewed instance of the same prior art. Verbatim from the
+%   PMC full text (retrieved 2026-08-27): "Spatial autocorrelation analysis using
+%   Moran's I revealed stronger aggregation of negative control signals in CosMx
+%   6K", and "CosMx 6K detected a higher total number of transcripts but
+%   exhibited reduced spatial variation and elevated negative control signals
+%   compared to Xenium 5K".
+% VERIFICATION: Crossref record (Nat Commun 16, 2025-10-17) plus PMC12534522
+%   full text, both retrieved 2026-08-27. The nature.com page is behind an auth
+%   redirect; PMC is the readable copy. Author list truncated with "others" --
+%   Crossref lists 8+; complete it before camera-ready.

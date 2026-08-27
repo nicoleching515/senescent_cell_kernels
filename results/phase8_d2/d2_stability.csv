@@ -1,0 +1,11 @@
+pair,n_cells,pearson_r,spearman_rho,anchor_sign_flipped,top5_jaccard,top5_n_changed
+dca_seed0 vs dca_seed1,20000,0.5703,0.6113,False,0.0,2000
+dca_seed0 vs dca_seed2,20000,0.9824,0.98399,False,0.6653,402
+dca_seed0 vs raw_seed0,20000,0.72435,0.70616,False,0.3201,1030
+dca_seed0 vs raw_seed1,20000,0.68868,0.673,False,0.261,1172
+dca_seed1 vs dca_seed2,20000,0.57324,0.61213,False,0.0,2000
+dca_seed1 vs raw_seed0,20000,0.50854,0.48051,False,0.0309,1880
+dca_seed1 vs raw_seed1,20000,0.50663,0.47439,False,0.0515,1804
+dca_seed2 vs raw_seed0,20000,0.72415,0.70025,False,0.3236,1022
+dca_seed2 vs raw_seed1,20000,0.68829,0.66649,False,0.2563,1184
+raw_seed0 vs raw_seed1,20000,0.99553,0.99543,False,0.7606,272

@@ -1,0 +1,13 @@
+Atm
+Atr
+Cdkn1a
+Cdkn2a
+Cdkn2b
+Chek1
+Chek2
+Gadd45a
+Hmgb2
+Lmnb1
+Mdm2
+Trp53
+Trp53bp1

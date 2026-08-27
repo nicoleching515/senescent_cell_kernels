@@ -37,13 +37,30 @@ anndata==0.12.19
 # without them, but §4 cannot be re-derived from raw data without them.
 # DeepScence is run with denoise=False because its DCA dependency needs an
 # obsolete TensorFlow stack (see code/_shims/dca).
+# 2026-08-27, task 8.5 / C7-D2: that is still true OF THIS ENVIRONMENT and no pin below
+# changes -- there is deliberately no tensorflow here. DCA now runs OUT OF PROCESS in a
+# separate CPython 3.8.19 + TF 2.4.4 venv built by code/setup_dca_env.sh, reached through
+# code/_shims_dca_bridge. Nothing in that venv is installed here, and nothing here imports
+# it. See reports/CS_PHASE8_D2_DENOISE.md; the isolated environment's full manifest is
+# results/phase8_d2/dca_venv_pip_freeze.txt.
 scanpy==1.11.5
 pointpats==2.5.5
 leidenalg==0.12.0
 igraph==1.0.0
 DeepScence==1.0.0
 senepy==1.0.1
+# kneed: a HARD import of DeepScence (DeepScence/io.py line 17), not a soft dependency -- without it
+# `import DeepScence` raises ModuleNotFoundError. It was missing from these pins and had to be
+# installed by hand after the 2026-08-27 container reset, which means the environment could NOT
+# rebuild itself from this file. Pinned 2026-08-27 at the version then installed.
+kneed==0.8.6
 # formulaic: not installed
+
+# --- human arm H1 / Phase 7 Job A, added 2026-08-27 --------------------------
+# Reads the CellMarker 2.0 human .xlsx once, in code/build_markers_human_spleen.py, to produce
+# the pinned genesets/cellmarker_pin/*.csv.gz. Every downstream script reads the .csv.gz, so
+# openpyxl is needed only to REGENERATE the pin, not to re-run the human-arm builds.
+openpyxl==3.1.5
 
 # --- Reproducibility check, 2026-08-21 ---------------------------------------
 # The README previously flagged, honestly, that numpy drifted 1.26.3 -> 2.4.6

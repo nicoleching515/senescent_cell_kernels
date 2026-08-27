@@ -1,0 +1,26 @@
+cell_type,in_label_set,hub_tissue,hub_cell,hub_num,hub_size,on_panel,usable,tissue_matched
+Red pulp macrophages,True,intestine,macrophage,0,3147,940,yes,no
+Monocytes,True,lung,monocyte,0,351,167,yes,no
+cDC1,True,,,,,0,no_hub,no
+cDC2,True,,,,,0,no_hub,no
+pDC,True,,,,,0,no_hub,no
+Follicular B cells,True,blood,memory b cell,1,1103,267,yes,no
+Marginal zone B cells,True,blood,memory b cell,1,1103,267,yes,no
+Germinal centre B cells,True,blood,memory b cell,1,1103,267,yes,no
+CD4 T cells,True,lung,t cell,0,1053,412,yes,no
+CD8 T cells,True,lung,t cell,0,1053,412,yes,no
+NK cells,True,blood,nk cell,0,242,107,yes,no
+Fibroblastic reticular cells,True,skin,fibroblast,1,1837,482,yes,no
+Sinusoidal endothelium,True,skin,endothelial cell,0,551,164,yes,no
+Endothelial cells,True,skin,endothelial cell,0,551,164,yes,no
+Lymphatic endothelium,True,,,,,0,no_hub,no
+Smooth muscle / capsule,True,heart,smooth muscle cell,0,57,27,yes,no
+Pericytes,True,heart,pericyte,0,49,16,yes,no
+Fibroblasts,True,skin,fibroblast,1,1837,482,yes,no
+Erythroid cells,True,,,,,0,no_hub,no
+Megakaryocytes,True,,,,,0,no_hub,no
+Neutrophils,True,blood,neutrophil,0,1265,381,yes,no
+Mesothelial cells,True,,,,,0,no_hub,no
+Plasma cells,False,intestine,plasma cell,0,384,119,yes,no
+Follicular dendritic cells,False,,,,,0,no_hub,no
+Proliferating cells,False,skin,mitotic cell,0,1089,318,yes,no

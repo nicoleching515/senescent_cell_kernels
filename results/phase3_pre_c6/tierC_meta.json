@@ -1,0 +1,56 @@
+[
+ {
+  "section": "sbr",
+  "arm": "SBR",
+  "n_cells": 127386,
+  "n_used": 114721,
+  "area_mm2": 23.62,
+  "median_nn_um": 6.74,
+  "n_cdkn1a_pos": 5240
+ },
+ {
+  "section": "7448_liver_sbr_Male_10-U1",
+  "arm": "SBR",
+  "n_cells": 187536,
+  "n_used": 162303,
+  "area_mm2": 47.21,
+  "median_nn_um": 7.81,
+  "n_cdkn1a_pos": 18014
+ },
+ {
+  "section": "7260_liver_sbr_Male_26-U1",
+  "arm": "SBR",
+  "n_cells": 202016,
+  "n_used": 180669,
+  "area_mm2": 56.26,
+  "median_nn_um": 8.15,
+  "n_cdkn1a_pos": 11540
+ },
+ {
+  "section": "7239_liver_sbr_Male_52-U1",
+  "arm": "SBR",
+  "n_cells": 83392,
+  "n_used": 75384,
+  "area_mm2": 29.57,
+  "median_nn_um": 8.5,
+  "n_cdkn1a_pos": 17130
+ },
+ {
+  "section": "7361_liver_sbr_Male_2-U1",
+  "arm": "SBR",
+  "n_cells": 193983,
+  "n_used": 161579,
+  "area_mm2": 52.2,
+  "median_nn_um": 8.77,
+  "n_cdkn1a_pos": 32522
+ },
+ {
+  "section": "7450_liver_sbr_Male_10-U1",
+  "arm": "SBR",
+  "n_cells": 93197,
+  "n_used": 81428,
+  "area_mm2": 27.3,
+  "median_nn_um": 9.71,
+  "n_cdkn1a_pos": 11958
+ }
+]

@@ -1,0 +1,159 @@
+{
+ "variants": [
+  {
+   "variant": "B_secondary_senescence_C6_minusA_s10",
+   "base": "v1_curated",
+   "caller": "A_PHASE7_S10_16",
+   "n_base": 35,
+   "n_shared_with_caller": 11,
+   "n_after": 24,
+   "passes_ge30": "NO"
+  },
+  {
+   "variant": "B_secondary_senescence_C6_sourced_s10",
+   "base": "SenMayo+ReactomeSASP",
+   "caller": "A_PHASE7_S10_16",
+   "n_base": 123,
+   "n_shared_with_caller": 4,
+   "n_after": 119,
+   "passes_ge30": "yes"
+  },
+  {
+   "variant": "B_secondary_senescence_C6_minusA_ported",
+   "base": "v1_curated",
+   "caller": "A_ported",
+   "n_base": 35,
+   "n_shared_with_caller": 23,
+   "n_after": 12,
+   "passes_ge30": "NO"
+  },
+  {
+   "variant": "B_secondary_senescence_C6_sourced_ported",
+   "base": "SenMayo+ReactomeSASP",
+   "caller": "A_ported",
+   "n_base": 123,
+   "n_shared_with_caller": 7,
+   "n_after": 116,
+   "passes_ge30": "yes"
+  }
+ ],
+ "gate": [
+  {
+   "b7": "B_secondary_senescence (FROZEN, re-sourced)",
+   "caller": "A_PHASE7_S10_16",
+   "n_b7": 116,
+   "b7_ge30": true,
+   "a_in_b7": 0,
+   "n_A_final": 5,
+   "verdict": "FAIL"
+  },
+  {
+   "b7": "B_secondary_senescence (FROZEN, re-sourced)",
+   "caller": "A_ported",
+   "n_b7": 116,
+   "b7_ge30": true,
+   "a_in_b7": 0,
+   "n_A_final": 33,
+   "verdict": "PASS"
+  },
+  {
+   "b7": "B_secondary_senescence_v1_curated_ported",
+   "caller": "A_PHASE7_S10_16",
+   "n_b7": 35,
+   "b7_ge30": true,
+   "a_in_b7": 11,
+   "n_A_final": 1,
+   "verdict": "FAIL"
+  },
+  {
+   "b7": "B_secondary_senescence_v1_curated_ported",
+   "caller": "A_ported",
+   "n_b7": 35,
+   "b7_ge30": true,
+   "a_in_b7": 23,
+   "n_A_final": 21,
+   "verdict": "PASS"
+  },
+  {
+   "b7": "B_secondary_senescence_C6_minusA_s10",
+   "caller": "A_PHASE7_S10_16",
+   "n_b7": 24,
+   "b7_ge30": false,
+   "a_in_b7": 0,
+   "n_A_final": 5,
+   "verdict": "FAIL"
+  },
+  {
+   "b7": "B_secondary_senescence_C6_minusA_s10",
+   "caller": "A_ported",
+   "n_b7": 24,
+   "b7_ge30": false,
+   "a_in_b7": 12,
+   "n_A_final": 25,
+   "verdict": "FAIL"
+  },
+  {
+   "b7": "B_secondary_senescence_C6_sourced_s10",
+   "caller": "A_PHASE7_S10_16",
+   "n_b7": 119,
+   "b7_ge30": true,
+   "a_in_b7": 0,
+   "n_A_final": 5,
+   "verdict": "FAIL"
+  },
+  {
+   "b7": "B_secondary_senescence_C6_sourced_s10",
+   "caller": "A_ported",
+   "n_b7": 119,
+   "b7_ge30": true,
+   "a_in_b7": 3,
+   "n_A_final": 32,
+   "verdict": "PASS"
+  },
+  {
+   "b7": "B_secondary_senescence_C6_minusA_ported",
+   "caller": "A_PHASE7_S10_16",
+   "n_b7": 12,
+   "b7_ge30": false,
+   "a_in_b7": 0,
+   "n_A_final": 5,
+   "verdict": "FAIL"
+  },
+  {
+   "b7": "B_secondary_senescence_C6_minusA_ported",
+   "caller": "A_ported",
+   "n_b7": 12,
+   "b7_ge30": false,
+   "a_in_b7": 0,
+   "n_A_final": 33,
+   "verdict": "FAIL"
+  },
+  {
+   "b7": "B_secondary_senescence_C6_sourced_ported",
+   "caller": "A_PHASE7_S10_16",
+   "n_b7": 116,
+   "b7_ge30": true,
+   "a_in_b7": 0,
+   "n_A_final": 5,
+   "verdict": "FAIL"
+  },
+  {
+   "b7": "B_secondary_senescence_C6_sourced_ported",
+   "caller": "A_ported",
+   "n_b7": 116,
+   "b7_ge30": true,
+   "a_in_b7": 0,
+   "n_A_final": 33,
+   "verdict": "PASS"
+  }
+ ],
+ "citations": {
+  "v1": "neretti2024dissecting (GSA meeting ABSTRACT -- audit B8, do not cite)",
+  "senmayo_pmid": "35974106",
+  "reactome_sasp_pmid": "(none in MSigDB record)",
+  "distinction_replacements": [
+   "martin2023modelling",
+   "acosta2013 (references.bib)"
+  ]
+ }
+}

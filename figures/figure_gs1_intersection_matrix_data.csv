@@ -1,0 +1,225 @@
+arm,panel,row,col,n_frozen,n_preC6
+M1 mouse liver,BxB,B1_tnfa_nfkb_proximal,B2,15,15
+M1 mouse liver,BxB,B1_tnfa_nfkb_proximal,B3,19,19
+M1 mouse liver,BxB,B1_tnfa_nfkb_proximal,B4,6,6
+M1 mouse liver,BxB,B1_tnfa_nfkb_proximal,B5,16,16
+M1 mouse liver,BxB,B1_tnfa_nfkb_proximal,B6,4,4
+M1 mouse liver,BxB,B1_tnfa_nfkb_proximal,B7,22,14
+M1 mouse liver,BxB,B2_il6_jak_stat3,B1,15,15
+M1 mouse liver,BxB,B2_il6_jak_stat3,B3,21,21
+M1 mouse liver,BxB,B2_il6_jak_stat3,B4,1,1
+M1 mouse liver,BxB,B2_il6_jak_stat3,B5,6,6
+M1 mouse liver,BxB,B2_il6_jak_stat3,B6,1,1
+M1 mouse liver,BxB,B2_il6_jak_stat3,B7,15,3
+M1 mouse liver,BxB,B3_interferon_response,B1,19,19
+M1 mouse liver,BxB,B3_interferon_response,B2,21,21
+M1 mouse liver,BxB,B3_interferon_response,B4,3,3
+M1 mouse liver,BxB,B3_interferon_response,B5,5,5
+M1 mouse liver,BxB,B3_interferon_response,B6,2,2
+M1 mouse liver,BxB,B3_interferon_response,B7,8,4
+M1 mouse liver,BxB,B4_downstream_arrest,B1,6,6
+M1 mouse liver,BxB,B4_downstream_arrest,B2,1,1
+M1 mouse liver,BxB,B4_downstream_arrest,B3,3,3
+M1 mouse liver,BxB,B4_downstream_arrest,B5,2,2
+M1 mouse liver,BxB,B4_downstream_arrest,B6,0,0
+M1 mouse liver,BxB,B4_downstream_arrest,B7,3,11
+M1 mouse liver,BxB,B5_emt_ecm,B1,16,16
+M1 mouse liver,BxB,B5_emt_ecm,B2,6,6
+M1 mouse liver,BxB,B5_emt_ecm,B3,5,5
+M1 mouse liver,BxB,B5_emt_ecm,B4,2,2
+M1 mouse liver,BxB,B5_emt_ecm,B6,0,0
+M1 mouse liver,BxB,B5_emt_ecm,B7,22,8
+M1 mouse liver,BxB,B6_oxidative_stress,B1,4,4
+M1 mouse liver,BxB,B6_oxidative_stress,B2,1,1
+M1 mouse liver,BxB,B6_oxidative_stress,B3,2,2
+M1 mouse liver,BxB,B6_oxidative_stress,B4,0,0
+M1 mouse liver,BxB,B6_oxidative_stress,B5,0,0
+M1 mouse liver,BxB,B6_oxidative_stress,B7,0,2
+M1 mouse liver,BxB,B7_secondary_senescence,B1,22,14
+M1 mouse liver,BxB,B7_secondary_senescence,B2,15,3
+M1 mouse liver,BxB,B7_secondary_senescence,B3,8,4
+M1 mouse liver,BxB,B7_secondary_senescence,B4,3,11
+M1 mouse liver,BxB,B7_secondary_senescence,B5,22,8
+M1 mouse liver,BxB,B7_secondary_senescence,B6,0,2
+M1 mouse liver,A0xB,A0_pre_disjointness,B1,4,
+M1 mouse liver,A0xB,A0_pre_disjointness,B2,0,
+M1 mouse liver,A0xB,A0_pre_disjointness,B3,1,
+M1 mouse liver,A0xB,A0_pre_disjointness,B4,37,
+M1 mouse liver,A0xB,A0_pre_disjointness,B5,1,
+M1 mouse liver,A0xB,A0_pre_disjointness,B6,3,
+M1 mouse liver,A0xB,A0_pre_disjointness,B7,0,
+M1 mouse liver,A0xB,"A_S10_16_mouse (variant, FAILED)",B1,2,
+M1 mouse liver,A0xB,"A_S10_16_mouse (variant, FAILED)",B2,0,
+M1 mouse liver,A0xB,"A_S10_16_mouse (variant, FAILED)",B3,1,
+M1 mouse liver,A0xB,"A_S10_16_mouse (variant, FAILED)",B4,7,
+M1 mouse liver,A0xB,"A_S10_16_mouse (variant, FAILED)",B5,1,
+M1 mouse liver,A0xB,"A_S10_16_mouse (variant, FAILED)",B6,0,
+M1 mouse liver,A0xB,"A_S10_16_mouse (variant, FAILED)",B7,0,
+M1 mouse liver,frozenAxB,A_sender_for_tnfa_nfkb_proximal (sensitivity),B1,0,
+M1 mouse liver,frozenAxB,A_sender_for_tnfa_nfkb_proximal (sensitivity),B2,0,
+M1 mouse liver,frozenAxB,A_sender_for_tnfa_nfkb_proximal (sensitivity),B3,0,
+M1 mouse liver,frozenAxB,A_sender_for_tnfa_nfkb_proximal (sensitivity),B4,35,
+M1 mouse liver,frozenAxB,A_sender_for_tnfa_nfkb_proximal (sensitivity),B5,0,
+M1 mouse liver,frozenAxB,A_sender_for_tnfa_nfkb_proximal (sensitivity),B6,2,
+M1 mouse liver,frozenAxB,A_sender_for_tnfa_nfkb_proximal (sensitivity),B7,0,
+M1 mouse liver,frozenAxB,A_sender_for_il6_jak_stat3 (sensitivity),B1,4,
+M1 mouse liver,frozenAxB,A_sender_for_il6_jak_stat3 (sensitivity),B2,0,
+M1 mouse liver,frozenAxB,A_sender_for_il6_jak_stat3 (sensitivity),B3,1,
+M1 mouse liver,frozenAxB,A_sender_for_il6_jak_stat3 (sensitivity),B4,37,
+M1 mouse liver,frozenAxB,A_sender_for_il6_jak_stat3 (sensitivity),B5,1,
+M1 mouse liver,frozenAxB,A_sender_for_il6_jak_stat3 (sensitivity),B6,3,
+M1 mouse liver,frozenAxB,A_sender_for_il6_jak_stat3 (sensitivity),B7,0,
+M1 mouse liver,frozenAxB,A_sender_for_interferon_response (sensitivity),B1,3,
+M1 mouse liver,frozenAxB,A_sender_for_interferon_response (sensitivity),B2,0,
+M1 mouse liver,frozenAxB,A_sender_for_interferon_response (sensitivity),B3,0,
+M1 mouse liver,frozenAxB,A_sender_for_interferon_response (sensitivity),B4,36,
+M1 mouse liver,frozenAxB,A_sender_for_interferon_response (sensitivity),B5,1,
+M1 mouse liver,frozenAxB,A_sender_for_interferon_response (sensitivity),B6,3,
+M1 mouse liver,frozenAxB,A_sender_for_interferon_response (sensitivity),B7,0,
+M1 mouse liver,frozenAxB,A_sender_for_downstream_arrest (sensitivity),B1,2,
+M1 mouse liver,frozenAxB,A_sender_for_downstream_arrest (sensitivity),B2,0,
+M1 mouse liver,frozenAxB,A_sender_for_downstream_arrest (sensitivity),B3,0,
+M1 mouse liver,frozenAxB,A_sender_for_downstream_arrest (sensitivity),B4,0,
+M1 mouse liver,frozenAxB,A_sender_for_downstream_arrest (sensitivity),B5,1,
+M1 mouse liver,frozenAxB,A_sender_for_downstream_arrest (sensitivity),B6,3,
+M1 mouse liver,frozenAxB,A_sender_for_downstream_arrest (sensitivity),B7,0,
+M1 mouse liver,frozenAxB,A_sender_for_emt_ecm (sensitivity),B1,3,
+M1 mouse liver,frozenAxB,A_sender_for_emt_ecm (sensitivity),B2,0,
+M1 mouse liver,frozenAxB,A_sender_for_emt_ecm (sensitivity),B3,1,
+M1 mouse liver,frozenAxB,A_sender_for_emt_ecm (sensitivity),B4,37,
+M1 mouse liver,frozenAxB,A_sender_for_emt_ecm (sensitivity),B5,0,
+M1 mouse liver,frozenAxB,A_sender_for_emt_ecm (sensitivity),B6,3,
+M1 mouse liver,frozenAxB,A_sender_for_emt_ecm (sensitivity),B7,0,
+M1 mouse liver,frozenAxB,A_sender_for_oxidative_stress (sensitivity),B1,3,
+M1 mouse liver,frozenAxB,A_sender_for_oxidative_stress (sensitivity),B2,0,
+M1 mouse liver,frozenAxB,A_sender_for_oxidative_stress (sensitivity),B3,1,
+M1 mouse liver,frozenAxB,A_sender_for_oxidative_stress (sensitivity),B4,37,
+M1 mouse liver,frozenAxB,A_sender_for_oxidative_stress (sensitivity),B5,1,
+M1 mouse liver,frozenAxB,A_sender_for_oxidative_stress (sensitivity),B6,0,
+M1 mouse liver,frozenAxB,A_sender_for_oxidative_stress (sensitivity),B7,0,
+M1 mouse liver,frozenAxB,A_sender_for_secondary_senescence (sensitivity),B1,4,
+M1 mouse liver,frozenAxB,A_sender_for_secondary_senescence (sensitivity),B2,0,
+M1 mouse liver,frozenAxB,A_sender_for_secondary_senescence (sensitivity),B3,1,
+M1 mouse liver,frozenAxB,A_sender_for_secondary_senescence (sensitivity),B4,37,
+M1 mouse liver,frozenAxB,A_sender_for_secondary_senescence (sensitivity),B5,1,
+M1 mouse liver,frozenAxB,A_sender_for_secondary_senescence (sensitivity),B6,3,
+M1 mouse liver,frozenAxB,A_sender_for_secondary_senescence (sensitivity),B7,0,
+M1 mouse liver,frozenAxB,A_SENDER_FINAL_strict (PRIMARY),B1,0,
+M1 mouse liver,frozenAxB,A_SENDER_FINAL_strict (PRIMARY),B2,0,
+M1 mouse liver,frozenAxB,A_SENDER_FINAL_strict (PRIMARY),B3,0,
+M1 mouse liver,frozenAxB,A_SENDER_FINAL_strict (PRIMARY),B4,0,
+M1 mouse liver,frozenAxB,A_SENDER_FINAL_strict (PRIMARY),B5,0,
+M1 mouse liver,frozenAxB,A_SENDER_FINAL_strict (PRIMARY),B6,0,
+M1 mouse liver,frozenAxB,A_SENDER_FINAL_strict (PRIMARY),B7,0,
+H1 human spleen,BxB,B1_tnfa_nfkb_proximal,B2,15,15
+H1 human spleen,BxB,B1_tnfa_nfkb_proximal,B3,23,23
+H1 human spleen,BxB,B1_tnfa_nfkb_proximal,B4,5,5
+H1 human spleen,BxB,B1_tnfa_nfkb_proximal,B5,15,15
+H1 human spleen,BxB,B1_tnfa_nfkb_proximal,B6,2,2
+H1 human spleen,BxB,B1_tnfa_nfkb_proximal,B7,26,10
+H1 human spleen,BxB,B2_il6_jak_stat3,B1,15,15
+H1 human spleen,BxB,B2_il6_jak_stat3,B3,22,22
+H1 human spleen,BxB,B2_il6_jak_stat3,B4,1,1
+H1 human spleen,BxB,B2_il6_jak_stat3,B5,6,6
+H1 human spleen,BxB,B2_il6_jak_stat3,B6,1,1
+H1 human spleen,BxB,B2_il6_jak_stat3,B7,16,3
+H1 human spleen,BxB,B3_interferon_response,B1,23,23
+H1 human spleen,BxB,B3_interferon_response,B2,22,22
+H1 human spleen,BxB,B3_interferon_response,B4,3,3
+H1 human spleen,BxB,B3_interferon_response,B5,5,5
+H1 human spleen,BxB,B3_interferon_response,B6,1,1
+H1 human spleen,BxB,B3_interferon_response,B7,13,3
+H1 human spleen,BxB,B4_downstream_arrest,B1,5,5
+H1 human spleen,BxB,B4_downstream_arrest,B2,1,1
+H1 human spleen,BxB,B4_downstream_arrest,B3,3,3
+H1 human spleen,BxB,B4_downstream_arrest,B5,3,3
+H1 human spleen,BxB,B4_downstream_arrest,B6,0,0
+H1 human spleen,BxB,B4_downstream_arrest,B7,6,11
+H1 human spleen,BxB,B5_emt_ecm,B1,15,15
+H1 human spleen,BxB,B5_emt_ecm,B2,6,6
+H1 human spleen,BxB,B5_emt_ecm,B3,5,5
+H1 human spleen,BxB,B5_emt_ecm,B4,3,3
+H1 human spleen,BxB,B5_emt_ecm,B6,0,0
+H1 human spleen,BxB,B5_emt_ecm,B7,20,6
+H1 human spleen,BxB,B6_oxidative_stress,B1,2,2
+H1 human spleen,BxB,B6_oxidative_stress,B2,1,1
+H1 human spleen,BxB,B6_oxidative_stress,B3,1,1
+H1 human spleen,BxB,B6_oxidative_stress,B4,0,0
+H1 human spleen,BxB,B6_oxidative_stress,B5,0,0
+H1 human spleen,BxB,B6_oxidative_stress,B7,0,0
+H1 human spleen,BxB,B7_secondary_senescence,B1,26,10
+H1 human spleen,BxB,B7_secondary_senescence,B2,16,3
+H1 human spleen,BxB,B7_secondary_senescence,B3,13,3
+H1 human spleen,BxB,B7_secondary_senescence,B4,6,11
+H1 human spleen,BxB,B7_secondary_senescence,B5,20,6
+H1 human spleen,BxB,B7_secondary_senescence,B6,0,0
+H1 human spleen,A0xB,A_ported_pre_disjointness,B1,4,
+H1 human spleen,A0xB,A_ported_pre_disjointness,B2,0,
+H1 human spleen,A0xB,A_ported_pre_disjointness,B3,1,
+H1 human spleen,A0xB,A_ported_pre_disjointness,B4,45,
+H1 human spleen,A0xB,A_ported_pre_disjointness,B5,2,
+H1 human spleen,A0xB,A_ported_pre_disjointness,B6,2,
+H1 human spleen,A0xB,A_ported_pre_disjointness,B7,0,
+H1 human spleen,A0xB,"A_PHASE7_S10_16 (variant, FAILED)",B1,2,
+H1 human spleen,A0xB,"A_PHASE7_S10_16 (variant, FAILED)",B2,0,
+H1 human spleen,A0xB,"A_PHASE7_S10_16 (variant, FAILED)",B3,1,
+H1 human spleen,A0xB,"A_PHASE7_S10_16 (variant, FAILED)",B4,8,
+H1 human spleen,A0xB,"A_PHASE7_S10_16 (variant, FAILED)",B5,1,
+H1 human spleen,A0xB,"A_PHASE7_S10_16 (variant, FAILED)",B6,0,
+H1 human spleen,A0xB,"A_PHASE7_S10_16 (variant, FAILED)",B7,0,
+H1 human spleen,frozenAxB,A_sender_for_tnfa_nfkb_proximal (sensitivity),B1,0,
+H1 human spleen,frozenAxB,A_sender_for_tnfa_nfkb_proximal (sensitivity),B2,0,
+H1 human spleen,frozenAxB,A_sender_for_tnfa_nfkb_proximal (sensitivity),B3,0,
+H1 human spleen,frozenAxB,A_sender_for_tnfa_nfkb_proximal (sensitivity),B4,43,
+H1 human spleen,frozenAxB,A_sender_for_tnfa_nfkb_proximal (sensitivity),B5,1,
+H1 human spleen,frozenAxB,A_sender_for_tnfa_nfkb_proximal (sensitivity),B6,1,
+H1 human spleen,frozenAxB,A_sender_for_tnfa_nfkb_proximal (sensitivity),B7,0,
+H1 human spleen,frozenAxB,A_sender_for_il6_jak_stat3 (sensitivity),B1,4,
+H1 human spleen,frozenAxB,A_sender_for_il6_jak_stat3 (sensitivity),B2,0,
+H1 human spleen,frozenAxB,A_sender_for_il6_jak_stat3 (sensitivity),B3,1,
+H1 human spleen,frozenAxB,A_sender_for_il6_jak_stat3 (sensitivity),B4,45,
+H1 human spleen,frozenAxB,A_sender_for_il6_jak_stat3 (sensitivity),B5,2,
+H1 human spleen,frozenAxB,A_sender_for_il6_jak_stat3 (sensitivity),B6,2,
+H1 human spleen,frozenAxB,A_sender_for_il6_jak_stat3 (sensitivity),B7,0,
+H1 human spleen,frozenAxB,A_sender_for_interferon_response (sensitivity),B1,3,
+H1 human spleen,frozenAxB,A_sender_for_interferon_response (sensitivity),B2,0,
+H1 human spleen,frozenAxB,A_sender_for_interferon_response (sensitivity),B3,0,
+H1 human spleen,frozenAxB,A_sender_for_interferon_response (sensitivity),B4,44,
+H1 human spleen,frozenAxB,A_sender_for_interferon_response (sensitivity),B5,2,
+H1 human spleen,frozenAxB,A_sender_for_interferon_response (sensitivity),B6,2,
+H1 human spleen,frozenAxB,A_sender_for_interferon_response (sensitivity),B7,0,
+H1 human spleen,frozenAxB,A_sender_for_downstream_arrest (sensitivity),B1,2,
+H1 human spleen,frozenAxB,A_sender_for_downstream_arrest (sensitivity),B2,0,
+H1 human spleen,frozenAxB,A_sender_for_downstream_arrest (sensitivity),B3,0,
+H1 human spleen,frozenAxB,A_sender_for_downstream_arrest (sensitivity),B4,0,
+H1 human spleen,frozenAxB,A_sender_for_downstream_arrest (sensitivity),B5,1,
+H1 human spleen,frozenAxB,A_sender_for_downstream_arrest (sensitivity),B6,2,
+H1 human spleen,frozenAxB,A_sender_for_downstream_arrest (sensitivity),B7,0,
+H1 human spleen,frozenAxB,A_sender_for_emt_ecm (sensitivity),B1,3,
+H1 human spleen,frozenAxB,A_sender_for_emt_ecm (sensitivity),B2,0,
+H1 human spleen,frozenAxB,A_sender_for_emt_ecm (sensitivity),B3,1,
+H1 human spleen,frozenAxB,A_sender_for_emt_ecm (sensitivity),B4,44,
+H1 human spleen,frozenAxB,A_sender_for_emt_ecm (sensitivity),B5,0,
+H1 human spleen,frozenAxB,A_sender_for_emt_ecm (sensitivity),B6,2,
+H1 human spleen,frozenAxB,A_sender_for_emt_ecm (sensitivity),B7,0,
+H1 human spleen,frozenAxB,A_sender_for_oxidative_stress (sensitivity),B1,3,
+H1 human spleen,frozenAxB,A_sender_for_oxidative_stress (sensitivity),B2,0,
+H1 human spleen,frozenAxB,A_sender_for_oxidative_stress (sensitivity),B3,1,
+H1 human spleen,frozenAxB,A_sender_for_oxidative_stress (sensitivity),B4,45,
+H1 human spleen,frozenAxB,A_sender_for_oxidative_stress (sensitivity),B5,2,
+H1 human spleen,frozenAxB,A_sender_for_oxidative_stress (sensitivity),B6,0,
+H1 human spleen,frozenAxB,A_sender_for_oxidative_stress (sensitivity),B7,0,
+H1 human spleen,frozenAxB,A_sender_for_secondary_senescence (sensitivity),B1,4,
+H1 human spleen,frozenAxB,A_sender_for_secondary_senescence (sensitivity),B2,0,
+H1 human spleen,frozenAxB,A_sender_for_secondary_senescence (sensitivity),B3,1,
+H1 human spleen,frozenAxB,A_sender_for_secondary_senescence (sensitivity),B4,45,
+H1 human spleen,frozenAxB,A_sender_for_secondary_senescence (sensitivity),B5,2,
+H1 human spleen,frozenAxB,A_sender_for_secondary_senescence (sensitivity),B6,2,
+H1 human spleen,frozenAxB,A_sender_for_secondary_senescence (sensitivity),B7,0,
+H1 human spleen,frozenAxB,A_SENDER_FINAL_strict (PRIMARY),B1,0,
+H1 human spleen,frozenAxB,A_SENDER_FINAL_strict (PRIMARY),B2,0,
+H1 human spleen,frozenAxB,A_SENDER_FINAL_strict (PRIMARY),B3,0,
+H1 human spleen,frozenAxB,A_SENDER_FINAL_strict (PRIMARY),B4,0,
+H1 human spleen,frozenAxB,A_SENDER_FINAL_strict (PRIMARY),B5,0,
+H1 human spleen,frozenAxB,A_SENDER_FINAL_strict (PRIMARY),B6,0,
+H1 human spleen,frozenAxB,A_SENDER_FINAL_strict (PRIMARY),B7,0,

@@ -280,6 +280,18 @@ normalise depth. So §4.2–4.3 characterise DeepScence as we could run it on th
 not DeepScence as published. It should be reported in exactly those words."* The
 README reports it in none of those words. `BIO_PHASE3.md` "Open / not done" also
 records that **DeepScence scores exist for the two 26 wk sections only**.
+> **⚠ SUPERSEDED 2026-08-27 (Phase 8).** The suggested rewording below quotes
+> **0.93–1.22×** and **1.51–2.85×**. Both are properties of the **two-section,
+> pre-C6 Tier A** base and no longer hold. At 11-section coverage on the frozen
+> strict-33 Tier A the pooled agreement is **1.212×**, and the circular
+> DeepScence vs `Cdkn1a`⁺ pair is **weaker**, not stronger (median 1.071 over
+> eleven sections, vs the 1.51–2.85 quoted here). The README has already been
+> corrected; this block is left **unedited as a record of what was proposed at
+> the time**. Do not apply it. Current numbers:
+> `results/phase3/caller_coverage_gate{,_headline}.csv`, which carry six
+> explicitly-labelled bases. See `reports/CS_PHASE8_CALLERS.md` and
+> `reports/SUBMISSION_PATCH_2026-08-29.md`.
+
 *Additionally:* the README quotes the **Phase 2 sham-only** Jaccard ratios
 (0.60× / 0.88× / 1.66×) which were superseded by the Phase 3 cell-type- **and**
 depth-matched ratios (0.93–1.22× of chance for four of six pairs, but 1.51–2.85× for
@@ -905,7 +917,7 @@ Planted-truth simulation earns causal language. Covariate adjustment does not.
 | **C12** | "This is a finding the plan did not anticipate and **it applies to every real dataset**" | `CS_PHASE1.md` §1 | one simulator | **NO.** Universal generalisation from a single generative model whose density–response coupling was planted. | "…and it will apply to any dataset in which local cell density is associated with the response, which we expect to be common" |
 | **C13** | "The ductular reaction … is recovered by a pipeline that **knows nothing about** arm or timepoint" | `BIO_PHASE3.md` §2.1 | Blind-annotation composition table | **YES — earned.** This is the correct form of the argument (the classifier had no access to the labels) and it is stated precisely. Leave it. | none |
 | **C14** | "SenePy's Kupffer enrichment **is** a hub-size artefact" | `BIO_PHASE3.md` §4.2 | mean score vs on-panel hub size, r = 0.992 across five cell types | **PARTIAL.** r = 0.992 on **n = 5 points** is a strong pattern but a weak sample, and hub size may covary with cell-type transcriptional complexity. The operational recommendation (threshold within cell type) is right regardless. | "SenePy's cross-cell-type score scales almost perfectly with the number of that hub's genes on our panel (r = 0.992, n = 5 cell types), so it is not comparable across cell types" |
-| **C15** | "DeepScence's CoreScence set **is** 69% circular with our response modules" | `README.md` L~300; `BIO_PHASE2.md` §4.2 | 24 of 35 on-panel CoreScence genes are members of ≥1 Tier B module | **YES on the number, PARTIAL on the word.** The 69% is a set-membership fact. "Circular" is the (correct) interpretation but should be introduced as such once. | "…shares 24 of its 35 on-panel genes (69%) with at least one Tier B response module — i.e. scoring senders with DeepScence and reading out a Tier B response is partly circular by construction" |
+| **C15** | "DeepScence's CoreScence set **is** 69% circular with our response modules" | `README.md` L~300; `BIO_PHASE2.md` §4.2 | ~~24 of 35~~ **26 of 33** on-panel CoreScence genes are members of ≥1 Tier B module | **NO on the number as audited, YES on the claim.** ⚠ **Superseded 2026-08-27** (`AUDIT_PHASE8_FACTCHECK.md` M1): this row verified `24/35` against the report, not against files. The denominator 35 is reproducible under no mapping convention; 31 of the 39 CoreScence genes are reachable on the mouse panel through the pinned MGI map and 33 with the documented Title-case fallback. The circularity claim survives and strengthens: **79%**, not 69%. "Circular" is the (correct) interpretation but should be introduced as such once. | "…shares 26 of the 33 CoreScence genes reachable on our panel (79%) with at least one Tier B response module — i.e. scoring senders with DeepScence and reading out a Tier B response is partly circular by construction" |
 
 **One general observation, and it is the most useful thing in this section.** The phase
 reports are consistently well hedged — `CS_PHASE4.md` §5, `CS_PHASE5.md` §6.4,

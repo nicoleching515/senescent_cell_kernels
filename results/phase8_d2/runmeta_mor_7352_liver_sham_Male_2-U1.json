@@ -1,0 +1,32 @@
+{
+ "section": "7352_liver_sham_Male_2-U1",
+ "config": "mor",
+ "n_cells": 139378,
+ "n_genes": 4845,
+ "denoise": false,
+ "random_state": 0,
+ "anchor": "published_CDKN1A",
+ "panel": "ortholog_mapped_MGI_1to1",
+ "min_counts_per_cell": 20,
+ "mor_min_detect_frac": 0.05,
+ "mor_genes_in_estimator": 1711,
+ "mor_cells_fallback_to_libsize": 0,
+ "mor_sf_p01": 0.7961207439348771,
+ "mor_sf_p99": 1.4253569793425485,
+ "mor_sf_spearman_vs_mapped_counts": 0.9185,
+ "direction_log": {
+  "corr_metrics": [
+   "0.1436629",
+   "0.11870426"
+  ],
+  "reverse_log": [
+   true,
+   true
+  ],
+  "node": 0,
+  "reverse": true,
+  "correlation": -0.002429157728329301
+ },
+ "minutes": 8.5,
+ "total_minutes": 8.61
+}

@@ -1,0 +1,96 @@
+panel,pair,section,arm,x,ratio_stratified,z,is_published_section
+a,tierA vs senepy,7001_liver_sham_Male_52-U1,sham,0.0603,0.953,-0.81,False
+a,tierA vs senepy,7239_liver_sbr_Male_52-U1,SBR,-0.1013,0.751,-2.84,False
+a,tierA vs senepy,7248_liver_sham_Male_26-U1,sham,-0.202,0.927,-1.55,False
+a,tierA vs senepy,7250_liver_sham_Male_26-U1,sham,0.0,0.982,-0.41,True
+a,tierA vs senepy,7259_liver_sbr_Male_26-U1,SBR,0.0,1.081,1.08,True
+a,tierA vs senepy,7260_liver_sbr_Male_26-U1,SBR,-0.2127,0.811,-3.26,False
+a,tierA vs senepy,7352_liver_sham_Male_2-U1,sham,0.1378,0.99,-0.16,False
+a,tierA vs senepy,7361_liver_sbr_Male_2-U1,SBR,0.1816,1.092,1.79,False
+a,tierA vs senepy,7435_liver_sham_Male_10-U1,sham,0.0469,0.882,-2.16,False
+a,tierA vs senepy,7448_liver_sbr_Male_10-U1,SBR,0.101,1.062,0.97,False
+a,tierA vs senepy,7450_liver_sbr_Male_10-U1,SBR,0.0192,1.179,2.31,False
+a,tierA vs deepscence,7001_liver_sham_Male_52-U1,sham,1.1914,1.096,1.9,False
+a,tierA vs deepscence,7239_liver_sbr_Male_52-U1,SBR,1.139,1.66,9.7,False
+a,tierA vs deepscence,7248_liver_sham_Male_26-U1,sham,0.7812,1.305,7.12,False
+a,tierA vs deepscence,7250_liver_sham_Male_26-U1,sham,1.0,1.108,2.68,True
+a,tierA vs deepscence,7259_liver_sbr_Male_26-U1,SBR,1.0,1.314,5.62,True
+a,tierA vs deepscence,7260_liver_sbr_Male_26-U1,SBR,1.1573,1.371,8.35,False
+a,tierA vs deepscence,7352_liver_sham_Male_2-U1,sham,0.7948,1.324,6.01,False
+a,tierA vs deepscence,7361_liver_sbr_Male_2-U1,SBR,1.101,1.554,11.77,False
+a,tierA vs deepscence,7435_liver_sham_Male_10-U1,sham,0.8573,1.105,2.08,False
+a,tierA vs deepscence,7448_liver_sbr_Male_10-U1,SBR,1.1598,1.228,4.86,False
+a,tierA vs deepscence,7450_liver_sbr_Male_10-U1,SBR,1.0182,1.336,5.08,False
+a,tierA vs cdkn1a,7001_liver_sham_Male_52-U1,sham,1.9119,1.565,7.35,False
+a,tierA vs cdkn1a,7239_liver_sbr_Male_52-U1,SBR,1.966,1.351,3.46,False
+a,tierA vs cdkn1a,7248_liver_sham_Male_26-U1,sham,1.7925,1.361,5.44,False
+a,tierA vs cdkn1a,7250_liver_sham_Male_26-U1,sham,2.0,1.09,0.81,True
+a,tierA vs cdkn1a,7259_liver_sbr_Male_26-U1,SBR,2.0,1.442,4.86,True
+a,tierA vs cdkn1a,7260_liver_sbr_Male_26-U1,SBR,1.8347,1.329,4.98,False
+a,tierA vs cdkn1a,7352_liver_sham_Male_2-U1,sham,2.0751,1.085,0.98,False
+a,tierA vs cdkn1a,7361_liver_sbr_Male_2-U1,SBR,2.0648,1.737,10.28,False
+a,tierA vs cdkn1a,7435_liver_sham_Male_10-U1,sham,2.0508,1.173,2.12,False
+a,tierA vs cdkn1a,7448_liver_sbr_Male_10-U1,SBR,1.9488,1.77,10.98,False
+a,tierA vs cdkn1a,7450_liver_sbr_Male_10-U1,SBR,2.2188,2.198,11.94,False
+a,senepy vs deepscence,7001_liver_sham_Male_52-U1,sham,3.2116,0.414,-10.18,False
+a,senepy vs deepscence,7239_liver_sbr_Male_52-U1,SBR,3.0816,0.52,-5.47,False
+a,senepy vs deepscence,7248_liver_sham_Male_26-U1,sham,3.0662,0.453,-11.68,False
+a,senepy vs deepscence,7250_liver_sham_Male_26-U1,sham,3.0,2.15,25.97,True
+a,senepy vs deepscence,7259_liver_sbr_Male_26-U1,SBR,3.0,0.381,-8.24,True
+a,senepy vs deepscence,7260_liver_sbr_Male_26-U1,SBR,3.0829,0.506,-8.53,False
+a,senepy vs deepscence,7352_liver_sham_Male_2-U1,sham,2.9511,0.541,-7.8,False
+a,senepy vs deepscence,7361_liver_sbr_Male_2-U1,SBR,2.8394,0.549,-8.8,False
+a,senepy vs deepscence,7435_liver_sham_Male_10-U1,sham,3.0975,0.532,-8.53,False
+a,senepy vs deepscence,7448_liver_sbr_Male_10-U1,SBR,3.0112,0.332,-10.41,False
+a,senepy vs deepscence,7450_liver_sbr_Male_10-U1,SBR,2.9165,0.5,-6.45,False
+a,senepy vs cdkn1a,7001_liver_sham_Male_52-U1,sham,3.9938,1.163,1.8,False
+a,senepy vs cdkn1a,7239_liver_sbr_Male_52-U1,SBR,4.1714,0.842,-1.28,False
+a,senepy vs cdkn1a,7248_liver_sham_Male_26-U1,sham,4.191,1.289,4.01,False
+a,senepy vs cdkn1a,7250_liver_sham_Male_26-U1,sham,4.0,1.369,3.0,True
+a,senepy vs cdkn1a,7259_liver_sbr_Male_26-U1,SBR,4.0,0.979,-0.18,True
+a,senepy vs cdkn1a,7260_liver_sbr_Male_26-U1,SBR,3.9374,1.354,4.15,False
+a,senepy vs cdkn1a,7352_liver_sham_Male_2-U1,sham,4.0315,1.163,1.69,False
+a,senepy vs cdkn1a,7361_liver_sbr_Male_2-U1,SBR,3.9216,1.205,2.65,False
+a,senepy vs cdkn1a,7435_liver_sham_Male_10-U1,sham,4.0415,1.181,2.1,False
+a,senepy vs cdkn1a,7448_liver_sbr_Male_10-U1,SBR,3.9287,1.199,2.05,False
+a,senepy vs cdkn1a,7450_liver_sbr_Male_10-U1,SBR,3.9523,1.391,3.3,False
+a,deepscence vs cdkn1a,7001_liver_sham_Male_52-U1,sham,5.1717,0.995,-0.07,False
+a,deepscence vs cdkn1a,7239_liver_sbr_Male_52-U1,SBR,4.8799,1.83,8.2,False
+a,deepscence vs cdkn1a,7248_liver_sham_Male_26-U1,sham,5.0542,0.994,-0.08,False
+a,deepscence vs cdkn1a,7250_liver_sham_Male_26-U1,sham,5.0,2.849,16.64,True
+a,deepscence vs cdkn1a,7259_liver_sbr_Male_26-U1,SBR,5.0,1.505,5.54,True
+a,deepscence vs cdkn1a,7260_liver_sbr_Male_26-U1,SBR,4.817,1.002,0.02,False
+a,deepscence vs cdkn1a,7352_liver_sham_Male_2-U1,sham,5.1464,0.963,-0.42,False
+a,deepscence vs cdkn1a,7361_liver_sbr_Male_2-U1,SBR,5.1263,1.525,7.33,False
+a,deepscence vs cdkn1a,7435_liver_sham_Male_10-U1,sham,4.8853,0.978,-0.27,False
+a,deepscence vs cdkn1a,7448_liver_sbr_Male_10-U1,SBR,5.1657,1.071,1.01,False
+a,deepscence vs cdkn1a,7450_liver_sbr_Male_10-U1,SBR,4.8058,1.346,3.44,False
+b,tierA vs senepy,"2-section, pre-C6 Tier A (PUBLISHED)",,0.935,0.935,-1.71,True
+b,tierA vs senepy,"2-section, post-C6 Tier A (FROZEN)",,1.007,1.007,0.2,False
+b,tierA vs senepy,"11-section, post-C6 Tier A (FROZEN)",,0.972,0.972,-1.63,False
+b,tierA vs deepscence,"2-section, pre-C6 Tier A (PUBLISHED)",,1.103,1.103,3.14,True
+b,tierA vs deepscence,"2-section, post-C6 Tier A (FROZEN)",,1.179,1.179,5.47,False
+b,tierA vs deepscence,"11-section, post-C6 Tier A (FROZEN)",,1.288,1.288,19.23,False
+b,tierA vs cdkn1a,"2-section, pre-C6 Tier A (PUBLISHED)",,1.017,1.017,0.25,True
+b,tierA vs cdkn1a,"2-section, post-C6 Tier A (FROZEN)",,1.3,1.3,4.25,False
+b,tierA vs cdkn1a,"11-section, post-C6 Tier A (FROZEN)",,1.471,1.471,19.45,False
+b,senepy vs deepscence,"2-section, pre-C6 Tier A (PUBLISHED)",,1.693,1.693,18.18,True
+b,senepy vs deepscence,"2-section, post-C6 Tier A (FROZEN)",,1.693,1.693,18.18,False
+b,senepy vs deepscence,"11-section, post-C6 Tier A (FROZEN)",,0.737,0.737,-15.08,False
+b,senepy vs cdkn1a,"2-section, pre-C6 Tier A (PUBLISHED)",,1.168,1.168,1.97,True
+b,senepy vs cdkn1a,"2-section, post-C6 Tier A (FROZEN)",,1.168,1.168,1.97,False
+b,senepy vs cdkn1a,"11-section, post-C6 Tier A (FROZEN)",,1.211,1.211,7.43,False
+b,deepscence vs cdkn1a,"2-section, pre-C6 Tier A (PUBLISHED)",,2.05,2.05,14.91,True
+b,deepscence vs cdkn1a,"2-section, post-C6 Tier A (FROZEN)",,2.05,2.05,14.91,False
+b,deepscence vs cdkn1a,"11-section, post-C6 Tier A (FROZEN)",,1.255,1.255,10.53,False
+c,deepscence_score,7250_liver_sham_Male_26-U1,sham,-0.35,,,True
+c,deepscence_score,7001_liver_sham_Male_52-U1,sham,0.2906,,,False
+c,deepscence_score,7260_liver_sbr_Male_26-U1,SBR,0.3164,,,False
+c,deepscence_score,7259_liver_sbr_Male_26-U1,SBR,0.3176,,,True
+c,deepscence_score,7448_liver_sbr_Male_10-U1,SBR,0.3451,,,False
+c,deepscence_score,7361_liver_sbr_Male_2-U1,SBR,0.3846,,,False
+c,deepscence_score,7239_liver_sbr_Male_52-U1,SBR,0.3891,,,False
+c,deepscence_score,7352_liver_sham_Male_2-U1,sham,0.4096,,,False
+c,deepscence_score,7248_liver_sham_Male_26-U1,sham,0.4571,,,False
+c,deepscence_score,7435_liver_sham_Male_10-U1,sham,0.4799,,,False
+c,deepscence_score,7450_liver_sbr_Male_10-U1,SBR,0.5577,,,False

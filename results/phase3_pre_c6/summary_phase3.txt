@@ -1,0 +1,199 @@
+====================================================================================================
+PHASE 3 — NULL BATTERY N1-N8 ON REAL MOUSE LIVER (GSE310392, Xenium 5K)
+====================================================================================================
+window 100 um (99th pct of observed distance-to-nearest-sender, in-band sections, primary call)
+lambda grid [7, 50] um, 40 log-spaced points; floor = resolution floor (median NN 6.7-10.6 um), ceiling = window/2
+400 spatial block bootstrap replicates over 100 quantile blocks; receiver labels = 'merged' (Bio Phase 3 stable label families)
+
+SECTION ADMISSIBILITY (Section 8 Test 3, Cdkn1a+ hepatocyte prevalence)
+  in band (PRIMARY, 6 animals): 7259, 7260, 7001, 7248, 7352, 7435
+  over the 20 % ceiling (excluded): 7239, 7448, 7361, 7450
+  below the 1 % floor (excluded): 7250
+
+### 1. NAIVE FITS — in-band sections, tierA_p95, receiver type x module
+n fits 315; sections 6; receiver types 9; modules 7
+lambda_hat railed at a grid bound in 200/315 (63 %): 114 at the 7 um floor, 86 at the 50 um ceiling; interior median 15.6 um
+beta_hat: 223 positive, 92 negative; |beta|/sd(y) median 0.269, p90 0.617
+
+--- PRIMARY: in-band sections, tierA_p95 ---
+fits 315;  naive beta > 0 in 223;  positive AND block-bootstrap CI excludes 0: 160 (51 %)
+null                                        n   medSF               IQR   <=0  >0.5
+N2 matched decoy                          160   0.943 [  0.905,  0.980]  0.00  1.00
+N1 stratified label permutation           160   0.716 [  0.403,  0.882]  0.09  0.66
+N1 on the N5+N6-conditioned residual      160   0.987 [  0.921,  1.058]  0.03  0.95
+N3 torus shift                            160   1.000 [  0.992,  1.008]  0.00  1.00
+N4 rotation                               160   0.964 [  0.867,  1.042]  0.00  0.97
+N5 nuisance conditioning                  160   0.084 [ -0.130,  0.261]  0.38  0.06
+N6 receiver-baseline conditioning         160   0.486 [  0.222,  0.756]  0.12  0.49
+zonation covariate alone                  160   0.843 [  0.510,  0.992]  0.04  0.77
+N5 + N6                                   160   0.082 [ -0.099,  0.252]  0.35  0.06
+N2 + N5 + N6 (combined)                   160   0.082 [ -0.099,  0.249]  0.35  0.06
+N8 scrambled response gene set            160   0.935 [  0.819,  1.054]  0.01  0.97
+
+### 2. SURVIVING FRACTION BY RECEIVER CELL TYPE
+cell type                n    medN   b/sd      N1      N3      N2      N5      N6     zon  N2N5N6
+Biliary/ductular        19   21796  0.199   0.404   1.002   0.920  -0.040   0.486   0.244   0.065
+DC                      10    3064  0.335   0.503   1.004   0.896  -0.188   0.291   0.670  -0.091
+Endothelial             24   22304  0.367   0.871   1.000   0.951   0.146   0.745   0.896   0.128
+Hepatocytes             22   57289  0.273   0.899   0.999   0.978   0.124   0.773   1.043   0.107
+Macrophages             25   13526  0.338   0.854   1.000   0.960   0.107   0.408   0.881   0.101
+Mesenchymal             22   16704  0.303   0.738   1.001   0.954   0.037   0.690   0.954   0.073
+Proliferating            2    3542  0.710  -0.084   1.010   0.950   0.150   0.704   0.823   0.193
+T/NK cells              24    4864  0.444   0.426   1.000   0.923  -0.080   0.170   0.900  -0.043
+vSMCs                   12    3361  0.485   0.696   0.996   0.937   0.222   0.391   0.720   0.215
+
+### 3. SURVIVING FRACTION BY TIER B MODULE
+module                   n   b/sd      N1      N3      N2      N5      N6     zon  N2N5N6      N8
+downstream_arrest        7  0.246   0.801   1.009   0.971   0.737   0.731   0.900   0.756   1.028
+emt_ecm                 33  0.538   0.417   1.000   0.925  -0.009   0.298   0.811   0.019   1.281
+il6_jak_stat3           30  0.318   0.743   1.002   0.938  -0.000   0.599   0.788  -0.012   0.877
+interferon_response     21  0.294   0.809   0.999   0.956   0.095   0.539   0.823   0.160   0.676
+secondary_senescence    36  0.342   0.712   1.000   0.945   0.087   0.459   0.855   0.090   0.975
+tnfa_nfkb_proximal      33  0.305   0.713   1.000   0.960   0.105   0.486   0.876   0.105   0.847
+
+### 4. SENSITIVITY TO THE TEST-3 ADMISSIBILITY RULE
+
+--- over-ceiling sections (Cdkn1a+ hep 22-45 %) ---
+fits 210;  naive beta > 0 in 155;  positive AND block-bootstrap CI excludes 0: 127 (60 %)
+null                                        n   medSF               IQR   <=0  >0.5
+N2 matched decoy                          127   0.953 [  0.921,  0.972]  0.00  1.00
+N5 nuisance conditioning                  127   0.109 [ -0.054,  0.222]  0.33  0.06
+N6 receiver-baseline conditioning         127   0.381 [  0.192,  0.573]  0.12  0.34
+zonation covariate alone                  127   0.726 [  0.587,  0.825]  0.00  0.87
+N5 + N6                                   127   0.097 [ -0.034,  0.214]  0.29  0.05
+N2 + N5 + N6 (combined)                   127   0.098 [ -0.037,  0.215]  0.28  0.05
+N8 scrambled response gene set             50   0.955 [  0.907,  1.068]  0.00  1.00
+
+--- below-floor section (0.48 %) ---
+fits 49;  naive beta > 0 in 34;  positive AND block-bootstrap CI excludes 0: 30 (61 %)
+null                                        n   medSF               IQR   <=0  >0.5
+N2 matched decoy                           30   0.985 [  0.970,  0.991]  0.00  1.00
+N5 nuisance conditioning                   30   0.160 [  0.046,  0.298]  0.20  0.13
+N6 receiver-baseline conditioning          30   0.590 [  0.263,  0.792]  0.10  0.60
+zonation covariate alone                   30   0.814 [  0.596,  0.938]  0.07  0.80
+N5 + N6                                    30   0.124 [ -0.033,  0.267]  0.27  0.10
+N2 + N5 + N6 (combined)                    30   0.124 [ -0.033,  0.268]  0.27  0.10
+
+### 5. ARM CONTRAST WITHIN THE ADMISSIBLE SET (2 SBR animals vs 4 sham animals)
+arm    sections  fits  rep  med b/sd  med SF N5  med SF N2N5N6  med SF N1
+sbr           2   112   60     0.300      0.036          0.053      0.551
+sham          4   203  100     0.392      0.113          0.104      0.759
+  matched-decoy balance PER ARM (Bio Phase 2 §5: never pooled):
+    sbr: max |SMD| before 0.412-0.459, after 0.013-0.033; match rate 1.000-1.000
+    sham: max |SMD| before 0.274-0.387, after 0.019-0.032; match rate 1.000-1.000
+  section-level detection depth vs naive |beta|/sd (Spearman over the six in-band sections, pooled over cell types x modules):
+    rho = +0.143 (p = 0.787, n = 6)
+
+### 6. N7 — SENDER THRESHOLD AND CALLER SENSITIVITY (in-band sections)
+call           prev%  fits  rep  railed  medlam  med b/sd   SF N5  SF N2N5N6   SF N1
+tierA_p90       8.58   322  198    0.71     7.0     0.395   0.069      0.088   0.777
+tierA_p95       4.29   315  160    0.63    13.3     0.326   0.084      0.082   0.716
+tierA_p99       0.86   301   91    0.57    19.7     0.320   0.246      0.247   0.728
+cdkn1a_pos      4.29   322  203    0.73     9.6     0.506   0.385      0.203   0.911
+senepy_p95      3.18   315  155    0.77    18.3     0.476   0.302      0.219   0.895
+senepy_p99      0.63   245  107    0.64    18.2     0.516   0.444      0.283   0.886
+
+### 7. ZONATION-STRATIFIED FITS, HEPATOCYTES (Section 11, T3)
+stratum        fits   med n  railed  med lam  med b/sd  pos&sig   SF N5  SF zon  SF N2N5N6
+all              42   63848    0.74      8.1     0.273       22   0.124   1.043      0.107
+periportal       42   21610    0.86     20.6     0.333       23   0.202   0.995      0.173
+midzonal         42   21300    0.79      7.0     0.337       24   0.227   0.987      0.197
+pericentral      42   20937    0.76     16.2     0.309       19   0.022   0.988     -0.034
+  naive |beta|/sd per module, pooled vs within zone (median over sections):
+stratum                 all  midzonal  pericentral  periportal
+module                                                        
+downstream_arrest    -0.141     0.099       -0.182      -0.111
+emt_ecm               0.141     0.303        0.127       0.219
+il6_jak_stat3         0.419     0.374        0.217       0.218
+interferon_response   0.010     0.275       -0.022       0.299
+oxidative_stress     -0.221    -0.195       -0.256      -0.180
+secondary_senescence  0.255     0.191        0.478       0.224
+tnfa_nfkb_proximal    0.195     0.218        0.168       0.280
+
+### 8. N8 SCRAMBLED-RESPONSE CONTROL (Tier E3 expression-matched)
+module                    n  beta_obs/sd  rand mean  rand sd   SF_N8  pct rand >= obs
+downstream_arrest        45       0.0665     0.0008   0.1479   1.042            0.375
+emt_ecm                  45       0.4185    -0.1431   0.1572   1.304            0.000
+il6_jak_stat3            45       0.1930     0.0264   0.1507   0.896            0.125
+interferon_response      45       0.2180     0.0782   0.1513   0.690            0.200
+oxidative_stress         45      -0.2199    -0.1096   0.1858   0.608            0.770
+secondary_senescence     45       0.1904     0.0046   0.1473   0.982            0.070
+tnfa_nfkb_proximal       45       0.3131     0.0521   0.1627   0.809            0.050
+
+### 9. DeepScence/CoreScence CIRCULARITY (7259)
+sender call           n  beta_full/sd  beta_stripped/sd   ratio
+corescence_p95       49        0.2393            0.2106   0.993
+tierA_p95            49        0.1428            0.1527   1.054
+  per module, CoreScence sender call:
+    downstream_arrest      ratio  1.128 (10 genes removed)
+    emt_ecm                ratio  0.993 (9 genes removed)
+    il6_jak_stat3          ratio  1.004 (5 genes removed)
+    interferon_response    ratio  1.046 (5 genes removed)
+    oxidative_stress       ratio  0.936 (0 genes removed)
+    secondary_senescence   ratio  0.698 (14 genes removed)
+    tnfa_nfkb_proximal     ratio  0.996 (8 genes removed)
+  Tier A n Tier B = 0 genes over all 7 modules (disjointness confirmed); CoreScence n Tier B = 51 genes, per-module fraction 0.00-0.37
+
+### 10. IS THE REGRESSOR A MEASUREMENT OR A SENDER-CALLING RATE?
+   log(median distance to nearest sender) vs log(sender density);
+   a homogeneous Poisson process gives slope exactly -0.5.
+subset                                          n   slope      r2  obs/Poisson med d
+ALL sections x ALL sender definitions          77  -0.524  0.9837              1.034
+cdkn1a_pos only (across sections)              11  -0.486  0.9982              1.034
+tierA percentile calls                         33  -0.515  0.9977              0.985
+in-band sections only                          42  -0.528  0.9829              1.033
+
+   between-section sd of log(lambda_hat), by distance scale (median over 42 celltype x module x call cells):
+     raw microns 0.726 | Poisson-normalised 0.705 | median-NN-normalised 0.696
+   r2 of log(lambda_raw) on log(sender density): median 0.023; slope median -0.097 (a pure density readout would be -0.500)
+
+### 11. WHERE THE NAIVE GRADIENT COMES FROM (unstratified fits)
+   binned curve monotone decreasing (Spearman < 0) in 33/42 section x module fits
+   surviving fraction after adding ONLY receiver cell-type intercepts: median 0.344
+   surviving fraction after the full N5 block: median 0.019
+
+### 12. T2 COMBINED ESTIMATE UNDER N2+N5+N6, DONOR BOOTSTRAP
+   6 animals -> 63 distinct resamples. CASE STUDY per Section 24.1.
+cell type            module                   lam0      b0      SF       donor CI on SF    donor CI on lam(ctrl)
+Hepatocytes          downstream_arrest        50.0  -0.086   0.082 [  -0.204,   0.716] [      7.0,     50.0]
+Hepatocytes          emt_ecm                   7.0   0.198   0.169 [  -0.379,   0.716] [      7.0,     50.0]
+Hepatocytes          il6_jak_stat3             7.0   0.372  -0.021 [  -0.197,   0.162] [      7.0,     50.0]
+Hepatocytes          interferon_response       7.0   0.090  -0.090 [  -0.447,   1.375] [      7.0,     50.0]
+Hepatocytes          oxidative_stress          7.0  -0.355   0.193 [  -0.012,   0.390] [      7.0,     50.0]
+Hepatocytes          secondary_senescence      7.0   0.286   0.063 [  -0.262,   0.245] [      7.0,     50.0]
+Hepatocytes          tnfa_nfkb_proximal        7.0   0.247   0.240 [   0.083,   0.365] [      7.0,     50.0]
+Biliary/ductular     downstream_arrest        50.0   0.054   0.473 [  -3.725,   1.893] [      7.0,     50.0]
+Biliary/ductular     emt_ecm                  36.8   0.120  -0.256 [  -0.751,  -0.068] [      7.0,     50.0]
+Biliary/ductular     il6_jak_stat3            20.5   0.101  -0.430 [  -1.006,  -0.110] [      7.0,     50.0]
+Biliary/ductular     interferon_response      33.0   0.019  -2.030 [  -8.975,   8.349] [      7.0,     30.1]
+Biliary/ductular     oxidative_stress          8.3  -0.441   0.092 [   0.043,   0.166] [      7.0,     50.0]
+Biliary/ductular     secondary_senescence     32.3   0.115   0.005 [  -0.170,   0.133] [      7.0,     50.0]
+Biliary/ductular     tnfa_nfkb_proximal       18.1   0.146   0.023 [  -0.177,   0.172] [      7.0,     50.0]
+Endothelial          downstream_arrest        50.0  -0.085   0.187 [  -0.197,   0.994] [      7.0,     50.0]
+Endothelial          emt_ecm                  19.0   0.334   0.169 [   0.069,   0.273] [      7.0,     50.0]
+Endothelial          il6_jak_stat3            21.0   0.181   0.103 [  -0.401,   0.268] [      7.0,     50.0]
+Endothelial          interferon_response      24.4   0.118   0.245 [  -0.188,   0.413] [      7.0,     50.0]
+Endothelial          oxidative_stress         22.4  -0.280   0.088 [  -0.048,   0.255] [      7.0,     50.0]
+Endothelial          secondary_senescence      7.0   0.310   0.053 [  -0.171,   0.178] [      7.0,     50.0]
+Endothelial          tnfa_nfkb_proximal        7.0   0.397  -0.084 [  -0.160,   0.086] [      7.0,     50.0]
+Macrophages          downstream_arrest        50.0  -0.042  -0.482 [  -1.451,   3.371] [      7.0,     50.0]
+Macrophages          emt_ecm                  23.7   0.429   0.033 [  -0.057,   0.215] [      7.0,     50.0]
+Macrophages          il6_jak_stat3             7.0   0.375  -0.004 [  -0.209,   0.246] [      7.0,     50.0]
+Macrophages          interferon_response       7.0   0.250   0.299 [  -0.064,   0.969] [      7.0,     50.0]
+Macrophages          oxidative_stress          7.0  -0.637   0.024 [  -0.076,   0.059] [      7.0,     50.0]
+Macrophages          secondary_senescence     11.0   0.324   0.138 [   0.095,   0.301] [      7.0,     50.0]
+Macrophages          tnfa_nfkb_proximal       10.9   0.347   0.030 [  -0.111,   0.116] [      7.0,     50.0]
+Mesenchymal          downstream_arrest        50.0  -0.050   0.407 [  -0.830,   2.744] [      7.0,     50.0]
+Mesenchymal          emt_ecm                  23.2   0.307  -0.006 [  -0.146,   0.142] [      7.0,     50.0]
+Mesenchymal          il6_jak_stat3             7.0   0.131  -0.755 [  -1.369,  -0.231] [      7.0,     50.0]
+Mesenchymal          interferon_response       7.0   0.160  -0.343 [  -1.769,   0.190] [      7.0,     50.0]
+Mesenchymal          oxidative_stress          9.6  -0.565   0.145 [   0.001,   0.221] [      7.0,     42.3]
+Mesenchymal          secondary_senescence      9.3   0.225  -0.019 [  -0.236,   0.294] [      7.0,     50.0]
+Mesenchymal          tnfa_nfkb_proximal        7.0   0.309  -0.028 [  -0.141,   0.210] [      7.0,     50.0]
+T/NK cells           downstream_arrest         7.0   0.217   0.582 [   0.009,   0.890] [      7.0,     50.0]
+T/NK cells           emt_ecm                  50.0   0.446  -0.153 [  -0.347,  -0.051] [      7.0,     12.3]
+T/NK cells           il6_jak_stat3            15.3   0.389   0.061 [  -0.046,   0.190] [      7.0,     50.0]
+T/NK cells           interferon_response      14.9   0.313  -0.081 [  -0.303,   0.067] [      7.0,     50.0]
+T/NK cells           oxidative_stress         16.8  -0.337  -0.060 [  -0.244,   0.137] [      7.0,     50.0]
+T/NK cells           secondary_senescence     23.6   0.337  -0.018 [  -0.152,   0.137] [      7.0,     50.0]
+T/NK cells           tnfa_nfkb_proximal       21.1   0.361  -0.107 [  -0.199,  -0.002] [      7.0,     50.0]

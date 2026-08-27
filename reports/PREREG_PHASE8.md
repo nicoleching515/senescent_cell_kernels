@@ -1,0 +1,993 @@
+# Pre-registration — Phase 8 freeze (M1 mouse + H1 human)
+
+**DRAFT for the PI to assemble and commit.** Written by the biology collaborator, 2026-08-27.
+Nothing in this file has been committed and no tag exists yet.
+
+**Companion file, not duplicated here:** `reports/PREREG_PHASE8_genesets.md` is the gene-set
+section (Tiers A–E, both arms, the §11 gate result, the pins, and the gene-set deviation table
+D1–D17). This file covers everything else §15 asks for and references that file rather than
+restating it.
+
+**Freeze status of the H1 data.** No H1 expression value, cell record or annotation has been read
+by any bio agent. Panel membership only (`genesets/h1_candidate/`), which is the sanctioned §12.1
+step-2 screen. `data/raw_h1/` is on disk ahead of the tag; §13 below records that as a declared
+deviation.
+
+---
+
+## 0. What is provisional in this draft
+
+Two agents were running while this was first drafted — the **M1 end-to-end re-run (task 8.7)** and
+the **D2 denoise-cost measurement (task 8.5)**. **D2 has since landed and is resolved**
+(`reports/CS_PHASE8_D2_DENOISE.md`); 8.7 is still in flight. Every number below is marked with
+where it came from, and anything 8.7 will move is marked **PROVISIONAL**. Nothing provisional may
+be frozen as if it were settled.
+
+| Item | State |
+|---|---|
+| Frozen tag hash | **TBD — the tag does not exist yet.** §1 |
+| Composition-matched rerun protocol | **RESOLVED and FILLED (PI decision D15): freeze both variants.** Implemented as `code/run_phase8_compmatch.py`, run on M1, gated on H1. All four previously-`TBD` fields transcribed from `reports/CS_PHASE8_COMPMATCH.md`. **The protocol is inert (1.6 %) where the same variables as covariates remove 85.4 %** — P23. §3.8 |
+| Fitting window | **RESOLVED (PI decision D16): frozen as `100 µm, fixed`**, with the 99th-percentile rule recorded as provenance. §3.2 |
+| Every pooled number in `results/phase3/caller_coverage_gate.csv` | **PROVISIONAL** — the file currently mixes a pre-C6 2-section base with a post-C6 11-section base. The M1 re-run agent is recomputing both bases under one sender definition and labelling the basis in the output. §13 P1 |
+| D2 `denoise` | **RESOLVED (task 8.5): DCA installed and ran; `denoise=False` frozen as a *chosen* value, `denoise=True` as the published-default sensitivity.** No longer provisional and no longer a caveat. §3.9, P22, P26–P28 |
+
+**What 8.7 has and has not yet touched**, by file mtime at the time of writing (2026-08-27
+~06:14 UTC). `phase2_downstream.py` rebuilt the sender calls and module scores on the promoted C6
+gene sets at **05:48–05:53**, so anything written before then is a **pre-C6** number:
+
+| Artefact | Written | Configuration | Status here |
+|---|---|---|---|
+| `results/phase3/summary_phase3.txt` (pinned) | 08-20 19:03 | pre-C6 | The **published baseline**, deliberately unchanged. Source of the §5 benchmark values, all marked **PROVISIONAL** |
+| `results/phase3/sf_summary_c1.csv` (corrected N3/N4) | 04:41 | **pre-C6** | **PROVISIONAL.** The C1 *conclusion* is invariant across six sender calls spanning 0.5–9.0 % prevalence, so it transfers; the numeric SF values do not |
+| `results/phase3/a7_summary.csv` (A7) | 05:19 | **pre-C6 sender calls** | **PROVISIONAL** in magnitude. The three qualitative A7 findings — raw assay not flat, N5 removes it, N2 does not — are what §10.1 and P2 freeze |
+| `results/phase3/caller_*_11sections.csv` | 06:07 | **post-C6** | New. See the P1 table in §13 — the headline moved a second time |
+| `results/phase3/caller_*_verify2sec.csv` | 06:03 | **pre-C6** | Reproduces the committed published tables. **Do not pool it against the 06:07 files** — see P1 caution (i) |
+| `results/phase3/main_fits.csv` | 06:13, still being written | **post-C6** | 8.7 in flight |
+
+Nothing provisional may be frozen as if it were settled, and every provisional row must be re-read
+before the tag (§14 item 6).
+
+---
+
+## 1. Frozen tag
+
+```
+git tag -a phase8-frozen -m "Frozen for human replication, post C1, C7 and the C6 gene-set decision"
+```
+
+**Tag commit hash: `TBD`.**
+
+This is deliberately left empty. The tag does not exist at the time of writing and inventing a
+hash would be worse than a gap. The PI fills it at the moment of tagging, together with:
+
+| Field | Value |
+|---|---|
+| Tag name | `phase8-frozen` |
+| Tag commit hash | **TBD** |
+| Tag date (UTC) | **TBD** |
+| Predecessor tag | `pre-c6-genesets` — captures the mouse gene sets **before** the C6 sets were promoted into `genesets/`. Already created (PI decision D5). Its hash: **TBD**, to be recorded here alongside |
+
+**Nothing in Phase 9 or Phase 10 may begin until this tag and this file are committed.**
+
+---
+
+## 2. Datasets
+
+| Arm | Accession | Tissue | Design | Panel |
+|---|---|---|---|---|
+| **M1 mouse** | **GEO GSE310392** | liver | 11 Xenium Prime 5K sections, sham / SBR fibrosis | Xenium Prime Mouse 5K pan-tissue + 100-gene custom add-on = 5,106 `Gene Expression` features − 9 genotyping probes = **5,097 genes** |
+| **H1 human** | **GEO GSE326743** | **normal spleen** | 7 donors, ages 17 / 31 / 32 / 32 / 37 / 57 / 59, 4 M / 3 F, all normal FFPE | Xenium Prime 5K Human standard + 100 add-on, **5,093 genes**, verified on the `.h5` feature table, byte-identical across SPLN07 / SPLN30 / SPLN44 |
+
+H1 sample-level detail, the 132-series GEO screen that selected it, and the 19 Prime-5K candidates
+it was chosen from: `reports/PHASE7_H1_SCREEN.md`.
+
+**H1 sections and cells:** 7 sections, 2,207,593 cells (SPLN07 249,420 / SPLN14 329,371 /
+SPLN21 220,435 / SPLN24 396,173 / SPLN30 366,199 / SPLN43 331,582 / SPLN44 314,413).
+Source: `reports/PHASE7_H1_SCREEN.md` §3, from the `.h5` shapes at acquisition.
+
+**Control features present on both panels** (Prime 5K stock complement, confirmed on the data of
+both arms): 609 negative control codewords, 40 negative control probes, 21 genomic controls. Audit
+test A7 needs the 40 negative control probes and they are there.
+
+---
+
+## 3. Fixed parameters — not retunable after the tag
+
+Every value in this section was read from the code or from a result file on disk, with the file
+named. Where the planning document's wording and the implementation differ, the **implementation**
+is what is frozen and the difference is declared.
+
+### 3.1 λ grid
+
+`code/run_phase3_nulls.py:86-93` (`lam_grid`), constants at `:59-62`.
+
+```python
+WINDOW_UM    = 100.0
+LAM_LO_FLOOR = 7.0     # the resolution floor: at or below the median NN distance of every section
+N_LAM        = 40
+def lam_grid(dmax=WINDOW_UM, med_nn=0.0):
+    return np.exp(np.linspace(np.log(LAM_LO_FLOOR), np.log(dmax / 2.0), N_LAM))
+```
+
+- **Floor = 7.0 µm**, the resolution floor. Median nearest-neighbour distance is 6.7–10.6 µm across
+  sections, so 7 µm is at or below it for most but **not** all of them.
+- **Ceiling = window / 2 = 50.0 µm.** An exponential with λ > dmax/2 is not distinguishable from a
+  linear trend over [0, dmax].
+- **40 log-spaced points.** Confirmed in `results/phase3/main_fits.csv`: `lam_grid_lo` ≡ 7.0 and
+  `lam_grid_hi` ≡ 50.0 on every row.
+- **Declared:** `lam_grid`'s `med_nn` argument is accepted and never used. The floor is a literal
+  and does **not** adapt per section. This is frozen as-is; it must not be quietly "fixed" for H1,
+  because that would make the two arms non-comparable. If H1's median NN distance is materially
+  different from M1's, that is reported as a limitation, not patched.
+- **"Railed at a grid bound"** is frozen as the Phase-3 definition, `run_phase3_nulls.py:239`:
+  `lam_railed = int(t0 == 0 or t0 == sf.lam.size - 1)` — exact index equality at either end.
+  *Declared:* three other non-equivalent definitions exist in the codebase
+  (`run_phase5_kernels.py:124` exact value equality; `:361` a 0.1 % tolerance for the proximal-vs-
+  downstream control; `sasp_estimators.py:155` a 2 % tolerance, synthetic only). Any railing rate
+  quoted in the paper is the Phase-3 one unless it says otherwise.
+
+### 3.2 Fitting window
+
+**Frozen value: 100 µm, applied as a hard cap on receiver distance in every fit.**
+`code/run_phase3_nulls.py:59` (`WINDOW_UM = 100.0`), enforced at `:169`
+(`& np.isfinite(self.d_obs) & (self.d_obs <= WINDOW_UM)`), and again at `:585`,
+`run_phase3_n8.py:224`, `run_phase3_lamscale.py:52`, `make_phase5_figs.py:94`; re-declared as the
+same literal in `phase4_data.py:36` and `phase3_null_diag.py:31`; it is also COMMOT's distance
+threshold (`phase4_run.py:61`) and the spline `dmax` (`run_phase5_kernels.py:79, 213`).
+
+**RESOLVED by the PI (decision D16): freeze the code's actual behaviour.** §15 says
+"window = 99th percentile of distance-to-nearest-sender". **The code does not compute a percentile
+at run time**, and it never has. The 99th-percentile rule is recorded here as the **provenance** of
+the literal — it is how 100 was chosen, once, from the six Test-3-admissible sections at the
+primary sender call — and **not** as a runtime rule. **What is pre-registered is `window = 100 µm,
+fixed`.** Every published result already used 100 µm, so freezing the literal preserves continuity
+and re-runs nothing.
+
+*(Namespace note: "D16" here is the **PI decision** series of `PHASE8_ROADMAP_STATUS.md`, not the
+gene-set deviation D16 of `PREREG_PHASE8_genesets.md` §12, which is the `kneed`/`openpyxl` pin.)*
+
+The percentile measurement itself is `stage_window`
+(`run_phase3_nulls.py:100-136`, `d_p99 = float(np.percentile(dr, 99))` at `:128`), written to
+`results/phase3/window.csv` (297 rows = 11 sections × 27 section/call/module combinations).
+
+Measured 99th percentiles from that file:
+
+| sender call | in-band (6 sections) range | median over all 11 |
+|---|---|---|
+| `tierA_p95` (**primary**) | **76.0 – 112.1 µm** | 96.1 |
+| `cdkn1a_pos` | 76.3 – 160.9 µm | 95.7 |
+| `senepy_p95` | 118.3 – 186.8 µm | 151.0 |
+| `tierA_p90` | — | 66.3 |
+| `tierA_p99` | — | 230.4 |
+| `senepy_p99` | — | 354.6 |
+
+So 100 µm sits close to the in-band `tierA_p95` median (96.1) and **truncates** the window for the
+sparser calls. **This is a real limitation of the SenePy caller under the frozen window and is kept
+in the deviation table (P8) rather than buried here: under `senepy_p95` all six in-band 99th
+percentiles — 118.3 to 186.8 µm — exceed the 100 µm cap.** Quantified from the same file over those six sections, the
+share of receivers the cap discards is bracketed by `frac_gt_80` and `frac_gt_150`: **7.4–21.5 %
+lie beyond 80 µm and 0.2–2.3 % beyond 150 µm under `senepy_p95`**, against **0.8–7.0 %** and
+**0.0–0.11 %** under the primary `tierA_p95`. A SenePy-called kernel is therefore fitted on a
+materially truncated distance distribution, which bounds what it can claim about reach. **Pre-registered consequence:** the window is a fixed 100 µm on both arms,
+it is not re-derived from H1, and any SenePy-called H1 quantity carries **two** caveats — this
+truncation, and the cross-tissue surrogate-hub problem of §3.7. `results/phase3/window.csv` is regenerated for H1 and reported, but does not change the cap.
+*(The M1 copy of `window.csv` was being rewritten by the 8.7 re-run as this was written; the ranges
+above are from the file as it stood and are **PROVISIONAL** to the extent the new sender calls move
+them. The 100 µm cap itself is a literal and does not move.)*
+
+### 3.3 Kernel families and the selection rule
+
+**Families (5), frozen:** `code/sasp_kernels.py:81` and `code/run_phase5_kernels.py:52` —
+`exponential`, `gaussian`, `powerlaw`, `step`, `spline`.
+
+| family | form | source |
+|---|---|---|
+| exponential | `exp(-d/λ)` | `sasp_kernels.py:48-78` |
+| gaussian | `exp(-0.5 (d/λ)²)` | " |
+| powerlaw | `(1 + d/λ)^(-p)`, `p ∈ {0.5, 1.0, 2.0, 4.0}` (`run_phase5_kernels.py:53`) | " |
+| step | `1[d < λ]` | " |
+| spline | cubic B-spline, `N_KNOTS = 6` (`run_phase5_kernels.py:54`), knots at data quantiles, `dmax = WINDOW_UM` | " |
+
+**Selection rule, frozen: strict argmin AIC. No BIC, no within-section cross-validation, and no
+ΔAIC tolerance band.**
+`run_phase5_kernels.py:176` — `best = min(FAMS, key=lambda f: res[f]["aic"])`, with
+`aic = n·log(rss/n) + 2(k_par + 1)` at `:122`. `d_aic_vs_best` is recorded per row (`:191-192`);
+`summarize_phase5.py:215` scores a family's "win" rate as `(d_aic_vs_best == 0).mean()`, i.e. exact
+ties only. If a ΔAIC < 2 band was ever intended, it is not in the code and is **not** frozen.
+
+**Second, independent and separately reported criterion:** leave-one-**section**-out held-out
+Gaussian log-likelihood (`stage_heldout`, `run_phase5_kernels.py:203-264`; core in
+`phase5_common.py:146-186`; λ chosen on the training folds at `phase5_common.py:168`; winner
+`pp.idxmax(axis=1)` on `ll_per_cell`, `summarize_phase5.py:236`). Both criteria are run under
+`design="naive"` and `design="ctrl"` (the full N5+N6 design), `run_phase5_kernels.py:169-170`.
+**Per §3.6 below, only the `ctrl` result is reportable as a distance effect on this assay.**
+
+### 3.4 Null battery N1–N8, with the corrected N3/N4
+
+| Null | Definition as implemented | Source |
+|---|---|---|
+| **N1** | Sender-label permutation, stratified by cell type, among sender-eligible cells | `run_phase3_nulls.py:379-386` (`permute_within_type`), invoked `:464-465` |
+| **N2** | Matched decoys: greedy 1-1 propensity matching within section and within cell type, caliper **0.25 SD**; contrast is the shared-λ two-kernel fit `fit2_shared` | `phase3_core.py:26-108`; `run_phase3_nulls.py:159-160, 251-253, 265-267` |
+| **N3** | Torus shift of the sender coordinate set — six variants, below | `run_phase3_nulls.py:389-399`; `phase3_null_geom.py` |
+| **N4** | Rotation of the sender set about its centroid — five variants, below | `run_phase3_nulls.py:402-408`; `phase3_null_geom.py` |
+| **N5** | Nuisance-covariate conditioning: 11 named columns + k-NN cell-type composition + 2 segmentation dummies. Columns: `log_counts, log_genes, log_area, log_nucarea, log_dens25, log_dens50, log_dens100, nn1_um, zonation, zonation_sq, log_dist_boundary` | `phase3_core.py:146-154` |
+| **N6** | Receiver neighbour baseline: mean response over the k = 20 nearest neighbours, excluding senders and self | `phase3_core.py:164-173` |
+| **N7** | Sender-definition sensitivity axis: the same fits repeated over the sender calls | `run_phase3_nulls.py:68-69` (`N7_CALLS`), extended with `TIERA_PM_CALLS` at `:77-78` |
+| **N8** | Three products: gene-set disjointness; scrambled-response (real module vs **200** expression-matched random gene sets, same cells, same λ); CoreScence/DeepScence circularity | `run_phase3_n8.py:151-240`, `N_RAND = 200` at `:36` |
+
+**Corrected N3/N4 variant identifiers, frozen exactly as these strings**
+(`phase3_null_geom.py:57-61`):
+
+```
+TRANSLATION = ("N3_orig", "N3_tile", "N3_occ", "N3_occ15", "N3_swap", "N3_snap")
+ROTATION    = ("N4_orig", "N4_tile", "N4_occ", "N4_occ15", "N4_swap")
+```
+
+- `*_orig` — the published bounding-box wrap (`:193-197`). It leaves 23 % of N3's shifted senders
+  and 8 % of N4's outside the tissue (`results/phase3/null_destructiveness.csv`).
+- `*_occ` — accept an offset/angle only if ≥ 95 % of shifted senders land in an occupied 25 µm grid
+  cell (`OCC_TOL = 0.05`, `:52`; `:207-216`). **Degenerate on a liver section** and reported as
+  such, not as a corrected null.
+- `*_occ15` — the same at ≥ 85 % (`OCC_TOL_RELAXED = 0.15`, `:53`).
+- `N3_swap` — relocate senders to random real cell positions without replacement (`:235-240`).
+  **This is a label permutation, not a torus shift**, and reproduces N1; see §3.5 and the footnotes
+  in `reports/CS_PHASE8_C1_CLOSEOUT.md` §4.1.
+- `N3_snap` — `orig`, then snap each sender to the nearest real cell (`:246-247`).
+- `*_tile` — wrap inside the Phase-4 solid-tissue tiles, `TILE_SOLID = 0.98`, `GRID_UM = 25.0`
+  (`:51-54, 258-273`). **These are the clustering-preserving in-tissue variants and are the ones to
+  cite as the corrected N3/N4.**
+- **Declared:** `N4_snap` appears in the header prose of `phase3_null_geom.py:33` but is **not** in
+  the `ROTATION` tuple and is not implemented; `N4_swap` is itself defined as rotate-then-snap
+  (`:249-252`). The rotation family has five variants, not six.
+
+Permutation count for the corrected variants: **1,000** (`results/phase3/sf_summary_c1.csv`,
+`n_perm` column, 13 rows). *Declared inconsistency:* `summarize_phase3_c1.py:191-192` prints a
+header saying "200 permutations" for the N7 sub-table; the data column says 1000 for the primary
+call and the N7 axis was run at 200 (`reports/CS_PHASE8_C1_CLOSEOUT.md` §7). The **data column**
+is authoritative per row.
+
+### 3.5 Surviving fraction
+
+**Two definitions, by null family. Both are frozen; which one applies is determined by the null,
+not by the analyst.**
+
+*Conditioning nulls* (N2, N5, N6, zonation) — ratio of β̂ at the **same** λ index `t0`, where `t0`
+is the naive λ̂ (`run_phase3_nulls.py:236, 256-270`):
+
+```python
+out[f"sf_{k}"] = v / b["base"]
+```
+
+*Perturbation nulls* (N1, N3, N4, and the corrected variants) — `run_phase3_nulls.py:498`, and
+identically at `:678`:
+
+```python
+o[f"{nm}_sf"] = float((rec["beta_obs"] - v.mean()) / rec["beta_obs"])
+```
+
+*N8 scrambled* — `run_phase3_n8.py:203`: `sf_n8 = (bstd - br.mean()) / bstd`.
+
+Bootstrap CI on SF is the ratio of **paired** bootstrap draws (`:297-304`).
+
+**The "reportable fit" filter — the denominator of every SF quoted:** a fit is reportable iff its
+naive amplitude is positive **and** its spatial block-bootstrap CI excludes zero.
+`summarize_phase3.py:85` — `rep = d[(d.beta_naive > 0) & (d.beta_base_lo > 0)]`; identically
+`summarize_phase3_c1.py:50-52`. A prior floor also applies: **`MIN_RECEIVERS = 2000`**
+(`run_phase3_nulls.py:65`, enforced at `:217`).
+
+On M1 this gives 315 fits and **160 reportable** at the primary call
+(`results/phase3/main_fits.csv`, in-band × `tierA_p95` × `stratum == "all"`; the same 315/160
+appears in the pinned `results/phase3/summary_phase3.txt`). **PROVISIONAL** — 8.7 recomputes it.
+
+**Pre-registered consequence, from A7 (§3.6): the reportable-fit filter's nominal 5 % is wrong on
+this assay. Its measured false-positive rate is 9–16 %.**
+
+### 3.6 Bootstrap
+
+**400 replicates over 100 quantile blocks.** `run_phase3_nulls.py:63-64` —
+`N_BLOCKS_SIDE = 10`, `N_BOOT = 400`; blocks built at `:155-156`, `self.nb = N_BLOCKS_SIDE ** 2`
+= 100; resampling at `:276-277` (`rng.multinomial`), CI at the 2.5 / 97.5 percentiles (`:295-296`).
+
+**What the blocks are quantiles of** — `sasp_phase3.py:290-296`: a 10 × 10 grid of **marginal
+quantiles of the x and y cell-centroid coordinates**, computed over **all cells of the section**,
+so blocks are equal-count and none is empty.
+
+**Declared:** per fit, blocks are re-indexed to populated blocks only
+(`run_phase3_nulls.py:226-227`), so the effective block count is ≤ 100 for cell-type-restricted
+fits. Other stages use different counts and are not covered by this parameter:
+`run_phase5_kernels.py:51` `N_BOOT = 200`; `run_phase5_wc.py:57` `N_BOOT = 200`, `N_SPLIT = 20`;
+the proximal-vs-downstream control draws 2,000 donor blocks with **sections** as blocks
+(`run_phase5_kernels.py:366`).
+
+**A7's finding on the bootstrap, pre-registered as a limit on interpretation.**
+`results/phase3/a7_summary.csv`, design `n6n5`, `frac_CI_excludes_zero` over the five control
+responses: **0.091, 0.103, 0.109, 0.127, 0.164** — i.e. **9–16 % against a 5 % nominal**, on
+responses whose true amplitude is known to be zero. The reportable-fit filter therefore admits two
+to three times more fits than its nominal rate implies, in both arms. This is stated in Methods,
+not in a footnote.
+
+### 3.7 Sender callers and their thresholds
+
+**§15 says "the four sender callers and their thresholds". The phrase is ambiguous in the code and
+the pre-registration resolves it explicitly, because two different things are called a caller.**
+
+**(a) Sender *masks* that enter the distance fits — three score families, not four**
+(`sasp_phase3.py:233-271`). DeepScence is **not** among them.
+
+| call | rule | granularity | source |
+|---|---|---|---|
+| `tierA_pNN`, **`tierA_p95` is PRIMARY** | strict `>` NNth percentile of `tierA_score`, **within cell type**, per section; cell types with ≥ 20 cells | per section × cell type | `sasp_phase3.py:256-257`; flags built at `phase2_downstream.py:98-105` for `q ∈ {90, 95, 99}` |
+| `cdkn1a_pos` | `cdkn1a_counts > 0`. No percentile, no stratification | per cell | `sasp_phase3.py:258-259` |
+| `senepy_pNN` | strict `>` NNth percentile of the SenePy hub score, **within cell type**, per section; ≥ 100 finite-score sender-eligible cells | per section × cell type | `sasp_phase3.py:260-268` |
+| `tierApm_pNN` (**pre-registered sensitivity**, PI decision D1) | the same rule scored on `A_sender_for_<module>.txt`, so the mask depends on the response module | per section × cell type × module | `sasp_phase3.py:247-255`; flags at `phase2_downstream.py:107-119` |
+
+`tierA_score` is `scanpy.tl.score_genes(..., ctrl_size=200)` on `A_SENDER_FINAL_strict`
+(`phase2_downstream.py:73`). All masks are finally `& ok`, excluding `Low_quality`, `Unknown`,
+`unknown` (`sasp_phase3.py:33`) and `Proliferating` (`:35`).
+
+**N7 axis, frozen:** `N7_CALLS = ["tierA_p90", "tierA_p95", "tierA_p99", "cdkn1a_pos",
+"senepy_p95", "senepy_p99"]` (`run_phase3_nulls.py:68-69`) — **six** calls, extended to nine with
+`TIERA_PM_CALLS` (`:77-78`) under decision D1. The freeze does **not** claim four.
+
+**(b) The four *scores* in the caller-agreement analysis** —
+`caller_disagree.py:41`, `caller_disagree_all.py:37`:
+`['tierA_score', 'senepy_score', 'deepscence_score', 'cdkn1a_counts']`. Three thresholding rules,
+all top-5 %, all per section: global (`caller_disagree.py:60-62`); within cell type, strata ≥ 50
+cells (`:65-68`); and **depth- and type-matched** — recomputed inside each
+(cell type × within-type transcript-count **decile**), `N_DEPTH_DECILES = 10`, strata ≥ 50 cells
+(`caller_disagree_all.py:83-109`). **The depth- and type-matched rule is the primary one for every
+agreement number.**
+
+**SenePy on H1 is not the same estimator as SenePy on M1.** SenePy 1.0.1 ships 65 hubs across 10
+tissues and **spleen is not among them**; liver is (`results/phase7_jobA/senepy_spleen_coverage.json`:
+`spleen_hub: false`, `n_hubs: 65`, `n_labels: 22`, `n_usable_surrogate: 15`, `n_no_hub: 7`,
+`min_on_panel: 10`). Of the 22 spleen labels, **0 get a tissue-matched hub, 15 get a cross-tissue
+surrogate, and 7 get no SenePy score at all** (cDC1, cDC2, pDC, lymphatic endothelium, erythroid
+cells, megakaryocytes, mesothelial cells). See §13 deviation P4 and
+`reports/PREREG_PHASE8_genesets.md` §13.
+
+### 3.8 Composition-matched rerun protocol at 5 seeds — **FROZEN, BOTH VARIANTS**
+
+**PI decision D15, taken under delegated authority: freeze the matched-decoy protocol *and* its
+covariate-adjusted counterpart.** §15's item now reads "the composition-matched rerun protocol at
+5 seeds **and its covariate-adjusted counterpart**". Implemented and run on the mouse arm;
+built, arm-generic and **gated** on the human arm. Full specification, provenance and results:
+**`reports/CS_PHASE8_COMPMATCH.md`**.
+
+*(Namespace note: "D15" here is the **PI decision** series of `PHASE8_ROADMAP_STATUS.md`, not the
+gene-set deviation D15 of `PREREG_PHASE8_genesets.md` §12 — the `genesets/mouse_c6/` promotion,
+itself superseded by P10.)*
+
+**Which is primary.** The **covariate-adjusted counterpart is PRIMARY** for any claim about how
+much of the gradient is composition. The **matched-decoy protocol is reported alongside**, every
+time, because §15 specifies it and **its inertness is itself a finding** (P23). This is the same
+report-both discipline already applied to the two Tier A variants (P11) and to B7 (§4 of the
+gene-set file).
+
+| Field | Frozen value |
+|---|---|
+| **Producer script** | **`code/run_phase8_compmatch.py`** (driver `code/_compmatch_chain.sh`) |
+| **Matching variables** | Exact stratum: **receiver cell type**. Propensity score: the **20-NN cell-type composition vector** (`knn_frac_<type>`, one column per cell type present in the section, taken by name from `phase3_core.build_blocks`), plus cell-type dummies in the propensity model. **No density, depth, anatomy or segmentation term** — adding them is the `full` comparison variant, not the protocol. On M1 the matching set is 9 columns: `knn_frac_{B-cells, Biliary/ductular, DC, Endothelial, Hepatocytes, Macrophages, Mesenchymal, Proliferating, T/NK cells}` (`compmatch_reruns.csv`, `matched_on`) |
+| **Matching rule** | 1-1 nearest-neighbour on the propensity logit, **without replacement**, **within cell type and within section**, **caliper 0.25 SD** of the within-stratum score sd (`phase3_core.greedy_ps_match`). Estimator: shared-λ two-kernel sender-vs-decoy contrast (`BlockProfiler.beta2_at`) at **λ = λ̂_naive**; SF = β_sender / β_naive; **400 block-bootstrap replicates over 100 quantile blocks** (§3.6), window 100 µm (§3.2) |
+| **Number of seeds** | **5** |
+| **The five literal seed values** | **20260901, 20260902, 20260903, 20260904, 20260905** — chosen outside the range `run_phase3_nulls._expand` can reach, so no rerun accidentally reproduces an existing N2 match |
+| **What the seed controls** | Both the greedy matcher's claim order and the block bootstrap, **but point estimates are computed before the bootstrap**, so the reported between-seed spread is matching variability only |
+| **Covariate-adjusted counterpart (PRIMARY), 3 seed-free variants** | `type_adj` — receiver's own cell-type intercepts; `comp_adj` — the 20-NN composition vector as covariates; `typecomp_adj` — both. Same scopes, same λ̂, same bootstrap. `typecomp_adj` is the exact regression counterpart of the matching set |
+| **Comparison variant** | `full` — the published N2 matching set (adds `log_dens50`, `log_counts`, `zonation`), run at the same five seeds, so the isolation of composition is measured rather than asserted |
+| **Scope** | **Pooled (unstratified) is primary** — it is the fit the §17 composition row is about; per receiver cell type is secondary |
+| **Sections** | `sasp_phase3.IN_BAND` — the six §8 Test 3 admissible sections |
+| **Sender calls** | `tierA_p95` on `A_SENDER_FINAL_strict` (**PRIMARY**) and `tierApm_p95` on the seven per-module sets (the D1 sensitivity) |
+| **Reportable population** | `beta_naive > 0 & beta_base_lo > 0`, identical to `summarize_phase3.sf_table` (§3.5) |
+| **Balance gate** | Master Plan §8 Test 5, \|SMD\| ≤ 0.1. On M1: max \|SMD\| **0.0916 → 0.0352**, gate passes in **100 %** of matches |
+| **Output** | `results/phase3/compmatch_reruns.csv` (per-seed + summary), `results/phase3/compmatch_fits.csv` (fit level) |
+| **Arms** | **Both.** M1 run 2026-08-27. **H1 is gated**: `--arm h1` refuses unless `ARMS['h1']['sections']` is populated *and* `SASP_H1_UNFROZEN=1` is set. Running it on H1 is roadmap item 10.2, after Phase 9 |
+
+**Frozen M1 values** (`results/phase3/compmatch_reruns.csv`, `row_type = summary`,
+`call = tierA_p95`, `scope_kind = pooled`; independently re-read from the file for this
+pre-registration):
+
+| Variant | n reportable | SF | share removed | 95 % CI on SF | across-seed range (sd) |
+|---|---|---|---|---|---|
+| **`comp` — the protocol** | 165 | **0.9837** | **1.6 %** | [0.973, 0.994] | 0.98370 – 0.98397 (1.2 × 10⁻⁴) |
+| `full` — published N2 set | 165 | 0.9855 | 1.4 % | [0.979, 0.992] | 0.98539 – 0.98577 (1.6 × 10⁻⁴) |
+| `comp_adj` | 33 | 0.4989 | 50.1 % | [0.421, 0.606] | seed-free |
+| `type_adj` | 33 | **0.3415** | **65.9 %** | [0.236, 0.402] | seed-free |
+| **`typecomp_adj` — PRIMARY** | 33 | **0.1461** | **85.4 %** | [0.052, 0.246] | seed-free |
+
+Median match rate **0.999871**; the five per-seed pooled SFs are 0.983695 / 0.983887 / 0.983965 /
+0.983714 / 0.983735.
+
+**The harness is the published estimator.** `beta_naive` and `lam_naive` are **bit-identical** to
+`results/phase3/main_fits.csv` on all 142 cells reportable in both (max |Δβ| = 0.000e+00), and the
+`full` variant reproduces the published N2 (five-seed medians 0.9463–0.9499 against 0.9490).
+
+### 3.9 DeepScence run settings
+
+Frozen exactly as currently invoked. `run_deepscence_all.py` (11 sections) and `run_deepscence.py`
+(the preserved 2-section run) are byte-identical in settings.
+
+| Setting | Value | Source |
+|---|---|---|
+| denoise | **`denoise=False` — PRIMARY, and a *chosen* value, not a forced one.** `denoise=True` (the published default) is the pre-registered sensitivity. See the D2 block below | `run_deepscence_all.py:60`, `run_deepscence.py:40`; `reports/CS_PHASE8_D2_DENOISE.md` |
+| `random_state` | `0` | same lines |
+| Anchor | **published `CDKN1A`** (DeepScence's own `io.py::fix_score_direction`), not overridden | `run_deepscence_all.py:12-13` |
+| Minimum counts per cell | **≥ 20** | `run_deepscence_all.py:54`, `run_deepscence.py:35` |
+| Panel, M1 | ortholog-remapped, MGI 1:1, **4,845 of 5,097** panel genes map | `run_deepscence_all.py:32-34, 55-56`; `logs/ds_smoke.log` |
+| Panel, H1 | **native — no remapping.** This is §8's experiment | §8, and `reports/PREREG_PHASE8_genesets.md` §5 |
+| Coverage | **11 / 11 M1 sections** (was 2 / 11), 1.47 M cells | task C7/D1 |
+
+**The four attributes every DeepScence number carries** (§9 reporting standard, one Methods row,
+not scattered caveats): **coverage, denoise state, anchor, panel (native or ortholog-mapped, with
+the mapping rate)**.
+
+**D2 (`denoise`) — RESOLVED. DCA installed, ran, and lost on the merits.**
+
+**§6 path 1 landed; the fallback was not needed.** DCA 0.3.4 runs under TensorFlow 2.4.4 / Keras
+2.4.3 in an isolated CPython **3.8.19** venv, out of process, handing a denoised matrix back to the
+pinned 3.11 stack over plain `.npz`/`.npy`. **The main environment was not modified and has no
+TensorFlow in it**, and every committed `deepscence_*.csv` is byte-identical. `denoise=True`
+completed on **three full M1 sections, both arms** — 7239 and 7259 (SBR) and 7352 (sham) — plus a
+20,000-cell three-seed panel. Recipe: `code/setup_dca_env.sh`; rebuild ≈ 4 minutes.
+
+**The sentence this pre-registration used to carry — "DeepScence as we can run it on this panel,
+not DeepScence as published" — is withdrawn. We ran it as published and chose against it.**
+
+**Reason 1 — §4 (D-b)'s premise is refuted by measurement.** The planning document states that DCA
+denoising "is precisely the step that would normalize depth — the confound under investigation".
+**It is not: denoising RAISES the caller's depth loading by x1.32-1.67**, on three of three sections and
+on both arms (`results/phase8_d2/d2_depth.csv`, Spearman ρ of score against transcript counts):
+
+| section | arm | `denoise=False` | `denoise=True` | Δρ |
+|---|---|---|---|---|
+| 7239 | SBR | 0.3891 | **0.6404** | **+0.2512** |
+| 7259 | SBR | 0.3176 | **0.5314** | **+0.2138** |
+| 7352 | **sham** | 0.4096 | **0.5419** | **+0.1323** |
+
+It also collapses the global top-5 % sender set onto **100.0 % hepatocytes on all three sections**
+(from 64.5 / 71.5 / 97.2 %), with biliary/ductular enrichment falling to ~0, and it changes which
+cells are senders: sender-set Jaccard against the committed run is **0.118–0.280**, i.e. **56–79 %
+of the committed sender set is not called**.
+
+**Reason 2 — the published default is not reliably reproducible.** One fixed 20,000-cell
+subsample, three seeds, nothing else changed (`results/phase8_d2/d2_stability.csv`):
+
+| pair | Pearson *r* | top-5 % Jaccard | cells changing status |
+|---|---|---|---|
+| `denoise=False`, seed 0 vs 1 | **0.9955** | **0.761** | 272 |
+| `denoise=True`, seed 0 vs 2 | 0.9824 | 0.665 | 402 |
+| **`denoise=True`, seed 0 vs 1** | **0.5703** | **0.000** | 2,000 |
+| **`denoise=True`, seed 1 vs 2** | **0.5732** | **0.000** | 2,000 |
+
+**One of three seeds returned a top-5 % sender set sharing no cells at all with the other two**,
+with no diagnostic that anything was different. §10.10 and P26.
+
+**Stated against interest: `denoise=False` is not the de-confounded option either.** It is simply
+*less* depth-loaded than the published default. An explicit library-size normalisation (`lib`,
+below) cuts the caller's depth loading by 74 % and 93 % and changes 46 % and 100 % of its sender
+calls. **The frozen caller is depth-loaded.**
+
+**Also frozen: the two §6-path-3 normalisation configurations, with `mor`'s inadequacy stated.**
+§6 names median-of-ratios (*poscounts*); measured on this sparse 5K panel it removes only
+**11.4–23.6 %** of log-depth variance (p90/p10 depth ratio 11.0 → 8.7–10.0,
+`d2_normalisation_strength.csv`) and returns a clean null on four sections — **a null about a weak
+normalisation, not about the caller.** The `lib` configuration removes **100 %** (p90/p10 → 1.000)
+and moves the caller a great deal: ρ 0.3176 → **0.0819** on 7259 and 0.4096 → **0.0289** on 7352
+(−74 %, −93 %), with 46.4 % and 100 % of the committed sender set no longer called, and the call
+set **broadening** across cell types rather than concentrating. Both configurations are in the
+frozen list; **`mor` may not be reported as evidence that normalisation cannot move this caller.**
+
+**Determinism control — a positive result, and the floor everything else is read against.** Re-run
+at the same seed, the harness reproduces the committed scores at Pearson *r* = **0.9999991**
+(7239, 24 of 75,384 calls moving) and **0.9999999** (7259, 2 of 114,721). 7259's committed score is
+`deepscence_sbr.csv`, **written 2026-08-20, before two container rebuilds** — so **the preserved
+two-section base is not merely intact on disk, it is re-derivable from raw data in the rebuilt
+environment.** Every effect above is read against these two floors and against the seed-to-seed
+floor (*r* ≈ 0.996, Jaccard ≈ 0.76). P28.
+
+**Frozen consequence for H1.** The DCA environment carries forward, so §8's free experiment runs at
+the published default on **both** arms — which removes `denoise=False` from the list of things that
+could explain a mouse-only artefact. Budget CPU time or a CUDA-11 image: TensorFlow 2.4 could not
+use this box's GPU (wants CUDA 11; absent) and fell back to CPU.
+
+**D3 re-anchoring, frozen.** The primary alternative anchor is an **eight-gene proliferation set**
+(`Kif20a Ncaph Anln Ect2 Gtse1 Uhrf1 Fen1 Clspn`), chosen because every member is on the mouse
+panel and absent from **every** `A_*.txt` and `B_*.txt`; the script asserts this at run time.
+**`Lmnb1`, which §7 of the planning document proposes, is itself in `B_downstream_arrest` and
+`B_secondary_senescence` and must not be the primary anchor** — it is reported as a secondary. All
+anchor decisions are taken on the Spearman correlation **after linearly removing the rank of log
+transcript counts from both variables**; on the raw correlation every anchor on this panel is a
+detection-rate readout. Source: `reports/CS_PHASE8_CALLERS.md` §5,
+`results/phase3/deepscence_anchor_decisions.csv`.
+
+**Sign-invariant summary, pre-registered as the form to carry to H1**: rank by `|score|` as well as
+by score. On M1 the Tier A–DeepScence agreement is `1.285×` chance under `|score|`, above chance in
+10 of 11 sections — as high as either signed version, so it cannot be an artefact of the anchor.
+H1's anchor problem will recur and its polarity may not be recoverable at all.
+
+### 3.10 Gene sets — Tier A–E membership
+
+**Frozen in `reports/PREREG_PHASE8_genesets.md`, which is the gene-set section of this
+pre-registration.** Summary of what that file fixes:
+
+- **Tier A PRIMARY: `A_SENDER_FINAL_strict`, n = 33 on both arms**, disjoint from all seven
+  response modules (PI decision D1).
+- **Pre-registered sensitivity: the seven `A_sender_for_<module>` sets**, each disjoint from the
+  one module it is paired with. Gated in the same run; both gates must pass.
+- **Tier B: seven modules.** M1 126 / 68 / 100 / 190 / 125 / **31** / 108; H1 120 / 71 / 126 / 231 /
+  113 / 36 / 116.
+- **Tier C** ligand–receptor, **Tier D** nuisance (13 covariate names, arm-specific anatomical
+  covariate: liver zonation for M1, red pulp / white pulp for H1), **Tier E** controls.
+- **Frozen directories:** `genesets/` (mouse, now carrying the promoted C6 sets) and
+  `genesets/human/`. `variants/` is reported but never used.
+  `genesets/human/FROZEN_MANIFEST.csv` — 35 frozen files, 8 variants, SHA-256 per file.
+- **§11 gate: PASS on both arms.** Re-verified for this draft; see §4.
+
+### 3.11 Section admissibility (M1)
+
+Frozen from `results/phase3/summary_phase3.txt` (pinned, md5 `ecf86b9ca5460f31290e2f4c9e822ea2`),
+§8 Test 3 on `Cdkn1a`⁺ hepatocyte prevalence:
+
+- **In band, PRIMARY, 6 animals:** 7259, 7260, 7001, 7248, 7352, 7435.
+- Over the 20 % ceiling, excluded: 7239, 7448, 7361, 7450.
+- Below the 1 % floor, excluded: 7250.
+
+**H1 has no analogue of this rule** and none is invented: all 7 spleens are normal, there is no
+disease contrast, and the admissibility rule is `Cdkn1a`⁺-prevalence-based. **Pre-registered: all
+7 H1 sections are analysed; the A3 prevalence band (1–20 %, ≥ 200 senders, ≥ 5,000 non-senders) is
+reported per section and per caller, and is a *reported* quantity, not an exclusion rule, on H1.**
+For the SenePy caller, A3 is evaluated on the subset of cells that receive a SenePy score at all,
+and the two denominators are stated separately (§3.7).
+
+---
+
+## 4. The §11 disjointness gate is now enforced automatically
+
+`B_oxidative_stress` clears the ≥ 30 floor by exactly one gene on the mouse arm (**31**), and that
+gene is **`Junb`**, from GSE310392's 100-gene custom add-on. Under the stock-panel-only definition
+(5,006 rows) mouse B6 is **30** — the floor, margin 0.
+
+**New in this draft: `code/gate_genesets_guard.py`** runs the gate on **both arms** and exits
+non-zero if either fails, and it is wired to fire automatically:
+
+- **`.githooks/pre-commit`** (installed via `git config core.hooksPath .githooks`) blocks any commit
+  that stages a file under `genesets/` or either mouse panel file until the gate passes.
+- **`.claude/settings.json`** declares a `PostToolUse` hook on `Write|Edit|NotebookEdit` running
+  `code/hook_geneset_gate.sh`, so an agent editing a gene set fires the gate immediately.
+- A SHA-256 manifest of 96 watched gene-set and panel files
+  (`genesets/.geneset_manifest.json`) names *which* file moved.
+
+The human half **delegates to `code/gate_disjointness_human.py` unchanged**, as a subprocess — that
+script is the gate of record and already exits non-zero. The mouse half re-applies the same §11
+assertions read-only to the **promoted `genesets/*.txt`** that the pipeline actually reads; the
+existing mouse gate lives inside `build_genesets_mouse_c6.py`, which gates the sets it is *building
+in memory* and writes files as a side effect, so it is the wrong instrument for a post-change check.
+
+**Current verdict: PASS on both arms.** Mouse: A = 33; B = 126 / 68 / 100 / 190 / 125 / **31** /
+108; A ∩ B_k = 0 for all seven; all seven per-module sensitivity sets ≥ 15 and disjoint from their
+own module. Human: delegated gate exits 0, frozen configuration PASS.
+
+**Correction to `reports/PREREG_PHASE8_genesets.md` §3.1 and deviation D10.** That file states that
+"any later change that removes even one gene from mouse B6 fails the §11 gate". **Measured, it does
+not.** On the authoritative 5,097-gene panel B6 has n = 31 against a floor of 30, so removing one
+gene leaves exactly 30 and the gate still **passes**; removing two fails. The one-gene statement is
+true only under the CSV-only 5,006-gene definition, where B6 is already 30. Verified by
+falsification against the guard: dropping 1 gene from mouse B6 → gate PASS; dropping 2 → gate FAIL;
+injecting `Junb` into `A_SENDER_FINAL_strict` → gate FAIL. **The correct pre-registered statement
+is: mouse B6 has a margin of exactly one gene, it is the only module anywhere near the floor, it is
+the module carrying a documented source substitution, and it should be read as the weakest of the
+seven independently of whether it passes.**
+
+---
+
+## 5. Named primary outcome
+
+**PRIMARY OUTCOME — the reach bound.**
+
+> The **surviving fraction of the naive distance-to-nearest-sender amplitude under the combined
+> N2 + N5 + N6 nuisance design**, at the primary sender call `tierA_p95` on the strict-33 Tier A,
+> taken as the **median over the arm's reportable fits** (positive naive amplitude, spatial
+> block-bootstrap CI excluding zero, ≥ 2,000 receivers), reported with its paired-bootstrap
+> interquartile range; **together with the controlled amplitude `|β| / sd(y)` in response-SD units,
+> compared against that arm's own 80 %-power detectable bound.**
+
+One number per arm, one sender definition, one design. The per-module Tier A sets are the
+pre-registered sensitivity and are reported alongside (decision D1), not instead.
+
+**Why this and not a length constant.** λ̂ rails at a grid bound in a majority of M1 fits, so a
+fitted length constant is not the estimand; the amplitude and its survival under conditioning are.
+This is the operational form of the question the PI has kept — *how far does senescence signalling
+reach* — answered as a bound.
+
+**M1 benchmark values, PROVISIONAL** (pre-C6; from the pinned
+`results/phase3/summary_phase3.txt`, primary call, 160 reportable fits; task 8.7 recomputes all of
+them under the promoted C6 sets):
+
+| Quantity | M1 value | Source |
+|---|---|---|
+| Naive amplitude, median `\|β\|/sd(y)` | **0.326** | `summary_phase3.txt` §6, `tierA_p95` row |
+| SF, N2 + N5 + N6 | **0.082 [−0.099, 0.249]** | `summary_phase3.txt` §1 |
+| SF, N5 alone | 0.084 | " |
+| SF, N1 | 0.716 | " |
+| SF, N2 matched decoy | 0.943 | " |
+| Controlled amplitude | 0.027 response-sd | `reports/CS_PHASE3.md` §, derived |
+| 80 %-power detectable bound | **0.203 response-sd** (SE 0.073) | `reports/CS_PHASE3.md`, `reports/BIO_DELIVERABLE6_DISCUSSION.md` |
+| λ̂ railed at a grid bound | 63 % (200/315) | `summary_phase3.txt` §1 |
+| Corrected N3 / N4 (tile) | **0.974 / 0.962** | `results/phase3/sf_summary_c1.csv` |
+
+---
+
+## 6. Replication criterion — written before any H1 outcome is computed
+
+H1 is scored against these four criteria, fixed now. **All thresholds are absolute, not
+"whatever M1 turns out to be."**
+
+**R1 — primary (the bound replicates).** H1 replicates M1 iff the H1 median SF under
+N2 + N5 + N6, at `tierA_p95`, over H1's reportable fits, has a **paired-bootstrap interval that
+includes 0** *and* an **upper limit below 0.50**. (M1: 0.082 [−0.099, 0.249] — includes 0, upper
+limit 0.249.)
+
+**R2 — amplitude (nothing above the bound).** H1's median controlled amplitude `|β|/sd(y)` under
+N2 + N5 + N6 is **below H1's own 80 %-power detectable bound**, computed from H1's own standard
+error by the same rule that produced M1's 0.203. R2 is evaluated with H1's bound, not M1's, because
+the arms differ in n, prevalence and depth.
+
+**R3 — geometric predictions (must replicate in any tissue).** These are properties of point
+patterns, not of biology, and a failure means a pipeline is broken:
+ (a) **Poisson identity** — median distance-to-nearest-sender against sender density fits the
+ homogeneous-Poisson slope of −1/2 with **r² ≥ 0.95** (M1: 0.984);
+ (b) **λ̂ railing rate** is reported for both arms; no threshold is set, because it is diagnostic;
+ (c) **null destructiveness** — every in-tissue N3/N4 variant retains **≥ 95 %** of shifted senders
+ with a real neighbour inside the 100 µm window (M1: 96.6–100 %), and the published bounding-box
+ variants do not (M1: 77 % / 92 %).
+
+**R4 — non-replication (outcome B).** H1 fails to replicate iff the H1 SF interval under
+N2 + N5 + N6 **excludes 0** *and* the controlled amplitude exceeds H1's own detectable bound in
+**≥ 2 of the 7** Tier B modules. On R4 the mouse arm is **not** dropped: both arms are reported and
+the candidate explanations are named in advance (species, tissue — confounded by design and not
+separable — prevalence, panel, sender-caller behaviour, architecture, donor variance), together
+with the follow-up that would distinguish them (a human liver arm at adequate panel depth, which
+does not currently exist publicly).
+
+**R5 — hard prerequisites, checked before R1–R4 are computed.** A2 (disjointness on the real H1
+panel — pre-verified: passes), A5 (matched-decoy contrast, |SMD| ≤ 0.1), and **A7 (negative-control
+kernel flat under the N5-conditioned design, pooled over sections)**. A7 on H1 is **only adequately
+powered pooled across sections** — one spleen section cannot deliver it; seven can (M1's per-fit
+resolution is ±0.137 SD, 1.8× larger than the conditioned biological amplitude, while the
+section-clustered pooled CI half-width is ±0.018 SD). Failure of A2 or A5 → **outcome C**.
+
+**Bootstrap scope on H1.** Section-level bootstrap only, labelled as such. Donor count is 7 and the
+donor bootstrap is not run.
+
+---
+
+## 7. §18 outcome table — decided before looking
+
+| | Outcome | What it means, and what we do |
+|---|---|---|
+| **A** | **Both arms agree, no kernel above bound.** | The strongest version. Two species, two tissues, two labs: the distance-dependent SASP response is not separable from technical and compositional confounding at achievable power. Reported with the corrected null battery, A7, and the measured 9–16 % false-positive rate as the supporting evidence for *why* the bound is the honest answer. |
+| **B** | **H1 shows a surviving kernel** (criterion R4). | Report both arms; do not drop mouse. Hypothesise: species, **tissue** (confounded by design, not separable), prevalence, panel, sender-caller behaviour, architecture, donor variance. Name the distinguishing follow-up: a human liver arm at adequate panel depth. |
+| **C** | **H1 fails A2 or A5.** | A data-availability finding, one honest paragraph, and move to the next candidate in the §12.1 screen (runners-up: GSE336890 kidney, GSE335963 bone marrow). |
+| **D** | **The confound structure differs but the null result does not.** | The confound is context-specific, so no published characterisation from a different dataset can be trusted. Strengthens the case for running the battery every time. |
+| **E** | **C1 changes M1's N3 result.** | Handled in the correction ledger. **Already resolved: it does not.** N3-tile 0.974 and N4-tile 0.962 against the published 1.000 and 0.964, invariant across six sender calls spanning 0.5–9.0 % prevalence (`results/phase3/sf_summary_c1_n7.csv`). *Those values are **PROVISIONAL** — pre-C6 — but the invariance across a 0.5–9.0 % prevalence range and three unrelated sender callers is a property of the section outline and the sender point pattern, so the conclusion transfers even though the numbers will move.* Contribution 3 survives; what changes is that N3-occ is declared degenerate and N3-swap is declared a label permutation, not a corrected torus shift. |
+| **F** | **DeepScence's instability appears in H1 too.** | §8's experiment. A real limitation of a widely used tool, verifiable by anyone. See §8 for the prediction and its falsifier. |
+
+Outcomes are not mutually exclusive: A or B is the primary axis, D, E and F are orthogonal and any
+combination may be reported.
+
+---
+
+## 8. The §8 DeepScence prediction — stated before H1 runs
+
+**CoreScence is a human gene set.** On M1 it runs ortholog-remapped (4,845 of 5,097 panel genes);
+**on H1 it runs natively, exactly as published, with no remapping.** That separates two explanations
+currently confounded: is DeepScence's observed behaviour a property of *our mouse adaptation*
+(remapping loss, `denoise=False`), or a property of *the published tool*?
+
+**D2 has already removed one half of that confound.** The DCA environment now exists
+(`code/setup_dca_env.sh`, §12), so `denoise=True` is runnable on **both** arms — `denoise=False`
+can no longer be offered as the explanation for a mouse-only artefact, and the H1 comparison is
+run at both denoise states. It also supplies a sixth prediction, below, from a direction M1 has
+already measured.
+
+**PREDICTION, registered before any H1 expression value is read: it is a property of the tool, and
+it will recur natively in H1.** Concretely, and each falsifiable on its own:
+
+| # | Prediction on H1 (7 sections) | Falsified if |
+|---|---|---|
+| **P-i** | DeepScence's score correlates **positively** with per-cell transcript counts (Spearman ρ) in **≥ 5 of 7** sections, magnitude comparable to M1's +0.29 … +0.56 | ρ is null or negative in ≥ 3 of 7 |
+| **P-ii** | The published `CDKN1A` anchor is **weak, unstable or inverted** — depth-partialled fold-split sign stability < 0.90 — in **≥ 1 of 7** sections | all 7 sections have stability ≥ 0.90 |
+| **P-iii** | The **sign-invariant** (`\|score\|`) depth- and type-matched agreement with the Tier A caller is **above chance, pooled** (ratio > 1.10) | pooled ratio ≤ 1.05, or below chance |
+| **P-iv** | CoreScence circularity with the frozen Tier B modules is **≈ 88 %** natively | materially below 88 % on the native panel |
+| **P-v** | Within cell type, DeepScence is **bottom-of-the-depth-distribution selecting** (Q5/Q1 < 1) in ≥ 5 of 7 sections, as it is in all 11 M1 sections | Q5/Q1 > 1 in ≥ 3 of 7 |
+| **P-vi** *(new, from D2)* | Switching `denoise=True` on H1 **raises** the score's depth loading rather than lowering it, as it does on 3 of 3 M1 sections (Δρ +0.13 … +0.25) — i.e. §4 (D-b)'s premise fails natively too | Δρ ≤ 0 in ≥ 5 of 7 H1 sections, which would make the M1 result an artefact of ortholog remapping |
+| **P-vii** *(new, from D2)* | The `denoise=True` seed instability recurs: **≥ 1** of 3 seeds on an H1 section gives a top-5 % sender set with Jaccard < 0.30 against the others | all three seeds agree at Jaccard ≥ 0.60, as `denoise=False` does on M1 |
+
+**The evidence already leans one way, and this is recorded so the prediction is not read as
+neutral.** CoreScence is **88 % circular with the frozen Tier B modules on the human panel**
+(29 of 33 on-panel CoreScence genes are in ≥ 1 Tier B module —
+`results/phase7_jobA/gate_result_human.json`), against 76 % under the superseded curated B7 and
+**79 %** in the pre-C6 mouse arm (26 of the 33 CoreScence genes reachable on the mouse panel;
+`results/phase7_jobA/corescence_circularity_mouse.json`). Under the promoted C6 sets the mouse arm
+is **also 29/33 = 88 %**. **That 88 % is measured natively and cannot be attributed to ortholog
+remapping.** B7 alone accounts for 18 of the 33 on both arms. *(Corrected 2026-08-27 from
+"24/35 = 69 %", a typed-in literal reproducible under no mapping convention —
+`reports/AUDIT_PHASE8_FACTCHECK.md` M1.)*
+
+**Either answer publishes.** If P-i…P-v hold, we have found a real limitation of a widely adopted
+tool, in the species it was written for. If they fail, our mouse adaptation caused the M1 behaviour,
+which strengthens everything else by removing a confound — and we say so.
+
+**Consequence already frozen regardless of the outcome:** the **strip-and-refit sensitivity** (fit
+each Tier B module with the CoreScence-shared genes removed, report both amplitudes) is part of the
+frozen run order, not an afterthought (PI decision D6).
+
+---
+
+## 9. Analysis and run order after the tag
+
+1. **Phase 9** — H1 audit A1, A2 (gate), A3, A4, A5 (gate), A6 (build and validate the red/white
+   pulp covariate), A7 (must be flat, pooled), A8 (cross-arm on the 2,425-gene ortholog-intersected
+   panel). **Stop on A2 or A5 failure → outcome C.**
+2. **Job B** — cell types with the 22-label spleen marker set; cross-check against the depositors'
+   four-level `annotations.csv.gz` (which covers fewer cells than the matrix, so its QC filter is
+   characterised first); then the sender callers.
+3. **Phase 10** — H1 through the frozen pipeline: naive, N1–N8, controlled fits, kernel families,
+   superposition vs nearest, proximal vs downstream. Then the §8 comparison, the §17 two-arm table,
+   Figures 5 and 6, and the revised 2, 3, 4.
+4. **Every cross-arm number is reported twice**, on the 2,425-gene ortholog-intersected panel and
+   on each arm's full panel (test A8).
+
+---
+
+## 10. What may never be reported, whatever the data says
+
+These are consequences of measurements already made, and they bind both arms.
+
+1. **No naive distance kernel, and no N2-only kernel, may be reported as a distance effect.**
+   A7 measured the mouse arm's negative-control response against distance to nearest sender:
+   naive clustered mean **−0.070 SD [−0.128, −0.012], p = 0.023**, and the matched-decoy contrast
+   leaves **−0.061 [−0.111, −0.012], p = 0.020** — 80 % undiminished. The N5 technical covariate
+   block removes it completely (**+0.007 [−0.011, +0.025], p = 0.41**), and that residual excludes
+   the conditioned biological amplitude of +0.036 SD. Source: `results/phase3/a7_summary.csv`,
+   `all_controls` rows. **The raw assay is not flat; a matched-decoy contrast is not a substitute
+   for the technical covariate block on this assay.**
+   **Name the response correctly.** `all_controls` is the **pooled** control feature set — 40
+   negative-control probes + 609 negative-control codewords + 21 genomic controls, and the
+   codewords carry ~73 % of the counts. Per family under `base`: codewords −0.0604 [−0.1085,
+   −0.0123] p = 0.0188; genomic controls −0.0307 [−0.0558, −0.0056] p = 0.0213; and the **40
+   negative-control probes on their own are flat, −0.0225 [−0.0527, +0.0078], p = 0.129.** Since
+   `PREREG_PHASE8_genesets.md` §11 designates `E_negative_control_probes` the *primary technical
+   null* and Phase 9 item 9.4 repeats it, **the pre-registered primary A7 response passes on M1**;
+   the non-flatness is carried by the codewords and genomic controls. Report it as "pooled
+   negative-control features", never as "negative-control probes"
+   (`reports/AUDIT_PHASE8_FACTCHECK.md` R1).
+2. **No caller-independence claim.** See §13 P1.
+3. **No age-stratified or young-vs-old claim on H1.** Age is a continuous covariate only (PI
+   decision D4). Two donors are over 55.
+4. **No marginal-zone-specific confirmatory claim.** Exploratory only (PI decision D3b, §13 P7).
+5. **No cross-arm difference attributed to species or tissue.** They are confounded by design —
+   mouse liver against human spleen. This belongs in the abstract, not the limitations.
+6. **`CXCL8`/`CXCR1` results must never be reported as replicating a mouse result** — no mouse
+   ortholog exists. Conversely `MMP3` and `TIMP1` are mouse-only. `CXCL2`/`CXCL5` are on **both**
+   panels and are a **map gap**, not a biological asymmetry.
+7. **The circularity figure "1.51–2.85×" must not be quoted.** Measured over 11 sections the
+   DeepScence-vs-`Cdkn1a`⁺ pair is 0.963–2.849 with a **median of 1.071** and a pooled 1.255; both
+   published values were the two largest of the eleven (`results/phase3/caller_coverage_gate.csv`).
+8. **The composition-matched number may never be reported alone.** The matched-decoy SF of 0.9837
+   ("composition removes 1.6 %") and the covariate-adjusted SF of 0.1461 ("composition removes
+   85.4 %") come from the **same variables on the same fits**. Quoting the first without the second
+   states the opposite of what the data says. Wherever the matched number appears, `type_adj`
+   (65.9 %) and `typecomp_adj` (85.4 %) appear beside it. P23, P25.
+9. **`mor` may never be reported as evidence that normalisation cannot move this caller.** §6's
+   named estimator removes only 11.4–23.6 % of log-depth variance on this panel; its null is a null
+   about a weak normalisation. Wherever it appears, the `lib` result (100 % removed; depth loading
+   −74 % and −93 %; 46 % and 100 % of sender calls changed) appears beside it. P27.
+10. **No `denoise=True` number may be reported from a single seed without its seed-stability
+   companion.** One of three seeds gave a top-5 % sender set disjoint from the other two
+   (Jaccard 0.000). Any published-default sensitivity result carries that fact. P26.
+11. **`rho_signed_dz_vs_depth` for the D2 `raw` control rows (−0.47, −0.16) must not be quoted** —
+   it is the direction of numerical noise on a shift of 0.0002–0.001 z-units. P28.
+12. **Four sentences from the two-section base must be struck** (§13 P1): "0.93–1.22× of chance …
+   i.e. they are statistically independent"; "Four of six pairs sit at 0.93–1.22×"; "the one pair
+   that looked concordant in sham is anti-concordant in SBR"; "DeepScence's correlation with
+   sequencing depth reverses sign between two sections of the same study".
+
+---
+
+## 11. Figure policy, frozen
+
+Committed figures are held at their committed state and regenerated **exactly once**, from the
+frozen configuration, at task 8.7. Regenerated candidates live in `figures/revised_candidates/`
+with `_REVISED` suffixes and a README carrying the regeneration ledger.
+`code/check_figures_guard.py` is a content-hash guard over the 27 committed figures (PDF date
+stamps stripped before hashing). **Two actors have already collided in `figures/` and nothing
+warned**; the guard makes the policy enforceable rather than advisory.
+**`code/make_figure2.py` must never be run** — it is a superseded second producer of `figure2a`;
+the live producer is `make_phase5_figs.py --which 2a`. It now refuses to run.
+
+Every figure writes a `*_data.csv` beside it so every plotted number is auditable, and both `.png`
+and `.pdf` are emitted; **PNGs are the reproducibility comparison** because matplotlib date-stamps
+PDFs.
+
+---
+
+## 12. Environment
+
+Pinned in `requirements.txt`. `kneed==0.8.6` and `openpyxl==3.1.5` were added on 2026-08-27:
+`kneed` is a **hard** import of DeepScence (`DeepScence/io.py`), so the pinned environment could
+not reconstruct the sender caller that produces `deepscence_score` — the reproducibility claim was
+broken until then. A persistent interpreter lives at `/workspace/envs/sasp311/bin/python` on the
+network volume, which survives container resets; the environment has been lost twice.
+
+**Second, isolated environment for DCA.** `denoise=True` cannot run in the pinned stack (DCA 0.3.4
+needs TensorFlow 2.4 / Keras 2.4, which will not sit alongside the 3.11 scientific stack). It runs
+in a separate **CPython 3.8.19** venv built by **`code/setup_dca_env.sh`** (≈ 4 minutes), out of
+process, exchanging matrices as plain `.npz`/`.npy`. **The main environment has no TensorFlow and
+was not modified.** Pins archived at `results/phase8_d2/dca_venv_pip_freeze.txt` and
+`dca_venv_python.txt`. TensorFlow 2.4 could not use this box's GPU — it wants CUDA 11
+(`libcudart.so.11.0`, `libcublas.so.11`, `libcudnn.so.8`), none present — so it runs on CPU:
+8.6 min to denoise an 83k-cell section, 16.4 min for the whole `denoise=True` call against 5.2 min
+for `denoise=False`.
+
+**Memory — a reproducibility-relevant resource fact, recorded for Methods.** The container's real
+ceiling is a **57.7 GiB cgroup** (`/sys/fs/cgroup/memory.max` = 61,999,996,928 bytes), **not** the
+~251 GB `free` reports for the host; `free` is misleading inside the container and
+`memory.current` must be read against `memory.max`. **DeepScence holds five dense
+`n_cells × 4,845` float32 arrays at once**, so an 83k-cell section was OOM-killed with 11 GB free
+and **~16 GB of cgroup headroom is the working requirement** for a section of that size — more for
+the 200k+ ones. Six D2 jobs were OOM-killed before this was established, and three D1 sections were
+OOM-killed at five-way concurrency earlier in the day and recovered sequentially. **Anyone
+reproducing this must budget headroom per section, not per box.**
+
+**Declared:** three files in `genesets/msigdb_mouse_2026.1.Mm/` are HTML error pages, not JSON
+(`FRIDMAN_SENESCENCE_UP`, `FRIDMAN_SENESCENCE_DN`, `WP_NRF2_PATHWAY`) — MSigDB has no mouse version
+of those sets. **No tier uses any of the three**, so no published mouse number is affected. The
+human archive is clean, 27 of 27 valid.
+
+---
+
+## 13. Deviation table — Phase 8 additions
+
+`reports/PREREG_PHASE8_genesets.md` §12 carries the **gene-set** deviations, **D1–D17, seventeen
+rows** as it now stands (the roadmap's "16-row" description predates the D17 panel-definition row).
+Those are not restated here. The rows below are everything that has landed since, numbered `P*` so
+they cannot be confused with the `D*` gene-set rows.
+
+| # | Deviation | Reason / evidence |
+|---|---|---|
+| **P1** | **Caller independence is falsified. The motivating claim is restated, not defended.** | See the dedicated table immediately below — the number moved twice, for two different reasons, and the two must not be conflated. |
+| **P2** | **The raw mouse assay is not flat, so no naive or N2-only kernel may be reported.** | A7, first direct measurement, on the **pooled** control features (`all_controls` = 40 probes + 609 codewords + 21 genomic controls; the 40 probes **alone** are flat at −0.018, p = 0.18, so the pre-registered primary A7 response passes and this finding rests on the codewords and genomic controls — §10.1, `AUDIT_PHASE8_FACTCHECK.md` R1): naive control amplitude **−0.070 SD [−0.128, −0.012], p = 0.023**, a quarter of the naive biological +0.314 SD in the same fits; **N2 leaves −0.061 [−0.111, −0.012], p = 0.020**; **N5 removes it: +0.007 [−0.011, +0.025], p = 0.41**, excluding the conditioned biological +0.077 SD. 825 control fits vs 1,155 module fits, same estimator. `results/phase3/a7_summary.csv`, `a7_verdict.txt`. §10.1. **Magnitudes are PROVISIONAL** — A7 was run at 05:19 on the pre-C6 sender calls; the three qualitative findings are what is frozen. A7 must be re-run after 8.7. |
+| **P3** | **The estimator's false-positive rate is 9–16 % against a 5 % nominal.** | Same A7 run, full N6+N5 design, `frac_CI_excludes_zero` on responses with known-zero amplitude: 0.091 / 0.103 / 0.109 / 0.127 / 0.164 across the five control families (`results/phase3/a7_summary.csv`). **The five families are not five replications**: `all_controls` is the sum of the probe, codeword and genomic responses and `neg_probe_rate` is a ratio of two of them, so this is a range over correlated statistics. The **16 % upper end comes entirely from `neg_probe_rate`**, the one response whose denominator is an N5 column and which the caller report itself says is not a clean null; the clean-null subset is **9.1–12.7 %** (`AUDIT_PHASE8_FACTCHECK.md` M3). Quote the range as 9–13 % with 16 % as the `neg_probe_rate` outlier. Either a bootstrap FPR above nominal, or residual confounding N5 does not capture — both readings argue the same way. Stated in Methods. |
+| **P4** | **SenePy ships no spleen signature; it is not the same estimator across arms.** | `results/phase7_jobA/senepy_spleen_coverage.json`: 65 hubs, 10 tissues, `spleen_hub: false`. Of 22 spleen labels: **0 tissue-matched, 15 cross-tissue surrogate, 7 with no hub in any tissue.** M1 used tissue-matched mouse **Liver** hubs. Surrogates collapse: one blood memory-B hub scores all three B labels, one lung T-cell hub both T subsets. A3 must therefore be evaluated on the scored subset for SenePy and on all cells for the other callers, with both denominators stated. *Open recommendation, flagged not taken: demote SenePy to sensitivity on H1 and promote the `CDKN1A`⁺ call into the primary trio.* |
+| **P5** | **Age is a continuous covariate only.** No young-vs-old contrast, no age-stratified prevalence claim. | PI decision D4. Ages 17/31/32/32/37/57/59 — five under 40, **two over 55**. A sparse continuum, not a two-group design. H1's value is a human replication of the geometry, not an ageing result. |
+| **P6** | **Plasma cells are admitted by an explicit 3-marker exception to `MIN_MARKERS = 4`.** | PI decision D2b. Surviving on-panel markers `JCHAIN`, `MZB1`, `XBP1` — among the most specific markers in immunology, shared with no other label in the set; the label fails by exactly one gene, and only after the over-adjustment guard removes `MKI67` (which was CellMarker contamination from "dividing plasma cell" rows). **Recorded as an exception with its reason, so it does not read as the threshold having been 3 all along.** The alternative — folding plasma cells into the B compartment — would misattribute their signal: a plasma cell is not a B cell for receiver purposes. A 3-gene score is noisier and the label is reported as such. |
+| **P7** | **Marginal zone B cells: label and compartment kept; every MZ-*specific* claim is exploratory.** | PI decision D3b. CellMarker 2.0 has only **6** spleen rows for this type, below the 8-row threshold, so its markers come from the weakest evidence tier (all-tissue fallback at ≥ 1 PMID). The compartment is structurally central to spleen and `D_spleen_marginal_zone` is one of the five A6 compartments, so dropping it would leave the A6 axis without its middle term. **No confirmatory marginal-zone hypothesis is pre-registered**; any MZ-specific claim is conditional on the label surviving the post-freeze re-gate against measured expression and against the depositors' own annotations. |
+| **P8** | **RESOLVED (PI decision D16): the fitting window is pre-registered as `100 µm, fixed`. The 99th-percentile rule of §15 is recorded as provenance, not as a runtime computation.** | §3.2. The code has never computed a percentile at fit time (`run_phase3_nulls.py:59`, capped at `:169`); §15's wording describes how 100 was chosen once. Every published result already used 100 µm, so freezing the literal preserves continuity and re-runs nothing. Identical on both arms; `window.csv` is regenerated for H1 and reported but does not change the cap. **Kept in this table because it bounds the SenePy results:** under `senepy_p95` **all six in-band 99th percentiles (118.3–186.8 µm) exceed the cap**, and 7.4–21.5 % of receivers lie beyond 80 µm with 0.2–2.3 % beyond 150 µm, against 0.8–7.0 % and 0.0–0.11 % under the primary `tierA_p95` (`results/phase3/window.csv`). A SenePy-called kernel is fitted on a materially truncated distance distribution, and that limitation is reported wherever a SenePy-called reach quantity is. |
+| **P9** | **RESOLVED (PI decision D15): the composition-matched rerun protocol at 5 seeds is frozen — together with its covariate-adjusted counterpart — and is implemented.** | §3.8. At the time of the first draft **no code implemented it**: the phrase appeared only in the planning document (five mentions, no method — no matching variables, no rule, no seeds, no estimand, no output format), and neither `composition_all.py` nor `run_phase5_super.py`'s 5-draw geometry null is the protocol. It is now `code/run_phase8_compmatch.py`, run on M1 and gated on H1. **§15's item is amended to read "the composition-matched rerun protocol at 5 seeds *and its covariate-adjusted counterpart*"** — an addition, not a substitution. All four previously-`TBD` fields are filled in §3.8 from `reports/CS_PHASE8_COMPMATCH.md`. Nine specification ambiguities had to be resolved to implement it at all; they are carried as **D15.1–D15.9** below. |
+| **P10** | **The mouse C6 gene sets are promoted into `genesets/`. Supersedes gene-set deviation D15.** | PI decision D5, "tag then promote". `git tag pre-c6-genesets` captures the prior state. Three files changed: B7 38 → 108, strict Tier A 25 → 33, `A_sender_for_secondary_senescence` 55 → 74. Gate re-verified PASS on the authoritative 5,097-gene panel. **Every published Phase 2–5 mouse number was computed pre-C6 and is being re-fitted at task 8.7.** |
+| **P11** | **Tier A: strict-33 primary, per-module sets as pre-registered sensitivity.** | PI decision D1. Both are gated in the same run and both gates must pass. Cost, stated against interest: the 33 survivors contain no `CDKN1A`, `CDKN2A`, `TP53`, `LMNB1` or `MKI67` — it is a DNA-damage / p53-effector / replicative-senescence score, not a score on the field's canonical arrest markers. The per-module sensitivity retains all 12 canonical markers for B2, B5, B6 and B7, which is exactly why it is pre-registered alongside. |
+| **P12** | **`Lmnb1` is not usable as the D3 re-anchor**, contrary to §7 of the planning document. | It is a member of `B_downstream_arrest` and `B_secondary_senescence`. The primary anchor is an 8-gene proliferation set disjoint from every `A_*.txt` and `B_*.txt`, asserted at run time; `Lmnb1` is reported as a secondary. All anchor decisions are depth-partialled. §3.9. |
+| **P13** | **The consensus-of-callers anchor is unusable and is not offered.** | It disagrees with the published sign in 9 of 11 M1 sections because SenePy dominates it, and anchoring on it inflates DeepScence-vs-SenePy agreement to 2.793× chance — it manufactures the exact circularity D3 exists to remove, in the opposite direction. |
+| **P14** | **`N4_snap` is documented but not implemented.** The rotation family has five variants. | `phase3_null_geom.py:33` (prose) vs `:58` (`ROTATION`, 5 entries). `N4_swap` is itself rotate-then-snap. |
+| **P15** | **N3-occ / N4-occ at the specified 5 % tolerance are degenerate and are not a corrected null.** | On a liver section the criterion admits 1–63 of 38,080–108,375 candidate translations, all near-identity: median displacement 27 µm (N3) and 25 µm (N4), inside the 100 µm window and close to the median λ̂ of 12.8 µm; for section 7001 the only admissible translation is the identity. Values quoted (0.951 / 0.896) are the 15 %-tolerance variants; at the literal 5 % they are **0.349 / 0.273** and measure the null's degeneracy, not the effect. Holds for all six sender calls (0.121–0.673). |
+| **P16** | **N3-swap reproduces N1 and is not a corrected torus shift.** | Median SF 0.721 vs N1's 0.716, per-fit Spearman ρ = 0.948, median absolute difference 0.0087; conditioning on the N5+N6+zonation block moves it to **0.999**, i.e. it removes nothing the nuisance model does not already remove. The identity is tight for the Tier A percentile calls (ρ 0.92–0.98) and only directional for SenePy (ρ 0.43–0.51), so the footnote reads "reproduces N1 **for the Tier A calls**". |
+| **P17** | **The §11 gate now runs automatically after any gene-set or panel change**, not only at freeze. | §4. `code/gate_genesets_guard.py` + a git `pre-commit` hook + a `PostToolUse` hook. The mouse B6 margin is the reason. |
+| **P18** | **Mouse B6's margin is one gene, but a one-gene trim does not fail the gate — a two-gene trim does.** Corrects `PREREG_PHASE8_genesets.md` §3.1 / D10. | §4, verified by falsification against the guard. The one-gene statement holds only under the CSV-only 5,006-gene panel definition. |
+| **P19** | **`code/build_genesets.py` cannot be re-run as committed and now refuses to run.** | Its `SCRATCH` constant pointed at a dead per-session `/tmp` path, so it globbed zero MSigDB JSONs and would have **silently overwritten `genesets/*.txt` with EMPTY Tier B modules, exiting 0**. It now refuses to run when the archived MSigDB pin is missing, and refuses to revert the promoted C6 sets. |
+| **P20** | **`data/raw_h1/` is on disk ahead of the tag.** | §0.4 and §15 require the freeze committed before the human data is downloaded. What has been read is panel membership, file structure, cell counts and coordinate ranges — the §12.1 step-2 screen plus a structural integrity check. **No expression value, senescence score, cell-type assignment or outcome-bearing quantity has been computed.** The pre-registration is still writable without contamination, but it must be committed before Job B or any A3/A5 test runs against these files. |
+| **P21** | **The depositors ship usable cell-type annotations, contrary to §12.3.** | `annotations.csv.gz` carries four nested levels (`Level_1`–`Level_4`). This does not replace Job B — the plan's own pipeline still runs — but it gives an external label set to check the marker-based annotation against. The depositors' annotations cover **fewer cells than the matrix** (SPLN07: 239,167 of 249,420), so their QC filter must be characterised before the two label sets are compared. |
+| **P22** | **RESOLVED, and the premise inverted: `denoise=False` is a CHOSEN value, not a forced deviation.** | §3.9. **DCA installed and ran** — §6 path 1, not the fallback: DCA 0.3.4 under TensorFlow 2.4.4 / Keras 2.4.3 in an isolated CPython 3.8.19 venv, out of process, on three full M1 sections across both arms plus a three-seed panel. **The install failure that justified the original caveat no longer exists.** What was "we deviated because DCA would not install" is now "**we ran the published default and chose against it, for measured reasons**". `denoise=False` is frozen as PRIMARY and `denoise=True` as the pre-registered published-default sensitivity, satisfying §9's requirement that the denoise state be a stated choice. **The sentence "DeepScence as we can run it on this panel, not DeepScence as published" is withdrawn from this pre-registration.** `reports/CS_PHASE8_D2_DENOISE.md`. |
+| **P23** | **The composition-matched protocol as §15 specifies it is INERT — and freezing it alone would have licensed a false claim.** | §3.8. Composition-matched decoys remove **1.6 %** of the pooled naive amplitude (SF 0.9837 [0.973, 0.994]; 3.6 % within cell type). The **same variables, on the same fits, entered as covariates, remove 85.4 %** (`typecomp_adj`, SF 0.1461 [0.052, 0.246]) — **a factor of fifty**. Matching is not failing to balance: max \|SMD\| 0.0916 → 0.0352 and the §8 Test 5 gate passes in **100 %** of matches. It balances sender against decoy without touching the *receiver's* dependence on composition, which is where the confounding acts (`CS_PHASE3.md` §5, verbatim). **The five seeds buy nothing**: at a median match rate of 0.999871 the greedy matcher has no freedom left, and the pooled SF moves by 1.2 × 10⁻⁴ across all five. **Reported, not hidden — §15's parameter as written would certify as "not composition" a gradient that is 66–85 % composition.** The matched number may never appear without the covariate-adjusted number beside it (§10.9). |
+| **P24** | **This converges with A7 from an independent direction, and the convergence is the result.** | A7: N2 matched decoys leave the technical gradient **~80 % intact** (−0.061 of −0.070 SD) while the N5 covariate block removes it entirely (+0.007, p = 0.41) — P2. Composition matching: matched decoys remove **1.6 %** where the same variables as covariates remove **85.4 %** — P23. **Two independent analyses, different responses, different confounds, same conclusion: matched-decoy designs systematically fail to remove what covariate adjustment removes on this assay.** The N2-vs-N5 result was already rated the project's strongest contribution by external novelty review; this doubles its evidentiary base and is pre-registered as a claim in its own right, to be tested again on H1. |
+| **P25** | **§17's "composition surrogate share 66–76 %" is confirmed at its lower bound and exceeded at its upper.** | **65.9 %** from receiver cell-type intercepts alone (`type_adj`) reproduces the published 66 % almost exactly and now, for the first time, **has a producer** — `CS_PHASE8_M1_RERUN.md` §7 had recorded that no script emitted the range. But the full composition vector reaches **85.4 %** (`typecomp_adj`), **above the top of the published range**, and 98.5 % for `downstream_arrest`; on the per-module Tier A sets it is 79.6 %, with `downstream_arrest` at 114.6 %. The published interval is also **two different estimators on two different scales** — 66 % is `1 − SF` on β̂, 76 % is a ratio of binned *curve* amplitudes (`CS_PHASE5.md` §4). **The row is split, not patched**, per `CS_PHASE8_COMPMATCH.md` §5.1. Honest statement: **66 % (own cell type) to 85 % (own cell type + neighbourhood composition)**. The composition share is never below 0.52 in any section and never below 0.59 in any module. |
+| **P26** | **The published default is not reliably reproducible across seeds. Promote to Results, beside the D3 polarity flip.** | One fixed 20,000-cell subsample, three seeds, nothing else changed (`results/phase8_d2/d2_stability.csv`): **one of three seeds returned a top-5 % sender set perfectly disjoint from the other two** — Pearson *r* **0.5703** and **0.5732**, **Jaccard exactly 0.000**, 2,000 of 2,000 cells changing status — against *r* 0.9955 / Jaccard **0.761** for `denoise=False` across seeds. Nothing about the outlier run looks broken; its denoised matrix has the same global statistics and it returned a normal-looking score distribution, **with no diagnostic that anything was different**. Its internal gene-set metric shows why: at the two agreeing seeds one bottleneck node dominates (0.464, 0.463 vs ~0.15–0.18 for the other), while at the outlier the two are nearly tied (0.373 vs 0.335) — no single senescence axis stands out, and the code picks a node anyway. **This is a second concrete instability in the same published tool**, in the same family as the D3 polarity flip (P12, P13), and belongs in the same section of the paper. It also warrants a note to the DeepScence authors, together with P29. |
+| **P27** | **§6's named normalisation estimator was too weak to test its own question. Both configurations are frozen, with `mor`'s inadequacy stated.** | §6 names median-of-ratios (*poscounts*). On this sparse 5K panel it removes only **11.4–23.6 %** of log-depth variance (p90/p10 depth ratio 11.0 → 8.7–10.0) and returns a clean null on four sections — **a null about a weak normalisation, not about the caller**. An added `lib` configuration removes **100 %** (p90/p10 → 1.000) and moves the caller a great deal: depth loading ρ 0.3176 → **0.0819** (7259) and 0.4096 → **0.0289** (7352), i.e. **−74 % and −93 %**, with **46.4 % and 100 %** of the committed sender set no longer called and the call set **broadening** across cell types (biliary/ductular 0.99 → 1.53; stellate, Kupffer, LSEC, T/NK, B all roughly doubling). `results/phase8_d2/d2_normalisation_strength.csv`, `d2_depth.csv`. **`mor` may never be reported as evidence that normalisation cannot move this caller.** `lib` is a declared sensitivity, not a frozen candidate — on 7352 it lands on an axis uncorrelated with the committed one (*r* = −0.017), and that instability is itself the finding: strip depth out and the caller has no single answer. |
+| **P28** | **Determinism control — a positive result: the frozen two-section base is re-derivable, not merely intact on disk.** | Re-run at the same seed, the harness reproduces the committed scores at Pearson *r* = **0.9999991** (7239; 24 of 75,384 calls moving) and **0.9999999** (7259; 2 of 114,721). **7259's committed score is `deepscence_sbr.csv`, written 2026-08-20, before two container rebuilds** — so the preserved base reproduces from raw data in the rebuilt environment. This matters more than it would otherwise: this session found **194 untracked files** holding the project's evidence base, so a *demonstrated re-derivation* is worth more than a hash. These two figures, plus the seed-to-seed floor (*r* ≈ 0.996, Jaccard ≈ 0.76), are the floors every D2 effect above is read against. **Caution:** `rho_signed_dz_vs_depth` for the `raw` rows (−0.47, −0.16) is the direction of numerical noise on a shift of 0.0002–0.001 z-units and **must not be quoted**. |
+| **P29** | **§4 (D-b)'s stated rationale is refuted by measurement and must be corrected in the paper.** | The planning document says DCA denoising "is precisely the step that would normalize depth — the confound under investigation". **Measured, it RAISES the depth loading by x1.32-1.67** (7239 x1.65, 7259 x1.67, 7352 x1.32 -- 'roughly doubles' was an overstatement by the coordinator and is corrected here): Spearman ρ of score against transcript counts 0.3891 → **0.6404** (7239), 0.3176 → **0.5314** (7259), 0.4096 → **0.5419** (7352) — **three of three sections, both arms**, across a 1.9× spread in median depth (`results/phase8_d2/d2_depth.csv`). It also collapses the global top-5 % call set onto **100.0 % hepatocytes on all three sections** and leaves sender-set agreement with the committed run at Jaccard **0.118–0.280** (56–79 % of the committed senders no longer called). The uncomfortable shape of the result, stated: the denoised score is simultaneously a **better** senescence score by DeepScence's own internal criterion (mean \|corr\| with CoreScence 0.126 → 0.470 on 7259) **and** a more depth-confounded one. **Whatever DCA contributes here, it is not depth normalisation.** |
+
+### D15.1–D15.9 — the nine specification decisions behind the composition-matched protocol
+
+**Why these are in the pre-registration.** §15 names the protocol in five places and specifies its
+method in none: no matching variables, no matching rule, no seed values, no estimand, no output
+format, and no statement of whether "composition matching" or "composition adjustment" was meant.
+Implementing it therefore required nine decisions that are **reconstructions, not readings**. They
+are recorded in the producer's docstring as `D15.1`–`D15.9` and carried here verbatim in substance,
+so a reader can see exactly which parts of §15 were followed and which were rebuilt.
+
+| # | Ambiguity in §15 | Decision taken | Basis |
+|---|---|---|---|
+| **D15.1** | "Composition-matched" — matched *how*, and matching *what to what*? | The **N2 design** — senders vs non-sender decoys — with the matching set reduced to composition alone. | N2 is the only sender/non-sender matching design in the plan (Master Plan §22 Step 3, §8 Test 5) and it is already implemented. |
+| **D15.2** | Which variables? | Exact stratification on receiver **cell type**, plus 1-1 nearest-neighbour propensity matching on the **20-NN cell-type composition vector**, caliper 0.25 SD. **Nothing else.** | The point is to isolate composition; leaving density, depth and anatomy in makes it the published N2 again. The published N2 set is run alongside as variant `full`, so the isolation is **measured, not asserted**. |
+| **D15.3** | Which five seeds? | **20260901–20260905.** | Derived by date from `sasp_phase3.MASTER_SEED = 20260820`, and deliberately outside the range `run_phase3_nulls._expand` can reach, so no rerun accidentally reproduces an existing N2 match. |
+| **D15.4** | Does the seed control matching, the bootstrap, or both? | **Both, but separably**: point estimates are computed **before** the bootstrap, so the reported between-seed spread is matching variability and nothing else. | Otherwise "at 5 seeds" would measure bootstrap noise, which the CI already reports. |
+| **D15.5** | Pooled, or per receiver cell type? | **Both; pooled is primary.** | A within-cell-type fit has already removed the between-type composition effect, so it cannot be the fit the §17 composition row is about. |
+| **D15.6** | Which sender call? | `tierA_p95` on the strict-33 (**PRIMARY**) **and** `tierApm_p95` on the seven per-module sets. | Both pre-registered Tier A variants (P11). They agree: every paired row differs by < 0.07 in SF, and the protocol's own number by 0.0023. |
+| **D15.7** | Which sections? | The six §8 Test 3 admissible sections, `sasp_phase3.IN_BAND`. | Every other Phase 3 primary uses them. |
+| **D15.8** | Which fits enter a median? | `beta_naive > 0` **and** `beta_base_lo > 0`, identical to `summarize_phase3.sf_table`. | So these medians are directly comparable to the published SF table (§3.5). |
+| **D15.9** | **Matching alone cannot answer the scientific question.** | Three seed-free **covariate-adjustment** variants added at the same scopes, same λ̂, same bootstrap: `comp_adj`, `type_adj`, `typecomp_adj`. | `CS_PHASE3.md` §5 is explicit that in this dataset matching balances covariates **without** removing the response's dependence on them. Reporting only the matched result would say "composition matching removes nothing" and a reader would hear "composition is not the confound" — the opposite of the truth. **This decision is what PI decision D15 ratified into the frozen list.** |
+
+**Recorded silence.** The documents never state the protocol's *output*, so the §17 row it was
+meant to fill had no producer at all before this run — reached independently by
+`reports/CS_PHASE8_M1_RERUN.md` §7. See P25.
+
+**Calibration, and why the inertness was foreseeable.** On synthetic tissue, N2-style matching
+returns **0.934 with a planted real effect and 0.775 with none** (`CS_PHASE3.md` §6). A design
+whose two answers are that close cannot discriminate, and a composition-only matching set has
+strictly less to work with than N2 did.
+
+### P1 in full — the caller-agreement headline moved twice
+
+**Quantity:** depth- and type-matched top-5 % overlap of the three non-circular Tier A pairs
+(Tier A vs SenePy, vs DeepScence, vs `Cdkn1a`⁺), pooled as Σ`n_both` / Σ`exp_both_stratified`,
+z from the pooled `sd_both_stratified`. The circular DeepScence-vs-`Cdkn1a`⁺ pair is excluded from
+every pooled number, per `BIO_PHASE3.md` §4.4. All three rows recomputed for this draft directly
+from `results/phase3/caller_agreement_matched_significance_{11sections,verify2sec}.csv`.
+
+| Configuration | Pooled | z | p | Band | Median | Above chance |
+|---|---|---|---|---|---|---|
+| **(a)** 2 sections, **pre-C6** Tier A — *the published base* | **1.030×** | 1.27 | 0.203 | 0.932 – 1.221 | 1.000 | 3 / 6 |
+| **(b)** 11 sections, **pre-C6** Tier A — *the like-for-like coverage comparison, and the basis of the 8.4 gate decision* | **1.118×** | 11.49 | 1.44 × 10⁻³⁰ | 0.700 – 1.711 | 1.110 | 20 / 33 |
+| **(c)** 11 sections, **post-C6** Tier A — *the frozen configuration, task 8.7, 06:07 UTC.* **PROVISIONAL** | **1.212×** | 20.62 | 1.84 × 10⁻⁹⁴ | 0.751 – 2.198 | 1.179 | 26 / 33 |
+
+**(a) → (b) is the answer to the 8.4 gate question — "did full DeepScence coverage move the
+headline?" — and it is the pair that must be cited for the restatement.** Both bases are pre-C6, so
+it holds the gene sets fixed and varies only DeepScence coverage, which is exactly the comparison
+§5 asked for. **The like-for-like answer is 1.030 → 1.118, p = 1.44 × 10⁻³⁰.**
+
+**(c) answers a different question and must never be quoted as the gate result.** It mixes the
+coverage change with a **sender-definition** change (the promoted C6 33-gene strict Tier A), and
+the two cannot be separated inside it. Both belong in the pre-registration, and the distinction is
+stated here explicitly rather than left for a reader to infer from mtimes. **The
+motivating sentence "their top-5 % calls overlap at 0.93–1.22× of chance … i.e. they are
+statistically independent" is dead** and the defensible restatement — "weakly but genuinely
+dependent, in a direction each pair's depth loading explains" — is drafted verbatim in
+`reports/CS_PHASE8_CALLERS.md` §3. Tier A vs DeepScence is above chance in **11 of 11** sections
+under (b), which breaks the independence claim on its sign pattern alone, without pooling.
+
+**(b) → (c) is the C6 gene-set change, not coverage, and every figure in it is PROVISIONAL.** The 8.7 re-run rebuilt
+`tierA_score` on the promoted 33-gene strict Tier A, so every Tier A pair moved: vs DeepScence
+1.248 → **1.288** (11/11 above chance, 10 significantly); vs `Cdkn1a`⁺ 1.171 → **1.471** (11/11);
+vs SenePy 0.914 → **0.972**, which is **no longer significantly below chance** (z −1.63, p = 0.104).
+`results/phase3/caller_coverage_gate.csv`, rewritten 06:09 UTC.
+
+⚠ **Two cautions on `results/phase3/caller_coverage_gate.csv` as it now stands.**
+ (i) **Confirmed by the coordinator.** Its "2-section (published base)" rows come from
+ `*_verify2sec.csv`, last written **06:03** with the **pre-C6** sender scores, while its 11-section
+ rows were written **06:07/06:09** from the **post-C6** ones. **The file therefore compares two
+ different gene-set configurations in one table, and every pooled number in it — including the
+ 1.212 recorded above — is provisional until it is regenerated.** The M1 re-run agent has been
+ directed to recompute both bases under the same sender definition and to label the basis
+ explicitly in the output. Row (b) above is the correct like-for-like comparison and was recomputed
+ here for that reason.
+ (ii) Under (c) the claim "one pair sits *below* chance in all eleven sections" — which is load-
+ bearing for the restatement, because it is what distinguishes a shared **technical** variable from
+ a shared latent state — **weakens to 0.972, n.s.** If (c) is confirmed when 8.7 finishes, that
+ sentence must be re-derived or dropped. **It must not be carried over from the pre-C6 text.**
+
+⚠ `reports/CS_PHASE8_CALLERS.md` §2.1 states **22/33** sections above chance for row (b); the file
+gives **20/33** (`ratio_stratified > 1`, equivalently `z > 0`). Use 20/33.
+
+---
+
+## 14. Open items the PI must close before tagging
+
+**Closed since the first draft:** the fitting window (**PI decision D16** — frozen as the 100 µm
+literal, §3.2 / P8); the composition-matched rerun protocol (**PI decision D15** — implemented,
+and frozen **together with its covariate-adjusted counterpart**, §3.8 / P9 / P23–P25, with the nine
+reconstruction decisions carried as D15.1–D15.9); and **D2 `denoise`** (task 8.5 — DCA installed
+and ran, `denoise=False` frozen as a *chosen* value with `denoise=True` as the published-default
+sensitivity, §3.9 / P22 / P26–P29). All three are recorded above; none is open.
+
+**Two items D2 adds to the paper rather than to this table**, flagged so they are not lost:
+the **seed instability** (P26) is promoted to Results beside the D3 polarity flip, and both it and
+the refutation of §4 (D-b) (P29) warrant a note to the DeepScence authors.
+
+| # | Item | Where |
+|---|---|---|
+| 1 | **Fill the tag hash and the `pre-c6-genesets` hash.** | §1 |
+| 2 | ~~Transcribe the composition-matched protocol's four fields~~ — **DONE.** §3.8 is filled from `reports/CS_PHASE8_COMPMATCH.md` and re-verified against `results/phase3/compmatch_reruns.csv`. What remains is editorial: **§17's "composition surrogate share 66–76 %" row must be split**, not patched — see P25. | §3.8, P25 |
+| 3 | **Confirm the primary outcome and the R1–R5 thresholds** as stated, or amend them now. They are numeric and absolute by design. | §5, §6 |
+| 4 | **Confirm the SenePy recommendation** — demote to sensitivity on H1 and promote `CDKN1A`⁺ into the primary trio, or leave as is. Flagged, not taken. Note that SenePy now carries **two** independent caveats: no spleen hub (P4) and the 100 µm window truncating 7–22 % of its receivers (P8). | §3.7, P4, P8 |
+| 5 | **Accept the three corrections to already-written text**: the mouse-B6 one-gene statement (P18), the 22/33 → 20/33 count (P1), and the mixed-configuration `caller_coverage_gate.csv` (P1 caution i — since confirmed by the coordinator and being regenerated). | §4, P1 |
+| 6 | **Re-run the gate and re-read every remaining PROVISIONAL value once 8.7 finishes** — in particular A7 and the corrected N3/N4, both computed on the pre-C6 sender calls, and every pooled number in `caller_coverage_gate.csv` — and replace every **PROVISIONAL** mark. | §0, §5, P1 |
+| 7 | **Decide whether the "one pair below chance in all eleven sections" sentence survives.** Under the post-C6 configuration Tier A vs SenePy is 0.972, n.s. That sentence is load-bearing for the restatement — it is what separates a shared *technical* variable from a shared latent state. | P1 caution (ii) |

@@ -1,0 +1,44 @@
+file,tier,status,n,n_on_panel,sha256_16,role
+genesets/human/A6_SenMayo_arrest_reference.txt,A,FROZEN,33,33,414187186ce3b0cc,"reference comparison set, not a sender definition"
+genesets/human/A_SENDER_FINAL_strict.txt,A,FROZEN,33,33,497f2f28828dff53,PRIMARY sender definition (PI decision 2026-08-27)
+genesets/human/A_core_arrest.txt,A,FROZEN,6,6,f030e3a0f702527e,"component subset of the primary, post-disjointness"
+genesets/human/A_dna_damage_response.txt,A,FROZEN,11,11,b666472b7a1c44b6,"component subset of the primary, post-disjointness"
+genesets/human/A_nuclear_chromatin.txt,A,FROZEN,1,1,327664f156bf23ee,"component subset of the primary, post-disjointness"
+genesets/human/A_proliferation_down.txt,A,FROZEN,2,2,099ca48fea53cf9d,"component subset of the primary, post-disjointness"
+genesets/human/A_sender_for_downstream_arrest.txt,A,FROZEN,36,36,1acc785f8c789931,PRE-REGISTERED SENSITIVITY: per-module sender set
+genesets/human/A_sender_for_emt_ecm.txt,A,FROZEN,79,79,8b410508d6f370f4,PRE-REGISTERED SENSITIVITY: per-module sender set
+genesets/human/A_sender_for_il6_jak_stat3.txt,A,FROZEN,81,81,9437448b56dc5266,PRE-REGISTERED SENSITIVITY: per-module sender set
+genesets/human/A_sender_for_interferon_response.txt,A,FROZEN,80,80,fca6d1376b943a89,PRE-REGISTERED SENSITIVITY: per-module sender set
+genesets/human/A_sender_for_oxidative_stress.txt,A,FROZEN,79,79,777c07e310783b99,PRE-REGISTERED SENSITIVITY: per-module sender set
+genesets/human/A_sender_for_secondary_senescence.txt,A,FROZEN,81,81,9437448b56dc5266,PRE-REGISTERED SENSITIVITY: per-module sender set
+genesets/human/A_sender_for_tnfa_nfkb_proximal.txt,A,FROZEN,77,77,f39a39e997b6a2ee,PRE-REGISTERED SENSITIVITY: per-module sender set
+genesets/human/A_senescence_curated_nonsecreted.txt,A,FROZEN,13,13,0cc112459c480133,"component subset of the primary, post-disjointness"
+genesets/human/B_downstream_arrest.txt,B,FROZEN,231,231,03d94eaa59c44cbe,FROZEN response module (1 of 7)
+genesets/human/B_emt_ecm.txt,B,FROZEN,113,113,22850a7e2e642f34,FROZEN response module (1 of 7)
+genesets/human/B_il6_jak_stat3.txt,B,FROZEN,71,71,a3d9ef6d40938bea,FROZEN response module (1 of 7)
+genesets/human/B_interferon_response.txt,B,FROZEN,126,126,139fba606a414dfb,FROZEN response module (1 of 7)
+genesets/human/B_oxidative_stress.txt,B,FROZEN,36,36,9a268fc81856e686,FROZEN response module (1 of 7)
+genesets/human/B_secondary_senescence.txt,B,FROZEN,116,116,e38443aac1a9d695,FROZEN response module (1 of 7)
+genesets/human/B_tnfa_nfkb_proximal.txt,B,FROZEN,120,120,60ab7752e1d0fdd7,FROZEN response module (1 of 7)
+genesets/human/C_ligands.txt,C,FROZEN,13,13,1656e24c2c340e25,FROZEN ligand / receptor list
+genesets/human/C_receptors.txt,C,FROZEN,15,15,7519ad733f322e1b,FROZEN ligand / receptor list
+genesets/human/D_landmark_vessel_stroma.txt,D,FROZEN,13,13,51a3146017dccf3c,FROZEN vascular/stromal landmark set
+genesets/human/D_nuisance_covariates.txt,D,FROZEN,13,n/a,6f47dd57bc4c5ff7,FROZEN covariate NAMES (not genes)
+genesets/human/D_spleen_capsule_trabecula.txt,D,FROZEN,18,18,ce9994676759680d,FROZEN A6 compartment marker set (red/white pulp axis)
+genesets/human/D_spleen_marginal_zone.txt,D,FROZEN,8,8,6daa90e68e0c030b,FROZEN A6 compartment marker set (red/white pulp axis)
+genesets/human/D_spleen_red_pulp.txt,D,FROZEN,28,28,92e6c8b5780a08df,FROZEN A6 compartment marker set (red/white pulp axis)
+genesets/human/D_spleen_white_pulp_follicle.txt,D,FROZEN,13,13,461d95da911cbc6e,FROZEN A6 compartment marker set (red/white pulp axis)
+genesets/human/D_spleen_white_pulp_tzone.txt,D,FROZEN,24,24,846d92bda37cdd89,FROZEN A6 compartment marker set (red/white pulp axis)
+genesets/human/E_genomic_controls.txt,E,FROZEN,21,n/a,90ad364adc8a0947,FROZEN control features -- audit test A7
+genesets/human/E_housekeeping_expanded.txt,E,FROZEN,8,8,35a94077c67ac4c2,FROZEN housekeeping control (thin: report as such)
+genesets/human/E_housekeeping_planA.txt,E,FROZEN,1,1,e8eaea2146a73a74,FROZEN housekeeping control (thin: report as such)
+genesets/human/E_negative_control_codewords.txt,E,FROZEN,609,n/a,43b0557855adeecd,FROZEN control features -- audit test A7
+genesets/human/E_negative_control_probes.txt,E,FROZEN,40,n/a,1c67525e2b549d1b,FROZEN control features -- audit test A7
+genesets/human/variants/A_PHASE7_S10_16.txt,A,"variant (reported, not used)",14,14,fa68c62b93ca9d26,"REPORTED, FAILED the section 11 gate (14 on-panel, 5 survive). NOT USED."
+genesets/human/variants/A_SENDER_FINAL_noB4_noB7.txt,A,"variant (reported, not used)",75,75,30f50784bb7ccd1c,REPORTED. Partial-removal sensitivity set. NOT USED.
+genesets/human/variants/A_SENDER_FINAL_noB7.txt,A,"variant (reported, not used)",33,33,497f2f28828dff53,REPORTED. Identical to the primary now that B7 is disjoint by construction.
+genesets/human/variants/B_secondary_senescence_C6_minusA_ported.txt,B,"variant (reported, not used)",12,12,f56d5785405c06a2,"C6-as-written against the ported caller: 12 genes, FAILS >=30. NOT USED."
+genesets/human/variants/B_secondary_senescence_C6_minusA_s10.txt,B,"variant (reported, not used)",24,24,c2678ea53049e659,"C6-as-written against the section 10 caller: 24 genes, FAILS >=30. NOT USED."
+genesets/human/variants/B_secondary_senescence_C6_sourced_ported.txt,B,"variant (reported, not used)",116,116,e38443aac1a9d695,Identical to the FROZEN B_secondary_senescence; kept as the audit trail of how it was built.
+genesets/human/variants/B_secondary_senescence_C6_sourced_s10.txt,B,"variant (reported, not used)",119,119,26768c30d98dc130,Re-sourced against the section 10 caller. NOT USED (that caller failed the gate).
+genesets/human/variants/B_secondary_senescence_v1_curated_ported.txt,B,"variant (reported, not used)",35,35,496fa55770dfb3cc,SUPERSEDED B7. Required to be reported by section 23 / C6. NOT USED.

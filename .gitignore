@@ -68,3 +68,26 @@ results/phase4/parts/
 # The repo root IS /workspace (code/ has ~122 hardcoded /workspace/... paths),
 # so the clone is redundant and must not be tracked recursively.
 senescent_cell_kernels/
+
+# Claude Code per-session lock, not a project artefact.
+.claude/scheduled_tasks.lock
+
+# --- Phase 8 additions, 2026-08-27 ------------------------------------------
+# Persistent Python environment on the network volume. Master plan 16.1 says to
+# install into /workspace rather than the container disk, because the container
+# overlay is rebuilt on every pod restart (it was wiped twice on 2026-08-27).
+# It lives here so it survives resets -- it must never enter git. ~6.6 GB.
+envs/
+
+# Byte-compiled caches. 719 directories accumulated before this rule existed.
+__pycache__/
+*.py[cod]
+
+# H1 human arm raw bundles (GSE326743), same policy as data/raw/.
+# Re-fetch with code/fetch_h1_geo.sh; see reports/PHASE7_H1_SCREEN.md.
+data/raw_h1/
+
+# Figure candidates superseded pending the 8.7 regeneration. Kept on disk for
+# comparison, deliberately not committed -- see figures/revised_candidates/README.md.
+figures/revised_candidates/
+figures/.committed_manifest.json

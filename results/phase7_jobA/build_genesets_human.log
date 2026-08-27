@@ -1,0 +1,119 @@
+====================================================================================================
+PANEL: 5093 Gene Expression features (GSE326743, Xenium Prime 5K Human + 100 addon)
+   Gene Expression               5093
+   Negative Control Probe          40
+   Genomic Control                 21
+   Negative Control Codeword      609
+   Unassigned Codeword            695
+   Deprecated Codeword           3291
+====================================================================================================
+Panel genes inheriting location='Secreted' from the MOUSE panel metadata via the ortholog map: 263
+
+### MSigDB HUMAN sets used (release 2026.1.Hs, fetched 2026-08-27) ###
+  FRIDMAN_SENESCENCE_DN                                      M9487   C2:CGP           n= 13  on-panel=  4
+  FRIDMAN_SENESCENCE_UP                                      M9143   C2:CGP           n= 77  on-panel= 47
+  GOBP_CELLULAR_RESPONSE_TO_OXIDATIVE_STRESS                 M45123  C5:GO:BP         n=260  on-panel=139
+  GOBP_CELLULAR_SENESCENCE                                   M11558  C5:GO:BP         n=109  on-panel= 61
+  GOBP_RESPONSE_TO_OXIDATIVE_STRESS                          M3223   C5:GO:BP         n=437  on-panel=204
+  GOBP_RESPONSE_TO_REACTIVE_OXYGEN_SPECIES                   M16953  C5:GO:BP         n=194  on-panel=101
+  HALLMARK_APOPTOSIS                                         M5902   H                n=161  on-panel=105
+  HALLMARK_E2F_TARGETS                                       M5925   H                n=200  on-panel=112
+  HALLMARK_EPITHELIAL_MESENCHYMAL_TRANSITION                 M5930   H                n=200  on-panel=113
+  HALLMARK_G2M_CHECKPOINT                                    M5901   H                n=200  on-panel=117
+  HALLMARK_IL6_JAK_STAT3_SIGNALING                           M5897   H                n= 87  on-panel= 71
+  HALLMARK_INFLAMMATORY_RESPONSE                             M5932   H                n=200  on-panel=146
+  HALLMARK_INTERFERON_ALPHA_RESPONSE                         M5911   H                n= 97  on-panel= 45
+  HALLMARK_INTERFERON_GAMMA_RESPONSE                         M5913   H                n=200  on-panel=113
+  HALLMARK_MYC_TARGETS_V1                                    M5926   H                n=200  on-panel= 80
+  HALLMARK_P53_PATHWAY                                       M5939   H                n=200  on-panel= 89
+  HALLMARK_REACTIVE_OXYGEN_SPECIES_PATHWAY                   M5938   H                n= 49  on-panel= 18
+  HALLMARK_TNFA_SIGNALING_VIA_NFKB                           M5890   H                n=200  on-panel=120
+  HALLMARK_XENOBIOTIC_METABOLISM                             M5934   H                n=200  on-panel= 97
+  REACTOME_CELLULAR_SENESCENCE                               M27188  C2:CP:REACTOME   n=197  on-panel= 65
+  REACTOME_DETOXIFICATION_OF_REACTIVE_OXYGEN_SPECIES         M27244  C2:CP:REACTOME   n= 37  on-panel= 15
+  REACTOME_DNA_DAMAGE_TELOMERE_STRESS_INDUCED_SENESCENCE     M27191  C2:CP:REACTOME   n= 79  on-panel= 19
+  REACTOME_ONCOGENE_INDUCED_SENESCENCE                       M27190  C2:CP:REACTOME   n= 35  on-panel= 16
+  REACTOME_SENESCENCE_ASSOCIATED_SECRETORY_PHENOTYPE_SASP    M27187  C2:CP:REACTOME   n=111  on-panel= 27
+  SAUL_SEN_MAYO                                              M45803  C2:CGP           n=124  on-panel= 99
+  WP_NRF2_PATHWAY                                            M39454  C2:CP:WIKIPATHWAYS n=141  on-panel= 60
+  full H collection archived: _h.all.v2026.1.Hs.json (50 sets)
+
+### PHASE 7 s10 TIER A (the literal 16) ###
+  on-panel 14/16 : ATM ATR CDKN1A CDKN2A CDKN2B CHEK1 CHEK2 GADD45A H2AFX HMGB2 LMNB1 MDM2 TP53 TP53BP1
+  OFF-PANEL      : TP53I3 HMGB1
+  (s10 symbols not present in the ported mouse Tier A: TP53I3)
+
+### PORTED MOUSE TIER A subsets, on-panel (BEFORE disjointness enforcement) ###
+  A1_core_arrest                         12/16 on-panel   missing: CDKN2C,CDKN2D,GADD45B,RBL1
+                                         no MGI ortholog: Trp53i3
+  A2_proliferation_down                  21/21 on-panel   missing: -
+  A3_nuclear_chromatin                    6/13 on-panel   missing: CHAF1B,H1-0,HIST1H1C,HMGB1,HP1BP3,LBR,LMNB2
+  A4_dna_damage_response                 23/25 on-panel   missing: RIF1
+  A5_senescence_curated_nonsecreted      19/31 on-panel   missing: AEN,BTG2,CCNG1,EDA2R,IGFBP5,NUPR1,PERP,PLK3,SESN1,TP53INP1,TRIM22,ZMAT3
+  TIER A TOTAL (union, on-panel, pre-disjointness): 81
+  Sanity: Tier A members inheriting Secreted (must be ~0): NONE
+
+### TIER B modules on-panel ###
+  B1_tnfa_nfkb_proximal          120 on-panel   [HALLMARK_TNFA_SIGNALING_VIA_NFKB]
+  B2_il6_jak_stat3                71 on-panel   [HALLMARK_IL6_JAK_STAT3_SIGNALING]
+  B3_interferon_response         126 on-panel   [HALLMARK_INTERFERON_GAMMA_RESPONSE; HALLMARK_INTERFERON_ALPHA_RESPONSE]
+  B4_downstream_arrest           231 on-panel   [HALLMARK_E2F_TARGETS; HALLMARK_G2M_CHECKPOINT; HALLMARK_MYC_TARGETS_V1]
+  B5_emt_ecm                     113 on-panel   [HALLMARK_EPITHELIAL_MESENCHYMAL_TRANSITION]
+  B6_oxidative_stress             36 on-panel   [HALLMARK_REACTIVE_OXYGEN_SPECIES_PATHWAY; REACTOME_DETOXIFICATION_OF_REACTIVE_OXYGEN_SPECIES; CUR_NRF2_targets (mouse arm rescue, ported)]
+  B7_secondary_senescence        116 on-panel   [SAUL_SEN_MAYO; REACTOME_SENESCENCE_ASSOCIATED_SECRETORY_PHENOTYPE_SASP; minus Tier A caller pool A0 (C6, adopted)]
+  B6 note: HALLMARK_REACTIVE_OXYGEN_SPECIES_PATHWAY ALONE gives 18 on-panel -> mouse-style rescue APPLIED
+
+### A x B COLLISIONS on the ported Tier A (genes removed from TIER A) ###
+  B1_tnfa_nfkb_proximal            4 : CCND1 CDKN1A GADD45A NFE2L2
+  B3_interferon_response           1 : CDKN1A
+  B4_downstream_arrest            45 : APEX1 AURKB BIRC5 BRCA1 BRCA2 BUB1 CBX5 CCNA2 CCNB2 CCND1 CDC20 CDC25A CDK1 CDKN1A CDKN1B CDKN2A CHAF1A CHEK1 CHEK2 E2F1 EZH2 H2AFX HMGA1 HMGB2 LMNB1 MCM2 MCM3 MCM4 MCM5 MCM6 MCM7 MKI67 MRE11 NBN PCNA PLK1 RAD50 RPA1 RRM2 SUV39H1 TOP2A TP53 TYMS UNG XRCC6
+  B5_emt_ecm                       2 : GADD45A MCM7
+  B6_oxidative_stress              2 : NFE2L2 SESN2
+
+  |A| pre  = 81
+  |A| after removing collisions with B1-B6 ONLY (B7 excluded) = 33
+  |A| after removing collisions with B1-B3,B5,B6 (no B4,B7)   = 75
+  |A| after removing collisions with B1-B7 (STRICT)           = 33
+
+### TIER C ligand-receptor, on-panel ###
+IL6        YES      2/2 [IL6R,IL6ST]                       canonical SASP; drives B2. HUMAN receptor is IL6R (mouse Il6ra).
+CXCL8      YES      2/2 [CXCR1,CXCR2]                      HUMAN-ONLY. s10 addition: IL-8, NO MOUSE ORTHOLOG. CXCR1 also has no clean mouse ortholog.
+CXCL1      no       1/1 [CXCR2]                            kept for cross-arm parity; in mouse this was a CXCL8 analogue, in human it is a gene in its own right
+CXCL2      YES      1/1 [CXCR2]                            kept for cross-arm parity; mouse analogue of CXCL8
+CXCL5      YES      1/1 [CXCR2]                            kept for cross-arm parity; ELR+ CXC chemokine
+CCL2       YES      2/2 [CCR2,ACKR3]                       HIGHEST PRIORITY (Sec 9). ACKR3=CXCR7.
+CXCL12     YES      3/3 [CXCR4,ACKR3,DPP4]                 DPP4 cleaves CXCL12 -> candidate range-limiting mechanism.
+TGFB1      YES      2/2 [TGFBR1,TGFBR2]                    contact-adjacent; short lambda expected
+IL1A       YES      2/2 [IL1R1,IL1RAP]                     IL-1alpha LARGELY MEMBRANE-BOUND -> SHORTEST lambda predicted
+IL1B       YES      2/2 [IL1R1,IL1RAP]                     secreted; longer lambda than IL1A expected
+TNF        YES      2/2 [TNFRSF1A,TNFRSF1B]                drives B1
+IGFBP3     YES      0/0 []                                 SASP Atlas core secreted factor
+IGFBP7     no       0/0 []                                 SASP Atlas core secreted factor
+GDF15      YES      0/0 []                                 SASP Atlas core secreted factor
+MMP1       no       0/0 []                                 human single gene; mouse orthologs were Mmp1a/Mmp1b
+MMP3       no       0/0 []                                 SASP Atlas core secreted factor
+TIMP1      no       0/0 []                                 SASP Atlas core secreted factor
+THBS1      YES      1/2 [CD47] MISSING:SDC1                paper-specific: THBS-mediated senescence network (Karpova 2026)
+  CROSS-ARM ASYMMETRY: CXCL8 (+CXCR1) exist here and have NO mouse ortholog. The mouse arm substituted Cxcl1/Cxcl2/Cxcl5 -> Cxcr2. Any CXCL8 result is HUMAN-ONLY and must not be reported as replicating a mouse quantity.
+
+### TIER D, on-panel ###
+  D_landmark_vessel_stroma  13  (dropped by the over-adjustment guard: ACTA2 PDGFRB PECAM1 SPP1)
+  liver-only genes not ported: Krt19 Krt7 Pkhd1 Onecut1 Hnf1b Cftr Sox9 Lrat Stab2
+  ANATOMICAL COVARIATE: DEFERRED. The mouse D_zonation_* sets were derived from the mouse EXPRESSION MATRIX; H1 is spleen and is behind the s15 freeze. Build the red-pulp/white-pulp axis post-download with the same procedure. Phase 7 test A6 as written specifies a LUNG axis and does not apply to this arm.
+
+### TIER E controls ###
+  E1_housekeeping_planA             1/ 6 : TBP
+     MISSING: ACTB GAPDH PPIA RPL13A RPS18
+  E1b_housekeeping_expanded         8/39 : HPRT1 PGK1 RAB7A SDHA SNRPD3 TBP TUBB YWHAZ
+     MISSING: ACTB ACTR2 ARPC2 ATP5F1B B2M CFL1 CHMP2A CNOT4 COX4I1 EEF1A1 EMC7 GAPDH GPI HNRNPK NDUFB8 PFN1 PPIA PSMB2 RACK1 REEP5 RER1 RPL11 RPL13A RPLP0 RPS18 SAR1A SRP14 TMEM59 UBC VCP VPS29
+  E4_negative_control_probes       40 features (PANEL feature_type)
+  E4_negative_control_codewords    609 features (PANEL feature_type)
+  E4_genomic_controls              21 features (PANEL feature_type)
+  E2 cell-type identity: NOT BUILT. See report -- in spleen every abundant cell type is an immune cell, so the s10 "identity program unrelated to inflammation" has no valid instance on this panel. HGNC gene group "Hemoglobin subunits" puts only HBG1,HBZ on the panel.
+  E3 random size/expression-matched sets: NOT BUILT. build_random_null_sets.py needs the H1 expression matrix for the expression-matching bins; that is post-freeze.
+
+### SenMayo audit -- SAUL_SEN_MAYO, MSigDB human M45803 ###
+  set size 124 ; on-panel 99 ; of those inheriting Secreted: 39
+  SenMayo_arrest = on-panel MINUS secreted MINUS TierB(B1-B6) = 33 genes: AXL CCL1 CCL13 CCL16 CCL26 CCL3 CD55 CST4 CTNNB1 CXCL16 CXCR2 EGFR EREG ESM1 HGF ICAM3 IQGAP2 ITPKA KITLG NAP1L4 PAPPA PECAM1 PIGF PLAT PTBP1 PTGER2 PTGES SCAMP4 SELPLG SERPINB4 TIMP2 TNFRSF10C VGF
+
+Written to /workspace/genesets/human

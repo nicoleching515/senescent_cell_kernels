@@ -1,0 +1,104 @@
+======================================================================================================================
+PHASE 7 / C1 — N3 AND N4 SURVIVING FRACTIONS, ORIGINAL vs IN-TISSUE
+======================================================================================================================
+variant                                                           n   medSF               IQR   <=0   rej  fullSF  keep    disp
+N3 torus shift, whole-section bounding box (ORIGINAL)           153   0.999 [  0.989,  1.006]  0.00  0.82   1.001 0.772   2910um
+N4 rotation, whole-section bounding box (ORIGINAL)              153   0.947 [  0.804,  1.039]  0.02  0.85   0.992 0.920   3194um
+N3 torus shift, whole-section bounding box (ORIGINAL)           153   1.001 [  0.991,  1.008]  0.00  0.82   0.999 0.772   2910um
+N3-occ whole-section shift, <=5% of senders out of tissue       153   0.302 [  0.000,  0.734]  0.16  0.46   0.287 1.000     28um
+N3-occ15 whole-section shift, <=15% out of tissue (suppl.)      153   0.940 [  0.761,  1.011]  0.01  0.84   0.917 0.969    317um
+N3-swap senders relocated to random real cell positions         153   0.695 [  0.392,  0.872]  0.05  0.78   1.003 1.000   3241um
+N3-snap whole-section shift, snapped to nearest real cell (suppl.)  153   0.993 [  0.950,  1.017]  0.00  0.89   0.976 1.000   2977um
+N4 rotation, whole-section bounding box (ORIGINAL)              153   0.952 [  0.796,  1.048]  0.01  0.85   1.001 0.920   3194um
+N4-occ whole-section rotation, <=5% of senders out of tissue    153   0.183 [  0.000,  0.559]  0.17  0.33   0.198 1.000     25um
+N4-occ15 whole-section rotation, <=15% out of tissue (suppl.)   153   0.883 [  0.690,  0.989]  0.01  0.84   0.893 0.969    320um
+N4-swap rotation, snapped to nearest real cell positions        153   0.946 [  0.786,  1.035]  0.01  0.92   0.958 1.000   2980um
+N3-tile torus shift inside solid-tissue tiles                   136   0.971 [  0.906,  1.009]  0.01  0.80   0.972 1.000    479um
+N4-tile rotation inside solid-tissue tiles                      136   0.924 [  0.835,  1.049]  0.00  0.85   0.994 1.000    589um
+
+fullSF = the same surviving fraction with beta taken under the FULL N5+N6+zonation design at fixed lambda
+keep = fraction of shifted senders retaining a real neighbour within 100 um (median over sections)
+disp = median distance a sender is actually moved by the null (median over sections)
+
+======================================================================================================================
+N7 SENDER-DEFINITION AXIS UNDER THE CORRECTED NULLS (200 permutations, in-band sections)
+======================================================================================================================
+call         variant       n   medSF               IQR   <=0   rej
+cdkn1a_pos   N3_orig     192   1.002 [  0.996,  1.008]  0.00  0.93
+cdkn1a_pos   N4_orig     192   1.002 [  0.944,  1.054]  0.00  0.93
+cdkn1a_pos   N3_orig     192   0.999 [  0.995,  1.004]  0.00  0.94
+cdkn1a_pos   N3_occ      192   0.394 [  0.000,  0.767]  0.17  0.45
+cdkn1a_pos   N3_occ15    192   0.972 [  0.878,  1.041]  0.00  0.92
+cdkn1a_pos   N3_swap     192   0.891 [  0.749,  0.958]  0.03  0.88
+cdkn1a_pos   N3_snap     192   1.009 [  0.991,  1.035]  0.00  0.94
+cdkn1a_pos   N4_orig     192   0.999 [  0.949,  1.051]  0.00  0.93
+cdkn1a_pos   N4_occ      192   0.302 [  0.000,  0.639]  0.17  0.25
+cdkn1a_pos   N4_occ15    192   0.938 [  0.788,  1.014]  0.01  0.69
+cdkn1a_pos   N4_swap     192   1.011 [  0.986,  1.068]  0.00  0.94
+cdkn1a_pos   N3_tile     168   0.985 [  0.856,  1.036]  0.02  0.86
+cdkn1a_pos   N4_tile     168   0.957 [  0.821,  1.030]  0.01  0.86
+senepy_p95   N3_orig     146   0.999 [  0.992,  1.004]  0.00  0.96
+senepy_p95   N4_orig     146   1.015 [  0.974,  1.081]  0.01  0.97
+senepy_p95   N3_orig     146   1.000 [  0.994,  1.006]  0.00  0.95
+senepy_p95   N3_occ      146   0.385 [  0.033,  0.768]  0.15  0.62
+senepy_p95   N3_occ15    146   0.981 [  0.859,  1.074]  0.00  0.94
+senepy_p95   N3_swap     146   0.929 [  0.858,  0.990]  0.01  0.93
+senepy_p95   N3_snap     146   1.003 [  0.981,  1.026]  0.00  0.97
+senepy_p95   N4_orig     146   1.011 [  0.972,  1.076]  0.01  0.97
+senepy_p95   N4_occ      146   0.341 [  0.021,  0.656]  0.15  0.36
+senepy_p95   N4_occ15    146   0.923 [  0.766,  1.031]  0.01  0.78
+senepy_p95   N4_swap     146   1.016 [  0.984,  1.079]  0.01  0.97
+senepy_p95   N3_tile     134   1.001 [  0.843,  1.063]  0.01  0.89
+senepy_p95   N4_tile     134   0.964 [  0.825,  1.052]  0.01  0.88
+senepy_p99   N3_orig     103   1.004 [  0.990,  1.012]  0.00  0.81
+senepy_p99   N4_orig     103   1.008 [  0.961,  1.069]  0.00  0.84
+senepy_p99   N3_orig     103   1.005 [  0.992,  1.014]  0.00  0.82
+senepy_p99   N3_occ      103   0.390 [  0.061,  0.708]  0.20  0.51
+senepy_p99   N3_occ15    103   0.978 [  0.864,  1.079]  0.00  0.85
+senepy_p99   N3_swap     103   0.927 [  0.840,  0.982]  0.01  0.92
+senepy_p99   N3_snap     103   0.996 [  0.948,  1.035]  0.00  0.86
+senepy_p99   N4_orig     103   1.001 [  0.955,  1.060]  0.00  0.83
+senepy_p99   N4_occ      103   0.299 [  0.000,  0.545]  0.19  0.24
+senepy_p99   N4_occ15    103   0.911 [  0.699,  1.011]  0.01  0.52
+senepy_p99   N4_swap     103   1.004 [  0.962,  1.042]  0.00  0.91
+senepy_p99   N3_tile      91   0.997 [  0.771,  1.090]  0.02  0.63
+senepy_p99   N4_tile      91   0.979 [  0.749,  1.096]  0.02  0.67
+tierA_p90    N3_orig     181   1.001 [  0.994,  1.007]  0.00  0.91
+tierA_p90    N4_orig     181   0.968 [  0.852,  1.049]  0.00  0.95
+tierA_p90    N3_orig     181   1.000 [  0.994,  1.006]  0.00  0.92
+tierA_p90    N3_occ      181   0.578 [  0.000,  0.828]  0.15  0.54
+tierA_p90    N3_occ15    181   0.948 [  0.843,  1.021]  0.00  0.93
+tierA_p90    N3_swap     181   0.784 [  0.469,  0.894]  0.07  0.82
+tierA_p90    N3_snap     181   1.008 [  0.980,  1.030]  0.00  0.97
+tierA_p90    N4_orig     181   0.966 [  0.857,  1.053]  0.00  0.95
+tierA_p90    N4_occ      181   0.355 [  0.000,  0.643]  0.14  0.30
+tierA_p90    N4_occ15    181   0.903 [  0.795,  0.990]  0.00  0.76
+tierA_p90    N4_swap     181   0.993 [  0.877,  1.042]  0.00  0.96
+tierA_p90    N3_tile     153   0.983 [  0.930,  1.022]  0.00  0.89
+tierA_p90    N4_tile     153   0.982 [  0.895,  1.041]  0.00  0.90
+tierA_p99    N3_orig      93   0.998 [  0.986,  1.003]  0.00  0.61
+tierA_p99    N4_orig      93   0.934 [  0.840,  1.074]  0.03  0.63
+tierA_p99    N3_orig      93   1.005 [  0.994,  1.017]  0.00  0.60
+tierA_p99    N3_occ       93   0.129 [  0.000,  0.529]  0.20  0.32
+tierA_p99    N3_occ15     93   0.939 [  0.815,  1.030]  0.00  0.70
+tierA_p99    N3_swap      93   0.689 [  0.391,  0.878]  0.04  0.66
+tierA_p99    N3_snap      93   0.987 [  0.930,  1.023]  0.00  0.71
+tierA_p99    N4_orig      93   0.953 [  0.852,  1.058]  0.03  0.66
+tierA_p99    N4_occ       93   0.118 [  0.000,  0.439]  0.20  0.26
+tierA_p99    N4_occ15     93   0.831 [  0.721,  0.971]  0.02  0.54
+tierA_p99    N4_swap      93   0.970 [  0.818,  1.043]  0.02  0.76
+tierA_p99    N3_tile      83   0.968 [  0.886,  1.031]  0.01  0.69
+tierA_p99    N4_tile      83   0.968 [  0.837,  1.031]  0.02  0.69
+tierApm_p95  N3_orig     160   0.999 [  0.989,  1.006]  0.00  0.81
+tierApm_p95  N4_orig     160   0.943 [  0.793,  1.041]  0.03  0.82
+tierApm_p95  N3_orig     160   1.000 [  0.993,  1.007]  0.00  0.79
+tierApm_p95  N3_occ      160   0.331 [  0.000,  0.722]  0.12  0.56
+tierApm_p95  N3_occ15    160   0.904 [  0.767,  1.008]  0.03  0.80
+tierApm_p95  N3_swap     160   0.706 [  0.429,  0.898]  0.06  0.80
+tierApm_p95  N3_snap     160   0.996 [  0.958,  1.030]  0.00  0.87
+tierApm_p95  N4_orig     160   0.948 [  0.782,  1.035]  0.03  0.82
+tierApm_p95  N4_occ      160   0.233 [  0.000,  0.519]  0.18  0.26
+tierApm_p95  N4_occ15    160   0.851 [  0.689,  0.976]  0.03  0.70
+tierApm_p95  N4_swap     160   0.968 [  0.791,  1.034]  0.01  0.88
+tierApm_p95  N3_tile     146   0.961 [  0.913,  1.001]  0.01  0.84
+tierApm_p95  N4_tile     146   0.943 [  0.840,  1.028]  0.03  0.84

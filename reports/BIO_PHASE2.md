@@ -12,8 +12,8 @@ Deliverables D-A (cell types), D-B (anatomy), D-C (senders), D-D (module scores)
    Unknown, median confidence 0.966 (first attempt: 22.9% hepatocytes, 24.2% Unknown, 0.241).
 2. **DeepScence and SenePy both installed and ran.** Section 10 gets its two independent
    sender-calling methods after all. But see §4: **the sender callers do not agree with each
-   other at better than chance**, and DeepScence's own gene set is 69% circular with our response
-   modules.
+   other at better than chance**, and DeepScence's own gene set is **79%** circular with our
+   response modules (**corrected 2026-08-27** from 69%; see the correction box in §4.2).
 3. **The two arms are not equally analysable.** Section 8 Test 3 **passes for every SBR cell type**
    (hepatocytes 9.6% Cdkn1a+) and **fails for sham** (hepatocytes 0.48%). The paper's estimates
    must come from the SBR arm.
@@ -179,15 +179,32 @@ on-panel), LSEC hub 0 (205/62), Kupffer hub 0 (638/226), plus Lymphoid T and B h
 
 ### 4.2 ⚠️ DeepScence's own gene set is circular with our response modules
 
-CoreScence v2 at the occurrence ≥5 threshold DeepScence uses: 39 genes, 35 on our panel.
-**24 of those 35 (69%) are members of at least one Tier B response module.**
+CoreScence v2 at the occurrence ≥5 threshold DeepScence uses: 39 genes, **33** on our panel.
+**26 of those 33 (79%) are members of at least one Tier B response module.**
+
+> **Correction, 2026-08-27** — `reports/AUDIT_PHASE8_FACTCHECK.md` M1, applied in
+> `reports/AUDIT_CORRECTIONS_APPLIED.md`. This paragraph originally read "39 genes, 35 on our
+> panel. 24 of those 35 (69%)". **The denominator 35 is wrong and is reproducible under no
+> mapping convention.** Of the 39 CoreScence genes, 31 are reachable on the 5,097-gene mouse
+> panel through the pinned 1:1 MGI map (`logs/ds_smoke.log`: "on our ortholog-mapped panel: 31";
+> `logs/caller2.log`: "17 up / 14 down on mouse panel"), 33 with the Title-case fallback the
+> project applies for symbols the map has no row for (`CDKN2B`, `CXCL1`), and 6 —
+> `CXCL8 HMGB1 IGFBP5 IGFBP7 MIF TNFRSF10C` — are not on the mouse panel at all. The numerator 24
+> below is correct for the strict 31 (24/31 = 77%); the module table that follows lists exactly
+> those 24 genes. Under the 33-gene convention — the one `code/run_phase3_n8.py::corescence_mouse`
+> implements and the one behind `corescence_on_panel = 33` in the committed
+> `results/phase3/n8_disjointness_*.csv` — it is **26 of 33 = 79%**, the two extra circular genes
+> being `Cdkn2b` and `Cxcl1`. Derived by `code/corescence_circularity.py`. **This makes the
+> circularity finding stronger, not weaker.**
+
+(**Bold** = added by the 2026-08-27 correction: the two genes the pinned MGI map has no row for.)
 
 | Tier B module | CoreScence genes it contains |
 |---|---|
-| secondary_senescence | Ccl2 Cdkn1a Cdkn2a Gdf15 Hmgb2 Igfbp3 Il1a Il6 Lmnb1 Mdm2 Serpine1 Tgfb1 |
+| secondary_senescence | Ccl2 Cdkn1a Cdkn2a **Cdkn2b** **Cxcl1** Gdf15 Hmgb2 Igfbp3 Il1a Il6 Lmnb1 Mdm2 Serpine1 Tgfb1 |
 | downstream_arrest | Brca1 Bub1b Ccna2 Cdk1 Cdkn1a Cdkn2a Hells Hmgb2 Lmnb1 Tgfb1 |
 | emt_ecm | Fas Fgf2 Igfbp2 Igfbp3 Il6 Jun Serpine1 Tgfb1 Vegfa |
-| tnfa_nfkb_proximal | Cdkn1a Icam1 Il1a Il6 Jun Serpine1 Vegfa |
+| tnfa_nfkb_proximal | Cdkn1a **Cxcl1** Icam1 Il1a Il6 Jun Serpine1 Vegfa |
 | il6_jak_stat3 | Fas Il6 Jun Stat1 Tgfb1 |
 | interferon_response | Cdkn1a Fas Icam1 Il6 Stat1 |
 
@@ -201,7 +218,7 @@ Comparison of the three sender definitions against the Tier B union (on-panel ge
 
 | Sender definition | on-panel | overlaps Tier B | % |
 |---|---|---|---|
-| DeepScence CoreScence (occ≥5) | 35 | 24 | **69%** |
+| DeepScence CoreScence (occ≥5) | 33 | 26 | **79%** |
 | SenePy liver hepatocyte hub 1 | 54 | 13 | **24%** |
 | Tier A union-strict | 25 | 0 | **0%** (by construction) |
 

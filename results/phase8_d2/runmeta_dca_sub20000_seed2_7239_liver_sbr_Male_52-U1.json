@@ -1,0 +1,41 @@
+{
+ "section": "7239_liver_sbr_Male_52-U1",
+ "config": "dca_sub20000_seed2",
+ "n_cells": 20000,
+ "n_genes": 4845,
+ "denoise": true,
+ "random_state": 2,
+ "anchor": "published_CDKN1A",
+ "panel": "ortholog_mapped_MGI_1to1",
+ "min_counts_per_cell": 20,
+ "direction_log": {
+  "corr_metrics": [
+   "0.4633671",
+   "0.15171678"
+  ],
+  "reverse_log": [
+   true,
+   false
+  ],
+  "node": 0,
+  "reverse": true,
+  "correlation": -0.0069527942687273026
+ },
+ "dca_bridge": {
+  "tensorflow": "2.4.4",
+  "keras": "2.4.3",
+  "anndata": "0.7.8",
+  "scanpy": "1.8.2",
+  "numpy": "1.19.5",
+  "python": "3.8.19",
+  "n_cells": 20000,
+  "n_genes": 4845,
+  "minutes": 29.05,
+  "threads": 12,
+  "seed": 2,
+  "out_min": 1.2522582437668461e-06,
+  "out_max": 530.0130004882812,
+  "out_mean": 0.26292645931243896
+ },
+ "minutes": 31.35
+}

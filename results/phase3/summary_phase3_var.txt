@@ -1,0 +1,28 @@
+============================================================================================================================
+PHASE 8 — SURVIVING FRACTION UNDER EVERY N3/N4 VARIANT, INCLUDING THE MRKVICKA ET AL. (2021) VARIANCE CORRECTION
+============================================================================================================================
+variant                                                             n   medSF               IQR   <=0   rej  fullSF  keep     disp
+N3 torus shift, whole-section bounding box (ORIGINAL)             153   0.999 [  0.989,  1.006]  0.00  0.82   1.001 0.772   2910um
+N3 torus shift, whole-section bounding box (ORIGINAL, re-run in the C1 job)  153   1.001 [  0.991,  1.008]  0.00  0.82   0.999 0.772   2910um
+N3-tile torus shift inside solid-tissue tiles                     136   0.971 [  0.906,  1.009]  0.01  0.80   0.972 1.000    479um
+N3-occ whole-section shift, <=5% of senders out of tissue         153   0.302 [  0.000,  0.734]  0.16  0.46   0.287 1.000     28um
+N3-occ15 whole-section shift, <=15% out of tissue (suppl.)        153   0.940 [  0.761,  1.011]  0.01  0.84   0.917 0.969    317um
+N3-swap senders relocated to random real cell positions           153   0.695 [  0.392,  0.872]  0.05  0.78   1.003 1.000   3241um
+N3-snap whole-section shift, snapped to nearest real cell (suppl.)  153   0.993 [  0.950,  1.017]  0.00  0.89   0.976 1.000   2977um
+N3-var VARIANCE-CORRECTED Euclidean shift (Mrkvicka et al. 2021)  153   0.996 [  0.975,  1.007]  0.00  0.91   0.997 1.000   2215um
+N4 rotation, whole-section bounding box (ORIGINAL)                153   0.947 [  0.804,  1.039]  0.02  0.85   0.992 0.920   3194um
+N4 rotation, whole-section bounding box (ORIGINAL, re-run in the C1 job)  153   0.952 [  0.796,  1.048]  0.01  0.85   1.001 0.920   3194um
+N4-tile rotation inside solid-tissue tiles                        136   0.924 [  0.835,  1.049]  0.00  0.85   0.994 1.000    589um
+N4-occ whole-section rotation, <=5% of senders out of tissue      153   0.183 [  0.000,  0.559]  0.17  0.33   0.198 1.000     25um
+N4-occ15 whole-section rotation, <=15% out of tissue (suppl.)     153   0.883 [  0.690,  0.989]  0.01  0.84   0.893 0.969    320um
+N4-swap rotation, snapped to nearest real cell positions          153   0.946 [  0.786,  1.035]  0.01  0.92   0.958 1.000   2980um
+N4-var VARIANCE-CORRECTED rotation (this work, same principle)    153   0.985 [  0.958,  1.003]  0.00  0.89   0.999 1.000   3395um
+
+medSF = median surviving fraction (beta_obs - mean null beta)/beta_obs over the reportable fits (n column)
+rej   = rejection rate at p<0.05; for N3-var/N4-var this is the RS_count-standardized Monte Carlo test of Mrkvicka et al. (2021),
+        for every other row it is the repo's uncorrected permutation p
+keep  = fraction of shifted senders retaining a real cell within 100 um (median over sections); for the var rows, of the RETAINED
+        shifted senders (those landing inside the tissue window W)
+disp  = median distance a sender is actually moved
+N3_var: window-matched SF median 0.995 [0.975,1.008]; median fraction of receiver cells retained in W_i 0.591
+N4_var: window-matched SF median 0.985 [0.955,1.004]; median fraction of receiver cells retained in W_i 0.842

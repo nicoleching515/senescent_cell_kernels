@@ -1,0 +1,13 @@
+b7,caller,n_b7,b7_ge30,a_in_b7,n_A_final,verdict
+"B_secondary_senescence (FROZEN, re-sourced)",A_PHASE7_S10_16,116,True,0,5,FAIL
+"B_secondary_senescence (FROZEN, re-sourced)",A_ported,116,True,0,33,PASS
+B_secondary_senescence_v1_curated_ported,A_PHASE7_S10_16,35,True,11,1,FAIL
+B_secondary_senescence_v1_curated_ported,A_ported,35,True,23,21,PASS
+B_secondary_senescence_C6_minusA_s10,A_PHASE7_S10_16,24,False,0,5,FAIL
+B_secondary_senescence_C6_minusA_s10,A_ported,24,False,12,25,FAIL
+B_secondary_senescence_C6_sourced_s10,A_PHASE7_S10_16,119,True,0,5,FAIL
+B_secondary_senescence_C6_sourced_s10,A_ported,119,True,3,32,PASS
+B_secondary_senescence_C6_minusA_ported,A_PHASE7_S10_16,12,False,0,5,FAIL
+B_secondary_senescence_C6_minusA_ported,A_ported,12,False,0,33,FAIL
+B_secondary_senescence_C6_sourced_ported,A_PHASE7_S10_16,116,True,0,5,FAIL
+B_secondary_senescence_C6_sourced_ported,A_ported,116,True,0,33,PASS

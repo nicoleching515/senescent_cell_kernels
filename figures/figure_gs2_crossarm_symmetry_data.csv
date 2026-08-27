@@ -1,0 +1,37 @@
+tier,set,mouse_preC6,mouse_C6,human_preC6,human_C6,orthologue_intersected_mouse_C6,orthologue_intersected_human_C6,note,dark_segment_shared_with_other_arm,metric,value
+A,A0 candidate pool (pre-disjointness),74.0,74.0,81.0,81.0,64.0,64.0,unchanged by C6 -- C6 only changes B7,,,
+A,A_SENDER_FINAL_strict (PRIMARY),25.0,33.0,21.0,33.0,27.0,26.0,C6 raises both arms to 33,27,,
+B,B_tnfa_nfkb_proximal,126.0,126.0,120.0,120.0,88.0,90.0,unchanged by C6,,,
+B,B_il6_jak_stat3,68.0,68.0,71.0,71.0,58.0,59.0,unchanged by C6,,,
+B,B_interferon_response,100.0,100.0,126.0,126.0,80.0,82.0,unchanged by C6,,,
+B,B_downstream_arrest,190.0,190.0,231.0,231.0,137.0,138.0,unchanged by C6,,,
+B,B_emt_ecm,125.0,125.0,113.0,113.0,86.0,87.0,unchanged by C6,,,
+B,B_oxidative_stress,31.0,31.0,36.0,36.0,18.0,19.0,unchanged by C6,,,
+B,B_secondary_senescence,38.0,108.0,35.0,116.0,85.0,88.0,RE-SOURCED by C6,88,,
+FOOTNOTE,Tier A strict (PRIMARY),,,,,,,,,n_mouse,33
+FOOTNOTE,Tier A strict (PRIMARY),,,,,,,,,n_human,33
+FOOTNOTE,Tier A strict (PRIMARY),,,,,,,,,n_mouse_mapped,31
+PLOTTED,Tier A strict (PRIMARY),,,,,,,,,n_overlap,26
+PLOTTED,Tier A strict (PRIMARY),,,,,,,,,n_overlap_map_gap_corrected,27
+FOOTNOTE,Tier A strict (PRIMARY),,,,,,,,,human_only,CDKN2B DDB2 GADD45G MDC1 PHLDA3 TNFRSF10B XPC
+FOOTNOTE,Tier A strict (PRIMARY),,,,,,,,,human_only_map_gap,CDKN2B
+FOOTNOTE,Tier A strict (PRIMARY),,,,,,,,,human_only_real,DDB2 GADD45G MDC1 PHLDA3 TNFRSF10B XPC
+FOOTNOTE,Tier A strict (PRIMARY),,,,,,,,,mouse_only,HMGA1 LMNB2 PLK3 RIF1 SESN1
+FOOTNOTE,Tier A strict (PRIMARY),,,,,,,,,mouse_unmapped,Cdkn2b H2afx
+FOOTNOTE,Tier A strict (PRIMARY),,,,,,,,,mouse_only_map_gap,Cdkn2b
+FOOTNOTE,Tier A strict (PRIMARY),,,,,,,,,mouse_only_real,H2afx
+FOOTNOTE,Tier A strict (PRIMARY),,,,,,,,,mouse_only_complete,HMGA1 LMNB2 PLK3 RIF1 SESN1 H2afx
+FOOTNOTE,B_secondary_senescence,,,,,,,,,n_mouse,108
+FOOTNOTE,B_secondary_senescence,,,,,,,,,n_human,116
+FOOTNOTE,B_secondary_senescence,,,,,,,,,n_mouse_mapped,104
+PLOTTED,B_secondary_senescence,,,,,,,,,n_overlap,85
+PLOTTED,B_secondary_senescence,,,,,,,,,n_overlap_map_gap_corrected,88
+FOOTNOTE,B_secondary_senescence,,,,,,,,,human_only,ANAPC1 CCL13 CCL16 CCL26 CCL3 CCL4 CCL5 CST4 CXCL2 CXCL3 CXCL8 EGF ESM1 FZR1 H3F3B ICAM3 IL1B ITPKA NAP1L4 NFKB1 PAPPA PIGF PLAT RELA RPS6KA5 SERPINB4 STAT3 TIMP2 TNFRSF10C UBE2C VGF
+FOOTNOTE,B_secondary_senescence,,,,,,,,,human_only_map_gap,CCL3 CXCL2 CXCL3
+FOOTNOTE,B_secondary_senescence,,,,,,,,,human_only_real,ANAPC1 CCL13 CCL16 CCL26 CCL4 CCL5 CST4 CXCL8 EGF ESM1 FZR1 H3F3B ICAM3 IL1B ITPKA NAP1L4 NFKB1 PAPPA PIGF PLAT RELA RPS6KA5 SERPINB4 STAT3 TIMP2 TNFRSF10C UBE2C VGF
+FOOTNOTE,B_secondary_senescence,,,,,,,,,mouse_only,ANAPC11 ANAPC15 ANAPC16 ANAPC2 ANAPC4 ANAPC5 ANG BEX3 C3 CD9 CDC16 CDC23 ETS2 JUN MMP3 NRG1 SERPINE2 TUBGCP2 WNT16
+FOOTNOTE,B_secondary_senescence,,,,,,,,,mouse_unmapped,Ccl3 Cxcl1 Cxcl2 Cxcl3
+FOOTNOTE,B_secondary_senescence,,,,,,,,,mouse_only_map_gap,Ccl3 Cxcl2 Cxcl3
+FOOTNOTE,B_secondary_senescence,,,,,,,,,mouse_only_real,Cxcl1
+FOOTNOTE,B_secondary_senescence,,,,,,,,,mouse_only_complete,ANAPC11 ANAPC15 ANAPC16 ANAPC2 ANAPC4 ANAPC5 ANG BEX3 C3 CD9 CDC16 CDC23 ETS2 JUN MMP3 NRG1 SERPINE2 TUBGCP2 WNT16 Cxcl1
+PLOTTED,ortholog-intersected panel,,,,,,,,,n_genes,2425

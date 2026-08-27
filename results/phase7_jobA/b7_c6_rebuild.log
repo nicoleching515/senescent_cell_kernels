@@ -1,0 +1,31 @@
+====================================================================================================
+C6 -- B7 secondary_senescence rebuild, human arm
+====================================================================================================
+v1 (unchanged, ported mouse curated list): 35 on-panel genes
+  SAUL_SEN_MAYO            PMID 35974106   124 genes, 99 on-panel
+  REACTOME_SASP            PMID (none in MSigDB record) 111 genes, 27 on-panel
+  sourced union on-panel   123 genes
+
+### B7 variants ###
+variant                                      base                   caller            base  shared  after >=30?
+B_secondary_senescence_C6_minusA_s10         v1_curated             A_PHASE7_S10_16     35      11     24 **FAIL**
+B_secondary_senescence_C6_sourced_s10        SenMayo+ReactomeSASP   A_PHASE7_S10_16    123       4    119 PASS
+B_secondary_senescence_C6_minusA_ported      v1_curated             A_ported            35      23     12 **FAIL**
+B_secondary_senescence_C6_sourced_ported     SenMayo+ReactomeSASP   A_ported           123       7    116 PASS
+
+### Section 11 gate under each B7 variant ###
+B7 used                                      Tier A             |B7| |B7|>=30    A-in-B7 A_strict
+B_secondary_senescence (FROZEN, re-sourced)  A_PHASE7_S10_16     116     PASS          0        5  FAIL
+B_secondary_senescence (FROZEN, re-sourced)  A_ported            116     PASS          0       33  PASS
+B_secondary_senescence_v1_curated_ported     A_PHASE7_S10_16      35     PASS         11        1  FAIL
+B_secondary_senescence_v1_curated_ported     A_ported             35     PASS         23       21  PASS
+B_secondary_senescence_C6_minusA_s10         A_PHASE7_S10_16      24     FAIL          0        5  FAIL
+B_secondary_senescence_C6_minusA_s10         A_ported             24     FAIL         12       25  FAIL
+B_secondary_senescence_C6_sourced_s10        A_PHASE7_S10_16     119     PASS          0        5  FAIL
+B_secondary_senescence_C6_sourced_s10        A_ported            119     PASS          3       32  PASS
+B_secondary_senescence_C6_minusA_ported      A_PHASE7_S10_16      12     FAIL          0        5  FAIL
+B_secondary_senescence_C6_minusA_ported      A_ported             12     FAIL          0       33  FAIL
+B_secondary_senescence_C6_sourced_ported     A_PHASE7_S10_16     116     PASS          0        5  FAIL
+B_secondary_senescence_C6_sourced_ported     A_ported            116     PASS          0       33  PASS
+
+Written to /workspace/results/phase7_jobA/b7_c6_rebuild.{csv,json} and 4 comparison files in /workspace/genesets/human/variants

@@ -1,0 +1,111 @@
+====================================================================================================
+MOUSE C6 REBUILD -- GSE310392 panel: 5106 Gene Expression features, 9 genotyping probes, 5097 genes
+MSigDB mouse pin: release 2026.1.Mm, fetched 2026-08-20 (23 archived sets)
+ARCHIVE INTEGRITY: 3 archived files are HTML error pages, not JSON (no mouse version exists upstream): FRIDMAN_SENESCENCE_DN.json, FRIDMAN_SENESCENCE_UP.json, WP_NRF2_PATHWAY.json
+   None feeds any tier; no published mouse number is affected. Reported, not hidden.
+====================================================================================================
+
+Tier A candidate pool A0 (on-panel, pre-disjointness): 74
+Section 10 sixteen in mouse symbols, on-panel: 13/16  (off-panel: H2ax Hmgb1 Trp53i3)
+
+### Self-check: does this reproduce the mouse arm as published (genesets/README.md)? ###
+  B1_tnfa_nfkb_proximal          published 126  recomputed 126  OK
+  B2_il6_jak_stat3               published  68  recomputed  68  OK
+  B3_interferon_response         published 100  recomputed 100  OK
+  B4_downstream_arrest           published 190  recomputed 190  OK
+  B5_emt_ecm                     published 125  recomputed 125  OK
+  B6_oxidative_stress            published  31  recomputed  31  OK
+  B7 v1 (curated)                published  38  recomputed  38  OK
+  A0 pre-disjointness            published  74  recomputed  74  OK
+
+### Mouse Tier B under C6 ###
+  B1_tnfa_nfkb_proximal          126 on-panel   [HALLMARK_TNFA_SIGNALING_VIA_NFKB]
+  B2_il6_jak_stat3                68 on-panel   [HALLMARK_IL6_JAK_STAT3_SIGNALING]
+  B3_interferon_response         100 on-panel   [HALLMARK_INTERFERON_GAMMA_RESPONSE; HALLMARK_INTERFERON_ALPHA_RESPONSE]
+  B4_downstream_arrest           190 on-panel   [HALLMARK_E2F_TARGETS; HALLMARK_G2M_CHECKPOINT; HALLMARK_MYC_TARGETS_V1]
+  B5_emt_ecm                     125 on-panel   [HALLMARK_EPITHELIAL_MESENCHYMAL_TRANSITION]
+  B6_oxidative_stress             31 on-panel   [HALLMARK_REACTIVE_OXYGEN_SPECIES_PATHWAY; REACTOME_DETOXIFICATION_OF_REACTIVE_OXYGEN_SPECIES; CUR_NRF2_targets]
+  B7_secondary_senescence        108 on-panel   [SAUL_SEN_MAYO; REACTOME_SENESCENCE_ASSOCIATED_SECRETORY_PHENOTYPE_SASP; minus Tier A caller pool A0 (C6, adopted)]
+  B7 sourced union before caller subtraction: 113 on-panel (SenMayo 90 + Reactome SASP 23)
+  B7 v1 curated (superseded, archived): 38
+
+====================================================================================================
+SECTION 11 GATE -- MOUSE ARM, C6 CONFIGURATION
+====================================================================================================
+
+### Tier A definition: A_S10_16_mouse  (|A & panel| = 13) ###
+  [FAIL] len(A & panel) >= 15 : 13
+  [PASS] len(B1_tnfa_nfkb_proximal) >= 30 : 126
+  [PASS] len(B2_il6_jak_stat3) >= 30 : 68
+  [PASS] len(B3_interferon_response) >= 30 : 100
+  [PASS] len(B4_downstream_arrest) >= 30 : 190
+  [PASS] len(B5_emt_ecm) >= 30 : 125
+  [PASS] len(B6_oxidative_stress) >= 30 : 31
+  [PASS] len(B7_secondary_senescence) >= 30 : 108
+  [FAIL] A n B_k == 0 for all k : 11 memberships
+     removed by B1_tnfa_nfkb_proximal          ( 2): Cdkn1a Gadd45a
+     removed by B3_interferon_response         ( 1): Cdkn1a
+     removed by B4_downstream_arrest           ( 7): Cdkn1a Cdkn2a Chek1 Chek2 Hmgb2 Lmnb1 Trp53
+     removed by B5_emt_ecm                     ( 1): Gadd45a
+  [FAIL] re-check len(A) >= 15 after removal : 5
+     surviving: Atm Atr Cdkn2b Mdm2 Trp53bp1
+  ==> MOUSE GATE VERDICT for A_S10_16_mouse: FAIL
+
+### Tier A definition: A_ported(A0)  (|A & panel| = 74) ###
+  [PASS] len(A & panel) >= 15 : 74
+  [PASS] len(B1_tnfa_nfkb_proximal) >= 30 : 126
+  [PASS] len(B2_il6_jak_stat3) >= 30 : 68
+  [PASS] len(B3_interferon_response) >= 30 : 100
+  [PASS] len(B4_downstream_arrest) >= 30 : 190
+  [PASS] len(B5_emt_ecm) >= 30 : 125
+  [PASS] len(B6_oxidative_stress) >= 30 : 31
+  [PASS] len(B7_secondary_senescence) >= 30 : 108
+  [FAIL] A n B_k == 0 for all k : 46 memberships
+     removed by B1_tnfa_nfkb_proximal          ( 4): Ccnd1 Cdkn1a Gadd45a Nfe2l2
+     removed by B3_interferon_response         ( 1): Cdkn1a
+     removed by B4_downstream_arrest           (37): Apex1 Aurkb Birc5 Brca1 Brca2 Bub1 Cbx5 Ccna2 Ccnd1 Cdc20 Cdc25a Cdk1 Cdkn1a Cdkn1b Cdkn2a Cdkn2c Chek1 Chek2 E2f1 Ezh2 Hmgb2 Lbr Lmnb1 Mcm2 Mki67 Mre11a Nbn Pcna Plk1 Rad50 Rbl1 Rpa1 Suv39h1 Top2a Trp53 Ung Xrcc6
+     removed by B5_emt_ecm                     ( 1): Gadd45a
+     removed by B6_oxidative_stress            ( 3): Cdkn2d Nfe2l2 Sesn2
+  [PASS] re-check len(A) >= 15 after removal : 33
+     surviving: Atm Atr Bax Bcl2 Bcl2l1 Ccnb1 Cdkn1c Cdkn2b Ehmt2 Ercc1 Foxm1 Foxo3 Glb1 H2afx Hmga1 Lmnb2 Mdm2 Mdm4 Nfatc1 Parp1 Plk3 Rad51 Rb1 Rbl2 Rif1 Sesn1 Sirt1 Terf2 Tert Trp53bp1 Trp63 Trp73 Xrcc5
+  ==> MOUSE GATE VERDICT for A_ported(A0): PASS
+
+### PRE-REGISTERED SENSITIVITY: per-module mouse sender sets ###
+  B1_tnfa_nfkb_proximal          |A_mod|= 70  A_mod n B_k=0  PASS
+  B2_il6_jak_stat3               |A_mod|= 74  A_mod n B_k=0  PASS
+  B3_interferon_response         |A_mod|= 73  A_mod n B_k=0  PASS
+  B4_downstream_arrest           |A_mod|= 37  A_mod n B_k=0  PASS
+  B5_emt_ecm                     |A_mod|= 73  A_mod n B_k=0  PASS
+  B6_oxidative_stress            |A_mod|= 71  A_mod n B_k=0  PASS
+  B7_secondary_senescence        |A_mod|= 74  A_mod n B_k=0  PASS
+  [PASS] per-module gate
+
+====================================================================================================
+PANEL DEFINITION AUDIT (mouse)
+====================================================================================================
+  5K pan-tissue metadata CSV       : 5006 rows
+  GSE310392 custom add-on          : 100 (9 genotyping probes, 91 genes)
+  overlap between the two files    : 0
+  AUTHORITATIVE PANEL (h5 Gene Expression minus genotyping probes): 5097
+  Module sizes differ between the two definitions where the add-on contributes:
+    B1_tnfa_nfkb_proximal          126 on the authoritative panel vs 119 on the CSV alone  (add-on genes: Areg Fos Il6 Jun Junb Klf6 Nfkbia)
+    B2_il6_jak_stat3                68 on the authoritative panel vs  65 on the CSV alone  (add-on genes: Il6 Jun Reg1)
+    B3_interferon_response         100 on the authoritative panel vs  97 on the CSV alone  (add-on genes: Cfh Il6 Nfkbia)
+    B4_downstream_arrest           190 on the authoritative panel vs 189 on the CSV alone  (add-on genes: Hmgb2)
+    B5_emt_ecm                     125 on the authoritative panel vs 115 on the CSV alone  (add-on genes: Acta2 Areg Il6 Jun Plod2 Pvr Spp1 Tgfbi Thy1 Vim)
+    B6_oxidative_stress             31 on the authoritative panel vs  30 on the CSV alone  (add-on genes: Junb)
+    B7_secondary_senescence        108 on the authoritative panel vs 104 on the CSV alone  (add-on genes: Areg Il6 Jun Spp1)
+
+### MODULE MARGIN OVER THE >=30 FLOOR ###
+  B1_tnfa_nfkb_proximal          n=126 margin=+96   (CSV-only n=119 margin=+89)
+  B2_il6_jak_stat3               n= 68 margin=+38   (CSV-only n= 65 margin=+35)
+  B3_interferon_response         n=100 margin=+70   (CSV-only n= 97 margin=+67)
+  B4_downstream_arrest           n=190 margin=+160   (CSV-only n=189 margin=+159)
+  B5_emt_ecm                     n=125 margin=+95   (CSV-only n=115 margin=+85)
+  B6_oxidative_stress            n= 31 margin= +1   (CSV-only n= 30 margin= +0)  <-- NO MARGIN
+  B7_secondary_senescence        n=108 margin=+78   (CSV-only n=104 margin=+74)
+
+wrote intersection_matrix_mouse.csv, _BxB.csv, _BxB_preC6.csv
+
+|A_SENDER_FINAL_strict| mouse: 33  (was 25 under the curated B7)
+Written to /workspace/genesets/mouse_c6 (+ variants/) and /workspace/results/phase7_jobA/mouse_c6_summary.json

@@ -1,0 +1,25 @@
+basis,tierA_definition,tierA_n_genes,pair,A,B,circular,n_sections,ratio_min,ratio_median,ratio_max,n_sections_above_chance,n_sections_sig_above,n_sections_sig_below,obs_overlap,exp_overlap,pooled_ratio,pooled_z,pooled_p
+"2-section, pre-C6 Tier A (PUBLISHED)",A_SENDER_FINAL_strict pre-C6,25,senepy vs cdkn1a,senepy_score,cdkn1a_counts,False,2,0.979,1.174,1.369,1,1,0,150,128.5,1.168,1.97,0.049
+"11-section, pre-C6 Tier A (task 8.4)",A_SENDER_FINAL_strict pre-C6,25,senepy vs cdkn1a,senepy_score,cdkn1a_counts,False,11,0.842,1.199,1.391,9,7,0,1389,1147.2,1.211,7.43,1.11e-13
+"2-section, post-C6 Tier A (FROZEN)",A_SENDER_FINAL_strict C6,33,senepy vs cdkn1a,senepy_score,cdkn1a_counts,False,2,0.979,1.174,1.369,1,1,0,150,128.5,1.168,1.97,0.049
+"11-section, post-C6 Tier A (FROZEN)",A_SENDER_FINAL_strict C6,33,senepy vs cdkn1a,senepy_score,cdkn1a_counts,False,11,0.842,1.199,1.391,9,7,0,1389,1147.2,1.211,7.43,1.11e-13
+"2-section, pre-C6 Tier A (PUBLISHED)",A_SENDER_FINAL_strict pre-C6,25,senepy vs deepscence,senepy_score,deepscence_score,False,2,0.381,1.265,2.15,1,1,1,1051,620.6,1.693,18.18,6.79e-74
+"11-section, pre-C6 Tier A (task 8.4)",A_SENDER_FINAL_strict pre-C6,25,senepy vs deepscence,senepy_score,deepscence_score,False,11,0.332,0.506,2.15,1,1,10,2184,2963.7,0.737,-15.08,2.33e-51
+"2-section, post-C6 Tier A (FROZEN)",A_SENDER_FINAL_strict C6,33,senepy vs deepscence,senepy_score,deepscence_score,False,2,0.381,1.265,2.15,1,1,1,1051,620.6,1.693,18.18,6.79e-74
+"11-section, post-C6 Tier A (FROZEN)",A_SENDER_FINAL_strict C6,33,senepy vs deepscence,senepy_score,deepscence_score,False,11,0.332,0.506,2.15,1,1,10,2184,2963.7,0.737,-15.08,2.33e-51
+"2-section, pre-C6 Tier A (PUBLISHED)",A_SENDER_FINAL_strict pre-C6,25,tierA vs cdkn1a,tierA_score,cdkn1a_counts,False,2,0.959,1.008,1.057,1,0,0,191,187.8,1.017,0.25,0.806
+"11-section, pre-C6 Tier A (task 8.4)",A_SENDER_FINAL_strict pre-C6,25,tierA vs cdkn1a,tierA_score,cdkn1a_counts,False,11,0.948,1.148,1.433,9,5,0,1844,1574.2,1.171,7.08,1.48e-12
+"2-section, post-C6 Tier A (FROZEN)",A_SENDER_FINAL_strict C6,33,tierA vs cdkn1a,tierA_score,cdkn1a_counts,False,2,1.09,1.266,1.442,2,1,0,244,187.8,1.3,4.25,2.11e-05
+"11-section, post-C6 Tier A (FROZEN)",A_SENDER_FINAL_strict C6,33,tierA vs cdkn1a,tierA_score,cdkn1a_counts,False,11,1.085,1.361,2.198,11,9,0,2316,1574.3,1.471,19.45,2.74e-84
+"2-section, pre-C6 Tier A (PUBLISHED)",A_SENDER_FINAL_strict pre-C6,25,tierA vs deepscence,tierA_score,deepscence_score,False,2,1.041,1.131,1.221,2,1,0,927,840.4,1.103,3.14,0.00167
+"11-section, pre-C6 Tier A (task 8.4)",A_SENDER_FINAL_strict pre-C6,25,tierA vs deepscence,tierA_score,deepscence_score,False,11,1.041,1.268,1.711,11,9,0,5022,4024.2,1.248,16.56,1.44e-61
+"2-section, post-C6 Tier A (FROZEN)",A_SENDER_FINAL_strict C6,33,tierA vs deepscence,tierA_score,deepscence_score,False,2,1.108,1.211,1.314,2,2,0,991,840.3,1.179,5.47,4.49e-08
+"11-section, post-C6 Tier A (FROZEN)",A_SENDER_FINAL_strict C6,33,tierA vs deepscence,tierA_score,deepscence_score,False,11,1.096,1.314,1.66,11,10,0,5183,4024.2,1.288,19.23,2.13e-82
+"2-section, pre-C6 Tier A (PUBLISHED)",A_SENDER_FINAL_strict pre-C6,25,tierA vs senepy,tierA_score,senepy_score,False,2,0.932,0.938,0.943,0,0,0,580,620.6,0.935,-1.71,0.0865
+"11-section, pre-C6 Tier A (task 8.4)",A_SENDER_FINAL_strict pre-C6,25,tierA vs senepy,tierA_score,senepy_score,False,11,0.7,0.937,0.995,0,0,3,2708,2963.2,0.914,-4.93,8.03e-07
+"2-section, post-C6 Tier A (FROZEN)",A_SENDER_FINAL_strict C6,33,tierA vs senepy,tierA_score,senepy_score,False,2,0.982,1.031,1.081,1,0,0,625,620.4,1.007,0.2,0.845
+"11-section, post-C6 Tier A (FROZEN)",A_SENDER_FINAL_strict C6,33,tierA vs senepy,tierA_score,senepy_score,False,11,0.751,0.982,1.179,4,1,3,2879,2963.1,0.972,-1.63,0.104
+"2-section, pre-C6 Tier A (PUBLISHED)",A_SENDER_FINAL_strict pre-C6,25,deepscence vs cdkn1a,deepscence_score,cdkn1a_counts,True,2,1.505,2.177,2.849,2,2,0,385,187.8,2.05,14.91,2.95e-50
+"11-section, pre-C6 Tier A (task 8.4)",A_SENDER_FINAL_strict pre-C6,25,deepscence vs cdkn1a,deepscence_score,cdkn1a_counts,True,11,0.963,1.071,2.849,7,5,0,1976,1574.5,1.255,10.53,6.24e-26
+"2-section, post-C6 Tier A (FROZEN)",A_SENDER_FINAL_strict C6,33,deepscence vs cdkn1a,deepscence_score,cdkn1a_counts,True,2,1.505,2.177,2.849,2,2,0,385,187.8,2.05,14.91,2.95e-50
+"11-section, post-C6 Tier A (FROZEN)",A_SENDER_FINAL_strict C6,33,deepscence vs cdkn1a,deepscence_score,cdkn1a_counts,True,11,0.963,1.071,2.849,7,5,0,1976,1574.5,1.255,10.53,6.24e-26

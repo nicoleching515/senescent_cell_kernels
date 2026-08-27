@@ -1,0 +1,66 @@
+CellMarker 2.0 human, pinned: 60877 rows
+tissue_class == Spleen: 447 rows, 62 cell_name values
+
+Over-adjustment guard (Tier A + Tier C genes removed from the cell-type covariate):
+  Follicular B cells             CXCR4
+  Germinal centre B cells        HMGA1
+  Megakaryocytes                 CXCR4
+  Mesothelial cells              MKI67 TOP2A TYMS
+  Neutrophils                    CXCL8 CXCR1 CXCR2
+  Plasma cells                   MKI67
+  Proliferating cells            CDK1 HMGB2 MKI67
+  Red pulp macrophages           spleen-only (37 rows)                      on-panel=16  kept=15  
+  Monocytes                      spleen-only (19 rows)                      on-panel=6   kept=5   
+  cDC1                           spleen-only (10 rows)                      on-panel=4   kept=4   
+  cDC2                           spleen-only (17 rows)                      on-panel=5   kept=5   
+  pDC                            spleen-only (11 rows)                      on-panel=8   kept=8   
+  Follicular B cells             spleen-only (22 rows)                      on-panel=9   kept=9   
+  Marginal zone B cells          ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (6 spleen rows) on-panel=8   kept=8   
+  Germinal centre B cells        ALL-TISSUE FALLBACK >=2 PMID (0 spleen rows) on-panel=4   kept=4   
+  Plasma cells                   spleen-only (34 rows)                      on-panel=3   kept=3   <-- DROPPED, < 4 markers
+  CD4 T cells                    spleen-only (37 rows)                      on-panel=16  kept=14  
+  CD8 T cells                    spleen-only (42 rows)                      on-panel=18  kept=15  
+  NK cells                       spleen-only (37 rows)                      on-panel=25  kept=15  
+  Follicular dendritic cells     ALL-TISSUE FALLBACK >=2 PMID (3 spleen rows) on-panel=3   kept=3   <-- DROPPED, < 4 markers
+  Fibroblastic reticular cells   ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (0 spleen rows) on-panel=5   kept=4   
+  Sinusoidal endothelium         ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (0 spleen rows) on-panel=9   kept=9   
+  Endothelial cells              spleen-only (11 rows)                      on-panel=6   kept=4   
+  Lymphatic endothelium          ALL-TISSUE FALLBACK >=2 PMID (0 spleen rows) on-panel=4   kept=4   
+  Smooth muscle / capsule        ALL-TISSUE FALLBACK >=2 PMID (0 spleen rows) on-panel=7   kept=6   
+  Pericytes                      ALL-TISSUE FALLBACK >=2 PMID (0 spleen rows) on-panel=14  kept=12  
+  Fibroblasts                    spleen-only (13 rows)                      on-panel=5   kept=5   
+  Erythroid cells                ALL-TISSUE FALLBACK >=2 PMID (10 spleen rows) on-panel=5   kept=5   
+  Megakaryocytes                 ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (10 spleen rows) on-panel=24  kept=15  
+  Neutrophils                    ALL-TISSUE FALLBACK >=2 PMID (5 spleen rows) on-panel=42  kept=15  
+  Mesothelial cells              ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (0 spleen rows) on-panel=16  kept=15  
+  Proliferating cells            spleen-only (12 rows)                      on-panel=3   kept=3   <-- DROPPED, < 4 markers
+
+Arbitration (gene kept by the best-evidenced label of its compartment):
+  CD4 T cells                    lost  1: CD8A->CD8 T cells
+  CD8 T cells                    lost  2: CD4->CD4 T cells KLRD1->NK cells
+  Fibroblastic reticular cells   lost  2: CNN1->Smooth muscle / capsule(stronger evidence tier) COL11A1->Fibroblasts(stronger evidence tier)
+  Germinal centre B cells        lost  2: CD19->Follicular B cells(stronger evidence tier) MS4A1->Follicular B cells(stronger evidence tier)
+  Lymphatic endothelium          lost  2: PECAM1->Endothelial cells(stronger evidence tier) PROX1->Endothelial cells(stronger evidence tier)
+  Marginal zone B cells          lost  6: CD19->Follicular B cells(stronger evidence tier) CD27->Follicular B cells(stronger evidence tier) CD79A->Follicular B cells(stronger evidence tier) CD79B->Follicular B cells(stronger evidence tier) MS4A1->Follicular B cells(stronger evidence tier) TNFRSF13B->Follicular B cells(stronger evidence tier)
+  NK cells                       lost  1: CXCR5->CD4 T cells
+  Neutrophils                    lost  4: CD33->Red pulp macrophages(stronger evidence tier) FCAR->Monocytes(stronger evidence tier) FCGR1A->Red pulp macrophages(stronger evidence tier) S100A12->Monocytes(stronger evidence tier)
+  Pericytes                      lost  2: ACTA2->Smooth muscle / capsule MYH11->Smooth muscle / capsule
+  Red pulp macrophages           lost  1: CD14->Monocytes
+  Sinusoidal endothelium         lost  1: LYVE1->Lymphatic endothelium(stronger evidence tier)
+  Smooth muscle / capsule        lost  3: MCAM->Pericytes PDGFRB->Pericytes RGS5->Pericytes
+
+LABEL SET: 22 assignable, 3 dropped for thin on-panel support
+  DROPPED Plasma cells                   only 3 on-panel markers: JCHAIN,MZB1,XBP1
+  DROPPED Follicular dendritic cells     only 3 on-panel markers: CR1,CR2,FCER2
+  DROPPED Proliferating cells            only 3 on-panel markers: CD3D,IL7R,TUBB
+
+Promiscuous genes removed (claimed by > 3 labels):
+   CD14       4 labels
+   CCR7       4 labels
+   SELL       4 labels
+   ACTA2      4 labels
+   CD34       4 labels
+   PECAM1     4 labels
+
+wrote /workspace/genesets/human/markers_spleen_evidence.csv (265 rows)
+wrote /workspace/code/markers_human_spleen.py (22 labels)

@@ -1,0 +1,85 @@
+section,arm,ligand,on_panel,n_ligand_pos,pct_ligand_pos,n_ligand_pos_senders,dens_lig_per_mm2,dens_ligsender_per_mm2,d_med_to_ligand_um,d_p10_to_ligand_um,d_med_to_ligsender_um,d_p10_to_ligsender_um,recept_on_panel,note
+sbr,SBR,Il1a,True,3103,2.705,220,131.4,9.31,33.5,12.0,137.8,50.2,Il1r1;Il1rap,membrane-bound; predicted SHORTEST lambda
+sbr,SBR,Tgfb1,True,7856,6.848,386,332.6,16.34,19.5,6.7,101.4,37.0,Tgfbr1;Tgfbr2,latent/ECM-tethered; short
+sbr,SBR,Tnf,True,1308,1.14,52,55.4,2.2,53.0,17.8,278.4,106.9,Tnfrsf1a;Tnfrsf1b,membrane + shed soluble; short-intermediate
+sbr,SBR,Il6,True,100,0.087,3,4.2,0.13,196.0,74.0,,,Il6ra;Il6st,freely secreted; intermediate
+sbr,SBR,Igfbp3,True,19177,16.716,757,811.9,32.05,12.4,0.0,70.2,25.4,,secreted carrier; no cognate receptor on panel
+sbr,SBR,Gdf15,True,502,0.438,114,21.3,4.83,86.9,33.0,187.8,70.4,,secreted; GFRAL off-panel
+sbr,SBR,Timp1,True,2425,2.114,110,102.7,4.66,39.1,12.7,174.0,68.2,Cd47,secreted; Cd63 off-panel
+sbr,SBR,Mmp3,True,81,0.071,3,3.4,0.13,229.4,81.8,,,,secreted protease; no receptor
+sbr,SBR,Thbs1,True,6489,5.656,263,274.7,11.13,22.6,7.3,120.1,44.1,Cd47;Sdc1,matricellular; short
+sbr,SBR,Ccl2,True,5304,4.623,274,224.5,11.6,26.9,8.7,123.9,44.1,Ccr2;Ackr3,small diffusible chemokine; predicted LONG
+sbr,SBR,Cxcl12,True,57258,49.911,3161,2424.0,133.82,5.3,0.0,34.2,13.6,Cxcr4;Ackr3;Dpp4,small chemokine; Dpp4 cleaves it -> range-limiting
+sbr,SBR,Cxcl1,True,6597,5.75,474,279.3,20.07,23.0,7.9,94.9,35.1,Cxcr2,CXCL8 analogue; predicted LONGEST
+sbr,SBR,Cxcl2,True,95,0.083,8,4.0,0.34,193.2,72.4,697.3,249.3,Cxcr2,CXCL8 analogue; predicted LONGEST
+sbr,SBR,Cxcl5,True,7546,6.578,283,319.5,11.98,22.2,6.7,113.3,43.0,Cxcr2,CXCL8 analogue; predicted LONGEST
+7448_liver_sbr_Male_10-U1,SBR,Il1a,True,8163,5.029,983,172.9,20.82,29.0,10.3,90.6,34.0,Il1r1;Il1rap,membrane-bound; predicted SHORTEST lambda
+7448_liver_sbr_Male_10-U1,SBR,Tgfb1,True,22256,13.713,2445,471.4,51.79,15.7,0.0,54.6,20.2,Tgfbr1;Tgfbr2,latent/ECM-tethered; short
+7448_liver_sbr_Male_10-U1,SBR,Tnf,True,1090,0.672,141,23.1,2.99,86.6,29.1,254.9,91.6,Tnfrsf1a;Tnfrsf1b,membrane + shed soluble; short-intermediate
+7448_liver_sbr_Male_10-U1,SBR,Il6,True,105,0.065,18,2.2,0.38,284.4,108.1,645.2,260.8,Il6ra;Il6st,freely secreted; intermediate
+7448_liver_sbr_Male_10-U1,SBR,Igfbp3,True,28533,17.58,2429,604.3,51.45,16.3,0.0,53.9,19.9,,secreted carrier; no cognate receptor on panel
+7448_liver_sbr_Male_10-U1,SBR,Gdf15,True,1503,0.926,667,31.8,14.13,71.2,26.6,109.0,40.8,,secreted; GFRAL off-panel
+7448_liver_sbr_Male_10-U1,SBR,Timp1,True,5156,3.177,566,109.2,11.99,39.7,11.8,117.0,41.8,Cd47,secreted; Cd63 off-panel
+7448_liver_sbr_Male_10-U1,SBR,Mmp3,True,514,0.317,53,10.9,1.12,151.7,45.9,398.0,142.6,,secreted protease; no receptor
+7448_liver_sbr_Male_10-U1,SBR,Thbs1,True,13503,8.32,1237,286.0,26.2,23.7,6.5,76.7,27.3,Cd47;Sdc1,matricellular; short
+7448_liver_sbr_Male_10-U1,SBR,Ccl2,True,4197,2.586,695,88.9,14.72,48.5,15.5,112.7,40.0,Ccr2;Ackr3,small diffusible chemokine; predicted LONG
+7448_liver_sbr_Male_10-U1,SBR,Cxcl12,True,118728,73.152,15180,2514.7,321.52,0.0,0.0,21.2,7.9,Cxcr4;Ackr3;Dpp4,small chemokine; Dpp4 cleaves it -> range-limiting
+7448_liver_sbr_Male_10-U1,SBR,Cxcl1,True,2749,1.694,642,58.2,13.6,53.4,18.7,110.8,41.4,Cxcr2,CXCL8 analogue; predicted LONGEST
+7448_liver_sbr_Male_10-U1,SBR,Cxcl2,True,167,0.103,19,3.5,0.4,230.0,81.4,772.5,257.3,Cxcr2,CXCL8 analogue; predicted LONGEST
+7448_liver_sbr_Male_10-U1,SBR,Cxcl5,True,1902,1.172,229,40.3,4.85,63.1,21.1,182.8,67.7,Cxcr2,CXCL8 analogue; predicted LONGEST
+7260_liver_sbr_Male_26-U1,SBR,Il1a,True,9569,5.296,701,170.1,12.46,29.8,10.4,119.7,43.3,Il1r1;Il1rap,membrane-bound; predicted SHORTEST lambda
+7260_liver_sbr_Male_26-U1,SBR,Tgfb1,True,26557,14.699,1837,472.0,32.65,15.8,0.0,71.6,24.7,Tgfbr1;Tgfbr2,latent/ECM-tethered; short
+7260_liver_sbr_Male_26-U1,SBR,Tnf,True,1802,0.997,172,32.0,3.06,75.0,24.1,241.9,87.1,Tnfrsf1a;Tnfrsf1b,membrane + shed soluble; short-intermediate
+7260_liver_sbr_Male_26-U1,SBR,Il6,True,253,0.14,28,4.5,0.5,209.0,75.5,612.3,224.6,Il6ra;Il6st,freely secreted; intermediate
+7260_liver_sbr_Male_26-U1,SBR,Igfbp3,True,19955,11.045,1056,354.7,18.77,23.5,4.1,96.5,32.4,,secreted carrier; no cognate receptor on panel
+7260_liver_sbr_Male_26-U1,SBR,Gdf15,True,2626,1.453,760,46.7,13.51,59.8,21.8,122.5,41.7,,secreted; GFRAL off-panel
+7260_liver_sbr_Male_26-U1,SBR,Timp1,True,5662,3.134,388,100.6,6.9,45.2,12.1,168.0,55.9,Cd47,secreted; Cd63 off-panel
+7260_liver_sbr_Male_26-U1,SBR,Mmp3,True,443,0.245,23,7.9,0.41,209.9,58.3,685.4,249.8,,secreted protease; no receptor
+7260_liver_sbr_Male_26-U1,SBR,Thbs1,True,16551,9.161,1073,294.2,19.07,23.9,5.8,96.8,31.7,Cd47;Sdc1,matricellular; short
+7260_liver_sbr_Male_26-U1,SBR,Ccl2,True,10098,5.589,991,179.5,17.61,34.2,9.5,105.0,35.3,Ccr2;Ackr3,small diffusible chemokine; predicted LONG
+7260_liver_sbr_Male_26-U1,SBR,Cxcl12,True,124194,68.741,8872,2207.4,157.69,0.0,0.0,31.5,11.9,Cxcr4;Ackr3;Dpp4,small chemokine; Dpp4 cleaves it -> range-limiting
+7260_liver_sbr_Male_26-U1,SBR,Cxcl1,True,7175,3.971,1192,127.5,21.19,38.2,13.4,99.5,34.4,Cxcr2,CXCL8 analogue; predicted LONGEST
+7260_liver_sbr_Male_26-U1,SBR,Cxcl2,True,353,0.195,46,6.3,0.82,171.1,63.1,465.9,174.4,Cxcr2,CXCL8 analogue; predicted LONGEST
+7260_liver_sbr_Male_26-U1,SBR,Cxcl5,True,2872,1.59,268,51.0,4.76,61.4,19.2,195.5,68.7,Cxcr2,CXCL8 analogue; predicted LONGEST
+7239_liver_sbr_Male_52-U1,SBR,Il1a,True,3367,4.466,742,113.9,25.1,32.8,11.9,73.3,27.7,Il1r1;Il1rap,membrane-bound; predicted SHORTEST lambda
+7239_liver_sbr_Male_52-U1,SBR,Tgfb1,True,11948,15.85,2556,404.1,86.45,15.7,0.0,38.9,14.8,Tgfbr1;Tgfbr2,latent/ECM-tethered; short
+7239_liver_sbr_Male_52-U1,SBR,Tnf,True,358,0.475,75,12.1,2.54,107.9,36.8,231.3,86.1,Tnfrsf1a;Tnfrsf1b,membrane + shed soluble; short-intermediate
+7239_liver_sbr_Male_52-U1,SBR,Il6,True,86,0.114,25,2.9,0.85,244.8,89.4,397.4,155.5,Il6ra;Il6st,freely secreted; intermediate
+7239_liver_sbr_Male_52-U1,SBR,Igfbp3,True,6477,8.592,1033,219.1,34.94,27.8,6.7,63.6,22.5,,secreted carrier; no cognate receptor on panel
+7239_liver_sbr_Male_52-U1,SBR,Gdf15,True,2330,3.091,1482,78.8,50.13,40.7,16.0,52.2,20.0,,secreted; GFRAL off-panel
+7239_liver_sbr_Male_52-U1,SBR,Timp1,True,696,0.923,146,23.5,4.94,77.2,25.3,166.1,60.9,Cd47,secreted; Cd63 off-panel
+7239_liver_sbr_Male_52-U1,SBR,Mmp3,True,110,0.146,31,3.7,1.05,214.6,72.1,397.6,140.2,,secreted protease; no receptor
+7239_liver_sbr_Male_52-U1,SBR,Thbs1,True,5809,7.706,924,196.5,31.25,25.3,6.7,65.3,22.3,Cd47;Sdc1,matricellular; short
+7239_liver_sbr_Male_52-U1,SBR,Ccl2,True,2329,3.09,549,78.8,18.57,45.4,14.1,90.5,31.9,Ccr2;Ackr3,small diffusible chemokine; predicted LONG
+7239_liver_sbr_Male_52-U1,SBR,Cxcl12,True,49458,65.608,13331,1672.8,450.9,0.0,0.0,16.2,0.0,Cxcr4;Ackr3;Dpp4,small chemokine; Dpp4 cleaves it -> range-limiting
+7239_liver_sbr_Male_52-U1,SBR,Cxcl1,True,2530,3.356,1065,85.6,36.02,43.2,14.0,70.7,23.2,Cxcr2,CXCL8 analogue; predicted LONGEST
+7239_liver_sbr_Male_52-U1,SBR,Cxcl2,True,121,0.161,25,4.1,0.85,191.0,70.1,391.5,152.2,Cxcr2,CXCL8 analogue; predicted LONGEST
+7239_liver_sbr_Male_52-U1,SBR,Cxcl5,True,2432,3.226,443,82.3,14.98,47.6,13.1,102.2,33.9,Cxcr2,CXCL8 analogue; predicted LONGEST
+7361_liver_sbr_Male_2-U1,SBR,Il1a,True,6830,4.227,1491,130.8,28.56,31.9,11.5,70.7,26.1,Il1r1;Il1rap,membrane-bound; predicted SHORTEST lambda
+7361_liver_sbr_Male_2-U1,SBR,Tgfb1,True,20795,12.87,4110,398.4,78.74,17.0,0.0,42.6,14.7,Tgfbr1;Tgfbr2,latent/ECM-tethered; short
+7361_liver_sbr_Male_2-U1,SBR,Tnf,True,787,0.487,194,15.1,3.72,102.7,34.8,202.2,72.6,Tnfrsf1a;Tnfrsf1b,membrane + shed soluble; short-intermediate
+7361_liver_sbr_Male_2-U1,SBR,Il6,True,374,0.231,91,7.2,1.74,140.7,52.8,299.9,109.1,Il6ra;Il6st,freely secreted; intermediate
+7361_liver_sbr_Male_2-U1,SBR,Igfbp3,True,16779,10.384,2868,321.4,54.94,20.8,5.9,49.6,18.5,,secreted carrier; no cognate receptor on panel
+7361_liver_sbr_Male_2-U1,SBR,Gdf15,True,4067,2.517,1494,77.9,28.62,42.8,15.9,74.3,27.2,,secreted; GFRAL off-panel
+7361_liver_sbr_Male_2-U1,SBR,Timp1,True,2440,1.51,580,46.7,11.11,63.4,19.1,123.6,40.4,Cd47,secreted; Cd63 off-panel
+7361_liver_sbr_Male_2-U1,SBR,Mmp3,True,425,0.263,84,8.1,1.61,150.8,51.9,323.4,115.5,,secreted protease; no receptor
+7361_liver_sbr_Male_2-U1,SBR,Thbs1,True,12770,7.903,2755,244.6,52.78,26.3,7.3,57.6,18.1,Cd47;Sdc1,matricellular; short
+7361_liver_sbr_Male_2-U1,SBR,Ccl2,True,11535,7.139,2825,221.0,54.12,30.7,8.5,59.7,18.2,Ccr2;Ackr3,small diffusible chemokine; predicted LONG
+7361_liver_sbr_Male_2-U1,SBR,Cxcl12,True,77742,48.114,16999,1489.3,325.65,7.9,0.0,19.8,7.3,Cxcr4;Ackr3;Dpp4,small chemokine; Dpp4 cleaves it -> range-limiting
+7361_liver_sbr_Male_2-U1,SBR,Cxcl1,True,2223,1.376,729,42.6,13.97,57.9,20.9,103.4,37.5,Cxcr2,CXCL8 analogue; predicted LONGEST
+7361_liver_sbr_Male_2-U1,SBR,Cxcl2,True,894,0.553,246,17.1,4.71,105.7,34.5,190.2,66.8,Cxcr2,CXCL8 analogue; predicted LONGEST
+7361_liver_sbr_Male_2-U1,SBR,Cxcl5,True,335,0.207,105,6.4,2.01,148.0,55.4,269.0,102.6,Cxcr2,CXCL8 analogue; predicted LONGEST
+7450_liver_sbr_Male_10-U1,SBR,Il1a,True,5308,6.519,650,194.4,23.81,28.8,10.1,87.9,32.5,Il1r1;Il1rap,membrane-bound; predicted SHORTEST lambda
+7450_liver_sbr_Male_10-U1,SBR,Tgfb1,True,9974,12.249,1361,365.3,49.85,19.9,0.0,59.4,21.4,Tgfbr1;Tgfbr2,latent/ECM-tethered; short
+7450_liver_sbr_Male_10-U1,SBR,Tnf,True,442,0.543,56,16.2,2.05,111.9,37.7,310.6,112.6,Tnfrsf1a;Tnfrsf1b,membrane + shed soluble; short-intermediate
+7450_liver_sbr_Male_10-U1,SBR,Il6,True,112,0.138,17,4.1,0.62,216.4,81.1,618.3,220.2,Il6ra;Il6st,freely secreted; intermediate
+7450_liver_sbr_Male_10-U1,SBR,Igfbp3,True,5853,7.188,692,214.4,25.35,28.0,8.9,85.3,31.2,,secreted carrier; no cognate receptor on panel
+7450_liver_sbr_Male_10-U1,SBR,Gdf15,True,1280,1.572,484,46.9,17.73,60.6,22.8,101.9,37.8,,secreted; GFRAL off-panel
+7450_liver_sbr_Male_10-U1,SBR,Timp1,True,1237,1.519,192,45.3,7.03,68.8,21.0,167.6,59.0,Cd47,secreted; Cd63 off-panel
+7450_liver_sbr_Male_10-U1,SBR,Mmp3,True,46,0.056,13,1.7,0.48,340.6,127.6,615.0,232.6,,secreted protease; no receptor
+7450_liver_sbr_Male_10-U1,SBR,Thbs1,True,2816,3.458,356,103.1,13.04,44.6,13.1,118.0,42.2,Cd47;Sdc1,matricellular; short
+7450_liver_sbr_Male_10-U1,SBR,Ccl2,True,3287,4.037,545,120.4,19.96,43.6,12.9,103.9,34.9,Ccr2;Ackr3,small diffusible chemokine; predicted LONG
+7450_liver_sbr_Male_10-U1,SBR,Cxcl12,True,44512,54.664,7832,1630.4,286.88,6.1,0.0,23.8,9.0,Cxcr4;Ackr3;Dpp4,small chemokine; Dpp4 cleaves it -> range-limiting
+7450_liver_sbr_Male_10-U1,SBR,Cxcl1,True,921,1.131,216,33.7,7.91,76.9,27.4,156.8,57.7,Cxcr2,CXCL8 analogue; predicted LONGEST
+7450_liver_sbr_Male_10-U1,SBR,Cxcl2,True,97,0.119,16,3.6,0.59,230.3,86.2,645.4,225.4,Cxcr2,CXCL8 analogue; predicted LONGEST
+7450_liver_sbr_Male_10-U1,SBR,Cxcl5,True,353,0.434,60,12.9,2.2,122.4,43.1,277.3,106.2,Cxcr2,CXCL8 analogue; predicted LONGEST

@@ -1,0 +1,26 @@
+{
+ "section": "7259_liver_sbr_Male_26-U1",
+ "config": "raw",
+ "n_cells": 127386,
+ "n_genes": 4845,
+ "denoise": false,
+ "random_state": 0,
+ "anchor": "published_CDKN1A",
+ "panel": "ortholog_mapped_MGI_1to1",
+ "min_counts_per_cell": 20,
+ "direction_log": {
+  "corr_metrics": [
+   "0.12547544",
+   "0.121928126"
+  ],
+  "reverse_log": [
+   true,
+   false
+  ],
+  "node": 0,
+  "reverse": true,
+  "correlation": 0.002484119962900877
+ },
+ "minutes": 40.75,
+ "total_minutes": 41.05
+}

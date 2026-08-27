@@ -1,0 +1,13 @@
+cell_type
+density_25um
+density_50um
+density_100um
+knn_composition
+total_counts
+n_genes_detected
+cell_area_um2
+nucleus_area_um2
+section
+segmentation_method
+dist_to_tissue_boundary_um
+ANATOMICAL_ARM_SPECIFIC__spleen_red_pulp_white_pulp_axis__DEFERRED_see_report

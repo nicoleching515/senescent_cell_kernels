@@ -1,0 +1,20 @@
+{
+ "senepy_tissues": [
+  "blood",
+  "bone marrow",
+  "heart",
+  "hippocampus",
+  "intestine",
+  "kidney",
+  "liver",
+  "lung",
+  "skin",
+  "tongue"
+ ],
+ "spleen_hub": false,
+ "n_hubs": 65,
+ "n_labels": 22,
+ "n_usable_surrogate": 15,
+ "n_no_hub": 7,
+ "min_on_panel": 10
+}

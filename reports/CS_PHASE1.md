@@ -271,7 +271,12 @@ Two implementation choices worth flagging in Methods:
 * **Proximal vs downstream programs** (Section 6.4).
 * **Nulls N1, N3, N4, N6, N7, N8.** Only N2 and N5 are implemented. N3 (torus shift) is
   particularly worth adding to the synthetic study, since the generator is already on a
-  torus and it is the null CellWHISPER showed leading methods fail.
+  torus. [Corrected 2026-08-27, citation audit CIT-1: this sentence continued "and it is
+  the null CellWHISPER showed leading methods fail." **It is not.** CellWHISPER's null
+  permutes cell locations *within each cell type* — this project's N1 — and the words
+  *torus*/*toroidal* do not appear in that paper. The torus/random-shift null is Lotwick
+  & Silverman (1982); Mrkvička et al. (2021) document its rectangular-window requirement
+  and its liberality.]
 * **Coarsened exact matching** is implemented (`match_method="cem"`) but was not swept;
   all reported results use propensity-score matching.
 * **Anisotropic / anatomically structured tissue.** The confounder is an isotropic GRF;

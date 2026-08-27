@@ -1,0 +1,28 @@
+{
+ "section": "7352_liver_sham_Male_2-U1",
+ "config": "lib",
+ "n_cells": 139378,
+ "n_genes": 4845,
+ "denoise": false,
+ "random_state": 0,
+ "anchor": "published_CDKN1A",
+ "panel": "ortholog_mapped_MGI_1to1",
+ "min_counts_per_cell": 20,
+ "lib_sf_p01": 0.09484193011647254,
+ "lib_sf_p99": 4.501214642262913,
+ "direction_log": {
+  "corr_metrics": [
+   "0.15022978",
+   "0.12734161"
+  ],
+  "reverse_log": [
+   false,
+   false
+  ],
+  "node": 0,
+  "reverse": false,
+  "correlation": 0.0008069075411185622
+ },
+ "minutes": 8.6,
+ "total_minutes": 8.66
+}

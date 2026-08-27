@@ -322,8 +322,15 @@ autocorrelation and destroy only their *alignment*. A shared cause produces
 alignment without signalling, and a sender-intrinsic confounder (depth, size) is not
 touched by moving the senders at all. **The torus shift tests "are the senders
 aligned with the response field?", which is not "is there a SASP effect?"** If the
-paper reproduces the CellWHISPER finding that existing tools fail the torus shift,
+paper shows that existing tools fail the torus shift,
 it must simultaneously report that *passing* it proves very little.
+
+> **Correction 2026-08-27 (citation audit CIT-1).** This sentence read "reproduces the
+> CellWHISPER finding that existing tools fail the torus shift." CellWHISPER contains no
+> torus shift; its null permutes cell locations within each cell type, which is this
+> project's N1. The torus-shift failure reported here is this project's own result. The
+> null itself is Lotwick & Silverman (1982); Mrkvička et al. (2021), *Spatial Statistics*
+> 42:100430, show it is liberal and that it assumes a rectangular window.
 
 Figure 2b makes this visible: the observed binned curve, the matched-decoy curve and
 the torus-shift 95 % band lie on top of each other in every panel.

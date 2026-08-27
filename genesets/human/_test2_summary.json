@@ -1,0 +1,544 @@
+{
+ "panel_n": 5093,
+ "panel_feature_types": {
+  "Gene Expression": 5093,
+  "Negative Control Probe": 40,
+  "Genomic Control": 21,
+  "Negative Control Codeword": 609,
+  "Unassigned Codeword": 695,
+  "Deprecated Codeword": 3291
+ },
+ "msigdb_release": "2026.1.Hs",
+ "msigdb_fetched": "2026-08-27",
+ "A_phase7_16_on_panel": [
+  "ATM",
+  "ATR",
+  "CDKN1A",
+  "CDKN2A",
+  "CDKN2B",
+  "CHEK1",
+  "CHEK2",
+  "GADD45A",
+  "H2AFX",
+  "HMGB2",
+  "LMNB1",
+  "MDM2",
+  "TP53",
+  "TP53BP1"
+ ],
+ "A_phase7_16_off_panel": [
+  "TP53I3",
+  "HMGB1"
+ ],
+ "A_ported_pre": [
+  "APEX1",
+  "ATM",
+  "ATR",
+  "AURKB",
+  "BAX",
+  "BCL2",
+  "BCL2L1",
+  "BIRC5",
+  "BRCA1",
+  "BRCA2",
+  "BUB1",
+  "CBX5",
+  "CCNA2",
+  "CCNB1",
+  "CCNB2",
+  "CCND1",
+  "CDC20",
+  "CDC25A",
+  "CDK1",
+  "CDKN1A",
+  "CDKN1B",
+  "CDKN1C",
+  "CDKN2A",
+  "CDKN2B",
+  "CHAF1A",
+  "CHEK1",
+  "CHEK2",
+  "DDB2",
+  "E2F1",
+  "EHMT2",
+  "ERCC1",
+  "EZH2",
+  "FOXM1",
+  "FOXO3",
+  "GADD45A",
+  "GADD45G",
+  "GLB1",
+  "H2AFX",
+  "HMGA1",
+  "HMGB2",
+  "LMNB1",
+  "MCM2",
+  "MCM3",
+  "MCM4",
+  "MCM5",
+  "MCM6",
+  "MCM7",
+  "MDC1",
+  "MDM2",
+  "MDM4",
+  "MKI67",
+  "MRE11",
+  "NBN",
+  "NFATC1",
+  "NFE2L2",
+  "PARP1",
+  "PCNA",
+  "PHLDA3",
+  "PLK1",
+  "RAD50",
+  "RAD51",
+  "RB1",
+  "RBL2",
+  "RPA1",
+  "RRM2",
+  "SESN2",
+  "SIRT1",
+  "SUV39H1",
+  "TERF2",
+  "TERT",
+  "TNFRSF10B",
+  "TOP2A",
+  "TP53",
+  "TP53BP1",
+  "TP63",
+  "TP73",
+  "TYMS",
+  "UNG",
+  "XPC",
+  "XRCC5",
+  "XRCC6"
+ ],
+ "A_final_strict": [
+  "ATM",
+  "ATR",
+  "BAX",
+  "BCL2",
+  "BCL2L1",
+  "CCNB1",
+  "CDKN1C",
+  "CDKN2B",
+  "DDB2",
+  "EHMT2",
+  "ERCC1",
+  "FOXM1",
+  "FOXO3",
+  "GADD45G",
+  "GLB1",
+  "MDC1",
+  "MDM2",
+  "MDM4",
+  "NFATC1",
+  "PARP1",
+  "PHLDA3",
+  "RAD51",
+  "RB1",
+  "RBL2",
+  "SIRT1",
+  "TERF2",
+  "TERT",
+  "TNFRSF10B",
+  "TP53BP1",
+  "TP63",
+  "TP73",
+  "XPC",
+  "XRCC5"
+ ],
+ "A_final_noB7": [
+  "ATM",
+  "ATR",
+  "BAX",
+  "BCL2",
+  "BCL2L1",
+  "CCNB1",
+  "CDKN1C",
+  "CDKN2B",
+  "DDB2",
+  "EHMT2",
+  "ERCC1",
+  "FOXM1",
+  "FOXO3",
+  "GADD45G",
+  "GLB1",
+  "MDC1",
+  "MDM2",
+  "MDM4",
+  "NFATC1",
+  "PARP1",
+  "PHLDA3",
+  "RAD51",
+  "RB1",
+  "RBL2",
+  "SIRT1",
+  "TERF2",
+  "TERT",
+  "TNFRSF10B",
+  "TP53BP1",
+  "TP63",
+  "TP73",
+  "XPC",
+  "XRCC5"
+ ],
+ "A_final_noB4_noB7": [
+  "APEX1",
+  "ATM",
+  "ATR",
+  "AURKB",
+  "BAX",
+  "BCL2",
+  "BCL2L1",
+  "BIRC5",
+  "BRCA1",
+  "BRCA2",
+  "BUB1",
+  "CBX5",
+  "CCNA2",
+  "CCNB1",
+  "CCNB2",
+  "CDC20",
+  "CDC25A",
+  "CDK1",
+  "CDKN1B",
+  "CDKN1C",
+  "CDKN2A",
+  "CDKN2B",
+  "CHAF1A",
+  "CHEK1",
+  "CHEK2",
+  "DDB2",
+  "E2F1",
+  "EHMT2",
+  "ERCC1",
+  "EZH2",
+  "FOXM1",
+  "FOXO3",
+  "GADD45G",
+  "GLB1",
+  "H2AFX",
+  "HMGA1",
+  "HMGB2",
+  "LMNB1",
+  "MCM2",
+  "MCM3",
+  "MCM4",
+  "MCM5",
+  "MCM6",
+  "MDC1",
+  "MDM2",
+  "MDM4",
+  "MKI67",
+  "MRE11",
+  "NBN",
+  "NFATC1",
+  "PARP1",
+  "PCNA",
+  "PHLDA3",
+  "PLK1",
+  "RAD50",
+  "RAD51",
+  "RB1",
+  "RBL2",
+  "RPA1",
+  "RRM2",
+  "SIRT1",
+  "SUV39H1",
+  "TERF2",
+  "TERT",
+  "TNFRSF10B",
+  "TOP2A",
+  "TP53",
+  "TP53BP1",
+  "TP63",
+  "TP73",
+  "TYMS",
+  "UNG",
+  "XPC",
+  "XRCC5",
+  "XRCC6"
+ ],
+ "A_per_module_sizes": {
+  "B1_tnfa_nfkb_proximal": 77,
+  "B2_il6_jak_stat3": 81,
+  "B3_interferon_response": 80,
+  "B4_downstream_arrest": 36,
+  "B5_emt_ecm": 79,
+  "B6_oxidative_stress": 79,
+  "B7_secondary_senescence": 81
+ },
+ "B_sizes": {
+  "B1_tnfa_nfkb_proximal": 120,
+  "B2_il6_jak_stat3": 71,
+  "B3_interferon_response": 126,
+  "B4_downstream_arrest": 231,
+  "B5_emt_ecm": 113,
+  "B6_oxidative_stress": 36,
+  "B7_secondary_senescence": 116
+ },
+ "B_prov": {
+  "B1_tnfa_nfkb_proximal": [
+   "HALLMARK_TNFA_SIGNALING_VIA_NFKB"
+  ],
+  "B2_il6_jak_stat3": [
+   "HALLMARK_IL6_JAK_STAT3_SIGNALING"
+  ],
+  "B3_interferon_response": [
+   "HALLMARK_INTERFERON_GAMMA_RESPONSE",
+   "HALLMARK_INTERFERON_ALPHA_RESPONSE"
+  ],
+  "B4_downstream_arrest": [
+   "HALLMARK_E2F_TARGETS",
+   "HALLMARK_G2M_CHECKPOINT",
+   "HALLMARK_MYC_TARGETS_V1"
+  ],
+  "B5_emt_ecm": [
+   "HALLMARK_EPITHELIAL_MESENCHYMAL_TRANSITION"
+  ],
+  "B6_oxidative_stress": [
+   "HALLMARK_REACTIVE_OXYGEN_SPECIES_PATHWAY",
+   "REACTOME_DETOXIFICATION_OF_REACTIVE_OXYGEN_SPECIES",
+   "CUR_NRF2_targets (mouse arm rescue, ported)"
+  ],
+  "B7_secondary_senescence": [
+   "SAUL_SEN_MAYO",
+   "REACTOME_SENESCENCE_ASSOCIATED_SECRETORY_PHENOTYPE_SASP",
+   "minus Tier A caller pool A0 (C6, adopted)"
+  ]
+ },
+ "B6_hallmark_alone_on_panel": 18,
+ "collisions": {
+  "B1_tnfa_nfkb_proximal": [
+   "CCND1",
+   "CDKN1A",
+   "GADD45A",
+   "NFE2L2"
+  ],
+  "B3_interferon_response": [
+   "CDKN1A"
+  ],
+  "B4_downstream_arrest": [
+   "APEX1",
+   "AURKB",
+   "BIRC5",
+   "BRCA1",
+   "BRCA2",
+   "BUB1",
+   "CBX5",
+   "CCNA2",
+   "CCNB2",
+   "CCND1",
+   "CDC20",
+   "CDC25A",
+   "CDK1",
+   "CDKN1A",
+   "CDKN1B",
+   "CDKN2A",
+   "CHAF1A",
+   "CHEK1",
+   "CHEK2",
+   "E2F1",
+   "EZH2",
+   "H2AFX",
+   "HMGA1",
+   "HMGB2",
+   "LMNB1",
+   "MCM2",
+   "MCM3",
+   "MCM4",
+   "MCM5",
+   "MCM6",
+   "MCM7",
+   "MKI67",
+   "MRE11",
+   "NBN",
+   "PCNA",
+   "PLK1",
+   "RAD50",
+   "RPA1",
+   "RRM2",
+   "SUV39H1",
+   "TOP2A",
+   "TP53",
+   "TYMS",
+   "UNG",
+   "XRCC6"
+  ],
+  "B5_emt_ecm": [
+   "GADD45A",
+   "MCM7"
+  ],
+  "B6_oxidative_stress": [
+   "NFE2L2",
+   "SESN2"
+  ]
+ },
+ "unmapped_mouse_symbols": {
+  "A1_core_arrest": [
+   "Trp53i3"
+  ],
+  "B7_secondary_senescence_v1": [
+   "Trp53i3"
+  ]
+ },
+ "msigdb": {
+  "HALLMARK_XENOBIOTIC_METABOLISM": [
+   "M5934",
+   "H",
+   200,
+   97
+  ],
+  "HALLMARK_TNFA_SIGNALING_VIA_NFKB": [
+   "M5890",
+   "H",
+   200,
+   120
+  ],
+  "HALLMARK_REACTIVE_OXYGEN_SPECIES_PATHWAY": [
+   "M5938",
+   "H",
+   49,
+   18
+  ],
+  "HALLMARK_P53_PATHWAY": [
+   "M5939",
+   "H",
+   200,
+   89
+  ],
+  "HALLMARK_MYC_TARGETS_V1": [
+   "M5926",
+   "H",
+   200,
+   80
+  ],
+  "HALLMARK_INTERFERON_GAMMA_RESPONSE": [
+   "M5913",
+   "H",
+   200,
+   113
+  ],
+  "HALLMARK_INTERFERON_ALPHA_RESPONSE": [
+   "M5911",
+   "H",
+   97,
+   45
+  ],
+  "HALLMARK_INFLAMMATORY_RESPONSE": [
+   "M5932",
+   "H",
+   200,
+   146
+  ],
+  "HALLMARK_IL6_JAK_STAT3_SIGNALING": [
+   "M5897",
+   "H",
+   87,
+   71
+  ],
+  "HALLMARK_G2M_CHECKPOINT": [
+   "M5901",
+   "H",
+   200,
+   117
+  ],
+  "HALLMARK_EPITHELIAL_MESENCHYMAL_TRANSITION": [
+   "M5930",
+   "H",
+   200,
+   113
+  ],
+  "HALLMARK_E2F_TARGETS": [
+   "M5925",
+   "H",
+   200,
+   112
+  ],
+  "HALLMARK_APOPTOSIS": [
+   "M5902",
+   "H",
+   161,
+   105
+  ],
+  "REACTOME_SENESCENCE_ASSOCIATED_SECRETORY_PHENOTYPE_SASP": [
+   "M27187",
+   "C2:CP:REACTOME",
+   111,
+   27
+  ],
+  "REACTOME_ONCOGENE_INDUCED_SENESCENCE": [
+   "M27190",
+   "C2:CP:REACTOME",
+   35,
+   16
+  ],
+  "REACTOME_DNA_DAMAGE_TELOMERE_STRESS_INDUCED_SENESCENCE": [
+   "M27191",
+   "C2:CP:REACTOME",
+   79,
+   19
+  ],
+  "REACTOME_DETOXIFICATION_OF_REACTIVE_OXYGEN_SPECIES": [
+   "M27244",
+   "C2:CP:REACTOME",
+   37,
+   15
+  ],
+  "REACTOME_CELLULAR_SENESCENCE": [
+   "M27188",
+   "C2:CP:REACTOME",
+   197,
+   65
+  ],
+  "GOBP_RESPONSE_TO_REACTIVE_OXYGEN_SPECIES": [
+   "M16953",
+   "C5:GO:BP",
+   194,
+   101
+  ],
+  "GOBP_RESPONSE_TO_OXIDATIVE_STRESS": [
+   "M3223",
+   "C5:GO:BP",
+   437,
+   204
+  ],
+  "GOBP_CELLULAR_SENESCENCE": [
+   "M11558",
+   "C5:GO:BP",
+   109,
+   61
+  ],
+  "GOBP_CELLULAR_RESPONSE_TO_OXIDATIVE_STRESS": [
+   "M45123",
+   "C5:GO:BP",
+   260,
+   139
+  ],
+  "SAUL_SEN_MAYO": [
+   "M45803",
+   "C2:CGP",
+   124,
+   99
+  ],
+  "FRIDMAN_SENESCENCE_UP": [
+   "M9143",
+   "C2:CGP",
+   77,
+   47
+  ],
+  "FRIDMAN_SENESCENCE_DN": [
+   "M9487",
+   "C2:CGP",
+   13,
+   4
+  ],
+  "WP_NRF2_PATHWAY": [
+   "M39454",
+   "C2:CP:WIKIPATHWAYS",
+   141,
+   60
+  ]
+ }
+}

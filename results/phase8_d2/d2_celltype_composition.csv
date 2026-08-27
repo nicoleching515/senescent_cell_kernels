@@ -1,0 +1,113 @@
+section,config,cell_type,bg_pct,call_pct_committed,call_pct_alt,enrich_committed,enrich_alt
+7239_liver_sbr_Male_52-U1,raw,Hepatocytes,36.134,71.512,71.22,1.979,1.971
+7239_liver_sbr_Male_52-U1,raw,Biliary/ductular,22.2,26.552,26.844,1.196,1.209
+7239_liver_sbr_Male_52-U1,raw,Hepatic stellate cells,11.509,0.557,0.557,0.048,0.048
+7239_liver_sbr_Male_52-U1,raw,LSECs,10.131,0.292,0.292,0.029,0.029
+7239_liver_sbr_Male_52-U1,raw,Kupffer cells,9.036,0.265,0.265,0.029,0.029
+7239_liver_sbr_Male_52-U1,raw,T/NK cells,3.007,0.212,0.212,0.071,0.071
+7239_liver_sbr_Male_52-U1,raw,DC,2.7,0.053,0.053,0.02,0.02
+7239_liver_sbr_Male_52-U1,raw,vSMCs,2.217,0.053,0.053,0.024,0.024
+7239_liver_sbr_Male_52-U1,raw,B-cells,1.208,0.053,0.053,0.044,0.044
+7239_liver_sbr_Male_52-U1,raw,Proliferating,0.919,0.345,0.345,0.375,0.375
+7239_liver_sbr_Male_52-U1,raw,Central venous LSECs,0.877,0.106,0.106,0.121,0.121
+7239_liver_sbr_Male_52-U1,raw,Mesothelial cells,0.062,0.0,0.0,0.0,0.0
+7259_liver_sbr_Male_26-U1,raw,Biliary/ductular,28.595,28.365,28.365,0.992,0.992
+7259_liver_sbr_Male_26-U1,raw,Hepatocytes,26.24,64.505,64.487,2.458,2.458
+7259_liver_sbr_Male_26-U1,raw,Hepatic stellate cells,13.179,1.22,1.22,0.093,0.093
+7259_liver_sbr_Male_26-U1,raw,Kupffer cells,11.517,0.872,0.872,0.076,0.076
+7259_liver_sbr_Male_26-U1,raw,LSECs,11.3,2.789,2.789,0.247,0.247
+7259_liver_sbr_Male_26-U1,raw,T/NK cells,5.498,0.75,0.767,0.136,0.14
+7259_liver_sbr_Male_26-U1,raw,DC,2.412,0.105,0.105,0.043,0.043
+7259_liver_sbr_Male_26-U1,raw,B-cells,0.673,0.105,0.105,0.155,0.155
+7259_liver_sbr_Male_26-U1,raw,Proliferating,0.588,1.29,1.29,2.196,2.196
+7239_liver_sbr_Male_52-U1,mor,Hepatocytes,36.134,71.512,69.151,1.979,1.914
+7239_liver_sbr_Male_52-U1,mor,Biliary/ductular,22.2,26.552,28.833,1.196,1.299
+7239_liver_sbr_Male_52-U1,mor,Hepatic stellate cells,11.509,0.557,0.61,0.048,0.053
+7239_liver_sbr_Male_52-U1,mor,LSECs,10.131,0.292,0.265,0.029,0.026
+7239_liver_sbr_Male_52-U1,mor,Kupffer cells,9.036,0.265,0.292,0.029,0.032
+7239_liver_sbr_Male_52-U1,mor,T/NK cells,3.007,0.212,0.239,0.071,0.079
+7239_liver_sbr_Male_52-U1,mor,DC,2.7,0.053,0.08,0.02,0.029
+7239_liver_sbr_Male_52-U1,mor,vSMCs,2.217,0.053,0.08,0.024,0.036
+7239_liver_sbr_Male_52-U1,mor,B-cells,1.208,0.053,0.053,0.044,0.044
+7239_liver_sbr_Male_52-U1,mor,Proliferating,0.919,0.345,0.292,0.375,0.317
+7239_liver_sbr_Male_52-U1,mor,Central venous LSECs,0.877,0.106,0.106,0.121,0.121
+7239_liver_sbr_Male_52-U1,mor,Mesothelial cells,0.062,0.0,0.0,0.0,0.0
+7248_liver_sham_Male_26-U1,mor,Hepatocytes,55.099,89.543,90.637,1.625,1.645
+7248_liver_sham_Male_26-U1,mor,LSECs,16.57,1.791,1.637,0.108,0.099
+7248_liver_sham_Male_26-U1,mor,Hepatic stellate cells,8.069,0.624,0.583,0.077,0.072
+7248_liver_sham_Male_26-U1,mor,Kupffer cells,7.353,0.593,0.563,0.081,0.077
+7248_liver_sham_Male_26-U1,mor,Biliary/ductular,4.305,6.487,5.71,1.507,1.326
+7248_liver_sham_Male_26-U1,mor,vSMCs,3.492,0.46,0.44,0.132,0.126
+7248_liver_sham_Male_26-U1,mor,T/NK cells,2.654,0.246,0.184,0.093,0.069
+7248_liver_sham_Male_26-U1,mor,Central venous LSECs,1.259,0.123,0.113,0.098,0.089
+7248_liver_sham_Male_26-U1,mor,B-cells,0.671,0.102,0.092,0.153,0.137
+7248_liver_sham_Male_26-U1,mor,Proliferating,0.529,0.031,0.041,0.058,0.077
+7259_liver_sbr_Male_26-U1,mor,Biliary/ductular,28.595,28.365,30.561,0.992,1.069
+7259_liver_sbr_Male_26-U1,mor,Hepatocytes,26.24,64.505,62.727,2.458,2.39
+7259_liver_sbr_Male_26-U1,mor,Hepatic stellate cells,13.179,1.22,1.255,0.093,0.095
+7259_liver_sbr_Male_26-U1,mor,Kupffer cells,11.517,0.872,0.837,0.076,0.073
+7259_liver_sbr_Male_26-U1,mor,LSECs,11.3,2.789,2.545,0.247,0.225
+7259_liver_sbr_Male_26-U1,mor,T/NK cells,5.498,0.75,0.715,0.136,0.13
+7259_liver_sbr_Male_26-U1,mor,DC,2.412,0.105,0.087,0.043,0.036
+7259_liver_sbr_Male_26-U1,mor,B-cells,0.673,0.105,0.105,0.155,0.155
+7259_liver_sbr_Male_26-U1,mor,Proliferating,0.588,1.29,1.168,2.196,1.988
+7450_liver_sbr_Male_10-U1,mor,Hepatocytes,38.242,92.485,92.903,2.418,2.429
+7450_liver_sbr_Male_10-U1,mor,LSECs,16.029,0.909,0.86,0.057,0.054
+7450_liver_sbr_Male_10-U1,mor,Kupffer cells,14.127,0.417,0.417,0.03,0.03
+7450_liver_sbr_Male_10-U1,mor,Hepatic stellate cells,10.984,0.639,0.54,0.058,0.049
+7450_liver_sbr_Male_10-U1,mor,Biliary/ductular,10.011,0.417,0.417,0.042,0.042
+7450_liver_sbr_Male_10-U1,mor,Proliferating,4.533,4.617,4.347,1.019,0.959
+7450_liver_sbr_Male_10-U1,mor,T/NK cells,3.41,0.27,0.27,0.079,0.079
+7450_liver_sbr_Male_10-U1,mor,Mesothelial cells,1.24,0.074,0.074,0.059,0.059
+7450_liver_sbr_Male_10-U1,mor,B-cells,0.997,0.172,0.172,0.172,0.172
+7450_liver_sbr_Male_10-U1,mor,DC,0.426,0.0,0.0,0.0,0.0
+7259_liver_sbr_Male_26-U1,lib,Biliary/ductular,28.595,28.365,43.706,0.992,1.528
+7259_liver_sbr_Male_26-U1,lib,Hepatocytes,26.24,64.505,42.73,2.458,1.628
+7259_liver_sbr_Male_26-U1,lib,Hepatic stellate cells,13.179,1.22,3.138,0.093,0.238
+7259_liver_sbr_Male_26-U1,lib,Kupffer cells,11.517,0.872,1.813,0.076,0.157
+7259_liver_sbr_Male_26-U1,lib,LSECs,11.3,2.789,5.718,0.247,0.506
+7259_liver_sbr_Male_26-U1,lib,T/NK cells,5.498,0.75,1.883,0.136,0.342
+7259_liver_sbr_Male_26-U1,lib,DC,2.412,0.105,0.244,0.043,0.101
+7259_liver_sbr_Male_26-U1,lib,B-cells,0.673,0.105,0.296,0.155,0.44
+7259_liver_sbr_Male_26-U1,lib,Proliferating,0.588,1.29,0.471,2.196,0.801
+7352_liver_sham_Male_2-U1,lib,Hepatocytes,60.851,97.238,85.516,1.598,1.405
+7352_liver_sham_Male_2-U1,lib,LSECs,13.108,0.932,5.934,0.071,0.453
+7352_liver_sham_Male_2-U1,lib,Kupffer cells,7.361,0.245,2.207,0.033,0.3
+7352_liver_sham_Male_2-U1,lib,Hepatic stellate cells,6.95,0.49,3.319,0.071,0.478
+7352_liver_sham_Male_2-U1,lib,vSMCs,3.378,0.18,0.474,0.053,0.14
+7352_liver_sham_Male_2-U1,lib,Biliary/ductular,3.362,0.523,1.144,0.156,0.34
+7352_liver_sham_Male_2-U1,lib,T/NK cells,2.509,0.229,0.915,0.091,0.365
+7352_liver_sham_Male_2-U1,lib,DC,1.503,0.065,0.229,0.044,0.152
+7352_liver_sham_Male_2-U1,lib,B-cells,0.572,0.065,0.229,0.114,0.4
+7352_liver_sham_Male_2-U1,lib,Proliferating,0.407,0.033,0.033,0.08,0.08
+7239_liver_sbr_Male_52-U1,dca,Hepatocytes,36.134,71.512,99.973,1.979,2.767
+7239_liver_sbr_Male_52-U1,dca,Biliary/ductular,22.2,26.552,0.0,1.196,0.0
+7239_liver_sbr_Male_52-U1,dca,Hepatic stellate cells,11.509,0.557,0.0,0.048,0.0
+7239_liver_sbr_Male_52-U1,dca,LSECs,10.131,0.292,0.0,0.029,0.0
+7239_liver_sbr_Male_52-U1,dca,Kupffer cells,9.036,0.265,0.0,0.029,0.0
+7239_liver_sbr_Male_52-U1,dca,T/NK cells,3.007,0.212,0.0,0.071,0.0
+7239_liver_sbr_Male_52-U1,dca,DC,2.7,0.053,0.027,0.02,0.01
+7239_liver_sbr_Male_52-U1,dca,vSMCs,2.217,0.053,0.0,0.024,0.0
+7239_liver_sbr_Male_52-U1,dca,B-cells,1.208,0.053,0.0,0.044,0.0
+7239_liver_sbr_Male_52-U1,dca,Proliferating,0.919,0.345,0.0,0.375,0.0
+7239_liver_sbr_Male_52-U1,dca,Central venous LSECs,0.877,0.106,0.0,0.121,0.0
+7239_liver_sbr_Male_52-U1,dca,Mesothelial cells,0.062,0.0,0.0,0.0,0.0
+7259_liver_sbr_Male_26-U1,dca,Biliary/ductular,28.595,28.365,0.017,0.992,0.001
+7259_liver_sbr_Male_26-U1,dca,Hepatocytes,26.24,64.505,99.965,2.458,3.81
+7259_liver_sbr_Male_26-U1,dca,Hepatic stellate cells,13.179,1.22,0.0,0.093,0.0
+7259_liver_sbr_Male_26-U1,dca,Kupffer cells,11.517,0.872,0.0,0.076,0.0
+7259_liver_sbr_Male_26-U1,dca,LSECs,11.3,2.789,0.0,0.247,0.0
+7259_liver_sbr_Male_26-U1,dca,T/NK cells,5.498,0.75,0.0,0.136,0.0
+7259_liver_sbr_Male_26-U1,dca,DC,2.412,0.105,0.0,0.043,0.0
+7259_liver_sbr_Male_26-U1,dca,B-cells,0.673,0.105,0.0,0.155,0.0
+7259_liver_sbr_Male_26-U1,dca,Proliferating,0.588,1.29,0.017,2.196,0.03
+7352_liver_sham_Male_2-U1,dca,Hepatocytes,60.851,97.238,100.0,1.598,1.643
+7352_liver_sham_Male_2-U1,dca,LSECs,13.108,0.932,0.0,0.071,0.0
+7352_liver_sham_Male_2-U1,dca,Kupffer cells,7.361,0.245,0.0,0.033,0.0
+7352_liver_sham_Male_2-U1,dca,Hepatic stellate cells,6.95,0.49,0.0,0.071,0.0
+7352_liver_sham_Male_2-U1,dca,vSMCs,3.378,0.18,0.0,0.053,0.0
+7352_liver_sham_Male_2-U1,dca,Biliary/ductular,3.362,0.523,0.0,0.156,0.0
+7352_liver_sham_Male_2-U1,dca,T/NK cells,2.509,0.229,0.0,0.091,0.0
+7352_liver_sham_Male_2-U1,dca,DC,1.503,0.065,0.0,0.044,0.0
+7352_liver_sham_Male_2-U1,dca,B-cells,0.572,0.065,0.0,0.114,0.0
+7352_liver_sham_Male_2-U1,dca,Proliferating,0.407,0.033,0.0,0.08,0.0

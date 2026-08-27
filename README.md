@@ -281,17 +281,39 @@ pass Q≥20; 33.82% of assigned transcripts are nuclear). The plan's >30%
 bleed-through threshold is comfortably cleared, so the confounding documented
 here is *not* attributable to transcript bleed-through.
 
-**Senescence calling is a choice, not a fact.** Four sender definitions —
+**Senescence calling is a choice, not a fact — but the callers are not
+independent, and saying they were was wrong.** Four sender definitions —
 DeepScence (run with `denoise=False`, a forced deviation from the published
 configuration, because its DCA dependency needs an obsolete TensorFlow stack,
-and on **two of eleven sections**), SenePy, `Cdkn1a`⁺ and a curated
-arrest-and-damage score — overlap at **0.93–1.22× of chance for four of six
-pairs** after conditioning on cell type *and* transcript-depth decile
-(`BIO_PHASE3.md` §4.4). The one consistently above-chance pair, DeepScence vs
-`Cdkn1a`⁺ (1.51–2.85×), is expected: `CDKN1A` is DeepScence's own sign anchor.
-The pair that looked concordant in sham (SenePy vs DeepScence, 2.15×) is
-*anti*-concordant in SBR (0.38×). DeepScence's CoreScence set is 69% circular
-with our response modules. Because of the `denoise=False` deviation — DCA
+now scored on **all eleven sections**), SenePy, `Cdkn1a`⁺ and a curated
+arrest-and-damage score — overlap **above chance** after conditioning on cell
+type *and* transcript-depth decile: pooled **1.21× chance (z = 21.9,
+p = 1.8 × 10⁻¹⁰⁶)** over the four non-circular pairs, eleven sections, frozen
+strict-33 Tier A (`results/phase3/caller_coverage_gate_headline.csv`). The
+effect is **small and certain**: 21 % above chance, not 2× above it.
+
+> **Superseded, and by how much.** This paragraph read "**0.93–1.22× of chance
+> for four of six pairs** … i.e. statistically independent", from a
+> **two-section** DeepScence base and the pre-C6 25-gene Tier A. Both premises
+> moved. At full coverage on the same gene sets the pooled value went
+> 1.040 → 1.129; on the frozen 33-gene Tier A it is 1.212. It is above chance on
+> the *published two-section base* too (1.13×, p = 4 × 10⁻⁸), so coverage is not
+> the only reason. The defensible restatement is **"weakly but genuinely
+> dependent, in a direction each pair's depth loading explains"**
+> (`reports/CS_PHASE8_CALLERS.md` §3, `reports/CORRECTIONS.md` §2).
+>
+> Two per-pair numbers in the old text are also superseded. **DeepScence vs
+> `Cdkn1a`⁺ was quoted at 1.51–2.85×**; over eleven sections it is 0.963–2.849
+> with a median of **1.071** and a pooled **1.255**, so the quoted range
+> overstates the measured circularity by about two-fold. The pair is still
+> circular by construction — `CDKN1A` is DeepScence's own sign anchor — and is
+> still excluded from every pooled number. **SenePy vs DeepScence was read as
+> "concordant in sham (2.15×), anti-concordant in SBR (0.38×)"**; at full
+> coverage it is 0.33–0.55× in **ten of eleven** sections. There is no arm
+> effect — there is one anomalous section, 7250. DeepScence's CoreScence set is **79%** circular
+with our response modules (26 of the 33 CoreScence genes reachable on the mouse
+panel are in ≥1 Tier B module; corrected 2026-08-27 from "69%", whose denominator
+of 35 was a typed-in literal — `reports/BIO_PHASE2.md` §4.2 correction box). Because of the `denoise=False` deviation — DCA
 denoising is precisely the step that would normalise depth — these characterise
 **DeepScence as we could run it on this panel, not DeepScence as published**.
 What the choice propagates into:
@@ -483,12 +505,22 @@ an FPR claim that one of our own reports explicitly disclaims.
 
 **Still outstanding — these need a human, not another agent:**
 
-- Two claims sit behind publisher paywalls and are re-blocked as of 2026-08-21
-  (cell.com/sciencedirect 403, bioRxiv 429 to every attempt): the **Ma et al.
-  distance-gradient sentence** and the **CellWHISPER >90% sentence**. Both are
-  substantiated by independent search retrievals of the primary sources; neither
-  has been *rendered* from the publisher. Neither is presented here as verified.
-  The CellWHISPER one is the first citation in our opening paragraph.
+- ~~Two claims sit behind publisher paywalls~~ **The CellWHISPER one is now
+  resolved (2026-08-27, citation audit).** The v1 full text was rendered from
+  bioRxiv and the sentence reads verbatim: *"CellChat v2, COMMOT, and SpaTalk
+  predict similar numbers of interactions on real (blue) and randomized (orange)
+  data, indicating poor specificity and false positive rates (FPR) >90%. In
+  contrast, CellWHISPER produced markedly fewer interactions on randomized data
+  compared to real data, suggesting FPR < 5%."* Note the form: it is an
+  **interaction-count ratio from which they infer an FPR**, not a measured type-I
+  error — always write "implying". The same reading also confirmed that
+  **CellWHISPER contains no torus shift** (the strings *torus*/*toroidal* do not
+  occur) and uses no negative control probes; see `reports/CITATION_AUDIT.md`.
+  **Still outstanding:** the **Ma et al. distance-gradient sentence**
+  (cell.com/sciencedirect 403). The abstract-level claim — SSSs "serve as
+  epicenters for heightened inflammation that compromises surrounding cells in a
+  distance-dependent manner" — *is* verified from PubMed; the finer per-pathway
+  monotone-with-distance claim is not, and is not presented here as verified.
 - The **2026 Author Correction on Acosta et al. 2013** (doi
   10.1038/s41556-026-01959-z, *Nat Cell Biol* 28(6):1343) exists — re-confirmed
   via Europe PMC — but its **content is still unread**; nature.com redirects

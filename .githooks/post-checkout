@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+# Phase 8 hazard guard, 2026-08-27.
+#
+# code/build_genesets.py AS COMMITTED AT HEAD has a dead per-session SCRATCH path.
+# Run in that state it globs ZERO MSigDB JSONs and SILENTLY OVERWRITES
+# genesets/*.txt with EMPTY Tier B modules, exiting 0. The working tree carries
+# guards that refuse both that and a revert of the promoted C6 sets.
+#
+# A checkout that restores the HEAD version reintroduces the hazard. This hook
+# detects that and refuses to leave the tree in that state.
+#
+# Retire this hook once the guarded file is committed.
+set -u
+F=code/build_genesets.py
+ROOT=$(git rev-parse --show-toplevel 2>/dev/null) || exit 0
+[ -f "$ROOT/$F" ] || exit 0
+if ! grep -q "Refusing to run" "$ROOT/$F" 2>/dev/null; then
+  cat >&2 <<'MSG'
+
+  ############################################################
+  #  STOP — code/build_genesets.py has lost its safety guards #
+  ############################################################
+
+  The version now in your working tree is the one that SILENTLY
+  OVERWRITES genesets/*.txt with EMPTY Tier B modules and exits 0.
+
+  DO NOT RUN IT. Restore the guarded version:
+
+      git stash list                 # if you stashed it
+      # or recover from reports/ / the session record
+
+  This hook exists because the guarded version is NOT YET COMMITTED.
+  Committing code/ retires this hook.
+
+MSG
+  exit 1
+fi
+exit 0

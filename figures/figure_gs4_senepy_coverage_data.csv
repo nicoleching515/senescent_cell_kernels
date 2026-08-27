@@ -1,0 +1,23 @@
+cell_type,in_label_set,hub_tissue,hub_cell,hub_num,hub_size,on_panel,usable,tissue_matched,hub
+cDC1,True,,,,,0,no_hub,no,—
+cDC2,True,,,,,0,no_hub,no,—
+pDC,True,,,,,0,no_hub,no,—
+Lymphatic endothelium,True,,,,,0,no_hub,no,—
+Erythroid cells,True,,,,,0,no_hub,no,—
+Megakaryocytes,True,,,,,0,no_hub,no,—
+Mesothelial cells,True,,,,,0,no_hub,no,—
+Red pulp macrophages,True,intestine,macrophage,0.0,3147.0,940,yes,no,intestine / macrophage
+Fibroblastic reticular cells,True,skin,fibroblast,1.0,1837.0,482,yes,no,skin / fibroblast
+Fibroblasts,True,skin,fibroblast,1.0,1837.0,482,yes,no,skin / fibroblast
+CD4 T cells,True,lung,t cell,0.0,1053.0,412,yes,no,lung / t cell
+CD8 T cells,True,lung,t cell,0.0,1053.0,412,yes,no,lung / t cell
+Neutrophils,True,blood,neutrophil,0.0,1265.0,381,yes,no,blood / neutrophil
+Follicular B cells,True,blood,memory b cell,1.0,1103.0,267,yes,no,blood / memory b cell
+Marginal zone B cells,True,blood,memory b cell,1.0,1103.0,267,yes,no,blood / memory b cell
+Germinal centre B cells,True,blood,memory b cell,1.0,1103.0,267,yes,no,blood / memory b cell
+Monocytes,True,lung,monocyte,0.0,351.0,167,yes,no,lung / monocyte
+Sinusoidal endothelium,True,skin,endothelial cell,0.0,551.0,164,yes,no,skin / endothelial cell
+Endothelial cells,True,skin,endothelial cell,0.0,551.0,164,yes,no,skin / endothelial cell
+NK cells,True,blood,nk cell,0.0,242.0,107,yes,no,blood / nk cell
+Smooth muscle / capsule,True,heart,smooth muscle cell,0.0,57.0,27,yes,no,heart / smooth muscle cell
+Pericytes,True,heart,pericyte,0.0,49.0,16,yes,no,heart / pericyte

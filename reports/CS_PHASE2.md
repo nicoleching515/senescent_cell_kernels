@@ -342,9 +342,13 @@ every control is regime-dependent.
    Section 6.5 prescription is empirically vindicated.
 2. **Demote N3/N4 from "the strong null" to "a necessary but weak check."** They
    cannot separate confounding from causation, and on our synthetic data they endorse
-   confounding at 89–98 %. If the paper reproduces the CellWHISPER finding that
-   existing tools fail the torus shift, it should simultaneously report that *passing*
+   confounding at 89–98 %. If the paper shows that existing tools fail the torus shift,
+   it should simultaneously report that *passing*
    the torus shift proves much less than the field assumes.
+   [Corrected 2026-08-27, citation audit CIT-1: this read "reproduces the CellWHISPER
+   finding that existing tools fail the torus shift." CellWHISPER runs no torus shift —
+   their null is a within-cell-type location permutation (our N1). The torus-shift result
+   in this project is ours, against a null attributable to Lotwick & Silverman (1982).]
 3. **Hold λ fixed at λ̂_obs inside every permutation null.** Re-profiling silently
    changes the model and destroys power.
 4. **Report the family-spread on d̂½ as part of the estimate.** On the real data it is
