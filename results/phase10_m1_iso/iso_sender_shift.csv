@@ -1,0 +1,7 @@
+arm,section,call,n_cells,n_senders_full,n_senders_iso,prevalence_full,prevalence_iso,jaccard_top5pct,n_intersection,n_union,spearman_tierA,pearson_tierA
+m1,7259_liver_sbr_Male_26-U1,tierA_p95,127386,5707,5707,4.4801,4.4801,0.4903,3755,7659,0.8774,0.8961
+m1,7260_liver_sbr_Male_26-U1,tierA_p95,202016,8860,8860,4.3858,4.3858,0.4675,5645,12075,0.8791,0.8961
+m1,7001_liver_sham_Male_52-U1,tierA_p95,165961,6895,6895,4.1546,4.1546,0.4744,4437,9353,0.882,0.8949
+m1,7248_liver_sham_Male_26-U1,tierA_p95,224921,9725,9725,4.3237,4.3237,0.4788,6297,13153,0.8789,0.8987
+m1,7352_liver_sham_Male_2-U1,tierA_p95,139378,6097,6097,4.3744,4.3744,0.4586,3834,8360,0.8756,0.8894
+m1,7435_liver_sham_Male_10-U1,tierA_p95,172218,6960,6960,4.0414,4.0414,0.4826,4531,9389,0.8882,0.8998
