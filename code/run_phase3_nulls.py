@@ -656,9 +656,14 @@ def _perm_c1_job(sample, call, seed, n_perm, do_full, curves_for, module=None):
     for r in range(n_perm):
         for nm in G.ALL_NULLS:
             scope = "tile" if nm in G.TILE_NULLS else "full"
+            if scope == "tile" and not geom.tiles:
+                continue        # the construction itself is undefined here
+            # the draw happens whether or not this scope has any fit cells, so
+            # the random stream does not depend on the fit population -- the
+            # same property `_perm_job` has, where `dsets` is always built.
+            pts = geom.draw(nm, rng)
             if not cells[scope]:
                 continue
-            pts = geom.draw(nm, rng)
             dd = P.dist_to_points(sf.coords, pts)
             for ci, rec in enumerate(cells[scope]):
                 ii, lam = rec["ii"], rec["lam"]
