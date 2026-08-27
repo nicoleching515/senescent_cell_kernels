@@ -16,25 +16,29 @@ pass exists to remove, and §6 records the one place it nearly recurred.
 
 ## 0.1 The figures guard does **not** pass, and that is not this pass's doing
 
+**A task-8.7 figure regeneration is in progress in this working tree, and the guard is failing
+against a manifest that has not been re-snapshotted.** The guard passed at the start of this pass
+("OK: all 52 committed figures match", exit 0) and again after the PRIORITY 3 commit. It began
+failing after commit **`39e7791` "figure2e: write the producer that never existed, and fix what it
+drew"** — another agent's work — and the count has grown as that work continues:
+
 ```
-$ python3 code/check_figures_guard.py
-CHANGED: figures/figure2e.pdf
-CHANGED: figures/figure2e.png
+17:24  CHANGED: figure2e.{pdf,png}                                     (2 artefacts)
+...    CHANGED: figure2a.{pdf,png}, figure2a_amplitudes.csv, figure2b.{pdf,png},
+                figure2c.{pdf,png}, figure2e.{pdf,png}, figure3.{pdf,png},
+                figure3_data.csv, figure4.{pdf,png}, figure4_data.csv,
+                figure4_supp_ncem_lengthscale.{pdf,png}                (17 artefacts)
 exit=1
 ```
 
-It passed at the start of this pass ("OK: all 52 committed figures match", exit 0) and again after
-the PRIORITY 3 commit. It began failing after commit **`39e7791` "figure2e: write the producer that
-never existed, and fix what it drew"** — another agent's work, which regenerated
-`figures/figure2e.{pdf,png}` without re-snapshotting `figures/.committed_manifest.json`.
+**I did not touch `figures/` and did not run `--snapshot`.** Reconciling the manifest belongs to
+whoever owns task 8.7 regeneration — it is their re-snapshot to make, and the count will keep
+moving until they make it. **Until then the guard's output must not be quoted as a pass anywhere**,
+and the `WRITING_PACK.md` figure-guard row now says exactly that.
 
-**I did not touch `figures/` and did not run `--snapshot`.** Resolving this belongs to whoever owns
-task 8.7 regeneration. Until they do, **the guard's output must not be quoted as a pass** anywhere.
-
-Related and also live: **`figures/figure4.png` was regenerated during this session** — md5
+Related, and the reason §6 exists: **`figures/figure4.png` was regenerated mid-pass** — md5
 `d44fac63411d6c30a42c40894a287f17` at first observation, **`fdead29871b61481e297951dfea75b3d`**
-minutes later — and `figures/figure4.{pdf,png}`, `figures/figure4_data.csv`, `code/make_figure4.py`
-are modified in the working tree as this is written. See §6.
+minutes later.
 
 ## 0.2 Seven numbers-audit items outside my brief are still live in `WRITING_PACK.md`
 
