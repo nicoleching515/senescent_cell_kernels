@@ -102,3 +102,7 @@ data/raw_h1_candidates/
 # reports ARE committed; only the bulk caches are excluded.
 data/processed_h1/
 data/raw_h1_transcripts/
+
+# Phase 10 ortholog-intersected-panel caches and per-cell tables (regenerable by
+# code/m1_callers_iso.py + code/m1_prep_cache_iso.py from data/raw + the tracked caches)
+data/processed_m1_iso/
