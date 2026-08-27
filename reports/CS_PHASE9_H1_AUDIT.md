@@ -6,6 +6,10 @@
 `reports/PREREG_PHASE8.md` committed. This is the first work permitted to read H1 expression data.
 
 **Every number below was produced by a script in this report and is in a file named beside it.**
+`python3 code/h1_verify_report.py` re-reads all 28 headline figures from those files and exits
+non-zero if any has drifted — **28 checks, 0 failed**. It exists because this project has
+repeatedly found its own written numbers not to match the files behind them
+(`reports/AUDIT_PHASE8_FACTCHECK.md`).
 New code is `code/h1_*.py`; new outputs are `results/phase9_h1/` and `data/processed_h1/`.
 Nothing under `results/phase3/`, `figures/`, `genesets/` or `data/processed/` was written.
 
@@ -957,7 +961,7 @@ DeepScence 16.5–41 min/section; DCA `denoise=True` 2.4–2.9 min to denoise 20
   `h1_a8_crossarm.py`, `h1_module_fits.py`, `h1_jobB_crosscheck.py`, `h1_caller_agreement.py`,
   `h1_senepy_surrogates.py`, `h1_deepscence.py`, `h1_deepscence_anchor.py`,
   `h1_deepscence_dca.py`, `h1_d2_analyse.py`, `h1_run_annotate_queue.sh`, `h1_run_stage2.sh`,
-  `h1_run_deepscence_supervisor.sh`, `h1_run_dca_panel.sh`
+  `h1_run_deepscence_supervisor.sh`, `h1_run_dca_panel.sh`, `h1_verify_report.py`
 - `results/phase9_h1/` — 30+ CSVs, all named in this report
 - `data/processed_h1/` — per-section `celltypes_h1_*`, `senders_h1_*`, `modules_h1_*`,
   `anatomy_h1_*`, `deepscence_h1_*`, `cache3_h1/*.npz`
