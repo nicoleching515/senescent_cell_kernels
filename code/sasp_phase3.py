@@ -178,6 +178,20 @@ def prep(sample: str, force: bool = False) -> str:
         d[f"flag_p{q}"] = sen[f"sender_flag_p{q}"].fillna(0).to_numpy().astype(bool)
     for m in MODULES:
         d[f"mod__{m}"] = mods[m].to_numpy(np.float32)
+    # Phase 8 / D1: the seven per-module Tier A sensitivity sender sets
+    # (`genesets/A_sender_for_<module>.txt`), scored and thresholded by
+    # `phase2_downstream.py` exactly as the PRIMARY Tier A set is.  Cached
+    # here so `Sec.sender_mask("tierApm_pNN", module=...)` costs nothing.
+    # A cache written before Phase 8 simply lacks these keys, and
+    # `sender_mask` raises rather than guessing (see `Sec.has_permodule`).
+    for m in MODULES:
+        col = f"tierA_{m}_score"
+        if col not in sen.columns:
+            continue
+        d[f"tierApm__{m}"] = sen[col].to_numpy(np.float32)
+        for q in (90, 95, 99):
+            d[f"flag_pm_{m}_p{q}"] = (sen[f"sender_flag_{m}_p{q}"]
+                                      .fillna(0).to_numpy().astype(bool))
 
     np.savez_compressed(out, **d)
     return (f"[done] {sample} n={len(cid)} medNN={float(d['median_nn_um']):.2f} "
@@ -213,16 +227,43 @@ class Sec:
     def module(self, m):
         return self.z[f"mod__{m}"].astype(float)
 
+    @property
+    def has_permodule(self) -> bool:
+        """True when this cache carries the Phase 8 per-module Tier A flags."""
+        return all(f"flag_pm_{m}_p95" in self.z.files for m in MODULES)
+
     # ---- sender calls (N7 axis) ------------------------------------------
-    def sender_mask(self, call: str) -> np.ndarray:
+    def sender_mask(self, call: str, module: str = None) -> np.ndarray:
         """Sender calls, all excluding Low_quality/Unknown/Proliferating.
 
-        tierA_pNN  : Bio's within-cell-type NNth-percentile Tier A flag
-        cdkn1a_pos : Cdkn1a > 0, the call the source paper uses
-        senepy_pNN : within-cell-type NNth percentile of the SenePy hub score
+        tierA_pNN   : Bio's within-cell-type NNth-percentile Tier A flag
+        cdkn1a_pos  : Cdkn1a > 0, the call the source paper uses
+        senepy_pNN  : within-cell-type NNth percentile of the SenePy hub score
+        tierApm_pNN : the same within-cell-type NNth-percentile rule applied to
+                      the PER-MODULE Tier A sensitivity set
+                      `genesets/A_sender_for_<module>.txt` (Phase 8 D1).  This
+                      call is module-specific, so `module=` is required and the
+                      caller must fan out over `MODULES`.
         """
         ok = ~np.isin(self.celltype, EXCLUDE_TYPES + EXCLUDE_FROM_SENDERS)
-        if call.startswith("tierA_p"):
+        if call.startswith("tierApm_p"):
+            # checked BEFORE tierA_p*, which is not a prefix of it but is easy
+            # to confuse; the two families must never silently swap.
+            if module is None:
+                raise ValueError(
+                    f"{call!r} is a per-module sender call: pass "
+                    "module=<one of sasp_phase3.MODULES>.")
+            if module not in MODULES:
+                raise ValueError(f"unknown module {module!r}")
+            key = f"flag_pm_{module}_p{call[9:]}"
+            if key not in self.z.files:
+                raise ValueError(
+                    f"{self.name}: the Phase 3 cache has no {key!r}.  It "
+                    "predates Phase 8; re-run phase2_downstream.py and "
+                    "sasp_phase3.prep(force=True) before using "
+                    f"{call!r}.  (Sec.has_permodule reports this.)")
+            m = self.z[key].copy()
+        elif call.startswith("tierA_p"):
             m = self.z[f"flag_p{call[7:]}"].copy()
         elif call == "cdkn1a_pos":
             m = self.cdkn1a_counts > 0
