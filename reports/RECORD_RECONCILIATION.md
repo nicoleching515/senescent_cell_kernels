@@ -265,7 +265,8 @@ print(spearmanr(s.I_ctcentred_mean.abs(), s.a7_base_mean.abs()))"
 pack §0.4's diagnosis is corrected accordingly.
 
 > **The falsification survives at every aggregation, and this must be said out loud.** ρ is
-> **positive and significant under all four** (+0.71 to +0.94, p ≤ 1.9 × 10⁻⁵ in every case).
+> **positive and significant under all four** (+0.71 to +0.94; the largest p of the four is
+> 8.4 × 10⁻⁵).
 > "Moran's I and the A7 kernel do not disagree" is therefore **not a fragile finding** — only
 > the digit is aggregation-dependent. Any writer who states a bare ρ invites a reader to
 > recompute it another way, get a different number, and conclude the finding turns on the
