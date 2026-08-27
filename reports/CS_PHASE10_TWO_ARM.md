@@ -210,23 +210,17 @@ value. Quantities that are properties of the arm rather than of the call appear 
 | Composition-matched SF [comp_adj] | 0.4989  95% CI [0.4215, 0.6063]  share removed 50.1 %  n_rep 33 | 0.1023  95% CI [-0.0469, 0.2202]  share removed 89.8 %  n_rep 12 | 0.1182  95% CI [-0.0356, 0.2200]  share removed 88.2 %  n_rep 12 |
 | Composition-matched SF [type_adj] | 0.3414  95% CI [0.2356, 0.4016]  share removed 65.9 %  n_rep 33 | 0.2958  95% CI [0.1731, 0.4256]  share removed 70.4 %  n_rep 12 | 0.3349  95% CI [0.1649, 0.4372]  share removed 66.5 %  n_rep 12 |
 | Composition-matched SF [typecomp_adj] (PRIMARY of the pair) | 0.1461  95% CI [0.0520, 0.2461]  share removed 85.4 %  n_rep 33 | 0.0698  95% CI [-0.1056, 0.1889]  share removed 93.0 %  n_rep 12 | 0.0821  95% CI [-0.0700, 0.1882]  share removed 91.8 %  n_rep 12 |
-| Ripley's K at 50 um vs a within-type permutation null [tierA_p95] | 1.085 (range 1.009 - 1.160) | 1.012 (range 0.988 - 1.036) | — |
-| Ripley's K at 50 um vs a within-type permutation null [cdkn1a_pos] | 1.319 (range 1.158 - 1.684) | 1.161 (range 1.118 - 1.218) | — |
-| Ripley's K at 50 um vs a within-type permutation null [senepy_p95] | 1.593 (range 1.305 - 1.936) | 1.647 (range 1.295 - 2.415) | — |
+| Ripley's K at 50 um vs a within-type permutation null [tierA_p95] | 1.085 (range 1.009 - 1.160) over the 6 in-band sections; 1.136 (1.009 - 1.363) over all 11 | 1.012 (range 0.988 - 1.036) | — |
+| Ripley's K at 50 um vs a within-type permutation null [cdkn1a_pos] | 1.319 (range 1.158 - 1.684) over the 6 in-band sections; 1.263 (1.032 - 1.684) over all 11 | 1.161 (range 1.118 - 1.218) | — |
+| Ripley's K at 50 um vs a within-type permutation null [senepy_p95] | 1.593 (range 1.305 - 1.936) over the 6 in-band sections; 1.556 (1.272 - 1.936) over all 11 | 1.647 (range 1.295 - 2.415) | — |
 | A5 matched-decoy balance, max \|SMD\| after matching | 0.0352 (100 % pass) | 0.0933 (35/35 matches pass \|SMD\| <= 0.1) | — |
-| Caller agreement, depth- and type-matched, pooled [senepy vs cdkn1a] | 1.211 (z 7.43) | — | — |
-| Caller agreement, depth- and type-matched, pooled [senepy vs deepscence] | 0.737 (z -15.08) | — | — |
-| Caller agreement, depth- and type-matched, pooled [tierA vs cdkn1a] | 1.471 (z 19.45) | — | — |
-| Caller agreement, depth- and type-matched, pooled [tierA vs deepscence] | 1.288 (z 19.23) | — | — |
-| Caller agreement, depth- and type-matched, pooled [tierA vs senepy] | 0.972 (z -1.63) | — | — |
-| Caller agreement, depth- and type-matched, pooled [deepscence vs cdkn1a] | 1.255 (z 10.53)  CIRCULAR | — | — |
-| Caller agreement, depth- and type-matched, pooled [deepscence_score vs cdkn1a_counts] | — | 6.436 (z 204.83)  CIRCULAR | — |
-| Caller agreement, depth- and type-matched, pooled [senepy_score vs cdkn1a_counts] | — | 1.505 (z 18.70) | — |
-| Caller agreement, depth- and type-matched, pooled [senepy_score vs deepscence_score] | — | 1.093 (z 5.89) | — |
+| Caller agreement, depth- and type-matched, pooled [senepy_score vs cdkn1a_counts] | 1.211 (z 7.43) | 1.505 (z 18.70) | — |
+| Caller agreement, depth- and type-matched, pooled [senepy_score vs deepscence_score] | 0.737 (z -15.08) | 1.093 (z 5.89) | — |
+| Caller agreement, depth- and type-matched, pooled [tierA_score vs cdkn1a_counts] | 1.471 (z 19.45) | 1.081 (z 3.05) | — |
+| Caller agreement, depth- and type-matched, pooled [tierA_score vs deepscence_score] | 1.288 (z 19.23) | 1.602 (z 38.86) | — |
+| Caller agreement, depth- and type-matched, pooled [tierA_score vs senepy_score] | 0.972 (z -1.63) | 0.874 (z -7.96) | — |
+| Caller agreement, depth- and type-matched, pooled [deepscence_score vs cdkn1a_counts] | 1.255 (z 10.53)  CIRCULAR | 6.436 (z 204.83)  CIRCULAR | — |
 | Caller agreement, depth- and type-matched, pooled [tierA_score vs abs_deepscence_score] | — | 1.102 (z 5.67) | — |
-| Caller agreement, depth- and type-matched, pooled [tierA_score vs cdkn1a_counts] | — | 1.081 (z 3.05) | — |
-| Caller agreement, depth- and type-matched, pooled [tierA_score vs deepscence_score] | — | 1.602 (z 38.86) | — |
-| Caller agreement, depth- and type-matched, pooled [tierA_score vs senepy_score] | — | 0.874 (z -7.96) | — |
 | Caller depth loading, Spearman(score, transcript counts) [tierA_score] | 0.0561  (min -0.0609, max 0.1252, n=11) | -0.0227  (min -0.1738, max 0.0979, n=7) | — |
 | Caller depth loading, Spearman(score, transcript counts) [cdkn1a_counts] | 0.1923  (min 0.0152, max 0.4814, n=11) | 0.0837  (min 0.0563, max 0.1653, n=7) | — |
 | Caller depth loading, Spearman(score, transcript counts) [senepy_score] | 0.1676  (min 0.0968, max 0.5134, n=11) | 0.2339  (min 0.0405, max 0.3323, n=7) | — |
@@ -449,7 +443,7 @@ spleen confounds the two by design (PREREG §10.5).
 | 1 | **Reportable fits** (naive β > 0 **and** block-bootstrap CI excludes 0) | **153 / 315 = 48.6 %** | **58 / 343 = 16.9 %** (merged call) · 61 / 343 = 17.8 % (frozen-literal) | `main_fits.csv`, both arms |
 | 2 | **SF under N2+N5+N6** (the primary outcome) | **0.0885** IQR [−0.0166, +0.2338] | **0.1582** IQR [+0.0074, +0.3837] | `sf_summary.csv` / `h1_headlines_*.json` |
 | 3 | **SF under N1**, the within-type sender-label permutation | **0.7074** — the permutation destroys 71 % of the amplitude | **0.3319** — it destroys only 33 %; **the permuted sender set reproduces two-thirds of the observed effect** | `perm_nulls.csv`, both arms |
-| 4 | **Ripley's K at 50 µm**, `tierA_p95` senders vs a within-type permutation null | **1.136** (range 1.009–1.363) | **1.012** (range 0.988–1.036); **3 of 7 sections below 1.0** | `results/phase3/ripley.csv`, `results/phase9_h1/a4_ripley.csv` |
+| 4 | **Ripley's K at 50 µm**, `tierA_p95` senders vs a within-type permutation null | **1.085** (1.009–1.160) over the 6 in-band sections, **1.136** (1.009–1.363) over all 11 | **1.012** (0.988–1.036); **3 of 7 sections below 1.0** | `results/phase3/ripley.csv`, `results/phase9_h1/a4_ripley.csv` |
 | 5 | **λ̂ geometry** | 60.0 % railed: **32.7 % at the 7 µm floor**, 27.3 % at the 50 µm ceiling; median λ̂ **14.73 µm** | 70.0 % railed: 25.1 % at the floor, **44.9 % at the ceiling**; median λ̂ **38.16 µm** | `main_fits.csv`, both arms |
 | 6 | **Local cell density**: median real cells within the 100 µm window of a sender | **140** | **476** — 3.4× denser | `null_destructiveness.csv`, `real_median_nbrs`, both arms |
 | 7 | **Sequencing depth**: median transcripts per cell, per section | **446 – 968** (in-band 6) | **42 – 273** — 3 to 10× shallower, and spanning **6.5×** within the arm | `results/section_qc_sender_summary.csv`; `results/phase9_h1/a1_sections.csv` |

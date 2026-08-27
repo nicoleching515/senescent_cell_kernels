@@ -28,6 +28,9 @@ M1_INBAND = ["7259_liver_sbr_Male_26-U1", "7260_liver_sbr_Male_26-U1",
              "7352_liver_sham_Male_2-U1", "7435_liver_sham_Male_10-U1"]
 H1_SECS = ["SPLN07", "SPLN14", "SPLN21", "SPLN24", "SPLN30", "SPLN43", "SPLN44"]
 ROWS = []
+# the mouse gate file names pairs informally; rename them to the H1 file's A-vs-B form so the
+# two arms land on the SAME table row instead of two half-empty ones.
+PAIR_NAME = {'senepy vs cdkn1a': 'senepy_score vs cdkn1a_counts', 'senepy vs deepscence': 'senepy_score vs deepscence_score', 'tierA vs cdkn1a': 'tierA_score vs cdkn1a_counts', 'tierA vs deepscence': 'tierA_score vs deepscence_score', 'tierA vs senepy': 'tierA_score vs senepy_score', 'deepscence vs cdkn1a': 'deepscence_score vs cdkn1a_counts'}
 
 
 def add(quantity, arm, value, source, filt, panel="full", note=""):
@@ -257,13 +260,17 @@ def main():
                 % (call, v))
 
     # ---------------- clustering, matching, callers, Phase 5 ----------------
-    r = pd.read_csv(f"{R3}/ripley.csv"); r = r[r.band == "in_band"]
-    for call, lab in [("tierA_p95", "tierA_p95"), ("cdkn1a_pos", "cdkn1a_pos"),
-                      ("senepy_p95", "senepy_p95")]:
-        v = r[r.call == call].ripley_ratio
-        add("Ripley's K at 50 um vs a within-type permutation null [%s]" % lab, "M1",
-            "%.3f (range %.3f - %.3f)" % (v.mean(), v.min(), v.max()),
-            f"{R3}/ripley.csv", "band=='in_band' & call=='%s'" % call)
+    r0 = pd.read_csv(f"{R3}/ripley.csv")
+    for call in ("tierA_p95", "cdkn1a_pos", "senepy_p95"):
+        vi = r0[(r0.band == "in_band") & (r0.call == call)].ripley_ratio
+        va = r0[r0.call == call].ripley_ratio
+        add("Ripley's K at 50 um vs a within-type permutation null [%s]" % call, "M1",
+            "%.3f (range %.3f - %.3f) over the 6 in-band sections; "
+            "%.3f (%.3f - %.3f) over all 11"
+            % (vi.mean(), vi.min(), vi.max(), va.mean(), va.min(), va.max()),
+            f"{R3}/ripley.csv",
+            "call=='%s'; in-band = the fit population, all 11 = the Phase-9 comparison"
+            % call)
     r = pd.read_csv(f"{R9}/a4_ripley.csv")
     rc = "call" if "call" in r.columns else r.columns[1]
     for call in ("tierA_p95", "cdkn1a_pos", "senepy_p95"):
@@ -283,7 +290,8 @@ def main():
     g = pd.read_csv(f"{R3}/caller_coverage_gate.csv")
     g = g[g.basis.str.contains("11-section, post-C6", na=False)]
     for _, row in g.iterrows():
-        add("Caller agreement, depth- and type-matched, pooled [%s]" % row.pair, "M1",
+        add("Caller agreement, depth- and type-matched, pooled [%s]"
+            % PAIR_NAME.get(row.pair, row.pair), "M1",
             "%.3f (z %.2f)%s" % (row.pooled_ratio, row.pooled_z,
                                  "  CIRCULAR" if row.circular else ""),
             f"{R3}/caller_coverage_gate.csv",
