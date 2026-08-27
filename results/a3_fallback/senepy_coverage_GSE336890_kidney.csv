@@ -1,0 +1,6 @@
+tissue,cell,hub,hub_size,on_panel,usable
+kidney,endothelial cell,0,20,11,yes
+kidney,endothelial cell,8,3,2,no
+kidney,epithelial cell,0,50,23,yes
+kidney,macrophage,0,38,19,yes
+kidney,macrophage,1,209,69,yes

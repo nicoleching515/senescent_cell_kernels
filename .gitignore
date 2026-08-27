@@ -91,3 +91,8 @@ data/raw_h1/
 # comparison, deliberately not committed -- see figures/revised_candidates/README.md.
 figures/revised_candidates/
 figures/.committed_manifest.json
+
+# A3 fallback screen (contingency): panel-verification downloads for the two
+# runner-up candidates of reports/PHASE7_H1_SCREEN.md. Same policy as data/raw_h1/.
+# Re-fetch with code/fetch_h1_candidates.sh; see reports/A3_FALLBACK_SCREEN.md.
+data/raw_h1_candidates/

@@ -1,5 +1,21 @@
 # Submission patch — caller independence, for the Aug 29 deadline
 
+> # ⚠ REFRAMED 2026-08-27 — THERE IS NO MANUSCRIPT
+>
+> This file was written as **corrections to a draft**. **No draft exists.** Nothing
+> has been written yet, so there is nothing to find-and-replace.
+>
+> **What it is actually good for:** the numbers, the falsified claims, and the
+> wordings that must not be used. All of that is being consolidated into
+> **`reports/WRITING_PACK.md`**, organised by the §30 outline and traced to source
+> files. **Use the writing pack when drafting. Keep this file only as the record
+> of what was found wrong and when.**
+>
+> Note that two of its own sections were themselves corrected after being written
+> (§4a's A7 attribution, §9's Moran framing) — it went stale twice while the
+> numbers settled. That is the reason for the consolidation.
+
+
 **Status: APPLY. Rewritten 2026-08-27 against the settled post-C6 numbers.**
 This supersedes the "DO NOT APPLY — NUMBERS SUPERSEDED" hold of 06:09. Task 8.7
 (the M1 end-to-end re-run) is **complete**, all stages landed, and every number

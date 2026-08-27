@@ -159,6 +159,53 @@ what it costs." That is still publishable; it is a different claim.
 | 76 | **`kumar2026cellwhisper` forenames actually fixed** | `references.bib` | The citation audit's own note said they were corrected. **They were not.** Abhishek->Anurendra, Fernando->Felix, Bhavya->Bhavay, Nan->Nicholas — in the project's most load-bearing citation, while `SUBMISSION_PATCH` told the PI the bibliography was clean |
 | 77 | **Falsified Moran framing removed from the DEADLINE document** | `reports/SUBMISSION_PATCH_2026-8-29.md` | §9 still instructed *"so the reader can see the two tests disagree"* — in the one document applied to the manuscript by hand, two days out. Replaced with the measured power argument |
 | 78 | **Freeze document corrected before tagging** | `reports/PREREG_PHASE8.md` | **5 corrections.** It carried my "roughly doubles" overstatement in 2 places and 3 **pre-C6** A7 values. Frozen values re-read by me from `a7_summary.csv` (09:06): codewords **-0.0604** (was -0.0549), genomic **-0.0307** (was -0.0337), probes **-0.0225** p=0.129 (was -0.0177). Residual stale digits: **0** |
+| 80 | **`phase8-frozen` TAGGED** | `926439629a07269a32c93f998da0f6e1cd20933c` | Verified before tagging: figure guard 52/52, gene-set gate exit 0 both arms, all three pinned hashes. Pre-registration hashes filled; working tree clean |
+| 81 | **Hazard fix committed (`11fa773`) + temp hook retired (`9264396`)** | proven by running `git checkout -- code/` against HEAD | The PI's own commit (`1351ce8`) had **left the guard file out** — my `skip-worktree` protection stopped it being staged. Guards now in history; hazard permanently closed |
+| 82 | **A3 fallback screen** | `reports/A3_FALLBACK_SCREEN.md`, `results/a3_fallback/` | **No adequate like-for-like fallback exists** |
+
+## THE A3 SCREEN'S STRATEGIC FINDING: a failure likely ENDS the human arm
+
+**A2 is not the discriminator — both candidates PASS the frozen gate** (strict Tier
+A 33/33, all seven modules above the floor, `oxidative_stress` at 36 on both).
+That was the obvious screen and it does not separate them.
+
+**What does:** I verified the three panels share a **5,006-gene three-way core**
+(H1 5,093; kidney and BM 5,101 each; H1∩kidney **5,008**, H1∩BM **5,023**). The
+sender callers are frozen. **So an A3 failure on H1 caused by out-of-band
+prevalence on a Prime 5K panel is likely to REPRODUCE on both candidates** — they
+are ~98% the same instrument.
+
+Each also adds a cell-budget failure H1 does not have. To clear both A3 floors at
+p=5%, a cell type needs **2.4%** of an H1 donor, **29%** of the median kidney
+donor, **7.7%** of the median BM donor.
+
+**Bone marrow fails structurally, and I verified it** from
+`GSE335963_a3_budget.json`: at p=0.02, **`n_strata_ok: 0`** of 88 donor x type
+strata, and **`types_ok_in_all_donors: []` at every prevalence level tested**.
+
+**Consequence for planning: an A3 failure most likely ends the human arm rather
+than redirecting it.** That is worth knowing *before* A3 runs, not after.
+
+## ⚠ MY OWN SCREEN WAS WRONG IN BOTH DIRECTIONS
+
+`PHASE7_H1_SCREEN.md` §2 gave **sample** counts where **donor** counts were needed:
+
+| I reported | Actually |
+|---|---|
+| GSE336890 "9" | 9 Region **slides** carrying **20 patient specimens** (8 AIN / 7 ATI / only **5** reference) — *more* than I said |
+| GSE335963 "39" | A **SuperSeries**. Only **6 of 39** GSM are Xenium at all, from **4 donors** (two repeat sections) — far *fewer* than I said |
+
+Neither error changed the H1 selection, but both would have misled anyone using
+that table as a fallback list. Corrected in place with a banner.
+
+**Also gone:** §12.1's stated reason for preferring H1 over these two was its age
+axis. **Neither candidate deposits age at all**, so that comparison was never
+available to make.
+
+**And a data defect worth remembering:** two kidney samples type **all 9,644
+features** as `Gene Expression`. Only the ENSG id prefix recovers the real
+5,101-gene panel — a title-trusting screen would have mis-sized that panel by 89%.
+
 
 | 79 | **Commit plan written for the PI** | `reports/COMMIT_PLAN_FOR_PI.md` | 590 changed paths categorised, a 6-step commit order, pre-tag verification commands, and §0 leading with the destructive-checkout hazard. **Nothing executed** — no commits, pushes or tags, per standing instruction |
 

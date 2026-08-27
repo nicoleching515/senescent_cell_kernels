@@ -1,0 +1,43 @@
+{
+ "CH02": {
+  "Ignore*": 4663,
+  "Tissue": 15883,
+  "Other": 25417,
+  "Fiber-enriched": 438,
+  "Bone": 379
+ },
+ "CH15": {
+  "Ignore*": 7455,
+  "Other": 14330,
+  "Tissue": 4102,
+  "Fiber-enriched": 4157,
+  "Bone": 109
+ },
+ "NC03": {
+  "Other": 4464,
+  "Bone": 399,
+  "Tissue": 6683,
+  "Ignore*": 5401
+ },
+ "NC03-2": {
+  "Other": 16882,
+  "Tissue": 11150,
+  "Fiber-enriched": 125,
+  "Bone": 99,
+  "Ignore*": 1411
+ },
+ "NC05": {
+  "Ignore*": 12076,
+  "Other": 4524,
+  "Bone": 257,
+  "Fiber-enriched": 745,
+  "Tissue": 5196
+ },
+ "NC05-2": {
+  "Ignore*": 8525,
+  "Other": 11361,
+  "Bone": 709,
+  "Tissue": 15931,
+  "Fiber-enriched": 256
+ }
+}

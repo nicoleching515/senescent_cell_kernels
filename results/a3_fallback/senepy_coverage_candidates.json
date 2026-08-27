@@ -1,0 +1,97 @@
+{
+ "H1_GSE326743_spleen": {
+  "tissue": "spleen",
+  "panel": "/workspace/genesets/h1_candidate/GSE326743_gene_panel_5093.csv",
+  "n_panel": 5093,
+  "tissue_hub_present": false,
+  "n_hubs": 0,
+  "n_cell_types": 0,
+  "n_usable": 0,
+  "hubs": []
+ },
+ "GSE336890_kidney": {
+  "tissue": "kidney",
+  "panel": "/workspace/results/a3_fallback/GSE336890_gene_panel_5101.csv",
+  "n_panel": 5101,
+  "tissue_hub_present": true,
+  "n_hubs": 5,
+  "n_cell_types": 3,
+  "n_usable": 4,
+  "hubs": [
+   {
+    "tissue": "kidney",
+    "cell": "endothelial cell",
+    "hub": 0,
+    "hub_size": 20,
+    "on_panel": 11,
+    "usable": "yes"
+   },
+   {
+    "tissue": "kidney",
+    "cell": "endothelial cell",
+    "hub": 8,
+    "hub_size": 3,
+    "on_panel": 2,
+    "usable": "no"
+   },
+   {
+    "tissue": "kidney",
+    "cell": "epithelial cell",
+    "hub": 0,
+    "hub_size": 50,
+    "on_panel": 23,
+    "usable": "yes"
+   },
+   {
+    "tissue": "kidney",
+    "cell": "macrophage",
+    "hub": 0,
+    "hub_size": 38,
+    "on_panel": 19,
+    "usable": "yes"
+   },
+   {
+    "tissue": "kidney",
+    "cell": "macrophage",
+    "hub": 1,
+    "hub_size": 209,
+    "on_panel": 69,
+    "usable": "yes"
+   }
+  ]
+ },
+ "GSE335963_bonemarrow": {
+  "tissue": "bone marrow",
+  "panel": "/workspace/results/a3_fallback/GSE335963_gene_panel_5101.csv",
+  "n_panel": 5101,
+  "tissue_hub_present": true,
+  "n_hubs": 1,
+  "n_cell_types": 1,
+  "n_usable": 1,
+  "hubs": [
+   {
+    "tissue": "bone marrow",
+    "cell": "t cell",
+    "hub": 1,
+    "hub_size": 838,
+    "on_panel": 269,
+    "usable": "yes"
+   }
+  ]
+ },
+ "_inventory": {
+  "n_hubs": 65,
+  "tissues": [
+   "blood",
+   "bone marrow",
+   "heart",
+   "hippocampus",
+   "intestine",
+   "kidney",
+   "liver",
+   "lung",
+   "skin",
+   "tongue"
+  ]
+ }
+}

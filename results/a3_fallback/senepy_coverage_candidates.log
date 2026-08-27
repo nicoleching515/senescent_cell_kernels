@@ -1,0 +1,27 @@
+SenePy human hub inventory: 65 hubs, 10 tissues
+tissues: blood, bone marrow, heart, hippocampus, intestine, kidney, liver, lung, skin, tongue
+
+====================================================================================================
+H1_GSE326743_spleen   panel = GSE326743_gene_panel_5093.csv (5093 genes)
+  tissue-matched SenePy hub for 'spleen': ABSENT
+  no hubs at all for this tissue -- every cell type needs a cross-tissue surrogate
+
+====================================================================================================
+GSE336890_kidney   panel = GSE336890_gene_panel_5101.csv (5101 genes)
+  tissue-matched SenePy hub for 'kidney': PRESENT
+  cell type (SenePy label)             hub     size  on-panel   usable
+  macrophage                             1      209        69      yes
+  epithelial cell                        0       50        23      yes
+  macrophage                             0       38        19      yes
+  endothelial cell                       0       20        11      yes
+  endothelial cell                       8        3         2       no
+  5 hubs, 3 distinct cell types, 4 usable at MIN_ON_PANEL=10
+
+====================================================================================================
+GSE335963_bonemarrow   panel = GSE335963_gene_panel_5101.csv (5101 genes)
+  tissue-matched SenePy hub for 'bone marrow': PRESENT
+  cell type (SenePy label)             hub     size  on-panel   usable
+  t cell                                 1      838       269      yes
+  1 hubs, 1 distinct cell types, 1 usable at MIN_ON_PANEL=10
+
+wrote /workspace/results/a3_fallback/senepy_coverage_candidates.json

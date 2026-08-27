@@ -1,0 +1,65 @@
+====================================================================================================
+GSE335963 -- 4 cell_feature_matrix.h5
+  GSM9824312_CH02        features=9692   cells=61583     gene panel (ENSG ids) = 5101   dup symbols = 0
+      by feature id prefix : ENSG=5101  NegControlProbe=40  NegControlCodeword=609  Intergenic=21  UnassignedCodeword=630  DeprecatedCodeword=3291
+      by h5 feature_type   : Deprecated Codeword=3291  Gene Expression=5101  Genomic Control=21  Negative Control Codeword=609  Negative Control Probe=40  Unassigned Codeword=630
+      stock Prime 5K NegControlCodeword   expect 609  got 609  MATCH
+      stock Prime 5K NegControlProbe      expect  40  got  40  MATCH
+      stock Prime 5K Intergenic           expect  21  got  21  MATCH
+  GSM9824313_CH15        features=9692   cells=40264     gene panel (ENSG ids) = 5101   dup symbols = 0
+      by feature id prefix : ENSG=5101  NegControlProbe=40  NegControlCodeword=609  Intergenic=21  UnassignedCodeword=630  DeprecatedCodeword=3291
+      by h5 feature_type   : Deprecated Codeword=3291  Gene Expression=5101  Genomic Control=21  Negative Control Codeword=609  Negative Control Probe=40  Unassigned Codeword=630
+      stock Prime 5K NegControlCodeword   expect 609  got 609  MATCH
+      stock Prime 5K NegControlProbe      expect  40  got  40  MATCH
+      stock Prime 5K Intergenic           expect  21  got  21  MATCH
+  GSM9824314_NC03        features=9692   cells=23992     gene panel (ENSG ids) = 5101   dup symbols = 0
+      by feature id prefix : ENSG=5101  NegControlProbe=40  NegControlCodeword=609  Intergenic=21  UnassignedCodeword=630  DeprecatedCodeword=3291
+      by h5 feature_type   : Deprecated Codeword=3291  Gene Expression=5101  Genomic Control=21  Negative Control Codeword=609  Negative Control Probe=40  Unassigned Codeword=630
+      stock Prime 5K NegControlCodeword   expect 609  got 609  MATCH
+      stock Prime 5K NegControlProbe      expect  40  got  40  MATCH
+      stock Prime 5K Intergenic           expect  21  got  21  MATCH
+  GSM9824316_NC05        features=9692   cells=35084     gene panel (ENSG ids) = 5101   dup symbols = 0
+      by feature id prefix : ENSG=5101  NegControlProbe=40  NegControlCodeword=609  Intergenic=21  UnassignedCodeword=630  DeprecatedCodeword=3291
+      by h5 feature_type   : Deprecated Codeword=3291  Gene Expression=5101  Genomic Control=21  Negative Control Codeword=609  Negative Control Probe=40  Unassigned Codeword=630
+      stock Prime 5K NegControlCodeword   expect 609  got 609  MATCH
+      stock Prime 5K NegControlProbe      expect  40  got  40  MATCH
+      stock Prime 5K Intergenic           expect  21  got  21  MATCH
+  panel identical across 4 samples (symmetric difference == 0): True   {'GSM9824313_CH15': 0, 'GSM9824314_NC03': 0, 'GSM9824316_NC05': 0}
+  vs the frozen H1 panel (GSE326743, 5093 genes): 5023 shared, 70 H1-only, 78 candidate-only
+  wrote /workspace/results/a3_fallback/GSE335963_gene_panel_5101.csv (5101 rows)
+  wrote /workspace/results/a3_fallback/GSE335963_panel_features.csv
+====================================================================================================
+GSE336890 -- 4 cell_feature_matrix.h5
+  GSM9844156_Region01    features=9644   cells=121864    gene panel (ENSG ids) = 5101   dup symbols = 0
+      by feature id prefix : ENSG=5101  NegControlProbe=40  NegControlCodeword=609  Intergenic=21  UnassignedCodeword=582  DeprecatedCodeword=3291
+      by h5 feature_type   : Gene Expression=9644   <== feature_type column is UNUSABLE here (controls typed as Gene Expression)
+      stock Prime 5K NegControlCodeword   expect 609  got 609  MATCH
+      stock Prime 5K NegControlProbe      expect  40  got  40  MATCH
+      stock Prime 5K Intergenic           expect  21  got  21  MATCH
+  GSM9844157_Region02    features=9644   cells=23409     gene panel (ENSG ids) = 5101   dup symbols = 0
+      by feature id prefix : ENSG=5101  NegControlProbe=40  NegControlCodeword=609  Intergenic=21  UnassignedCodeword=582  DeprecatedCodeword=3291
+      by h5 feature_type   : Deprecated Codeword=3291  Gene Expression=5101  Genomic Control=21  Negative Control Codeword=609  Negative Control Probe=40  Unassigned Codeword=582
+      stock Prime 5K NegControlCodeword   expect 609  got 609  MATCH
+      stock Prime 5K NegControlProbe      expect  40  got  40  MATCH
+      stock Prime 5K Intergenic           expect  21  got  21  MATCH
+  GSM9844163_Region14    features=9644   cells=26598     gene panel (ENSG ids) = 5101   dup symbols = 0
+      by feature id prefix : ENSG=5101  NegControlProbe=40  NegControlCodeword=609  Intergenic=21  UnassignedCodeword=582  DeprecatedCodeword=3291
+      by h5 feature_type   : Deprecated Codeword=3291  Gene Expression=5101  Genomic Control=21  Negative Control Codeword=609  Negative Control Probe=40  Unassigned Codeword=582
+      stock Prime 5K NegControlCodeword   expect 609  got 609  MATCH
+      stock Prime 5K NegControlProbe      expect  40  got  40  MATCH
+      stock Prime 5K Intergenic           expect  21  got  21  MATCH
+  GSM9844164_Region15    features=9644   cells=98714     gene panel (ENSG ids) = 5101   dup symbols = 0
+      by feature id prefix : ENSG=5101  NegControlProbe=40  NegControlCodeword=609  Intergenic=21  UnassignedCodeword=582  DeprecatedCodeword=3291
+      by h5 feature_type   : Gene Expression=9644   <== feature_type column is UNUSABLE here (controls typed as Gene Expression)
+      stock Prime 5K NegControlCodeword   expect 609  got 609  MATCH
+      stock Prime 5K NegControlProbe      expect  40  got  40  MATCH
+      stock Prime 5K Intergenic           expect  21  got  21  MATCH
+  panel identical across 4 samples (symmetric difference == 0): True   {'GSM9844157_Region02': 0, 'GSM9844163_Region14': 0, 'GSM9844164_Region15': 0}
+  vs the frozen H1 panel (GSE326743, 5093 genes): 5008 shared, 85 H1-only, 93 candidate-only
+  wrote /workspace/results/a3_fallback/GSE336890_gene_panel_5101.csv (5101 rows)
+  wrote /workspace/results/a3_fallback/GSE336890_panel_features.csv
+====================================================================================================
+cross-candidate: |GSE335963 ^ GSE336890| = 164
+three-way core (H1 n candidate1 n candidate2) = 5006 genes
+
+wrote /workspace/results/a3_fallback/panel_screen.json

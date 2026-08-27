@@ -1,5 +1,13 @@
 # Phase 7 §12.1 — GEO panel-first screen for a human Xenium Prime 5K arm
 
+> **⚠ TWO ROWS IN §2 WERE CORRECTED 2026-08-27.** Both gave **sample** counts where
+> **donor** counts were needed, and both were wrong — in opposite directions.
+> GSE336890 has *more* donors than stated (20, not 9); GSE335963 has far *fewer*
+> (4, not 39 — it is a SuperSeries and only 6 GSM are Xenium at all). Neither error
+> changed the H1 selection, but both would have misled anyone using this table as a
+> fallback list. See `reports/A3_FALLBACK_SCREEN.md`.
+
+
 **Date:** 2026-08-27
 **Scope:** the §12.1 "Search protocol, GEO only". Panel-first, tissue-agnostic.
 **Status:** candidate selected and acquired; **freeze/pre-registration (§15) NOT yet committed** — see the caveat at the end.
@@ -37,8 +45,8 @@ secondary/validation target.
 | Series | Human n | Tissue | Files | Verdict |
 |---|---|---|---|---|
 | **GSE326743** | **7** | **Spleen, normal FFPE** | h5 + parquet | **SELECTED** |
-| GSE336890 | 9 | Kidney biopsy (AIN / ATI / reference) | h5 + parquet | Runner-up; disease-defined axis |
-| GSE335963 | 39 | Bone marrow (CHIP vs non-CHIP) | h5 + parquet | Runner-up; CHIP is an ageing-associated axis |
+| GSE336890 | 9 slides / **20 donors** | Kidney biopsy (AIN / ATI / reference) | h5 + parquet | **CORRECTED 2026-08-27:** the 9 are Region *slides*, carrying 20 patient specimens (8 AIN / 7 ATI / **only 5 reference**), 358,005 cells. See `reports/A3_FALLBACK_SCREEN.md` |
+| GSE335963 | 39 GSM / **4 donors** | Bone marrow (CHIP vs non-CHIP) | h5 + parquet | **CORRECTED 2026-08-27: this is a SuperSeries.** Only **6 of 39** GSM are Xenium (= GSE335962), from **4 donors** (two are repeat sections). **Fails A3 structurally** — 0 of 88 donor x type strata clear the floors at p=2%. **Strike from the runner-up list** |
 | GSE335962 | 6 | Bone marrow biopsy (CHIP) | h5 + parquet | Subset of the above |
 | GSE311609 | 41 | Primary NSCLC / breast cancer | h5 + parquet | Tumour |
 | GSE343063 | 6 | Lung (SCLC) | h5 + parquet + zarr | Tumour |

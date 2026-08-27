@@ -1,0 +1,63 @@
+====================================================================================================
+GSE335963 (Xenium subseries GSE335962) -- bone marrow biopsy
+  CH02       donor=CH02   cells=61583
+  CH15       donor=CH15   cells=40264
+  NC03       donor=NC03   cells=23992
+  NC03-2     donor=NC03   cells=51464
+  NC05       donor=NC05   cells=35084
+  NC05-2     donor=NC05   cells=69901
+  sections=6  DONORS=4  total cells=282288
+    donor CH02   cells=  61583
+    donor CH15   cells=  40264
+    donor NC03   cells=  75456
+    donor NC05   cells= 104985
+====================================================================================================
+GSE336890 -- kidney biopsy, per-cell donor assignment from cells_stats
+  blocks=22  total cells=358005
+  cross-check, block sum vs /matrix/shape of the Region h5:
+    Region_1   blocks= 121864  h5= 121864  diff=+0 
+    Region_2   blocks=  23405  h5=  23409  diff=-4   <-- cells with no donor assignment
+    Region_14  blocks=  26450  h5=  26598  diff=-148   <-- cells with no donor assignment
+    Region_15  blocks=  98714  h5=  98714  diff=+0 
+  DONORS (distinct patient specimens) = 20
+    AIN/23929      disease=AIN  blocks=1 regions=C   cells=  40589
+    REF/L102       disease=REF  blocks=2 regions=C,M cells=  26450
+    ATI/7997       disease=ATI  blocks=2 regions=C,M cells=  24868
+    AIN/26646      disease=AIN  blocks=1 regions=C   cells=  24112
+    AIN/704        disease=AIN  blocks=1 regions=C   cells=  23405
+    REF/L117       disease=REF  blocks=1 regions=M   cells=  22618
+    AIN/20463      disease=AIN  blocks=1 regions=C   cells=  21376
+    ATI/4442       disease=ATI  blocks=1 regions=C   cells=  20940
+    ATI/8145       disease=ATI  blocks=1 regions=C   cells=  19474
+    ATI/24981      disease=ATI  blocks=1 regions=M   cells=  18748
+    REF/L111       disease=REF  blocks=1 regions=M   cells=  17195
+    ATI/23693      disease=ATI  blocks=1 regions=C   cells=  16307
+    ATI/7751       disease=ATI  blocks=1 regions=C   cells=  16000
+    AIN/26655      disease=AIN  blocks=1 regions=M   cells=  13803
+    REF/L115       disease=REF  blocks=1 regions=C   cells=  13349
+    ATI/26661      disease=ATI  blocks=1 regions=C   cells=  12174
+    AIN/14022      disease=AIN  blocks=1 regions=C   cells=  10317
+    AIN/16104      disease=AIN  blocks=1 regions=C   cells=   7912
+    AIN/24870      disease=AIN  blocks=1 regions=C   cells=   5569
+    REF/L112       disease=REF  blocks=1 regions=M   cells=   2799
+====================================================================================================
+A3 cell budget. A donor needs >= 5,000 cells OF A TYPE for the non-sender floor, and
+>= 200/p cells of that type for the >= 200-sender floor at prevalence p.
+series       donors        min   median      max   donors with >= 5,000 cells IN TOTAL
+GSE336890    20           2799    17972    40589   19/20
+    cells of a type needed for >= 200 senders: p=20% -> 1000  p=10% -> 2000  p=5% -> 4000  p=2% -> 10000  p=1% -> 20000
+GSE335963    4           40264    68520   104985   4/4
+    cells of a type needed for >= 200 senders: p=20% -> 1000  p=10% -> 2000  p=5% -> 4000  p=2% -> 10000  p=1% -> 20000
+
+Required share of a donor held by a SINGLE cell type for that (donor x type) stratum
+to clear both A3 floors -- max(5000/(1-p), 200/p) / donor cells:
+series       donor cells      p=20%  p=10%  p=5%  p=2%  p=1%
+GSE336890    min donor 2799    223.3%   198.5%   188.0%   357.3%   714.5%
+GSE336890    median donor 17972   34.8%    30.9%    29.3%    55.6%   111.3%
+GSE336890    max donor 40589    15.4%    13.7%    13.0%    24.6%    49.3%
+GSE335963    min donor 40264    15.5%    13.8%    13.1%    24.8%    49.7%
+GSE335963    median donor 68520    9.1%     8.1%     7.7%    14.6%    29.2%
+GSE335963    max donor 104985    6.0%     5.3%     5.0%     9.5%    19.1%
+  (a share > 100 %% means NO cell type in that donor can satisfy A3 at that prevalence)
+
+wrote /workspace/results/a3_fallback/cell_budget.csv and cell_budget.json

@@ -1,0 +1,89 @@
+donor,cell_type,n_cells
+CH02,Active Fibroblast,149
+CH02,Adipocyte,1492
+CH02,B-Cell,2063
+CH02,CXCL12+ Fibroblast,393
+CH02,Cycling GMP,733
+CH02,EC,1839
+CH02,Erythroid,3897
+CH02,Erythroid (Cycling),9155
+CH02,MSC-Adipo,1355
+CH02,MSC-Osteo,654
+CH02,Macrophage,1719
+CH02,Megakaryocyte,921
+CH02,Monocyte,3192
+CH02,NK,186
+CH02,Neutrophil,7992
+CH02,Osteoclast,67
+CH02,Osteocyte,332
+CH02,Plasma Cell,1279
+CH02,Preneutrophil/GMP,6571
+CH02,SMC,386
+CH02,T-Cell,2263
+CH02,pDC,142
+CH15,Active Fibroblast,192
+CH15,Adipocyte,1014
+CH15,B-Cell,2338
+CH15,CXCL12+ Fibroblast,1005
+CH15,Cycling GMP,158
+CH15,EC,2269
+CH15,Erythroid,1481
+CH15,Erythroid (Cycling),3414
+CH15,MSC-Adipo,2516
+CH15,MSC-Osteo,1207
+CH15,Macrophage,2074
+CH15,Megakaryocyte,274
+CH15,Monocyte,2028
+CH15,NK,42
+CH15,Neutrophil,3608
+CH15,Osteoclast,63
+CH15,Osteocyte,173
+CH15,Plasma Cell,877
+CH15,Preneutrophil/GMP,2943
+CH15,SMC,533
+CH15,T-Cell,1874
+CH15,pDC,70
+NC03,Active Fibroblast,275
+NC03,Adipocyte,679
+NC03,B-Cell,2414
+NC03,CXCL12+ Fibroblast,539
+NC03,Cycling GMP,277
+NC03,EC,2809
+NC03,Erythroid,3630
+NC03,Erythroid (Cycling),9438
+NC03,MSC-Adipo,2444
+NC03,MSC-Osteo,1070
+NC03,Macrophage,1179
+NC03,Megakaryocyte,640
+NC03,Monocyte,2737
+NC03,NK,87
+NC03,Neutrophil,7977
+NC03,Osteoclast,110
+NC03,Osteocyte,554
+NC03,Plasma Cell,693
+NC03,Preneutrophil/GMP,5463
+NC03,SMC,628
+NC03,T-Cell,2896
+NC03,pDC,75
+NC05,Active Fibroblast,123
+NC05,Adipocyte,2840
+NC05,B-Cell,5707
+NC05,CXCL12+ Fibroblast,5015
+NC05,Cycling GMP,84
+NC05,EC,4300
+NC05,Erythroid,3679
+NC05,Erythroid (Cycling),8099
+NC05,MSC-Adipo,4200
+NC05,MSC-Osteo,1485
+NC05,Macrophage,2434
+NC05,Megakaryocyte,582
+NC05,Monocyte,4275
+NC05,NK,134
+NC05,Neutrophil,4401
+NC05,Osteoclast,257
+NC05,Osteocyte,709
+NC05,Plasma Cell,1072
+NC05,Preneutrophil/GMP,5556
+NC05,SMC,1050
+NC05,T-Cell,3508
+NC05,pDC,70

@@ -1,0 +1,45 @@
+GSE335963 / GSE335962 bone marrow -- depositor Annotation labels: 22 types
+annotated cells per section: {'CH02': 46780, 'CH15': 30153, 'NC03': 16947, 'NC03-2': 29667, 'NC05': 22798, 'NC05-2': 36782}  (total 183127)
+
+### cells per (donor x cell type), 4 donors ###
+cell type                   CH02      CH15      NC03      NC05
+Erythroid (Cycling)         9155      3414      9438      8099
+Neutrophil                  7992      3608      7977      4401
+Preneutrophil/GMP           6571      2943      5463      5556
+Erythroid                   3897      1481      3630      3679
+B-Cell                      2063      2338      2414      5707
+Monocyte                    3192      2028      2737      4275
+EC                          1839      2269      2809      4300
+T-Cell                      2263      1874      2896      3508
+MSC-Adipo                   1355      2516      2444      4200
+Macrophage                  1719      2074      1179      2434
+CXCL12+ Fibroblast           393      1005       539      5015
+Adipocyte                   1492      1014       679      2840
+MSC-Osteo                    654      1207      1070      1485
+Plasma Cell                 1279       877       693      1072
+SMC                          386       533       628      1050
+Megakaryocyte                921       274       640       582
+Osteocyte                    332       173       554       709
+Cycling GMP                  733       158       277        84
+Active Fibroblast            149       192       275       123
+Osteoclast                    67        63       110       257
+NK                           186        42        87       134
+pDC                          142        70        75        70
+TOTAL                      46780     30153     46614     59580
+
+### how many (donor x type) strata clear the A3 floors ###
+p        need n>=   strata (of 88) types clearing it in ALL 4 donors
+20%      6250       6              (none)
+10%      5556       8              (none)
+5%       5263       9              (none)
+2%       10000      0              (none)
+1%       20000      0              (none)
+
+### the same, per SECTION (the pre-registration reports A3 per section) ###
+  p=20%   need n>=6250    strata clearing: 3 of 132
+  p=10%   need n>=5556    strata clearing: 6 of 132
+  p=5%    need n>=5263    strata clearing: 6 of 132
+  p=2%    need n>=10000   strata clearing: 0 of 132
+  p=1%    need n>=20000   strata clearing: 0 of 132
+
+wrote /workspace/results/a3_fallback/GSE335963_donor_x_celltype.csv and GSE335963_a3_budget.json
