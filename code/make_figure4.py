@@ -38,10 +38,67 @@ PAIRS = ["Ccl2->Ccr2", "Tnf->Tnfrsf1a/1b", "Tgfb1->Tgfbr1/2", "Il1a->Il1r1"]
 PLAB = {"Ccl2->Ccr2": "Ccl2→\nCcr2", "Tnf->Tnfrsf1a/1b": "Tnf→\nTnfrsf1a/b",
         "Tgfb1->Tgfbr1/2": "Tgfb1→\nTgfbr1/2", "Il1a->Il1r1": "Il1a→\nIl1r1"}
 
-# CS_PHASE3 §0 / results/phase3/perm_nulls.csv, the 160 reportable fits
-OURS = dict(N3_sf=1.0001, N4_sf=0.9641, N1_sf=0.7160,
-            N3_reject=0.875, N4_reject=0.900,
-            beta_obs=0.01126, N3_null_abs=8.91e-5)
+P3 = "/workspace/results/phase3"
+
+
+def load_ours():
+    """Our own estimator's numbers, READ FROM results/phase3 — never typed in.
+
+    These were hard-coded literals until 2026-08-27 on the pre-C6 160-fit
+    basis (N3 1.0001 / N4 0.9641), which silently regressed the figure on
+    every re-run.  The reportable population is now 153, not 160
+    (CS_PHASE8_TORUS_VAR.md).  Definition of "reportable" is
+    summarize_phase3.py:85 verbatim: in-band sections, the primary call,
+    stratum=all, naive beta > 0 AND its block-bootstrap CI excluding zero.
+    """
+    import sys
+    sys.path.insert(0, "/workspace/code")
+    import sasp_phase3 as P
+    import run_phase3_nulls as RN
+
+    mf = pd.read_csv(f"{P3}/main_fits.csv")
+    pn = pd.read_csv(f"{P3}/perm_nulls.csv")
+    key = ["section", "celltype", "module"]
+    d = mf[mf.section.isin(P.IN_BAND) & (mf.call == RN.PRIMARY_CALL)
+           & (mf.stratum == "all")].copy()
+    p = pn[pn.section.isin(P.IN_BAND) & (pn.call == RN.PRIMARY_CALL)]
+    cols = [c for c in p.columns if c.endswith("_sf") or c.endswith("_p")]
+    cols += ["beta_obs", "N3_null_mean"]
+    d = d.merge(p[key + cols].drop_duplicates(key), on=key, how="left")
+    rep = d[(d.beta_naive > 0) & (d.beta_base_lo > 0)]
+    if len(rep) == 0:
+        raise SystemExit("figure4: no reportable fits — refusing to draw "
+                         "panel c's own-estimator bars from nothing")
+
+    # the variance-corrected (N3-var/N4-var) run is the FROZEN PRIMARY null.
+    # sf_summary_var.csv is written by summarize_phase3_var.py; perm_nulls_var
+    # is its input.  Absent -> we say so rather than silently dropping it.
+    var = {}
+    fv = f"{P3}/sf_summary_var.csv"
+    if os.path.exists(fv):
+        sv = pd.read_csv(fv)
+        sv = sv[sv.subset.str.startswith("PRIMARY")].set_index("variant")
+        for k, v in (("N3_var_sf", "N3_var"), ("N4_var_sf", "N4_var")):
+            if v in sv.index:
+                var[k] = float(sv.loc[v, "median"])
+                var[k[:2] + "_var_n"] = int(sv.loc[v, "n"])
+    else:
+        print("figure4 WARNING: %s absent — the PRIMARY (variance-corrected) "
+              "null cannot be drawn" % fv)
+
+    o = dict(n_reportable=int(len(rep)),
+             N3_sf=float(rep.N3_sf.median()),
+             N4_sf=float(rep.N4_sf.median()),
+             N1_sf=float(rep.N1_sf.median()),
+             N3_reject=float((rep.N3_p < 0.05).mean()),
+             N4_reject=float((rep.N4_p < 0.05).mean()),
+             beta_obs=float(rep.beta_obs.median()),
+             N3_null_abs=float(rep.N3_null_mean.abs().median()))
+    o.update(var)
+    return o
+
+
+OURS = load_ours()
 
 
 def load():
@@ -100,7 +157,7 @@ def main():
                          pair="ALL", cond=null,
                          quantity="surviving fraction of the score "
                                   "(median null / real)", value=v,
-                         n_interactions=160))
+                         n_interactions=OURS["n_reportable"]))
     pd.DataFrame(rows).to_csv(f"{FIG}/figure4_data.csv", index=False)
 
     fig = plt.figure(figsize=(12.2, 8.8))
