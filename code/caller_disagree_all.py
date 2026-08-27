@@ -12,6 +12,8 @@ Why this file exists rather than an edit to caller_disagree.py:
   The only edit made to caller_disagree.py is DS_ALIAS, which maps the two section
   directory names onto the preserved `deepscence_{sham,sbr}.csv` filenames.  Called
   with tag='sham' it behaves exactly as before; this is verified by --verify.
+  (That edit was lost once and re-applied on 2026-08-27; it is now committed, as
+  `DS_ALIAS={v:k for k,v in SAMP.items()}` in caller_disagree.py.)
 
 What changed between the two runs is COVERAGE ONLY.  Every DeepScence score comes
 from run_deepscence_all.py at settings identical to run_deepscence.py
@@ -25,8 +27,11 @@ outputs were, dated 2026-08-20 18:02).  It is reconstructed here and validated b
 every cell of all six published tables to come back EXACTLY as committed.
 
 Usage:
-  caller_disagree_all.py --verify        # reproduce the 2-section tables, compare
-  caller_disagree_all.py --all           # write the 11-section tables
+  caller_disagree_all.py --verify         # reproduce the 2-section tables, compare
+  caller_disagree_all.py --set 2sec_c6    # the post-C6 two-section tables (*_2sec_c6.csv)
+  caller_disagree_all.py --all            # write the 11-section tables
+  add --out-dir DIR to write anywhere but results/phase3/ (used to verify without
+  overwriting the committed tables).
 """
 import sys, os, numpy as np, pandas as pd, warnings
 sys.path.insert(0, '/workspace/code')
@@ -202,7 +207,20 @@ def extra_tables(tag, arm, label=None):
     return pd.DataFrame(bias), pd.DataFrame(pair), pd.DataFrame(sig)
 
 
-def run_set(specs, suffix):
+def run_set(specs, suffix, out=None, require_deepscence=True):
+    out = out or OUT
+    if require_deepscence:
+        # D6 guard: data/processed/deepscence_*.csv is gitignored, and every caller table
+        # below silently drops the DeepScence columns when it is absent (exit 0, different
+        # caller set, plausible-looking output).  Refuse instead.
+        miss = [t for t, _, _ in specs
+                if not os.path.exists(CD.PROC + 'deepscence_%s.csv' % CD.DS_ALIAS.get(t, t))]
+        if miss:
+            raise SystemExit('no DeepScence scores for: %s\n'
+                             '  expected %sdeepscence_<tag>.csv (gitignored; rebuild with '
+                             'run_deepscence_all.py)\n'
+                             '  re-run with --allow-missing-deepscence to accept a caller set '
+                             'WITHOUT DeepScence' % (miss, CD.PROC))
     T = []; C = []; S = []; P = []; B = []; M = []; G = []
     for tag, arm, label in specs:
         print('...', label, flush=True)
@@ -221,11 +239,11 @@ def run_set(specs, suffix):
     }
     # the stratified-null test is a Phase 8 addition and has no 2-section
     # counterpart to overwrite, so it is written unconditionally alongside
-    pd.concat(G).to_csv(OUT + 'caller_agreement_matched_significance' + suffix + '.csv',
+    pd.concat(G).to_csv(out + 'caller_agreement_matched_significance' + suffix + '.csv',
                         index=False)
     print('wrote caller_agreement_matched_significance' + suffix + '.csv', flush=True)
     for k, v in outs.items():
-        v.to_csv(OUT + k + suffix + '.csv', index=False)
+        v.to_csv(out + k + suffix + '.csv', index=False)
         print('wrote', k + suffix + '.csv', len(v), 'rows', flush=True)
     return outs
 
@@ -249,8 +267,39 @@ def verify():
     return bad
 
 
+# the two-section set, in the order the published tables carry it.  This is the spec that
+# produced results/phase3/caller_*_2sec_c6.csv -- the post-C6 base of
+# summarize_caller_coverage.py:67 -- which until now had no committed producer at all
+# (logs/m1_callers_2sec_c6.log is the only record that it ran).
+TWO_SEC = [('sham', 'sham', 'sham'), ('sbr', 'SBR', 'sbr')]
+
+SETS = {
+    '2sec_c6':    (TWO_SEC, '_2sec_c6'),
+    '2sec':       (TWO_SEC, ''),
+    '11sections': ([(s, a, s) for s, a, _ in SECTIONS], '_11sections'),
+}
+
 if __name__ == '__main__':
-    if '--verify' in sys.argv:
+    import argparse
+    ap = argparse.ArgumentParser(description=__doc__,
+                                 formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument('--verify', action='store_true',
+                    help='re-run the two original sections and require an exact match')
+    ap.add_argument('--all', action='store_true', help="alias for --set 11sections")
+    ap.add_argument('--set', choices=sorted(SETS), help='which section set to write')
+    ap.add_argument('--suffix', help='override the output suffix for --set')
+    ap.add_argument('--out-dir', default=OUT,
+                    help='write elsewhere (trailing slash added); default %s' % OUT)
+    ap.add_argument('--allow-missing-deepscence', action='store_true',
+                    help='proceed with a caller set that has no DeepScence column')
+    a = ap.parse_args()
+    out = a.out_dir if a.out_dir.endswith('/') else a.out_dir + '/'
+    if a.verify:
         sys.exit(verify())
-    if '--all' in sys.argv:
-        run_set([(s, a, s) for s, a, _ in SECTIONS], '_11sections')
+    name = '11sections' if a.all else a.set
+    if not name:
+        ap.error('nothing to do: pass --verify, --all, or --set {%s}' % ','.join(sorted(SETS)))
+    specs, suffix = SETS[name]
+    if a.suffix is not None:
+        suffix = a.suffix
+    run_set(specs, suffix, out=out, require_deepscence=not a.allow_missing_deepscence)

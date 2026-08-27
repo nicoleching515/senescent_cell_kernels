@@ -20,6 +20,11 @@ from scipy.stats import spearmanr
 warnings.filterwarnings('ignore')
 PROC='/workspace/data/processed/'; RAW='/workspace/data/raw/'; OUT='/workspace/results/phase3/'
 SAMP={'sham':'7250_liver_sham_Male_26-U1','sbr':'7259_liver_sbr_Male_26-U1'}
+# inverse of SAMP: full section directory name -> the preserved short filename used by
+# data/processed/deepscence_{sham,sbr}.csv.  caller_disagree_all.py:_load() needs this so a
+# spec given by section name still finds the two DeepScence score files that were run under
+# the short names.  Identity for any tag not listed.
+DS_ALIAS={v:k for k,v in SAMP.items()}
 EXCL={'Low_quality','Unknown'}
 
 def run(tag, arm):
