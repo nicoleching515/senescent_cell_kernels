@@ -47,6 +47,35 @@ the same 1,000 permutations, so old and new sit on the same page.
 > `results/phase3/figure2e_data.csv` and `figures/figure2e.png` were regenerated
 > together in the 8.7 figure pass and carry the current values.
 
+> ## ⚠ TWO FURTHER SUPERSESSIONS, 2026-08-27 (record reconciliation)
+>
+> **(a) Every surviving fraction in this report is pre-C6, on the 160-reportable-fit
+> population.** The frozen population is **153** reportable fits and the frozen values are
+> in `results/phase3/sf_summary_c1.csv` / `sf_summary_var.csv`: N3-tile **0.971** (here
+> 0.974), published N3 **0.999** (1.000), N3-occ **0.302** (0.349), N3-swap **0.695**
+> (0.721), N4-tile **0.924** (0.962), N4-occ **0.183** (0.273), N1 **0.707** (0.716).
+> §0's table and §6 items 1 and 5 are keyed to the old population. **Do not copy a digit
+> from this report into anything.**
+>
+> **(b) §6 item 3 is the last place in the repo that presents the torus finding as novel
+> statistics, and its recommendation is now against the settled position.** It reads *"The
+> occupancy result is a finding in its own right"* and *"tiling is the way out, and this is
+> the concrete argument for it."* Both are superseded:
+>
+> - The rectangular-window requirement is **Lotwick & Silverman (1982)** and has been known
+>   for forty years. The claim is **import and quantification, never discovery** — see
+>   forbidden-claims item 19 in `reports/WRITING_PACK.md` §3 and `NOVELTY_ASSESSMENT.md` §2.2.
+>   What is ours is the cost measured on real tissue, the direct calibration study, and the
+>   FFT enumeration of the admissible offset set.
+> - **Tiling is not the way out.** Mrkvička et al. (2021) specifically predict that extending
+>   random shifts to a union of aligned rectangles *increases* the liberality of the test, and
+>   our own calibration study confirms it: the tiled torus rejects at **0.080–0.118** against a
+>   nominal 0.05 while the variance correction (RS_count) holds **0.033–0.060**. The primary
+>   corrected null is **N3-var (0.996)**, not N3-tile — `reports/CS_PHASE8_TORUS_VAR.md` §2,
+>   `reports/CORRECTIONS.md` §8.1.
+>
+> The text is left unedited as the record of what C1 concluded at the time.
+
 ---
 
 ## 0. Headline

@@ -292,6 +292,18 @@ records that **DeepScence scores exist for the two 26 wk sections only**.
 > explicitly-labelled bases. See `reports/CS_PHASE8_CALLERS.md` and
 > `reports/SUBMISSION_PATCH_2026-08-29.md`.
 
+> **⚠ THE SUPERSESSION ABOVE ALSO COVERS THE PARAGRAPH BELOW — extended 2026-08-27
+> (record reconciliation).** The 2026-08-27 marker above was scoped to "the suggested
+> rewording below", which left this *Additionally* paragraph reading as a live
+> recommendation. It is not one. **Both of its numbers are on the forbidden-claims list**
+> (`reports/WRITING_PACK.md` §3): "0.93–1.22× of chance for four of six pairs" is item 14
+> — a property of the two-section, pre-C6 base only — and "1.51–2.85×" is item 8, whose
+> two values were the two largest of eleven (frozen range **0.963–2.849, median 1.071,
+> pooled 1.255**). The frozen replacement is **0.751–2.198 across eleven sections, pooling
+> to 1.212× (Mantel–Haenszel, z = 21.9, 4-pair basis)**;
+> `results/phase3/caller_coverage_gate{,_headline}.csv`. **Do not apply this paragraph.**
+> It is left unedited as the record of what was recommended on 2026-08-21.
+
 *Additionally:* the README quotes the **Phase 2 sham-only** Jaccard ratios
 (0.60× / 0.88× / 1.66×) which were superseded by the Phase 3 cell-type- **and**
 depth-matched ratios (0.93–1.22× of chance for four of six pairs, but 1.51–2.85× for

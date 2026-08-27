@@ -1,5 +1,31 @@
 # CS Phase 8 — caller agreement at full DeepScence coverage, A7, and D3
 
+> ## ⚠ THIS REPORT IS PRE-C6 THROUGHOUT — SUPERSEDED 2026-08-27 (record reconciliation)
+>
+> **Every Tier-A-involving number in this file, and every A7 number, was computed before the
+> C6 gene-set promotion** (strict Tier A 25 → 33 genes; A7 re-run at 09:06). The frozen files
+> are `results/phase3/caller_coverage_gate{,_headline}.csv` and `results/phase3/a7_summary.csv`.
+> **Do not copy a digit from this report.** The substitutions that matter:
+>
+> | here (pre-C6) | frozen |
+> |---|---|
+> | pooled 11-section agreement **1.118×** (3-pair) | **1.212×**, p = 1.84e-106 (4-pair, the basis the CSV emits) — or **1.2122×**, p = 1.8e-94 on the 3-pair basis. **Never mix the two in one sentence.** |
+> | Tier A × SenePy **0.914, below chance in 11 of 11** | **0.972, z = −1.63, p = 0.104, above chance in 4 of 11.** This plank is **dead** — see forbidden-claims item 17. The pair that *is* below chance is **SenePy × DeepScence, 0.737, z = −15.08** |
+> | Tier A × DeepScence 1.248 | **1.288** |
+> | Tier A × `Cdkn1a`⁺ 1.171 | **1.471** |
+> | A7 pooled controls **−0.070, p = 0.023** | **−0.0744 [−0.1306, −0.0182], p = 0.0145** |
+> | A7 probes −0.0177, p = 0.183 · codewords −0.0549 · genomic −0.0337 | **−0.0225 (p = 0.129) · −0.0604 · −0.0307** |
+> | naive / conditioned biological amplitude 0.314 / 0.291 | **0.3120** (median \|β\|/sd) / **0.2767** (section-clustered signed mean) — two different estimators; **name the one you use** |
+>
+> **§3's drafted paragraph must not be shipped** (writing pack §3.1(a)): it is pre-C6 and two
+> of its clauses are dead. The wording that survives is in
+> `reports/SUBMISSION_PATCH_2026-08-29.md` §2.1.
+> **Also do not carry forward** §4.1's "every control family is indistinguishable from zero
+> under +N6+N5" hedge in either direction: on the frozen file the unhedged statement is now
+> **true** (`neg_probe_rate` +0.0097 [−0.0060, +0.0253], p = 0.199), so audit R5 is moot; and
+> §4.3's "the reportable-fit filter admits 2–3× more fits than its nominal rate implies" is
+> **not supported** (audit R6, forbidden-claims item 22).
+
 **Yes, it moved, and it moved against us: the depth- and type-matched caller
 agreement rose from the published 0.93–1.22× chance to 0.70–1.71×, and the
 pooled value went from 1.030× chance (z = 1.27, p = 0.20 — indistinguishable
@@ -113,7 +139,7 @@ two sections: **0.932–1.221**. Recomputed identically at eleven sections:
 | basis | band | median | pooled ratio | z | p | sections above chance |
 |---|---|---|---|---|---|---|
 | 2 sections, 3 pairs *(the published band)* | **0.932 – 1.221** | 1.000 | **1.030** | 1.27 | 0.20 | 3 / 6 |
-| 11 sections, 3 pairs | **0.700 – 1.711** | 1.110 | **1.118** | 11.49 | 1.4e-30 | 22 / 33 |
+| 11 sections, 3 pairs | **0.700 – 1.711** | 1.110 | **1.118** | 11.49 | 1.4e-30 | **20 / 33** |
 | 2 sections, 4 pairs *(incl. SenePy vs `Cdkn1a`⁺)* | 0.932 – 1.369 | 1.010 | 1.040 | 1.76 | 0.078 | 4 / 8 |
 | 11 sections, 4 pairs | 0.700 – 1.711 | 1.156 | **1.129** | 13.35 | 1.1e-40 | 29 / 44 |
 | **11 sections, 4 pairs, in-band six only** | 0.775 – 1.374 | 1.131 | **1.115** | 8.99 | 2.6e-19 | 16 / 24 |
@@ -124,8 +150,15 @@ Test-3-admissible sections Phase 3 actually fits gives a narrower band and the
 same conclusion at p = 2.6 × 10⁻¹⁹.
 
 The rise is not merely a power effect. The **ratio itself** rose (1.030 → 1.118),
-the median rose (1.000 → 1.110), and the sign counts rose (3/6 → 22/33). The
+the median rose (1.000 → 1.110), and the sign counts rose (3/6 → **20/33**). The
 2-section base was not a small sample of the truth; it was an unrepresentative one.
+
+*(Arithmetic corrected 2026-08-27, record reconciliation: this section said **22 / 33** in
+both places. The 11-section 3-pair above-chance count on this pre-C6 base is
+0/11 (Tier A × SenePy) + 11/11 (Tier A × DeepScence) + 9/11 (Tier A × `Cdkn1a`⁺) = **20**.
+`CORRECTIONS.md` §5.2 and `CS_PHASE8_M1_RERUN.md` §0.3 recorded the error; this is where it
+is fixed. On the **frozen** post-C6 base the same count is **26 / 33** — 4 + 11 + 11 —
+because Tier A × SenePy is no longer below chance in every section.)*
 
 ### 2.2 Per pair, and where the movement is
 

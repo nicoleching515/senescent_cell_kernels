@@ -124,7 +124,10 @@ Full derivations in the sections named. In brief:
    between two seed pairs, **with no diagnostic firing**.
 4. **The torus finding is not novel statistics** (§8.1, §17.2) — Lotwick &
    Silverman (1982). What is new is the **measurement**: tiled torus runs at up to
-   **2.35× nominal** type-I error while the variance correction holds 0.033–0.060.
+   **up to 2.4× nominal** type-I error (0.118 / 0.05 = **2.36** exactly) while the variance
+   correction holds 0.033–0.060. *(Rounding standardised 2026-08-27: this file said 2.35×
+   in three places and `SUBMISSION_PATCH` / the master plan said 2.4×. Both round the same
+   ratio; the repo convention is now **"up to 2.4×", with 2.36 as the exact figure**.)*
    **C1 replaced a liberal test with a more liberal one**, and no surviving
    fraction could have revealed it.
 
@@ -619,7 +622,7 @@ replications, nominal 5 %):
 | **across all 8 window × scale cells** | **0.033–0.078** | **0.040–0.118** | **0.033–0.060** |
 
 **Tiling is more liberal than the whole-window torus it replaced, in 7 of 8
-cells, by up to 2.35× nominal** (0.1175 against 0.05; the 8th cell is an exact
+cells, by up to 2.4× nominal** (0.118 against 0.05, i.e. 2.36 exactly; the 8th cell is an exact
 tie at 0.0475, not a reversal). So correction C1 replaced a liberal test with a
 *more* liberal one, exactly as Mrkvička §2.1.4 predicts and as no number in the
 C1 reports could have revealed — a surviving fraction is not a rejection rate,
@@ -914,8 +917,19 @@ baseline autocorrelation lengths (ℓ/λ ∈ {0.25, 0.5, 1, 2, 4}, i.e. 7.5–12
 | **matched decoy (N2)** | `cover_lam_decoyS_blk_mean` | **0.346 — worse than doing nothing** |
 | nuisance-conditioned | `cover_lam_nuis_blk_mean` | **0.854** |
 
-The matched decoy is worse than naive in **6 of those 8 cells**; it ties or beats
-naive only at (κ = 0, ℓ/λ = 2) and (κ = 4.5, ℓ/λ = 2).
+The matched decoy is **strictly worse than naive in 5 of those 8 cells**; it beats naive at
+(κ = 0, ℓ/λ = 2) — 0.000 → 0.0667 — and at (κ = 4.5, ℓ/λ = 2) — 0.800 → 0.8333 — and **ties
+at exactly 0.000 at (κ = 0, ℓ/λ = 4)**. *(Corrected 2026-08-27, record reconciliation: this
+read "worse than naive in **6 of those 8 cells**", which counts the 0.000/0.000 tie as a loss.
+Say "5 of 8 strictly, 6 of 8 if the exact tie at zero counts" — the substantive point, that
+the matched decoy is worse than doing nothing in the regime where the kernel is hardest to
+identify, is unchanged.)*
+```bash
+python3 -c "
+import pandas as pd; d=pd.read_csv('figures/figure1_data.csv'); s=d[d.ell_over_lambda>=2]
+print((s.cover_lam_decoyS_blk_mean<s.cover_lam_naive_blk_mean).sum(),
+      (s.cover_lam_decoyS_blk_mean==s.cover_lam_naive_blk_mean).sum(), len(s))"
+```
 
 **|relative bias| on λ̂** over the whole 20-cell grid
 (`relbias_lam_{naive,decoyS,nuis}_mean`, relative to λ_true = 30 µm): the matched

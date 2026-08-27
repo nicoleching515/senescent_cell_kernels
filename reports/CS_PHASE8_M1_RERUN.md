@@ -314,7 +314,9 @@ N3-tile as the presented variant. The answer does not move — 0.996 against
 N3-tile's 0.971 and a published 0.999 — but a direct type-I-error simulation
 shows **tiling is more liberal than the whole-window torus it replaced, in 7 of
 8 window × correlation-scale cells, up to 2.4× nominal (0.118 against 0.05)**,
-while the variance-corrected estimator holds 0.040–0.060 everywhere. C1 replaced
+while the variance-corrected estimator holds **0.033–0.060** everywhere *(corrected
+2026-08-27: this read 0.040–0.060; the minimum over all eight window × correlation-scale
+cells is 0.033, the rectangle at s = 0.02 — `results/phase3/var_sim_calibration.csv`)*. C1 replaced
 a liberal test with a more liberal one, and no surviving fraction could have
 revealed that. Full reasoning and both caveats in `CORRECTIONS.md` §8.1 and
 `reports/CS_PHASE8_TORUS_VAR.md`.
@@ -443,8 +445,16 @@ resolved silently.
    made a second script depend on the tag rather than on `genesets/` for its
    pre-C6 column (§4.1). The freeze should record that `pre-c6-genesets` is
    load-bearing for provenance, not merely archival.
-6. **The §17 "composition surrogate share 66–76 %" row has no producer.** It must
-   be sourced or dropped before `PREREG_PHASE8.md`.
+6. ~~**The §17 "composition surrogate share 66–76 %" row has no producer.** It must
+   be sourced or dropped before `PREREG_PHASE8.md`.~~ **STALE relative to §6 of this same
+   file, and superseded outright — 2026-08-27.** §6 records the row as *now sourced* at its
+   lower bound. The settled resolution: **do not carry "66–76 %" forward in any form.** It is
+   not one quantity — 66 % is 1 − SF from receiver cell-type intercepts, and the 76 % is a
+   ratio of two *binned curve* amplitudes whose denominator is in no file (0.212 / 0.260 =
+   **0.815**, not 0.76; the only two "ALL RECEIVERS" amplitudes on disk are 0.260 and
+   0.266001). It is replaced by the composition-matched decomposition: **65.9 %** (receiver's
+   own cell type) to **85.4 %** (cell type + 20-NN composition), both from
+   `results/phase3/compmatch_reruns.csv`. See `reports/WRITING_PACK.md` §0.2.
 
 ---
 
@@ -652,7 +662,8 @@ N4-var 0.985**, against N3-tile 0.971 / N4-tile 0.924 and a published
 simulation on Mrkvička's own §5 design, extended with an irregular window,
 measures **tiling at 0.040–0.118 against a 5 % nominal (up to 2.4×)**, the
 whole-window torus at 0.033–0.073, and the variance-corrected estimator at
-**0.040–0.060**. Correction C1 replaced a liberal test with a more liberal one —
+**0.033–0.060** *(corrected 2026-08-27: read 0.040–0.060; the minimum is 0.033)*.
+Correction C1 replaced a liberal test with a more liberal one —
 a fact no surviving fraction could expose, because SF is not a rejection rate.
 N3-tile, occ, occ15, swap and snap stay in the battery and in Figure 2c as
 supporting variants.
