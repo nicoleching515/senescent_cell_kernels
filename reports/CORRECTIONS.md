@@ -1864,6 +1864,23 @@ hashes. `git tag -l` shows only `pre-c6-genesets`; `phase8-frozen` does not exis
 
 ### 18.3 Numbers that are still stale in live documents
 
+> **⚠ MOSTLY CLEARED 2026-08-27 (record reconciliation) — `reports/RECORD_RECONCILIATION.md`.**
+> The table below was a to-do list. **Fixed since:** `CS_PHASE8_CALLERS.md` §2.1's 22 of 33
+> (→ **20**, and 26 on the frozen base) and its §4.1 self-contradiction about `neg_probe_rate`
+> (→ **p = 0.199**, audit R5 moot); `CS_PHASE8_TORUS_VAR.md` §1/§10's "23 % in the void"
+> (→ **35.5 % out of tissue**, with the 22.8 % retention column named separately), its §4
+> range basis (**0.048–0.118**, 0.080–0.118 only for s ≥ 0.05) and its 0.802/0.801
+> contradiction (→ **0.801**); `PHASE8_ROADMAP_STATUS.md`'s FPR (→ **9–16 %**, probe 0.145),
+> caller pooled (→ **1.212** on the frozen 4-pair basis), guard (→ **52 / 52**), Tier A ×
+> SenePy (→ **0.972, n.s.**), its PI-decisions vector and its 8.5b A7 block;
+> `CS_PHASE7_C1.md`'s 160-fit population and its §6 item 3 discovery framing (both now
+> carry supersession banners); `README.md`'s pre-C6 headline and its 4-pair/3-pair mixing.
+> **The tiled-torus inflation is standardised repo-wide on 2.35×** (0.1175 / 0.05 exactly),
+> not 2.4×. **Still open** from this table: `CS_PHASE8_TORUS_VAR.md` §9's md5 certification
+> (true when written), its §6 "+1.05 to +2.01" four-vs-three count,
+> `PREREG_PHASE8.md`'s 20 PROVISIONAL marks and its P29 "roughly doubles",
+> `CS_PHASE8_CALLERS.md` §5.5's D3 column, and `README.md:293`'s 69 % circularity bar.
+
 | where | says | should say |
 |---|---|---|
 | `CS_PHASE8_CALLERS.md:116,127` §2.1 | 22 of 33 above chance | **20 of 33** (§5.2 of this file; recomputed twice) |

@@ -207,6 +207,47 @@ no denominator on disk yields 76 %) — superseded anyway by the 65.9 %/85.4 % p
 - Two files still carry live forbidden numbers: `BIO_DELIVERABLE7_CLAIM_AUDIT.md`
   L285 and `CS_PHASE7_C1.md` §6.3.
 
+## ✅ ALL OF THE ABOVE WORKED, 2026-08-27 — `reports/RECORD_RECONCILIATION.md`
+
+The four findings and the 22 disagreements have been resolved against files. The
+record above is left as written; the outcomes are:
+
+1. **lambda-hat = 14.7 um.** The pooled median of `lam_naive` over the 315 primary
+   fits, printed by `code/summarize_phase3.py:221` into
+   `results/phase3/summary_phase3.txt` sec 6, `tierA_p95` row, column `medlam`.
+   **15.7 is withdrawn everywhere.** Reasons for choosing the pooled median over
+   16.07 / 14.99 / 17.1: it is the only one an emitted file carries; the
+   pre-registration deliberately does **not** make lambda-hat an estimand, so the
+   tiebreak falls to the frozen code; it shares the 315-fit denominator with the
+   60 % railing rate it must always travel with; and it is a valid median of a
+   censored sample (the median order statistic lies in the interior) whereas the
+   interior median discards 60 % of fits non-randomly and is biased upward.
+   **Dependents: 2,215 um = 150x (was 141x); seams ~81 lambda-hat apart (was ~76);
+   the 100 um window spans ~6.8 lambda-hat (was "6 lambda"). All three strengthen.**
+   The nearest reproducible match to 15.7 anywhere is 15.716 — the pre-C6 *interior*
+   median over the zonation-stratified rows, which triple-counts hepatocytes.
+2. **The brackets are IQRs and stay IQRs.** The pre-registered bootstrap emits
+   *per-fit* CIs only (median span [-0.415, +0.381]); it emits no interval on the
+   median across fits, so a genuine CI cannot be computed without a new run.
+   Relabelled in eight documents; the pre-registration's "paired-bootstrap
+   interquartile range" and criterion R1's "paired-bootstrap interval" are corrected
+   by dated note.
+3. **Spearman rho: state the aggregation, and state that the falsification is not
+   fragile.** +0.8951 (clustered mean per field, knn6 raw) is the frozen value;
+   +0.9441 cell-type-centred; +0.9231 median-per-field; +0.7104 per-row. All four
+   positive and significant.
+4. **Naive biological amplitude: +0.2767**, the section-clustered signed mean under
+   `design = base`. 0.3120 is the median |beta|/sd on the same fits and must be named
+   when used; 0.2914 and 0.314 are pre-C6.
+5. **The 76 % composition surrogate is withdrawn** in `CS_PHASE5.md` sec 4 and
+   replaced by the 65.9 % / 85.4 % composition-matched pair.
+6. **The two files with live forbidden numbers are marked.**
+   `BIO_DELIVERABLE7_CLAIM_AUDIT.md`'s existing marker was scoped to "the suggested
+   rewording below" and did **not** cover the *Additionally* paragraph that repeats
+   both forbidden figures; its scope is now extended. `CS_PHASE7_C1.md` sec 6 item 3
+   now carries a banner recording that the discovery framing is superseded and that
+   tiling is no longer the recommended remedy.
+
 
 | 80 | **`phase8-frozen` TAGGED** | `926439629a07269a32c93f998da0f6e1cd20933c` | Verified before tagging: figure guard 52/52, gene-set gate exit 0 both arms, all three pinned hashes. Pre-registration hashes filled; working tree clean |
 | 81 | **Hazard fix committed (`11fa773`) + temp hook retired (`9264396`)** | proven by running `git checkout -- code/` against HEAD | The PI's own commit (`1351ce8`) had **left the guard file out** — my `skip-worktree` protection stopped it being staged. Guards now in history; hazard permanently closed |
