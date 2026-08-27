@@ -34,6 +34,7 @@ an inline dated marker pointing back to this block. Full derivations and command
 | **C-8** | **§13, deviation P2** | **Pre-C6 digits, and one stale *instruction*.** P2 quotes the **05:19** A7 file throughout (naive `all_controls` −0.070 [−0.128, −0.012] p 0.023; N2 −0.061 [−0.111, −0.012] p 0.020; N5 +0.007 [−0.011, +0.025] p 0.41; the 40 probes −0.018 p 0.18; biological +0.314 naive / +0.077 conditioned) and closes *"Magnitudes are PROVISIONAL — A7 was run at 05:19 on the pre-C6 sender calls … **A7 must be re-run after 8.7**."* **A7 *was* re-run.** `stat -c '%y' results/phase3/a7_summary.csv` → `2026-08-27 09:06:16`, against `2026-08-27 05:19:12` for `results/phase3_pre_c6/a7_summary.csv`. The instruction is discharged, not outstanding, and the magnitudes are no longer provisional. | Frozen `results/phase3/a7_summary.csv`, `all_controls`: naive **−0.0744 [−0.1306, −0.0182], p = 0.0145**; N2 **−0.0642 [−0.1113, −0.0172], p = 0.0124**; N5 **+0.0038 [−0.0186, +0.0261], p = 0.715**. `neg_control_probe` naive **−0.0225 [−0.0527, +0.0078], p = 0.129** — **still flat, so the pre-registered primary A7 response still passes** and P2's finding still rests on the codewords and genomic controls. Biological modules `median_abs_amplitude` **0.3120** naive / **0.0795** conditioned (clustered means +0.2767 / +0.0310). **All three qualitative findings in P2 are unchanged.** Command: `python3 -c "import pandas as pd; d=pd.read_csv('results/phase3/a7_summary.csv'); print(d[d.design.isin(['base','n2','n5'])].to_string())"` |
 | **C-9** | **§13, deviation P3** | **P3 instructs the writer to publish a pre-C6 range — this is the one correction in this block that changes an instruction rather than a digit.** Its body lists **0.091 / 0.103 / 0.109 / 0.127 / 0.164**; the **0.127** is the pre-C6 `neg_control_probe` value (the same stale digit C-2 corrects in §3.6, left uncorrected here), from which P3 derives *"the clean-null subset is **9.1–12.7 %**"* and then instructs *"**Quote the range as 9–13 %** with 16 % as the `neg_probe_rate` outlier."* **The instruction is wrong**, and it contradicts P3's own header, which already says 9–16 %. | Frozen `results/phase3/a7_summary.csv`, `design == "n6n5"`, `frac_CI_excludes_zero`: **0.091** (`neg_control_codeword`) / **0.103** (`all_controls`) / **0.109** (`genomic_control`) / **0.145** (`neg_control_probe`) / **0.164** (`neg_probe_rate`). The clean-null (count-based) subset is therefore **9.1–14.5 %**. **The instruction is corrected to read: quote the range as 9–15 % on the four count-based responses, with 16 % as the `neg_probe_rate` outlier.** The header ("9–16 % against a 5 % nominal") is correct as written and does not change. Note also that the pre-C6 list is wrong in more than one place: pre-C6 `all_controls` is 0.091 and `neg_control_codeword` is 0.109 — **the reverse of frozen** — so quoting that list as an ordered per-response list was already wrong before the vintage issue. Command: `python3 -c "import pandas as pd; d=pd.read_csv('results/phase3/a7_summary.csv'); print(d[d.design=='n6n5'][['response','frac_CI_excludes_zero']].to_string(index=False))"` |
 | **C-10** | **§13, deviation P24** | *"N2 matched decoys leave the technical gradient **~80 % intact** (−0.061 of −0.070 SD)"* — the pre-C6 ratio. C-1 corrects the same quantity to 86 % at §10.1 and leaves P24 at 80 %. | Frozen `results/phase3/a7_summary.csv`, `all_controls`: **−0.0642 / −0.0744 = 86.3 %**, with N5 still removing the gradient entirely (**+0.0038, p = 0.715**). P24's convergence argument is **strengthened, not weakened** — the matched-decoy design leaves more of the technical gradient than the pre-C6 file said, which is the direction P24 argues. |
+| **C-11** | **§3.11 (the pin); §3.5 and §5 (the 160)** | **The pin is not a hash, and the file it pins was overwritten.** §3.11 pins `results/phase3/summary_phase3.txt` by md5 `ecf86b9ca5460f31290e2f4c9e822ea2` — that string is **31 hex characters**, which no MD5 can be, and it is not this file's digest under any vintage. The file itself was rewritten by task 8.7 at **2026-08-27 09:06**, so §3.5's *"the same 315/160 appears in the pinned `results/phase3/summary_phase3.txt`"* and §5's *"from the pinned `results/phase3/summary_phase3.txt`, primary call, 160 reportable fits"* no longer resolve to anything on disk. | The file on disk is **md5 `dc92ddc6605eef52f6359aeab4e16fd7`** (32 hex), mtime **2026-08-27 09:06**, and its line 19 reads `fits 315;  naive beta > 0 in 216;  positive AND block-bootstrap CI excludes 0: 153 (49 %)`. **The pinned digest is replaced by that one, and the reportable count everywhere in this file is 315 / 153, not 315 / 160** — consistent with C-5, which already carries 153. §3.11's three admissibility lists are unaffected and still re-verify exactly against `sasp_phase3.py:67-72`. Command: `md5sum results/phase3/summary_phase3.txt; sed -n 19p results/phase3/summary_phase3.txt` |
 
 **None of these corrections changes a pre-registered decision, a threshold, a stop condition,
 or the §18 outcome.** C-3 removes a forbidden claim; C-4 renames a bracket without moving a
@@ -309,6 +310,11 @@ On M1 this gives 315 fits and **160 reportable** at the primary call
 (`results/phase3/main_fits.csv`, in-band × `tierA_p95` × `stratum == "all"`; the same 315/160
 appears in the pinned `results/phase3/summary_phase3.txt`). **PROVISIONAL** — 8.7 recomputes it.
 
+***[Corrected 2026-08-27 — see §0.0 item C-11 (and C-5). 8.7 did recompute it: the count is
+**315 fits / 153 reportable**, re-derived from `results/phase3/main_fits.csv` and printed at
+line 19 of `results/phase3/summary_phase3.txt`. The "same 315/160 appears in the pinned file"
+claim is **withdrawn**: that file was overwritten at 2026-08-27 09:06 and now reads 153.]***
+
 **Pre-registered consequence, from A7 (§3.6): the reportable-fit filter's nominal 5 % is wrong on
 this assay. Its measured false-positive rate is 9–16 %.**
 
@@ -564,6 +570,11 @@ pre-registration.** Summary of what that file fixes:
 Frozen from `results/phase3/summary_phase3.txt` (pinned, md5 `ecf86b9ca5460f31290e2f4c9e822ea2`),
 §8 Test 3 on `Cdkn1a`⁺ hepatocyte prevalence:
 
+***[Corrected 2026-08-27 — see §0.0 item C-11. The quoted digest is 31 hex characters and so
+cannot be an MD5; the pinned file was also overwritten at 2026-08-27 09:06. **The pin is
+md5 `dc92ddc6605eef52f6359aeab4e16fd7`.** The three lists below are unaffected and re-verify
+exactly against `sasp_phase3.py:67-72`.]***
+
 - **In band, PRIMARY, 6 animals:** 7259, 7260, 7001, 7248, 7352, 7435.
 - Over the 20 % ceiling, excluded: 7239, 7448, 7361, 7450.
 - Below the 1 % floor, excluded: 7250.
@@ -639,6 +650,11 @@ reach* — answered as a bound.
 **M1 benchmark values, PROVISIONAL** (pre-C6; from the pinned
 `results/phase3/summary_phase3.txt`, primary call, 160 reportable fits; task 8.7 recomputes all of
 them under the promoted C6 sets):
+
+***[Corrected 2026-08-27 — see §0.0 items C-11 and C-5. The pin is md5
+`dc92ddc6605eef52f6359aeab4e16fd7`, not the 31-character string in §3.11, and the primary call
+has **153** reportable fits, not 160. The frozen replacements for every value in the table
+below are in C-5.]***
 
 | Quantity | M1 value | Source |
 |---|---|---|

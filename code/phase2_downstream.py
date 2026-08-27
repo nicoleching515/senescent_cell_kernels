@@ -13,6 +13,18 @@ PC,PP = gl('D_zonation_pericentral'), gl('D_zonation_periportal')
 A_STRICT = gl('A_SENDER_FINAL_strict')
 BMODS = {os.path.basename(p)[2:-4]:[l.strip() for l in open(p) if l.strip()]
          for p in sorted(glob.glob(GS+'B_*.txt'))}
+# Phase 8 / D1: the seven per-module Tier A sensitivity sender sets.  One set
+# per Tier B module, scored and thresholded exactly as A_SENDER_FINAL_strict
+# is, so `tierApm_pNN` differs from `tierA_pNN` only in which genes define the
+# sender score.  The names must be the Tier B module list, or a downstream
+# `sender_mask(call, module=...)` would silently look up a column that is not
+# there.
+AMODS = {os.path.basename(p)[len('A_sender_for_'):-4]:
+         [l.strip() for l in open(p) if l.strip()]
+         for p in sorted(glob.glob(GS+'A_sender_for_*.txt'))}
+assert sorted(AMODS) == sorted(BMODS), (
+    'A_sender_for_* sets do not match the Tier B module list: %s vs %s'
+    % (sorted(AMODS), sorted(BMODS)))
 GRID_UM=25.0
 EXCLUDE_FROM_STRATA = {'Low_quality','Unknown'}   # not receiver cell types
 
@@ -93,6 +105,27 @@ for tag in sys.argv[1:]:
             if m.sum()<20: continue
             f[m]=(tierA[m]>np.percentile(tierA[m],q_)).astype(int)
         sen['sender_flag_p%d'%q_]=f
+    # --- Phase 8 / D1: the per-module Tier A sensitivity sender sets --------
+    # Appended AFTER the primary columns and BEFORE the DeepScence merge, so
+    # neither the existing columns nor their order moves and no row alignment
+    # can drift.  Same scorer, same ctrl_size, same within-cell-type strict
+    # percentile rule, same >= 20-cell stratum floor as the primary block.
+    for name in sorted(AMODS):
+        on=[g for g in AMODS[name] if g in B.var_names]
+        sc.tl.score_genes(B,on,score_name='_tierApm',ctrl_size=200)
+        v=B.obs['_tierApm'].to_numpy()
+        sen['tierA_%s_score'%name]=np.round(v,5)
+        for q_ in [90,95,99]:
+            f=np.zeros(n,int)
+            for c in sen.cell_type.unique():
+                if c in EXCLUDE_FROM_STRATA: continue
+                m=(sen.cell_type==c).to_numpy()
+                if m.sum()<20: continue
+                f[m]=(v[m]>np.percentile(v[m],q_)).astype(int)
+            sen['sender_flag_%s_p%d'%(name,q_)]=f
+        print('  A_sender_for_%-22s %3d genes, %3d on panel, p95 senders %6d'
+              %(name,len(AMODS[name]),len(on),
+                int(sen['sender_flag_%s_p95'%name].sum())))
     ds=PROC+'deepscence_%s.csv'%tag
     if os.path.exists(ds):
         sen=sen.merge(pd.read_csv(ds),on='cell_id',how='left')
