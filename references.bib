@@ -228,8 +228,12 @@
   doi     = {10.1186/s13073-024-01418-0},
   pmid    = {39810225},
 }
-% AUDIT: title is INCOMPLETE here -- the audit confirmed the record but did not
-%   supply the full title. Complete it before camera-ready.
+% AUDIT NOTE REMOVED 2026-08-27 (remediation pass): a "% AUDIT: title is
+%   INCOMPLETE here" note stood at this position and was WRONG. The title above
+%   matches, word for word including the trailing "for the detection of an in vivo
+%   senescent cell burden", both Crossref (10.1186/s13073-024-01418-0) and PubMed
+%   (PMID 39810225), each retrieved in-session. Nothing is missing. The note was
+%   deleted because leaving it standing invites someone to "fix" a correct title.
 % AUDIT: the year/DOI mismatch (2025 article, -024- DOI) is NOT an error --
 %   BMC/Springer DOI suffixes encode submission year.
 
@@ -778,22 +782,61 @@
 %   the region with higher cell and transcript density, but especially regions
 %   with high cell density, which is not surprising."
 %   OUR DEFENCE, which has to be stated explicitly: a near-zero GLOBAL Moran's I
-%   does not preclude a projection onto one specific covariate. Report our own
-%   Moran's I on the controls next to the kernel amplitude so the reader can see
-%   the two tests disagree.
+%   does not preclude a projection onto one specific covariate. The defence is
+%   POWER, NOT ORTHOGONALITY. Do NOT write that the two tests disagree -- measured,
+%   they AGREE: over the 12 control+module fields of results/moran/moran_pooled.csv,
+%   |Moran's I| against |A7 naive amplitude| ranks at Spearman rho = +0.8951
+%   (knn6 raw, p = 8.37e-05) and +0.9441 (cell-type-centred, p = 3.93e-06)
+%   (results/moran/moran_verdict.txt; code/summarize_moran.py:183-184). The sign is
+%   positive under every aggregation tried, so the falsification is not an artefact
+%   of one choice.
+%   State the POWER argument instead. Global Moran's I is underpowered against this
+%   estimand, by two measurements in results/moran/moran_kernel_power.csv (22 rows,
+%   11 sections x 2 sender calls): (1) the WHOLE A7 gradient moves the controls'
+%   Moran's I by a median of only 0.83 % of its observed value
+%   (dI_as_frac_of_I_controls, median 0.00826, range 2.1e-05 to 0.0608); and (2) the
+%   smallest kernel amplitude Moran's I could resolve at dI = 2*SE(I) is a median
+%   0.362 SD (beta_min_visible_to_moran, median 0.3622, range 0.3082-1.0697) --
+%   larger than every A7 amplitude this project reports, and 12x the conditioned
+%   amplitude of 0.029 SD. So a near-zero global Moran's I on the controls is
+%   CONSISTENT with the A7 gradient; it is not evidence against it, and it is not a
+%   disagreement between two tests.
+% FORBIDDEN, recorded so it is not re-introduced a third time: this block previously
+%   ended "Report our own Moran's I on the controls next to the kernel amplitude so
+%   the reader can see the two tests disagree." That is forbidden-claims item 21
+%   verbatim, and it is the same sentence struck from reports/NOVELTY_ASSESSMENT.md
+%   SS2.1 point 3 as FALSIFIED. It was re-introduced into this file by the citation
+%   audit on 2026-08-27 and removed by the remediation pass the same day
+%   (reports/AUDIT_CLAIMS_CITATIONS.md L1; reports/REMEDIATION_PASS.md). Do not
+%   restore it.
 % VERIFICATION: bioRxiv API record and the vignette both retrieved 2026-08-27.
 %   Publication status re-checked: Crossref returns only the posted-content
 %   record; there is no journal version.
 
 @article{ren2025systematic,
-  author  = {Ren, Pengfei and Zhang, Rui and Wang, Yunfeng and others and Zhang, Zongxu},
+  author  = {Ren, Pengfei and Zhang, Rui and Wang, Yunfeng and others and Zhang, Zhe and Zeng, Zexian},
   title   = {Systematic benchmarking of high-throughput subcellular spatial transcriptomics platforms across human tumors},
   journal = {Nature Communications},
   year    = {2025},
   volume  = {16},
+  number  = {1},
+  pages   = {9232},
   doi     = {10.1038/s41467-025-64292-3},
+  pmid    = {41107232},
   pmcid   = {PMC12534522},
 }
+% CORRECTED 2026-08-27 (remediation pass), and this one mattered: the author line
+%   previously read "... and others and Zhang, Zongxu", which under the
+%   "and others and X" convention asserts ZONGXU ZHANG as the senior author. He is
+%   NOT. Two records retrieved independently in-session agree:
+%     - Crossref, api.crossref.org/works/10.1038/s41467-025-64292-3 -> 19 authors,
+%       #8 Zhang, Zongxu; #18 Zhang, Zhe; #19 Zeng, Zexian.
+%     - NCBI efetch, PMID 41107232 -> the same 19, same order, same positions.
+%   Both also give volume 16, issue 1, article number 9232. Issue, article number
+%   and PMID were missing and are added above. This is the only peer-reviewed
+%   prior-art citation for the negative-control-probe diagnostic (WRITING_PACK
+%   item 20, NOVELTY_ASSESSMENT SSU1 both lean on it), so naming the wrong senior
+%   author was the most consequential bibliography error in the file.
 % SUPPORTS: the peer-reviewed instance of the same prior art. Verbatim from the
 %   PMC full text (retrieved 2026-08-27): "Spatial autocorrelation analysis using
 %   Moran's I revealed stronger aggregation of negative control signals in CosMx
