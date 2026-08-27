@@ -93,7 +93,7 @@ with the claim it supports.
 | interior median over the 153 reportable | 14.99 µm | `results/phase3/main_fits.csv` |
 | median λ̂ in the N7 table row `tierA_p95` | 14.7 µm | `results/phase3/summary_phase3.txt` §6 |
 
-IQR is **[7.0, 50.0] µm** for every one of these — i.e. **60 % of fits are railed at a grid
+IQR is **[7.0, 50.0] µm** for the three **non-interior** definitions, including the authoritative one (the two interior definitions cannot rail by construction: [10.67, 28.68] and [10.63, 25.43]), — i.e. **60 % of fits are railed at a grid
 bound** (`m1_final_audit.txt`, `lam_railed_frac = 0.6000` [F]). That fact must travel with any
 λ̂ the paper quotes; "pooled median" and "interior median" are materially different quantities.
 
@@ -394,7 +394,7 @@ exception is `perm_nulls_var_full200.csv` (the covariate-adjusted N3-var/N4-var 
 - SF after the full N5 block: median **0.042**.
 
 ### Ripley / Poisson geometry (`summary_phase3.txt` §10, `results/phase3/poisson_fits.csv`)
-- log(median distance to nearest sender) on log(sender density): slope **−0.525**, **r² 0.9843**
+- log(median distance to nearest sender) on log(sender density): slope **−0.525**, **r² 0.9843**, over all **77 section × sender-definition cells** (subset-dependent: −0.486/0.9982 `cdkn1a_pos`; −0.517/0.9958 Tier A percentile; −0.529/0.9833 in-band)
   (homogeneous Poisson predicts exactly −0.5); obs/Poisson median distance ratio **1.042** [F].
 - Ripley ratio median **1.1237** [F] (`m1_final_audit.txt`).
 - λ̂ is **not** a density readout: r² of log(λ̂_raw) on log(sender density) median **0.016**,
@@ -473,7 +473,7 @@ Five families, frozen: exponential, gaussian, powerlaw (p ∈ {0.5,1,2,4}), step
 
 d̂½ spread across families within a fit: **ctrl median 6.00×**, naive 3.20× [F].
 Held-out (leave-one-section-out, 252 folds), ctrl: **spline and step have negative median
-ΔLL vs covariates-only**; no family beats it in more than 54 % of folds [F].
+ΔLL vs covariates-only**; no family beats it in more than **54.4 %** of folds (gaussian 0.544; `summary_phase5.txt:137`) [F].
 **Under control, no kernel family earns its place.**
 
 ### Superposition vs nearest sender (`results/phase5/summary_phase5.txt` T1)
@@ -614,11 +614,11 @@ This matches `SASP_Kernel_Master_Plan.md` §30 5.5. The pre-C6 list was
    `all_controls` is the sum of probe + codeword + genomic, and `neg_probe_rate` is a ratio of
    two of them. This is a range over correlated statistics, **not five replications**.
 2. **Powered only pooled.** A single fit resolves **±0.1346 SD naive / ±0.1336 SD
-   conditioned** (median CI half-width) [F]; pooled CI half-width ±0.018 SD. The conditioned
+   conditioned** (median CI half-width) [F]; pooled CI half-width **0.0155–0.0562 SD** across the 25 control rows — **name the response and design**: ±0.018 is the conditioned probe/codeword row, and for `all_controls`/`base` it is **0.0562**. The conditioned
    biological median \|β\|/sd is **0.0795**, so one fit resolves **1.7×** that.
 3. **It is the estimator's rate, not the reportable-fit filter's.** The reportable filter
    (`beta_naive > 0 AND beta_base_lo > 0`, one-sided, naive design) admits **3.0–13.3 %**
-   across the five control responses; on the full N6+N5 design it admits **4.8 %, identical
+   across the five control responses; on the full N6+N5 design it admits **4.9 % (0.0485), identical
    across all five — essentially nominal.** [V]
 
 ```bash
@@ -676,7 +676,7 @@ Model: ΔI = β_z² · Var(k) · I(k), k_i = exp(−d_i/λ̂). [V]
 | **smallest β Moran's I could resolve (ΔI = 2·SE)** | **0.362 SD** | **0.308 – 1.070** |
 | — restricted to `tierA_p95` | 0.338 SD | 0.308 – 0.418 |
 
-**0.362 SD exceeds the project's own naive biological amplitude (0.277) and is 5× the A7
+**0.362 SD (median over 22 section × call rows; range 0.308–1.070) exceeds the project's own naive biological amplitude (0.277) and is 5× the A7
 control gradient (0.074).** Moran's I could not have detected the paper's headline effect.
 
 **Rank agreement (`moran_verdict.txt`, re-derived) [V]:** over the 12 control + module fields,
@@ -713,7 +713,7 @@ Moran's **smallest** I; the two statistics disagree on that response's rank.
 > estimand — **name it explicitly whenever you use it.**
 >
 > **0.2914 and 0.314 are the pre-C6 vintages of those two estimators. Do not use them.**
-> The power argument is unaffected: 0.362 SD exceeds all four.
+> The power argument is unaffected: 0.362 SD (median; range 0.308–1.070) exceeds all four.
 >
 > ```bash
 > python3 -c "
@@ -755,7 +755,7 @@ six anyway; `SUBMISSION_PATCH` §0.4 knows two. **Three is the current count.**
 trail: `compmatch_fits.csv` (6,237 rows) = merge of `_tierA` + `_tierApm`.
 Producer `code/run_phase8_compmatch.py`; driver `code/_compmatch_chain.sh`.
 
-**All four rows below are the same 42 fits / 33 reportable, pooled scope, same variables.** [V]
+**All four rows below are the same 42 fits / 33 reportable **per seed** — the matched `comp`/`full` rows are pooled over the five frozen seeds and read **210 / 165** in the file, pooled scope, same variables.** [V]
 
 | control | SF | 95 % CI | **composition share removed** |
 |---|---|---|---|
@@ -1235,7 +1235,7 @@ measurement already made, and they bind **both** arms.
 | **19** | "we **discovered** that torus shifts break on non-convex tissue" / "this is a finding in its own right" | see item 21 | `SUBMISSION_PATCH` §0.5, §6 |
 | **20** | "**nobody in this literature reports** the negative-control-probe spatial diagnostic" | **FALSE** — Voyager and Ren et al. (2025) both do. See §4.2 | `CITATION_AUDIT.md`; `NOVELTY_ASSESSMENT.md` §U1 |
 | **21** | "**the two tests disagree**" (Moran's I vs the A7 kernel) | **FALSIFIED** — they rank together at ρ = +0.895 / +0.944. See §4.3 | `NOVELTY_ASSESSMENT.md` banner |
-| **22** | "the reportable-fit filter admits **2–3× more fits** than its nominal rate implies" | **NOT SUPPORTED** — the filter measures **3.0–13.3 %** on the naive design and 4.8 % on the full design; the 9–16 % is the estimator's two-sided CI-exclusion rate | audit R6 |
+| **22** | "the reportable-fit filter admits **2–3× more fits** than its nominal rate implies" | **NOT SUPPORTED** — the filter measures **3.0–13.3 %** on the naive design and 4.9 % (0.0485) on the full design; the 9–16 % is the estimator's two-sided CI-exclusion rate | audit R6 |
 | **23** | "**circular sender set**" | "**contaminated sender/response split**" or "**hollow sender set**" | `SUBMISSION_PATCH` §0.3 |
 | **24** | "CellWHISPER's torus-shift null" / attributing N3 to CellWHISPER | CellWHISPER's null is a **within-cell-type location permutation = our N1**; the torus shift is **Lotwick & Silverman (1982)** | `CITATION_AUDIT.md` §0.1 |
 | **25** | CellWHISPER's ">90 % FPR" as a **measured** rate | it is an **inferred interaction-count ratio**; use "implying" | `CITATION_AUDIT.md` §0.2 |
