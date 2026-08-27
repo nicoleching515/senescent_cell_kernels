@@ -52,7 +52,9 @@ def load():
     mf = pd.read_csv(f"{RES}/main_fits.csv")
     mf["band"] = mf.section.map(BAND)
     pf = pd.DataFrame()
-    for f in ("perm_nulls.csv", "perm_nulls_n7.csv"):
+    # `_pm` is the per-module Tier A variant's perturbation-null file; without
+    # it the N7 table's tierApm rows have no N1 column (Phase 8 / D1).
+    for f in ("perm_nulls.csv", "perm_nulls_n7.csv", "perm_nulls_pm.csv"):
         if os.path.exists(f"{RES}/{f}"):
             pf = pd.concat([pf, pd.read_csv(f"{RES}/{f}")], ignore_index=True)
     if not pf.empty:
@@ -211,7 +213,9 @@ def main():
     w(f"{'call':13s} {'prev%':>6s} {'fits':>5s} {'rep':>4s} {'railed':>7s} "
       f"{'medlam':>7s} {'med b/sd':>9s} {'SF N5':>7s} {'SF N2N5N6':>10s} "
       f"{'SF N1':>7s}")
-    for call in RN.N7_CALLS:
+    # Phase 8 / D1: the axis carries BOTH pre-registered Tier A variants, so
+    # the table iterates all nine calls, not the six of N7_CALLS.
+    for call in RN.ALL9_CALLS:
         dd = merged(mf, pf, n8, P.IN_BAND, call=call)
         if dd.empty:
             continue
