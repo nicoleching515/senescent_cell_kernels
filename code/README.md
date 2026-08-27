@@ -70,7 +70,7 @@ python3 -u sasp_phase1b.py --n-jobs 44
 |---|---|
 | `sasp_phase3.py` | Phase 3 per-section cache (`data/processed/cache3/*.npz`), `Sec` accessor, sender calls, Section 8 Test 3 section-admissibility lists (`IN_BAND` / `OVER_CEILING` / `BELOW_FLOOR`), merged receiver labels |
 | `phase3_core.py` | matched decoys on real sections (same greedy propensity algorithm as `sasp_estimators.match_decoys`), Tier D covariate blocks, N6 neighbour baseline |
-| `run_phase3_nulls.py` | stages `window` / `main` (N2,N5,N6,zonation + block bootstrap) / `perm` (N1,N3,N4) / `curves` |
+| `run_phase3_nulls.py` | stages `window` / `main` (N2,N5,N6,zonation + block bootstrap) / `perm` (N1,N3,N4) / **`perm_c1`** (the same N3/N4 under `phase3_null_geom`'s in-tissue constructions, scopes `full` and `tile`) / `curves`. `--calls all9\|tierA_pm` adds the per-module Tier A axis (`tierApm_p*`), `--tag` suffixes the outputs. **The task-8.7 edits to this file were lost and reconstructed — see `reports/PIPELINE_RECONSTRUCTION.md`.** |
 | `run_phase3_n8.py` | N8: Tier A x Tier B disjointness, Tier E3 scrambled-response control, CoreScence circularity |
 | `run_phase3_strat.py` | unstratified vs cell-type-conditioned vs N5 decomposition of the naive gradient |
 | `run_phase3_attribution.py` | which N5 sub-block removes the amplitude |
