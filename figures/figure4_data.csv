@@ -137,3 +137,5 @@ b,NCEM linear*,ALL,N0_type,fraction of real-significant interactions still signi
 c,NCEM linear*,ALL,N0_type,surviving fraction of the score (median null / real),-0.0289620388098083,87
 c,our SASP kernel estimator (CS_PHASE3),ALL,N3_lig,surviving fraction of the score (median null / real),0.998870982287264,153
 c,our SASP kernel estimator (CS_PHASE3),ALL,N4_lig,surviving fraction of the score (median null / real),0.9471932849110392,153
+c,our SASP kernel estimator (CS_PHASE3),ALL,N3_var_lig,surviving fraction of the score (median null / real),0.9959658800875878,153
+c,our SASP kernel estimator (CS_PHASE3),ALL,N4_var_lig,surviving fraction of the score (median null / real),0.9850676549759072,153

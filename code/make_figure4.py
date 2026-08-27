@@ -100,6 +100,24 @@ def load_ours():
 
 OURS = load_ours()
 
+# panel c, our own estimator.  The bounding-box pair is what was published;
+# N3-var/N4-var is the FROZEN PRIMARY null (variance-corrected shift/rotation,
+# Mrkvicka et al. 2021) adopted after the tiled-torus calibration.  Both are
+# drawn so the reader can see they agree, and every bar names its variant.
+OURS_BARS = [("N3_lig", OURS["N3_sf"]), ("N4_lig", OURS["N4_sf"])]
+if "N3_var_sf" in OURS and "N4_var_sf" in OURS:
+    OURS_BARS += [("N3_var_lig", OURS["N3_var_sf"]),
+                  ("N4_var_lig", OURS["N4_var_sf"])]
+else:
+    print("figure4 WARNING: the PRIMARY variance-corrected null is NOT in "
+          "panel c -- sf_summary_var.csv did not supply N3_var/N4_var.")
+OURS_COL = {"N3_lig": CCOL["N3_lig"], "N4_lig": CCOL["N4_lig"],
+            "N3_var_lig": PAL.SERIES[5], "N4_var_lig": "#6fbf6f"}
+OURS_HATCH = {"N3_lig": "///", "N4_lig": "\\\\\\",
+              "N3_var_lig": "///", "N4_var_lig": "\\\\\\"}
+OURS_TICK = {"N3_lig": "N3\nbbox", "N4_lig": "N4\nbbox",
+             "N3_var_lig": "★N3\n-var", "N4_var_lig": "★N4\n-var"}
+
 
 def load():
     R = pd.read_csv(f"{P4}/interactions.csv.gz")
@@ -152,7 +170,12 @@ def main():
                                       "(median null / real)",
                              value=float(r.score_sf_median),
                              n_interactions=int(r.n_real_sig)))
-    for null, v in (("N3_lig", OURS["N3_sf"]), ("N4_lig", OURS["N4_sf"])):
+    # Our own estimator's bars.  The bounding-box N3/N4 are the PUBLISHED
+    # pair; N3-var/N4-var are the FROZEN PRIMARY null (variance-corrected).
+    # Both are drawn, and both carry a variant qualifier, because the old
+    # figure labelled the bounding-box pair "N3 torus shift" with no qualifier
+    # at all and a reader could not tell which null was used.
+    for null, v in OURS_BARS:
         rows.append(dict(panel="c", method="our SASP kernel estimator (CS_PHASE3)",
                          pair="ALL", cond=null,
                          quantity="surviving fraction of the score "
@@ -162,7 +185,7 @@ def main():
 
     fig = plt.figure(figsize=(12.2, 8.8))
     gs = fig.add_gridspec(2, 4, height_ratios=[1.0, 1.05], hspace=0.60,
-                          wspace=0.32, left=0.068, right=0.985,
+                          wspace=0.32, left=0.068, right=0.972,
                           top=0.825, bottom=0.205)
 
     # ---- row 1: significance rate, real vs each null, per method ----------
@@ -197,10 +220,15 @@ def main():
         ax.bar(np.arange(len(METHODS)) + (ni - (len(NULLS) - 1) / 2) * w, v, w, color=CCOL[null],
                hatch=CHATCH[null], edgecolor=PAL.INK2, linewidth=0.5)
     ax.axhline(0.90, color=PAL.STATUS["critical"], lw=1.4, ls="--", zorder=5)
-    ax.text(-0.45, 1.32, "CellWHISPER's reported >90% FPR, under the control "
-            "these bars now use (N0t, orange)", fontsize=7.5, ha="left",
-            va="center", color=PAL.STATUS["critical"])
-    ax.text(-0.45, 1.20, "Our bars are CALL SURVIVAL, not an FPR: survival "
+    # CIT-5 (Master_Plan.md:204): CellWHISPER's ">90 %" is INFERRED from a
+    # count ratio, not a measured type-I error. Keep the "implying"
+    # construction everywhere -- this string was the last site without it.
+    ax.text(-0.45, 1.45, "CellWHISPER reports comparable interaction counts "
+            "on permuted coordinates,\nimplying an FPR above 90% \u2014 under "
+            "the control these bars now use (N0t, orange)",
+            fontsize=7.2, ha="left", va="center", linespacing=1.45,
+            color=PAL.STATUS["critical"])
+    ax.text(-0.45, 1.22, "Our bars are CALL SURVIVAL, not an FPR: survival "
             "equals an FPR only if the\nshuffle is a true null \u2014 which is "
             "the assumption under test (\u00a75).", fontsize=6.4, ha="left",
             va="center", linespacing=1.35, color=PAL.INK2)
@@ -212,7 +240,7 @@ def main():
                         va="bottom", fontsize=6.4, color=PAL.INK2, rotation=90)
     ax.set_xticks(range(len(METHODS)))
     ax.set_xticklabels(METHODS, fontsize=8.5)
-    ax.set_ylim(0, 1.42)
+    ax.set_ylim(0, 1.58)
     ax.set_ylabel("fraction of real-significant interactions\n"
                   "still significant after shuffling", fontsize=8.5)
     ax.set_title("b   Does the coordinate shuffle change what is CALLED?",
@@ -225,10 +253,13 @@ def main():
              for m in METHODS]
         ax2.bar(np.arange(len(METHODS)) + (ni - (len(NULLS) - 1) / 2) * w, v, w, color=CCOL[null],
                 hatch=CHATCH[null], edgecolor=PAL.INK2, linewidth=0.5)
-    xo = len(METHODS) + 0.35
-    ax2.bar([xo - 0.5 * w, xo + 0.5 * w], [OURS["N3_sf"], OURS["N4_sf"]], w,
-            color=[CCOL["N3_lig"], CCOL["N4_lig"]],
-            hatch=[CHATCH["N3_lig"], CHATCH["N4_lig"]],
+    xo = len(METHODS) + 0.75
+    ws = 0.30   # wider than the bar so the four variant tick labels fit
+    ob = [(xo + (i - (len(OURS_BARS) - 1) / 2) * ws, c, v)
+          for i, (c, v) in enumerate(OURS_BARS)]
+    ax2.bar([b[0] for b in ob], [b[2] for b in ob], w,
+            color=[OURS_COL[b[1]] for b in ob],
+            hatch=[OURS_HATCH[b[1]] for b in ob],
             edgecolor=PAL.INK2, linewidth=0.5)
     for ni, null in enumerate(NULLS):
         for mi, m in enumerate(METHODS):
@@ -238,18 +269,28 @@ def main():
                          ha="center", va="bottom", fontsize=6.4,
                          color=PAL.INK2, rotation=90)
     ax2.axhline(1.0, color=PAL.MUTED, lw=1.0, ls=":")
-    for xx, vv in ((xo - 0.5 * w, OURS["N3_sf"]), (xo + 0.5 * w, OURS["N4_sf"])):
-        ax2.text(xx, vv + 0.02, f"{vv:.2f}", ha="center", va="bottom",
+    for xx, cc, vv in ob:
+        ax2.text(xx, vv + 0.02, f"{vv:.3f}", ha="center", va="bottom",
                  fontsize=6.4, color=PAL.INK2, rotation=90)
     ax2.axvline(len(METHODS) - 0.42, color=PAL.AXIS, lw=1.0)
-    ax2.set_xticks(list(range(len(METHODS))) + [xo])
-    ax2.set_xticklabels(METHODS + ["our SASP\nkernel estimator"], fontsize=8.5)
+    ax2.set_xticks(list(range(len(METHODS))) + [b[0] for b in ob])
+    ax2.set_xticklabels(METHODS + [OURS_TICK[b[1]] for b in ob], fontsize=8.5)
+    for t, cc in zip(ax2.get_xticklabels()[len(METHODS):],
+                     [b[1] for b in ob]):
+        t.set_fontsize(7.0)
+        if cc.endswith("_var_lig"):
+            t.set_color(PAL.SERIES[5])
+            t.set_fontweight("bold")
+    ax2.text(1.0, -0.19, "our SASP kernel estimator:  ★ = the frozen "
+             "primary (variance-corrected) null", transform=ax2.transAxes,
+             ha="right", va="top", fontsize=7.4, color=PAL.INK2)
     ax2.set_ylabel("surviving fraction of the score\n(median null ÷ real)",
                    fontsize=8.5)
     ax2.set_title("c   Does the coordinate shuffle change the SCORE?",
                   fontsize=9.5, loc="left", pad=16, fontweight="bold")
     ymax = max(1.25, np.nanmax([HA["score_sf_median"].max(), 1.05]) * 1.15)
     ax2.set_ylim(min(0, np.nanmin(HA["score_sf_median"].min()) * 1.15), ymax)
+    ax2.set_xlim(-0.6, xo + 0.62)
 
     handles = [Patch(facecolor=CCOL[c], hatch=CHATCH[c], edgecolor=PAL.INK2,
                      linewidth=0.5, label=CLAB[c]) for c in CONDS]
