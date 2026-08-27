@@ -83,8 +83,25 @@ is not one where a single senescence axis stands out — but the code still pick
 returns a score, with no diagnostic that anything is different.
 
 State it precisely, because it is a strong claim: **one of three seeds at the published
-default produced a sender set sharing no cells with the other two**, while three
-`denoise=False` runs agreed at Jaccard 0.76–0.99. The seed-0 numbers in §2 are therefore
+default produced a sender set sharing no cells with the other two**, while ~~three
+`denoise=False` runs agreed at Jaccard 0.76–0.99~~ **the two `denoise=False` runs agreed at
+Pearson r = 0.996 and top-5 % Jaccard 0.76**.
+
+***[Corrected 2026-08-27 (remediation pass) — two errors in one clause, and this is the site
+`WRITING_PACK.md` §5.9 inherited them from. **(1) "0.76–0.99" merges a correlation and a set
+overlap into one range.** `results/phase8_d2/d2_stability.csv` contains exactly **one**
+`denoise=False` seed pair — `raw_seed0 vs raw_seed1`, n = 20,000, `pearson_r` **0.99553**,
+`top5_jaccard` **0.7606**, `top5_n_changed` 272 — and **no Jaccard of 0.99 appears anywhere in the
+file**: the 0.99 is the Pearson r. **(2) "three runs" is wrong — there are two.** The only
+`denoise=False` seeds on disk are `runmeta_raw_sub20000_7239_liver_sbr_Male_52-U1.json` and
+`runmeta_raw_sub20000_seed1_7239_liver_sbr_Male_52-U1.json`; there is no `raw_seed2`
+(`grep -rho "raw_seed[0-9]" results/phase8_d2/ | sort -u` → `raw_seed0`, `raw_seed1`).
+`PREREG_PHASE8.md` P26 states it correctly ("r 0.9955 / Jaccard 0.761"). **The finding is
+unaffected and if anything sharper**: the `denoise=True` outlier's Jaccard of 0.000 is being
+compared against a two-seed floor of 0.76, not a three-seed range.
+`AUDIT_NUMBERS_FINAL.md` R1.]***
+
+The seed-0 numbers in §2 are therefore
 the *favourable* case for `denoise=True` — seed 2 reproduces them almost exactly
 (`dca_seed2` vs `raw_seed0`: *r* 0.724, J 0.324, against seed 0's 0.724 / 0.320) — and the
 unfavourable case is that the caller does not converge to a single answer at all.

@@ -306,6 +306,16 @@ N3_reject 0.875  N4_reject 0.900  beta_obs 0.0112607  N3_null_abs 8.9053e-05
 with the derived constants rounded to the 4 decimals at which they had been hardcoded
 gives `figure4.png` and `figure4_data.csv` that are **byte-identical** to the committed
 ones (md5 `000f34051112aff4fed293fe7a5b25c2` and `bc6fb1d6c2d05dc36a278d5c6b44e1b9`).
+
+***[⚠ STALE HASH — MARKED 2026-08-27 (remediation pass); the two banners above do not cover it.
+`000f3405…` was the md5 of `figures/figure4.png` **as committed before the task-8.7 regeneration**,
+and it is **no longer the hash of any file in this repo**: `md5sum figures/figure4.png` →
+**`d44fac63411d6c30a42c40894a287f17`** (also recorded in `results/phase3/m1_final_audit.txt` §5),
+sha256 `76718f1e…4829`, matching `figures/.committed_manifest.json`. **The byte-identity claim this
+paragraph makes was true when it was written and is left standing as the record of that check.**
+It is marked because `reports/WRITING_PACK.md` §5.4 copied `000f3405…` **out of this line** and
+presented it as a current, file-verified hash — the exact transcription failure its `[F]` mark is
+meant to exclude (`AUDIT_NUMBERS_FINAL.md` R3). **Do not quote this hash as current.**]***
 Without that rounding the only difference in `figure4_data.csv` is the two
 `our SASP kernel estimator` rows, which now carry full precision — max absolute change
 **2.34 × 10⁻⁵**, no other cell in the 138-row table altered. (`figure4.pdf` differs on

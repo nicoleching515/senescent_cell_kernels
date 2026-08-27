@@ -292,9 +292,21 @@ Rejection rate at a nominal 5 %, under the null of independence
    test with a more liberal one.** That is the finding this section exists to record, and
    it is against the project's interest.
 2. **RS_count holds the nominal level throughout** — 0.033–0.060 across every window and
-   every correlation scale, never outside ±0.010 of nominal. This reproduces the paper's
+   every correlation scale, ~~never outside ±0.010 of nominal~~ **within 1.6 Monte-Carlo SE of
+   nominal everywhere**. This reproduces the paper's
    headline claim and is the check that our `rs_count` is the paper's estimator and not
    something adjacent to it.
+   ***[Corrected 2026-08-27 (remediation pass) — the "±0.010" gloss **contradicted the range in
+   its own sentence** and is struck; this is the site the same wording in `WRITING_PACK.md` §5.7
+   was taken from. Nominal is 0.05, so ±0.010 is [0.040, 0.060], but
+   `results/phase3/var_sim_calibration.csv`, column `rs_count_reject_05`, all eight cells read
+   **0.0325, 0.0550, 0.0350, 0.0600, 0.0400, 0.0425, 0.0525, 0.0550** — two are below 0.040
+   (rectangle s = 0.02 at **0.0325**; rectangle s = 0.15 at **0.0350**) and the largest shortfall
+   is **0.0175**. **The range 0.033–0.060 is correct and is confirmed; only the gloss was false.**
+   The Monte-Carlo SE at 400 replicates is √(0.05·0.95/400) = **0.0109**, so 0.0325 is **1.6 SE**
+   low — statistically unremarkable, which is why the replacement states the SE bound. The item's
+   conclusion (that our `rs_count` is the paper's estimator) is unaffected.
+   `AUDIT_NUMBERS_FINAL.md` R2.]***
 3. **The torus correction is liberal at strong autocorrelation** (0.073–0.078 at s = 0.30),
    reproducing the paper's own diagnosis.
 4. **The standardisation is doing the work, not the dropping.** Drop-and-*don't*-
