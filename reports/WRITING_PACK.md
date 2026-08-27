@@ -36,6 +36,53 @@ under any subset I tried. Its only apparent provenance is a back-derivation from
 report's own sentence "2,215 µm … 141× the pooled λ̂" (2215/141 = 15.71), i.e. it is circular
 with the claim it supports.
 
+> ## ✅ RESOLVED 2026-08-27 — **λ̂ = 14.7 µm**, and 15.7 is withdrawn
+>
+> **The authoritative definition is the pooled median of `lam_naive` over the 315 primary
+> fits** (in-band × `tierA_p95` × `stratum == "all"`) — **14.7 µm** (14.7321). It is printed
+> by `code/summarize_phase3.py:221` into `results/phase3/summary_phase3.txt` §6, the
+> `tierA_p95` row, column `medlam`. **IQR [7.0, 50.0] µm; 60 % of fits railed** — that caveat
+> is not optional.
+>
+> **Why this and not one of the other three** (full reasoning in
+> `reports/RECORD_RECONCILIATION.md` §1):
+> 1. **It is emitted.** 16.07 and 14.99 are emitted by no file. Replacing an invented number
+>    with an unemitted one is the same failure one step later.
+> 2. **The pre-registration freezes the summariser, not a λ̂ estimand.** `PREREG_PHASE8.md`
+>    §5 explicitly declines to make a length constant the estimand — *"λ̂ rails at a grid
+>    bound in a majority of M1 fits, so a fitted length constant is not the estimand"* — and
+>    its benchmark table quotes only the **railing rate** for λ̂. There is no pre-registered
+>    λ̂ to match, so the tiebreak falls to what the frozen code prints.
+> 3. **It shares a denominator with its mandatory caveat.** The 60 % railing rate is over the
+>    315. Quoting a λ̂ over 153 beside a railing rate over 315 mixes bases.
+> 4. **It is a valid median of a censored sample; the interior median is not.** 103 fits are
+>    censored at the 7 µm floor and 86 at the 50 µm ceiling, but the median order statistic
+>    falls in the **interior** (the 55th of the 126 unrailed values), so 14.73 is a legitimate
+>    median. The interior median discards 60 % of the sample non-randomly, at both ends
+>    asymmetrically, and is biased upward — and it is unstable to the population choice
+>    (17.06 over 315 vs 14.99 over 153) in a way the pooled median is not.
+> 5. **"Pooled" becomes true.** The phrase in circulation is "the pooled λ̂"; 14.73 is
+>    literally the pooled median. 15.7 was never pooled anything.
+>
+> **Where 15.7 probably came from.** The closest reproducible match anywhere in either tree
+> is **15.716 µm** — the *interior* median over the **pre-C6** `tierA_p95` in-band fits
+> **including the zonation-stratified rows** (441 rows, so hepatocytes are counted four times
+> over). Pre-C6, interior, and pseudo-replicated: not a defensible estimand under any
+> reading, so 15.7 is withdrawn either way.
+> ```bash
+> python3 -c "
+> import pandas as pd
+> d=pd.read_csv('results/phase3_pre_c6/main_fits.csv'); d['sec']=d.section.str.split('_').str[0]
+> p=d[(d.call=='tierA_p95')&(d.sec.isin(['7259','7260','7001','7248','7352','7435']))]
+> print(p[p.lam_railed==0].lam_naive.median(), len(p))"   # -> 15.716  441
+> ```
+>
+> **Dependents, re-derived** (all move in the direction that *strengthens* the claim):
+> N3-var's 2,215 µm displacement is **150×** λ̂ (was 141×); at a 1,200 µm tile side the seams
+> are **~81 λ̂** apart (was ~76); the 100 µm window spans **≈ 6.8 λ̂** (was "≈ 6λ"), i.e. 14×
+> the 7 µm floor but only **2×** the 50 µm ceiling — say that too. N4-var's 3,395 µm is 230×
+> λ̂; N3-occ's 28 µm is 1.9× λ̂.
+
 **Verified alternatives, pick one and name the estimand [V]:**
 
 | definition | value | source |
@@ -62,9 +109,10 @@ print(len(p), len(r), p.lam_naive.median(), r.lam_naive.median(),
 PY
 ```
 
-**Consequences.** Two dependent claims inherit the problem: "N3-var displaces 141× the pooled
-λ̂" and "at a 1,200 µm tile side the seams are ~76 λ̂ apart" (`CS_PHASE8_TORUS_VAR.md` §2, §4).
-Recompute both against whichever λ̂ the paper adopts, or state them in µm only.
+**Consequences — now recomputed.** The two dependent claims become **"N3-var displaces 150×
+the pooled λ̂"** and **"at a 1,200 µm tile side the seams are ~81 λ̂ apart"**
+(`CS_PHASE8_TORUS_VAR.md` §2, §4, both corrected 2026-08-27). Neither reverses; both get
+slightly stronger.
 
 ## 0.2 The "76 %" composition-surrogate share — **UNSOURCED denominator**
 
@@ -90,7 +138,23 @@ C6 is about half what the original narrative said. Human halves reproduce exactl
 (25/33 = 75.8 %, 29/33 = 87.9 %); the mouse bar in `figures/figure_gs3_*` came from the
 literal. **Never write "69 % → 76 % → 88 %".**
 
-## 0.4 Spearman ρ = +0.923 for Moran's I vs A7 — **not reproducible; use +0.895**
+## 0.4 Spearman ρ for Moran's I vs A7 — **aggregation-dependent; use +0.895 and say which**
+
+> ## ✅ RESOLVED 2026-08-27 — four aggregations, all reproduce, the falsification survives all
+>
+> +0.923 **is** reproducible — under a different aggregation. All four re-derived:
+>
+> | aggregation | ρ | p | emitted by |
+> |---|---|---|---|
+> | section-clustered **mean** per field, knn6 **raw**, 12 control+module fields | **+0.8951** | 8.37e-05 | `moran_verdict.txt`; `code/summarize_moran.py:183` — **frozen; quote this** |
+> | section-clustered **mean** per field, knn6 **cell-type-centred**, 12 fields | **+0.9441** | 3.93e-06 | same, `:184` — **frozen** |
+> | **median** per field, knn6 raw, 12 fields | +0.9231 | 1.86e-05 | no file |
+> | **per-row**, no aggregation, 132 pairs | +0.7104 | 1.43e-21 | no file |
+>
+> **Every value is positive and significant, so "Moran's I and the A7 kernel do not disagree"
+> holds at every aggregation. Say that explicitly** — otherwise a reader who recomputes it a
+> different way will think the finding is fragile. Only the digit is aggregation-dependent.
+> **The aggregation must be stated in the same clause as the number, everywhere.**
 
 `SUBMISSION_PATCH_2026-08-29.md` §9 L606 says "+0.923 raw". I recomputed from **both**
 `results/moran/moran_pooled.csv` and `results/moran/moran_vs_a7.csv` field means and got
@@ -123,6 +187,27 @@ fits**, not confidence intervals. `CS_PHASE8_M1_RERUN.md` §6 says so explicitly
 bracket is the IQR, not a CI — label it"). §30 5.2/5.3 currently present them unlabelled.
 **Label every such bracket "IQR across fits".** Genuine CIs exist only for the
 composition-matched SFs and the A7 clustered means.
+
+> ## ✅ RESOLVED 2026-08-27 — they are IQRs; the pre-registered bootstrap cannot make them CIs
+>
+> **The bracket has no bootstrap in it at all.** `code/summarize_phase3.py:99` is
+> `np.quantile(v, [.25, .5, .75])` over the per-fit SF **point estimates**, written to
+> `sf_summary.csv` as `q25 / median / q75`. `m1_final_audit.txt` names the two headline
+> brackets `ctrl_amp_iqr` and `SF_N2+N5+N6_iqr`. **The §3.6 bootstrap — 400 replicates over
+> 100 quantile blocks — emits per-fit CIs only** (`sf_n2n5n6_lo/hi` in `main_fits.csv`, whose
+> median span is [−0.415, +0.381], two orders of magnitude wider than the IQR). **It emits no
+> interval on the median across fits, so a genuine CI cannot be computed without a new run**
+> — and `results/` is frozen. **Therefore: relabel everywhere, do not fabricate a CI.**
+>
+> `PREREG_PHASE8.md` §5 calls it a *"paired-bootstrap interquartile range"* and §6 R1 writes
+> the replication criterion on a *"paired-bootstrap interval"*. Both are misnomers and are
+> corrected by dated note in that file's new §0.0 (item C-4). **R1 reads: the IQR across the
+> reportable fits includes 0 and its upper quartile is below 0.50.** M1's own outcome is
+> unchanged.
+>
+> Relabelled in: `SASP_Kernel_Master_Plan.md` §29/§30, `README.md`,
+> `SUBMISSION_PATCH_2026-08-29.md` §8, `PLAN_UPDATE_D12_D13.md`,
+> `PHASE8_ROADMAP_STATUS.md`, `BIO_DELIVERABLE6_DISCUSSION.md`, `PREREG_PHASE8.md` §0.0.
 
 ---
 
@@ -353,7 +438,10 @@ PY
   kernel is fitted on a materially truncated distance distribution (deviation P8).
 - External calibration: the endometrium nearest-neighbour figures **45–211 µm**
   (`references.bib`, §31 ref 7). **Retrieved, not re-derived.**
-- λ̂ for the "≈ 6λ" claim: see §0.1 — **pick a sourced value.**
+- λ̂ for the window-justification claim: **RESOLVED — λ̂ = 14.7 µm pooled, so the window is
+  ≈ 6.8 λ̂** (`results/phase3/summary_phase3.txt` §6, `tierA_p95`, `medlam`). Write it with the
+  railing caveat in the same sentence: IQR [7.0, 50.0] µm, 60 % railed, so the window is 14×
+  the 7 µm floor and **2×** the 50 µm ceiling. See §0.1.
 
 ### λ grid, frozen (`PREREG_PHASE8.md` §3.1, `code/run_phase3_nulls.py:59-93`)
 `WINDOW_UM = 100.0`; floor **7.0 µm** (resolution floor, a literal that does **not** adapt per
@@ -570,6 +658,33 @@ Moran's **smallest** I; the two statistics disagree on that response's rank.
 
 ### ⚠ The "naive biological amplitude" has four values in circulation
 **Decide once, name the estimator.** [V]
+
+> ## ✅ RESOLVED 2026-08-27 — **+0.2767**, the section-clustered signed mean, `design = base`
+>
+> **Authoritative: `naive biological amplitude = +0.2767` response-SD**, defined as the
+> **section-clustered signed mean of β̂/sd(y) over the 1,155 biological-module fits under
+> `design = base`** — `results/phase3/a7_summary.csv`, row `BIOLOGICAL MODULES (reference)`,
+> column `clustered_mean`, frozen 09:06. Its conditioned counterpart is **+0.0310** (`n6n5`).
+>
+> **Why the clustered mean and not the median |β|/sd:** the clustered mean is A7's own
+> primary statistic — it is the only one of the two that carries an interval and a p-value
+> (`clustered_lo/hi/p`, a section-clustered t-CI), it is the statistic every A7 verdict in the
+> paper is decided on (flat / not flat, per family and per design), and it is signed, so it
+> is comparable with the control gradients it is contrasted against. The median |β|/sd is
+> unsigned and interval-free.
+>
+> **The companion, when you want it: 0.3120** = median |β|/sd over the *same* 1,155 fits
+> (`median_abs_amplitude`), conditioned counterpart **0.0795**. Legitimate, different
+> estimand — **name it explicitly whenever you use it.**
+>
+> **0.2914 and 0.314 are the pre-C6 vintages of those two estimators. Do not use them.**
+> The power argument is unaffected: 0.362 SD exceeds all four.
+>
+> ```bash
+> python3 -c "
+> import pandas as pd; d=pd.read_csv('results/phase3/a7_summary.csv')
+> print(d[d.response.str.startswith('BIO')][['design','clustered_mean','median_abs_amplitude']])"
+> ```
 
 | value | what it is | file |
 |---|---|---|
@@ -1350,6 +1465,28 @@ and `git tag pre-c6-genesets`. `MASTER_SEED = 20260820`.
 ---
 
 # 7. RESIDUAL DISAGREEMENTS BETWEEN DOCUMENTS, AND THE AUTHORITATIVE FILE FOR EACH
+
+> ## ✅ ALL 22 WORKED, 2026-08-27 — see `reports/RECORD_RECONCILIATION.md`
+>
+> The table below is the *diagnosis*. The fixes have now been applied to the documents, and
+> the per-file record of what changed and why is in `reports/RECORD_RECONCILIATION.md`.
+> Status by row:
+>
+> | rows | status |
+> |---|---|
+> | **1, 4, 5, 8, 9, 12** — pre-C6 digits in `PHASE8_ROADMAP_STATUS.md`, `PREREG_PHASE8.md`, `CS_PHASE7_C1.md`, `NOVELTY_ASSESSMENT.md` | **FIXED.** Frozen values in place; pre-C6 digits struck through or marked, never deleted |
+> | **2, 3, 13** — caller bases, the dead Tier A × SenePy plank, "22 of 33" | **FIXED.** `CS_PHASE8_CALLERS.md` now carries a whole-file pre-C6 banner and the arithmetic error (20 of 33, and 26 of 33 frozen) is corrected |
+> | **6** — naive biological amplitude | **RESOLVED: +0.2767**, section-clustered signed mean. See §5.5 |
+> | **7** — Spearman ρ | **RESOLVED: +0.8951 frozen, aggregation stated everywhere.** +0.923 reproduces as the median-per-field aggregation. See §0.4 |
+> | **10, 21** — RS_count 0.033–0.060; tiled-torus inflation | **FIXED.** 0.040–0.060 corrected in `CS_PHASE8_M1_RERUN.md` §6/§14.3; the inflation is standardised repo-wide on **2.35×**, the exact 0.1175 / 0.05 — "2.4×" and "2.36×" both rounded it up |
+> | **11, 16** — "23 % / 8 % in the void"; N4 8.3 % | **FIXED.** Audit R3's column fix applied to `CS_PHASE8_TORUS_VAR.md` (§1 table and §10 blockquote) and to `NOVELTY_ASSESSMENT.md` §2.2; audit R3's own 8.3 % marked superseded to 8.0 % |
+> | **14** — figure guard | **CLOSED.** `git ls-files figures/` = 52, on disk 52, `check_figures_guard.py` exits 0 with "all 52 committed figures match". `PHASE8_ROADMAP_STATUS.md`'s "27 of 45" paragraph is replaced |
+> | **15** — matched decoy worse in "6 of 8" | **FIXED to 5 of 8 strictly** (1 exact tie at 0.000), `CORRECTIONS.md` §13.1 |
+> | **17** — audit R5 | **MOOT, and said so.** `neg_probe_rate` under N6+N5 is +0.0097 [−0.0060, +0.0253], p = 0.199. "Every control family is flat under +N6+N5" is now **true**; the hedge is withdrawn in `CS_PHASE8_CALLERS.md` §4.1 and `AUDIT_PHASE8_FACTCHECK.md` R5 |
+> | **18, 19** — stale "NOT DONE" statuses; the `SUBMISSION_PATCH` §9 warning | **CLOSED** in `NOVELTY_ASSESSMENT.md` §4 and `CORRECTIONS.md` §1/§18.2 |
+> | **22** — the composition-surrogate row | **WITHDRAWN.** The 76 % is 0.212/0.260 = 0.815 with an unsourced denominator; `CS_PHASE5.md` §4 now says so, and the row is replaced by the 65.9 % / 85.4 % composition-matched pair |
+> | **20** — bibliography counts | **HALF RESOLVED.** The count is **43 entries** — `grep -c '^@' references.bib` — so "32 entries" is a stale vintage and `CORRECTIONS.md` §18.3's "truth: 43" is right. The other half ("41 wrong given names across 19 of 32 entries") is an **audit finding against the 32-entry vintage** and cannot be restated for the 43-entry file without re-checking every author line against Crossref/PubMed. **Not done here** — see `RECORD_RECONCILIATION.md` §6 |
+
 
 | # | disagreement | authoritative source | resolution |
 |---|---|---|---|
