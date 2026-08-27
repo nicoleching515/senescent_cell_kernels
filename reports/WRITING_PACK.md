@@ -166,8 +166,8 @@ The centred value **+0.9441, p = 3.93 × 10⁻⁶** is agreed by every source [V
 
 The bound **0.1833** is in `results/phase3/m1_final_audit.txt` as `power80_bound` [F,V]. No
 file attaches a distance range to it. "**over 0–100 µm**" (§30 5.3) is correct as an inference
-— every fit is capped at `WINDOW_UM = 100.0` (`code/run_phase3_nulls.py:59`, enforced at
-`:169`) — but it is the writer joining two facts. Say it that way; do not cite a file for the
+— every fit is capped at `WINDOW_UM = 100.0` (`code/run_phase3_nulls.py:52`, enforced at
+`:143`) ***[line numbers corrected 2026-08-27 — see the note at "λ grid, frozen" below]*** — but it is the writer joining two facts. Say it that way; do not cite a file for the
 range.
 
 ## 0.6 The 3-pair caller-agreement numbers are emitted by no file
@@ -412,7 +412,7 @@ exception is `perm_nulls_var_full200.csv` (the covariate-adjusted N3-var/N4-var 
 | **detectable bound at 80 % power** | **0.1833 → 0.183** = 2.802 × 0.0654 (z_{0.975}+z_{0.80}) | `m1_final_audit.txt` (`power80_bound`) | V |
 | ratio, bound ÷ estimate | **6.4×** (pre-C6: 7.5×) | `CORRECTIONS.md` §A | V |
 | controlled fits positive **and** CI excludes 0 | **13 of 153** (pre-C6: 15 of 160) | `m1_final_audit.txt` | F |
-| distance range | fits are hard-capped at **100 µm** (`WINDOW_UM`, `run_phase3_nulls.py:59`, enforced `:169`) | code | F |
+| distance range | fits are hard-capped at **100 µm** (`WINDOW_UM`, `run_phase3_nulls.py:52`, enforced `:143`) ***[line numbers corrected 2026-08-27; were :59 / :169]*** | code | F |
 | pre-C6 comparators (**do not quote**) | 0.027, bound 0.203 | `m1_final_audit.txt` | V |
 
 ```bash
@@ -443,11 +443,24 @@ PY
   railing caveat in the same sentence: IQR [7.0, 50.0] µm, 60 % railed, so the window is 14×
   the 7 µm floor and **2×** the 50 µm ceiling. See §0.1.
 
-### λ grid, frozen (`PREREG_PHASE8.md` §3.1, `code/run_phase3_nulls.py:59-93`)
+### λ grid, frozen (`PREREG_PHASE8.md` §3.1, `code/run_phase3_nulls.py:52-72`)
 `WINDOW_UM = 100.0`; floor **7.0 µm** (resolution floor, a literal that does **not** adapt per
 section); ceiling **window/2 = 50.0 µm**; **40 log-spaced points**. "Railed" = exact index
-equality at either end (`:239`). Three other non-equivalent railing definitions exist in the
+equality at either end (`:204`). Three other non-equivalent railing definitions exist in the
 codebase — any railing rate in the paper is the Phase-3 one.
+
+***[Line citations corrected 2026-08-27 — all four pointers into `code/run_phase3_nulls.py`
+(541 lines, unmodified vs HEAD) were wrong, and a wrong pointer into frozen code has already
+produced three of this project's errors. **`WINDOW_UM` is at `:52`, not `:59` (`:59` is blank);
+the window is enforced at `:143` (`& np.isfinite(self.d_obs) & (self.d_obs <= WINDOW_UM)`), not
+`:169` (which is `def fit_cell`); railing is `:204`
+(`lam_railed=int(t0 == 0 or t0 == sf.lam.size - 1)`), not `:239` (which is `keys = list(b)`); and
+the λ grid is `:52–72` (`LAM_LO_FLOOR = 7.0` at `:53`, `N_LAM = 40` at `:55`, `lam_grid()` at
+`:65–72`), not `:59–93`.** **The substance is fully confirmed and unchanged**: `WINDOW_UM = 100.0`,
+`LAM_LO_FLOOR = 7.0`, ceiling `dmax/2 = 50.0`, 40 log-spaced points, railing = index equality at
+either end. Only the pointers moved. Command:
+`grep -n 'WINDOW_UM\|LAM_LO_FLOOR\|N_LAM\|lam_grid\|d_obs <= \|lam_railed' code/run_phase3_nulls.py`.
+`AUDIT_NUMBERS_FINAL.md` R7.]***
 
 ### Kernel families (Figure 3; `results/phase5/kernel_families.csv`, `summary_phase5.txt` T4)
 Five families, frozen: exponential, gaussian, powerlaw (p ∈ {0.5,1,2,4}), step, spline
@@ -486,8 +499,21 @@ the negative **stronger**. SF(N5) also depends on sample size: 100 blocks **0.14
 **Source: `results/phase4/headline.csv`** (100 rows; the `pair == 'ALL'` rows below).
 Producers `code/phase4_run.py` → `phase4_summarize.py` → `code/make_figure4.py`.
 `make_figure4.py` was **de-hardcoded**: `load_ours()` re-derives all seven previously literal
-values and the regenerated PNG is byte-identical (`figure4.png` md5
-`000f34051112aff4fed293fe7a5b25c2`) [F].
+values and the regenerated PNG is byte-identical (`figure4.png` sha256
+`76718f1ec5c1625aa977d6df8d831fd23cfe33f993a8b206ce09a17860044829`, matching
+`figures/.committed_manifest.json`; md5 `d44fac63411d6c30a42c40894a287f17`) [F].
+
+***[Corrected 2026-08-27 — this line previously quoted the md5 `000f34051112aff4fed293fe7a5b25c2`,
+which is **not the hash of the file on disk**. `md5sum figures/figure4.png` →
+`d44fac63411d6c30a42c40894a287f17`, which is also what `results/phase3/m1_final_audit.txt` §5
+records. `000f3405…` occurs in exactly two places in this repo: `reports/CS_PHASE7_C1.md` L308, a
+**pre-C6** document, and the line above, which copied it from there. **It was read from a report,
+not from a file — the exact failure mode the `[F]` mark exists to exclude.** The underlying claim
+is sound and is re-verified here **for this figure specifically**: `sha256sum figures/figure4.png`
+= `76718f1e…4829`, which is exactly the value `figures/.committed_manifest.json` records under the
+key `figures/figure4.png`. **Do not restate this as a whole-guard pass** — see the figure-guard row
+in §6, and note that the guard's status is a moving target while task 8.7 regeneration is in
+progress. `AUDIT_NUMBERS_FINAL.md` R3.]***
 
 Significant-interaction **survival rate** under each null (fraction of real-significant
 interactions still significant on nulled data), ALL pairs:
@@ -890,13 +916,28 @@ Rejection rate at nominal 0.05, under the null of independence:
 | irregular | 0.15 | 0.040 | **0.083** | 0.050 | **0.053** | 0.033 | 0.008 |
 | irregular | 0.30 | 0.073 | **0.118** | 0.085 | **0.055** | 0.040 | 0.020 |
 
-- **"Tiled torus rejects at 0.080–0.118, up to 2.4× nominal"** is the **irregular-window 4×4
+- **"Tiled torus rejects at 0.080–0.118, up to ~~2.4×~~ 2.35× nominal"** ***[2026-08-27: 2.35×, the exact 0.1175/0.05 — see the correction two bullets below]*** is the **irregular-window 4×4
   rows at s ≥ 0.05**. The s = 0.02 irregular row is **0.048**. **Write it as
   "0.080–0.118 for s ≥ 0.05"** or "0.048–0.118 across all four correlation scales". 0.118/0.05
-  = 2.36; `CORRECTIONS.md` §C.4 rounds to 2.35×, `SUBMISSION_PATCH` to 2.4×. [V]
-- **RS_count holds 0.033–0.060 across every window and every correlation scale** — never
-  outside ±0.010 of nominal. **`CS_PHASE8_M1_RERUN.md` §6 and §14.3 say "0.040–0.060"; the
-  true minimum is 0.033.** [V]
+  = 2.36 ~~; `CORRECTIONS.md` §C.4 rounds to 2.35×, `SUBMISSION_PATCH` to 2.4×~~. [V]
+  ***[Corrected 2026-08-27 — this clause had it backwards and contradicted §7's own resolution
+  banner. The file value is `torus_tile4x4_reject_05` = **0.1175** (irregular window, s = 0.30),
+  and **0.1175 / 0.05 = 2.35 exactly**. 2.35 is the exact ratio; **2.36 is the rounding**, obtained
+  by first rounding 0.1175 to 0.118. The repo is standardised on **2.35×** — write 2.35×.
+  Command: `python3 -c "import pandas as pd; print(pd.read_csv('results/phase3/var_sim_calibration.csv').torus_tile4x4_reject_05.max()/0.05)"`.
+  `AUDIT_NUMBERS_FINAL.md` R10.]***
+- **RS_count holds 0.033–0.060 across every window and every correlation scale**, ~~never
+  outside ±0.010 of nominal~~ — **within 1.6 Monte-Carlo SE of nominal everywhere**.
+  **`CS_PHASE8_M1_RERUN.md` §6 and §14.3 say "0.040–0.060"; the true minimum is 0.033.** [V]
+  ***[Corrected 2026-08-27 — the "±0.010" gloss contradicted the range in its own sentence and is
+  struck. Nominal is 0.05, so ±0.010 is [0.040, 0.060], but `results/phase3/var_sim_calibration.csv`,
+  `rs_count_reject_05`, all eight cells: **0.0325, 0.0550, 0.0350, 0.0600, 0.0400, 0.0425, 0.0525,
+  0.0550**. Two are below 0.040 — rectangle s = 0.02 at **0.0325** and rectangle s = 0.15 at
+  **0.0350** — and the largest shortfall is **0.0175**, not 0.010. The **range 0.033–0.060 is
+  correct and is confirmed**; only the gloss was false. The Monte-Carlo SE at 400 replicates is
+  √(0.05·0.95/400) = **0.0109**, so 0.0325 is **1.6 SE** low: statistically unremarkable, which is
+  why the replacement wording states the SE bound rather than a spurious ±0.010.
+  `AUDIT_NUMBERS_FINAL.md` R2.]***
 - Whole-window torus: **0.033–0.078 overall**; 0.033–0.073 on the irregular window;
   **0.073–0.078 at strong autocorrelation**. [V]
 - Tiling is more liberal than the whole-window torus in **7 of the 8 cells** (1 tie). [V]
@@ -1084,8 +1125,16 @@ isolated py3.8 venv; main environment untouched. [F]
 
 **Seed instability at the published default** (`d2_stability.csv`, one fixed 20,000-cell
 subsample of 7239): seeds 0 and 2 agree at Jaccard **0.665**; **seed 1 shares no cells with
-either — Jaccard 0.000, 2,000 of 2,000 cells changing status, twice.** `denoise=False` agrees
-seed-to-seed at **Jaccard 0.76–0.99**. DeepScence hands `random_state` straight to `dca()`, so
+either — Jaccard 0.000, 2,000 of 2,000 cells changing status, twice.** ~~`denoise=False` agrees
+seed-to-seed at **Jaccard 0.76–0.99**.~~ **`denoise=False` reproduces across the two seeds at
+Pearson r = 0.996 and top-5 % Jaccard 0.76.**
+***[Corrected 2026-08-27 — "0.76–0.99" **merged a correlation and a set overlap into one range**.
+`results/phase8_d2/d2_stability.csv` contains exactly **one** `denoise=False` seed pair —
+`raw_seed0 vs raw_seed1`, n = 20,000, `pearson_r` **0.99553**, `top5_jaccard` **0.7606**,
+`top5_n_changed` 272. There is no second raw-vs-raw row and **no Jaccard of 0.99 anywhere in the
+file**: the 0.99 is the Pearson r. `PREREG_PHASE8.md` P26 states it correctly ("r 0.9955 /
+Jaccard 0.761"), so this pack had **degraded a correct statement**. The `denoise=True` half of the
+sentence is right and stands. `AUDIT_NUMBERS_FINAL.md` R1.]*** DeepScence hands `random_state` straight to `dca()`, so
 one seed moves both stages.
 
 **Normalisation (`d2_normalisation_strength.csv`):** §6's named estimator `mor` removes only
@@ -1106,7 +1155,7 @@ committed at the same seed, Pearson r = 0.9999991–0.9999999, 2–24 cells of 7
 | **the frame sentence** | "**Every correction made today moved against interest. None of them changed the conclusion.**" | `CORRECTIONS.md` §A L22–24 |
 | gene-set freeze manifest | `genesets/human/FROZEN_MANIFEST.csv`, **43 rows, 35 FROZEN / 8 variants**, SHA-256 per file, 0 mismatches | audit C1 |
 | deviation tables | `PREREG_PHASE8.md` §13 (P1–P28) and `PREREG_PHASE8_genesets.md` §12 | — |
-| figure guard | **`git ls-files figures/` = 52; 52 artefacts on disk** — the Phase 8 figures have been committed, so the guard now covers everything | verified here [V] |
+| figure guard | **`git ls-files figures/` = 52; the guard covers those 52 committed artefacts** — and **its pass/fail state must be re-checked at drafting time, not quoted from here** (as of 2026-08-27 17:24 it reports `CHANGED: figures/figure2e.{pdf,png}` after a regeneration that did not re-snapshot the manifest; `figures/figure4.png` still matches the manifest exactly). ~~so the guard now covers everything~~ — **it does not.** `figures/` also holds an **untracked** subdirectory `figures/revised_candidates/` with **10 files (9 `_REVISED` figure artefacts plus a README)**, and `git ls-files figures/revised_candidates \| wc -l` = **0**. The guard enumerates `git ls-files figures/`, so those are **outside its scope**. Write: *"the guard covers the 52 committed artefacts and passes; a further 9 candidate figures in `figures/revised_candidates/` are untracked and outside its scope."* ***[Corrected 2026-08-27 — "covers everything" is exactly the overreach checklist item 30 forbids. `AUDIT_NUMBERS_FINAL.md` R4.]*** | verified here [V] |
 | **stale guard claim** | "all 27 committed figures match" / "27 of 45" — **do not quote as current** | audit M7 |
 
 **Deviation-ID namespace collision — binding on the writer.** `D1`–`D17` means **three
@@ -1131,8 +1180,20 @@ quantity, so the bound contradicts no prior number.**
 Appendix needs: the full null battery (§5.2), the eleven-variant shift-null family (§5.7), the
 five-seed composition protocol (§5.6), the per-section caller tables
 (`caller_coverage_gate.csv`), the intersection matrix
-(`figures/figure_gs1_intersection_matrix_data.csv`, **196 cells, every Tier A × Tier B cell
-zero, but 18 of 21 Tier B pairs non-disjoint**), and the deviation tables.
+(`figures/figure_gs1_intersection_matrix_data.csv`, ~~**196 cells, every Tier A × Tier B cell
+zero**~~ **224 cells across three panels; the 14 `A_SENDER_FINAL_strict (PRIMARY)` × Tier B cells
+are all zero in both arms**, but 18 of 21 Tier B pairs non-disjoint), and the deviation tables.
+
+***[Corrected 2026-08-27 — the file has **224 rows**, not 196, and **196 is reproducible from no
+subset of it**. The three panels are `BxB` 84 rows (42 mouse + 42 human), `A0xB` 28 (pre-disjointness
+/ failed variants), `frozenAxB` 112 — of which **55 are non-zero**. Within `frozenAxB` the eight row
+labels are `A_SENDER_FINAL_strict (PRIMARY)` plus the seven `A_sender_for_<module> (sensitivity)`
+sets. **`A_SENDER_FINAL_strict` × all seven modules is 0 in both arms — max 0, sum 0, 14 cells — so
+the gate PASS is real.** The 55 non-zero cells are the **per-module sensitivity** sender sets, which
+are only required to be disjoint from *their own* module. Nothing is broken, but "every Tier A ×
+Tier B cell zero" describes **14 of 224** cells and reads as describing all of them. Command:
+`python3 -c "import pandas as pd; d=pd.read_csv('figures/figure_gs1_intersection_matrix_data.csv'); f=d[d.panel=='frozenAxB']; print(len(d), len(f), (f.n_frozen!=0).sum(), f[f.row.str.contains('strict')].n_frozen.abs().max())"`.
+`AUDIT_NUMBERS_FINAL.md` R5.]***
 
 ---
 
@@ -1277,7 +1338,7 @@ current spatial-omics practice, and we quantify what it costs.* **Three things i
 are ours:** (i) the cost measured on real tissue (35.5 % / 19.9 % out of tissue; 1–66 of
 38,080–108,375 offsets admissible; one section admitting only the identity); (ii) a **direct
 calibration measurement**, which no spatial-omics paper has (tiled torus 0.080–0.118 vs
-nominal 0.05, up to 2.4×; RS_count holds 0.033–0.060); (iii) the **FFT enumeration** — **lead
+nominal 0.05, up to **2.35×** ***[was "2.4×"; corrected 2026-08-27 to the repo-standard exact 0.1175/0.05]***; RS_count holds 0.033–0.060); (iii) the **FFT enumeration** — **lead
 the methods paragraph with it; it converts a rediscovery into a tool.**
 
 *"Presenting the N3 degeneracy as a discovery rather than as the first quantification on real
@@ -1510,7 +1571,7 @@ and `git tag pre-c6-genesets`. `MASTER_SEED = 20260820`.
 | 18 | `NOVELTY_ASSESSMENT.md` §4 O4/O11/O12 marked "NOT DONE" | `CITATION_AUDIT.md` §0.1, §1 | done: nine locations fixed, eleven spatial-statistics entries added. **Do not carry the "NOT DONE" statuses forward** |
 | 19 | `CORRECTIONS.md` §D says `SUBMISSION_PATCH` §9 "still instructs the falsified Moran framing" | `SUBMISSION_PATCH_2026-08-29.md` L606 | the dated correction block **is** there; the warning has been overtaken |
 | 20 | bibliography "32 entries, 19 with invented forenames" vs "43 entries, 18 author lines corrected" | `references.bib` | count it before citing either. **41 wrong given names across 19 of 32 entries** is the audit's finding; the remedy is procedural — copy author names from Crossref/PubMed, never type them |
-| 21 | tiled-torus inflation 2.4× vs 2.35× | `results/phase3/var_sim_calibration.csv` | 0.118/0.05 = **2.36**. Either rounding is defensible; be consistent [V] |
+| 21 | tiled-torus inflation 2.4× vs 2.35× | `results/phase3/var_sim_calibration.csv` | **RESOLVED: 2.35×**, the exact `0.1175 / 0.05`. ~~0.118/0.05 = **2.36**. Either rounding is defensible; be consistent~~ ***[corrected 2026-08-27 — "either rounding is defensible" is wrong: 0.1175 is the file value, so 2.35 is exact and 2.36 comes from rounding twice. `AUDIT_NUMBERS_FINAL.md` R10]*** [V] |
 | 22 | `CS_PHASE8_M1_RERUN.md` §6 says the composition-surrogate row **is** sourced; §9 item 6 says it is not | — | §9 is stale relative to §6. Both are superseded by §0.2 above: **the 76 % is unsourced and the row is replaced** |
 
 **Two files still carry live stale numbers that nobody has fixed:**

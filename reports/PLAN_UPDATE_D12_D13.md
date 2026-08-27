@@ -213,7 +213,8 @@ Primary/Secondary paragraphs above it are **byte-unchanged**.
   the N2-vs-N5 result, given its own subsection because an external review ranks it
   #1 of six; **new 5.7** shift nulls, framed as import-and-quantify with the three
   genuinely-ours items (35.5 %/19.9 % out-of-tissue — *not* to be merged with the
-  22.8 %/8.0 % retention column; the 2.4×-nominal calibration; the FFT enumeration,
+  22.8 %/8.0 % retention column; the **2.35×**-nominal calibration ***[was "2.4×";
+  standardised 2026-08-27 on the exact 0.1175 / 0.05]***; the FFT enumeration,
   which leads the methods paragraph); **new 5.8** two-arm replication and Figs. 5–6
   with the status caveat; **new 5.9** what was withdrawn and why that is a result.
 - **New section 6, "Corrections, pre-registration, and reproducibility"** — the
@@ -274,8 +275,13 @@ the prose was wrong.
 - "weak or reversed in four of eleven sections" — confirmed against
   `CS_PHASE8_CALLERS.md` §5.3 item 4, which names the four (7248, 7435, 7352, 7001)
   and gives the depth-partialled ρ range −0.024…+0.182.
-- "up to 2.4× nominal" — confirmed from `var_sim_calibration.csv` directly:
-  irregular window, s = 0.30, 4×4 tiling **0.1175** against nominal 0.05.
+- ~~"up to 2.4× nominal"~~ **"up to 2.35× nominal"** — confirmed from
+  `var_sim_calibration.csv` directly: irregular window, s = 0.30, 4×4 tiling **0.1175**
+  against nominal 0.05.
+  ***[Corrected 2026-08-27 — the confirmation line quoted the right file value and then
+  rounded it wrong. **0.1175 / 0.05 = 2.35 exactly**; "2.4×" rounds 0.1175 up twice. The repo
+  is standardised on 2.35× (`WRITING_PACK.md` §7, `CORRECTIONS.md` §C.4).
+  `AUDIT_NUMBERS_FINAL.md` R10; `AUDIT_CLAIMS_CITATIONS.md` L9.]***
 
 ### 2.4 Numbers in the brief that are one revision behind, and what I wrote instead
 
