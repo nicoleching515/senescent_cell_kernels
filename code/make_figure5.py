@@ -129,10 +129,11 @@ def main():
     ax.set_xlabel("surviving fraction of the naive distance amplitude "
                   "(1 = null removes nothing, 0 = null removes it all)")
     ax.set_xlim(-0.45, 1.35)
+    ax.set_ylim(-0.85, len(labs) - 0.35)
     ax.set_title("(a)  Surviving fraction by null, both arms.  Point = median over that "
                  "arm's reportable fits; bar = inter-quartile range across fits (NOT a "
                  "confidence interval)", loc="left")
-    ax.legend(loc="lower left", ncol=3)
+    ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.13), ncol=3)
 
     # ---------------- (b) forest: controlled amplitude per module ---------
     ax = fig.add_subplot(gs[1, 0])
@@ -164,7 +165,8 @@ def main():
     ax.set_title("(b)  §17 as a forest plot: each Tier B module against its own arm's\n"
                  "80 %-power detectable bound (dotted).  Nothing crosses it on either arm.",
                  loc="left")
-    ax.legend(loc="lower right")
+    ax.set_ylim(-0.95, len(mods) - 0.35)
+    ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.16), ncol=2)
 
     # ---------------- (c) geometric predictions ---------------------------
     gsc = gs[1, 1].subgridspec(1, 2, wspace=0.42)
@@ -214,7 +216,7 @@ def main():
                          frac_railed_floor=round(b[1], 4), frac_railed_ceiling=round(b[2], 4),
                          median_lam_naive_um=round(b[4], 3)))
     ax.set_xticks(xp); ax.set_xticklabels([b[0] for b in bars], fontsize=7.5)
-    ax.set_ylim(0, 1.05); ax.set_ylabel("fraction of fits with λ̂ at a grid bound")
+    ax.set_ylim(0, 1.24); ax.set_ylabel("fraction of fits with λ̂ at a grid bound")
     ax.set_title("(c2)  R3b λ̂ railing", loc="left")
     ax.legend(loc="lower left", fontsize=7)
 

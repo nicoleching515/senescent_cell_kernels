@@ -55,20 +55,20 @@ def main():
     add("Sections / donors", "M1", "11 / 11 mice; 6 admissible (§8 Test 3)",
         "/workspace/results/composition_by_arm_timepoint.csv",
         "len(c); c.mouse.nunique(); sasp_phase3.IN_BAND")
-    add("Cells, total", "M1", int(c.n_cells.sum()),
+    add("Cells, total", "M1", "{:,}".format(int(c.n_cells.sum())),
         "/workspace/results/composition_by_arm_timepoint.csv", "c.n_cells.sum()")
     add("Cells, admissible sections", "M1",
-        int(c[c.section.astype(str).str.split('_').str[0].isin(
-            [s.split('_')[0] for s in M1_INBAND])].n_cells.sum()),
+        "{:,}".format(int(c[c.section.astype(str).str.split('_').str[0].isin(
+            [s.split('_')[0] for s in M1_INBAND])].n_cells.sum())),
         "/workspace/results/composition_by_arm_timepoint.csv",
         "c[c.section in IN_BAND].n_cells.sum()")
 
     a1 = pd.read_csv(f"{R9}/a1_sections.csv")
     add("Sections / donors", "H1", "7 / 7 donors, ages 17-59, 4M/3F; all 7 analysed",
         f"{R9}/a1_sections.csv", "len(a1)")
-    add("Cells, total", "H1", int(a1.n_cells.sum()), f"{R9}/a1_sections.csv",
+    add("Cells, total", "H1", "{:,}".format(int(a1.n_cells.sum())), f"{R9}/a1_sections.csv",
         "a1.n_cells.sum()")
-    add("Cells, admissible sections", "H1", int(a1.n_qc_pass.sum()),
+    add("Cells, admissible sections", "H1", "{:,}".format(int(a1.n_qc_pass.sum())),
         f"{R9}/a1_sections.csv", "a1.n_qc_pass.sum() (QC-passed; H1 has no Test-3 rule)")
 
     w3 = pd.read_csv(f"{R3}/window.csv")
@@ -112,7 +112,7 @@ def main():
         add("Fits / reportable", label, "%d / %d (%.1f %%)"
             % (len(d), len(rep), 100 * len(rep) / max(len(d), 1)), src,
             flt + " ; reportable = beta_naive>0 & sf_base.notna() & beta_base_lo>0")
-        add("Naive amplitude, median |b|/sd(y)", label,
+        add("Naive amplitude, median beta/sd(y) over reportable fits", label,
             round(float((rep.beta_naive / rep.sd_y).median()), 4), src,
             flt + " ; median over reportable of beta_naive/sd_y")
         ctrl = rep.beta_n2n5n6 / rep.sd_y
