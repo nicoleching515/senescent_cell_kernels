@@ -5,14 +5,50 @@ Deliverables D-A (cell types), D-B (anatomy), D-C (senders), D-D (module scores)
 
 ---
 
+> ## ⚠ SUPERSEDED IN PART — 2026-08-27 (remediation pass). §4.3's INDEPENDENCE CLAIM IS FALSIFIED.
+>
+> **This is a historical phase report, kept as the record of what was found on 2026-08-20 on the two
+> published sections with the pre-C6 25-gene Tier A. Its findings are not rewritten.** Until this
+> banner was added, the file's only correction box was §4.2's (the 69 % → 79 % circularity
+> denominator); the ⚠️ marks elsewhere are the authors' own emphasis on a finding, **not correction
+> markers**, and §4.3 has been read as live.
+>
+> ### Superseded — do not quote
+>
+> | where | what is dead | frozen replacement, and its file |
+> |---|---|---|
+> | **§0 headline item 2**, the clause *"the sender callers do **not** agree with each other at better than chance"* | the conclusion | **They do.** `results/phase3/caller_coverage_gate_headline.csv`: on **the same two sections**, replacing the pre-C6 25-gene Tier A with the frozen C6 33-gene set moves the pooled agreement from **1.040× chance (z = 1.76, p = 0.078)** to **1.131× (z = 5.80, p = 6.5e-09)**; at 11 sections it is **1.212× (z = 21.92, p = 1.84e-106)**, band 0.751–2.198. |
+> | **§4.3 heading** *"⚠️ The sender callers agree at or below chance"* | the heading itself | See above. Read the heading as *"the sender callers agree at or below chance **on the two published sections, under the pre-C6 sender set**"*. |
+> | **§4.3 body**, *"**The three definitions are statistically independent — they are not noisy measurements of one latent senescent state.**"* | **STRUCK.** Forbidden-claims item **3** / **13**; `PREREG_PHASE8.md` §10.12 | The dependence is real and its *shape* is the finding. Replacement wording, `reports/SUBMISSION_PATCH_2026-08-29.md` §2.1: *"…four senescence callers overlap at **0.75–2.20× of chance across eleven sections, pooling to 1.21× (Mantel–Haenszel, z = 21.9)**; they are not independent, but the dependence spans **anti-concordance at 0.74× to concordance at 1.47×** with a different identifiable cause at each end, which is not what one latent state looks like."* |
+> | **§4.3 body**, *"two of three pairs overlap *less* than random"* | the count | On the frozen C6 set over the **same two sections**, **none** of the three is below chance: `tierA vs senepy` **1.007** (was 0.935), `tierA vs cdkn1a` **1.300** (was 1.017), `senepy vs cdkn1a` **1.168** — `results/phase3/caller_coverage_gate.csv`, `n_sections == 2`. |
+>
+> ### What still stands
+>
+> - **The ~99 % disagreement itself is not disputed** — the callers select almost disjoint cell sets.
+>   What is falsified is the inference from that to *independence*: a large disagreement and an
+>   above-chance overlap are not in conflict, and the frozen numbers show both.
+> - **§4.2's circularity correction (26 of 33 = 79 %) stands**, and so do §§1–3, §4.1, §4.4 and §5.
+>   Neither audit contradicted them. They were also not independently re-derived in this pass —
+>   absence of a correction here is not a verification.
+> - **The cause of the move is a sender-set defect, not coverage.** The pre-C6 Tier A used here was
+>   25 genes; the frozen C6 set is 33. The fix alone kills independence on these two sections.
+>
+> Derivations: `reports/AUDIT_CLAIMS_CITATIONS.md` L3; `reports/PREREG_PHASE8.md` §10.12;
+> `reports/WRITING_PACK.md` §3 items 3, 13, 14. Commands: `reports/REMEDIATION_PASS.md`.
+
+
 ## 0. Headline
 
 1. **Cell typing failed twice before it worked.** The full before/after is in §2; the correction is
    on the record, not silently overwritten. Final sham composition is 51.3% hepatocytes, 0%
    Unknown, median confidence 0.966 (first attempt: 22.9% hepatocytes, 24.2% Unknown, 0.241).
 2. **DeepScence and SenePy both installed and ran.** Section 10 gets its two independent
-   sender-calling methods after all. But see §4: **the sender callers do not agree with each
-   other at better than chance**, and DeepScence's own gene set is **79%** circular with our
+   sender-calling methods after all. But see §4: ~~**the sender callers do not agree with each
+   other at better than chance**~~ ***[SUPERSEDED 2026-08-27 — see the banner at the head of this
+   file. On these same two sections the frozen C6 Tier A gives **1.131× chance, z = 5.80,
+   p = 6.5e-09**; at 11 sections **1.212×, z = 21.92**
+   (`results/phase3/caller_coverage_gate_headline.csv`). They agree above chance.]***, and
+   DeepScence's own gene set is **79%** circular with our
    response modules (**corrected 2026-08-27** from 69%; see the correction box in §4.2).
 3. **The two arms are not equally analysable.** Section 8 Test 3 **passes for every SBR cell type**
    (hepatocytes 9.6% Cdkn1a+) and **fails for sham** (hepatocytes 0.48%). The paper's estimates
@@ -224,7 +260,7 @@ Comparison of the three sender definitions against the Tier B union (on-panel ge
 
 SenePy is much the cleaner of the two published tools.
 
-### 4.3 ⚠️ The sender callers agree at or below chance
+### 4.3 ⚠️ The sender callers agree at or below chance ***[on the two published sections, under the pre-C6 25-gene Tier A — SUPERSEDED 2026-08-27, see the head banner and the box below]***
 
 Sham, within-cell-type p95 flags, and Spearman on the continuous scores:
 
@@ -235,10 +271,31 @@ Sham, within-cell-type p95 flags, and Spearman on the continuous scores:
 | SenePy vs Cdkn1a+ | 0.0097 | 0.0058 | 1.66× | +0.012 |
 
 All three |ρ| < 0.03. Section 10 tolerates ~30% disagreement and asks for the analysis under both
-callers if it is exceeded; here disagreement is **~99%** and two of three pairs overlap *less* than
-random. **The three definitions are statistically independent — they are not noisy measurements of
-one latent senescent state.** Whatever λ we report will be a property of the sender definition we
+callers if it is exceeded; here disagreement is **~99%** and ~~two of three pairs overlap *less* than
+random~~. ~~**The three definitions are statistically independent — they are not noisy measurements of
+one latent senescent state.**~~ Whatever λ we report will be a property of the sender definition we
 chose. That has to be in the abstract, not a footnote.
+
+> **Correction, 2026-08-27 (remediation pass)** — see the banner at the head of this file.
+> **The independence sentence is STRUCK** (forbidden-claims items 3 and 13; `PREREG_PHASE8.md`
+> §10.12), and so is "two of three pairs overlap less than random".
+>
+> The table above is the **pre-C6 25-gene Tier A on the two published sections**, and both defects
+> matter. Re-run on the frozen C6 33-gene Tier A over **the same two sections**
+> (`results/phase3/caller_coverage_gate.csv`, `n_sections == 2`, `tierA_definition ==
+> "A_SENDER_FINAL_strict C6"`), **none of the three pairs is below chance**: `tierA vs senepy`
+> **1.007** (was 0.935), `tierA vs cdkn1a` **1.300** (was 1.017), `senepy vs cdkn1a` **1.168**
+> (unchanged — it does not involve Tier A). Pooled over the four gated pairs the two sections move
+> from **1.040× chance (z = 1.76, p = 0.078)** to **1.131× (z = 5.80, p = 6.5e-09)**, and at 11
+> sections to **1.212× (z = 21.92, p = 1.84e-106)**, band 0.751–2.198
+> (`results/phase3/caller_coverage_gate_headline.csv`).
+>
+> **What survives, and it is stronger than what it replaces:** the ~99 % disagreement is real, but
+> it does not imply independence — the callers overlap **above** chance while selecting almost
+> disjoint sets. The wording to use is `reports/SUBMISSION_PATCH_2026-08-29.md` §2.1. The closing
+> sentence of this subsection — that λ is a property of the sender definition chosen — is
+> **unaffected and still stands**; if anything the frozen numbers sharpen it, since changing the
+> Tier A definition alone moved every Tier-A-involving pair.
 
 ### 4.4 Section 8 Test 3 — passes for SBR, fails for sham
 

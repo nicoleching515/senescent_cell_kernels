@@ -6,6 +6,48 @@ T3 (Deliverable 5 — ligand–receptor plausibility, §12), T4 (characterise ca
 
 ---
 
+> ## ⚠ SUPERSEDED IN PART — 2026-08-27 (remediation pass). §4.4 AND §4.5 CARRY FALSIFIED CLAIMS.
+>
+> **This is a historical phase report and is kept as the record of what was found on 2026-08-20,
+> on four sections and the pre-C6 25-gene Tier A. Its findings are not rewritten.** But until this
+> banner was added the file carried **no correction marker of any kind**, and it holds the largest
+> concentration of forbidden text in the repo — including a paragraph in §4.5 explicitly drafted
+> *"for the paper"*. The scope below is stated line by line so that nothing beneath it reads as live
+> by accident.
+>
+> ### Superseded — do not quote, do not draft from
+>
+> | where | what is dead | frozen replacement, and the file it comes from |
+> |---|---|---|
+> | **§0 headline item 4**, last sentence | *"conditioning on cell type **and** depth decile does **not** make them agree (Jaccard ratios 0.93–1.22× of chance)"* | **They do agree, above chance.** Over 11 sections on the frozen C6 Tier A the four callers span **0.751–2.198× of chance and pool to 1.212× (Mantel–Haenszel z = 21.92, p = 1.84e-106, above chance in 35 of 44 section × pair values)** — `results/phase3/caller_coverage_gate_headline.csv`, row *"11-section, post-C6 Tier A (FROZEN)"*. Forbidden-claims items **13/14**. |
+> | **§4.4**, the sentence *"Four of six pairs sit at **0.93–1.22× of chance** — statistical independence"* | the range, the count, **and the independence conclusion** | The 0.93–1.22 band is **a property of the two published sections only** (`caller_coverage_gate_headline.csv`, row *"2-section, pre-C6 Tier A (PUBLISHED)"*: band 0.932–1.369, pooled 1.040, p = 0.078). At 11 sections only 2 of 6 pairs fall in it. Forbidden-claims item **14**; the independence conclusion is item **13** and `PREREG_PHASE8.md` §10.12. |
+> | **§4.4**, the table cell **`DeepScence vs Cdkn1a⁺ 2.85 / 1.51`** | the **1.51–2.85×** circularity range | Over 11 sections this pair runs **0.963–2.849, median 1.071, pooled 1.255 (z = 10.53, p = 6.24e-26, above chance in 7 of 11)** — `results/phase3/caller_coverage_gate.csv`, `pair == "deepscence vs cdkn1a"`, `n_sections == 11`. **The two published values were the two largest of the eleven.** Forbidden-claims item **8**. |
+> | **§4.4**, *"The one pair that looked concordant in sham … is **anti**-concordant in SBR"* | the **arm** interpretation | There is **no arm effect**; there is one anomalous section (**7250**). `PREREG_PHASE8.md` §10.12, forbidden-claims item **15**. On the frozen 11-section file the pair (`senepy vs deepscence`) runs 0.332–2.150, median 0.506, pooled **0.737 (z = −15.08)** — consistently *below* chance, not sham-vs-SBR. |
+> | **§4.4**, *"Tier A vs SenePy 0.93 / 0.94"* read as a stable below-chance pair | the *"below chance in all eleven sections"* plank | Frozen: **0.972, z = −1.63, p = 0.104, above chance in 4 of 11** (`caller_coverage_gate.csv`, C6 Tier A, 11 sections). **This plank is dead** — forbidden-claims item **17**. |
+> | **§4.5 in its entirety — the blockquote headed *"The finding, stated for the paper (§9 A7, §10)"*** | **STRUCK. This paragraph must not be shipped, quoted, or used as a drafting base.** It welds together, in one paragraph, *"overlap at 0.93–1.22× of chance … i.e. they are **statistically independent**"* (items 13 + 14) and *"DeepScence's correlation with sequencing depth **reverses sign between two sections** of the same study"* (item **16** — at 11 sections this is a **7250-only** effect, not a general one). It also carries the *"enriched 2.3–2.5× … depleted 8–11×"* depth magnitudes, which are the four-section values. | The replacement paragraph — the only version whose planks all survive — is `reports/SUBMISSION_PATCH_2026-08-29.md` §2.1, reproduced in `reports/WRITING_PACK.md` §3.1(a): *"After conditioning on cell type and within-cell-type sequencing depth, four senescence callers overlap at **0.75–2.20× of chance across eleven sections, pooling to 1.21× (Mantel–Haenszel, z = 21.9)**; they are not independent, but the dependence spans **anti-concordance at 0.74× to concordance at 1.47×** with a different identifiable cause at each end, which is not what one latent state looks like."* |
+>
+> ### What still stands
+>
+> - **§1 (T1), §2, §3 and §5 are untouched by this banner.** The 11-section annotation, the
+>   withdrawal of the Phase 2 time course, the Deliverable 5 verdict and the §5 depth/prevalence
+>   confound were not contradicted by either audit and are not superseded here. They were also not
+>   independently re-derived in this pass — absence of a correction is not a verification.
+> - **The §4 mechanism survives, and survived coverage.** The claim that the callers sit in
+>   *opposite depth camps within cell type* is confirmed at 11 sections, **11 of 11 in direction for
+>   every caller**, on `results/phase3/caller_within_type_depth_bias_11sections.csv` (Q5/Q1 of
+>   `enrichment` within cell type): SenePy **10.58–41.74** and `Cdkn1a`⁺ **4.19–42.36** at the top;
+>   Tier A **0.146–0.317** and DeepScence **0.218–0.795** at the bottom. **Only the magnitudes
+>   quoted in §4 (2.3–2.5× / 8–11×) are four-section values** — quote the ranges above instead.
+> - **What is dead is the conclusion drawn from the mechanism, not the mechanism.** Depth explains
+>   *where* each caller looks; the callers then **agree above chance anyway**. The restatement is
+>   *stronger* than what it replaces, not a retreat: the sender-set fix kills independence on the
+>   published two sections alone (1.040 → 1.131, p = 6.5e-09).
+>
+> Derivations: `reports/AUDIT_CLAIMS_CITATIONS.md` L2; `reports/AUDIT_NUMBERS_FINAL.md` §4;
+> `reports/PREREG_PHASE8.md` §10.12; `reports/WRITING_PACK.md` §3 items 8, 13, 14, 15, 16, 17.
+> Commands are in `reports/REMEDIATION_PASS.md`.
+
+
 ## 0. Headline
 
 1. **All 11 liver sections of GSE310392 are annotated and carry the full five-file per-cell
@@ -25,6 +67,12 @@ T3 (Deliverable 5 — ligand–receptor plausibility, §12), T4 (characterise ca
    DeepScence call the bottom (1.3–1.9×). But conditioning on cell type **and** depth decile does
    **not** make them agree (Jaccard ratios 0.93–1.22× of chance). Depth explains *where* each
    caller looks; it does not explain the disagreement. §4.
+   ***[SUPERSEDED 2026-08-27 — see the banner at the head of this file. Conditioning does NOT
+   restore independence, because there is none to restore: at 11 sections on the frozen C6 Tier A
+   the callers agree at **0.751–2.198× of chance, pooling to 1.212×, z = 21.92**
+   (`results/phase3/caller_coverage_gate_headline.csv`). The depth-camp mechanism in the first half
+   of this item stands (11 of 11 in direction); the independence conclusion in the second half is
+   falsified. Forbidden-claims items 13/14.]***
 5. **New confound the CS lead must handle:** within the SBR arm, *section-level* `Cdkn1a`⁺
    prevalence tracks *section-level* median transcripts per cell at Spearman **ρ = +0.94, p = 0.005**
    (n = 6). Animal-level "senescent burden" is not separable from animal-level detection depth
@@ -405,14 +453,44 @@ to chance:
 | SenePy vs DeepScence | 2.15 | **0.38** |
 | DeepScence vs `Cdkn1a`⁺ | 2.85 | 1.51 |
 
-Four of six pairs sit at **0.93–1.22× of chance** — statistical independence — after conditioning on
-both cell type and depth. Partial Spearman given log counts moves nothing (e.g. Tier A vs SenePy
-−0.024 → −0.037). The one pair that looked concordant in sham (SenePy vs DeepScence, 2.15×,
-ρ = +0.12) is **anti**-concordant in SBR (0.38×, ρ = −0.25). The only pair that is consistently
+~~Four of six pairs sit at **0.93–1.22× of chance** — statistical independence — after conditioning on
+both cell type and depth.~~
+***[STRUCK 2026-08-27 — see the banner at the head of this file. Both the count and the conclusion
+are two-section artefacts. Frozen, 11 sections, C6 Tier A: band **0.751–2.198×**, pooled **1.212×**,
+z = 21.92, p = 1.84e-106 (`results/phase3/caller_coverage_gate_headline.csv`); only 2 of 6 pairs fall
+in 0.93–1.22. The table above is retained as the record of the two-section measurement — note in
+particular that its `DeepScence vs Cdkn1a⁺` cells (2.85 / 1.51) are **the two largest of the eleven
+sections**, whose full range is 0.963–2.849, median 1.071, pooled 1.255. Forbidden-claims items
+8, 13, 14, 17.]*** Partial Spearman given log counts moves nothing (e.g. Tier A vs SenePy
+−0.024 → −0.037). ~~The one pair that looked concordant in sham (SenePy vs DeepScence, 2.15×,
+ρ = +0.12) is **anti**-concordant in SBR (0.38×, ρ = −0.25).~~
+***[STRUCK 2026-08-27 — there is **no arm effect**; there is one anomalous section, **7250**
+(`PREREG_PHASE8.md` §10.12, forbidden-claims item 15). At 11 sections this pair is consistently
+below chance, not sham-versus-SBR: 0.332–2.150, median 0.506, pooled **0.737, z = −15.08**
+(`results/phase3/caller_coverage_gate.csv`).]*** The only pair that is consistently
 above chance is DeepScence vs `Cdkn1a`⁺, which is expected because `CDKN1A` is DeepScence's own
 direction anchor.
+***[SUPERSEDED 2026-08-27 — also a two-section property. At 11 sections on the frozen C6 Tier A,
+**three** pairs are consistently above chance and `DeepScence vs Cdkn1a`⁺ is **not the strongest of
+them**: `tierA vs cdkn1a` is above chance in **11 of 11** (pooled 1.471, z = 19.45) and
+`tierA vs deepscence` in **11 of 11** (pooled 1.288, z = 19.23), while `deepscence vs cdkn1a` is above
+chance in only **7 of 11** (pooled 1.255, min 0.963) — `results/phase3/caller_coverage_gate.csv`.
+The circularity *explanation* stands; the "only pair" claim does not.]***
 
-### 4.5 The finding, stated for the paper (§9 A7, §10)
+### 4.5 ~~The finding, stated for the paper (§9 A7, §10)~~ — **STRUCK IN FULL 2026-08-27**
+
+***[STRUCK 2026-08-27 (remediation pass) — see the banner at the head of this file. **The blockquote
+below was drafted as manuscript text and must not be shipped, quoted, or used as a drafting base.**
+It contains, in one paragraph, two falsified claims: *"overlap at 0.93–1.22× of chance … i.e. they are
+statistically independent"* (forbidden-claims items 13 and 14 — frozen: 0.751–2.198×, pooling to
+1.212×, z = 21.92, `results/phase3/caller_coverage_gate_headline.csv`) and *"DeepScence's correlation
+with sequencing depth reverses sign between two sections of the same study"* (item 16 — at 11
+sections this is a **7250-only** effect). Its depth magnitudes (2.3–2.5× enriched, 8–11× depleted)
+are four-section values; the 11-section Q5/Q1 ranges are SenePy 10.58–41.74, `Cdkn1a`⁺ 4.19–42.36,
+Tier A 0.146–0.317, DeepScence 0.218–0.795
+(`results/phase3/caller_within_type_depth_bias_11sections.csv`). **The paragraph that replaces it is
+`reports/SUBMISSION_PATCH_2026-08-29.md` §2.1.** The text is kept below unaltered as the record of
+what was drafted on 2026-08-20 — it is a record, not a draft.]***
 
 > Four published or panel-standard ways of calling a senescent cell — DeepScence, SenePy, a
 > disjoint arrest-and-damage score, and `CDKN1A` positivity — were applied to the same 127k–237k
