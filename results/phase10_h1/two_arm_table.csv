@@ -1,0 +1,92 @@
+quantity,arm,panel,value,source,filter,note
+Platform / panel,M1,full,"Xenium Prime Mouse 5K + 100 custom; 5,097 panel genes",/workspace/results/phase9_h1/a8_panel_arithmetic.csv,row mouse_panel,
+Platform / panel,H1,full,"Xenium Prime Human 5K + 100 addon; 5,093 panel genes",/workspace/results/phase9_h1/a8_panel_arithmetic.csv,row human_panel,
+Sections / donors,M1,full,11 / 11 mice; 6 admissible (§8 Test 3),/workspace/results/composition_by_arm_timepoint.csv,len(c); c.mouse.nunique(); sasp_phase3.IN_BAND,
+"Cells, total",M1,full,1826893,/workspace/results/composition_by_arm_timepoint.csv,c.n_cells.sum(),
+"Cells, admissible sections",M1,full,1031880,/workspace/results/composition_by_arm_timepoint.csv,c[c.section in IN_BAND].n_cells.sum(),
+Sections / donors,H1,full,"7 / 7 donors, ages 17-59, 4M/3F; all 7 analysed",/workspace/results/phase9_h1/a1_sections.csv,len(a1),
+"Cells, total",H1,full,2207593,/workspace/results/phase9_h1/a1_sections.csv,a1.n_cells.sum(),
+"Cells, admissible sections",H1,full,1962278,/workspace/results/phase9_h1/a1_sections.csv,a1.n_qc_pass.sum() (QC-passed; H1 has no Test-3 rule),
+Median NN distance (um),M1,full,6.74 - 10.61,/workspace/results/phase3/window.csv,unique(section) -> median_nn_um,
+Median NN distance (um),H1,full,5.45 - 5.89 (all cells); 5.45 - 6.29 (QC-passed),/workspace/results/phase9_h1/a1_sections.csv,median_nn_um_all / median_nn_um_qc,BELOW the frozen 7.0 um lambda-grid floor in every section; PREREG 3.1 forbids patching it
+Transcript assignment rate,M1,full,88.27 % (section 7259 only),/workspace/logs/assignment_rate.log,stdout of code/assignment_rate.py; no CSV exists for M1,
+Transcript assignment rate,H1,full,92.41 - 94.17 % (3 sections),/workspace/results/phase9_h1/a1_assignment_rate.csv,assigned_pct,
+"Sender prevalence, primary call (%)",M1,full,4.041 - 4.480,/workspace/results/phase3/main_fits.csv,call=='tierA_p95' & stratum=='all' & section in IN_BAND(6),
+Fits / reportable,M1,full,315 / 153 (48.6 %),/workspace/results/phase3/main_fits.csv,call=='tierA_p95' & stratum=='all' & section in IN_BAND(6) ; reportable = beta_naive>0 & sf_base.notna() & beta_base_lo>0,
+"Naive amplitude, median |b|/sd(y)",M1,full,0.3288,/workspace/results/phase3/main_fits.csv,call=='tierA_p95' & stratum=='all' & section in IN_BAND(6) ; median over reportable of beta_naive/sd_y,
+"Controlled amplitude (N2+N5+N6), response-SD",M1,full,"0.0288  IQR [-0.0066, 0.0845]",/workspace/results/phase3/main_fits.csv,call=='tierA_p95' & stratum=='all' & section in IN_BAND(6),
+"80 %-power detectable bound, response-SD",M1,full,0.1833,/workspace/results/phase3/main_fits.csv,call=='tierA_p95' & stratum=='all' & section in IN_BAND(6) ; 2.802 * median SE  (code/m1_headlines.py:30-32),
+Controlled amplitude vs own bound,M1,full,0.0288 vs 0.1833 -> BELOW,/workspace/results/phase3/main_fits.csv,call=='tierA_p95' & stratum=='all' & section in IN_BAND(6),
+"SF, N2 matched decoy",M1,full,"0.9516  IQR [0.9191, 0.9776]",/workspace/results/phase3/main_fits.csv,call=='tierA_p95' & stratum=='all' & section in IN_BAND(6) ; np.quantile over reportable fits,
+"SF, N5 alone",M1,full,"0.1150  IQR [-0.0344, 0.2583]",/workspace/results/phase3/main_fits.csv,call=='tierA_p95' & stratum=='all' & section in IN_BAND(6) ; np.quantile over reportable fits,
+"SF, N6 alone",M1,full,"0.4708  IQR [0.1829, 0.7416]",/workspace/results/phase3/main_fits.csv,call=='tierA_p95' & stratum=='all' & section in IN_BAND(6) ; np.quantile over reportable fits,
+"SF, anatomical covariate alone",M1,full,"0.8429  IQR [0.5553, 0.9740]",/workspace/results/phase3/main_fits.csv,call=='tierA_p95' & stratum=='all' & section in IN_BAND(6) ; np.quantile over reportable fits,
+"SF, N5+N6",M1,full,"0.0844  IQR [-0.0126, 0.2333]",/workspace/results/phase3/main_fits.csv,call=='tierA_p95' & stratum=='all' & section in IN_BAND(6) ; np.quantile over reportable fits,
+"SF, N2+N5+N6 (PRIMARY OUTCOME)",M1,full,"0.0885  IQR [-0.0166, 0.2338]",/workspace/results/phase3/main_fits.csv,call=='tierA_p95' & stratum=='all' & section in IN_BAND(6) ; np.quantile over reportable fits,
+lambda-hat railed at a grid bound,M1,full,"60.0 % (103 at the 7 um floor, 86 at the 50 um ceiling); median lam-hat 14.73 um",/workspace/results/phase3/main_fits.csv,call=='tierA_p95' & stratum=='all' & section in IN_BAND(6),
+"Sender prevalence, primary call (%)",H1 (tierAmg_p95),full,3.837 - 4.553,/workspace/results/phase10_h1/main_fits.csv,call=='tierAmg_p95' & stratum=='all' & section in the 7 H1 sections,
+Fits / reportable,H1 (tierAmg_p95),full,343 / 58 (16.9 %),/workspace/results/phase10_h1/main_fits.csv,call=='tierAmg_p95' & stratum=='all' & section in the 7 H1 sections ; reportable = beta_naive>0 & sf_base.notna() & beta_base_lo>0,
+"Naive amplitude, median |b|/sd(y)",H1 (tierAmg_p95),full,0.1843,/workspace/results/phase10_h1/main_fits.csv,call=='tierAmg_p95' & stratum=='all' & section in the 7 H1 sections ; median over reportable of beta_naive/sd_y,
+"Controlled amplitude (N2+N5+N6), response-SD",H1 (tierAmg_p95),full,"0.0307  IQR [0.0028, 0.0666]",/workspace/results/phase10_h1/main_fits.csv,call=='tierAmg_p95' & stratum=='all' & section in the 7 H1 sections,
+"80 %-power detectable bound, response-SD",H1 (tierAmg_p95),full,0.1094,/workspace/results/phase10_h1/main_fits.csv,call=='tierAmg_p95' & stratum=='all' & section in the 7 H1 sections ; 2.802 * median SE  (code/m1_headlines.py:30-32),
+Controlled amplitude vs own bound,H1 (tierAmg_p95),full,0.0307 vs 0.1094 -> BELOW,/workspace/results/phase10_h1/main_fits.csv,call=='tierAmg_p95' & stratum=='all' & section in the 7 H1 sections,
+"SF, N2 matched decoy",H1 (tierAmg_p95),full,"0.9786  IQR [0.9463, 0.9940]",/workspace/results/phase10_h1/main_fits.csv,call=='tierAmg_p95' & stratum=='all' & section in the 7 H1 sections ; np.quantile over reportable fits,
+"SF, N5 alone",H1 (tierAmg_p95),full,"0.1264  IQR [-0.0245, 0.4016]",/workspace/results/phase10_h1/main_fits.csv,call=='tierAmg_p95' & stratum=='all' & section in the 7 H1 sections ; np.quantile over reportable fits,
+"SF, N6 alone",H1 (tierAmg_p95),full,"0.7395  IQR [0.4594, 0.9387]",/workspace/results/phase10_h1/main_fits.csv,call=='tierAmg_p95' & stratum=='all' & section in the 7 H1 sections ; np.quantile over reportable fits,
+"SF, anatomical covariate alone",H1 (tierAmg_p95),full,"0.9307  IQR [0.7509, 0.9933]",/workspace/results/phase10_h1/main_fits.csv,call=='tierAmg_p95' & stratum=='all' & section in the 7 H1 sections ; np.quantile over reportable fits,
+"SF, N5+N6",H1 (tierAmg_p95),full,"0.1608  IQR [0.0047, 0.3869]",/workspace/results/phase10_h1/main_fits.csv,call=='tierAmg_p95' & stratum=='all' & section in the 7 H1 sections ; np.quantile over reportable fits,
+"SF, N2+N5+N6 (PRIMARY OUTCOME)",H1 (tierAmg_p95),full,"0.1582  IQR [0.0074, 0.3837]",/workspace/results/phase10_h1/main_fits.csv,call=='tierAmg_p95' & stratum=='all' & section in the 7 H1 sections ; np.quantile over reportable fits,
+lambda-hat railed at a grid bound,H1 (tierAmg_p95),full,"70.0 % (86 at the 7 um floor, 154 at the 50 um ceiling); median lam-hat 38.16 um",/workspace/results/phase10_h1/main_fits.csv,call=='tierAmg_p95' & stratum=='all' & section in the 7 H1 sections,
+"Sender prevalence, primary call (%)",H1 (tierA_p95),full,3.379 - 4.554,/workspace/results/phase10_h1/main_fits.csv,call=='tierA_p95' & stratum=='all' & section in the 7 H1 sections,
+Fits / reportable,H1 (tierA_p95),full,343 / 61 (17.8 %),/workspace/results/phase10_h1/main_fits.csv,call=='tierA_p95' & stratum=='all' & section in the 7 H1 sections ; reportable = beta_naive>0 & sf_base.notna() & beta_base_lo>0,
+"Naive amplitude, median |b|/sd(y)",H1 (tierA_p95),full,0.1807,/workspace/results/phase10_h1/main_fits.csv,call=='tierA_p95' & stratum=='all' & section in the 7 H1 sections ; median over reportable of beta_naive/sd_y,
+"Controlled amplitude (N2+N5+N6), response-SD",H1 (tierA_p95),full,"0.0345  IQR [0.0006, 0.0707]",/workspace/results/phase10_h1/main_fits.csv,call=='tierA_p95' & stratum=='all' & section in the 7 H1 sections,
+"80 %-power detectable bound, response-SD",H1 (tierA_p95),full,0.1083,/workspace/results/phase10_h1/main_fits.csv,call=='tierA_p95' & stratum=='all' & section in the 7 H1 sections ; 2.802 * median SE  (code/m1_headlines.py:30-32),
+Controlled amplitude vs own bound,H1 (tierA_p95),full,0.0345 vs 0.1083 -> BELOW,/workspace/results/phase10_h1/main_fits.csv,call=='tierA_p95' & stratum=='all' & section in the 7 H1 sections,
+"SF, N2 matched decoy",H1 (tierA_p95),full,"0.9739  IQR [0.9472, 0.9885]",/workspace/results/phase10_h1/main_fits.csv,call=='tierA_p95' & stratum=='all' & section in the 7 H1 sections ; np.quantile over reportable fits,
+"SF, N5 alone",H1 (tierA_p95),full,"0.1745  IQR [-0.0253, 0.4767]",/workspace/results/phase10_h1/main_fits.csv,call=='tierA_p95' & stratum=='all' & section in the 7 H1 sections ; np.quantile over reportable fits,
+"SF, N6 alone",H1 (tierA_p95),full,"0.8007  IQR [0.5037, 0.9616]",/workspace/results/phase10_h1/main_fits.csv,call=='tierA_p95' & stratum=='all' & section in the 7 H1 sections ; np.quantile over reportable fits,
+"SF, anatomical covariate alone",H1 (tierA_p95),full,"0.9526  IQR [0.8021, 1.0022]",/workspace/results/phase10_h1/main_fits.csv,call=='tierA_p95' & stratum=='all' & section in the 7 H1 sections ; np.quantile over reportable fits,
+"SF, N5+N6",H1 (tierA_p95),full,"0.1628  IQR [0.0070, 0.4766]",/workspace/results/phase10_h1/main_fits.csv,call=='tierA_p95' & stratum=='all' & section in the 7 H1 sections ; np.quantile over reportable fits,
+"SF, N2+N5+N6 (PRIMARY OUTCOME)",H1 (tierA_p95),full,"0.1630  IQR [0.0040, 0.4759]",/workspace/results/phase10_h1/main_fits.csv,call=='tierA_p95' & stratum=='all' & section in the 7 H1 sections ; np.quantile over reportable fits,
+lambda-hat railed at a grid bound,H1 (tierA_p95),full,"74.1 % (88 at the 7 um floor, 166 at the 50 um ceiling); median lam-hat 40.49 um",/workspace/results/phase10_h1/main_fits.csv,call=='tierA_p95' & stratum=='all' & section in the 7 H1 sections,
+"SF, N1",M1,full,"0.7074  IQR [0.4163, 0.8648]  n=153",/workspace/results/phase3/perm_nulls.csv,call=='tierA_p95' ; merged onto the reportable fit key,
+"SF, N3",M1,full,"0.9989  IQR [0.9889, 1.0058]  n=153",/workspace/results/phase3/perm_nulls.csv,call=='tierA_p95' ; merged onto the reportable fit key,
+"SF, N4",M1,full,"0.9472  IQR [0.8037, 1.0389]  n=153",/workspace/results/phase3/perm_nulls.csv,call=='tierA_p95' ; merged onto the reportable fit key,
+"SF, C1 N3_tile (tile scope)",M1,full,"0.9706  IQR [0.9061, 1.0089]  n=136",/workspace/results/phase3/perm_nulls_c1.csv,call=='tierA_p95' & scope=='tile' ; merged onto the reportable fit key,
+"SF, C1 N4_tile (tile scope)",M1,full,"0.9243  IQR [0.8346, 1.0489]  n=136",/workspace/results/phase3/perm_nulls_c1.csv,call=='tierA_p95' & scope=='tile' ; merged onto the reportable fit key,
+"SF, N3_var",M1,full,"0.9960  IQR [0.9754, 1.0074]  n=153",/workspace/results/phase3/perm_nulls_var.csv,call=='tierA_p95' & scope=='full' ; merged onto the reportable fit key,
+"SF, N4_var",M1,full,"0.9851  IQR [0.9581, 1.0033]  n=153",/workspace/results/phase3/perm_nulls_var.csv,call=='tierA_p95' & scope=='full' ; merged onto the reportable fit key,
+"SF, N1",H1 (tierAmg_p95),full,NOT_RUN,/workspace/results/phase10_h1/perm_nulls.csv,,producer not run
+"SF, N3",H1 (tierAmg_p95),full,NOT_RUN,/workspace/results/phase10_h1/perm_nulls.csv,,producer not run
+"SF, N4",H1 (tierAmg_p95),full,NOT_RUN,/workspace/results/phase10_h1/perm_nulls.csv,,producer not run
+"SF, C1 N3_tile",H1 (tierAmg_p95),full,NOT_RUN,/workspace/results/phase10_h1/perm_nulls_c1.csv,,producer not run
+"SF, C1 N4_tile",H1 (tierAmg_p95),full,NOT_RUN,/workspace/results/phase10_h1/perm_nulls_c1.csv,,producer not run
+"SF, N3_var",H1 (tierAmg_p95),full,NOT_RUN,/workspace/results/phase10_h1/perm_nulls_var.csv,,producer not run
+"SF, N4_var",H1 (tierAmg_p95),full,NOT_RUN,/workspace/results/phase10_h1/perm_nulls_var.csv,,producer not run
+"SF, N1",H1 (tierA_p95),full,NOT_RUN,/workspace/results/phase10_h1/perm_nulls.csv,,producer not run
+"SF, N3",H1 (tierA_p95),full,NOT_RUN,/workspace/results/phase10_h1/perm_nulls.csv,,producer not run
+"SF, N4",H1 (tierA_p95),full,NOT_RUN,/workspace/results/phase10_h1/perm_nulls.csv,,producer not run
+"SF, C1 N3_tile",H1 (tierA_p95),full,NOT_RUN,/workspace/results/phase10_h1/perm_nulls_c1.csv,,producer not run
+"SF, C1 N4_tile",H1 (tierA_p95),full,NOT_RUN,/workspace/results/phase10_h1/perm_nulls_c1.csv,,producer not run
+"SF, N3_var",H1 (tierA_p95),full,NOT_RUN,/workspace/results/phase10_h1/perm_nulls_var.csv,,producer not run
+"SF, N4_var",H1 (tierA_p95),full,NOT_RUN,/workspace/results/phase10_h1/perm_nulls_var.csv,,producer not run
+"Poisson identity (R3a): slope, r2",M1,full,"-0.5249, r2 = 0.9843",/workspace/results/phase3/poisson_fits.csv,subset == 'ALL sections x ALL sender definitions',
+R3c null destructiveness: senders keeping a real neighbour <=100 um,M1,full,N3_occ 1.000; N3_occ15 0.969; N3_orig 0.772; N3_snap 1.000; N3_swap 1.000; N3_tile 1.000; N4_occ 1.000; N4_occ15 0.969; N4_orig 0.920; N4_swap 1.000; N4_tile 1.000,/workspace/results/phase3/null_destructiveness.csv,groupby('null').frac_retaining_a_neighbour.median(),
+"Poisson identity (R3a): slope, r2",H1,full,"-0.5124, r2 = 0.9783",/workspace/results/phase10_h1/poisson_fits.csv,subset == 'ALL sections x ALL sender definitions',
+R3c null destructiveness,H1,full,NOT_RUN,/workspace/results/phase10_h1/null_destructiveness.csv,,producer not run
+A7 PRIMARY: 40 negative control probes (naive),M1,full,"-0.0225 [-0.0527, +0.0078] p = 0.129",/workspace/results/phase3/a7_summary.csv,response=='neg_control_probe' & design=='base',
+A7 PRIMARY: 40 negative control probes (N6+N5),M1,full,"+0.0015 [-0.0160, +0.0191] p = 0.849",/workspace/results/phase3/a7_summary.csv,response=='neg_control_probe' & design=='n6n5',
+A7 pooled negative-control features (naive),M1,full,"-0.0744 [-0.1306, -0.0182] p = 0.0145",/workspace/results/phase3/a7_summary.csv,response=='all_controls' & design=='base',
+A7 pooled negative-control features (N6+N5),M1,full,"+0.0053 [-0.0162, +0.0268] p = 0.595",/workspace/results/phase3/a7_summary.csv,response=='all_controls' & design=='n6n5',
+A7 PRIMARY: 40 negative control probes (naive),H1,full,"-0.0118 [-0.0340, +0.0103] p = 0.239",/workspace/results/phase9_h1/a7_summary.csv,response=='neg_control_probe' & design=='base',
+A7 PRIMARY: 40 negative control probes (N6+N5),H1,full,"-0.0028 [-0.0263, +0.0206] p = 0.779",/workspace/results/phase9_h1/a7_summary.csv,response=='neg_control_probe' & design=='n6n5',
+A7 pooled negative-control features (naive),H1,full,"-0.0337 [-0.0530, -0.0145] p = 0.00516",/workspace/results/phase9_h1/a7_summary.csv,response=='all_controls' & design=='base',
+A7 pooled negative-control features (N6+N5),H1,full,"-0.0051 [-0.0156, +0.0054] p = 0.28",/workspace/results/phase9_h1/a7_summary.csv,response=='all_controls' & design=='n6n5',
+Composition-matched SF [comp],M1,full,"0.9837  95% CI [0.9730, 0.9942]  share removed 1.6 %  n_rep 165",/workspace/results/phase3/compmatch_reruns.csv,row_type=='summary' & scope_kind=='pooled' & call=='tierA_p95' & variant=='comp',
+Composition-matched SF [full],M1,full,"0.9855  95% CI [0.9792, 0.9923]  share removed 1.4 %  n_rep 165",/workspace/results/phase3/compmatch_reruns.csv,row_type=='summary' & scope_kind=='pooled' & call=='tierA_p95' & variant=='full',
+Composition-matched SF [comp_adj],M1,full,"0.4989  95% CI [0.4215, 0.6063]  share removed 50.1 %  n_rep 33",/workspace/results/phase3/compmatch_reruns.csv,row_type=='summary' & scope_kind=='pooled' & call=='tierA_p95' & variant=='comp_adj',
+Composition-matched SF [type_adj],M1,full,"0.3414  95% CI [0.2356, 0.4016]  share removed 65.9 %  n_rep 33",/workspace/results/phase3/compmatch_reruns.csv,row_type=='summary' & scope_kind=='pooled' & call=='tierA_p95' & variant=='type_adj',
+Composition-matched SF [typecomp_adj] (PRIMARY of the pair),M1,full,"0.1461  95% CI [0.0520, 0.2461]  share removed 85.4 %  n_rep 33",/workspace/results/phase3/compmatch_reruns.csv,row_type=='summary' & scope_kind=='pooled' & call=='tierA_p95' & variant=='typecomp_adj',
+Composition-matched SF,H1 (tierAmg_p95),full,NOT_RUN,/workspace/results/phase10_h1/compmatch_reruns_h1.csv,,producer not run
+Composition-matched SF,H1 (tierA_p95),full,NOT_RUN,/workspace/results/phase10_h1/compmatch_reruns_h1.csv,,producer not run
