@@ -799,8 +799,26 @@ if __name__ == "__main__":
     secs = {"sbr": P.SBR, "sham": P.SHAM, "all": P.ALL_SECTIONS,
             "inband": P.IN_BAND, "excluded": P.OVER_CEILING + P.BELOW_FLOOR
             }.get(a.sections, a.sections.split(","))
+    _requested = list(secs)
     secs = [s for s in secs if os.path.exists(
         os.path.join(P.CACHE3, f"{s}.npz"))]
+    # GUARD 2026-08-27. This filter is silent: with no cache3 present it left
+    # `secs` empty, and the stages below then wrote a 1-byte main_fits.csv /
+    # perm_nulls.csv / perm_curves.csv / curves.csv and exited 0 -- destroying
+    # the headline artefacts while reporting success. cache3 is gitignored, so
+    # a fresh clone hits this on the first run. Confirmed live on 2026-08-27:
+    # `--sections nonexistent` printed "(0, 0)" and returned 0 after truncating
+    # main_fits.csv to 1 byte.
+    #
+    # Deliberately narrow: this raises ONLY when the filter empties the list,
+    # i.e. exactly the case that currently produces garbage. A partial list is
+    # left alone, so no run that presently succeeds can be broken by this.
+    if _requested and not secs:
+        raise SystemExit(
+            "refusing to run: no Phase 3 cache (%s) for any requested section: %s\n"
+            "Continuing would overwrite the stage outputs with empty files and exit 0.\n"
+            "Build the cache first (sasp_phase3.prep) or check --sections."
+            % (P.CACHE3, _requested))
     calls = _resolve_calls(a.calls)
     print("sections:", secs, "\ncalls:", calls, flush=True)
     if a.stage == "window":
