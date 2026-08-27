@@ -48,6 +48,22 @@ identical). Every number in `CS_PHASE7_C1.md` still stands as written.
 > tabulates are superseded by `reports/CORRECTIONS.md` §8 (primary), §10 (the N7
 > axis at 1,000 permutations) and §11 (the second Tier A variant); the
 > conclusions are unchanged.
+>
+> **⚠ SCOPE OF THIS BOX WIDENED 2026-08-27 (remediation pass).** As written it was scoped to
+> *"the surviving fractions this report tabulates"*, which left four **pre-C6 digits reading as
+> live** beneath it. They are corrected in place at each site below, and listed here so the scope
+> is unambiguous:
+>
+> | where | pre-C6, live until today | frozen |
+> |---|---|---|
+> | **:195, :237, :294** — *"the median λ̂ (12.8 µm)"*, three times | 12.8 µm | **14.7 µm** — the pooled median of `lam_naive` over the 315 primary fits, `results/phase3/summary_phase3.txt` §6 `tierA_p95` / `medlam`; re-derives as **14.7321 µm** from `main_fits.csv`, **IQR [7.0, 50.0] µm, 60 % railed** (that caveat travels with it). `PREREG_PHASE8.md` §0.0 **C-7**, which states the withdrawal is "recorded project-wide" — this file was one of the places it had not reached. |
+> | **:234** — *"1 to 63 of 38,080 to 108,375"* | 1–63 | **1–66** — `results/phase3/null_destructiveness.csv`, `null == "N3_occ"`, `n_admissible_moves` = **66, 6, 1, 9, 10, 12** over the six in-band sections, of `n_candidate_moves` 38,080–108,375. `PREREG_PHASE8.md` §0.0 **C-6**. |
+> | **:196, :236** — *"27 µm (N3)"* | 27 µm | **28 µm** — median of `median_displacement_um` for `N3_occ` over the six in-band sections (0.00, 21.34, 26.64, 29.96, 31.42, 75.17) = **28.30 µm**. N4-occ's **25 µm** is correct (median 24.69) and is unchanged. |
+>
+> Command: `python3 -c "import pandas as pd; d=pd.read_csv('results/phase3/null_destructiveness.csv'); n=d[d['null']=='N3_occ']; print(sorted(n.n_admissible_moves), n.median_displacement_um.median())"`
+>
+> **The report's conclusions are unaffected** — the N3-occ / N4-occ variants are degenerate at the
+> literal 5 % tolerance either way. Only the digits and the λ̂ comparator move.
 
 ---
 
@@ -192,8 +208,9 @@ only in the caption.
 **2e–h — the destructiveness audit.** Panel **e** is the retention fraction with
 the two published bounding-box rows in red, bold, and separated by a rule from
 the in-tissue rows: 0.772 against 1.000. Panel **f** is the median displacement
-on a log axis with **two reference lines drawn — the median λ̂ (12.8 µm) and the
-100 µm fitting window** — which is what makes N3-occ's 27 µm and N4-occ's 25 µm
+on a log axis with **two reference lines drawn — the median λ̂ (~~12.8 µm~~ **14.7 µm**
+***[corrected 2026-08-27; see the widened correction box near the head of this file]***) and the
+100 µm fitting window** — which is what makes N3-occ's ~~27 µm~~ **28 µm** and N4-occ's 25 µm
 legible as disqualifying rather than merely small. Panel **g** is old-vs-new
 surviving fraction, bar = median, black line = IQR, **◆ = the published value**,
 with a dash-dot line at N1 = 0.716 and an arrow labelling N3-swap as ≡ N1.
@@ -231,10 +248,12 @@ Replace the single placeholder row with these three, verbatim:
 
 > **\*** N3-occ and N4-occ as specified — reject any move that puts more than 5 %
 > of the shifted senders outside the 25 µm occupancy grid — are **not
-> implementable on a liver section**. The criterion admits 1 to 63 of 38,080 to
+> implementable on a liver section**. The criterion admits ~~1 to 63~~ **1 to 66** of 38,080 to
 > 108,375 candidate translations and 1 to 12 of 720 candidate rotations, all
-> near-identity: median displacement 27 µm (N3) and 25 µm (N4), inside the
-> 100 µm fitting window and close to the median λ̂ of 12.8 µm. For section 7001
+> near-identity: median displacement ~~27 µm~~ **28 µm** (N3) and 25 µm (N4), inside the
+> 100 µm fitting window and close to the median λ̂ of ~~12.8 µm~~ **14.7 µm**
+> ***[three pre-C6 digits corrected 2026-08-27 — see the widened correction box near the head of
+> this file; `PREREG_PHASE8.md` §0.0 C-6 and C-7]***. For section 7001
 > the only admissible translation, and the only admissible rotation, is the
 > identity, whose surviving fraction is 0.000 by construction. The values quoted
 > here are the same nulls at a 15 % tolerance (median displacement 304 µm and
@@ -291,7 +310,7 @@ Replace the single placeholder row with these three, verbatim:
 > separately, **35.5 %** and **19.9 %** of them outside the tissue altogether;
 > every in-tissue variant retains
 > 96.6–100 %. **(f)** Median distance each null actually moves a sender, with the
-> median λ̂ (12.8 µm) and the 100 µm window marked: the occupancy-screened nulls
+> median λ̂ (~~12.8 µm~~ **14.7 µm** ***[corrected 2026-08-27; see the widened correction box near the head of this file]***) and the 100 µm window marked: the occupancy-screened nulls
 > at the specified 5 % tolerance move senders *less far than λ̂*, so they are in
 > tissue by being near-identity. **(g)** Surviving fraction, published value (◆)
 > against the corrected variants; N3-swap coincides with N1 (dash-dot line) and

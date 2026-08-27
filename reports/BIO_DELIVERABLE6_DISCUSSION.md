@@ -67,11 +67,35 @@ Four qualifiers are load-bearing and every claim below inherits them.
 1. **The readout is transcriptional.** Tier B modules are MSigDB Hallmark-derived gene sets
    (31–190 genes on-panel; Bio Phase 1 §1) scored per cell. We did not measure secreted protein,
    receptor occupancy, pathway phosphorylation, chromatin state, metabolism or motility.
-2. **The sender call is transcriptional and is a choice.** Three near-independent callers —
+2. **The sender call is transcriptional and is a choice.** ~~Three near-independent callers —
    a curated Tier A arrest/damage score, SenePy, and `Cdkn1a` positivity — agree at or below
    chance (Jaccard 0.93–1.22× of chance after conditioning on cell type **and** depth decile,
-   all |Spearman| < 0.03; Bio Phase 3 §4.4). Sender prevalence at the primary call is 4.29 %
-   (CS Phase 3 §7 N7).
+   all |Spearman| < 0.03; Bio Phase 3 §4.4).~~ **Four senescence callers — a curated Tier A
+   arrest/damage score, SenePy, DeepScence and `Cdkn1a` positivity — agree *above* chance after
+   conditioning on cell type and within-cell-type depth: 0.751–2.198× of chance across eleven
+   sections, pooling to 1.212× (Mantel–Haenszel z = 21.92).** Sender prevalence at the primary
+   call is 4.29 % (CS Phase 3 §7 N7).
+
+   > **⚠ CORRECTED 2026-08-27 (remediation pass) — this is a CLAIM, not a digit, and the
+   > ⚠ PRE-C6 DIGITS banner at the head of this section does not cover it.** That banner is
+   > scoped to the SF / amplitude / power vector; "agree at or below chance … 0.93–1.22× of
+   > chance" is forbidden-claims items **13/14** and `PREREG_PHASE8.md` §10.12, and it read as
+   > live beneath a banner that appeared to retire it.
+   >
+   > The 0.93–1.22 band is a property of **the two published sections under the pre-C6 25-gene
+   > Tier A** (`results/phase3/caller_coverage_gate_headline.csv`, row "2-section, pre-C6 Tier A
+   > (PUBLISHED)": band 0.932–1.369, pooled 1.040, p = 0.078). On the frozen C6 33-gene Tier A
+   > over the **same two sections** it is already **1.131×, z = 5.80, p = 6.5e-09**; at eleven
+   > sections **1.212×, z = 21.92, p = 1.84e-106**, band 0.751–2.198.
+   >
+   > **What this does to the argument of item 2: nothing.** "The sender call is a choice" does
+   > not depend on the callers being independent — it depends on them **disagreeing about which
+   > cells are senescent**, which they still do (~99 % disagreement). The defensible restatement
+   > is `reports/SUBMISSION_PATCH_2026-08-29.md` §2.1: they are *not* independent, but the
+   > dependence spans **anti-concordance at 0.74× to concordance at 1.47×** with a different
+   > identifiable cause at each end — **which is not what one latent state looks like**, and is a
+   > stronger version of the same point. The `|Spearman| < 0.03` figures and `Bio Phase 3` §4.4
+   > itself are pre-C6 two-section values; §4.4 now carries its own strike marker.
 3. **The observable distance range is [≈7, ≈100] µm.** λ grid [7, 50] µm; window 100 µm, the
    99th percentile of observed distance-to-nearest-sender (CS Phase 3 §2).
 4. **The bound is on amplitude, at 80 % power, in within-stratum response-sd units**, computed

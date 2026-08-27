@@ -323,12 +323,24 @@ effect is **small and certain**: 21 % above chance, not 2× above it.
 > effect — there is one anomalous section, 7250. DeepScence's CoreScence set is **79%** circular
 with our response modules (26 of the 33 CoreScence genes reachable on the mouse
 panel are in ≥1 Tier B module; corrected 2026-08-27 from "69%", whose denominator
-of 35 was a typed-in literal — `reports/BIO_PHASE2.md` §4.2 correction box). Because of the `denoise=False` deviation — DCA
-denoising is precisely the step that would normalise depth — these characterise
+of 35 was a typed-in literal — `reports/BIO_PHASE2.md` §4.2 correction box). Because of the `denoise=False` deviation — ~~DCA
+denoising is precisely the step that would normalise depth~~ — these characterise
 **DeepScence as we could run it on this panel, not DeepScence as published**.
+
+> **Corrected 2026-08-27.** The struck rationale is **refuted by measurement**
+> (`PREREG_PHASE8.md` P29). DCA denoising does not normalise depth — it **raises**
+> the depth loading, on three of three sections and both arms: Spearman ρ of score
+> against transcript counts 0.3891 → **0.6404** (7239, ×1.65), 0.3176 → **0.5314**
+> (7259, ×1.67), 0.4096 → **0.5419** (7352, ×1.32) — i.e. **×1.32–1.67**, not
+> "roughly doubles" either (`results/phase8_d2/d2_depth.csv`, columns
+> `rho_depth_committed` / `rho_depth_alt`, `config == "dca"`). **Whatever DCA
+> contributes here, it is not depth normalisation.** The `denoise=False` choice
+> itself is unaffected and is now a *chosen* value rather than a forced deviation
+> (P22): DCA installed and ran. The sentence that survives is the one after the
+> dash — these characterise DeepScence as we could run it on this panel.
 What the choice propagates into:
 
-| Quantity | Moves across callers that agree at chance |
+| Quantity | Moves across callers that agree **weakly but genuinely above chance** ***[header corrected 2026-08-27 — it read "callers that agree at chance", which restates the superseded claim the correction box three paragraphs above retires. Frozen: pooled **1.212× chance, z = 21.92, p = 1.84e-106** over 11 sections, `results/phase3/caller_coverage_gate_headline.csv`]*** |
 |---|---|
 | Controlled surviving fraction | varies 3–5×; no caller exceeds 0.29 |
 | Does the superposition regressor beat covariates-only? | **no** at `tierA_p95` (35 % of fits) — **yes** at `cdkn1a_pos` / `senepy_p95` (61–64 %) |

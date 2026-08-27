@@ -281,7 +281,11 @@ That last point is the whole opportunity. They had the right data, saw the trend
 
 ### Rank 2 — SenNet portal (`data.sennetconsortium.org`)
 
-1,753 public human and mouse datasets across 15 organs and 6 assay types as of January 2026. Filter for spatial assays at single-cell resolution. The consortium exists to map senescence, so annotation quality should exceed generic atlases. API docs at `docs.sennetconsortium.org/apis`.
+~~1,753 public human and mouse datasets across 15 organs and 6 assay types as of January 2026.~~ **2,041 public human and mouse datasets across 15 organs and 6 general assay types as of April 2026.** Filter for spatial assays at single-cell resolution.
+
+> **Correction 2026-08-27 (remediation pass; citation audit CIT-3).** This is the **second** of the two locations `reports/BIO_DELIVERABLE7_CLAIM_AUDIT.md` names for the "1,753 / January 2026" figure — §4.1 was corrected on 2026-08-27 and **§7 Rank 2 was missed**, so the unverifiable figure stayed live here. The §4.1 correction box's own marker (L184) says *"this **paragraph** previously said 1,753"*, which is why the scope did not reach this one. Re-checked against the bioRxiv API today (`https://api.biorxiv.org/details/biorxiv/10.64898/2026.02.06.704469`): the abstracts of **both** v1 (2026-02-10) and v2 (2026-05-04) read *"As of April 2026, the portal hosts 2,041 publicly available human and mouse datasets across 15 organs using 6 general assay types."* **No retrievable version states 1,753, and none states January 2026.** Source: Börner et al., *SenNet Portal: Build, Optimization and Usage*, bioRxiv 2026.02.06.704469 (`borner2026sennet`).
+>
+> **Also in this Rank 2 entry:** *"from the June 2026 ***Cell*** package"* repeats the CIT-4 attribution §4.1 corrects — **Farzad et al. is *Cell Press Blue* 1(4):100053, not *Cell***; the *Cell* item in that June 2026 SenNet package is the Suryadevara et al. **Review**. The ages-18–86 lymph-node claim itself is verified. The consortium exists to map senescence, so annotation quality should exceed generic atlases. API docs at `docs.sennetconsortium.org/apis`.
 
 Specific targets: **Farzad et al. (2026) human lymph node spatial multi-omics, ages 18–86**, from the June 2026 *Cell* package. Lymph node has strong architectural structure, which is a confound but a well-defined one you can control for. Also check lung parenchyma, prefrontal cortex, and liver TMC releases.
 

@@ -18,7 +18,18 @@
 > - **§17's table is entirely pre-C6** and its numbers no longer hold.
 > - **§23/C6's stated method does not work** (yields 12/24 genes, below the floor).
 > - **§4 (D-b)'s premise is REFUTED**: DCA does not normalise depth — measured, it
->   roughly doubles the depth loading on 3 of 3 sections.
+>   ~~roughly doubles~~ **raises it by ×1.32–1.67** on 3 of 3 sections.
+>   ***[Corrected 2026-08-27 — "roughly doubles" is an overstatement by the coordinator and is
+>   itself superseded (`PREREG_PHASE8.md` P29, `CORRECTIONS.md` §1739). Measured Spearman ρ of the
+>   score against transcript counts, `results/phase8_d2/d2_depth.csv`, `config == "dca"`:
+>   0.3891 → 0.6404 (7239, ×1.65); 0.3176 → 0.5314 (7259, ×1.67); 0.4096 → 0.5419 (7352, ×1.32).
+>   The refutation stands — only its magnitude was wrong.]***
+> - **§4 (D-d) point 1 is SUPERSEDED**: it quotes the circularity range **"1.51–2.85×"**
+>   (forbidden-claims item 8). Over eleven sections the DeepScence × `Cdkn1a`⁺ pair runs
+>   **0.963–2.849, median 1.071, pooled 1.255** (`results/phase3/caller_coverage_gate.csv`,
+>   `n_sections == 11`) — **the two published values were the two largest of the eleven.** The
+>   *circularity* itself is real and D-d's conclusion is unaffected. **This bullet is why §4 is now
+>   named for both D-b and D-d**; the banner previously named §4 for D-b only, leaving D-d live.
 > - **§15's composition-matched protocol had no implementation** and, once built,
 >   is **inert** (1.6% vs 85.4% from the same variables as covariates).
 >
@@ -184,7 +195,18 @@ DeepScence is the only senescence caller built for single-cell and spatial data,
 
 **D-d — Sign anchoring.** DeepScence fixes its bottleneck sign by correlating with `CDKN1A`. Two consequences:
 
-1. **Circularity with your `Cdkn1a`⁺ caller is built in.** The one pair consistently above chance is DeepScence vs `Cdkn1a`⁺ at 1.51–2.85×, and `BIO_PHASE3.md` §4.4 already identifies why. That pair is not evidence of agreement.
+1. **Circularity with your `Cdkn1a`⁺ caller is built in.** ~~The one pair consistently above chance is DeepScence vs `Cdkn1a`⁺ at 1.51–2.85×~~, and `BIO_PHASE3.md` §4.4 already identifies why. That pair is not evidence of agreement.
+   ***[SUPERSEDED 2026-08-27 — see the banner at the head of this file, which now names §4 for D-d
+   as well as D-b. **"1.51–2.85×" is forbidden-claims item 8.** Over eleven sections this pair runs
+   **0.963–2.849, median 1.071, pooled 1.255** (z = 10.53, above chance in **7 of 11**) —
+   `results/phase3/caller_coverage_gate.csv`, `pair == "deepscence vs cdkn1a"`, `n_sections == 11`.
+   The two published values (2.85 sham, 1.51 SBR) are **the two largest of the eleven**, so the
+   quoted range overstates the measured circularity by roughly two-fold. It is also no longer "the
+   one pair consistently above chance": on the frozen C6 Tier A, `tierA vs cdkn1a` (1.471) and
+   `tierA vs deepscence` (1.288) are above chance in **11 of 11**. **The circularity itself is real
+   and built in — `CDKN1A` is DeepScence's own sign anchor — and D-d's conclusion, that the pair is
+   not evidence of agreement, stands unchanged.** `BIO_PHASE3.md` §4.4 now carries its own strike
+   marker.]***
 2. **The polarity flips between arms.** Correlation between the `ds` score and its own gene set: **−0.350 in sham, +0.318 in SBR.** In sham it inverts relative to its own gene set.
 
 ## 5. D1 — Complete Coverage

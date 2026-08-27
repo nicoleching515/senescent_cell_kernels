@@ -26,7 +26,27 @@
 > **Moran's I could not have detected the paper's headline effect either.**
 >
 > So "different question" survives — but justified by **power, not orthogonality**.
-> Use that framing. Everything else in this report stands.
+> Use that framing. ~~Everything else in this report stands.~~
+>
+> **⚠ SCOPE OF THIS BANNER WIDENED 2026-08-27 (remediation pass). "Everything else in this
+> report stands" was FALSE and is struck** — `CORRECTIONS.md` §17.4 said so and the banner was
+> never amended. **Three further items in this report do not stand, and each is now marked at
+> its own site:**
+>
+> - **§U1's drop-in manuscript paragraph** ("Framing that survives review") commits
+>   forbidden-claims item **2** — it says "we use **them** [negative control **probes**] as a
+>   negative-control outcome" and then gives the **pooled** `all_controls` number — and quotes it
+>   at the **pre-C6 05:19** vintage (**−0.070, p = 0.023**; frozen **−0.0744 [−0.1306, −0.0182],
+>   p = 0.0145**). See the correction box at §U1.
+> - **§U1's `neg_probe_rate` sentence**, and **§4 objection O2**, both quote **+0.014, p = 0.079**
+>   — pre-C6. Frozen: **+0.0113 [−0.0085, +0.0310], p = 0.232**
+>   (`results/phase3/a7_summary.csv`, `neg_probe_rate` / `base`). The claim survives (not
+>   significant either way) but **p moved by a factor of three**.
+> - **§U2 misquotes Mrkvička *et al.* (2021)** inside quotation marks — forbidden-claims item
+>   **32**. See the correction box at §U2.
+>
+> What **does** still stand: §2.2, §2.3, the prior-art findings themselves, and the §4 status box
+> at O1/O3/O4/O5/O11/O12. Absence of a mark elsewhere in this file is not a verification.
 >
 > **⚠ ATTACH THE AGGREGATION TO EVERY ρ (added 2026-08-27, record reconciliation).** The
 > Moran-vs-A7 rank correlation is **aggregation-dependent**, and four values are in circulation
@@ -298,16 +318,50 @@ variable genes false positive rate`; `torus shift null spatial omics negative co
 
 **Framing that survives review.** Kill "nobody reports it". Write instead:
 
-> Negative control probes are routinely used to quantify background rate, and their global spatial
+> ~~Negative control probes are routinely used to quantify background rate, and their global spatial
 > autocorrelation has been used as a platform QC metric [Voyager; Ren 2025]. We instead use them
 > as a **negative-control outcome for the estimand itself** [Lipsitch 2010]: we refit the identical
 > distance-to-sender kernel with control counts as the response. The naive estimator returns
 > −0.070 SD (p=0.023), a quarter of the naive biological amplitude in the same fits, so a naive
 > Xenium distance kernel reports this in part. The full nuisance design removes it
-> (+0.007, p=0.41); **a matched-decoy contrast does not** (−0.061, p=0.020).
+> (+0.007, p=0.41); **a matched-decoy contrast does not** (−0.061, p=0.020).~~
+
+> **⚠ STRUCK AND REPLACED, 2026-08-27 (remediation pass). Do not paste the paragraph above into a
+> manuscript.** It has two defects.
+>
+> **(1) Wrong response named — forbidden-claims item 2.** The antecedent of "we instead use
+> **them**" is *negative control probes*, but −0.070 / −0.0744 is the **pooled** `all_controls`
+> response (40 probes + 609 codewords + 21 genomic controls). The **40 named probes are the
+> pre-registered primary technical null and they are FLAT** (−0.0225 [−0.0527, +0.0078],
+> p = 0.129), so writing that the probes carry the gradient states the opposite of the
+> pre-registered test's own result.
+>
+> **(2) Pre-C6 digits.** −0.070 / p 0.023 / +0.007 / p 0.41 / −0.061 / p 0.020 are the **05:19**
+> A7 file (`results/phase3_pre_c6/a7_summary.csv`); the frozen file is 09:06.
+>
+> **Replacement paragraph** (all digits from `results/phase3/a7_summary.csv`):
+>
+> > Negative control features are routinely used to quantify background rate, and their global
+> > spatial autocorrelation has been used as a platform QC metric [Voyager; Ren 2025]. We instead
+> > use them as a **negative-control outcome for the estimand itself** [Lipsitch 2010]: we refit
+> > the identical distance-to-sender kernel with control counts as the response. Across the
+> > **pooled** control set the naive estimator returns **−0.0744 SD [−0.1306, −0.0182],
+> > p = 0.0145** — about a quarter of the naive biological amplitude in the same fits — so a naive
+> > Xenium distance kernel reports this in part. The signal is carried by the **codewords**
+> > (−0.0604, p = 0.0188) and **genomic controls** (−0.0307, p = 0.0213); the **40 named
+> > negative-control probes, our pre-registered primary null, are flat** (−0.0225
+> > [−0.0527, +0.0078], p = 0.129) and are also the sparsest and least powered of the three
+> > families. The full nuisance design removes the pooled gradient (**+0.0038 [−0.0186, +0.0261],
+> > p = 0.715**); **a matched-decoy contrast does not** (**−0.0642 [−0.1113, −0.0172], p = 0.0124**,
+> > leaving **86.3 %** of it).
+>
+> Command: `python3 -c "import pandas as pd; d=pd.read_csv('results/phase3/a7_summary.csv'); print(d[d.design.isin(['base','n2','n5'])].to_string())"`
 
 **The one thing you must say in the same breath, or a reviewer will say it for you.**
-`neg_probe_rate` (probe counts ÷ transcript counts) is **flat naively** (+0.014, p=0.079). So the
+`neg_probe_rate` (probe counts ÷ transcript counts) is **flat naively** (~~+0.014, p=0.079~~
+**+0.0113 [−0.0085, +0.0310], p = 0.232** — ***[corrected 2026-08-27: +0.014 / p 0.079 is the
+pre-C6 05:19 vintage; frozen `results/phase3/a7_summary.csv`, `neg_probe_rate` / `base`. The claim
+is unaffected — not significant either way — but the p-value moved by a factor of three]***). So the
 gradient is a **per-cell detection-efficiency/size effect projected onto distance-to-sender**, not
 a spatial gradient in probe binding. Reporting "the raw assay is not flat" without that sentence
 invites the reading that you have rediscovered "bigger cells have more counts". Reporting *with*
@@ -328,8 +382,16 @@ not discovery. The FFT admissible-set computation is a small genuine methods con
 **PRIOR FOUND** (full detail in U2): Lotwick & Silverman (1982) established the toroidal shift and
 its rectangular-window requirement; `spatstat`'s `rshift` documents that torus shifts are undefined
 on non-rectangular windows; **Mrkvička *et al.* (2021), Spatial Statistics 42:100430** diagnoses
-the liberality of torus correction, proposes the **variance correction** explicitly *because* it
-"can also be used for irregular windows", and notes the exact trade-off you hit — different shifts
+the liberality of torus correction, proposes the **variance correction** — which, in the paper's
+own words, *"can be applied in case of general (compact) observation windows"* ~~explicitly
+*because* it "can also be used for irregular windows"~~ ***[MISQUOTATION CORRECTED 2026-08-27 —
+forbidden-claims item 32. The words "can also be used for irregular windows" are NOT in the paper
+and were inside quotation marks here. I extracted arXiv:1911.00240 (the Spatial Statistics 42:100430
+preprint) in-session; §2.1.4 "Shape of the observation window" reads verbatim: **"The approaches
+using minus correction and variance correction can be applied in case of general (compact)
+observation windows."** The string "irregular window" does not occur in the paper. Note also the
+weaker logical claim: the paper says the approaches CAN BE APPLIED to general windows — it does not
+say the variance correction was proposed BECAUSE of them]*** — and notes the exact trade-off you hit — different shifts
 drop different amounts of data, so the test statistic's variance must be standardized. Dvořák
 *et al.* (2022) show it attains nominal level under strong autocorrelation.
 
@@ -579,7 +641,7 @@ Ranking is novelty × defensibility × transferability, not by how much of the p
 | # | Objection | Evidence needed | Status in repo |
 |---|---|---|---|
 | O1 | *"Voyager already computes Moran's I on Xenium negative controls and concludes there is no technical spatial trend. What is new?"* | Report **your own Moran's I on the controls alongside the kernel amplitude**, and state that a near-zero global autocorrelation does not preclude a projection onto a specific covariate. Cite Voyager and Ren 2025 approvingly. | **NOT DONE.** Highest-priority gap. |
-| O2 | *"Your −0.070 SD is just cell size / sequencing depth. You have rediscovered normalization."* | `neg_probe_rate` flat naively (+0.014, p=0.079) → the gradient is detection efficiency, not probe binding; and that is precisely why N2 misses it. | **AVAILABLE**, `CS_PHASE8_CALLERS.md` §4.1. Must be promoted into the main text, not left in an appendix. |
+| O2 | *"Your −0.070 SD is just cell size / sequencing depth. You have rediscovered normalization."* ***[the −0.070 is pre-C6; frozen −0.0744, and it is the **pooled** response, not the probes]*** | `neg_probe_rate` flat naively (~~+0.014, p=0.079~~ **+0.0113, p = 0.232**, `results/phase3/a7_summary.csv` — corrected 2026-08-27 from the pre-C6 file) → the gradient is detection efficiency, not probe binding; and that is precisely why N2 misses it. | **AVAILABLE**, `CS_PHASE8_CALLERS.md` §4.1. Must be promoted into the main text, not left in an appendix. |
 | O3 | *"Torus shifts on irregular windows are a solved problem — Lotwick & Silverman 1982, Mrkvička et al. 2021 variance correction. Why did you not use the standard fix?"* | Both citations, plus either an implemented variance-corrected N3 variant or an explicit justification for tiling. | **NOT DONE.** Second-highest priority; the variance-corrected run is cheap. |
 | O4 | *"You cite CellWHISPER as the source of the torus-shift null. It permutes within cell type."* | Fix the citation everywhere (plan §32, Related Work, Figure 4 caption). | **NOT DONE.** Verified error. Cheap to fix, expensive to be caught on. |
 | O5 | *"λ̂ = 14.7 µm is below your segmentation resolution and your window is 100 µm, but senescence spreads ~1 mm in vitro (Nelson 2012). You looked in the wrong place."* *(λ̂ corrected 2026-08-27 from the pre-C6 12.8 µm.)* | State the bound's distance range explicitly; justify 100 µm against the endometrium 45–211 µm nearest-neighbour calibration and the pooled **λ̂ = 14.7 µm**, i.e. a window of **≈ 6.8 λ̂** — and in the same sentence give the railing caveat, IQR [7.0, 50.0] µm with 60 % of fits at a grid bound, so the window is 14× the 7 µm floor but only 2× the 50 µm ceiling; ideally show the fit is stable to a wider window. | **PARTIALLY** — the calibration numbers are in plan §3; the range statement is not attached to the bound. |
