@@ -69,7 +69,19 @@ N2 matched decoys; `sasp_kernels.BasisBlockProfiler` still does every solve.
 4. **Figure 2a is regenerated and the composition artefact is now visible on the
    figure.** The unstratified contact amplitude is +0.260 response-sd; replacing
    every cell's response by its cell type's section mean reproduces **+0.212 sd,
-   i.e. 76 % of it**, with no signalling of any kind. Within receiver cell type
+   i.e. 76 % of it**, with no signalling of any kind.
+   > **⚠ THE "76 %" IS UNSOURCED AND THE ROW IS SUPERSEDED — 2026-08-27 (record
+   > reconciliation).** 0.212 / 0.260 = **0.815**, not 0.76. The only two "ALL RECEIVERS"
+   > amplitudes on disk are **0.260** (`results/phase5/summary_phase5.txt` T3, identical in
+   > `results/phase5_pre_c6/`) and **0.266001** (`figures/figure2a_amplitudes.csv`); neither
+   > yields 76 %, and a denominator of ≈ 0.279 would, which is in no file. **The 76 % and the
+   > §17 "composition surrogate share 66–76 %" row are both withdrawn.** They are replaced by
+   > the composition-matched decomposition on the same fits: **65.9 %** removed by the
+   > receiver's own cell-type intercepts and **85.4 %** by cell type + the 20-NN composition
+   > vector, against **1.6 %** for the same variables used as matched decoys
+   > (`results/phase3/compmatch_reruns.csv`, `row_type == 'summary'`). Wherever the 1.6 %
+   > appears the other two must appear beside it (`PREREG_PHASE8.md` §10.8). See
+   > `reports/WRITING_PACK.md` §0.2 and `reports/CS_PHASE8_COMPMATCH.md`. Within receiver cell type
    the pooled amplitude falls to +0.091 sd, and it ranges from **+0.24
    (hepatocytes) to −0.06 (biliary/ductular)**.
 5. **Under control no kernel family earns its place**, the family that comes
@@ -381,7 +393,7 @@ sd units):
 | panel | amplitude |
 |---|---|
 | **unstratified** | **+0.260** |
-| **composition-only surrogate** | **+0.212** — 76 % of the unstratified curve, per-module ratios 0.42–1.83 |
+| **composition-only surrogate** | **+0.212** — ~~76 %~~ **81.5 %** of the unstratified curve (0.212 / 0.260; the 76 % is unsourced — see the note in §4), per-module ratios 0.42–1.83 |
 | pooled, within cell type | **+0.091** — a 65 % reduction, matching the 66 % Phase 3 measured on β̂ |
 | Hepatocytes | +0.236 |
 | Endothelial | +0.211 |
@@ -536,6 +548,10 @@ pick a maximiser, and it is why the ratio must not be quoted.
    composition-only dotted line goes in the caption as the primary claim: *76 %
    of the published-looking contact amplitude is reproduced by receiver cell-type
    composition with no signalling of any kind.*
+   **⚠ Do not use "76 %" in that caption — see the note in §4.** The sourced ratio is
+   **81.5 %** (0.212 / 0.260), and the claim itself is superseded by the
+   composition-matched pair: **65.9 %** (receiver cell type) to **85.4 %** (cell type +
+   20-NN composition), against **1.6 %** for the same variables as matched decoys.
 2. **Figure 3 exists** (`figures/figure3.{png,pdf}`) with the four Section 25
    panels: (a) 39 of 42 donor CIs on λ̂ under control span all of [7, 50] µm;
    (b) no kernel family earns its place under control; (c) Section 6.4 not

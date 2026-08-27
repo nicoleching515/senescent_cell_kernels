@@ -56,13 +56,20 @@ and annotated.
 
 All numbers are reproducible from `results/`; see the linked reports for method.
 
-**The kernel does not survive the null battery.** Across **160 of 315**
+**The kernel does not survive the null battery.** Across **153 of 315**
 reportable (section × receiver type × module) fits — not every receiver type is
 present in every section — the surviving fraction
-under combined control (N2+N5+N6) is **0.082 [−0.099, 0.249]**, with 35% at or
-below zero. 92% of the naive amplitude is nuisance. Controlled amplitude is
-0.027 response-sd against a naive 0.326.
-**Bound: controlled amplitude ≤ 0.20 response-sd** (80% power at 0.203 sd).
+under combined control (N2+N5+N6) is **0.088**, **IQR across fits
+[−0.017, 0.234]**, with 30% at or
+below zero. 91% of the naive amplitude is nuisance. Controlled amplitude is
+0.029 response-sd against a naive 0.329.
+**Bound: controlled amplitude ≤ 0.18 response-sd** (80% power at 0.183 sd).
+
+> *Updated 2026-08-27 (record reconciliation).* These were the **pre-C6** figures —
+> 160 of 315, SF 0.082 [−0.099, 0.249], 35 % ≤ 0, controlled 0.027, naive 0.326,
+> bound 0.203. The frozen post-C6 vector is `results/phase3/m1_final_audit.txt` §3.
+> **The bracket is an inter-quartile range across fits, not a confidence interval**
+> — `results/phase3/sf_summary.csv` carries `q25 / median / q75` and no CI column.
 
 **That is a conclusion, not a failure to detect — because the synthetic study
 calibrates it.** With a *planted* effect, N5 leaves 0.826 [0.734, 0.921]; with
@@ -297,7 +304,10 @@ effect is **small and certain**: 21 % above chance, not 2× above it.
 > **two-section** DeepScence base and the pre-C6 25-gene Tier A. Both premises
 > moved. At full coverage on the same gene sets the pooled value went
 > 1.040 → 1.129; on the frozen 33-gene Tier A it is 1.212. It is above chance on
-> the *published two-section base* too (1.13×, p = 4 × 10⁻⁸), so coverage is not
+> the *published two-section base* too (**1.131×, p = 6.5 × 10⁻⁹** — the 4-pair basis,
+> the same basis as the 1.212 above; *corrected 2026-08-27, this read "1.13×,
+> p = 4 × 10⁻⁸", which pairs a 4-pair ratio with a 3-pair p-value. On the 3-pair basis
+> the consistent pair is 1.128, p = 4.4 × 10⁻⁸ → 1.212, p = 1.8 × 10⁻⁹⁴*), so coverage is not
 > the only reason. The defensible restatement is **"weakly but genuinely
 > dependent, in a direction each pair's depth loading explains"**
 > (`reports/CS_PHASE8_CALLERS.md` §3, `reports/CORRECTIONS.md` §2).

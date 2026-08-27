@@ -17,7 +17,16 @@ the naive amplitude is **0.082 [−0.099, 0.249]**, with 35 % of fits at or belo
 (CS Phase 3 §0). Ninety-two per cent of the naive amplitude is nuisance. The controlled
 amplitude is **0.027 response-sd at contact** against a naive 0.326, and the block-bootstrap
 SE of 0.073 sd puts 80 % power at **0.203 response-sd** — so the reportable quantity is a
-**bound of ≤ 0.20 response-sd at cell contact**, not a length constant (CS Phase 3 §0). Under
+**bound of ≤ 0.20 response-sd at cell contact**, not a length constant (CS Phase 3 §0).
+
+> **⚠ PRE-C6 DIGITS — updated 2026-08-27 (record reconciliation).** The frozen post-C6 vector
+> (`results/phase3/m1_final_audit.txt` §3, 153 reportable fits) is: SF **0.088**, **IQR across
+> fits** [−0.017, 0.234], **30 %** of fits ≤ 0, i.e. **91 %** of the naive amplitude is
+> nuisance; controlled amplitude **0.029** against a naive **0.329**; block-bootstrap SE
+> **0.0654** puts 80 % power at **0.183 response-sd**, so the bound is **≤ 0.18 response-sd at
+> cell contact**. **The bracket is an inter-quartile range across fits, not a confidence
+> interval** (`sf_summary.csv` has `q25 / median / q75` and no CI column). The argument of
+> this section is unchanged and the bound is **tighter**. Under
 full control the donor-bootstrap CI on λ̂ spans the entire admissible grid, [7, 50] µm, in
 **39 of 42** cell-type × module fits (CS Phase 3 §7). And §6.4's proximal-versus-downstream
 comparison — the one Deliverable 6 explicitly asks me to interpret — returns a λ_prox/λ_down
@@ -686,7 +695,10 @@ Under control, 92 % of that amplitude is nuisance, and the decomposition is spec
 receiver cell-type intercepts alone takes the surviving fraction to 0.344 (CS Phase 3 §3.1) — and
 a composition-only surrogate, in which each cell's response is replaced by its cell type's
 section mean and which therefore contains no signalling, distance dependence or kernel of any
-kind, reproduces **76 %** of the contact amplitude (CS Phase 5 §4). Within receiver cell type the
+kind, reproduces **76 %** of the contact amplitude (CS Phase 5 §4) — ***but see the note at
+`CS_PHASE5.md` §4: that 76 % is 0.212 / 0.260 = 0.815, its denominator is in no file, and the
+row is superseded by the composition-matched 65.9 % / 85.4 % pair. Do not carry 76 % forward.***
+Within receiver cell type the
 pooled amplitude falls from +0.260 to +0.091 response-sd, and **two of nine receiver types go
 negative** (T/NK −0.039, Biliary/ductular −0.059). Of what survives stratification, transcript
 depth and segmentation area alone leave 0.288 and local density alone 0.219 (CS Phase 3 §3.2).
