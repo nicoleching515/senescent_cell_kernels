@@ -15,9 +15,32 @@ Gene set sources:
 import csv, gzip, json, os, glob
 from collections import OrderedDict
 
-SCRATCH = '/tmp/claude-0/-workspace/e6da7884-2946-490a-bf0e-2e4e0be01bfa/scratchpad/msigdb_mouse'
+# HAZARD FIX 2026-08-27 (Phase 8, D8). This pointed at a per-session /tmp
+# scratchpad from a PRIOR session that no longer exists. Re-running the script
+# then globbed ZERO MSigDB JSONs and, because the loop below swallowed every
+# error with a bare `except`, silently overwrote genesets/*.txt with EMPTY
+# Tier B modules and exited 0. The container has been wiped twice, which is
+# exactly when someone re-runs a build script.
+#
+# Now: prefer the archived in-repo pin, and FAIL LOUDLY if no sets are found.
+SCRATCH = os.environ.get(
+    'MSIGDB_MOUSE_DIR',
+    '/workspace/genesets/msigdb_mouse_2026.1.Mm')
 OUT = '/workspace/genesets'
 os.makedirs(OUT, exist_ok=True)
+
+# HAZARD FIX 2026-08-27 (Phase 8, D8), second order. This script regenerates the
+# PRE-C6 mouse gene sets. On 2026-08-27 the C6 re-sourced sets were promoted into
+# genesets/ (B7 38->108, A_SENDER_FINAL_strict 25->33). A successful re-run would
+# silently revert that promotion and desynchronise the mouse arm from the human
+# one, breaking the Section 17 two-arm comparison. Refuse unless explicitly forced.
+if os.path.exists(os.path.join(OUT, 'README_C6_mouse_provenance.md')) \
+        and os.environ.get('ALLOW_OVERWRITE_C6') != '1':
+    raise SystemExit(
+        'FATAL: genesets/ currently holds the PROMOTED C6 mouse sets.\n'
+        'This script writes the PRE-C6 versions and would silently revert them.\n'
+        'Recover the pre-C6 state with `git checkout pre-c6-genesets -- genesets/` '
+        'instead, or set ALLOW_OVERWRITE_C6=1 if reverting is genuinely intended.')
 
 # ------------------------------------------------------------------ panel
 panel_meta = {}
@@ -42,12 +65,22 @@ SECRETED_ON_PANEL = {g for g in PANEL if is_secreted(g)}
 
 # ------------------------------------------------------------------ msigdb
 MS = {}
-for f in glob.glob(SCRATCH + '/*.json'):
+_MS_ERRORS = []
+_MS_FILES = sorted(glob.glob(SCRATCH + '/*.json'))
+if not _MS_FILES:
+    raise SystemExit(
+        'FATAL: no MSigDB JSON found in %s\n'
+        'Set MSIGDB_MOUSE_DIR or restore the archived pin. Refusing to run: '
+        'continuing would overwrite genesets/*.txt with EMPTY Tier B modules.' % SCRATCH)
+for f in _MS_FILES:
     try:
         d = json.load(open(f))
         k = list(d)[0]
         MS[k] = (set(d[k]['geneSymbols']), d[k]['systematicName'])
-    except Exception:
+    except Exception as _e:
+        _MS_ERRORS.append((f, repr(_e)))
+        continue
+    if False:
         pass
 
 # ------------------------------------------------------------------ TIER A (sender: arrest + damage ONLY)
