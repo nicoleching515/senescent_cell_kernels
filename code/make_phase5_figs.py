@@ -46,16 +46,28 @@ RES5 = C5.RES5
 BINS = np.array([0., 2., 4., 6., 8., 10., 12.5, 15., 17.5, 20., 25., 30.,
                  35., 40., 50., 60., 75., 100.])
 MID = 0.5 * (BINS[:-1] + BINS[1:])
+# Tier B numbering is build_genesets.py:105-118 (TIER_B_SRC + B7_CUR), which
+# Master Plan §9 lines 455-461 and every report follow:
+#   B1 tnfa_nfkb_proximal  B2 il6_jak_stat3  B3 interferon_response
+#   B4 downstream_arrest   B5 emt_ecm        B6 oxidative_stress
+#   B7 secondary_senescence
+# Until 2026-08-27 this dict labelled secondary_senescence "B5", emt_ecm "B6"
+# and oxidative_stress "B7" -- a three-way rotation, and figure 2a's legend was
+# the ONLY place in the repository using that numbering.  The consequence was
+# direct: the module a reader identified as "B7" was oxidative stress (31
+# genes), while the re-sourced B7 (secondary_senescence, 108 genes -- the
+# frozen configuration's headline gene-set rebuild) appeared as "B5".
 SHORT = {"tnfa_nfkb_proximal": "TNFA/NF-kB (B1)",
          "il6_jak_stat3": "IL6/JAK/STAT3 (B2)",
          "interferon_response": "Interferon (B3)",
          "downstream_arrest": "Arrest (B4)",
-         "secondary_senescence": "2nd senescence (B5)",
-         "emt_ecm": "EMT/ECM (B6)",
-         "oxidative_stress": "Oxidative stress (B7)"}
+         "emt_ecm": "EMT/ECM (B5)",
+         "oxidative_stress": "Oxidative stress (B6)",
+         "secondary_senescence": "2nd senescence (B7)"}
+# plotting order == the B1..B7 numbering, so the legend reads in order
 ORDER = ["tnfa_nfkb_proximal", "il6_jak_stat3", "interferon_response",
-         "downstream_arrest", "secondary_senescence", "emt_ecm",
-         "oxidative_stress"]
+         "downstream_arrest", "emt_ecm", "oxidative_stress",
+         "secondary_senescence"]
 
 
 # ---------------------------------------------------------------------------
@@ -228,13 +240,29 @@ def fig2a(df):
 # ---------------------------------------------------------------------------
 
 def fig3():
+    # PROVENANCE.  Nothing in code/ wrote figures/figure3_data.csv until
+    # 2026-08-27 (CS_PHASE8_M1_RERUN.md:129,230 asserts otherwise), and the
+    # committed CSV covered only the `call = tierA_p95` sources, so 6 of panel
+    # (d)'s 12 real boxplots -- the Cdkn1a+ and SenePy p95 caller rows -- had no
+    # backing rows at all, and panel (a) carried 63 rows for the 42 CIs it
+    # draws (the 21 zonation rows are not in the figure).  `parts` collects
+    # exactly the frames the panels draw, and fig3 writes them at the end.
+    parts = []
+
+    def keep(panel, source, frame):
+        f = frame.copy()
+        f.insert(0, "source", source)
+        f.insert(0, "panel", panel)
+        parts.append(f)
+        return frame
+
     fig = plt.figure(figsize=(12.4, 10.2))
     gs = fig.add_gridspec(2, 2, hspace=0.42, wspace=0.40)
 
     # (a) lambda-hat with donor-bootstrap CIs -------------------------------
     ax = fig.add_subplot(gs[0, 0])
     cd = pd.read_csv("/workspace/results/phase3/combined_donor.csv")
-    cd = cd[cd.zone == "all"].copy()
+    cd = keep("3a", "combined_donor.csv", cd[cd.zone == "all"].copy())
     cts = sorted(set(cd.celltype))
     y = 0
     ticks, labs = [], []
@@ -277,7 +305,8 @@ def fig3():
 
     # (b) kernel family comparison -----------------------------------------
     ax = fig.add_subplot(gs[0, 1])
-    kf = pd.read_csv(f"{RES5}/kernel_families.csv")
+    kf = keep("3b", "kernel_families.csv",
+              pd.read_csv(f"{RES5}/kernel_families.csv"))
     fams = ["exponential", "gaussian", "powerlaw", "step", "spline"]
     w = 0.36
     for i, (des, col, lab) in enumerate(
@@ -308,7 +337,8 @@ def fig3():
 
     # (c) proximal vs downstream -------------------------------------------
     ax = fig.add_subplot(gs[1, 0])
-    pd_ = pd.read_csv(f"{RES5}/proximal_vs_downstream.csv")
+    pd_ = keep("3c", "proximal_vs_downstream.csv",
+               pd.read_csv(f"{RES5}/proximal_vs_downstream.csv"))
     yv = np.arange(len(pd_))
     ax.hlines(yv, pd_.ratio_lo, pd_.ratio_hi, color=PAL.MUTED, lw=2.4)
     ax.plot(pd_.ratio, yv, "o", color=PAL.SERIES[0], ms=6)
@@ -337,8 +367,10 @@ def fig3():
     CALLERS = [("tierA_p95", ""),
                ("Cdkn1a+", "_cdkn1a_pos"),
                ("SenePy p95", "_senepy_p95")]
-    ss = pd.read_csv(f"{RES5}/super_section.csv")
-    sn = pd.read_csv(f"{RES5}/super_nulls.csv")
+    ss = keep("3d", "super_section.csv",
+              pd.read_csv(f"{RES5}/super_section.csv"))
+    sn = keep("3d", "super_nulls.csv",
+              pd.read_csv(f"{RES5}/super_nulls.csv"))
     ss["v"] = 1000 * ss.d_aic / ss.n
     sn["v"] = 1000 * sn.d_aic / sn.n
     groups = [("planted superposition\n(synthetic, confounded)", None,
@@ -350,6 +382,9 @@ def fig3():
     for cname, suf in CALLERS:
         cs = pd.read_csv(f"{RES5}/super_section{suf}.csv")
         cn = pd.read_csv(f"{RES5}/super_nulls{suf}.csv")
+        if suf:  # the tierA_p95 pair is already in `parts`, unsuffixed
+            keep("3d", f"super_section{suf}.csv", cs)
+            keep("3d", f"super_nulls{suf}.csv", cn)
         cs["v"] = 1000 * cs.d_aic / cs.n
         cn["v"] = 1000 * cn.d_aic / cn.n
         groups += [
@@ -360,7 +395,7 @@ def fig3():
             (f"N3 torus-shift \u00b7 {cname}", cn[cn.null == "N3"].v,
              PAL.MUTED)]
     syn = pd.read_csv("/workspace/results/phase1b/misspec.csv")
-    syn = syn[syn.fit_family == "exponential"]
+    syn = keep("3d", "misspec.csv", syn[syn.fit_family == "exponential"])
     pv = syn.pivot_table(index=["true_superposition", "regime", "rep"],
                          columns="fit_mode", values=["aic", "n"])
     sv = ((pv["aic"]["superposition"] - pv["aic"]["nearest"])
@@ -399,18 +434,29 @@ def fig3():
     for ext in ("png", "pdf"):
         fig.savefig(f"{FIG}/figure3.{ext}", bbox_inches="tight")
     plt.close(fig)
-    print("wrote figure3")
+    D = pd.concat(parts, ignore_index=True)
+    D.to_csv(f"{FIG}/figure3_data.csv", index=False)
+    print("wrote figure3 and figure3_data.csv")
+    print(D.groupby(["panel", "source"]).size().to_string())
 
 
 if __name__ == "__main__":
     import argparse
     ap = argparse.ArgumentParser()
     ap.add_argument("--which", default="2a,3")
+    ap.add_argument("--rebuild", action="store_true",
+                    help="recompute figure2a_stratified_curves.csv instead of "
+                         "reusing the cached copy")
     a = ap.parse_args()
     w = a.which.split(",")
     if "2a" in w:
         f = f"{FIG}/figure2a_stratified_curves.csv"
-        if os.path.exists(f):
+        if os.path.exists(f) and not a.rebuild:
+            print("figure2a: REUSING the cached %s (mtime %s). It is NOT "
+                  "rebuilt from the senders/genesets on disk -- pass --rebuild "
+                  "after any change to either." % (f, __import__("time")
+                  .strftime("%Y-%m-%d %H:%M", __import__("time")
+                            .localtime(os.path.getmtime(f)))))
             df = pd.read_csv(f)
         else:
             df = build_fig2a_data(P.IN_BAND)
