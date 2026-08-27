@@ -309,9 +309,13 @@ ones (md5 `000f34051112aff4fed293fe7a5b25c2` and `bc6fb1d6c2d05dc36a278d5c6b44e1
 
 ***[⚠ STALE HASH — MARKED 2026-08-27 (remediation pass); the two banners above do not cover it.
 `000f3405…` was the md5 of `figures/figure4.png` **as committed before the task-8.7 regeneration**,
-and it is **no longer the hash of any file in this repo**: `md5sum figures/figure4.png` →
-**`d44fac63411d6c30a42c40894a287f17`** (also recorded in `results/phase3/m1_final_audit.txt` §5),
-sha256 `76718f1e…4829`, matching `figures/.committed_manifest.json`. **The byte-identity claim this
+and it is **no longer the hash of any file in this repo**. It is deliberately not replaced with a
+current value here: `figure4.png` was regenerated twice during the 2026-08-27 session (observed
+md5 `d44fac63…`, then `fdead298…` minutes later), so **any literal hash written into a report
+during an active regeneration is stale on arrival** — which is exactly how `000f3405…` came to be
+copied forward. To establish byte-identity, run `python3 code/check_figures_guard.py`, which
+compares every committed figure against `figures/.committed_manifest.json`.
+**The byte-identity claim this
 paragraph makes was true when it was written and is left standing as the record of that check.**
 It is marked because `reports/WRITING_PACK.md` §5.4 copied `000f3405…` **out of this line** and
 presented it as a current, file-verified hash — the exact transcription failure its `[F]` mark is
