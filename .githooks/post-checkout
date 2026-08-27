@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+# Post-checkout tripwire, 2026-08-27.
+#
+# `git checkout -- code/` silently reverts EVERY uncommitted change in the
+# directory. On 2026-08-27 that destroyed two pieces of work permanently:
+#   - the task 8.7 edits to run_phase3_nulls.py (perm_c1, _expand,
+#     TIERA_PM_CALLS, is_permodule, SectionFit(module=), --tag)
+#   - the de-hardcoding of make_figure4.py (load_ours)
+# Neither had ever been staged, so neither was recoverable from git.
+#
+# git has no pre-checkout hook, so this cannot prevent the loss. What it can
+# do is make it LOUD instead of silent, and name what to check.
+set -u
+ROOT=$(git rev-parse --show-toplevel 2>/dev/null) || exit 0
+warn=0
+check() { grep -q "$2" "$ROOT/$1" 2>/dev/null || { echo "  MISSING: $2 in $1"; warn=1; }; }
+check code/build_genesets.py  "Refusing to run"
+check code/run_phase3_nulls.py "perm_c1"
+check code/make_figure4.py     "load_ours"
+if [ "$warn" = 1 ]; then
+  cat >&2 <<'MSG'
+
+  ####################################################################
+  #  WARNING — a known-important symbol is absent after this checkout #
+  ####################################################################
+
+  One or more markers listed above are missing. Each corresponds to work
+  that was destroyed once already by an uncommitted-change revert.
+
+  If you did NOT intend to revert these, recover them before doing
+  anything else. `git checkout -- <dir>` cannot be undone for changes
+  that were never staged.
+
+MSG
+fi
+exit 0
