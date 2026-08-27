@@ -487,7 +487,7 @@ that sentence are genuinely ours:
 2. **A direct calibration measurement of what the violation costs**, which no
    spatial-omics paper has. On an irregular synthetic window under the null of
    independence, the **tiled** torus rejects at **0.080–0.118 against a nominal
-   0.05 — up to 2.4× nominal** — while the variance correction (RS_count) holds
+   0.05 — up to 2.35× nominal** (0.1175 / 0.05 exactly) — while the variance correction (RS_count) holds
    0.033–0.060 across every window and correlation scale. The whole-window torus
    is at 0.033–0.073. Reported against interest: **this means the project's own
    C1 correction replaced a liberal test with a more liberal one**, and it is why

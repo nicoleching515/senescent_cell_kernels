@@ -283,9 +283,12 @@ Rejection rate at a nominal 5 %, under the null of independence
 
 1. **Mrkvička §2.1.4's prediction holds, measurably.** Tiling is more liberal than the
    whole-window torus in **7 of the 8 cells**, and on the irregular window the 4×4 tiling
-   is at 0.080–0.118 against a nominal 0.05 while the whole-window torus is at
+   is at **0.048–0.118** across all four correlation scales — **0.080–0.118 for s ≥ 0.05**,
+   with 0.048 at s = 0.02 — against a nominal 0.05, while the whole-window torus is at
    0.033–0.073. At the strongest autocorrelation the tiled test rejects a true null
-   **2.4×** as often as it should. **The project's own correction C1 replaced a liberal
+   **2.35×** as often as it should (0.1175 / 0.05 exactly). *(Corrected 2026-08-27, record
+   reconciliation: "0.080–0.118 on the irregular window" omitted the s = 0.02 cell at 0.048
+   — quote the basis with the range; and "2.4×" was a rounding up of 2.35.)* **The project's own correction C1 replaced a liberal
    test with a more liberal one.** That is the finding this section exists to record, and
    it is against the project's interest.
 2. **RS_count holds the nominal level throughout** — 0.033–0.060 across every window and
@@ -308,7 +311,8 @@ Phase 3 fits — the project's instrument for that is the A7 negative-control-pr
 (9–16 % against 5 % nominal), which is a different measurement of a different thing.
 
 **And the empirical result on the real data does not follow the prediction.** N3-tile's
-SF (0.971) is *below* the bounding-box value (0.999), and its raw rejection rate (0.802)
+SF (0.971) is *below* the bounding-box value (0.999), and its raw rejection rate (**0.801**,
+per §2 of this report; the 0.802 written here was a typo and the two sections disagreed)
 is *below* the bounding-box one (0.824) — i.e. on this data the tiled null looks slightly
 more conservative, not more liberal. Two reasons that is not a contradiction. First, SF
 and a real-data rejection rate are not type I error. Second, liberality from seams scales

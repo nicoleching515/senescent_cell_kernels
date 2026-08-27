@@ -329,8 +329,17 @@ Three statements, in the order they matter:
 2. **The N5 covariate block removes it, for every count-based control family.**
    Under +N6+N5 **four of the five** control families — every count-based one —
    have a clustered mean indistinguishable from zero (`all_controls`
-   +0.007 [−0.011, +0.025]; `neg_control_probe` +0.006 [−0.004, +0.015]). *(Audit
-   item R5: this said "every control family", which is wrong. The exception is
+   +0.007 [−0.011, +0.025]; `neg_control_probe` +0.006 [−0.004, +0.015]).
+   **⚠ RESOLVED 2026-08-27 (record reconciliation): on the frozen file it is ALL FIVE, and
+   the original unhedged sentence is correct.** `neg_probe_rate` under `n6n5` is
+   **+0.0097 [−0.0060, +0.0253], p = 0.199** — the CI includes zero
+   (`results/phase3/a7_summary.csv`, 09:06). **Audit R5 is moot.** Write "every control
+   family is indistinguishable from zero under +N6+N5"; do **not** carry forward either the
+   "four of five" hedge above or the closing paragraph of §4.1, which still asserts the
+   `neg_probe_rate` exception at p = 0.020 — that is the pre-C6 05:19 file, and the two
+   statements in this section contradicted each other. *(Audit
+   item R5, as recorded at the time: this said "every control family", which was wrong on
+   the pre-C6 file. The exception is
    `neg_probe_rate`, whose `n6n5` mean was +0.0108 [+0.0021, +0.0195], p = 0.020
    — a CI that excludes zero. It is disclosed two paragraphs below, so only the
    word "every" was ever at fault. **In the frozen C6 re-run that exception is
@@ -352,7 +361,10 @@ Three statements, in the order they matter:
 p = 0.079) — direct confirmation that the naive gradient is a depth/size effect
 and not a spatial gradient in probe binding. Reported against interest: it is the
 one response of five whose conditioned amplitude is nominally non-zero
-(+0.011 [+0.002, +0.020], p = 0.020), which is expected for a ratio whose
+(+0.011 [+0.002, +0.020], p = 0.020) — **pre-C6. On the frozen 09:06 file this is
++0.0097 [−0.0060, +0.0253], p = 0.199: the exception is gone and there is no longer a
+"one response of five" to report against interest. See the resolved R5 note in §4.1** —
+which is expected for a ratio whose
 denominator is itself an N5 column, and it is a third of the biological amplitude.
 
 ### 4.2 The power bound, stated so "flat" is falsifiable

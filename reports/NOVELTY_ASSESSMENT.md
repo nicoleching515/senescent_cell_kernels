@@ -553,6 +553,29 @@ Ranking is novelty × defensibility × transferability, not by how much of the p
 
 ## 4. Anticipated reviewer objections, and the evidence each needs
 
+> **⚠ STATUS COLUMN SUPERSEDED IN FOUR ROWS — 2026-08-27 (record reconciliation).** This
+> table's "Status in repo" column was written before the Phase 8 runs landed. **O1, O3, O4,
+> O11 and O12 are DONE**; do not carry their "NOT DONE" statuses forward
+> (writing-pack §7 row 18):
+>
+> - **O1 — DONE.** Moran's I has been run on the controls (`results/moran/`,
+>   `reports/CS_PHASE8_MORAN.md`). O1's *premise* is also gone: the aggregate control field
+>   is **not** near zero, I = **+0.0455 [+0.0302, +0.0609]**. And the advice in its "Evidence
+>   needed" cell — "a near-zero global autocorrelation does not preclude a projection onto a
+>   specific covariate" — is the orthogonality argument that §2.1 point 3's strike replaces:
+>   justify "different question" by **power**, not orthogonality. Note the scope
+>   (`CORRECTIONS.md` §16.1): only §2.1 point 3 was *falsified*; O1 was not — it is
+>   overtaken.
+> - **O3 — DONE.** The variance-corrected shift was implemented and is now the **primary**
+>   N3: **N3-var 0.996**, N4-var 0.985 (`results/phase3/sf_summary_var.csv`).
+> - **O4 — DONE.** The CellWHISPER mis-citation was fixed in **nine** locations
+>   (`CITATION_AUDIT.md` §0.1). The torus null is Lotwick & Silverman (1982).
+> - **O11 / O12 — DONE.** **Eleven** spatial-statistics entries were added to
+>   `references.bib`, and ICE, markeR and the Jan-2026 circular-validation preprint are in
+>   (`CITATION_AUDIT.md` §1, `CORRECTIONS.md` §17.1).
+>
+> O5's λ̂ has also been corrected in place from the pre-C6 12.8 µm to the sourced **14.7 µm**.
+
 | # | Objection | Evidence needed | Status in repo |
 |---|---|---|---|
 | O1 | *"Voyager already computes Moran's I on Xenium negative controls and concludes there is no technical spatial trend. What is new?"* | Report **your own Moran's I on the controls alongside the kernel amplitude**, and state that a near-zero global autocorrelation does not preclude a projection onto a specific covariate. Cite Voyager and Ren 2025 approvingly. | **NOT DONE.** Highest-priority gap. |

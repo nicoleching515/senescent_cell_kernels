@@ -124,10 +124,13 @@ Full derivations in the sections named. In brief:
    between two seed pairs, **with no diagnostic firing**.
 4. **The torus finding is not novel statistics** (§8.1, §17.2) — Lotwick &
    Silverman (1982). What is new is the **measurement**: tiled torus runs at up to
-   **up to 2.4× nominal** type-I error (0.118 / 0.05 = **2.36** exactly) while the variance
-   correction holds 0.033–0.060. *(Rounding standardised 2026-08-27: this file said 2.35×
-   in three places and `SUBMISSION_PATCH` / the master plan said 2.4×. Both round the same
-   ratio; the repo convention is now **"up to 2.4×", with 2.36 as the exact figure**.)*
+   **up to 2.35× nominal** type-I error while the variance
+   correction holds 0.033–0.060. *(Rounding standardised 2026-08-27, record reconciliation:
+   the exact ratio is `torus_tile4x4_reject_05` 0.1175 ÷ 0.05 = **2.35**, irregular window,
+   s = 0.30, `results/phase3/var_sim_calibration.csv`. Several documents rounded it up to
+   "2.4×" and the writing pack to "2.36×" by rounding 0.1175 to 0.118 first. **The repo
+   convention is now 2.35×** — the exact figure, and the one that does not round in our
+   favour.)*
    **C1 replaced a liberal test with a more liberal one**, and no surviving
    fraction could have revealed it.
 
@@ -150,9 +153,13 @@ Moran's I could not have detected the paper's own headline effect either.
   immutable. Worse: **a `git checkout` is currently destructive**, because
   `code/build_genesets.py` at `HEAD` would overwrite `genesets/*.txt` with empty
   Tier B modules and the guard exists only in the working tree.
-* **`SUBMISSION_PATCH_2026-08-29.md` §9 still instructs the falsified Moran's I
+* ~~**`SUBMISSION_PATCH_2026-08-29.md` §9 still instructs the falsified Moran's I
   framing**, in the one document the PI applies to the manuscript by hand, two
-  days before the deadline.
+  days before the deadline.~~ **CLOSED — this warning has been overtaken.** §9 of
+  that file carries a dated `CORRECTED 2026-08-27 — DO NOT CLAIM THE TWO TESTS
+  DISAGREE` block; the instruction it warns about is no longer live there. (Writing
+  pack §7 row 19.) The falsified sentence in `NOVELTY_ASSESSMENT.md` §2.1 point 3 was
+  struck in the body on 2026-08-27.
 
 ---
 
@@ -622,7 +629,7 @@ replications, nominal 5 %):
 | **across all 8 window × scale cells** | **0.033–0.078** | **0.040–0.118** | **0.033–0.060** |
 
 **Tiling is more liberal than the whole-window torus it replaced, in 7 of 8
-cells, by up to 2.4× nominal** (0.118 against 0.05, i.e. 2.36 exactly; the 8th cell is an exact
+cells, by up to 2.35× nominal** (0.1175 against 0.05; the 8th cell is an exact
 tie at 0.0475, not a reversal). So correction C1 replaced a liberal test with a
 *more* liberal one, exactly as Mrkvička §2.1.4 predicts and as no number in the
 C1 reports could have revealed — a surviving fraction is not a rejection rate,
@@ -1813,14 +1820,23 @@ hashes. `git tag -l` shows only `pre-c6-genesets`; `phase8-frozen` does not exis
 
 ### 18.2 P1 — manuscript-bound, and the deadline is in two days
 
-* **⚠ `SUBMISSION_PATCH_2026-08-29.md` §9 still instructs the falsified framing.**
+* ~~**⚠ `SUBMISSION_PATCH_2026-08-29.md` §9 still instructs the falsified framing.**
   It tells the PI to write *"so the reader can see the two tests disagree"* —
   the sentence `CS_PHASE8_MORAN.md` §4.1 measured to be false (ρ = +0.895 /
   +0.944) and says *must not be written*. **This is the most dangerous unpatched
   line in the repo, because it sits in the one document the PI applies by hand.**
   The same falsified text is unedited in `NOVELTY_ASSESSMENT.md` §2.1 point 3 and
   §4 O1 — corrected by a top banner only, body untouched, and O1 still reads
-  "NOT DONE" for a run that has completed.
+  "NOT DONE" for a run that has completed.~~
+  **CLOSED 2026-08-27 (record reconciliation).** `SUBMISSION_PATCH` §9 already carried
+  the dated correction block when this item was written — the warning was written
+  against a state the patch had left. `NOVELTY_ASSESSMENT.md` §2.1 point 3 is now
+  **struck in the body**, and §4 O1/O4/O11/O12's "NOT DONE" statuses are marked
+  superseded in that file. The one thing that had genuinely not been done — attaching
+  the **aggregation** to the ρ — is now done: +0.8951 (clustered mean per field, knn6
+  raw) is the frozen value; +0.9441 cell-type-centred; +0.9231 median-per-field and
+  +0.7104 per-row are the same data under other aggregations, and **the falsification
+  holds at all four**.
 * **`references.bib:445` — `kumar2026cellwhisper` still carries four invented
   forenames** while its own audit note says they were corrected (§17.1), and
   `SUBMISSION_PATCH` §508-514 tells the author the bibliography is clean.

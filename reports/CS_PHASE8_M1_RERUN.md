@@ -66,7 +66,7 @@ mid-run and the completed tree.
 **One thing did change after this report was first written, and it is a
 correction to correction C1 itself.** N3-tile is no longer the primary corrected
 null: a calibration simulation shows tiling is *more* liberal than the
-whole-section torus it replaced (up to 2.4× nominal on an irregular window),
+whole-section torus it replaced (up to 2.35× nominal on an irregular window),
 so the field-standard variance correction N3-var / N4-var is presented instead.
 The measured answer is unchanged; the defensibility is not. See
 `CORRECTIONS.md` §8.1.
@@ -313,7 +313,7 @@ what leaves the tissue window, standardise by retained sample size) replaces
 N3-tile as the presented variant. The answer does not move — 0.996 against
 N3-tile's 0.971 and a published 0.999 — but a direct type-I-error simulation
 shows **tiling is more liberal than the whole-window torus it replaced, in 7 of
-8 window × correlation-scale cells, up to 2.4× nominal (0.118 against 0.05)**,
+8 window × correlation-scale cells, up to 2.35× nominal (0.1175 against 0.05)**,
 while the variance-corrected estimator holds **0.033–0.060** everywhere *(corrected
 2026-08-27: this read 0.040–0.060; the minimum over all eight window × correlation-scale
 cells is 0.033, the rectangle at s = 0.02 — `results/phase3/var_sim_calibration.csv`)*. C1 replaced
@@ -660,7 +660,7 @@ See `CORRECTIONS.md` §8.1 and `reports/CS_PHASE8_TORUS_VAR.md`. **N3-var 0.996,
 N4-var 0.985**, against N3-tile 0.971 / N4-tile 0.924 and a published
 0.999 / 0.947. The answer does not move; the calibration does. A type-I-error
 simulation on Mrkvička's own §5 design, extended with an irregular window,
-measures **tiling at 0.040–0.118 against a 5 % nominal (up to 2.4×)**, the
+measures **tiling at 0.040–0.118 against a 5 % nominal (up to 2.35×)**, the
 whole-window torus at 0.033–0.073, and the variance-corrected estimator at
 **0.033–0.060** *(corrected 2026-08-27: read 0.040–0.060; the minimum is 0.033)*.
 Correction C1 replaced a liberal test with a more liberal one —

@@ -171,7 +171,7 @@ see it.
   justify tiling"*. **We ran it.** N3-var **0.996** [0.975, 1.007] vs N3-tile 0.971
   and published bbox 0.999; N4-var 0.985; window-matched N3-var 0.995. Plus the
   calibration measurement: tiled torus **0.080–0.118 against nominal 0.05 (up to
-  2.4×)** while RS_count holds **0.033–0.060** — i.e. reported against interest,
+  2.35×)** while RS_count holds **0.033–0.060** — i.e. reported against interest,
   **C1 replaced a liberal test with a more liberal one**, which is why N3-var is
   primary. Both honest caveats carried (synthetic study; on real data the tile looks
   slightly *more* conservative because seams sit **~81 λ̂** apart — at the sourced
