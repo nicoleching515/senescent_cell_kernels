@@ -90,7 +90,11 @@ data/raw_h1/
 # Figure candidates superseded pending the 8.7 regeneration. Kept on disk for
 # comparison, deliberately not committed -- see figures/revised_candidates/README.md.
 figures/revised_candidates/
-figures/.committed_manifest.json
+# figures/.committed_manifest.json is now TRACKED (2026-08-27).  While it was ignored,
+# check_figures_guard.py exited 'no manifest; run --snapshot first' on any fresh clone and
+# --snapshot re-baselined whatever happened to be on disk -- so the phase8-frozen tag's own
+# claim of "figure guard 52/52 committed artefacts match" could not be re-verified from the
+# tag.  It is 5 KB of hashes; ignoring it cost the guard its meaning.
 
 # A3 fallback screen (contingency): panel-verification downloads for the two
 # runner-up candidates of reports/PHASE7_H1_SCREEN.md. Same policy as data/raw_h1/.
