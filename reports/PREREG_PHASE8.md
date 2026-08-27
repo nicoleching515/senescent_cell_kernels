@@ -46,6 +46,324 @@ its original text with a dated inline marker beside it.**
 
 ---
 
+## 0.1 PI DECISION BLOCK — dated 2026-08-27 (four post-freeze decisions, D-A … D-D)
+
+**This file is the frozen pre-registration and the freeze is real: `phase8-frozen` is committed and
+pushed. Nothing below is rewritten silently.** The four decisions recorded here are taken by the PI
+**after** the freeze and **after** H1 expression data was first read (Phase 9,
+`reports/CS_PHASE9_H1_AUDIT.md`). They are recorded in exactly the form §0.0 uses: **the original
+wording stays in place at every affected site**, and each site carries a dated inline marker
+pointing back to this block. **Two of them replace a frozen estimator on one arm and one retires a
+pre-registered question, so all four are declared deviations, not clarifications.** Every number
+below was re-read from the file named beside it, by the command given; none is quoted from a
+document. What these decisions contradict and do **not** resolve is listed at the end of this
+block, and in `reports/PREREG_DECISIONS_PHASE10.md`.
+
+*(Namespace note: **`D-A` … `D-D` is a new series.** It is not the **PI decision** D1–D16 series of
+`PHASE8_ROADMAP_STATUS.md`, not the gene-set deviation series D1–D17 of
+`PREREG_PHASE8_genesets.md` §12, not the Phase-8 `P*` rows of §13, and not the Phase-9 `H*` rows of
+`CS_PHASE9_H1_AUDIT.md` §11.)*
+
+| # | Decision | Kind | Sites marked |
+|---|---|---|---|
+| **D-A** | **DeepScence on H1 becomes a five-seed consensus score, reported with its between-seed dispersion.** M1 keeps its frozen single-seed score, so **the two arms use different DeepScence estimators** and that asymmetry is itself reportable | **New estimator, not in the frozen list.** Declared deviation | §3.9, §7 row F, §8, §9 item 4, §10.10 |
+| **D-B** | **Sender labelling: both the fine-label and the merged-label Tier A call are computed; the MERGED call is PRIMARY on H1.** The frozen fine-label call is retained as the **frozen-literal sensitivity** | **Declared post-freeze choice** between two already-computed calls; no threshold tuned | §3.7, §5, §6 (R1/R2), §13 head-note |
+| **D-C** | **P-ii is FALSIFIED and it leads the §8 reporting.** DeepScence's published `CDKN1A` anchor is stable in all seven H1 sections, so **M1's polarity flip is partly an artefact of our own ortholog remapping**, not a defect of the published tool | **A pre-registered prediction falsified and reported as such** | §8, §13 P12/P13 |
+| **D-D** | **P7 (marginal-zone B cells) is retired as UNANSWERABLE** — never testable on this panel, as distinct from tested and null | **Question withdrawn**, original P7 text preserved | §10.4, §13 P7 |
+
+---
+
+### D-A — DeepScence on H1 moves to a five-seed consensus score
+
+**The decision.** On the **H1 arm only**, the DeepScence score is no longer the single
+`random_state = 0` run frozen in §3.9. The H1 primary is a **consensus over five seeds**, and the
+**between-seed dispersion is reported beside every consensus number** — the spread is the finding,
+not a nuisance to be averaged away. **This is a new estimator that is not in the frozen list**, and
+it is recorded here as a deviation with its reason and its evidence.
+
+**The seed set is already frozen.** The five values are the composition-matched seeds of §3.8 —
+**20260901, 20260902, 20260903, 20260904, 20260905** — chosen there to be outside the range
+`run_phase3_nulls._expand` can reach. **No new seed value is introduced by this decision.**
+Command: `grep -n "^COMPMATCH_SEEDS" code/run_phase8_compmatch.py` → line 165,
+`COMPMATCH_SEEDS = (20260901, 20260902, 20260903, 20260904, 20260905)`.
+
+**The reason: the frozen single-seed configuration is not seed-reproducible on H1.** Full section,
+`denoise=False`, SPLN21, all 196,142 cells, nothing changed but `random_state` 0 → 1:
+
+| comparison | n | Pearson *r* | Spearman | top-5 % Jaccard | cells changing status | file |
+|---|---|---|---|---|---|---|
+| **H1 SPLN21, seed 0 vs 1, FULL section** | 196,142 | **0.3719** | 0.4157 | **0.2107** | 12,779 | `results/phase9_h1/d2_stability.csv` |
+| H1 SPLN21, same, 20,000-cell panel | 20,000 | 0.3829 | 0.3282 | 0.2006 | 1,327 | " |
+| **M1 seed-to-seed floor (M1's own `denoise=False` 0 vs 1)** | 20,000 | **0.99553** | 0.99543 | **0.7606** | 272 | `results/phase8_d2/d2_stability.csv` |
+| M1 determinism control, **same** seed, full sections 7239 / 7259 | 75,384 / 114,721 | **0.99999913 / 0.99999995** | — | — | 24 / 2 | `results/phase8_d2/d2_agreement.csv` |
+
+Commands:
+`python3 -c "import pandas as pd; print(pd.read_csv('results/phase9_h1/d2_stability.csv').to_string(index=False))"`;
+`python3 -c "import pandas as pd; d=pd.read_csv('results/phase8_d2/d2_stability.csv'); print(d[d.pair=='raw_seed0 vs raw_seed1'].to_string(index=False))"`;
+`python3 -c "import pandas as pd; d=pd.read_csv('results/phase8_d2/d2_agreement.csv'); print(d[d.config=='raw'][['section','n_cells','pearson_r','global_top5_n_changed']].to_string(index=False))"`.
+
+**r = 0.372 and Jaccard 0.211 against a floor of 0.9955 / 0.761.** It is not a small-sample
+artefact: the 20,000-cell panel and the full 196,142-cell section give the same answer.
+**Directions survive the seed; magnitudes do not** — on SPLN21 the depth loading moves only
++0.3122 → +0.2308 (`results/phase9_h1/d2_depth.csv`, `rho_seed1`), while the Tier A × DeepScence
+matched agreement ratio moves by a factor of about 2.5 (see the open items below — that second
+figure is quoted in `CS_PHASE9_H1_AUDIT.md` §10.5 and **has no producer file**, so it is *not*
+relied on here).
+
+**M1 keeps its frozen single-seed score, and the asymmetry is reportable.** The M1 harness
+reproduces its committed scores at *r* = **0.99999913** and **0.99999995** at the same seed, and
+its seed-to-seed floor is *r* = 0.99553 / Jaccard 0.7606 — so on M1 the single-seed score is not
+the source of instability and there is no reason to change it. **The consequence is stated rather
+than hidden: after this decision the two arms do not use the same DeepScence estimator** (M1:
+single run, `random_state = 0`; H1: five-seed consensus). **That asymmetry is itself a reportable
+finding** — it exists because the published tool is reproducible on the ortholog-remapped mouse
+panel and is not reproducible on its own native human panel — and it must be stated wherever a
+cross-arm DeepScence quantity is reported, alongside §9 item 4's requirement that every cross-arm
+number appear on both panels.
+
+**§3.9's reporting standard is extended from four attributes to five.** Every DeepScence number
+now carries **coverage, denoise state, anchor, panel (native or ortholog-mapped, with the mapping
+rate), and the seed configuration with its dispersion** — `random_state = 0`, single run, on M1;
+five-seed consensus with its between-seed spread on H1.
+
+**What this decision deliberately does not fix, and must be fixed before Phase 10 computes it:**
+the **pooling rule** for the consensus (per-cell mean of z-scored per-seed scores, rank-mean, or
+median) and the **dispersion statistic** reported beside it are not specified here and are not
+invented here. Whatever is chosen is a producer-level choice that must be written down before the
+consensus is read, not after.
+
+---
+
+### D-B — Fine and merged labelling: both computed, **MERGED named primary for H1**
+
+**The decision.** The Tier A sender call is computed at **both** label families on H1. The
+**merged-label call `tierA_merged_p95` is PRIMARY**, because it matches the label family the
+estimator actually stratifies on (`sasp_phase3.LABELS = "merged"`). The **frozen fine-label
+`tierA_p95` call is retained and reported as the frozen-literal sensitivity.** **This is a declared
+post-freeze choice**, not a clarification of the frozen text: §3.7 freezes the percentile rule
+*within cell type* as `phase2_downstream.py` implements it, which is the fine family.
+
+**The reason — the frozen combination leaves cells eligible but uncallable.** The call thresholds
+within **fine** cell types while the estimator's receiver stratification and sender-eligibility
+mask use **merged** labels, so a cluster that is `Unknown` at the fine level but resolved at the
+merged level is an eligible cell that can never be called a sender. Quantified, per section:
+
+| section | fine-`Unknown` but merged-assigned | QC-passed cells | **% eligible but uncallable** |
+|---|---|---|---|
+| SPLN07 | 0 | 227,360 | **0.00** |
+| SPLN14 | 38,701 | 283,628 | **13.64** |
+| SPLN21 | 20,155 | 196,142 | **10.28** |
+| SPLN24 | 7,386 | 393,202 | **1.88** |
+| SPLN30 | 0 | 291,577 | **0.00** |
+| SPLN43 | 24,815 | 270,472 | **9.17** |
+| SPLN44 | 27,588 | 299,897 | **9.20** |
+
+i.e. **0–13.6 % of cells per section.** Command (denominator is `n_cells_qc` from the annotation
+metadata, not a count taken from a document):
+
+```
+python3 -c "
+import pandas as pd, json
+BAD={'Low_quality','Unknown','unknown'}
+for s in ['SPLN07','SPLN14','SPLN21','SPLN24','SPLN30','SPLN43','SPLN44']:
+    d=pd.read_csv(f'data/processed_h1/celltypes_h1_{s}.csv')
+    n=json.load(open(f'data/processed_h1/annotation_meta_h1_{s}.json'))['n_cells_qc']
+    u=int(((d.cell_type.isin(BAD))&(~d.cell_type_merged.isin(BAD))).sum())
+    print(s,u,n,round(100*u/n,2))"
+```
+
+**The cost in senders, at the primary threshold, on the merged `T/NK cells` stratum**
+(`results/phase9_h1/a3_prevalence_by_type.csv`, `label_set == "merged"`; command:
+`python3 -c "import pandas as pd; d=pd.read_csv('results/phase9_h1/a3_prevalence_by_type.csv'); m=d[(d.label_set=='merged')&(d.cell_type=='T/NK cells')&(d.call.isin(['tierA_p95','tierA_merged_p95']))]; print(m[['section','call','n_all','n_senders_all','prevalence_pct_all','passes_A3']].to_string(index=False))"`):
+
+| section | cells | senders, **frozen fine-label call** | prevalence % | senders, **merged-label call** | prevalence % |
+|---|---|---|---|---|---|
+| SPLN14 | 39,158 | 23 | 0.059 | 1,958 | 5.000 |
+| **SPLN43** | **24,815** | **0** | **0.000** | 1,241 | 5.001 |
+| SPLN44 | 33,482 | 295 | 0.881 | 1,675 | 5.003 |
+
+**Zero senders in 24,815 cells** in SPLN43, and all three failures are *band* failures below the
+1 % floor — the signature of the mechanism, not of a thin population. Under the merged call T/NK
+passes A3 in 7 of 7 sections and every other row of the A3 table is unchanged; **no threshold is
+tuned — it is the identical percentile rule applied at the other label family.**
+
+**What is reported.** Both calls, every time, exactly as P11 already requires for the two Tier A
+variants: the merged call as primary and the frozen-literal fine call beside it, with the
+uncallable fraction above quoted wherever the difference between them matters.
+
+---
+
+### D-C — **P-ii is FALSIFIED. This is the headline of the §8 experiment, and it is reported as one.**
+
+**A pre-registered prediction was made, it was falsified, and it is reported at the front rather
+than in a table.** §8 predicted that DeepScence's published `CDKN1A` anchor would be *weak,
+unstable or inverted* — depth-partialled fold-split sign stability < 0.90 — in **≥ 1 of 7** H1
+sections, with the falsifier written in advance as "all 7 sections have stability ≥ 0.90".
+
+**Measured: stability = 1.000 in all seven sections — the anchor decides the polarity the same way
+in 20 of 20 random folds in every section.** `results/phase9_h1/deepscence_anchor_h1.csv`,
+produced by `code/h1_deepscence_anchor.py`, whose `fold_stability(v, k=20, seed=0)` at line 103
+defines the 20 folds and which imports `partial_spearman` from the mouse producer
+`code/deepscence_reanchor.py` so the definition cannot drift.
+
+| quantity | value across the 7 sections | file |
+|---|---|---|
+| `CDKN1A` fold-split sign stability | **1.00 in all 7** | `results/phase9_h1/deepscence_anchor_h1.csv`, `stab_cdkn1a` |
+| depth-partialled ρ(`CDKN1A`, score) | **+0.1911 … +0.2540**, positive in all 7 | " , `rho_partial_cdkn1a` |
+| `CDKN1A` rank among the 33 on-panel CoreScence genes | **1st – 7th** in all 7 | " , `rank_cdkn1a_in_core` |
+| the D3 alternative 8-gene proliferation anchor, for contrast | ρ +0.0097 … +0.0451, and **unstable (0.75) in SPLN21** | " , `rho_partial_prolif`, `stab_prolif` |
+
+Command:
+`python3 -c "import pandas as pd; print(pd.read_csv('results/phase9_h1/deepscence_anchor_h1.csv')[['section','rho_partial_cdkn1a','stab_cdkn1a','rho_partial_prolif','stab_prolif','rank_cdkn1a_in_core']].to_string(index=False))"`.
+
+**The consequence, stated plainly because it runs against our own result: M1's polarity flip
+(§13 P12, P13) is at least partly an artefact of our own ortholog remapping, not a defect in the
+published tool.** §8 exists to separate exactly two explanations — "a property of our mouse
+adaptation" against "a property of the published tool" — and on this axis it returned the first.
+On the native human panel the published anchor is the *better* anchor, and the D3 alternative
+anchor chosen on M1 is the one that carries almost no signal and is itself unstable in a section.
+
+**What this falsification does NOT touch.** The narrowing is explicit, because a falsified
+prediction is not a general acquittal. All three of the following are measured on the **native** H1
+run and are **unaffected by ortholog remapping**:
+
+1. **The 88 % CoreScence circularity.** **29 of 33** on-panel CoreScence genes sit in ≥ 1 frozen
+   Tier B module = **0.8788**, measured on the native human panel.
+   `results/phase7_jobA/gate_result_human.json`, keys `corescence.frozen_n_in_any_B` = 29,
+   `corescence.n_on_panel` = 33, `corescence.frozen_frac` = 0.8788. Command:
+   `python3 -c "import json; print(json.load(open('results/phase7_jobA/gate_result_human.json'))['corescence'])"`.
+   This is §8's P-iv, **CONFIRMED**.
+2. **The seed instability (D-A above).** *r* = 0.3719 / Jaccard 0.2107 across seeds at full section
+   size on the native panel, `results/phase9_h1/d2_stability.csv`.
+3. **DeepScence × `CDKN1A`⁺ agreement at 6.436 pooled, natively.** The circular pair is
+   **6.436**, z = 204.83, above chance in **7 of 7** sections, per-section range **3.459 – 10.115**
+   — against a pooled **1.255** on the ortholog-remapped mouse arm.
+   `results/phase9_h1/caller_agreement_pooled.csv` (row `deepscence_score, cdkn1a_counts`,
+   `circular = True`) and `caller_agreement_matched_significance.csv` for the per-section range.
+   Commands:
+   `python3 -c "import pandas as pd; d=pd.read_csv('results/phase9_h1/caller_agreement_pooled.csv'); print(d[(d.A=='deepscence_score')&(d.B=='cdkn1a_counts')].to_string(index=False))"`;
+   `python3 -c "import pandas as pd; d=pd.read_csv('results/phase9_h1/caller_agreement_matched_significance.csv'); m=d[(d.A=='deepscence_score')&(d.B=='cdkn1a_counts')]; print(m[['section','ratio_stratified','z']].to_string(index=False))"`.
+   **§10.7's prohibition is unchanged** — "1.51–2.85×" may still never be quoted; the H1 figure is
+   the pooled 6.436 with its 3.46–10.12 range, and this pair stays excluded from every pooled
+   cross-caller claim (`BIO_PHASE3.md` §4.4).
+
+**And it does not vacate P12.** P12 excludes `LMNB1` as the D3 primary anchor because `LMNB1` is a
+member of `B_downstream_arrest` and `B_secondary_senescence` — a **gene-set membership** fact about
+our own modules, not a claim about anchor performance. `LMNB1` tracks `CDKN1A` closely on H1
+(`rho_partial_lmnb1` +0.2029 … +0.2449) and remains a **secondary** for that reason alone.
+
+---
+
+### D-D — P7 (marginal-zone B cells) is retired as **UNANSWERABLE**
+
+**The decision.** P7's exploratory marginal-zone claims are **withdrawn as unanswerable on this
+panel**, by dated note. **The PI's grounds are that the question was never testable on this
+dataset — which is a different statement from "tested and null", and is recorded as the different
+statement it is.** No MZ result is being reported as negative; no MZ result exists to report.
+
+**The evidence.** The label is **never realised in any of the seven H1 sections.** It is present in
+the frozen marker set (`code/markers_human_spleen.py:27`, 8 markers, and in the merged B
+compartment at `:52`) but no cluster in any section is annotated to it. Command:
+
+```
+python3 -c "
+import pandas as pd
+labs=set()
+for s in ['SPLN07','SPLN14','SPLN21','SPLN24','SPLN30','SPLN43','SPLN44']:
+    labs |= set(pd.read_csv(f'data/processed_h1/celltypes_h1_{s}.csv').cell_type.unique())
+print('Marginal zone B cells' in labs, sorted(labs))"
+```
+
+→ `False`. It is one of six labels never realised in any section
+(`Lymphatic endothelium`, **`Marginal zone B cells`**, `Mesothelial cells`, `Pericytes`,
+`Sinusoidal endothelium`, `pDC` — `CS_PHASE9_H1_AUDIT.md` §1.5).
+
+**P7's original text is preserved in §13 in full, and deliberately so.** It records that the weak
+evidence tier was flagged **in advance**: CellMarker 2.0 has only **6** spleen rows for this type,
+so its eight markers come from the all-tissue fallback at ≥ 1 PMID — the weakest tier the marker
+build defines. That is verifiable, and it is the part of P7 worth keeping:
+`grep -c "^Marginal zone B cells" genesets/human/markers_spleen_evidence.csv` → **8** marker rows,
+each carrying the provenance string `ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (6 spleen rows)`
+(command: `grep "^Marginal zone B cells" genesets/human/markers_spleen_evidence.csv`), and
+`results/phase7_jobA/build_markers_human_spleen.log` line 18 records the same tier at build time.
+**A pre-registration that flagged its own weakest input in advance, and then found that input
+produced nothing, is a record worth keeping intact.**
+
+**What is retired and what is not.** Retired: every exploratory marginal-zone-*specific* claim, and
+P7's own conditional ("conditional on the label surviving the post-freeze re-gate" — it did not
+survive). **Not retired, and unchanged:** §10.4's prohibition on any MZ-specific confirmatory
+claim (it was already forbidden, and remains so a fortiori); the frozen marker file itself, which
+is under `genesets/.geneset_manifest.json` and **is not edited**; and the frozen gene set
+`genesets/human/D_spleen_marginal_zone.txt` (8 genes), which is scored as one of the five A6
+compartments — see the open items below for why P7's stated reason for keeping the label does not
+survive contact with how A6 was actually built.
+
+---
+
+### Open items these four decisions create and do **not** resolve
+
+Recorded here rather than left for a reader to notice. A known inconsistency is better than one
+nobody has seen.
+
+1. **D-B contradicts the literal text of §5, §6 R1 and §6 R2**, which name the primary call as
+   `tierA_p95`. Under D-B the H1 primary is `tierA_merged_p95`. **R1's threshold, its direction and
+   M1's own outcome are untouched**; what moves is which H1 fit population R1 is evaluated on. The
+   PI has not stated whether R1 is evaluated on the merged call with the fine call as sensitivity
+   (the reading consistent with D-B) or on both with neither named first. **Not resolved here.**
+2. **D-B leaves the N7 sender axis unspecified.** `N7_CALLS` (`run_phase3_nulls.py:68-69`,
+   six calls, nine with `TIERA_PM_CALLS`) does not contain `tierA_merged_p95`. Whether the merged
+   call **replaces** `tierA_p95` in the N7 axis on H1 or is **added** to it is a frozen-list
+   question this decision does not answer. **Not resolved here.**
+3. **D-B creates a second cross-arm estimator asymmetry**, alongside D-A's. M1's published sender
+   call is the fine-label one and the same fine/merged interaction exists on M1 (smaller —
+   `BIO_PHASE3.md` §1.1). Whether M1 is re-called at the merged family for cross-arm comparability,
+   or the asymmetry is declared and carried, is **not resolved here.**
+4. **D-A and D-C interact, and the interaction is not resolved.** Every H1 DeepScence number in
+   `CS_PHASE9_H1_AUDIT.md` §10 — including D-C's own 6.436 circularity, the P-ii anchor
+   stabilities, P-i's depth loadings and P-iii's pooled 1.102 — is computed at `random_state = 0`.
+   Once the H1 primary is the five-seed consensus, those quantities are **stated on a
+   non-primary estimator** until they are recomputed. The directions are seed-robust; the
+   magnitudes are not.
+5. **P-iii's verdict is seed-fragile and sits on its own threshold.** §8 registers "pooled ratio
+   > 1.10" and H1 returns **1.102** (`caller_agreement_pooled.csv`, `tierA_score` ×
+   `abs_deepscence_score`, z = 5.67). A margin of 0.002 on an estimator whose full-section
+   seed-to-seed Jaccard is 0.211 is not a margin. **P-iii must be re-evaluated on the consensus
+   score before it is reported either way.**
+6. **P7's stated reason for keeping the MZ label does not match how A6 was built.** P7 argues that
+   dropping the label "would leave the A6 axis without its middle term". The H1 axis is
+   `pulp = score(D_spleen_red_pulp) − mean(score(follicle), score(tzone))`
+   (`code/h1_a6_compartments.py:85-86`): **`D_spleen_marginal_zone` is scored as one of the five
+   compartments but does not enter the axis at all.** So retiring P7 costs the A6 axis nothing,
+   and P7's justification for keeping the label was already inaccurate before H1 was read.
+   Flagged, **not corrected** — it is P7's own wording and D-D preserves it.
+7. **P-vi remains contradicted-but-not-falsified** and is untouched by all four decisions: its
+   falsifier needs 5 of 7 sections and Phase 9 ran 1 (`CS_PHASE9_H1_AUDIT.md` §10.4). It must keep
+   being described that way.
+8. **One figure in the evidence chain has no producer file.** `CS_PHASE9_H1_AUDIT.md` §10.5 quotes
+   the Tier A × DeepScence matched ratio moving 1.174 → **2.967** between seeds on SPLN21. The
+   seed-0 value 1.174 is in `results/phase9_h1/caller_agreement_matched_significance.csv`; **the
+   seed-1 value is in no file in `results/`**, so it is not relied on anywhere in this block. It
+   should be regenerated into a file or dropped from the audit.
+9. **Recorded observation, no decision taken: §1's tag hash no longer matches the tag.** §1 records
+   the `phase8-frozen` commit as `926439629a07269a32c93f998da0f6e1cd20933c`, 2026-08-27 15:32 UTC.
+   The tag on disk is an annotated tag dated 2026-08-27 19:55:58 UTC, subject
+   "Phase 8 frozen (**RE-CUT**): pipeline and pre-registration for the human replication", and it
+   resolves to **`d04691e2692a7be8d1ff676d2fb74ad9d1df049d`**; 9264396 is an ancestor of it.
+   Commands: `git rev-list -n1 phase8-frozen`;
+   `git for-each-ref refs/tags/phase8-frozen --format='%(objecttype) %(taggerdate) %(subject)'`.
+   **§1 is deliberately left unedited** — the re-cut is outside these four decisions and needs the
+   PI's own record of why the tag moved.
+
+**None of these four decisions changes a pre-registered threshold, a stop condition, the §18
+outcome table, or any M1 number.** D-A and D-B change *which estimator* an H1 quantity is computed
+with, on one arm, with both alternatives computed and reported; D-C reports a registered prediction
+as falsified and states precisely what the falsification does not reach; D-D withdraws a question
+that was never answerable on this panel and keeps its original text. **No original wording has been
+deleted anywhere in this file; every affected site carries its original text with a dated inline
+marker beside it.**
+
+---
+
 ## 0. What is provisional in this draft
 
 Two agents were running while this was first drafted — the **M1 end-to-end re-run (task 8.7)** and
@@ -359,10 +677,12 @@ the pre-registration resolves it explicitly, because two different things are ca
 
 | call | rule | granularity | source |
 |---|---|---|---|
-| `tierA_pNN`, **`tierA_p95` is PRIMARY** | strict `>` NNth percentile of `tierA_score`, **within cell type**, per section; cell types with ≥ 20 cells | per section × cell type | `sasp_phase3.py:256-257`; flags built at `phase2_downstream.py:98-105` for `q ∈ {90, 95, 99}` |
+| `tierA_pNN`, **`tierA_p95` is PRIMARY** | strict `>` NNth percentile of `tierA_score`, **within cell type**, per section; cell types with ≥ 20 cells | per section × cell type | `sasp_phase3.py:256-257`; flags built at `phase2_downstream.py:98-105` for `q ∈ {90, 95, 99}` ***[M1 primary; on H1 superseded 2026-08-27 — see the D-B marker under this table and §0.1]*** |
 | `cdkn1a_pos` | `cdkn1a_counts > 0`. No percentile, no stratification | per cell | `sasp_phase3.py:258-259` |
 | `senepy_pNN` | strict `>` NNth percentile of the SenePy hub score, **within cell type**, per section; ≥ 100 finite-score sender-eligible cells | per section × cell type | `sasp_phase3.py:260-268` |
 | `tierApm_pNN` (**pre-registered sensitivity**, PI decision D1) | the same rule scored on `A_sender_for_<module>.txt`, so the mask depends on the response module | per section × cell type × module | `sasp_phase3.py:247-255`; flags at `phase2_downstream.py:107-119` |
+
+***[Post-freeze decision 2026-08-27 — see §0.1 item **D-B**. "Within cell type" in the `tierA_pNN` row above is the **fine** label family, while the estimator stratifies receivers and builds the sender-eligibility mask on **merged** labels (`sasp_phase3.LABELS = "merged"`), leaving **0–13.6 % of cells per section eligible but uncallable** — including **0 senders in 24,815 cells** for merged `T/NK cells` in SPLN43. **On H1 the PRIMARY call is the identical percentile rule applied at the merged family, `tierA_merged_p95`**; the frozen fine-label `tierA_p95` call is retained and reported as the **frozen-literal sensitivity**. No threshold is tuned. This row is unchanged for M1.]***
 
 `tierA_score` is `scanpy.tl.score_genes(..., ctrl_size=200)` on `A_SENDER_FINAL_strict`
 (`phase2_downstream.py:73`). All masks are finally `& ok`, excluding `Low_quality`, `Unknown`,
@@ -452,12 +772,14 @@ Frozen exactly as currently invoked. `run_deepscence_all.py` (11 sections) and `
 | Setting | Value | Source |
 |---|---|---|
 | denoise | **`denoise=False` — PRIMARY, and a *chosen* value, not a forced one.** `denoise=True` (the published default) is the pre-registered sensitivity. See the D2 block below | `run_deepscence_all.py:60`, `run_deepscence.py:40`; `reports/CS_PHASE8_D2_DENOISE.md` |
-| `random_state` | `0` | same lines |
+| `random_state` | `0` | same lines ***[M1 only after 2026-08-27 — see the D-A marker under this table and §0.1]*** |
 | Anchor | **published `CDKN1A`** (DeepScence's own `io.py::fix_score_direction`), not overridden | `run_deepscence_all.py:12-13` |
 | Minimum counts per cell | **≥ 20** | `run_deepscence_all.py:54`, `run_deepscence.py:35` |
 | Panel, M1 | ortholog-remapped, MGI 1:1, **4,845 of 5,097** panel genes map | `run_deepscence_all.py:32-34, 55-56`; `logs/ds_smoke.log` |
 | Panel, H1 | **native — no remapping.** This is §8's experiment | §8, and `reports/PREREG_PHASE8_genesets.md` §5 |
 | Coverage | **11 / 11 M1 sections** (was 2 / 11), 1.47 M cells | task C7/D1 |
+
+***[Post-freeze decision 2026-08-27 — see §0.1 item **D-A**. The `random_state` row above is unchanged for **M1**, which reproduces at the determinism floor (*r* = 0.99999913 / 0.99999995, `results/phase8_d2/d2_agreement.csv`). On **H1** the single `random_state = 0` run is **no longer the primary estimator**: it reproduces at *r* = 0.3719 and top-5 % Jaccard 0.2107 across seeds at full section size (`results/phase9_h1/d2_stability.csv`), against an M1 seed-to-seed floor of 0.99553 / 0.7606. The H1 primary is a **five-seed consensus at the frozen seeds 20260901–05, reported with its between-seed dispersion**. The two arms therefore use **different DeepScence estimators**, and that asymmetry is reportable. **The four attributes every DeepScence number carries become five**: coverage, denoise state, anchor, panel — and the seed configuration with its dispersion.]***
 
 **The four attributes every DeepScence number carries** (§9 reporting standard, one Methods row,
 not scattered caveats): **coverage, denoise state, anchor, panel (native or ortholog-mapped, with
@@ -642,6 +964,8 @@ seven independently of whether it passes.**
 One number per arm, one sender definition, one design. The per-module Tier A sets are the
 pre-registered sensitivity and are reported alongside (decision D1), not instead.
 
+***[Post-freeze decision 2026-08-27 — see §0.1 item **D-B**. On **H1** the sender definition this outcome is computed at is **`tierA_merged_p95`**, the same percentile rule at the label family the estimator stratifies on; the frozen `tierA_p95` fine-label call is reported beside it as the frozen-literal sensitivity. **The estimand, the design and the M1 numbers are unchanged.** §0.1 open item 1 records that this contradicts the literal wording of §5 and of R1/R2 below, and that the PI has not stated which of the two calls R1 is scored on.]***
+
 **Why this and not a length constant.** λ̂ rails at a grid bound in a majority of M1 fits, so a
 fitted length constant is not the estimand; the amplitude and its survival under conditioning are.
 This is the operational form of the question the PI has kept — *how far does senescence signalling
@@ -687,6 +1011,8 @@ bracket is the **inter-quartile range across the reportable fits** (`sf_summary.
 0.50.** The criterion, the threshold and M1's own outcome are unchanged; the frozen M1 values
 are 0.088, IQR [−0.017, 0.234].]***
 
+***[Post-freeze decision 2026-08-27 — see §0.1 item **D-B**. R1 and R2 name the call `tierA_p95`. On **H1** the primary sender call is **`tierA_merged_p95`** — the identical percentile rule at the label family the estimator stratifies on — with the frozen fine-label call reported beside it. **The thresholds (IQR includes 0; upper quartile < 0.50; amplitude below H1's own 80 %-power bound) and M1's outcome do not change**; only the H1 fit population does. §0.1 open item 1 records that the PI has not stated whether R1 is scored on the merged call alone or on both.]***
+
 **R2 — amplitude (nothing above the bound).** H1's median controlled amplitude `|β|/sd(y)` under
 N2 + N5 + N6 is **below H1's own 80 %-power detectable bound**, computed from H1's own standard
 error by the same rule that produced M1's 0.203. R2 is evaluated with H1's bound, not M1's, because
@@ -730,7 +1056,7 @@ donor bootstrap is not run.
 | **C** | **H1 fails A2 or A5.** | A data-availability finding, one honest paragraph, and move to the next candidate in the §12.1 screen (runners-up: GSE336890 kidney, GSE335963 bone marrow). |
 | **D** | **The confound structure differs but the null result does not.** | The confound is context-specific, so no published characterisation from a different dataset can be trusted. Strengthens the case for running the battery every time. |
 | **E** | **C1 changes M1's N3 result.** | Handled in the correction ledger. **Already resolved: it does not.** N3-tile 0.974 and N4-tile 0.962 against the published 1.000 and 0.964, invariant across six sender calls spanning 0.5–9.0 % prevalence (`results/phase3/sf_summary_c1_n7.csv`). *Those values are **PROVISIONAL** — pre-C6 — but the invariance across a 0.5–9.0 % prevalence range and three unrelated sender callers is a property of the section outline and the sender point pattern, so the conclusion transfers even though the numbers will move.* Contribution 3 survives; what changes is that N3-occ is declared degenerate and N3-swap is declared a label permutation, not a corrected torus shift. |
-| **F** | **DeepScence's instability appears in H1 too.** | §8's experiment. A real limitation of a widely used tool, verifiable by anyone. See §8 for the prediction and its falsifier. |
+| **F** | **DeepScence's instability appears in H1 too.** | §8's experiment. A real limitation of a widely used tool, verifiable by anyone. See §8 for the prediction and its falsifier. ***[2026-08-27, §0.1 **D-A** and **D-C**: outcome F is realised, and in a **different form** from the one anticipated. The instability that appears natively is **seed** instability in the frozen PRIMARY `denoise=False` configuration (*r* = 0.372, top-5 % Jaccard 0.211 at full section size), not the anchor instability P-ii predicted — **P-ii is falsified**. F is reported jointly with D-A's estimator change.]*** |
 
 Outcomes are not mutually exclusive: A or B is the primary axis, D, E and F are orthogonal and any
 combination may be reported.
@@ -749,6 +1075,8 @@ currently confounded: is DeepScence's observed behaviour a property of *our mous
 can no longer be offered as the explanation for a mouse-only artefact, and the H1 comparison is
 run at both denoise states. It also supplies a sixth prediction, below, from a direction M1 has
 already measured.
+
+***[Post-freeze result 2026-08-27 — see §0.1 item **D-C**. **P-ii below is FALSIFIED and it leads the reporting of this section.** The published `CDKN1A` anchor is stable **20/20 folds in all seven H1 sections** (`results/phase9_h1/deepscence_anchor_h1.csv`, `stab_cdkn1a` = 1.00 ×7), so **M1's polarity flip (P12, P13) is partly an artefact of our own ortholog remapping, not a defect in the published tool** — which is exactly the separation this section was designed to make. **What that does not touch**, all measured on the **native** run and so unaffected by remapping: the **88 %** CoreScence circularity (29/33, `results/phase7_jobA/gate_result_human.json`), the **seed instability** (§0.1 D-A), and DeepScence × `CDKN1A`⁺ at **6.436 pooled** natively (`results/phase9_h1/caller_agreement_pooled.csv`). Every verdict below is at `random_state = 0` and must be re-read against D-A.]***
 
 **PREDICTION, registered before any H1 expression value is read: it is a property of the tool, and
 it will recur natively in H1.** Concretely, and each falsifiable on its own:
@@ -778,6 +1106,8 @@ remapping.** B7 alone accounts for 18 of the 33 on both arms. *(Corrected 2026-0
 tool, in the species it was written for. If they fail, our mouse adaptation caused the M1 behaviour,
 which strengthens everything else by removing a confound — and we say so.
 
+***[2026-08-27 — see §0.1 item **D-C**. **Both halves of this sentence came true, on different predictions**: P-i, P-iv and P-v hold natively (a real limitation of the tool) and **P-ii is falsified** (our mouse adaptation caused the M1 polarity behaviour). **We say so, at the front of §8 and not in a table.** P-iii is confirmed only at 1.102 against its own 1.10 threshold and is seed-fragile — §0.1 open item 5.]***
+
 **Consequence already frozen regardless of the outcome:** the **strip-and-refit sensitivity** (fit
 each Tier B module with the CoreScence-shared genes removed, report both amplitudes) is part of the
 frozen run order, not an afterthought (PI decision D6).
@@ -797,6 +1127,8 @@ frozen run order, not an afterthought (PI decision D6).
    Figures 5 and 6, and the revised 2, 3, 4.
 4. **Every cross-arm number is reported twice**, on the 2,425-gene ortholog-intersected panel and
    on each arm's full panel (test A8).
+
+   ***[Post-freeze decisions 2026-08-27 — see §0.1 items **D-A** and **D-B**. Two **estimator** asymmetries now sit across the arms in addition to the panel axis: DeepScence is a single `random_state = 0` run on M1 and a five-seed consensus on H1 (D-A), and the Tier A sender call is fine-label on M1 and merged-label on H1 (D-B). **Both are declared, both have the alternative computed, and neither is a panel effect** — so a cross-arm DeepScence or sender-call number carries the estimator asymmetry as well as the two-panel requirement.]***
 
 ---
 
@@ -830,6 +1162,7 @@ These are consequences of measurements already made, and they bind both arms.
 3. **No age-stratified or young-vs-old claim on H1.** Age is a continuous covariate only (PI
    decision D4). Two donors are over 55.
 4. **No marginal-zone-specific confirmatory claim.** Exploratory only (PI decision D3b, §13 P7).
+   ***[Post-freeze decision 2026-08-27 — see §0.1 item **D-D**. **Strengthened, not relaxed: P7 is retired as UNANSWERABLE.** The `Marginal zone B cells` label is **never realised in any of the 7 H1 sections**, so the exploratory MZ claims have no support to be exploratory about. **Never testable on this panel — which is not the same as tested and null**, and is recorded as the different statement it is. This prohibition stands a fortiori.]***
 5. **No cross-arm difference attributed to species or tissue.** They are confounded by design —
    mouse liver against human spleen. This belongs in the abstract, not the limitations.
 6. **`CXCL8`/`CXCR1` results must never be reported as replicating a mouse result** — no mouse
@@ -850,6 +1183,7 @@ These are consequences of measurements already made, and they bind both arms.
 10. **No `denoise=True` number may be reported from a single seed without its seed-stability
    companion.** One of three seeds gave a top-5 % sender set disjoint from the other two
    (Jaccard 0.000). Any published-default sensitivity result carries that fact. P26.
+   ***[Extended 2026-08-27 — see §0.1 item **D-A**. **On H1 this applies to `denoise=False` as well**, i.e. to the frozen PRIMARY configuration: at full section size the seed-0 and seed-1 scores agree at *r* = 0.3719 and top-5 % Jaccard 0.2107 (`results/phase9_h1/d2_stability.csv`). **No single-seed H1 DeepScence number may be reported at all** once the five-seed consensus exists; until it does, every such number is labelled `random_state = 0` and carries this spread. M1 is unaffected.]***
 11. **`rho_signed_dz_vs_depth` for the D2 `raw` control rows (−0.47, −0.16) must not be quoted** —
    it is the direction of numerical noise on a shift of 0.0002–0.001 z-units. P28.
 12. **Four sentences from the two-section base must be struck** (§13 P1): "0.93–1.22× of chance …
@@ -918,6 +1252,8 @@ rows** as it now stands (the roadmap's "16-row" description predates the D17 pan
 Those are not restated here. The rows below are everything that has landed since, numbered `P*` so
 they cannot be confused with the `D*` gene-set rows.
 
+***[2026-08-27 — the four post-freeze PI decisions **D-A … D-D** of §0.1 are deviations too, and are deliberately **not** renumbered into this `P*` series: the `P*` rows are Phase-8 additions taken **before** any H1 expression value was read, and D-A–D-D were taken **after**. §0.1 is the register for them. The rows below that they touch — **P7** (retired by D-D), **P12** and **P13** (narrowed by D-C) — carry their own inline markers and their original text.]***
+
 | # | Deviation | Reason / evidence |
 |---|---|---|
 | **P1** | **Caller independence is falsified. The motivating claim is restated, not defended.** | See the dedicated table immediately below — the number moved twice, for two different reasons, and the two must not be conflated. |
@@ -926,13 +1262,13 @@ they cannot be confused with the `D*` gene-set rows.
 | **P4** | **SenePy ships no spleen signature; it is not the same estimator across arms.** | `results/phase7_jobA/senepy_spleen_coverage.json`: 65 hubs, 10 tissues, `spleen_hub: false`. Of 22 spleen labels: **0 tissue-matched, 15 cross-tissue surrogate, 7 with no hub in any tissue.** M1 used tissue-matched mouse **Liver** hubs. Surrogates collapse: one blood memory-B hub scores all three B labels, one lung T-cell hub both T subsets. A3 must therefore be evaluated on the scored subset for SenePy and on all cells for the other callers, with both denominators stated. *Open recommendation, flagged not taken: demote SenePy to sensitivity on H1 and promote the `CDKN1A`⁺ call into the primary trio.* |
 | **P5** | **Age is a continuous covariate only.** No young-vs-old contrast, no age-stratified prevalence claim. | PI decision D4. Ages 17/31/32/32/37/57/59 — five under 40, **two over 55**. A sparse continuum, not a two-group design. H1's value is a human replication of the geometry, not an ageing result. |
 | **P6** | **Plasma cells are admitted by an explicit 3-marker exception to `MIN_MARKERS = 4`.** | PI decision D2b. Surviving on-panel markers `JCHAIN`, `MZB1`, `XBP1` — among the most specific markers in immunology, shared with no other label in the set; the label fails by exactly one gene, and only after the over-adjustment guard removes `MKI67` (which was CellMarker contamination from "dividing plasma cell" rows). **Recorded as an exception with its reason, so it does not read as the threshold having been 3 all along.** The alternative — folding plasma cells into the B compartment — would misattribute their signal: a plasma cell is not a B cell for receiver purposes. A 3-gene score is noisier and the label is reported as such. |
-| **P7** | **Marginal zone B cells: label and compartment kept; every MZ-*specific* claim is exploratory.** | PI decision D3b. CellMarker 2.0 has only **6** spleen rows for this type, below the 8-row threshold, so its markers come from the weakest evidence tier (all-tissue fallback at ≥ 1 PMID). The compartment is structurally central to spleen and `D_spleen_marginal_zone` is one of the five A6 compartments, so dropping it would leave the A6 axis without its middle term. **No confirmatory marginal-zone hypothesis is pre-registered**; any MZ-specific claim is conditional on the label surviving the post-freeze re-gate against measured expression and against the depositors' own annotations. |
+| **P7** | **Marginal zone B cells: label and compartment kept; every MZ-*specific* claim is exploratory.** | PI decision D3b. CellMarker 2.0 has only **6** spleen rows for this type, below the 8-row threshold, so its markers come from the weakest evidence tier (all-tissue fallback at ≥ 1 PMID). The compartment is structurally central to spleen and `D_spleen_marginal_zone` is one of the five A6 compartments, so dropping it would leave the A6 axis without its middle term. **No confirmatory marginal-zone hypothesis is pre-registered**; any MZ-specific claim is conditional on the label surviving the post-freeze re-gate against measured expression and against the depositors' own annotations. ***[Post-freeze decision 2026-08-27 — see §0.1 item **D-D**. **P7 IS RETIRED AS UNANSWERABLE.** The condition this row sets — "conditional on the label surviving the post-freeze re-gate" — was not met: `Marginal zone B cells` is **never realised in any of the 7 H1 sections** (verified over `data/processed_h1/celltypes_h1_*.csv`; it is one of six labels never realised, `CS_PHASE9_H1_AUDIT.md` §1.5). **The PI's grounds are that the question was never testable on this panel — not that it was tested and null.** **This row's original text is preserved deliberately**, because it records that the weakest evidence tier was flagged **in advance**: the 6 CellMarker spleen rows are verifiable in `genesets/human/markers_spleen_evidence.csv` (8 marker rows, each stamped `ALL-TISSUE FALLBACK >=1 PMID -- WEAKEST EVIDENCE (6 spleen rows)`) and in `results/phase7_jobA/build_markers_human_spleen.log` line 18. **Caveat on this row's own reasoning, flagged and not corrected**: the A6 axis is `score(D_spleen_red_pulp) − mean(score(follicle), score(tzone))` (`code/h1_a6_compartments.py:85-86`), so `D_spleen_marginal_zone` is scored as one of the five compartments but is **not** a term in the axis — dropping the label leaves the axis intact. §0.1 open item 6.]*** |
 | **P8** | **RESOLVED (PI decision D16): the fitting window is pre-registered as `100 µm, fixed`. The 99th-percentile rule of §15 is recorded as provenance, not as a runtime computation.** | §3.2. The code has never computed a percentile at fit time (`run_phase3_nulls.py:59`, capped at `:169`); §15's wording describes how 100 was chosen once. Every published result already used 100 µm, so freezing the literal preserves continuity and re-runs nothing. Identical on both arms; `window.csv` is regenerated for H1 and reported but does not change the cap. **Kept in this table because it bounds the SenePy results:** under `senepy_p95` **all six in-band 99th percentiles (118.3–186.8 µm) exceed the cap**, and 7.4–21.5 % of receivers lie beyond 80 µm with 0.2–2.3 % beyond 150 µm, against 0.8–7.0 % and 0.0–0.11 % under the primary `tierA_p95` (`results/phase3/window.csv`). A SenePy-called kernel is fitted on a materially truncated distance distribution, and that limitation is reported wherever a SenePy-called reach quantity is. |
 | **P9** | **RESOLVED (PI decision D15): the composition-matched rerun protocol at 5 seeds is frozen — together with its covariate-adjusted counterpart — and is implemented.** | §3.8. At the time of the first draft **no code implemented it**: the phrase appeared only in the planning document (five mentions, no method — no matching variables, no rule, no seeds, no estimand, no output format), and neither `composition_all.py` nor `run_phase5_super.py`'s 5-draw geometry null is the protocol. It is now `code/run_phase8_compmatch.py`, run on M1 and gated on H1. **§15's item is amended to read "the composition-matched rerun protocol at 5 seeds *and its covariate-adjusted counterpart*"** — an addition, not a substitution. All four previously-`TBD` fields are filled in §3.8 from `reports/CS_PHASE8_COMPMATCH.md`. Nine specification ambiguities had to be resolved to implement it at all; they are carried as **D15.1–D15.9** below. |
 | **P10** | **The mouse C6 gene sets are promoted into `genesets/`. Supersedes gene-set deviation D15.** | PI decision D5, "tag then promote". `git tag pre-c6-genesets` captures the prior state. Three files changed: B7 38 → 108, strict Tier A 25 → 33, `A_sender_for_secondary_senescence` 55 → 74. Gate re-verified PASS on the authoritative 5,097-gene panel. **Every published Phase 2–5 mouse number was computed pre-C6 and is being re-fitted at task 8.7.** |
 | **P11** | **Tier A: strict-33 primary, per-module sets as pre-registered sensitivity.** | PI decision D1. Both are gated in the same run and both gates must pass. Cost, stated against interest: the 33 survivors contain no `CDKN1A`, `CDKN2A`, `TP53`, `LMNB1` or `MKI67` — it is a DNA-damage / p53-effector / replicative-senescence score, not a score on the field's canonical arrest markers. The per-module sensitivity retains all 12 canonical markers for B2, B5, B6 and B7, which is exactly why it is pre-registered alongside. |
-| **P12** | **`Lmnb1` is not usable as the D3 re-anchor**, contrary to §7 of the planning document. | It is a member of `B_downstream_arrest` and `B_secondary_senescence`. The primary anchor is an 8-gene proliferation set disjoint from every `A_*.txt` and `B_*.txt`, asserted at run time; `Lmnb1` is reported as a secondary. All anchor decisions are depth-partialled. §3.9. |
-| **P13** | **The consensus-of-callers anchor is unusable and is not offered.** | It disagrees with the published sign in 9 of 11 M1 sections because SenePy dominates it, and anchoring on it inflates DeepScence-vs-SenePy agreement to 2.793× chance — it manufactures the exact circularity D3 exists to remove, in the opposite direction. |
+| **P12** | **`Lmnb1` is not usable as the D3 re-anchor**, contrary to §7 of the planning document. | It is a member of `B_downstream_arrest` and `B_secondary_senescence`. The primary anchor is an 8-gene proliferation set disjoint from every `A_*.txt` and `B_*.txt`, asserted at run time; `Lmnb1` is reported as a secondary. All anchor decisions are depth-partialled. §3.9. ***[Narrowed 2026-08-27 — see §0.1 item **D-C**. **This row stands, for the reason it gives.** `Lmnb1`/`LMNB1` is excluded because it is a **member** of `B_downstream_arrest` and `B_secondary_senescence` — a gene-set membership fact about our own modules, not a claim about anchor performance — and on H1 it tracks `CDKN1A` closely (`rho_partial_lmnb1` +0.2029 … +0.2449, `results/phase9_h1/deepscence_anchor_h1.csv`) yet remains a secondary on that ground alone. **What is narrowed is the premise that the published anchor misbehaves**: on H1 it is stable 20/20 folds in all 7 sections and the 8-gene proliferation alternative carries almost no signal (ρ +0.0097 … +0.0451) and is itself unstable in SPLN21 (0.75). **On the human arm the published anchor is the better one**, so the D3 re-anchoring is an M1 measure, not a general correction to the tool.]*** |
+| **P13** | **The consensus-of-callers anchor is unusable and is not offered.** | It disagrees with the published sign in 9 of 11 M1 sections because SenePy dominates it, and anchoring on it inflates DeepScence-vs-SenePy agreement to 2.793× chance — it manufactures the exact circularity D3 exists to remove, in the opposite direction. ***[Narrowed 2026-08-27 — see §0.1 item **D-C**. Unchanged as a statement about **M1**. On H1 the consensus anchor is also the weakest of the three tested (`rho_partial_consensus` +0.0642 … +0.1695 against `CDKN1A`'s +0.1911 … +0.2540, `results/phase9_h1/deepscence_anchor_h1.csv`), so it is not offered on either arm — but the **reason** the published anchor needed replacing at all is now known to be **partly our ortholog remapping**: P-ii is falsified natively. The circularity this row worries about is not narrowed — DeepScence × `CDKN1A`⁺ is **6.436** pooled on the native H1 panel against 1.255 remapped on M1.]*** |
 | **P14** | **`N4_snap` is documented but not implemented.** The rotation family has five variants. | `phase3_null_geom.py:33` (prose) vs `:58` (`ROTATION`, 5 entries). `N4_swap` is itself rotate-then-snap. |
 | **P15** | **N3-occ / N4-occ at the specified 5 % tolerance are degenerate and are not a corrected null.** | On a liver section the criterion admits 1–63 of 38,080–108,375 candidate translations, all near-identity: median displacement 27 µm (N3) and 25 µm (N4), inside the 100 µm window and close to the median λ̂ of 12.8 µm; for section 7001 the only admissible translation is the identity. Values quoted (0.951 / 0.896) are the 15 %-tolerance variants; at the literal 5 % they are **0.349 / 0.273** and measure the null's degeneracy, not the effect. ***[Corrected 2026-08-27 — see §0.0 items C-6 and C-7: frozen values are 1–66 admissible offsets, 28 µm (N3-occ) and 25 µm (N4-occ), SFs 0.302 / 0.183, against a pooled λ̂ of 14.7 µm. The verdict is unaffected.]*** Holds for all six sender calls (0.121–0.673). |
 | **P16** | **N3-swap reproduces N1 and is not a corrected torus shift.** | Median SF 0.721 vs N1's 0.716, per-fit Spearman ρ = 0.948, median absolute difference 0.0087; conditioning on the N5+N6+zonation block moves it to **0.999**, i.e. it removes nothing the nuisance model does not already remove. The identity is tight for the Tier A percentile calls (ρ 0.92–0.98) and only directional for SenePy (ρ 0.43–0.51), so the footnote reads "reproduces N1 **for the Tier A calls**". |
@@ -1056,3 +1392,17 @@ the refutation of §4 (D-b) (P29) warrant a note to the DeepScence authors.
 | 5 | **Accept the three corrections to already-written text**: the mouse-B6 one-gene statement (P18), the 22/33 → 20/33 count (P1), and the mixed-configuration `caller_coverage_gate.csv` (P1 caution i — since confirmed by the coordinator and being regenerated). | §4, P1 |
 | 6 | **Re-run the gate and re-read every remaining PROVISIONAL value once 8.7 finishes** — in particular A7 and the corrected N3/N4, both computed on the pre-C6 sender calls, and every pooled number in `caller_coverage_gate.csv` — and replace every **PROVISIONAL** mark. | §0, §5, P1 |
 | 7 | **Decide whether the "one pair below chance in all eleven sections" sentence survives.** Under the post-C6 configuration Tier A vs SenePy is 0.972, n.s. That sentence is load-bearing for the restatement — it is what separates a shared *technical* variable from a shared latent state. | P1 caution (ii) |
+
+***[Post-freeze status note, 2026-08-27 — see §0.1. `CS_PHASE9_H1_AUDIT.md` §13 item 2 and item 7 name **three** PI decisions
+needed before the Phase-10 fits. **Two are now taken:** which label family the Tier A sender call is defined on (**D-B** —
+merged is primary on H1, the frozen fine-label call is the sensitivity), and whether DeepScence stays in the H1 caller set
+(**D-A** — it stays, as a five-seed consensus with its dispersion reported, not as the frozen single-seed score).
+**The third is still open and is item 4 above:** whether SenePy stays in the primary trio. It now carries **four** caveats on
+H1, not two — no spleen hub (P4), the 100 µm window truncating its receivers (P8), a within-type depth enrichment of
+**Q5/Q1 = 28.5–228.1×** across the 7 sections, recomputed here from
+`results/phase9_h1/caller_within_type_depth_bias.csv` (`CS_PHASE9_H1_AUDIT.md` §10.2 quotes 28.5–224.7 from the unrounded
+values; the committed file is rounded to 3 dp and gives 228.1 for SPLN24) — command:
+`python3 -c "import pandas as pd; d=pd.read_csv('results/phase9_h1/caller_within_type_depth_bias.csv'); s=d[d.caller=='senepy_score'].pivot_table(index='section',columns='within_type_depth_quintile',values='enrichment'); print((s['Q5']/s['Q1']).round(1))"`, and the v1/v2 hub-release discrepancy
+(`CS_PHASE9_H1_AUDIT.md` H4, `results/phase9_h1/senepy_surrogates_v1_v2.csv`). **Item 7 is answered on the human arm**: Tier A
+× SenePy is **0.874, z = −7.96, below chance in 7 of 7 H1 sections** (`results/phase9_h1/caller_agreement_pooled.csv`), so the
+sentence survives on H1 even though the post-C6 M1 configuration weakened it to 0.972 n.s. **None of D-A–D-D closes item 4.**]***
