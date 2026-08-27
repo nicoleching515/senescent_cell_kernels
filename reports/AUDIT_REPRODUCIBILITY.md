@@ -24,6 +24,13 @@ repository is an older revision than the one that produced the Phase 8 results.*
 committed exactly once (`a6aac3a`) and never updated, while every script that depends on it
 was. The working copy that grew the missing features was lost when the container was wiped.
 
+On the environment: `requirements.txt` is now close to correct — the `kneed`/`openpyxl` defect
+class is essentially closed, all 21 pins match what is installed exactly, `pip check` is clean,
+and nothing is installed from a git URL or a local path. It nonetheless cannot rebuild a
+working stack, for two reasons that are not about pins: it describes an interpreter no tracked
+runner actually uses (B10), and two of the three `commot` call sites import without the shim
+that makes `commot` importable at all under the pinned numpy (B9).
+
 ---
 
 ## BREAKS reproducibility
@@ -205,6 +212,55 @@ figure2b/2d/2e data. Run end to end on a clean clone it would leave every artefa
 untouched — including the file holding 0.0288 and 0.1833 — while `summarize_caller_coverage.py`
 (which *is* in stage 5) would consume an input nothing in the repo can rebuild.
 
+### B9. Two of the three `commot` call sites have no shim and cannot import under the pins
+
+`requirements.txt` closes with: *"Every import in `code/` now resolves except `commot`, which
+resolves only via `code/_shims/np2_compat.py` — by design."* That is true of one call site and
+false of the other two. `np2_compat` is imported in **exactly one place repo-wide**:
+
+```
+code/phase4_run.py:66:    import _shims.np2_compat   # noqa: F401  (must precede commot)
+```
+
+The other two import `commot` with no shim on any path:
+
+- `code/phase4_commot_mechanism.py:16` — `import commot as ct` at **module scope**.
+- `code/phase4_positive_control.py:61` — `import anndata as ad, commot as ct` inside `_commot()`.
+
+Neither is imported by `phase4_run.py`; both are standalone entry points with their own
+`__main__` (lines 69 and 182). Confirmed by execution — a bare `import commot` under the
+pinned `numpy==2.4.6` raises
+`AttributeError: np.Inf was removed in the NumPy 2.0 release`, and importing
+`_shims.np2_compat` first makes it succeed. `anndata` does not incidentally restore the alias.
+
+`phase4_commot_mechanism.py` is the sole producer of `results/phase4/commot_mechanism.csv` —
+the cell-level-vs-cluster-level COMMOT mechanism result, tracked, and the substantive finding
+of Figure 4. It cannot be run as committed.
+
+### B10. Every tracked runner calls bare `python3`, which is not the project environment
+
+`which python3` is `/usr/bin/python3` (3.11.10). `VIRTUAL_ENV` is unset. That interpreter's
+`sys.path` is `/usr/local/lib/python3.11/dist-packages` — **a second complete scientific stack
+of 249 packages**, on the container overlay, captured by no manifest. The project environment
+is a 144-package venv at `/workspace/envs/sasp311`, which is gitignored (correctly, 6.6 GB) and
+**mentioned in neither `requirements.txt` nor `README.md`**.
+
+Every tracked `code/*.sh` driver invokes bare `python3`. So an independent party who follows
+`README.md:446` (`pip install -r requirements.txt`) into a venv and then runs any driver gets
+the system interpreter and `ModuleNotFoundError`. Nothing in the repo says to activate a venv
+or set `PATH`.
+
+Partially mitigating: all 21 `==` pins currently match exactly in *both* stacks, so there is no
+numerical divergence today, and `pip check` is clean in the venv. Only 19 low-level transitive
+utilities differ (`pillow` 12.3.0/10.2.0, `sympy` 1.14.0/1.12, `networkx` 3.6.1/3.2.1, `attrs`,
+`certifi`, `urllib3`, …), none load-bearing. But the two stacks are a latent divergence, and
+the one the drivers actually use is the one that gets wiped.
+
+This also compounds D2: the overlay stack is exactly what
+`/usr/local/lib/python3.11/dist-packages/DeepScence/data/coreGS_v2.csv` refers to. The eight
+scripts in D2 work today *because* the drivers run the overlay interpreter — which is the
+arrangement master plan §16.1 exists to prevent.
+
 ---
 
 ## DEGRADES reproducibility
@@ -285,21 +341,55 @@ on the overlay and outside `/workspace`, so it does not survive a pod restart, a
 is meaningless to anyone else. `setup_dca_env.sh` itself is correct — it *requires*
 `DCA_ENV_ROOT` — so the fix is to make the runners honour it too.
 
-**The isolation is documented well enough to reconstruct.** `results/phase8_d2/dca_venv_pip_freeze.txt`
-is tracked, in the tag, and complete: 83 fully pinned packages including `DCA==0.3.4`,
-`tensorflow==2.4.4`, `Keras==2.4.3`, `PyYAML==5.4.1`. Together with `setup_dca_env.sh`'s
-SHA-256-pinned CPython 3.8.19 download and the `_shims_dca_bridge` subprocess protocol, an
-independent party has what they need. The only gap is that no committed script *writes* that
-manifest (B7) and the runners hardcode a dead path.
+**Is the isolation documented well enough to reconstruct? Nearly — with one real gap.**
+Everything needed is tracked and in the tag: `setup_dca_env.sh`, the bridge
+(`code/_shims_dca_bridge/dca/{__init__,api}.py`), the worker (`code/dca_denoise_worker.py`),
+`results/phase8_d2/dca_venv_python.txt`, and the 83-line manifest
+`results/phase8_d2/dca_venv_pip_freeze.txt` — which is byte-identical to the live venv's
+`pip freeze`. The Python 3.8 requirement is documented unusually well (TF <2.5 ships cp36/37/38
+wheels only; Ubuntu 22.04 has no python3.8; `/usr/bin/python3.10` has no `ensurepip` — all
+confirmed: this box has only 3.10 and 3.11), and the interpreter download is SHA-256 verified.
+
+The gap: **`setup_dca_env.sh` installs from a resolver, not from that manifest.** It pins only
+`dca==0.3.4`, `pyyaml==5.4.1`, `pip<25`, `setuptools<70`; `wheel` is unpinned and TensorFlow,
+Keras, numpy, h5py and scanpy are left to pip (`# pulls tensorflow 2.4.4 + keras 2.4.3`). The
+manifest records exactly what resolved on 2026-08-27 (TF 2.4.4, Keras 2.4.3, numpy 1.19.5,
+h5py 2.10.0, scanpy 1.8.2) but nothing installs from it, so a rebuild can silently land on a
+different TF patch. Rebuild also needs network to both GitHub and PyPI.
+
+The environment currently works end to end — `.../v38/bin/python -c "import dca.api,
+tensorflow, keras"` reports `DCA OK under TF 2.4.4 keras 2.4.3` — and nothing in the 3.11 stack
+imports TensorFlow (`import tensorflow` correctly fails there). The isolation itself is sound;
+its *durability* and *exact* reconstruction are what is at risk.
 
 ### D3b. `torch` is imported directly but not pinned
 
 `run_deepscence_all.py:25`, `run_deepscence_dca.py:37` and `run_deepscence_denoise_probe.py:56`
 all call `torch.set_num_threads(...)` at import time. `torch` appears nowhere in
 `requirements.txt`. It is present as `2.4.1+cu124` in both the venv and the overlay, and would
-arrive transitively via DeepScence, but unpinned — and DeepScence scores are a function of the
-torch version. Same defect class as the `kneed` and `openpyxl` omissions that have already
-bitten.
+arrive transitively via DeepScence (`Requires-Dist: torch`, unbounded), but unpinned — and
+DeepScence scores are a function of the torch version. Worse, the installed build is
+`2.4.1+cu124`: a **local version identifier served only from `download.pytorch.org/whl/cu124`**,
+not from PyPI, so `pip install -r requirements.txt` resolves some arbitrary other torch. The
+overlay additionally carries `torchvision 0.19.1+cu124`, `torchaudio 2.4.1+cu124` and twelve
+`nvidia-*-cu12` wheels, while `README.md:450` states "no GPU is used at any point".
+
+### D3c. `esda` and `libpysal` imported but not pinned
+
+`run_moran_controls.py:349-350` — `import libpysal`, `from esda.moran import Moran`. Neither is
+in `requirements.txt`. Installed as `esda 2.8.2` / `libpysal 4.14.1`, and both would arrive
+transitively (`commot` → `pysal` → `esda`; `pointpats` → `libpysal`), but unpinned. This is the
+`--validate` path that cross-checks the project's own Moran's I against a reference
+implementation, so the reference itself can drift silently. Same defect class as `kneed`.
+
+### D3d. `setuptools` is unpinned and both callers need `pkg_resources`
+
+`DeepScence/api.py` and `DeepScence/io.py` `import pkg_resources`; `senepy/__init__.py` does
+`from pkg_resources import resource_filename`. The venv happens to carry `setuptools 65.5.0`
+from Python 3.11's `ensurepip` bundle. `pkg_resources` is deprecated and slated for removal — a
+venv made with `--upgrade-deps`, or on 3.12+, ships no `setuptools` and `import DeepScence` /
+`import senepy` fails. `requirements.txt` pins no `setuptools`, `pip` or `wheel`, sets no
+`--index-url`, and carries no hashes.
 
 ### D4. `figures/.committed_manifest.json` is gitignored
 
@@ -354,6 +444,12 @@ Figure 2c with fewer null rows, plus a correspondingly short `figure2c_data.csv`
 
 ## COSMETIC
 
+- `corescence_circularity.py:77` (`_read_pre_c6`) shells out to
+  `git -C /workspace show pre-c6-genesets:genesets/<name>.txt`, i.e. the pipeline depends on a
+  **git tag** as a data source. It raises `SystemExit` with a clear message if the tag is
+  absent, so it fails loudly, and `git clone` fetches tags by default. Whether
+  `pre-c6-genesets` and `phase8-frozen` were actually pushed could not be verified offline
+  (`git ls-remote` has no network here); `refs/remotes` holds only `origin/main`.
 - `core.hooksPath = .githooks` is repo-local git config, not part of the tree. A clone gets
   `.githooks/pre-commit` but the hook does not fire until the documented
   `git config core.hooksPath .githooks` is run. The hook's own comment says so.
@@ -387,9 +483,13 @@ Essential things **not** in it:
    unverifiable from the tag.
 4. **`logs/`** — 225 files, gitignored, and the only surviving record of the actual
    invocations, including proof that `perm_c1` ran at 1,000 permutations.
-5. **The DCA venv** (D3) — reconstructable from `setup_dca_env.sh`, but the tracked runners
-   point at a dead session path.
-6. **Twelve commits of corrections made after the tag was cut** — including a withdrawn
+5. **The DCA venv** (D3) — reconstructable from `setup_dca_env.sh`, but only approximately
+   (TF/Keras are resolver-chosen, not installed from the tracked manifest), and the tracked
+   runners point at a dead session path.
+6. **Any record of which interpreter to use** (B10) — the environment the drivers actually run
+   is the 249-package overlay stack, which no manifest in the tag describes; the 144-package
+   venv that `requirements.txt` does describe is named nowhere in the repo.
+7. **Twelve commits of corrections made after the tag was cut** — including a withdrawn
    claim, a corrected p-value bound, and `RECORD_RECONCILIATION.md`. `origin/main` is at
    `926439…`, the tag commit, so **none of the post-freeze corrections have been pushed.**
    They exist only in this workspace, which has been wiped twice. Reports inside the tag
@@ -415,9 +515,12 @@ Static analysis plus cheap checks: `git ls-files` / `git ls-tree` inventories; a
 `git ls-files code/`; an AST-based cross-module attribute check over all 158 tracked scripts;
 an AST-based check of every CLI flag in every tracked `.sh` driver against the target script's
 `argparse`; existence checks on all 139 hardcoded `/workspace/...` paths and all quoted
-relative paths; and argument-parse-only invocations of `run_phase3_nulls.py` against
-non-existent section names (which compute nothing) to confirm B1 by execution rather than by
-reading. No pipeline stage was run. No package was installed.
+relative paths; an AST inventory of every top-level import in the 131 tracked `code/*.py`
+(21 stdlib, 19 third-party, 32 first-party — all 32 first-party resolve to tracked files)
+cross-checked against `requirements.txt` and against `pip freeze` in both interpreters; and
+argument-parse-only invocations of `run_phase3_nulls.py` against non-existent section names
+(which compute nothing) plus bare/shimmed `import commot` to confirm B1 and B9 by execution
+rather than by reading. No pipeline stage was run. No package was installed.
 
 **Side effect, disclosed:** confirming B1/B2/B3 required importing `run_phase3_nulls`,
 `sasp_phase3` and `caller_disagree`. Python rewrote their `code/__pycache__/*.pyc` from the
