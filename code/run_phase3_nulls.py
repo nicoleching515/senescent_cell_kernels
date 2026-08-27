@@ -99,10 +99,11 @@ def lam_grid(dmax: float = WINDOW_UM, med_nn: float = 0.0) -> np.ndarray:
 # Seeds.  `_expand` reproduces the pre-Phase-8 rule `base + step_i*i +
 # step_j*j` exactly for the six non-per-module calls at the same section and
 # call ordering, so every number computed before Phase 8 is reproducible from
-# it unchanged.  Per-module jobs are displaced by PM_SEED_OFFSET (plus the
-# module index) so that the seven sender sets of one call never share a
-# matching draw, a permutation stream or a bootstrap stream.
-PM_SEED_OFFSET = 100000
+# it unchanged.  A per-module job is displaced by PM_SEED_OFFSET * (module
+# index + 1), so the seven sender sets of one call never share a matching
+# draw, a permutation stream or a bootstrap stream, and no per-module seed can
+# collide with a non-per-module one.
+PM_SEED_OFFSET = 300000
 
 
 def is_permodule(call: str) -> bool:
@@ -130,7 +131,7 @@ def _expand(sections, calls, base, step_i, step_j, modules=None):
             sd = int(base) + step_i * i + step_j * j
             if is_permodule(c):
                 for mi, m in enumerate(modules):
-                    jobs.append((s, c, sd + PM_SEED_OFFSET + mi, m))
+                    jobs.append((s, c, sd + PM_SEED_OFFSET * (mi + 1), m))
             else:
                 jobs.append((s, c, sd, None))
     return jobs
