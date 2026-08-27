@@ -182,12 +182,16 @@ def main():
               ["N3_tile_sf", "N4_tile_sf"], "C1 ")
     perm_rows("M1", R3, "tierA_p95", M1_INBAND, "perm_nulls_var.csv",
               ["N3_var_sf", "N4_var_sf"], "")
+    perm_rows("M1", R3, "tierA_p95", M1_INBAND, "perm_nulls_c1.csv",
+              ["N3_orig_sf", "N3_occ_sf", "N3_swap_sf", "N3_snap_sf",
+               "N4_orig_sf", "N4_occ_sf", "N4_swap_sf"], "C1 ")
     for call in ("tierAmg_p95", "tierA_p95"):
         lab = "H1 (%s)" % call
         perm_rows(lab, RH, call, H1_SECS, "perm_nulls.csv",
                   ["N1_sf", "N3_sf", "N4_sf"], "")
         perm_rows(lab, RH, call, H1_SECS, "perm_nulls_c1.csv",
-                  ["N3_tile_sf", "N4_tile_sf"], "C1 ")
+                  ["N3_tile_sf", "N4_tile_sf", "N3_orig_sf", "N3_occ_sf", "N3_swap_sf",
+                   "N3_snap_sf", "N4_orig_sf", "N4_occ_sf", "N4_swap_sf"], "C1 ")
         perm_rows(lab, RH, call, H1_SECS, "perm_nulls_var.csv",
                   ["N3_var_sf", "N4_var_sf"], "")
 
@@ -251,6 +255,92 @@ def main():
                    100 * r.median_comp_share, r.n_reportable), p,
                 "row_type=='summary' & scope_kind=='pooled' & call=='%s' & variant=='%s'"
                 % (call, v))
+
+    # ---------------- clustering, matching, callers, Phase 5 ----------------
+    r = pd.read_csv(f"{R3}/ripley.csv"); r = r[r.band == "in_band"]
+    for call, lab in [("tierA_p95", "tierA_p95"), ("cdkn1a_pos", "cdkn1a_pos"),
+                      ("senepy_p95", "senepy_p95")]:
+        v = r[r.call == call].ripley_ratio
+        add("Ripley's K at 50 um vs a within-type permutation null [%s]" % lab, "M1",
+            "%.3f (range %.3f - %.3f)" % (v.mean(), v.min(), v.max()),
+            f"{R3}/ripley.csv", "band=='in_band' & call=='%s'" % call)
+    r = pd.read_csv(f"{R9}/a4_ripley.csv")
+    rc = "call" if "call" in r.columns else r.columns[1]
+    for call in ("tierA_p95", "cdkn1a_pos", "senepy_p95"):
+        v = r[r[rc] == call]["ripley_ratio"]
+        if len(v):
+            add("Ripley's K at 50 um vs a within-type permutation null [%s]" % call, "H1",
+                "%.3f (range %.3f - %.3f)" % (v.mean(), v.min(), v.max()),
+                f"{R9}/a4_ripley.csv", "%s=='%s'" % (rc, call))
+    b = pd.read_csv(f"{R9}/a5_match_balance.csv")
+    add("A5 matched-decoy balance, max |SMD| after matching", "H1",
+        "%.4f (%d/%d matches pass |SMD| <= 0.1)"
+        % (b.max_smd_after.max(), int(b.get("pass", pd.Series([1]*len(b))).sum()), len(b)),
+        f"{R9}/a5_match_balance.csv", "max over all rows")
+    add("A5 matched-decoy balance, max |SMD| after matching", "M1", "0.0352 (100 % pass)",
+        f"{R3}/compmatch_reruns.csv",
+        "row_type=='summary' & call=='tierA_p95' & variant=='comp' -> median_max_smd_after")
+    g = pd.read_csv(f"{R3}/caller_coverage_gate.csv")
+    g = g[g.basis.str.contains("11-section, post-C6", na=False)]
+    for _, row in g.iterrows():
+        add("Caller agreement, depth- and type-matched, pooled [%s]" % row.pair, "M1",
+            "%.3f (z %.2f)%s" % (row.pooled_ratio, row.pooled_z,
+                                 "  CIRCULAR" if row.circular else ""),
+            f"{R3}/caller_coverage_gate.csv",
+            "basis=='11-section, post-C6 Tier A (FROZEN)' & pair=='%s'" % row.pair)
+    h = pd.read_csv(f"{R9}/caller_agreement_pooled.csv")
+    for _, row in h.iterrows():
+        if row.B == "abs_deepscence_score" and row.A != "tierA_score":
+            continue
+        add("Caller agreement, depth- and type-matched, pooled [%s vs %s]" % (row.A, row.B),
+            "H1", "%.3f (z %.2f)%s" % (row.pooled_ratio, row.z,
+                                       "  CIRCULAR" if row.circular else ""),
+            f"{R9}/caller_agreement_pooled.csv", "A=='%s' & B=='%s'" % (row.A, row.B),
+            note="DeepScence at random_state=0, a NON-PRIMARY estimator under D-A")
+    for label, p2, col in [("M1", f"{R3}/caller_technical_loading_11sections.csv", "score"),
+                           ("H1", f"{R9}/caller_technical_loading.csv", "caller")]:
+        d2 = pd.read_csv(p2)
+        vc = ("rho_transcript_counts" if "rho_transcript_counts" in d2.columns
+              else "spearman_vs_transcript_counts")
+        for sc in ("tierA_score", "cdkn1a_counts", "senepy_score", "deepscence_score"):
+            v = d2[d2[col] == sc][vc]
+            if len(v):
+                add("Caller depth loading, Spearman(score, transcript counts) [%s]" % sc,
+                    label, "%.4f  (min %.4f, max %.4f, n=%d)"
+                    % (v.median(), v.min(), v.max(), len(v)), p2, "%s=='%s'" % (col, sc))
+    for label, p2, callf in [("M1", f"{R5}/kernel_families.csv", None),
+                             ("H1", f"{RH}/kernel_families.csv", "tierAmg_p95")]:
+        if not os.path.exists(p2):
+            missing("Kernel family AIC win rate, controlled design", label, p2, "not run")
+            continue
+        d2 = pd.read_csv(p2)
+        d2 = d2[d2.design == "ctrl"]
+        w = (d2.family == d2.best_family).groupby(d2.family).mean()
+        add("Kernel family AIC win rate, controlled design", label,
+            "; ".join("%s %.3f" % (k, v) for k, v in w.sort_values(ascending=False).items()),
+            p2, "design=='ctrl'; (family == best_family).mean()")
+    for label, p2 in [("M1", f"{R5}/super_section.csv"), ("H1", f"{RH}/super_section.csv")]:
+        if not os.path.exists(p2):
+            missing("Superposition beats nearest-sender", label, p2, "not run")
+            continue
+        d2 = pd.read_csv(p2)
+        d2 = d2[d2.design == "ctrl"]
+        add("Superposition beats nearest-sender (controlled design)", label,
+            "%.3f of fits; paired block-bootstrap win fraction median %.3f"
+            % ((d2.d_aic < 0).mean(), d2.boot_win_sup.median()), p2, "design=='ctrl'")
+    for label, p2 in [("M1", f"{R5}/proximal_vs_downstream.csv"),
+                      ("H1", f"{RH}/proximal_vs_downstream.csv")]:
+        if not os.path.exists(p2):
+            missing("Proximal vs downstream lambda ratio", label, p2, "not run")
+            continue
+        d2 = pd.read_csv(p2)
+        lo, hi = float(d2.grid_lo.iloc[0]) / float(d2.grid_hi.iloc[0]), \
+            float(d2.grid_hi.iloc[0]) / float(d2.grid_lo.iloc[0])
+        both = int(((d2.ratio_lo <= lo + 1e-6) & (d2.ratio_hi >= hi - 1e-6)).sum())
+        any_ = int(((d2.ratio_lo <= lo + 1e-6) | (d2.ratio_hi >= hi - 1e-6)).sum())
+        add("Proximal vs downstream lambda ratio: identifiability", label,
+            "%d receiver types; CI reaches a grid bound in %d, BOTH bounds in %d"
+            % (len(d2), any_, both), p2, "grid ratio bounds [%.3f, %.3f]" % (lo, hi))
 
     d = pd.DataFrame(ROWS)
     os.makedirs(RH, exist_ok=True)
