@@ -95,8 +95,9 @@ These are the decisions a rewrite could plausibly have got wrong, and what fixed
 each one.
 
 1. **`stage_window` ignores `--calls`.** `logs/m1_window.log` line 2 reads
-   `calls: ['tierA_p95']` — the default — yet `window.csv` has all nine calls
-   × 297 rows. So the stage iterates `ALL9_CALLS` internally.
+   `calls: ['tierA_p95']` — the default — yet `window.csv` has 297 rows =
+   11 sections × 27 (call, module) units = 11 × (6 + 3 × 7), i.e. all nine
+   calls. So the stage iterates `ALL9_CALLS` internally and ignores `--calls`.
 2. **The tile scope is a different fit population.** In `perm_nulls_c1.csv`, the
    `full` rows' `n`, `lam`, `beta_obs` are *identical* to `perm_nulls.csv`, but
    the `tile` rows are not. Testing both readings against 7259 / Hepatocytes /
@@ -116,8 +117,10 @@ each one.
    `(595, 80)`; `logs/phase3_perm_c1b.log` (04:40) ends `(595, 103)`; the
    committed file is `(595, 104)`. 104 = 15 base + 9 whole-section nulls × 8 +
    `beta_obs_full` + 2 tile nulls × 8; 103 is the same without `sender_set`; 80
-   is the same again without the six `_full_` columns. The single column added
-   by 8.7 to this stage is `sender_set`.
+   is the same again without the 23 full-design columns (`beta_obs_full` plus
+   `_full_null_mean` / `_full_sf` for each of the 11 nulls). **The single column
+   8.7 added to this stage is `sender_set`** — which is what
+   `CS_PHASE8_M1_RERUN.md:124` says ("both perm rows record `sender_set`").
 5. **`run_phase3_nulls.py:699`.** `logs/m1_perm_c1_n7.log` carries a
    `RuntimeWarning` citing **line 699** of the lost file for
    `mean=float(np.nanmean(A[:, bi]))`, and `logs/phase3_perm_c1b.log` cites
