@@ -38,10 +38,19 @@ def main():
     ax.set_title("a   the model-selection criterion is flat", loc="left",
                  fontsize=9.5, fontweight="bold")
     ax.legend(fontsize=7.2, loc="lower left", ncol=1)
-    ax.annotate("", xy=(103, 0.0136), xytext=(103, 0.0104),
+    # These three numbers were typed in (0.0104, 0.0136, "77%") against a
+    # 2026-08-20 vintage of `parts/`.  The parts were regenerated on
+    # 2026-08-21 and 575 of the 720 r2 values moved, so the annotation drifted
+    # away from the data the same script was plotting -- and this figure's own
+    # output CSV was the only surviving record of the old state.  Computed now.
+    r2 = d.groupby("cond").r2.median()
+    r2_real, r2_rand = float(r2["real"]), float(r2["N0_perm"])
+    ax.annotate("", xy=(103, r2_real), xytext=(103, r2_rand),
                 arrowprops=dict(arrowstyle="<->", color=PAL.INK2, lw=1.0))
-    ax.text(108, 0.0120, "77% of the explained\nvariance survives full\n"
-            "coordinate randomisation", fontsize=7, va="center", ha="left",
+    ax.text(108, 0.5 * (r2_real + r2_rand),
+            "%.1f%% of the explained\nvariance survives full\n"
+            "coordinate randomisation" % (100 * r2_rand / r2_real),
+            fontsize=7, va="center", ha="left",
             color=PAL.INK2, linespacing=1.5)
     ax.set_xlim(5, 165)
     ax.set_ylim(0, 0.019)
