@@ -11,8 +11,13 @@ either.
 This script measures that directly: real vs fully coordinate-permuted, at the
 cell-pair level and at the cell-type level, on the first tile of every section.
 """
+import os, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import numpy as np, pandas as pd, anndata as ad
 from scipy.stats import spearmanr
+import _shims.np2_compat            # noqa: F401  (MUST precede commot: commot 0.0.3 has
+                                    # `rho = np.Inf` as a default argument and raises at
+                                    # import under the pinned numpy 2.4.6)
 import commot as ct
 import phase4_data as D
 from phase4_tiles import all_tiles

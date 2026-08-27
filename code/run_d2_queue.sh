@@ -1,4 +1,5 @@
 #!/bin/bash
+. /workspace/code/_env.sh   # project interpreter, PATH and BLAS threads (AUDIT_REPRODUCIBILITY B10)
 # Phase 8 task 8.5 / C7-D2 job queue.  Two concurrent DeepScence runs, never more:
 # DeepScence densifies to two n_cells x 4845 float32 tensors plus AnnData copies and
 # five concurrent sections OOM-killed this box during the D1 run (logs/deepscence_d1_2026-08-27.log).

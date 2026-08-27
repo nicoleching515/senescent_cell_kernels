@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+. /workspace/code/_env.sh   # project interpreter, PATH and BLAS threads (AUDIT_REPRODUCIBILITY B10)
 # Pull ONLY the three Xenium analysis files from a GEO sample tarball.
 #
 # Why not just `curl | tar -x`:

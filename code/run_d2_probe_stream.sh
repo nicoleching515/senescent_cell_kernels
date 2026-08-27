@@ -1,4 +1,5 @@
 #!/bin/bash
+. /workspace/code/_env.sh   # project interpreter, PATH and BLAS threads (AUDIT_REPRODUCIBILITY B10)
 # Phase 8 task 8.5 / C7-D2 -- normalisation-probe stream (one section at a time).
 #
 # Scope was retargeted once §6 path 1 (real DCA) came up working: the point of the path-3

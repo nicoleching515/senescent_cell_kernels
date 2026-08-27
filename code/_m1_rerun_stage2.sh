@@ -1,4 +1,5 @@
 #!/bin/bash
+. /workspace/code/_env.sh   # project interpreter, PATH and BLAS threads (AUDIT_REPRODUCIBILITY B10)
 # Phase 8 / task 8.7 -- the sender-definition (N7) axis and the second
 # pre-registered Tier A variant, at 1,000 permutations (master plan Sec 24.3).
 set -x

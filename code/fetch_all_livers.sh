@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+. /workspace/code/_env.sh   # project interpreter, PATH and BLAS threads (AUDIT_REPRODUCIBILITY B10)
 # Sequential fetch of the remaining GSE310392 liver bundles.
 # Sequential, not parallel: avoids hammering NCBI, and avoids a repeat of the
 # quota race that silently truncated the first two downloads.

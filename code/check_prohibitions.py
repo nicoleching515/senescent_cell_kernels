@@ -127,7 +127,11 @@ def r_10_9(p, n):
 
 
 def r_10_10(p, n):
-    if re.search(r'denoise\s*=\s*True', n):
+    # a NUMBER reported from denoise=True, not a mention of the configuration: the rule is
+    # about quoting a single-seed value, so require a numeric literal in the paragraph.
+    # (a version number like "TensorFlow < 2.5" or "CPython 3.8" is not a result: match a
+    #  value in [0,1) or a percentage, which is what every D2 quantity in this project is)
+    if re.search(r'denoise\s*=\s*True', n) and re.search(r'(?<![\w.])0\.\d{2,}|\d+(?:\.\d+)?\s*%', n):
         if not re.search(r'seed|stabilit|jaccard', n, re.I):
             return ('a denoise=True number with no seed-stability companion in the same '
                     'paragraph (section 10.10)')

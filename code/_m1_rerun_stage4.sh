@@ -1,4 +1,5 @@
 #!/bin/bash
+. /workspace/code/_env.sh   # project interpreter, PATH and BLAS threads (AUDIT_REPRODUCIBILITY B10)
 # Phase 8 / task 8.7 -- Phase 5.
 set -x
 cd /workspace/code

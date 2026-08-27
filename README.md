@@ -454,12 +454,51 @@ python3 code/build_genesets.py
 
 ## Environment
 
+There are **two** interpreters in this project, and the difference matters.
+
+**1. The main environment** — a pip venv at `/workspace/envs/sasp311`, Python 3.11,
+described exactly by `requirements.txt` (144 packages; the 21 `==` pins are the
+load-bearing ones):
+
 ```bash
-pip install -r requirements.txt
+python3.11 -m venv /workspace/envs/sasp311
+/workspace/envs/sasp311/bin/pip install -r requirements.txt
 ```
 
-Python 3.11. Developed on 48 cores / 251 GB RAM. The workload is CPU- and
-RAM-bound; no GPU is used at any point.
+Every driver in `code/*.sh` sources `code/_env.sh`, which resolves that
+interpreter (`SASP_PYTHON`), puts it first on `PATH` so a bare `python3` inside a
+driver reaches it too, and **fails loudly if it is missing** rather than falling
+back. Run Python scripts directly the same way:
+
+```bash
+/workspace/envs/sasp311/bin/python code/summarize_phase3.py
+# or:  . code/_env.sh && python3 code/summarize_phase3.py
+```
+
+Do **not** use the system `python3`. On the development container `/usr/bin/python3`
+loads `/usr/local/lib/python3.11/dist-packages`, a *second* complete scientific stack
+of ~249 packages that no manifest here describes and that has been wiped twice. Every
+pin currently matches in both stacks, so nothing has diverged numerically yet — but
+only the venv is described by `requirements.txt`, and only the venv is rebuildable.
+Override with `SASP_PYTHON=/path/to/python` if your environment lives elsewhere.
+
+Eight scripts still read package data by absolute path from the overlay
+(`/usr/local/lib/python3.11/dist-packages/{DeepScence,senepy}/data/...`); see
+`reports/REPRODUCIBILITY_REPAIR.md`. `pip install -r requirements.txt` into a venv does
+**not** populate that path, so those eight need `DeepScence`/`senepy` importable from
+the venv and the constant edited, or the packages present at that path.
+
+**2. The DCA environment** — a separate CPython 3.8 venv, needed only for the D2
+`denoise=True` arm (TensorFlow < 2.5 ships no wheel for 3.11):
+
+```bash
+DCA_ENV_ROOT=/some/scratch bash code/setup_dca_env.sh
+export DCA_ENV_ROOT=/some/scratch      # the D2 runners honour this
+```
+
+Python 3.11 for everything else. Developed on 48 cores / 251 GB RAM (the container
+cgroup, not `free`, is the real ceiling). The workload is CPU- and RAM-bound; no GPU
+is used at any point.
 
 ---
 

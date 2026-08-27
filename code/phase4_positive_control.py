@@ -58,6 +58,9 @@ def _score(f, rng):
 
 
 def _commot(f, seed):
+    import _shims.np2_compat        # noqa: F401  (MUST precede commot -- see the shim's
+                                    # docstring; without it `import commot` raises
+                                    # AttributeError: np.Inf under the pinned numpy)
     import anndata as ad, commot as ct
     X = np.column_stack([f.lig, f.rec]).astype(np.float64)
     A = ad.AnnData(X, obs=pd.DataFrame({"celltype": TYPES[f.code]},

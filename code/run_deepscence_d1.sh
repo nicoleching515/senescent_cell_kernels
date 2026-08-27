@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+. /workspace/code/_env.sh   # project interpreter, PATH and BLAS threads (AUDIT_REPRODUCIBILITY B10)
 # Phase 7 C7/D1: DeepScence on the nine M1 sections that have no scores.
 # 5 concurrent x 20 threads on a 112-core box; each section densifies to
 # <10 GB so peak RSS stays far under the 251 GB ceiling.

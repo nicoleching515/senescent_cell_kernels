@@ -1,4 +1,5 @@
 #!/bin/bash
+. /workspace/code/_env.sh   # project interpreter, PATH and BLAS threads (AUDIT_REPRODUCIBILITY B10)
 # Phase 8 / 8.7 -- final stage: wait for every in-flight job, then summaries and
 # the ONE figure pass.  Waits are on log markers and file mtimes, never on
 # pgrep patterns (which match the supervising shells themselves).

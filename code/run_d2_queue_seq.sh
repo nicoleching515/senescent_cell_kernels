@@ -1,4 +1,5 @@
 #!/bin/bash
+. /workspace/code/_env.sh   # project interpreter, PATH and BLAS threads (AUDIT_REPRODUCIBILITY B10)
 # Phase 8 task 8.5 / C7-D2, SEQUENTIAL runner.
 #
 # Replaces the 2-way parallel run_d2_queue.sh after it OOM-killed a section.  The reason

@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+. /workspace/code/_env.sh   # project interpreter, PATH and BLAS threads (AUDIT_REPRODUCIBILITY B10)
 # Gate for re-cutting phase8-frozen. PI-authorised 2026-08-27, CONDITIONAL on
 # the reconstructed pipeline reproducing the committed results.
 #

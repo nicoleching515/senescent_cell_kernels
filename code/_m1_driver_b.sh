@@ -1,4 +1,5 @@
 #!/bin/bash
+. /workspace/code/_env.sh   # project interpreter, PATH and BLAS threads (AUDIT_REPRODUCIBILITY B10)
 cd /workspace/code
 L=/workspace/logs
 while pgrep -f "run_phase3_nulls.py --stage perm --sections inband --calls tierA_p95" >/dev/null \

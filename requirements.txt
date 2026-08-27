@@ -81,4 +81,25 @@ openpyxl==3.1.5
 # stored results are intact, but they are unverified against these pins.
 #
 # Every import in code/ now resolves except `commot`, which resolves only via
-# code/_shims/np2_compat.py -- by design, see above.
+# code/_shims/np2_compat.py -- by design, see above.  As of 2026-08-27 ALL THREE commot
+# call sites import the shim first (phase4_run.py:66, phase4_commot_mechanism.py,
+# phase4_positive_control.py:_commot); the latter two did not, and could not be run as
+# committed -- phase4_commot_mechanism.py is the sole producer of the Figure 4 mechanism
+# result.  Confirmed by execution: bare `import commot` raises AttributeError: np.Inf,
+# and `import _shims.np2_compat` first makes it succeed.
+
+# --- WHICH INTERPRETER, 2026-08-27 -------------------------------------------
+# This file describes the venv at /workspace/envs/sasp311 (Python 3.11.10, 144 packages).
+# It does NOT describe /usr/bin/python3, whose sys.path is
+# /usr/local/lib/python3.11/dist-packages -- a second, undocumented 249-package stack on
+# the container overlay.  Every tracked driver used to call bare `python3` and therefore
+# ran on the overlay; they now source code/_env.sh, which resolves SASP_PYTHON to the venv
+# and fails loudly if it is absent.  Rebuild with:
+#     python3.11 -m venv /workspace/envs/sasp311
+#     /workspace/envs/sasp311/bin/pip install -r requirements.txt
+# Not pinned here and deliberately so: torch (arrives via DeepScence; the installed build
+# is 2.4.1+cu124, a local version served only from download.pytorch.org, so pip will
+# resolve a different one), esda/libpysal (arrive via commot/pointpats; used only by
+# run_moran_controls.py --validate), setuptools (pkg_resources, needed by DeepScence and
+# senepy; the venv carries 65.5.0 from ensurepip).  The DCA arm is a separate CPython 3.8
+# venv -- see code/setup_dca_env.sh and results/phase8_d2/dca_venv_pip_freeze.txt.
