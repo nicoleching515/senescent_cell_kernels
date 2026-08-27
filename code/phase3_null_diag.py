@@ -34,6 +34,19 @@ CALL = "tierA_p95"
 SEED = 20260820
 
 
+def section_offset(sample: str) -> int:
+    """Per-section seed offset.  For the mouse sample names (`7259_liver_...`) this is
+    `int(sample[:4])`, bit-identical to the pre-Phase-10 rule, so every committed
+    `results/phase3/null_destructiveness.csv` value is reproducible unchanged.  H1's
+    section names (`SPLN07`) are not numeric, so they fall through to a stable
+    deterministic offset derived from the name."""
+    try:
+        return int(sample[:4])
+    except ValueError:
+        import zlib
+        return int(zlib.crc32(sample.encode()) % 100000)
+
+
 def section_rows(sample, call=CALL, n_rep=N_REP, seed=SEED):
     sec = P.Sec(sample)
     xy = sec.coords.astype(float)
@@ -41,7 +54,7 @@ def section_rows(sample, call=CALL, n_rep=N_REP, seed=SEED):
     elig = ~np.isin(sec.celltype, P.EXCLUDE_TYPES + P.EXCLUDE_FROM_SENDERS)
     g = G.Geom(xy, snd, elig)
     tree = g.tree
-    rng = np.random.default_rng(seed + int(sample[:4]))
+    rng = np.random.default_rng(seed + section_offset(sample))
 
     base_all = np.asarray(tree.query_ball_point(xy[snd], WINDOW_UM, workers=-1,
                                                 return_length=True), float) - 1.0

@@ -258,7 +258,8 @@ def _diag_job(sample, call, n_rep, seed):
     VG = V.VarGeom(xy, snd)
     geom = G.Geom(xy, snd, elig)      # only for occ-grid comparability
     tree = geom.tree
-    rng = np.random.default_rng(seed + int(sample[:4]))
+    import phase3_null_diag as _ND
+    rng = np.random.default_rng(seed + _ND.section_offset(sample))
     src = xy[snd]
     base = np.asarray(tree.query_ball_point(src, RN.WINDOW_UM, workers=-1,
                                             return_length=True), float) - 1.0

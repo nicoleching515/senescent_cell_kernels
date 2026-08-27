@@ -187,14 +187,22 @@ ARMS = {
         modules=list(P.MODULES),
         frozen=False,
     ),
-    # H1 is behind the s15 freeze.  Sections and cache are deliberately empty:
-    # they get filled in Phase 9/10, after the tag, by whoever runs Job B.
+    # H1.  Populated in Phase 10 (roadmap item 10.2), after Phase 9's A2/A5 gates
+    # passed.  It stays `frozen=True`, so SASP_H1_UNFROZEN=1 is still required and
+    # running it remains a deliberate act.  The cache is the one Phase 9 built
+    # (`code/h1_prep_cache.py`) and extended in Phase 10 (`code/h1_cache_extend.py`).
+    # PRIMARY CALL: `tierAmg_p95`, the identical Tier A percentile rule at the MERGED
+    # label family -- the family `sasp_phase3.LABELS = "merged"` actually stratifies
+    # receivers on.  Declared post-freeze PI decision; deviation H5,
+    # `reports/CS_PHASE9_H1_AUDIT.md` §9.4.  The frozen-literal fine-label
+    # `tierA_p95` is run alongside as the sensitivity, via `--calls`.
     "h1": dict(
-        label="H1 human spleen (behind the s15 pre-registration freeze)",
-        cache=os.path.join(P.PROC, "cache3_h1"),
-        sections=[],
+        label="H1 human spleen (GSE326743, Xenium Prime Human 5K + 100 addon)",
+        cache="/workspace/data/processed_h1/cache3_h1",
+        sections=["SPLN07", "SPLN14", "SPLN21", "SPLN24",
+                  "SPLN30", "SPLN43", "SPLN44"],
         labels=P.LABELS,
-        primary_call="tierA_p95",
+        primary_call="tierAmg_p95",
         permodule_call="tierApm_p95",
         modules=list(P.MODULES),
         frozen=True,
