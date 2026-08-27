@@ -31,12 +31,23 @@ RESULTS10 = "/workspace/results/phase10_h1"
 os.makedirs(RESULTS10, exist_ok=True)
 P.RESULTS = RESULTS10
 
+# `tierAmg_pNN` IS `tierA_merged_pNN` of PREREG_PHASE8.md decision D-B.  Both spellings
+# are accepted; the short one is used in the Phase-10 output files because
+# `sasp_phase3.Sec.sender_mask` dispatches on the `tierA_p` prefix and a name beginning
+# `tierA_` is one edit away from being read as the fine-label call.  Identical rule,
+# identical flags: `flag_merged_pNN`, written by Phase 9's `h1_callers.pct_flags` at the
+# merged label family and carried into the cache by `code/h1_cache_extend.py`.
+# Phase 9's `results/phase9_h1/a3_prevalence_by_type.csv` spells it `tierA_merged_p95`.
 MERGED_CALLS = ("tierAmg_p90", "tierAmg_p95", "tierAmg_p99")
+MERGED_ALIAS = {"tierA_merged_p90": "tierAmg_p90",
+                "tierA_merged_p95": "tierAmg_p95",
+                "tierA_merged_p99": "tierAmg_p99"}
 
 if not getattr(P.Sec, "_h1_merged_call_shim", False):
     _orig_sender_mask = P.Sec.sender_mask
 
     def sender_mask(self, call, module=None):
+        call = MERGED_ALIAS.get(call, call)
         if call.startswith("tierAmg_p"):
             key = "flag_merged_p" + call[9:]
             if key not in self.z.files:
