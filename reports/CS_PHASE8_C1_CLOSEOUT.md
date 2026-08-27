@@ -299,10 +299,17 @@ Replace the single placeholder row with these three, verbatim:
 > Tier B modules in hepatocytes, with the matched-decoy (N2) curve and the
 > torus-shift null band: the published bounding-box band (grey fill) and two
 > in-tissue bands (dotted) that keep every shifted sender in the section. All
-> three coincide with the observed curve. **(c)** Surviving fraction of β̂ under
-> each null over the 160 reportable fits (positive naive amplitude, spatial block
-> bootstrap CI excluding zero); the ten published nulls above the divider, the
-> nine in-tissue N3/N4 variants below it. **(d)** Median distance to nearest
+> three coincide with the observed curve. The frozen primary null (N3-var /
+> N4-var) has no band here and the panel says so: `perm_curves*.csv` carries no
+> variance-corrected draws, so no per-bin interval for it exists.
+> **(c)** Surviving fraction of β̂ under
+> each null over the **153** reportable fits ***[corrected 2026-08-27 from 160;
+> `CS_PHASE8_TORUS_VAR.md:76`, and the figure's own title reads
+> "n = 153 of 315 fits"]*** (positive naive amplitude, spatial block
+> bootstrap CI excluding zero); the ten published nulls above the first divider,
+> the nine in-tissue N3/N4 variants between the dividers, and below the second
+> divider the **frozen primary** variance-corrected pair, N3-var 0.996
+> [0.975, 1.007] and N4-var 0.985 [0.958, 1.003]. **(d)** Median distance to nearest
 > sender versus sender density against the homogeneous-Poisson slope of −1/2.
 > **(e)** Fraction of shifted senders retaining a real cell within the 100 µm
 > fitting window: the published bounding-box nulls (red) leave **22.8 %** of
@@ -310,18 +317,34 @@ Replace the single placeholder row with these three, verbatim:
 > separately, **35.5 %** and **19.9 %** of them outside the tissue altogether;
 > every in-tissue variant retains
 > 96.6–100 %. **(f)** Median distance each null actually moves a sender, with the
-> median λ̂ (~~12.8 µm~~ **14.7 µm** ***[corrected 2026-08-27; see the widened correction box near the head of this file]***) and the 100 µm window marked: the occupancy-screened nulls
+> median λ̂ (~~12.8 µm~~ **14.7321 µm, IQR [7.0, 50.0] µm, 60 % railed at a grid
+> bound** ***[corrected 2026-08-27; see the widened correction box near the head
+> of this file. The figure itself drew "15.7 µm" — the withdrawn interior-only
+> median — until `code/make_figure2e.py` was written and it was regenerated. The
+> IQR and railing rate now travel with the line inside the panel, because 60 %
+> of the 315 fits sit on a grid bound and a point estimate alone misrepresents
+> that.]***) and the 100 µm window marked: the occupancy-screened nulls
 > at the specified 5 % tolerance move senders *less far than λ̂*, so they are in
 > tissue by being near-identity. **(g)** Surviving fraction, published value (◆)
 > against the corrected variants; N3-swap coincides with N1 (dash-dot line) and
-> is a label permutation, not a torus shift. **(h)** *Pending:* the
-> negative-control-probe kernel (Section 13, test A7) — counts of negative
-> control probes against distance to nearest sender, which must be flat. Requires
-> the H1 arm and is held behind the pre-registration freeze.
+> is a label permutation, not a torus shift. Panels (e), (f) and (g) each carry
+> the frozen primary N3-var / N4-var row in green. **(h)** Section 13 test A7 on
+> the **mouse** arm: negative-control counts against distance to nearest sender,
+> which must be flat. **The two populations in this panel have different
+> scopes and the panel now states both.** The *curve* is six in-band sections,
+> hepatocytes, sender call tierA_p95; the *β/sd amplitudes* beside it are
+> **11 sections × 9 cell types** (`a7_control_probe_fits.csv`), 165 control fits
+> and 1,155 biological fits. The human (H1) half is held behind the
+> pre-registration freeze.
 
-The negative-control-probe slot is the only part of §19's Figure 2 brief not
-delivered, and it is marked pending in the figure, in the caption, in
-`figure2e_data.csv` and in the docstring of `fig2e()`.
+***[Corrected 2026-08-27.]*** Until then this caption read *"**(h)** Pending:
+… Requires the H1 arm"*, while the committed figure's panel h was already
+filled with the M1 result — and the figure's own scope box applied the curve's
+"six in-band sections, hepatocytes" clause to the 11-section × 9-cell-type
+β/sd numbers printed beside it. The mouse half of A7 is DONE; only H1 is
+pending. The figure now has a producer, `code/make_figure2e.py`; the claim in
+the sentence below about "the docstring of `fig2e()`" was false — no such
+function existed anywhere in the repository.
 
 ---
 

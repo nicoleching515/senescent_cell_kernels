@@ -473,16 +473,40 @@ still declares the panel pending if `a7_summary.csv` is absent.
 
 ### 4.5 Proposed caption change for panel h
 
+***[Rewritten 2026-08-27. Every number in the previous version of this caption
+was superseded — nine of them — and it applied ONE scope clause to TWO
+populations. The figure itself already carried the current values; this caption
+did not. `CORRECTIONS.md:1628` records the +0.291/+0.036 → +0.2767/+0.0310 move.
+The superseded text is kept below the replacement.]***
+
 > **(h)** Section 13 test A7 on the mouse arm: negative-control counts (40
 > negative control probes, 609 negative control codewords and 21 genomic
-> controls, pooled and z-scored) against distance to nearest sender, six
-> Test-3-admissible sections, hepatocytes. The raw assay is **not** flat —
-> amplitude −0.070 SD (section-clustered 95 % CI [−0.128, −0.012], p = 0.023), a
-> quarter of the naive Tier B amplitude of +0.291 SD in the same fits — and the
-> matched-decoy contrast does not remove it (−0.061, p = 0.020). The N5 technical
-> covariate block does: +0.007 [−0.011, +0.025], p = 0.41, which excludes the
-> conditioned Tier B amplitude of +0.036 SD. The human half is held behind the
-> pre-registration freeze.
+> controls, pooled and z-scored) against distance to nearest sender. **Two
+> scopes, stated separately:** the *curve* is the six Test-3-admissible
+> sections, hepatocytes, sender call `tierA_p95`; the *amplitudes* below are
+> **11 sections × 9 cell types** (`a7_control_probe_fits.csv`), 165 control fits
+> and 1,155 biological fits. The raw assay is **not** flat — amplitude
+> **−0.0744** SD (section-clustered 95 % CI **[−0.1306, −0.0182]**,
+> **p = 0.0145**), about a quarter of the naive Tier B amplitude of **+0.2767**
+> SD in the same fits — and the matched-decoy contrast does not remove it
+> (**−0.0642**, **p = 0.0124**). The full nuisance design does: N6+N5
+> **+0.0053 [−0.0162, +0.0268]**, **p = 0.595** (N5 alone
+> **+0.0038 [−0.0186, +0.0261]**, **p = 0.715**), which excludes the conditioned
+> Tier B amplitude of **+0.0310** SD. Per control family, naive: negative
+> control probe **−0.0225**, codeword **−0.0604**, genomic control **−0.0307**.
+> The human half is held behind the pre-registration freeze.
+
+<details><summary>Superseded version (pre-2026-08-27)</summary>
+
+> **(h)** … six Test-3-admissible sections, hepatocytes. The raw assay is
+> **not** flat — amplitude −0.070 SD (section-clustered 95 % CI
+> [−0.128, −0.012], p = 0.023), a quarter of the naive Tier B amplitude of
+> +0.291 SD in the same fits — and the matched-decoy contrast does not remove it
+> (−0.061, p = 0.020). The N5 technical covariate block does:
+> +0.007 [−0.011, +0.025], p = 0.41, which excludes the conditioned Tier B
+> amplitude of +0.036 SD.
+
+</details>
 
 ## 5. 8.6 — D3: what re-anchoring is, and what it finds
 
