@@ -1,2 +1,4 @@
-section,scope,n,rho_denoise_False,rho_denoise_True,delta_rho,ratio,sender_jaccard_False_vs_True
-SPLN21,"20,000-cell panel",20000,0.2697,-0.0972,-0.3669,-0.36,0.0304
+section,scope,n,rho_denoise_False,rho_denoise_True,delta_rho,ratio,sender_jaccard_False_vs_True,rho_seed1
+SPLN21,full section,196142,0.3122,0.1017,-0.2104,0.326,0.0164,
+SPLN21,"20,000-cell panel",20000,0.2697,-0.0972,-0.3669,-0.36,0.0304,
+SPLN21,"full section, seed check",196142,0.3122,,,,,0.2308

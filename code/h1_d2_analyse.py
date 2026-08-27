@@ -89,6 +89,32 @@ def main():
                     spearman_r=round(float(spearmanr(v1, v2).statistic), 4),
                     top5_jaccard=round(float((a & b).sum() / max((a | b).sum(), 1)), 4),
                     n_cells_changing_status=int((a ^ b).sum())))
+    # ---- full-section seed check on the FROZEN PRIMARY configuration ------------------
+    # The 20,000-cell panel above could be a small-sample artefact, so the committed
+    # random_state=0 full-section score is compared against a random_state=1 re-run of the
+    # same configuration on the same cells.
+    for section in H.ALL_SECTIONS:
+        p0 = H.PROC + "/deepscence_h1_%s.csv" % section
+        s1 = load("nodn_seed1", section)
+        if s1 is None or not os.path.exists(p0):
+            continue
+        j = pd.read_csv(p0).set_index("cell_id").join(s1, how="inner", rsuffix="_s1")
+        v1 = j.deepscence_score.to_numpy(float); v2 = j.deepscence_score_s1.to_numpy(float)
+        a, b = top5(v1), top5(v2)
+        rows_stab.append(dict(
+            section=section, config="denoise=False, FULL section", seed_a=0, seed_b=1,
+            n=len(j), pearson_r=round(float(pearsonr(v1, v2)[0]), 4),
+            spearman_r=round(float(spearmanr(v1, v2).statistic), 4),
+            top5_jaccard=round(float((a & b).sum() / max((a | b).sum(), 1)), 4),
+            n_cells_changing_status=int((a ^ b).sum())))
+        cells = H.cells_table(section).set_index("cell_id").reindex(j.index)
+        tc = cells.transcript_counts.to_numpy(float)
+        rows_depth.append(dict(section=section, scope="full section, seed check", n=len(j),
+                               rho_denoise_False=round(float(spearmanr(v1, tc).statistic), 4),
+                               rho_denoise_True=None, delta_rho=None, ratio=None,
+                               sender_jaccard_False_vs_True=None,
+                               rho_seed1=round(float(spearmanr(v2, tc).statistic), 4)))
+
     d1 = pd.DataFrame(rows_depth); d2 = pd.DataFrame(rows_stab)
     d1.to_csv(H.RESULTS + "/d2_depth.csv", index=False)
     d2.to_csv(H.RESULTS + "/d2_stability.csv", index=False)
