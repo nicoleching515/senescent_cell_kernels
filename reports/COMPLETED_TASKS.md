@@ -637,7 +637,9 @@ published theoretical prediction against it**, now confirmed empirically.
 
 **Reported against interest, twice:** on real data the direction is the
 *opposite* (N3-tile 0.971 < bbox 0.999; rejection 0.801 < 0.824) and the report
-explains why (tile seams 76 lambda-hat apart) rather than reconciling it away; and
+explains why (tile seams **81** lambda-hat apart at the sourced pooled lambda-hat of
+14.7 um; the "76" this entry recorded rested on the withdrawn 15.7 um) rather than
+reconciling it away; and
 RS_count's own 1/n_i variance assumption was validated on this data (slope
 -0.451 / -0.492 against a predicted -0.5).
 

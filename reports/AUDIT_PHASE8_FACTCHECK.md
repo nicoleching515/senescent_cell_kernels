@@ -528,7 +528,11 @@ Ordered by exposure.
    609 codewords, 21 genomic controls)", and add that the 40 probes alone are flat
    (−0.018, p = 0.18). A reviewer who requests the per-family breakdown — and the
    pre-registration promises one — finds this immediately.
-2. **R3.** "23 % in the void" appears in a proposed Figure 2 caption. Either quote 35 %
+2. **R3.** *(2026-08-27: the caption fix is done everywhere — `CS_PHASE7_C1.md`,
+   `CS_PHASE8_C1_CLOSEOUT.md`, `PHASE8_ROADMAP_STATUS.md`, and finally
+   `CS_PHASE8_TORUS_VAR.md` and `NOVELTY_ASSESSMENT.md` §2.2. Note also that this audit's own
+   N4 retention figure of **8.3 %** predates the 05:58 regeneration; the frozen value is
+   **8.0 %**, `1 − frac_retaining_a_neighbour` = 0.0805.)* "23 % in the void" appears in a proposed Figure 2 caption. Either quote 35 %
    (the occupancy measure) or restate as "23 % lost every real neighbour within 100 µm".
 3. **R2.** Remove `CDKN2B` from `human_only` in `crossarm_geneset_table.json` — the figure
    caption is generated from that field — and complete `mouse_only` to 7 entries. State the

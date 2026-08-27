@@ -25,7 +25,7 @@ re-verified against `results/` where possible.
 This project has twice shipped numbers that turned out to be recalled rather than measured.
 These are the ones that would embarrass the paper now.
 
-## 0.1 λ̂ = 15.7 µm "pooled" — **UNSOURCED**
+## 0.1 λ̂ = 15.7 µm "pooled" — **UNSOURCED — WITHDRAWN 2026-08-27; the value is 14.7 µm**
 
 **Where it appears:** `SASP_Kernel_Master_Plan.md` §30 5.3 ("λ̂ ≈ 15.7 µm pooled, so ≈ 6λ") and
 §29 objection 7; `reports/CS_PHASE8_TORUS_VAR.md` L105, L291, L323; `reports/CORRECTIONS.md`
