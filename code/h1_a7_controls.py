@@ -84,6 +84,8 @@ def _curves(sf, celltype):
 
 
 def _job(sample, call, seed):
+    # loky workers are fresh interpreters; repoint the cache inside the worker too.
+    import h1_sec                      # noqa: F401
     t0 = time.time()
     sf = R.SectionFit(sample, call, seed)
     Y, prov = control_matrix(sf.sec)

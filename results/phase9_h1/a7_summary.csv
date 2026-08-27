@@ -1,0 +1,31 @@
+response,design,design_label,n_fits,n_sections,median_abs_amplitude,median_signed_amplitude,frac_positive,frac_CI_excludes_zero,clustered_mean,clustered_lo,clustered_hi,clustered_p,median_CI_halfwidth,n_dropped_degenerate
+all_controls,base,naive (intercept only),98,7,0.0518,-0.0328,0.296,0.255,-0.0337,-0.053,-0.0145,0.00516,0.0825,0
+all_controls,n6,+N6 neighbour baseline,98,7,0.0513,-0.0316,0.306,0.255,-0.0322,-0.0502,-0.0143,0.00458,0.08,0
+all_controls,n5,+N5 technical covariates,98,7,0.0355,-0.0033,0.49,0.112,-0.0055,-0.0163,0.0053,0.262,0.0834,0
+all_controls,n6n5,+N6+N5 (full nuisance design),98,7,0.0358,-0.0023,0.49,0.112,-0.0051,-0.0156,0.0054,0.28,0.0837,0
+all_controls,n2,N2 matched-decoy contrast,98,7,0.051,-0.0293,0.296,0.235,-0.0331,-0.0515,-0.0148,0.00451,0.083,0
+genomic_control,base,naive (intercept only),98,7,0.0589,-0.0356,0.337,0.235,-0.0296,-0.0532,-0.006,0.0221,0.0817,0
+genomic_control,n6,+N6 neighbour baseline,98,7,0.0563,-0.0337,0.347,0.163,-0.028,-0.0503,-0.0057,0.0219,0.0788,0
+genomic_control,n5,+N5 technical covariates,98,7,0.0387,0.0002,0.5,0.102,-0.0025,-0.0174,0.0125,0.699,0.0838,0
+genomic_control,n6n5,+N6+N5 (full nuisance design),98,7,0.0386,0.0009,0.51,0.102,-0.0021,-0.0168,0.0126,0.735,0.0828,0
+genomic_control,n2,N2 matched-decoy contrast,98,7,0.0583,-0.0337,0.337,0.194,-0.0289,-0.0516,-0.0062,0.0207,0.0816,0
+neg_control_codeword,base,naive (intercept only),88,7,0.0362,-0.0147,0.42,0.114,0.0013,-0.0153,0.0179,0.857,0.0711,10
+neg_control_codeword,n6,+N6 neighbour baseline,88,7,0.0367,-0.0148,0.42,0.114,0.0013,-0.0152,0.0179,0.85,0.0708,10
+neg_control_codeword,n5,+N5 technical covariates,88,7,0.0397,-0.013,0.42,0.068,0.0012,-0.0147,0.0172,0.858,0.076,10
+neg_control_codeword,n6n5,+N6+N5 (full nuisance design),88,7,0.0397,-0.013,0.432,0.068,0.0013,-0.0146,0.0172,0.851,0.0762,10
+neg_control_codeword,n2,N2 matched-decoy contrast,88,7,0.0365,-0.0151,0.42,0.091,0.0006,-0.016,0.0172,0.933,0.0712,10
+neg_control_probe,base,naive (intercept only),98,7,0.0412,-0.0164,0.439,0.163,-0.0118,-0.034,0.0103,0.239,0.0766,0
+neg_control_probe,n6,+N6 neighbour baseline,98,7,0.0415,-0.015,0.439,0.153,-0.0118,-0.0341,0.0105,0.242,0.0767,0
+neg_control_probe,n5,+N5 technical covariates,98,7,0.0346,-0.0059,0.459,0.143,-0.0029,-0.0261,0.0204,0.772,0.0816,0
+neg_control_probe,n6n5,+N6+N5 (full nuisance design),98,7,0.0346,-0.0059,0.449,0.133,-0.0028,-0.0263,0.0206,0.779,0.0809,0
+neg_control_probe,n2,N2 matched-decoy contrast,98,7,0.0417,-0.0161,0.439,0.153,-0.012,-0.034,0.0099,0.229,0.0778,0
+neg_probe_rate,base,naive (intercept only),98,7,0.0414,-0.0176,0.418,0.133,-0.0095,-0.0271,0.0082,0.238,0.0726,0
+neg_probe_rate,n6,+N6 neighbour baseline,98,7,0.0413,-0.0172,0.418,0.122,-0.0094,-0.0271,0.0083,0.242,0.0732,0
+neg_probe_rate,n5,+N5 technical covariates,98,7,0.0329,0.0014,0.51,0.112,0.0013,-0.0185,0.0212,0.873,0.0737,0
+neg_probe_rate,n6n5,+N6+N5 (full nuisance design),98,7,0.0328,0.0021,0.51,0.112,0.0013,-0.0186,0.0213,0.874,0.0737,0
+neg_probe_rate,n2,N2 matched-decoy contrast,98,7,0.0418,-0.018,0.418,0.122,-0.0094,-0.0269,0.0082,0.239,0.0735,0
+BIOLOGICAL MODULES (reference),base,naive (intercept only),686,7,0.0977,0.0432,0.596,0.491,0.0392,0.0052,0.0732,0.0304,0.0965,0
+BIOLOGICAL MODULES (reference),n6,+N6 neighbour baseline,686,7,0.0697,0.0329,0.614,0.386,0.0269,0.0078,0.046,0.0136,0.0837,0
+BIOLOGICAL MODULES (reference),n5,+N5 technical covariates,686,7,0.0512,0.0153,0.571,0.21,0.0173,0.0006,0.0339,0.0442,0.0845,0
+BIOLOGICAL MODULES (reference),n6n5,+N6+N5 (full nuisance design),686,7,0.0459,0.0139,0.574,0.198,0.0147,0.0015,0.0279,0.0344,0.0805,0
+BIOLOGICAL MODULES (reference),n2,N2 matched-decoy contrast,686,7,0.0931,0.0427,0.596,0.481,0.0367,0.0045,0.0689,0.0315,0.0952,0

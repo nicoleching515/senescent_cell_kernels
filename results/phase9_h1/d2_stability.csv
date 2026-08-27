@@ -1,0 +1,7 @@
+section,config,seed_a,seed_b,n,pearson_r,spearman_r,top5_jaccard,n_cells_changing_status
+SPLN21,denoise=True,0,1,20000,0.3125,0.3039,0.0444,1830
+SPLN21,denoise=True,0,2,20000,0.2848,0.3305,0.051,1806
+SPLN21,denoise=True,1,2,20000,0.171,0.165,0.0482,1816
+SPLN21,denoise=False,0,1,20000,0.3829,0.3282,0.2006,1327
+SPLN21,denoise=False,0,2,20000,0.2565,0.2744,0.1788,1392
+SPLN21,denoise=False,1,2,20000,0.7128,0.7121,0.3683,921

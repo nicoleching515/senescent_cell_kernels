@@ -1,4 +1,46 @@
 section,our_label_set,our_label,n,modal_depositor_L3,modal_share,second,second_share
+SPLN07,cell_type,CD4 T cells,20146,T cells,0.4299,"gdT cells, NK cells, and T cells",0.1528
+SPLN07,cell_type,Endothelial cells,39354,Sinusoidal endothelial cells (littoral cells),0.7528,Arterial endothelial cells (KDR+ CD34+),0.0757
+SPLN07,cell_type,Erythroid cells,10247,Erythroid,0.7652,Sinusoidal endothelial cells (littoral cells),0.0531
+SPLN07,cell_type,Fibroblasts,22982,Red pulp fibroblasts,0.5973,T cell zone reticular cells CCL21+ CCL19+,0.1032
+SPLN07,cell_type,Follicular B cells,37034,B cells,0.6794,Smooth muscle,0.0488
+SPLN07,cell_type,Low_quality,19964,Low quality,0.2956,B cells,0.1031
+SPLN07,cell_type,Megakaryocytes,684,Low quality,0.2354,Red pulp fibroblasts,0.1754
+SPLN07,cell_type,Monocytes,3726,Monocytes,0.5931,Red pulp macrophages,0.2448
+SPLN07,cell_type,NK cells,7966,NK cells,0.6886,"gdT cells, NK cells, and T cells",0.1637
+SPLN07,cell_type,Neutrophils,24322,Neutrophils,0.323,Low quality,0.2267
+SPLN07,cell_type,Plasma cells,4735,Plasma cells,0.9189,T cells,0.015
+SPLN07,cell_type,Red pulp macrophages,31667,Red pulp macrophages,0.7064,Red pulp fibroblasts,0.0495
+SPLN07,cell_type,Smooth muscle / capsule,4115,Vascular smooth muscle cells,0.7043,Smooth muscle,0.1259
+SPLN07,cell_type,Unknown,411,"Germinal center B cells, proliferating",0.7372,Plasma cells,0.0657
+SPLN07,cell_type_merged,B cells,37034,B cells,0.6794,Smooth muscle,0.0488
+SPLN07,cell_type_merged,Endothelial,39354,Sinusoidal endothelial cells (littoral cells),0.7528,Arterial endothelial cells (KDR+ CD34+),0.0757
+SPLN07,cell_type_merged,Erythroid cells,10247,Erythroid,0.7652,Sinusoidal endothelial cells (littoral cells),0.0531
+SPLN07,cell_type_merged,Low_quality,19964,Low quality,0.2956,B cells,0.1031
+SPLN07,cell_type_merged,Megakaryocytes,684,Low quality,0.2354,Red pulp fibroblasts,0.1754
+SPLN07,cell_type_merged,Mono/Mac/DC,35393,Red pulp macrophages,0.6578,Monocytes,0.0647
+SPLN07,cell_type_merged,Neutrophils,24322,Neutrophils,0.323,Low quality,0.2267
+SPLN07,cell_type_merged,Plasma cells,4735,Plasma cells,0.9189,T cells,0.015
+SPLN07,cell_type_merged,Stromal,27097,Red pulp fibroblasts,0.5188,Vascular smooth muscle cells,0.1181
+SPLN07,cell_type_merged,T/NK cells,28112,T cells,0.3111,NK cells,0.2115
+SPLN07,cell_type_merged,Unknown,411,"Germinal center B cells, proliferating",0.7372,Plasma cells,0.0657
+SPLN14,cell_type,CD8 T cells,457,"Germinal center B cells, proliferating",0.3042,Sinusoidal endothelial cells (littoral cells),0.2407
+SPLN14,cell_type,Endothelial cells,50036,Sinusoidal endothelial cells (littoral cells),0.8589,Low quality,0.0416
+SPLN14,cell_type,Fibroblastic reticular cells,7210,Arterial endothelial cells (KDR+ CD34+),0.676,Sinusoidal endothelial cells (littoral cells),0.1014
+SPLN14,cell_type,Fibroblasts,23542,Red pulp fibroblasts,0.5857,Low quality,0.1443
+SPLN14,cell_type,Follicular B cells,51591,B cells,0.6695,Low quality,0.0524
+SPLN14,cell_type,Monocytes,6841,Monocytes,0.3166,Red pulp macrophages,0.2543
+SPLN14,cell_type,Plasma cells,15928,Plasma cells,0.8697,"Germinal center B cells, proliferating",0.0271
+SPLN14,cell_type,Red pulp macrophages,27301,Red pulp macrophages,0.7382,Low quality,0.0632
+SPLN14,cell_type,Smooth muscle / capsule,10596,Vascular smooth muscle cells,0.2013,Smooth muscle,0.1971
+SPLN14,cell_type,Unknown,89172,Low quality,0.3175,T cells,0.1347
+SPLN14,cell_type_merged,B cells,51591,B cells,0.6695,Low quality,0.0524
+SPLN14,cell_type_merged,Endothelial,50036,Sinusoidal endothelial cells (littoral cells),0.8589,Low quality,0.0416
+SPLN14,cell_type_merged,Mono/Mac/DC,34142,Red pulp macrophages,0.6412,Low quality,0.0712
+SPLN14,cell_type_merged,Plasma cells,15928,Plasma cells,0.8697,"Germinal center B cells, proliferating",0.0271
+SPLN14,cell_type_merged,Stromal,41348,Red pulp fibroblasts,0.3703,Arterial endothelial cells (KDR+ CD34+),0.1221
+SPLN14,cell_type_merged,T/NK cells,39151,T cells,0.2696,Low quality,0.2259
+SPLN14,cell_type_merged,Unknown,50478,Low quality,0.3862,B cells,0.2076
 SPLN21,cell_type,Endothelial cells,31609,Sinusoidal endothelial cells (littoral cells),0.7824,Red pulp fibroblasts,0.0444
 SPLN21,cell_type,Erythroid cells,584,Erythroid,0.8116,Sinusoidal endothelial cells (littoral cells),0.0462
 SPLN21,cell_type,Fibroblasts,18932,Red pulp fibroblasts,0.6755,Smooth muscle,0.1099
@@ -22,3 +64,91 @@ SPLN21,cell_type_merged,Plasma cells,6440,Plasma cells,0.8017,"Germinal center B
 SPLN21,cell_type_merged,Stromal,25247,Red pulp fibroblasts,0.5173,Smooth muscle,0.1046
 SPLN21,cell_type_merged,T/NK cells,26581,"gdT cells, NK cells, and T cells",0.2683,T cells,0.2662
 SPLN21,cell_type_merged,Unknown,941,White pulp macrophages,0.8002,Low quality,0.0882
+SPLN24,cell_type,CD4 T cells,31947,T cells,0.6121,T cell zone reticular cells CCL21+ CCL19+,0.1489
+SPLN24,cell_type,Endothelial cells,61790,Sinusoidal endothelial cells (littoral cells),0.8415,"gdT cells, NK cells, and T cells",0.0329
+SPLN24,cell_type,Fibroblasts,29356,Red pulp fibroblasts,0.7981,"gdT cells, NK cells, and T cells",0.0419
+SPLN24,cell_type,Follicular B cells,69666,B cells,0.6847,Plasma cells,0.0762
+SPLN24,cell_type,Germinal centre B cells,6659,"Germinal center B cells, proliferating",0.6773,Plasma cells,0.1005
+SPLN24,cell_type,Low_quality,43231,B cells,0.1585,Low quality,0.1212
+SPLN24,cell_type,Monocytes,5018,Monocytes,0.8589,Red pulp macrophages,0.0526
+SPLN24,cell_type,NK cells,41189,"gdT cells, NK cells, and T cells",0.4034,NK cells,0.2608
+SPLN24,cell_type,Neutrophils,11959,Neutrophils,0.5804,Low quality,0.0728
+SPLN24,cell_type,Plasma cells,9416,Plasma cells,0.8899,Red pulp fibroblasts,0.0207
+SPLN24,cell_type,Red pulp macrophages,21872,Red pulp macrophages,0.5532,Red pulp fibroblasts,0.1402
+SPLN24,cell_type,Smooth muscle / capsule,15830,Arterial endothelial cells (KDR+ CD34+),0.4506,Vascular smooth muscle cells,0.254
+SPLN24,cell_type,Unknown,27762,B cells,0.2564,White pulp macrophages,0.2202
+SPLN24,cell_type,cDC1,3884,Conventional dendritic cells,0.5165,T cell zone reticular cells CXCL9+,0.1213
+SPLN24,cell_type,cDC2,13623,Conventional dendritic cells,0.5577,Red pulp macrophages,0.1125
+SPLN24,cell_type_merged,B cells,83711,B cells,0.5807,White pulp macrophages,0.0822
+SPLN24,cell_type_merged,Endothelial,61790,Sinusoidal endothelial cells (littoral cells),0.8415,"gdT cells, NK cells, and T cells",0.0329
+SPLN24,cell_type_merged,Low_quality,43231,B cells,0.1585,Low quality,0.1212
+SPLN24,cell_type_merged,Mono/Mac/DC,44397,Red pulp macrophages,0.3177,Conventional dendritic cells,0.2196
+SPLN24,cell_type_merged,Neutrophils,11959,Neutrophils,0.5804,Low quality,0.0728
+SPLN24,cell_type_merged,Plasma cells,9416,Plasma cells,0.8899,Red pulp fibroblasts,0.0207
+SPLN24,cell_type_merged,Stromal,45186,Red pulp fibroblasts,0.5372,Arterial endothelial cells (KDR+ CD34+),0.161
+SPLN24,cell_type_merged,T/NK cells,73136,T cells,0.387,"gdT cells, NK cells, and T cells",0.2337
+SPLN24,cell_type_merged,Unknown,20376,B cells,0.3268,B cell zone reticular cells CXCL13+MADCAM1+,0.1894
+SPLN30,cell_type,CD4 T cells,37997,T cells,0.356,Low quality,0.3114
+SPLN30,cell_type,Endothelial cells,49023,Sinusoidal endothelial cells (littoral cells),0.7853,Arterial endothelial cells (KDR+ CD34+),0.0868
+SPLN30,cell_type,Fibroblasts,3939,T cell zone reticular cells CCL21+ CCL19+,0.6471,B cells,0.1257
+SPLN30,cell_type,Follicular B cells,61482,B cells,0.6665,Low quality,0.0854
+SPLN30,cell_type,Monocytes,3809,Monocytes,0.7543,Red pulp macrophages,0.12
+SPLN30,cell_type,Neutrophils,1287,Metamyelocyte/Band Neutrophils DEFA1+,0.4755,Promyelocyte,0.3201
+SPLN30,cell_type,Plasma cells,16431,Plasma cells,0.7278,"Germinal center B cells, proliferating",0.0476
+SPLN30,cell_type,Red pulp macrophages,31747,Red pulp macrophages,0.7264,Low quality,0.0643
+SPLN30,cell_type,Smooth muscle / capsule,28033,Red pulp fibroblasts,0.45,Smooth muscle,0.166
+SPLN30,cell_type,Unknown,57767,Low quality,0.3811,NK cells,0.1544
+SPLN30,cell_type_merged,B cells,61482,B cells,0.6665,Low quality,0.0854
+SPLN30,cell_type_merged,Endothelial,49023,Sinusoidal endothelial cells (littoral cells),0.7853,Arterial endothelial cells (KDR+ CD34+),0.0868
+SPLN30,cell_type_merged,Mono/Mac/DC,35556,Red pulp macrophages,0.6615,Monocytes,0.0944
+SPLN30,cell_type_merged,Neutrophils,1287,Metamyelocyte/Band Neutrophils DEFA1+,0.4755,Promyelocyte,0.3201
+SPLN30,cell_type_merged,Plasma cells,16431,Plasma cells,0.7278,"Germinal center B cells, proliferating",0.0476
+SPLN30,cell_type_merged,Stromal,31972,Red pulp fibroblasts,0.4004,Smooth muscle,0.1512
+SPLN30,cell_type_merged,T/NK cells,37997,T cells,0.356,Low quality,0.3114
+SPLN30,cell_type_merged,Unknown,57767,Low quality,0.3811,NK cells,0.1544
+SPLN43,cell_type,Endothelial cells,56471,Sinusoidal endothelial cells (littoral cells),0.8001,Low quality,0.0577
+SPLN43,cell_type,Fibroblastic reticular cells,5695,Arterial endothelial cells (KDR+ CD34+),0.768,Low quality,0.0737
+SPLN43,cell_type,Fibroblasts,21564,Red pulp fibroblasts,0.5621,Smooth muscle,0.14
+SPLN43,cell_type,Follicular B cells,45873,B cells,0.6555,Smooth muscle,0.0556
+SPLN43,cell_type,Low_quality,28169,Low quality,0.3646,Red pulp macrophages,0.1572
+SPLN43,cell_type,Neutrophils,2687,Promyelocyte,0.524,Metamyelocyte/Band Neutrophils DEFA1+,0.4403
+SPLN43,cell_type,Plasma cells,9860,Plasma cells,0.7308,"Germinal center B cells, proliferating",0.1281
+SPLN43,cell_type,Red pulp macrophages,25451,Red pulp macrophages,0.6714,Monocytes,0.1108
+SPLN43,cell_type,Smooth muscle / capsule,1496,Vascular smooth muscle cells,0.887,Smooth muscle,0.0976
+SPLN43,cell_type,Unknown,59456,Low quality,0.2998,Neutrophils,0.1997
+SPLN43,cell_type,cDC2,13601,Low quality,0.4843,Red pulp macrophages,0.16
+SPLN43,cell_type_merged,B cells,45873,B cells,0.6555,Smooth muscle,0.0556
+SPLN43,cell_type_merged,Endothelial,56471,Sinusoidal endothelial cells (littoral cells),0.8001,Low quality,0.0577
+SPLN43,cell_type_merged,Low_quality,28169,Low quality,0.3646,Red pulp macrophages,0.1572
+SPLN43,cell_type_merged,Mono/Mac/DC,39052,Red pulp macrophages,0.4933,Low quality,0.1953
+SPLN43,cell_type_merged,Neutrophils,2687,Promyelocyte,0.524,Metamyelocyte/Band Neutrophils DEFA1+,0.4403
+SPLN43,cell_type_merged,Plasma cells,9860,Plasma cells,0.7308,"Germinal center B cells, proliferating",0.1281
+SPLN43,cell_type_merged,Stromal,28755,Red pulp fibroblasts,0.4266,Arterial endothelial cells (KDR+ CD34+),0.158
+SPLN43,cell_type_merged,T/NK cells,24813,T cells,0.3238,Low quality,0.1762
+SPLN43,cell_type_merged,Unknown,34643,Low quality,0.3884,Neutrophils,0.3337
+SPLN44,cell_type,Endothelial cells,53815,Sinusoidal endothelial cells (littoral cells),0.7604,Neutrophils,0.0669
+SPLN44,cell_type,Erythroid cells,6476,Erythroid,0.8956,Metamyelocyte/Band Neutrophils DEFA1+,0.0185
+SPLN44,cell_type,Fibroblasts,18170,Red pulp fibroblasts,0.7879,Marginal zone reticular cells CXCL13+NGFR+MADCAM1-,0.0763
+SPLN44,cell_type,Follicular B cells,40376,B cells,0.6853,Red pulp macrophages,0.0475
+SPLN44,cell_type,Low_quality,26112,Low quality,0.2806,Neutrophils,0.1534
+SPLN44,cell_type,Megakaryocytes,760,Low quality,0.2658,Red pulp fibroblasts,0.1592
+SPLN44,cell_type,Monocytes,18272,Red pulp macrophages,0.4344,Monocytes,0.3729
+SPLN44,cell_type,NK cells,5894,NK cells,0.8378,"gdT cells, NK cells, and T cells",0.0762
+SPLN44,cell_type,Neutrophils,6339,Promyelocyte,0.5897,Metamyelocyte/Band Neutrophils DEFA1+,0.1693
+SPLN44,cell_type,Plasma cells,12423,Plasma cells,0.8982,Metamyelocyte/Band Neutrophils DEFA1+,0.011
+SPLN44,cell_type,Red pulp macrophages,29565,Red pulp macrophages,0.678,White pulp macrophages,0.0598
+SPLN44,cell_type,Smooth muscle / capsule,14117,Arterial endothelial cells (KDR+ CD34+),0.3144,Vascular smooth muscle cells,0.2673
+SPLN44,cell_type,Unknown,60681,Neutrophils,0.4513,T cells,0.1541
+SPLN44,cell_type,cDC1,1270,"Germinal center B cells, proliferating",0.6331,Conventional dendritic cells,0.1732
+SPLN44,cell_type,cDC2,5553,Low quality,0.5754,Red pulp macrophages,0.1032
+SPLN44,cell_type_merged,B cells,40376,B cells,0.6853,Red pulp macrophages,0.0475
+SPLN44,cell_type_merged,Endothelial,53815,Sinusoidal endothelial cells (littoral cells),0.7604,Neutrophils,0.0669
+SPLN44,cell_type_merged,Erythroid cells,6476,Erythroid,0.8956,Metamyelocyte/Band Neutrophils DEFA1+,0.0185
+SPLN44,cell_type_merged,Low_quality,26112,Low quality,0.2806,Neutrophils,0.1534
+SPLN44,cell_type_merged,Megakaryocytes,760,Low quality,0.2658,Red pulp fibroblasts,0.1592
+SPLN44,cell_type_merged,Mono/Mac/DC,54660,Red pulp macrophages,0.5226,Monocytes,0.1284
+SPLN44,cell_type_merged,Neutrophils,6339,Promyelocyte,0.5897,Metamyelocyte/Band Neutrophils DEFA1+,0.1693
+SPLN44,cell_type_merged,Plasma cells,12423,Plasma cells,0.8982,Metamyelocyte/Band Neutrophils DEFA1+,0.011
+SPLN44,cell_type_merged,Stromal,32287,Red pulp fibroblasts,0.4613,Arterial endothelial cells (KDR+ CD34+),0.1394
+SPLN44,cell_type_merged,T/NK cells,33481,"gdT cells, NK cells, and T cells",0.2841,T cells,0.2782
+SPLN44,cell_type_merged,Unknown,33094,Neutrophils,0.8151,Red pulp fibroblasts,0.0412

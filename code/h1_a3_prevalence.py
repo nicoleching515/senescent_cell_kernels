@@ -41,6 +41,15 @@ def rows_for(section):
     calls = {}
     for q in (90, 95, 99):
         calls["tierA_p%d" % q] = sen["sender_flag_p%d" % q].to_numpy(bool)
+        # DECLARED SENSITIVITY, not a new threshold.  The frozen Tier A call thresholds
+        # WITHIN FINE cell types (phase2_downstream.py) while the frozen receiver
+        # stratification uses MERGED labels (sasp_phase3.LABELS = 'merged').  A cluster that
+        # is 'Unknown' at the fine level but resolved at the merged level is therefore an
+        # eligible cell that can never be called a sender.  On H1 that removes whole T/NK
+        # compartments.  `tierA_merged_pNN` is the IDENTICAL percentile rule applied at the
+        # merged label family; both are reported.
+        if "sender_flag_merged_p%d" % q in sen:
+            calls["tierA_merged_p%d" % q] = sen["sender_flag_merged_p%d" % q].to_numpy(bool)
         if "senepy_flag_p%d" % q in sen:
             calls["senepy_p%d" % q] = sen["senepy_flag_p%d" % q].to_numpy(bool)
     calls["cdkn1a_pos"] = (sen.cdkn1a_counts > 0).to_numpy()

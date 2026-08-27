@@ -1,0 +1,22 @@
+A7 -- negative-control kernel, HUMAN arm (H1, GSE326743), 7 sections x 2 sender calls
+490 control fits, 686 biological-module fits, same estimator (WINDOW=100um, 40-point lambda grid, MIN_RECEIVERS=2000, 400-replicate spatial block bootstrap).
+
+PRIMARY pre-registered technical null: the 40 NEGATIVE CONTROL PROBES (`neg_control_probe`).  `all_controls` is the POOLED control feature set and must never be called 'negative control probes'.
+
+Control-feature sparsity (why power is the binding constraint):
+  all_controls           mean 0.0269 counts/cell, 2.47% of cells non-zero
+  genomic_control        mean 0.0243 counts/cell, 2.24% of cells non-zero
+  neg_control_codeword   mean 0.0007 counts/cell, 0.07% of cells non-zero
+  neg_control_probe      mean 0.0018 counts/cell, 0.18% of cells non-zero
+  neg_probe_rate         mean 0.0000 counts/cell, 0.18% of cells non-zero
+
+naive (intercept only)         PRIMARY 40 probes: -0.0118 [-0.0340, +0.0103] p=0.239 | pooled controls |beta|/sd med 0.0414 | modules 0.0977 (CI excl 0: 0.49)
++N6 neighbour baseline         PRIMARY 40 probes: -0.0118 [-0.0341, +0.0105] p=0.242 | pooled controls |beta|/sd med 0.0415 | modules 0.0697 (CI excl 0: 0.39)
++N5 technical covariates       PRIMARY 40 probes: -0.0029 [-0.0261, +0.0204] p=0.772 | pooled controls |beta|/sd med 0.0355 | modules 0.0512 (CI excl 0: 0.21)
++N6+N5 (full nuisance design)  PRIMARY 40 probes: -0.0028 [-0.0263, +0.0206] p=0.779 | pooled controls |beta|/sd med 0.0358 | modules 0.0459 (CI excl 0: 0.20)
+N2 matched-decoy contrast      PRIMARY 40 probes: -0.0120 [-0.0340, +0.0099] p=0.229 | pooled controls |beta|/sd med 0.0418 | modules 0.0931 (CI excl 0: 0.48)
+
+Smallest amplitude one A7 fit could resolve (median CI half-width): 0.0766 SD naive, 0.0809 SD conditioned.
+Biological module amplitude to be ruled out: 0.0977 SD naive, 0.0459 SD conditioned.
+
+VERDICT on the pre-registered primary response (40 negative control probes): FLAT -- the section-clustered mean includes zero under both the naive and the full N6+N5 design.

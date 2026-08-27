@@ -1,0 +1,2 @@
+section,scope,n,rho_denoise_False,rho_denoise_True,delta_rho,ratio,sender_jaccard_False_vs_True
+SPLN21,"20,000-cell panel",20000,0.2697,-0.0972,-0.3669,-0.36,0.0304

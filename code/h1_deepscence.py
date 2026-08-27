@@ -32,9 +32,16 @@ CG = "/sys/fs/cgroup/"
 
 
 def headroom_gb():
-    cur = int(open(CG + "memory.current").read())
+    """Headroom against ANONYMOUS memory, not `memory.current`.
+
+    `memory.current` includes reclaimable page cache -- reading seven 25-120 MB .h5 files and
+    writing caches leaves several GB of it -- so budgeting against it under-reports the real
+    headroom and refuses sections that fit.  The binding quantity is `anon` in memory.stat.
+    """
+    anon = int([l.split()[1] for l in open(CG + "memory.stat")
+                if l.startswith("anon ")][0])
     mx = int(open(CG + "memory.max").read())
-    return (mx - cur) / 2 ** 30, mx / 2 ** 30
+    return (mx - anon) / 2 ** 30, mx / 2 ** 30
 
 
 def run(section, subsample=None, factor=5.0, force=False):
@@ -80,8 +87,10 @@ def run(section, subsample=None, factor=5.0, force=False):
                    anchor="published CDKN1A", panel="native human, no ortholog remap",
                    log={k: (v.tolist() if hasattr(v, "tolist") else v)
                         for k, v in res.uns.get("log", {}).items()},
+                   
                    cgroup_peak_gb=round(peak, 1) if peak else None),
-              open(H.PROC + "/deepscence_meta_h1_%s.json" % section, "w"), indent=1)
+              open(H.PROC + "/deepscence_meta_h1_%s.json" % section, "w"), indent=1,
+              default=str)
     print("wrote %s (%d cells, %.1f min)" % (os.path.basename(out), A.n_obs, mins), flush=True)
 
 

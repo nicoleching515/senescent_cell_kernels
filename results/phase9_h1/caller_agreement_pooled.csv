@@ -1,0 +1,11 @@
+A,B,n_sections,n_both,exp,var,above_chance,pooled_ratio,z,circular
+cdkn1a_counts,abs_deepscence_score,7,289,996.13,927.3285409999999,2,0.29,-23.22,False
+deepscence_score,abs_deepscence_score,7,5748,2777.86,2526.848168,2,2.069,59.09,False
+deepscence_score,cdkn1a_counts,7,8455,1313.65,1215.608377,7,6.436,204.83,True
+senepy_score,abs_deepscence_score,7,2656,2661.68,2421.008071,4,0.998,-0.12,False
+senepy_score,cdkn1a_counts,7,1906,1266.12,1171.402631,7,1.505,18.7,False
+senepy_score,deepscence_score,7,3939,3603.06,3253.401994,6,1.093,5.89,False
+tierA_score,abs_deepscence_score,7,3077,2791.1099999999997,2538.3216239999997,5,1.102,5.67,False
+tierA_score,cdkn1a_counts,7,1424,1317.6,1219.114287,5,1.081,3.05,False
+tierA_score,deepscence_score,7,6021,3757.49,3392.730918,6,1.602,38.86,False
+tierA_score,senepy_score,7,3166,3620.99,3268.6939759999996,0,0.874,-7.96,False
