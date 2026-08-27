@@ -11,7 +11,12 @@ non-zero if any has drifted — **28 checks, 0 failed**. It exists because this 
 repeatedly found its own written numbers not to match the files behind them
 (`reports/AUDIT_PHASE8_FACTCHECK.md`).
 New code is `code/h1_*.py`; new outputs are `results/phase9_h1/` and `data/processed_h1/`.
-Nothing under `results/phase3/`, `figures/`, `genesets/` or `data/processed/` was written.
+**No Phase-9 producer writes to `results/phase3/`, `figures/`, `genesets/` or `data/processed/`**,
+and their contents are unchanged (`git status` clean for all four; `data/processed/` and
+`genesets/` file mtimes all predate this session). A concurrent documentation agent regenerated
+some `results/phase3/*_data.csv` and re-stamped `figures/figure4.pdf` during this session — those
+are not Phase 9's and `code/check_figures_guard.py` reports **`OK: all 52 committed figures
+match`** either way.
 
 ---
 
@@ -32,8 +37,10 @@ Nothing under `results/phase3/`, `figures/`, `genesets/` or `data/processed/` wa
 to Phase 10.
 
 **Reported against interest, the four things that went worst:**
-1. **A6's covariate does not validate cleanly** (§7). It is the spleen analogue of liver zonation
-   and it is weaker than liver zonation was.
+1. **A6's covariate does not validate cleanly** (§7). Its independent check has the wrong sign in
+   2 of 7 sections. M1's own equivalent check ranged −0.085 to +0.343 over 11 sections, so H1 is
+   *comparable* to M1 rather than worse — but neither is a strong validation and neither should be
+   presented as one.
 2. **Job B recovers 10–15 of 23 labels per section and the label set is section-dependent**
    (§9). Against the depositors' own 25-label annotation the agreement is **ARI 0.35–0.45**
    (0.55–0.66 on cells neither side calls low-quality). Our fine labels lose the T-cell
