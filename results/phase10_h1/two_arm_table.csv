@@ -57,24 +57,45 @@ lambda-hat railed at a grid bound,H1 (tierA_p95),full,"74.1 % (88 at the 7 um fl
 "SF, C1 N4_tile (tile scope)",M1,full,"0.9243  IQR [0.8346, 1.0489]  n=136",/workspace/results/phase3/perm_nulls_c1.csv,call=='tierA_p95' & scope=='tile' ; merged onto the reportable fit key,
 "SF, N3_var",M1,full,"0.9960  IQR [0.9754, 1.0074]  n=153",/workspace/results/phase3/perm_nulls_var.csv,call=='tierA_p95' & scope=='full' ; merged onto the reportable fit key,
 "SF, N4_var",M1,full,"0.9851  IQR [0.9581, 1.0033]  n=153",/workspace/results/phase3/perm_nulls_var.csv,call=='tierA_p95' & scope=='full' ; merged onto the reportable fit key,
-"SF, N1",H1 (tierAmg_p95),full,NOT_RUN,/workspace/results/phase10_h1/perm_nulls.csv,,producer not run
-"SF, N3",H1 (tierAmg_p95),full,NOT_RUN,/workspace/results/phase10_h1/perm_nulls.csv,,producer not run
-"SF, N4",H1 (tierAmg_p95),full,NOT_RUN,/workspace/results/phase10_h1/perm_nulls.csv,,producer not run
-"SF, C1 N3_tile",H1 (tierAmg_p95),full,NOT_RUN,/workspace/results/phase10_h1/perm_nulls_c1.csv,,producer not run
-"SF, C1 N4_tile",H1 (tierAmg_p95),full,NOT_RUN,/workspace/results/phase10_h1/perm_nulls_c1.csv,,producer not run
+"SF, C1 N3_orig",M1,full,"1.0011  IQR [0.9915, 1.0079]  n=153",/workspace/results/phase3/perm_nulls_c1.csv,call=='tierA_p95' & scope=='full' ; merged onto the reportable fit key,
+"SF, C1 N3_occ",M1,full,"0.3024  IQR [0.0000, 0.7338]  n=153",/workspace/results/phase3/perm_nulls_c1.csv,call=='tierA_p95' & scope=='full' ; merged onto the reportable fit key,
+"SF, C1 N3_swap",M1,full,"0.6948  IQR [0.3920, 0.8721]  n=153",/workspace/results/phase3/perm_nulls_c1.csv,call=='tierA_p95' & scope=='full' ; merged onto the reportable fit key,
+"SF, C1 N3_snap",M1,full,"0.9934  IQR [0.9499, 1.0166]  n=153",/workspace/results/phase3/perm_nulls_c1.csv,call=='tierA_p95' & scope=='full' ; merged onto the reportable fit key,
+"SF, C1 N4_orig",M1,full,"0.9520  IQR [0.7965, 1.0480]  n=153",/workspace/results/phase3/perm_nulls_c1.csv,call=='tierA_p95' & scope=='full' ; merged onto the reportable fit key,
+"SF, C1 N4_occ",M1,full,"0.1833  IQR [0.0000, 0.5586]  n=153",/workspace/results/phase3/perm_nulls_c1.csv,call=='tierA_p95' & scope=='full' ; merged onto the reportable fit key,
+"SF, C1 N4_swap",M1,full,"0.9457  IQR [0.7861, 1.0345]  n=153",/workspace/results/phase3/perm_nulls_c1.csv,call=='tierA_p95' & scope=='full' ; merged onto the reportable fit key,
+"SF, N1",H1 (tierAmg_p95),full,"0.3319  IQR [0.0474, 0.6583]  n=58",/workspace/results/phase10_h1/perm_nulls.csv,call=='tierAmg_p95' ; merged onto the reportable fit key,
+"SF, N3",H1 (tierAmg_p95),full,"0.9929  IQR [0.9770, 1.0020]  n=58",/workspace/results/phase10_h1/perm_nulls.csv,call=='tierAmg_p95' ; merged onto the reportable fit key,
+"SF, N4",H1 (tierAmg_p95),full,"0.9561  IQR [0.8119, 1.1317]  n=58",/workspace/results/phase10_h1/perm_nulls.csv,call=='tierAmg_p95' ; merged onto the reportable fit key,
+"SF, C1 N3_orig",H1 (tierAmg_p95),full,"0.9921  IQR [0.9744, 1.0007]  n=58",/workspace/results/phase10_h1/perm_nulls_c1.csv,call=='tierAmg_p95' & scope=='full' ; merged onto the reportable fit key,
+"SF, C1 N3_occ",H1 (tierAmg_p95),full,"0.5515  IQR [0.4041, 0.7390]  n=58",/workspace/results/phase10_h1/perm_nulls_c1.csv,call=='tierAmg_p95' & scope=='full' ; merged onto the reportable fit key,
+"SF, C1 N3_swap",H1 (tierAmg_p95),full,"0.3374  IQR [0.0515, 0.6604]  n=58",/workspace/results/phase10_h1/perm_nulls_c1.csv,call=='tierAmg_p95' & scope=='full' ; merged onto the reportable fit key,
+"SF, C1 N3_snap",H1 (tierAmg_p95),full,"1.0017  IQR [0.9857, 1.0185]  n=58",/workspace/results/phase10_h1/perm_nulls_c1.csv,call=='tierAmg_p95' & scope=='full' ; merged onto the reportable fit key,
+"SF, C1 N4_orig",H1 (tierAmg_p95),full,"0.9611  IQR [0.8118, 1.1357]  n=58",/workspace/results/phase10_h1/perm_nulls_c1.csv,call=='tierAmg_p95' & scope=='full' ; merged onto the reportable fit key,
+"SF, C1 N4_occ",H1 (tierAmg_p95),full,"0.4549  IQR [0.2784, 0.6329]  n=58",/workspace/results/phase10_h1/perm_nulls_c1.csv,call=='tierAmg_p95' & scope=='full' ; merged onto the reportable fit key,
+"SF, C1 N4_swap",H1 (tierAmg_p95),full,"0.9867  IQR [0.8506, 1.1561]  n=58",/workspace/results/phase10_h1/perm_nulls_c1.csv,call=='tierAmg_p95' & scope=='full' ; merged onto the reportable fit key,
+"SF, C1 N3_tile (tile scope)",H1 (tierAmg_p95),full,"0.9507  IQR [0.8521, 1.0750]  n=58",/workspace/results/phase10_h1/perm_nulls_c1.csv,call=='tierAmg_p95' & scope=='tile' ; merged onto the reportable fit key,
+"SF, C1 N4_tile (tile scope)",H1 (tierAmg_p95),full,"0.9063  IQR [0.7836, 1.1417]  n=58",/workspace/results/phase10_h1/perm_nulls_c1.csv,call=='tierAmg_p95' & scope=='tile' ; merged onto the reportable fit key,
 "SF, N3_var",H1 (tierAmg_p95),full,NOT_RUN,/workspace/results/phase10_h1/perm_nulls_var.csv,,producer not run
 "SF, N4_var",H1 (tierAmg_p95),full,NOT_RUN,/workspace/results/phase10_h1/perm_nulls_var.csv,,producer not run
-"SF, N1",H1 (tierA_p95),full,NOT_RUN,/workspace/results/phase10_h1/perm_nulls.csv,,producer not run
-"SF, N3",H1 (tierA_p95),full,NOT_RUN,/workspace/results/phase10_h1/perm_nulls.csv,,producer not run
-"SF, N4",H1 (tierA_p95),full,NOT_RUN,/workspace/results/phase10_h1/perm_nulls.csv,,producer not run
-"SF, C1 N3_tile",H1 (tierA_p95),full,NOT_RUN,/workspace/results/phase10_h1/perm_nulls_c1.csv,,producer not run
-"SF, C1 N4_tile",H1 (tierA_p95),full,NOT_RUN,/workspace/results/phase10_h1/perm_nulls_c1.csv,,producer not run
+"SF, N1",H1 (tierA_p95),full,"0.2623  IQR [0.0164, 0.6172]  n=61",/workspace/results/phase10_h1/perm_nulls.csv,call=='tierA_p95' ; merged onto the reportable fit key,
+"SF, N3",H1 (tierA_p95),full,"0.9975  IQR [0.9791, 1.0064]  n=61",/workspace/results/phase10_h1/perm_nulls.csv,call=='tierA_p95' ; merged onto the reportable fit key,
+"SF, N4",H1 (tierA_p95),full,"1.0181  IQR [0.8607, 1.2696]  n=61",/workspace/results/phase10_h1/perm_nulls.csv,call=='tierA_p95' ; merged onto the reportable fit key,
+"SF, C1 N3_orig",H1 (tierA_p95),full,"0.9980  IQR [0.9890, 1.0065]  n=61",/workspace/results/phase10_h1/perm_nulls_c1.csv,call=='tierA_p95' & scope=='full' ; merged onto the reportable fit key,
+"SF, C1 N3_occ",H1 (tierA_p95),full,"0.6080  IQR [0.4037, 0.7972]  n=61",/workspace/results/phase10_h1/perm_nulls_c1.csv,call=='tierA_p95' & scope=='full' ; merged onto the reportable fit key,
+"SF, C1 N3_swap",H1 (tierA_p95),full,"0.2897  IQR [0.0039, 0.6609]  n=61",/workspace/results/phase10_h1/perm_nulls_c1.csv,call=='tierA_p95' & scope=='full' ; merged onto the reportable fit key,
+"SF, C1 N3_snap",H1 (tierA_p95),full,"1.0050  IQR [0.9766, 1.0270]  n=61",/workspace/results/phase10_h1/perm_nulls_c1.csv,call=='tierA_p95' & scope=='full' ; merged onto the reportable fit key,
+"SF, C1 N4_orig",H1 (tierA_p95),full,"1.0152  IQR [0.8607, 1.2708]  n=61",/workspace/results/phase10_h1/perm_nulls_c1.csv,call=='tierA_p95' & scope=='full' ; merged onto the reportable fit key,
+"SF, C1 N4_occ",H1 (tierA_p95),full,"0.4815  IQR [0.3230, 0.6723]  n=61",/workspace/results/phase10_h1/perm_nulls_c1.csv,call=='tierA_p95' & scope=='full' ; merged onto the reportable fit key,
+"SF, C1 N4_swap",H1 (tierA_p95),full,"1.0228  IQR [0.8807, 1.2231]  n=61",/workspace/results/phase10_h1/perm_nulls_c1.csv,call=='tierA_p95' & scope=='full' ; merged onto the reportable fit key,
+"SF, C1 N3_tile (tile scope)",H1 (tierA_p95),full,"0.9654  IQR [0.8490, 1.0769]  n=61",/workspace/results/phase10_h1/perm_nulls_c1.csv,call=='tierA_p95' & scope=='tile' ; merged onto the reportable fit key,
+"SF, C1 N4_tile (tile scope)",H1 (tierA_p95),full,"0.9101  IQR [0.7690, 1.1372]  n=61",/workspace/results/phase10_h1/perm_nulls_c1.csv,call=='tierA_p95' & scope=='tile' ; merged onto the reportable fit key,
 "SF, N3_var",H1 (tierA_p95),full,NOT_RUN,/workspace/results/phase10_h1/perm_nulls_var.csv,,producer not run
 "SF, N4_var",H1 (tierA_p95),full,NOT_RUN,/workspace/results/phase10_h1/perm_nulls_var.csv,,producer not run
 "Poisson identity (R3a): slope, r2",M1,full,"-0.5249, r2 = 0.9843",/workspace/results/phase3/poisson_fits.csv,subset == 'ALL sections x ALL sender definitions',
 R3c null destructiveness: senders keeping a real neighbour <=100 um,M1,full,N3_occ 1.000; N3_occ15 0.969; N3_orig 0.772; N3_snap 1.000; N3_swap 1.000; N3_tile 1.000; N4_occ 1.000; N4_occ15 0.969; N4_orig 0.920; N4_swap 1.000; N4_tile 1.000,/workspace/results/phase3/null_destructiveness.csv,groupby('null').frac_retaining_a_neighbour.median(),
 "Poisson identity (R3a): slope, r2",H1,full,"-0.5124, r2 = 0.9783",/workspace/results/phase10_h1/poisson_fits.csv,subset == 'ALL sections x ALL sender definitions',
-R3c null destructiveness,H1,full,NOT_RUN,/workspace/results/phase10_h1/null_destructiveness.csv,,producer not run
+R3c null destructiveness: senders keeping a real neighbour <=100 um,H1,full,N3_occ 0.998; N3_occ15 0.947; N3_orig 0.801; N3_snap 1.000; N3_swap 1.000; N3_tile 1.000; N4_occ 0.998; N4_occ15 0.957; N4_orig 0.923; N4_swap 1.000; N4_tile 1.000,/workspace/results/phase10_h1/null_destructiveness.csv,groupby('null').frac_retaining_a_neighbour.median(),
 A7 PRIMARY: 40 negative control probes (naive),M1,full,"-0.0225 [-0.0527, +0.0078] p = 0.129",/workspace/results/phase3/a7_summary.csv,response=='neg_control_probe' & design=='base',
 A7 PRIMARY: 40 negative control probes (N6+N5),M1,full,"+0.0015 [-0.0160, +0.0191] p = 0.849",/workspace/results/phase3/a7_summary.csv,response=='neg_control_probe' & design=='n6n5',
 A7 pooled negative-control features (naive),M1,full,"-0.0744 [-0.1306, -0.0182] p = 0.0145",/workspace/results/phase3/a7_summary.csv,response=='all_controls' & design=='base',
@@ -90,3 +111,38 @@ Composition-matched SF [type_adj],M1,full,"0.3414  95% CI [0.2356, 0.4016]  shar
 Composition-matched SF [typecomp_adj] (PRIMARY of the pair),M1,full,"0.1461  95% CI [0.0520, 0.2461]  share removed 85.4 %  n_rep 33",/workspace/results/phase3/compmatch_reruns.csv,row_type=='summary' & scope_kind=='pooled' & call=='tierA_p95' & variant=='typecomp_adj',
 Composition-matched SF,H1 (tierAmg_p95),full,NOT_RUN,/workspace/results/phase10_h1/compmatch_reruns_h1.csv,,producer not run
 Composition-matched SF,H1 (tierA_p95),full,NOT_RUN,/workspace/results/phase10_h1/compmatch_reruns_h1.csv,,producer not run
+Ripley's K at 50 um vs a within-type permutation null [tierA_p95],M1,full,1.085 (range 1.009 - 1.160),/workspace/results/phase3/ripley.csv,band=='in_band' & call=='tierA_p95',
+Ripley's K at 50 um vs a within-type permutation null [cdkn1a_pos],M1,full,1.319 (range 1.158 - 1.684),/workspace/results/phase3/ripley.csv,band=='in_band' & call=='cdkn1a_pos',
+Ripley's K at 50 um vs a within-type permutation null [senepy_p95],M1,full,1.593 (range 1.305 - 1.936),/workspace/results/phase3/ripley.csv,band=='in_band' & call=='senepy_p95',
+Ripley's K at 50 um vs a within-type permutation null [tierA_p95],H1,full,1.012 (range 0.988 - 1.036),/workspace/results/phase9_h1/a4_ripley.csv,call=='tierA_p95',
+Ripley's K at 50 um vs a within-type permutation null [cdkn1a_pos],H1,full,1.161 (range 1.118 - 1.218),/workspace/results/phase9_h1/a4_ripley.csv,call=='cdkn1a_pos',
+Ripley's K at 50 um vs a within-type permutation null [senepy_p95],H1,full,1.647 (range 1.295 - 2.415),/workspace/results/phase9_h1/a4_ripley.csv,call=='senepy_p95',
+"A5 matched-decoy balance, max |SMD| after matching",H1,full,0.0933 (35/35 matches pass |SMD| <= 0.1),/workspace/results/phase9_h1/a5_match_balance.csv,max over all rows,
+"A5 matched-decoy balance, max |SMD| after matching",M1,full,0.0352 (100 % pass),/workspace/results/phase3/compmatch_reruns.csv,row_type=='summary' & call=='tierA_p95' & variant=='comp' -> median_max_smd_after,
+"Caller agreement, depth- and type-matched, pooled [senepy vs cdkn1a]",M1,full,1.211 (z 7.43),/workspace/results/phase3/caller_coverage_gate.csv,"basis=='11-section, post-C6 Tier A (FROZEN)' & pair=='senepy vs cdkn1a'",
+"Caller agreement, depth- and type-matched, pooled [senepy vs deepscence]",M1,full,0.737 (z -15.08),/workspace/results/phase3/caller_coverage_gate.csv,"basis=='11-section, post-C6 Tier A (FROZEN)' & pair=='senepy vs deepscence'",
+"Caller agreement, depth- and type-matched, pooled [tierA vs cdkn1a]",M1,full,1.471 (z 19.45),/workspace/results/phase3/caller_coverage_gate.csv,"basis=='11-section, post-C6 Tier A (FROZEN)' & pair=='tierA vs cdkn1a'",
+"Caller agreement, depth- and type-matched, pooled [tierA vs deepscence]",M1,full,1.288 (z 19.23),/workspace/results/phase3/caller_coverage_gate.csv,"basis=='11-section, post-C6 Tier A (FROZEN)' & pair=='tierA vs deepscence'",
+"Caller agreement, depth- and type-matched, pooled [tierA vs senepy]",M1,full,0.972 (z -1.63),/workspace/results/phase3/caller_coverage_gate.csv,"basis=='11-section, post-C6 Tier A (FROZEN)' & pair=='tierA vs senepy'",
+"Caller agreement, depth- and type-matched, pooled [deepscence vs cdkn1a]",M1,full,1.255 (z 10.53)  CIRCULAR,/workspace/results/phase3/caller_coverage_gate.csv,"basis=='11-section, post-C6 Tier A (FROZEN)' & pair=='deepscence vs cdkn1a'",
+"Caller agreement, depth- and type-matched, pooled [deepscence_score vs cdkn1a_counts]",H1,full,6.436 (z 204.83)  CIRCULAR,/workspace/results/phase9_h1/caller_agreement_pooled.csv,A=='deepscence_score' & B=='cdkn1a_counts',"DeepScence at random_state=0, a NON-PRIMARY estimator under D-A"
+"Caller agreement, depth- and type-matched, pooled [senepy_score vs cdkn1a_counts]",H1,full,1.505 (z 18.70),/workspace/results/phase9_h1/caller_agreement_pooled.csv,A=='senepy_score' & B=='cdkn1a_counts',"DeepScence at random_state=0, a NON-PRIMARY estimator under D-A"
+"Caller agreement, depth- and type-matched, pooled [senepy_score vs deepscence_score]",H1,full,1.093 (z 5.89),/workspace/results/phase9_h1/caller_agreement_pooled.csv,A=='senepy_score' & B=='deepscence_score',"DeepScence at random_state=0, a NON-PRIMARY estimator under D-A"
+"Caller agreement, depth- and type-matched, pooled [tierA_score vs abs_deepscence_score]",H1,full,1.102 (z 5.67),/workspace/results/phase9_h1/caller_agreement_pooled.csv,A=='tierA_score' & B=='abs_deepscence_score',"DeepScence at random_state=0, a NON-PRIMARY estimator under D-A"
+"Caller agreement, depth- and type-matched, pooled [tierA_score vs cdkn1a_counts]",H1,full,1.081 (z 3.05),/workspace/results/phase9_h1/caller_agreement_pooled.csv,A=='tierA_score' & B=='cdkn1a_counts',"DeepScence at random_state=0, a NON-PRIMARY estimator under D-A"
+"Caller agreement, depth- and type-matched, pooled [tierA_score vs deepscence_score]",H1,full,1.602 (z 38.86),/workspace/results/phase9_h1/caller_agreement_pooled.csv,A=='tierA_score' & B=='deepscence_score',"DeepScence at random_state=0, a NON-PRIMARY estimator under D-A"
+"Caller agreement, depth- and type-matched, pooled [tierA_score vs senepy_score]",H1,full,0.874 (z -7.96),/workspace/results/phase9_h1/caller_agreement_pooled.csv,A=='tierA_score' & B=='senepy_score',"DeepScence at random_state=0, a NON-PRIMARY estimator under D-A"
+"Caller depth loading, Spearman(score, transcript counts) [tierA_score]",M1,full,"0.0561  (min -0.0609, max 0.1252, n=11)",/workspace/results/phase3/caller_technical_loading_11sections.csv,score=='tierA_score',
+"Caller depth loading, Spearman(score, transcript counts) [cdkn1a_counts]",M1,full,"0.1923  (min 0.0152, max 0.4814, n=11)",/workspace/results/phase3/caller_technical_loading_11sections.csv,score=='cdkn1a_counts',
+"Caller depth loading, Spearman(score, transcript counts) [senepy_score]",M1,full,"0.1676  (min 0.0968, max 0.5134, n=11)",/workspace/results/phase3/caller_technical_loading_11sections.csv,score=='senepy_score',
+"Caller depth loading, Spearman(score, transcript counts) [deepscence_score]",M1,full,"0.3846  (min -0.3500, max 0.5577, n=11)",/workspace/results/phase3/caller_technical_loading_11sections.csv,score=='deepscence_score',
+"Caller depth loading, Spearman(score, transcript counts) [tierA_score]",H1,full,"-0.0227  (min -0.1738, max 0.0979, n=7)",/workspace/results/phase9_h1/caller_technical_loading.csv,caller=='tierA_score',
+"Caller depth loading, Spearman(score, transcript counts) [cdkn1a_counts]",H1,full,"0.0837  (min 0.0563, max 0.1653, n=7)",/workspace/results/phase9_h1/caller_technical_loading.csv,caller=='cdkn1a_counts',
+"Caller depth loading, Spearman(score, transcript counts) [senepy_score]",H1,full,"0.2339  (min 0.0405, max 0.3323, n=7)",/workspace/results/phase9_h1/caller_technical_loading.csv,caller=='senepy_score',
+"Caller depth loading, Spearman(score, transcript counts) [deepscence_score]",H1,full,"0.2963  (min 0.1822, max 0.3540, n=7)",/workspace/results/phase9_h1/caller_technical_loading.csv,caller=='deepscence_score',
+"Kernel family AIC win rate, controlled design",M1,full,step 0.898; spline 0.054; gaussian 0.032; exponential 0.013; powerlaw 0.003,/workspace/results/phase5/kernel_families.csv,design=='ctrl'; (family == best_family).mean(),
+"Kernel family AIC win rate, controlled design",H1,full,step 0.956; spline 0.032; gaussian 0.012; exponential 0.000; powerlaw 0.000,/workspace/results/phase10_h1/kernel_families.csv,design=='ctrl'; (family == best_family).mean(),
+Superposition beats nearest-sender (controlled design),M1,full,0.762 of fits; paired block-bootstrap win fraction median 0.730,/workspace/results/phase5/super_section.csv,design=='ctrl',
+Superposition beats nearest-sender (controlled design),H1,full,0.746 of fits; paired block-bootstrap win fraction median 0.730,/workspace/results/phase10_h1/super_section.csv,design=='ctrl',
+Proximal vs downstream lambda ratio: identifiability,M1,full,"6 receiver types; CI reaches a grid bound in 6, BOTH bounds in 2",/workspace/results/phase5/proximal_vs_downstream.csv,"grid ratio bounds [0.140, 7.143]",
+Proximal vs downstream lambda ratio: identifiability,H1,full,"6 receiver types; CI reaches a grid bound in 6, BOTH bounds in 3",/workspace/results/phase10_h1/proximal_vs_downstream.csv,"grid ratio bounds [0.140, 7.143]",
