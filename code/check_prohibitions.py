@@ -167,8 +167,16 @@ REVIEW_ONLY = [
     ('10.5', 'no cross-arm species/tissue attribution'),
 ]
 
-META = re.compile(r'prohibit|must not|may never|never be (?:quoted|reported)|struck'
-                  r'|forbidden|prohibition-waiver|section 10\.|§ ?10\.|10\.\d+\)', re.I)
+# A paragraph that is ABOUT the prohibition -- the rule itself, a withdrawal, a superseded
+# passage kept as a record -- is not a report of the number.  The check also looks at the
+# PRECEDING paragraph, because the "this is kept as a record" sentence is routinely the
+# paragraph above the block quote it introduces.
+META = re.compile(r'prohibit|must not|may never|(?:must|should|may|will) not be (?:quoted|reported)'
+                  r'|never be (?:quoted|reported)|struck|forbidden|prohibition-waiver'
+                  r'|section 10\.|§ ?10\.|10\.\d+\)'
+                  r'|supersed|withdraw|withdrew|retract|no longer|does not survive'
+                  r'|as the record|is a record|restate[ds]?|replaced by|kept below unaltered'
+                  r'|correction c-|\[corrected|\[extended', re.I)
 
 # PREREG_PHASE8.md is where the rules -- and therefore the forbidden literals -- live.
 EXEMPT_FILES = {'reports/PREREG_PHASE8.md'}
@@ -190,16 +198,25 @@ def check_text(rel, text):
     bad = []
     if rel.replace(os.sep, '/') in EXEMPT_FILES:
         return bad
-    for line, p in paragraphs(text):
+    paras = paragraphs(text)
+    prev_meta = False
+    for i, (line, p) in enumerate(paras):
         if not p.strip():
             continue
         n = _n(p)
-        meta = bool(META.search(n))
+        meta = bool(META.search(n)) or prev_meta
+        prev_meta = bool(META.search(n))
         for sec, _title, fn in RULES:
             msg = fn(p, n)
             if msg and not meta:
-                bad.append((rel, line, sec, msg))
+                bad.append((rel, line, sec, msg, _key(p)))
     return bad
+
+
+def _key(p):
+    """Identity of a violating paragraph, stable under re-wrapping and re-numbering, so the
+    ratchet can tell a NEW violation from one that was already in HEAD."""
+    return _n(p)[:400].lower()
 
 
 def check_file(path, rel=None):
@@ -225,11 +242,18 @@ def default_files():
     return sorted(out)
 
 
-def staged_files():
+def staged_files(new_only=True):
+    """Check the staged content of staged prose files.
+
+    With new_only (the pre-commit default) this is a RATCHET: a violation already present in
+    HEAD's version of the same file does not block the commit, but any violation the commit
+    ADDS does.  The corpus predates the checker and carries a backlog (see --backlog); the
+    ratchet stops it growing without demanding a corpus-wide rewrite first, and without
+    blocking unrelated work in files that already carry a backlog entry."""
     names = subprocess.run(['git', '-C', ROOT, 'diff', '--cached', '--name-only',
                             '--diff-filter=ACMR'],
                            capture_output=True, text=True).stdout.split()
-    bad = []
+    bad, carried = [], 0
     for rel in names:
         if os.path.splitext(rel)[1] not in TEXT_EXT:
             continue
@@ -237,8 +261,22 @@ def staged_files():
             continue
         blob = subprocess.run(['git', '-C', ROOT, 'show', ':' + rel],
                               capture_output=True, text=True)
-        if blob.returncode == 0:
-            bad += check_text(rel, blob.stdout)
+        if blob.returncode != 0:
+            continue
+        now = check_text(rel, blob.stdout)
+        if not now:
+            continue
+        old = subprocess.run(['git', '-C', ROOT, 'show', 'HEAD:' + rel],
+                             capture_output=True, text=True)
+        known = {(v[2], v[4]) for v in check_text(rel, old.stdout)} if old.returncode == 0 else set()
+        for v in now:
+            if new_only and (v[2], v[4]) in known:
+                carried += 1
+            else:
+                bad.append(v)
+    if carried:
+        print('section 10: %d pre-existing violation(s) carried unchanged in the staged files '
+              '(not blocking; see check_prohibitions.py --backlog)' % carried)
     return bad
 
 
@@ -298,8 +336,15 @@ def main(argv):
         return 0
     if '--self-test' in argv:
         return self_test()
+    if '--backlog' in argv:
+        bad = [v for f in default_files() for v in check_file(f)]
+        print('section 10 backlog: %d pre-existing violation(s) in the committed corpus'
+              % len(bad))
+        for rel, line, sec, msg, _k in bad:
+            print('  %s:%d  [%s] %s' % (rel, line, sec, msg))
+        return 0
     if '--staged' in argv:
-        bad = staged_files()
+        bad = staged_files(new_only='--all-violations' not in argv)
         scope = 'staged text files'
     else:
         files = [a for a in argv if not a.startswith('-')]
@@ -313,7 +358,7 @@ def main(argv):
     if bad:
         print('SECTION 10 PROHIBITION VIOLATIONS (%d) in %s:' % (len(bad), scope),
               file=sys.stderr)
-        for rel, line, sec, msg in bad:
+        for rel, line, sec, msg, _k in bad:
             print('  %s:%d  [%s] %s' % (rel, line, sec, msg), file=sys.stderr)
         print('\nIf the text is legitimately ABOUT the prohibition, say so in the paragraph '
               '(the words "prohibited"/"must not"/"struck", a section-10 citation, or\n'

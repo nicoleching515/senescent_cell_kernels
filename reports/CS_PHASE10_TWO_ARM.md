@@ -139,8 +139,10 @@ p90 and p99 carry that ≤ 0.007 % tie noise. Per-section counts:
 ### 1.2 The fitting window is still valid on H1, and the λ-grid floor is still violated
 
 `results/phase10_h1/window.csv`. At the primary call the frozen **100 µm** window retains
-**99.96–100.00 %** of receivers on every H1 section (`frac_gt_100` = 0.000009–0.000375),
-against 99.1 % on M1 — so the window is, if anything, more comfortable here.
+**99.914–99.997 %** of receivers on every H1 section (`frac_gt_100` = 2.6 × 10⁻⁵ – 8.6 × 10⁻⁴;
+99th percentile of distance-to-nearest-sender 43.8–61.7 µm), against 99.1 % on M1 — so the
+window is, if anything, more comfortable here.
+`python3 -c "import pandas as pd; w=pd.read_csv('results/phase10_h1/window.csv'); print(w[w.call=='tierAmg_p95'][['section','n','d_p99','frac_gt_100']].to_string(index=False))"`
 
 **The λ-grid floor is not.** `LAM_LO_FLOOR = 7.0 µm` is defined as "at or below the median
 nearest-neighbour distance of every section". On H1 the median NN distance is
