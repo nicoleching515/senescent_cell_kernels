@@ -51,9 +51,9 @@ def _pick(d, a, b):
 
 
 def main():
-    fig = plt.figure(figsize=(13.6, 8.8))
-    gs = fig.add_gridspec(2, 2, height_ratios=[1.0, 0.95], width_ratios=[1.25, 1.0],
-                          hspace=0.42, wspace=0.26)
+    fig = plt.figure(figsize=(13.6, 12.4))
+    gs = fig.add_gridspec(3, 2, height_ratios=[1.0, 0.95, 0.80],
+                          width_ratios=[1.25, 1.0], hspace=0.46, wspace=0.26)
 
     # ---------------- (a) agreement before / after conditioning -----------
     ax = fig.add_subplot(gs[0, :])
@@ -179,6 +179,47 @@ def main():
     ax.set_ylabel("Jaccard of the top-5 % call set")
     ax.set_title("(c)  The instability transfers, and gets worse natively.\n"
                  "Score agreement and call-set agreement are NOT the same quantity.",
+                 loc="left")
+
+    # ---------------- (d) P-vi: what denoising does to the depth loading ----
+    ax = fig.add_subplot(gs[2, :])
+    dd = pd.read_csv(f"{R9}/d2_depth.csv")
+    dd = dd[dd.scope == "20,000-cell panel"].sort_values("section")
+    m1_delta = [(0.3891, 0.6404, "7239"), (0.3176, 0.5314, "7259"),
+                (0.4096, 0.5419, "7352")]        # results/phase8_d2/d2_depth.csv, config=="dca"
+    xs = np.arange(len(m1_delta))
+    ax.axhline(0, color=PAL.INK2, lw=1.2, zorder=1)
+    for i, (a, b, lab) in enumerate(m1_delta):
+        ax.plot([i, i], [0, b - a], "-", color=C_M1, lw=6, alpha=.55, solid_capstyle="butt",
+                zorder=2)
+        ax.plot([i], [b - a], "o", color=C_M1, ms=7, mec=PAL.SURFACE, mew=1.3, zorder=3)
+        ROWS.append(dict(panel="d", arm="M1", section=lab, scope="full section",
+                         rho_denoise_False=a, rho_denoise_True=b, delta_rho=round(b - a, 4)))
+    xs2 = np.arange(len(m1_delta), len(m1_delta) + len(dd))
+    for i, r in zip(xs2, dd.itertuples()):
+        ax.plot([i, i], [0, r.delta_rho], "-", color=C_H1, lw=6, alpha=.55,
+                solid_capstyle="butt", zorder=2)
+        ax.plot([i], [r.delta_rho], "s", color=C_H1, ms=7, mec=PAL.SURFACE, mew=1.3, zorder=3)
+        ROWS.append(dict(panel="d", arm="H1", section=r.section,
+                         scope="20,000-cell panel",
+                         rho_denoise_False=float(r.rho_denoise_False),
+                         rho_denoise_True=float(r.rho_denoise_True),
+                         delta_rho=float(r.delta_rho)))
+    ax.axvline(len(m1_delta) - 0.5, color=PAL.AXIS, lw=1)
+    ax.set_xticks(list(xs) + list(xs2))
+    ax.set_xticklabels([l for _, _, l in m1_delta] + list(dd.section), fontsize=7)
+    ax.set_ylabel(r"$\Delta\rho$ = $\rho$(score, counts) with denoise=True"
+                  "\n" r"minus without")
+    ax.plot([], [], "o-", color=C_M1, lw=4, alpha=.6, label="M1, full sections (3), "
+            "ortholog-remapped")
+    ax.plot([], [], "s-", color=C_H1, lw=4, alpha=.6, label="H1, 20,000-cell panel (7), "
+            "native")
+    ax.legend(loc="lower right", fontsize=7.5)
+    ax.set_title("(d)  P-vi, FALSIFIED.  Registered: denoise=True RAISES the depth loading, "
+                 "as it does on 3 of 3 mouse sections.  Falsifier: $\\Delta\\rho \\leq 0$ in "
+                 "$\\geq$ 5 of 7.\n"
+                 "Measured on H1: $\\Delta\\rho \\leq 0$ in 6 of 7, and the SIGN of the "
+                 "loading inverts in 4 of 7.  The mouse direction does not transfer.",
                  loc="left")
 
     fig.suptitle("Figure 6 — DeepScence, native human panel against ortholog-remapped "
