@@ -21,7 +21,7 @@ cost-effectiveness.
 | 6 | **H1 acquired, 28 files / 525 MB** | `code/fetch_h1_geo.sh`, `data/raw_h1/` | 21 transcripts/morphology files skipped per §12.2. cell_id sets match h5<->parquet in all 7; coords in microns |
 | 7 | **DeepScence D1: 2/11 -> 11/11 coverage** | `data/processed/deepscence_*.csv` | 1.47M cells scored. 3 sections OOM-killed at 5-way concurrency, recovered sequentially. Original 2 preserved unchanged |
 | 8 | **C1: in-tissue N3/N4 nulls, 3 variants each** | `reports/CS_PHASE7_C1.md` | Bbox bug real and worse than recorded (23% void, not ~20%). **Contribution 3 survives**: N3-tile 0.974 vs published 1.000 |
-| 9 | **C1: N3-occ shown degenerate; N3-swap == N1** | `results/phase3/null_destructiveness.csv` | occ admits only near-identity offsets (27um vs median lambda-hat 12.8um). swap: rho=0.948 vs published N1 |
+| 9 | **C1: N3-occ shown degenerate; N3-swap == N1** | `results/phase3/null_destructiveness.csv` | occ admits only near-identity offsets (27um vs median lambda-hat **14.7um** — this row originally said 12.8um, a FOURTH value then in circulation, corrected 2026-08-27). swap: rho=0.948 vs published N1 |
 | 10 | **N7: correction invariant to sender definition** | `results/phase3/sf_summary_c1_n7.csv` | N3-tile 0.974-1.006 across 6 callers, prevalence 0.5-9% |
 | 11 | **`make_figure4.py` de-hardcoded** | `code/make_figure4.py` | All 7 constants re-derive; regenerated PNG byte-identical |
 | 12 | **Job A: human Tiers A-E built** | `genesets/human/`, `reports/BIO_PHASE7_JobA.md` | §10's 16-gene Tier A **FAILS the gate** (14 on-panel, 13 inside Hallmark modules, ATR alone survives). Independently recomputed |
@@ -162,7 +162,11 @@ what it costs." That is still publishable; it is a different claim.
 
 ## ⚠ THE PACK FOUND A CIRCULAR NUMBER, AND TWO MORE ERRORS OF MINE
 
-**1. `lambda-hat = 15.7 um "pooled"` is UNSOURCED and its provenance is CIRCULAR.**
+**1. `lambda-hat = 15.7 um "pooled"` was UNSOURCED and CIRCULAR — NOW RESOLVED
+(see the lambda-hat entry further down: authoritative value **14.7321 um**,
+emitted by `summary_phase3.txt` line 90, with mandatory IQR [7.0, 50.0] and 60%
+railed). 15.7 traced to a pre-C6 *interior* median over 441 pseudo-replicated
+rows. The original diagnosis is kept below as the record of how it was found.**
 It appears in six places including §30 5.3 and §29 objection 7. **No file emits
 it.** Its only apparent origin is a back-derivation from the torus report's own
 *"2,215 um = 141x the pooled lambda-hat"* — i.e. derived from the claim it is used
@@ -719,3 +723,21 @@ not. The N2-vs-N5 result is unaffected and remains the strongest finding.
 
 ---
 *Rows are appended as work lands. In-flight items are NOT listed here.*
+
+## A DEFECT INSIDE THE FROZEN PRE-REGISTRATION
+
+**There is no bootstrap in the reported bracket at all.** `summarize_phase3.py:99`
+is a plain `np.quantile([.25,.5,.75])` over per-fit point estimates. So
+`PREREG_PHASE8.md` §5's *"paired-bootstrap interquartile range"* and replication
+criterion **R1**'s *"paired-bootstrap interval"* are **misnomers in the frozen
+document**.
+
+The pre-registered 400x100-block bootstrap emits **per-fit** CIs only (median span
+[-0.415, +0.381]); there is **no interval on the median across fits**. Handled as
+a dated correction that leaves R1's threshold and M1's outcome untouched — the
+right treatment for a frozen artefact. **A genuine CI would require a new run**,
+and the agent stopped and said so rather than manufacturing one.
+
+**Consequence: every `0.088 [-0.017, 0.234]`-style bracket in this project is an
+IQR across fits, not a confidence interval.** Relabelled in eight documents.
+
