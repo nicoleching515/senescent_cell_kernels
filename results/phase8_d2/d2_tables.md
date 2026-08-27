@@ -43,8 +43,10 @@
 | mor    | 7450 | 869                      | 0.5577              | 0.5591        | 0.0014          | 0.1517                 | -0.0762             |
 | mor    | 7239 | 911                      | 0.3891              | 0.3804        | -0.0087         | -0.2022                | 0.0054              |
 | mor    | 7248 | 1138                     | 0.4571              | 0.4616        | 0.0046          | 0.0799                 | -0.1335             |
-| raw    | 7259 | 491                      | 0.3176              | 0.3176        | -0              | -0.1583                | -0.08               |
-| raw    | 7239 | 911                      | 0.3891              | 0.3885        | -0.0006         | -0.4673                | -0.0209             |
+| raw    | 7259 | 491                      | 0.3176              | 0.3176        | -0              | WITHHELD               | -0.08               |
+| raw    | 7239 | 911                      | 0.3891              | 0.3885        | -0.0006         | WITHHELD               | -0.0209             |
+
+`rho_signed_dz_vs_depth` is WITHHELD for the `raw` rows under PREREG_PHASE8.md section 10.11: on a shift of 0.0002-0.001 z-units it is the direction of numerical noise, not a depth effect, and must not be quoted. `rho_abs_dz_vs_depth` and the `delta_rho_depth` column are unaffected.
 
 ### D. How much depth variation each configuration actually removed
 
@@ -262,6 +264,8 @@
 
 ### H. Run provenance
 
+_17 `runmeta_*.json` files present in /workspace/results/phase8_d2/ at render time._
+
 | config             | section | n_cells | n_genes | denoise | anchor           | node | reverse | minutes |
 |--------------------|---------|---------|---------|---------|------------------|------|---------|---------|
 | dca                | 7239    | 83392   | 4845    | True    | published_CDKN1A | 0    | True    | 16.4    |
@@ -275,6 +279,7 @@
 | mor                | 7239    | 83392   | 4845    | False   | published_CDKN1A | 0    | True    | 5.16    |
 | mor                | 7248    | 224922  | 4845    | False   | published_CDKN1A | 0    | True    | 30.75   |
 | mor                | 7259    | 127386  | 4845    | False   | published_CDKN1A | 0    | True    | 44.13   |
+| mor                | 7352    | 139378  | 4845    | False   | published_CDKN1A | 0    | True    | 8.5     |
 | mor                | 7450    | 93197   | 4845    | False   | published_CDKN1A | 0    | True    | 17.85   |
 | raw                | 7239    | 83392   | 4845    | False   | published_CDKN1A | 0    | True    | 37.55   |
 | raw                | 7259    | 127386  | 4845    | False   | published_CDKN1A | 0    | True    | 40.75   |

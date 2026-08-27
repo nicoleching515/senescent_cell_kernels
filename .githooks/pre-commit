@@ -13,20 +13,36 @@ set -u
 ROOT="$(git rev-parse --show-toplevel)"
 STAGED="$(git diff --cached --name-only)"
 
+PY="${SASP_PYTHON:-}"
+if [ -z "$PY" ]; then
+  # Prefer the project environment; fall back to whatever python3 is on PATH. Both gates are
+  # stdlib-only, but preferring the project interpreter means they keep working if either ever
+  # grows a numpy dependency.
+  if [ -x "$ROOT/envs/sasp311/bin/python" ]; then PY="$ROOT/envs/sasp311/bin/python";
+  elif python3 -c "import sys" >/dev/null 2>&1; then PY="python3";
+  else PY="python"; fi
+fi
+
+# --- section 10: what may never be reported -------------------------------------------------
+# Ratchet, not a corpus sweep: a violation already present in HEAD's copy of the same file does
+# not block, a violation the commit ADDS does. `check_prohibitions.py --backlog` lists what is
+# already there. This is the only mechanical enforcement section 10 has ever had.
+if printf '%s\n' "$STAGED" | grep -qE '^(reports/|results/|README\.md$)'; then
+  "$PY" "$ROOT/code/check_prohibitions.py" --staged || {
+    echo ""
+    echo "COMMIT BLOCKED: this commit ADDS a PREREG_PHASE8.md section-10 violation." >&2
+    echo "Fix the text, or -- if the paragraph is about the prohibition rather than a report" >&2
+    echo "of the number -- say so in the paragraph. See code/check_prohibitions.py --list." >&2
+    exit 1
+  }
+fi
+
+# --- section 11: gene-set disjointness -------------------------------------------------------
 if ! printf '%s\n' "$STAGED" | grep -qE '^(genesets/|XeniumPrimeMouse5Kpan_tissue_pathways_metadata\.csv$|GSE310392_Q6VTXC_mMulti_100g_gene_list\.csv\.gz$)'; then
   exit 0
 fi
 
 echo "pre-commit: gene sets or a panel file are staged -- running the section-11 gate on both arms."
-PY="${SASP_PYTHON:-}"
-if [ -z "$PY" ]; then
-  # Prefer the interpreter that carries the scientific stack. The gate itself is
-  # stdlib-only, but preferring a full interpreter means it keeps working if the
-  # gate ever grows a numpy dependency. envs/sasp311 is the persistent fallback.
-  if python3 -c "import sys" >/dev/null 2>&1; then PY="python3";
-  elif [ -x "$ROOT/envs/sasp311/bin/python" ]; then PY="$ROOT/envs/sasp311/bin/python";
-  else PY="python"; fi
-fi
 "$PY" "$ROOT/code/gate_genesets_guard.py" || {
   echo ""
   echo "COMMIT BLOCKED: the section-11 disjointness gate FAILED on the staged gene sets." >&2

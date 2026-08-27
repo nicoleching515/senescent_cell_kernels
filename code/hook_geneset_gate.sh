@@ -30,7 +30,21 @@ print(p)
 ' 2>/dev/null)"
 [ -n "$FILE" ] || exit 0
 
+# Two watched families, two different gates.
+#
+#   reports/, results/, README.md  -> the section-10 prohibition checker.  These paths used to
+#     `exit 0` here unconditionally, which meant the only always-on hook deliberately skipped
+#     every path where a section-10 violation would actually be written
+#     (reports/AUDIT_PREREG_VS_CODE.md PART 4, "Coverage hole in the one always-on hook").
+#   genesets/, panel files        -> the section-11 disjointness gate, as before.
 case "$FILE" in
+  */reports/*.md|*/reports/*.txt|*/results/*.md|*/results/*.txt|*/README.md)
+    OUT="$("$PY" "$ROOT/code/check_prohibitions.py" "$FILE" 2>&1)"
+    if [ $? -ne 0 ]; then
+      printf 'SECTION 10 PROHIBITION VIOLATION in %s\n\n%s\n' "$FILE" "$OUT" >&2
+      exit 2
+    fi
+    exit 0 ;;
   */results/*|*/reports/*) exit 0 ;;
   */genesets/*|*/XeniumPrimeMouse5Kpan_tissue_pathways_metadata.csv|*/GSE310392_Q6VTXC_mMulti_100g_gene_list.csv.gz) ;;
   *) exit 0 ;;

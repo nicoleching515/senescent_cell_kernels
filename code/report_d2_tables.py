@@ -2,11 +2,22 @@
 """Render the C7-D2 tables as markdown, straight from results/phase8_d2/*.csv.
 
 Every number in reports/CS_PHASE8_D2_DENOISE.md is emitted by this script so none of them
-is hand-transcribed.  Usage: report_d2_tables.py [> fragment.md]
+is hand-transcribed.
+
+Producer of results/phase8_d2/d2_tables.md, which had no committed producer before:
+    python code/report_d2_tables.py --out results/phase8_d2/d2_tables.md
+
+Section 10.11 of PREREG_PHASE8.md: the `raw` rows of `rho_signed_dz_vs_depth` (-0.4673,
+-0.1583; quoted in the prereg as -0.47 and -0.16) may never be reported -- they are the
+direction of numerical noise on a shift of 0.0002-0.001 z-units.  This script used to hand
+the author those two values pre-formatted in table C.  They are now WITHHELD in the rendered
+table, with the reason printed beside it.  `--emit-prohibited` restores them for a purely
+internal diagnostic; the rendered file must never be written with that flag.
 """
 import pandas as pd, numpy as np, json, glob, os
 
 OUT = '/workspace/results/phase8_d2/'
+EMIT_PROHIBITED = False
 DEPTH = {  # median panel-wide transcript_counts, from cells.parquet (see §2)
 }
 
@@ -64,9 +75,20 @@ def main():
                   'global_top1_jaccard', 'within_type_top5_jaccard',
                   'matched_top5_jaccard']))
     print('\n### C. Depth dependence of the shift\n')
-    print(md(ag, ['config', 'sec', 'median_transcript_counts', 'rho_depth_committed',
-                  'rho_depth_alt', 'delta_rho_depth', 'rho_signed_dz_vs_depth',
-                  'rho_abs_dz_vs_depth']))
+    agc = ag.copy()
+    if not EMIT_PROHIBITED:
+        # PREREG_PHASE8.md section 10.11
+        mask = agc.config.astype(str).str.fullmatch('raw')
+        agc['rho_signed_dz_vs_depth'] = agc.rho_signed_dz_vs_depth.astype(object)
+        agc.loc[mask, 'rho_signed_dz_vs_depth'] = 'WITHHELD'
+    print(md(agc, ['config', 'sec', 'median_transcript_counts', 'rho_depth_committed',
+                   'rho_depth_alt', 'delta_rho_depth', 'rho_signed_dz_vs_depth',
+                   'rho_abs_dz_vs_depth']))
+    if not EMIT_PROHIBITED:
+        print('\n`rho_signed_dz_vs_depth` is WITHHELD for the `raw` rows under '
+              'PREREG_PHASE8.md section 10.11: on a shift of 0.0002-0.001 z-units it is the '
+              'direction of numerical noise, not a depth effect, and must not be quoted. '
+              '`rho_abs_dz_vs_depth` and the `delta_rho_depth` column are unaffected.')
     if len(st):
         st['sec'] = st.section.str.split('_').str[0]
         print('\n### D. How much depth variation each configuration actually removed\n')
@@ -120,7 +142,12 @@ def main():
 
     print('\n### H. Run provenance\n')
     rows = []
-    for f in sorted(glob.glob(OUT + 'runmeta_*.json')):
+    metas = sorted(glob.glob(OUT + 'runmeta_*.json'))
+    # This section's row count is a function of what is on disk, not of any fixed set, so it
+    # is stated rather than left to be inferred: a rebuilt tree with more (or fewer) runs
+    # renders a different table and nothing would otherwise say so.
+    print('_%d `runmeta_*.json` files present in %s at render time._\n' % (len(metas), OUT))
+    for f in metas:
         d = json.load(open(f))
         dl = d.get('direction_log', {})
         rows.append(dict(config=d['config'], section=d['section'].split('_')[0],
@@ -132,4 +159,20 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    import argparse, contextlib, sys
+    ap = argparse.ArgumentParser(description=__doc__,
+                                 formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument('--out', help='write the markdown here instead of stdout')
+    ap.add_argument('--emit-prohibited', action='store_true',
+                    help='internal diagnostic only: also print the section-10.11 `raw` '
+                         'rho_signed_dz_vs_depth values.  Never use for a written file.')
+    a = ap.parse_args()
+    EMIT_PROHIBITED = a.emit_prohibited
+    if a.out:
+        if EMIT_PROHIBITED:
+            sys.exit('refusing to write a file with --emit-prohibited (section 10.11)')
+        with open(a.out, 'w') as fh, contextlib.redirect_stdout(fh):
+            main()
+        print('wrote', a.out)
+    else:
+        main()

@@ -135,7 +135,10 @@ def r_10_10(p, n):
 
 
 def r_10_11(p, n):
-    if re.search(r'rho_signed_dz_vs_depth', n) and re.search(r'(?<![\d.])-0\.47(?![\d])|(?<![\d.])-0\.16(?![\d])', n):
+    # the prereg quotes the rounded pair; the files carry the full-precision values
+    if re.search(r'rho_signed_dz_vs_depth', n) and re.search(
+            r'(?<![\d.])-0\.47(?![\d])|(?<![\d.])-0\.16(?![\d])'
+            r'|(?<![\d.])-0\.4673(?![\d])|(?<![\d.])-0\.1583(?![\d])', n):
         if re.search(r'(?<![a-z])raw(?![a-z])', n, re.I):
             return ('quotes the D2 `raw` rho_signed_dz_vs_depth values (section 10.11) -- '
                     'the direction of numerical noise on a 0.0002-0.001 z-unit shift')
