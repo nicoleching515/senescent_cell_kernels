@@ -158,7 +158,56 @@ what it costs." That is still publishable; it is a different claim.
 | 75 | **`CORRECTIONS.md` finalised: 659 -> 1,966 lines** | `reports/CORRECTIONS.md` | Front matter A-D + six new sections. Leads with what did NOT move, re-derived by running `code/m1_headlines.py`: controlled amplitude **0.0288** vs an 80%-power bound of **0.1833**, SF **0.0885**, naive 0.3288, 153 fits. The bound **tightened** from 0.203 |
 | 76 | **`kumar2026cellwhisper` forenames actually fixed** | `references.bib` | The citation audit's own note said they were corrected. **They were not.** Abhishek->Anurendra, Fernando->Felix, Bhavya->Bhavay, Nan->Nicholas — in the project's most load-bearing citation, while `SUBMISSION_PATCH` told the PI the bibliography was clean |
 | 77 | **Falsified Moran framing removed from the DEADLINE document** | `reports/SUBMISSION_PATCH_2026-8-29.md` | §9 still instructed *"so the reader can see the two tests disagree"* — in the one document applied to the manuscript by hand, two days out. Replaced with the measured power argument |
-| 78 | **Freeze document corrected before tagging** | `reports/PREREG_PHASE8.md` | **5 corrections.** It carried my "roughly doubles" overstatement in 2 places and 3 **pre-C6** A7 values. Frozen values re-read by me from `a7_summary.csv` (09:06): codewords **-0.0604** (was -0.0549), genomic **-0.0307** (was -0.0337), probes **-0.0225** p=0.129 (was -0.0177). Residual stale digits: **0** |
+| 78 | **Freeze document corrected before tagging** | `reports/PREREG_PHASE8.md` | **5 corrections.** It carried my "roughly doubles" overstatement in 2 places and 3 **pre-C6** A7 values. Frozen values re-read by me from `a7_summary.csv` (09:06): codewords **-0.0604** (was -0.0549), genomic **-0.0307** (was -0.0337), probes **-0.0225** p=0.129 (was -0.0177). Residual stale digits: **0** || 83 | **`WRITING_PACK.md` built — 1,389 lines** | `reports/WRITING_PACK.md` | 53 marked re-derivations, a 33-item forbidden-claims checklist, 22 tabulated document disagreements with the authoritative file named, and a per-subsection source map with reproduce commands |
+
+## ⚠ THE PACK FOUND A CIRCULAR NUMBER, AND TWO MORE ERRORS OF MINE
+
+**1. `lambda-hat = 15.7 um "pooled"` is UNSOURCED and its provenance is CIRCULAR.**
+It appears in six places including §30 5.3 and §29 objection 7. **No file emits
+it.** Its only apparent origin is a back-derivation from the torus report's own
+*"2,215 um = 141x the pooled lambda-hat"* — i.e. derived from the claim it is used
+to support. Verified alternatives, all real: **16.07** um (median over the 153
+reportable fits), **14.73** (all 315), **17.1** (interior median — what the
+summariser actually prints). Two dependent claims inherit the problem: "141x
+lambda-hat" and "seams ~76 lambda-hat apart". **This must be resolved before it
+reaches a paper.**
+
+**2. The brackets I have been quoting are IQRs, NOT confidence intervals.**
+Verified: `sf_summary.csv` carries `q25 / median / q75` and **no CI column**. So
+`0.088 [-0.017, 0.234]` and `0.029 [-0.007, 0.084]` are **interquartile ranges
+across fits**. I wrote them as CIs repeatedly in this session, and §30 presents
+them unlabelled. An IQR and a CI mean entirely different things.
+
+**3. My Spearman rho was aggregation-dependent and I presented it as definitive.**
+I reported **+0.923** and said I had verified it. It does reproduce — but only
+under my aggregation (median per field, knn6). The same data gives **+0.8951**
+under the pack's method and **+0.7104** per-row with no aggregation. **All three
+are defensible; none is "the" value.** The real finding is that the statistic
+swings 0.71-0.94 with aggregation choice, so **the method must be stated
+alongside it.** The falsification it supports (Moran and A7 do NOT disagree)
+survives at every value.
+
+**Also unsourced:** the "76 %" composition-surrogate share (0.212/0.260 = **0.815**;
+no denominator on disk yields 76 %) — superseded anyway by the 65.9 %/85.4 % pair.
+
+## Document disagreements the pack tabulated (22 total)
+
+- **`PHASE8_ROADMAP_STATUS.md` contradicts itself** — my banner is post-C6 and
+  correct; the PI-decisions table, the 8.4 gate table and the 8.5b A7 block are
+  all pre-C6.
+- **`PREREG_PHASE8.md` §10.1 mixes vintages inside one item.**
+- **§30 5.9 mixes bases in one sentence** — 1.212 (4-pair) paired with 1.128
+  (3-pair). Consistent pairs are 1.128 -> 1.212 or 1.131 -> 1.212.
+- **Audit R3 was never applied to `CS_PHASE8_TORUS_VAR.md`**, which still says
+  "23 % in the void".
+- **Audit R5 is now moot** — `neg_probe_rate` under N6+N5 no longer excludes zero
+  (p 0.199), so "every control family is flat under +N6+N5" is now *true*.
+- **"Naive biological amplitude" has FOUR values in circulation** (0.277 / 0.291 /
+  0.312 / 0.314) — two estimators x two vintages.
+- Two files still carry live forbidden numbers: `BIO_DELIVERABLE7_CLAIM_AUDIT.md`
+  L285 and `CS_PHASE7_C1.md` §6.3.
+
+
 | 80 | **`phase8-frozen` TAGGED** | `926439629a07269a32c93f998da0f6e1cd20933c` | Verified before tagging: figure guard 52/52, gene-set gate exit 0 both arms, all three pinned hashes. Pre-registration hashes filled; working tree clean |
 | 81 | **Hazard fix committed (`11fa773`) + temp hook retired (`9264396`)** | proven by running `git checkout -- code/` against HEAD | The PI's own commit (`1351ce8`) had **left the guard file out** — my `skip-worktree` protection stopped it being staged. Guards now in history; hazard permanently closed |
 | 82 | **A3 fallback screen** | `reports/A3_FALLBACK_SCREEN.md`, `results/a3_fallback/` | **No adequate like-for-like fallback exists** |
