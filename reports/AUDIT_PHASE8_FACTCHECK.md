@@ -151,14 +151,33 @@ and the two documents currently disagree about which figure2b/2c is canonical.
 ### R5 — "under +N6+N5 every control family's clustered mean is indistinguishable from zero"
 **Where:** `CS_PHASE8_CALLERS.md` §4.1 statement 2.
 
-**Status: REFUTED, and self-contradicted two paragraphs later.** `neg_probe_rate` under
+> **⚠ SUPERSEDED 2026-08-27 (record reconciliation) — R5 IS NOW MOOT; THE CLAIM IS TRUE.**
+> This item was audited against the **pre-C6 05:19** `a7_summary.csv`. In the frozen 09:06
+> file, `neg_probe_rate` under `n6n5` is **+0.0097 [−0.0060, +0.0253], p = 0.199** — the CI
+> **includes** zero. All five control families are now indistinguishable from zero under
+> +N6+N5, so "every control family is flat under +N6+N5" is correct as written and needs no
+> hedge. Do **not** carry forward the "every count-based control family (4 of 5)" wording, and
+> do not carry forward the stale caveat that one response is nominally non-zero.
+> `python3 -c "import pandas as pd; d=pd.read_csv('results/phase3/a7_summary.csv'); print(d[(d.response=='neg_probe_rate')&(d.design=='n6n5')][['clustered_mean','clustered_lo','clustered_hi','clustered_p']])"`
+> The R5 finding below is retained as the record of what was true of the pre-C6 file.
+
+**Status at audit time (pre-C6 file): REFUTED, and self-contradicted two paragraphs later.** `neg_probe_rate` under
 `n6n5` is **+0.0108 [+0.0021, +0.0195], p = 0.0204** — CI excludes zero. The report
 discloses this immediately afterwards ("Reported against interest: it is the one response
 of five whose conditioned amplitude is nominally non-zero"). The word "every" in statement 2
 should be "every count-based control family (4 of 5)". Verified in `a7_summary.csv`.
 
 ### R6 — "the reportable-fit filter admits two to three times more fits than its nominal rate implies"
-**Where:** `CS_PHASE8_CALLERS.md` §4.3 warning.
+**Where:** `CS_PHASE8_CALLERS.md` §4.3 warning. **Also live in the frozen
+`reports/PREREG_PHASE8.md` §3.6** — see the dated correction block at the head of that file.
+
+> **⚠ DIGITS SUPERSEDED 2026-08-27 (record reconciliation).** R6's **verdict stands** — the
+> claim is not supported — but the table below is computed from the **pre-C6** fits file. The
+> frozen `results/phase3/a7_control_probe_fits.csv` gives, for the reportable filter as defined
+> (naive, one-sided): `all_controls` **13.3 %**, `neg_control_codeword` **13.3 %**,
+> `neg_control_probe` **8.5 %**, `neg_probe_rate` **6.7 %**, `genomic_control` **3.0 %** —
+> i.e. **3.0–13.3 %**, not 1.2–13.3 %. On the full `n6n5` design it is **4.8 %, identical
+> across all five responses — essentially nominal**, not 3.0–6.7 %. Quote the frozen figures.
 
 **Status: REFUTED by the same file.** The 9–16 % figure is a **two-sided** 95 %-CI exclusion
 rate under the full `n6n5` design. The reportable-fit filter is

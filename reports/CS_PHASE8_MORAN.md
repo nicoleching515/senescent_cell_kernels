@@ -31,7 +31,9 @@ committed figures match.**
 4. **But — and this is the part that cuts against the project — the two statistics do not
    disagree the way `NOVELTY_ASSESSMENT.md` §2.1 point 3 assumes.** Across the twelve
    control-plus-module fields, |Moran's I| and |A7 naive amplitude| rank together at
-   **Spearman ρ = +0.895 (p = 8.4 × 10⁻⁵)** raw, **+0.944** cell-type-centred. The sentence
+   **Spearman ρ = +0.895 (p = 8.4 × 10⁻⁵)** raw, **+0.944** cell-type-centred — in both cases
+   the **section-clustered mean per field** under knn6 weights (§4.1 gives the other
+   aggregations, all of which agree in sign and significance). The sentence
    *"so the reader can see the two tests disagree"* is **not supported by this data and must
    not be written.**
 
@@ -203,6 +205,24 @@ Across the twelve control + module fields, |Moran's I| against |A7 naive amplitu
 * raw: **Spearman ρ = +0.895, p = 8.4 × 10⁻⁵**
 * cell-type-centred: **ρ = +0.944, p = 3.9 × 10⁻⁶**
 
+**Both are the section-clustered *mean* per field, knn6 row-standardised weights, over the
+12 control + module fields** — `code/summarize_moran.py:183-184` → `moran_verdict.txt`.
+**The aggregation must be stated wherever this ρ appears, because ρ moves with it**
+(added 2026-08-27, record reconciliation):
+
+| aggregation | ρ | p | emitted by |
+|---|---|---|---|
+| clustered **mean** per field, knn6 raw, 12 fields | **+0.8951** | 8.37e-05 | `moran_verdict.txt` — **frozen; the one to quote** |
+| clustered **mean** per field, knn6 cell-type-centred, 12 fields | **+0.9441** | 3.93e-06 | same — **frozen** |
+| **median** per field, knn6 raw, 12 fields | +0.9231 | 1.86e-05 | no file; re-derivable from `moran_vs_a7.csv` |
+| **per-row**, no aggregation, 12 fields × 11 sections = 132 pairs | +0.7104 | 1.43e-21 | no file; same |
+
+**All four are positive and significant, so the falsification is not fragile: at every
+defensible aggregation, Moran's I and the A7 kernel agree rather than disagree.** Only the
+digit is aggregation-dependent. Do not let a reader infer that the finding turns on the
+choice. (The separate within-control-family value, ρ = +0.155, p = 0.259 over the 5 control
+responses × 11 sections, is a **different subset**, not a fifth aggregation of this one.)
+
 Panel (b) of the figure shows it: modules top-right, controls bottom-left, monotone between.
 **The plan's implied defence — "the two tests disagree, look" — is false on this data.**
 `NOVELTY_ASSESSMENT.md` §2.1 point 3 tells the project to write exactly that sentence. It
@@ -238,8 +258,14 @@ Three consequences, and they are the substance of the answer to objection 9:
    can see the projection.
 2. **Moran's I is blind to a distance-to-sender kernel at the amplitudes that matter here.**
    The smallest amplitude it could resolve is **0.362 SD**. The A7 control gradient is
-   **0.074 SD** (5× too small). The paper's own **naive biological amplitude is 0.291 SD**
-   and its **conditioned amplitude is 0.036 SD** — Moran's I could not detect the project's
+   **0.074 SD** (5× too small). The paper's own **naive biological amplitude is 0.277 SD**
+   and its **conditioned amplitude is 0.031 SD** — both the section-clustered signed mean of
+   β/sd(y) over the 1,155 biological-module fits (`results/phase3/a7_summary.csv`, row
+   `BIOLOGICAL MODULES (reference)`, `design = base` / `n6n5`), and both **frozen post-C6**.
+   *(Corrected 2026-08-27, record reconciliation: this read 0.291 / 0.036, the pre-C6 vintage
+   of the same estimator. The companion estimator on the same fits, median |β|/sd, gives
+   0.312 naive / 0.0795 conditioned — name whichever you use. The power argument is unaffected:
+   0.362 exceeds all of them.)* Moran's I could not detect the project's
    *headline effect* either, let alone the confound. A statistic that cannot see the estimand
    is not a test of the estimand.
 3. **Therefore the "different question" claim is true, but its correct justification is

@@ -634,9 +634,23 @@ sampling points and establishes the **direction**, not a type-I-error number for
 the real fits — the project's instrument for that is A7 (9–16 % against 5 %
 nominal). And **on the real data the prediction does not visibly bite**:
 N3-tile's SF (0.971) sits *below* the bounding-box value, i.e. it looks slightly
-*conservative* here, because at a 1,200 µm tile side and a pooled λ̂ of 15.7 µm
-the seams are ~76 λ̂ apart and the affected fraction of cells is small. Both
+*conservative* here, because at a 1,200 µm tile side and a **pooled λ̂ of 14.7 µm
+the seams are ~81 λ̂ apart** and the affected fraction of cells is small. Both
 halves have to be said.
+
+> **Corrected 2026-08-27 (record reconciliation).** This paragraph read "a pooled λ̂
+> of 15.7 µm … ~76 λ̂ apart". **15.7 µm is emitted by no file** and its only provenance
+> was `CS_PHASE8_TORUS_VAR.md`'s own "2,215 µm = 141× the pooled λ̂" (2215/141 = 15.71),
+> i.e. it was circular with the claim it supported. The authoritative value is
+> **λ̂ = 14.7 µm**, the pooled median of `lam_naive` over the 315 primary fits
+> (in-band × `tierA_p95` × `stratum == "all"`), printed by `code/summarize_phase3.py:221`
+> into `results/phase3/summary_phase3.txt` §6, `tierA_p95` row, column `medlam`
+> (re-derives as 14.7321 from `main_fits.csv`). **IQR [7.0, 50.0] µm; 60 % of fits
+> railed at a grid bound** — that caveat travels with every use. Dependents:
+> 2,215 µm = **150×** λ̂ (was 141×); seams **~81 λ̂** apart (was ~76); the 100 µm window
+> spans **≈ 6.8 λ̂** (was "≈ 6λ"). Every one of them moves in the direction that
+> *strengthens* the argument it supports. Full derivation:
+> `reports/RECORD_RECONCILIATION.md` §1.
 
 N3-tile, N3-occ, N3-swap and N3-snap remain in the battery and in Figure 2c as
 the supporting variants; only which one is *presented as primary* changes.

@@ -156,8 +156,11 @@ see it.
   was stale was the *answer*: "we quantify how much survives **matched-decoy and
   torus-shift nulls**" names the two nulls that are no longer the primaries.
   Rewritten to N5/N6 + **N3-var**, with the matched-decoy contrast demoted to
-  diagnostic, and the actual answer attached (SF **0.088** [−0.017, 0.234];
-  controlled **0.029** [−0.007, 0.084] vs a **0.183** bound **over 0–100 µm**).
+  diagnostic, and the actual answer attached (SF **0.088**, IQR across fits
+  [−0.017, 0.234]; controlled **0.029**, IQR across fits [−0.007, 0.084], vs a
+  **0.183** bound **over 0–100 µm**). *(Bracket type labelled 2026-08-27: both are
+  IQRs across the 153 reportable fits, not confidence intervals —
+  `results/phase3/sf_summary.csv` carries `q25/median/q75` and no CI column.)*
   Verdict on "which is right": **Ma et al.** — `references.bib` keys it
   `ma2024spatial`, PMID 39500323, and the novelty review verified it independently.
 - **4 (only one or two tissues).** Made concrete and honest: one mouse tissue,
@@ -171,7 +174,8 @@ see it.
   2.4×)** while RS_count holds **0.033–0.060** — i.e. reported against interest,
   **C1 replaced a liberal test with a more liberal one**, which is why N3-var is
   primary. Both honest caveats carried (synthetic study; on real data the tile looks
-  slightly *more* conservative because seams sit ~76 λ̂ apart).
+  slightly *more* conservative because seams sit **~81 λ̂** apart — at the sourced
+  pooled λ̂ of **14.7 µm**, not the withdrawn 15.7 µm; corrected 2026-08-27).
   `sf_summary_var.csv`, `var_sim_calibration.csv`, `CS_PHASE8_TORUS_VAR.md` §1–§4.
 - **9 (Voyager).** Content unchanged — it was already correct — with a ⚠ STATUS flag
   added: see §0.1. The quotable A7 numbers were attached so the objection is not

@@ -15,6 +15,30 @@ deviation.
 
 ---
 
+## 0.0 CORRECTION BLOCK — dated 2026-08-27 (record reconciliation)
+
+**This file is the frozen pre-registration. Nothing below is rewritten silently.** The
+following items are corrected here, with the original wording left in place at each site and
+an inline dated marker pointing back to this block. Full derivations and commands:
+`reports/RECORD_RECONCILIATION.md`.
+
+| # | Where | What is wrong | Correction, with source |
+|---|---|---|---|
+| **C-1** | **§10.1, paragraph 1** | **Mixes vintages inside one item.** Paragraph 1 quotes the **pre-C6 05:19** A7 file (−0.070 p = 0.023 naive; −0.061 p = 0.020 N2; +0.007 p = 0.41 N5; conditioned biological +0.036 SD) while paragraph 2 of the *same item* quotes the **frozen 09:06** file (−0.0604 / −0.0307 / −0.0225). A reader taking both paragraphs as one measurement is comparing two runs. | Frozen `results/phase3/a7_summary.csv`, `all_controls`: naive **−0.0744 [−0.1306, −0.0182], p = 0.0145**; N2 **−0.0642 [−0.1113, −0.0172], p = 0.0124** (86 %, not 80 %, undiminished); N5 **+0.0038 [−0.0186, +0.0261], p = 0.715**; conditioned biological amplitude **+0.0310** (clustered mean), not +0.036. Paragraph 2's per-family digits are already correct. |
+| **C-2** | **§3.6** | Quotes the FPR list **0.091 / 0.103 / 0.109 / 0.127 / 0.164** — the 0.127 is the **pre-C6** `neg_control_probe` value. | Frozen: **0.091 / 0.103 / 0.109 / 0.145 / 0.164**. The range "9–16 % against a 5 % nominal" is unchanged; the four count-based responses span **9–15 %**. |
+| **C-3** | **§3.6** | *"The reportable-fit filter therefore admits two to three times more fits than its nominal rate implies, in both arms."* **This is a forbidden claim** (audit R6, writing-pack checklist item 22) and it is live in the frozen text. | The 9–16 % is the **estimator's two-sided 95 %-CI exclusion rate**, not the filter's. The reportable filter (`beta_naive > 0 AND beta_base_lo > 0`, one-sided, naive design) admits **3.0–13.3 %** across the five control responses and **4.8 %, identical across all five — essentially nominal — on the full N6+N5 design** (`results/phase3/a7_control_probe_fits.csv`). Delete the sentence; keep the FPR statement. |
+| **C-4** | **§5 (primary outcome) and §6 R1** | The primary estimand is specified as *"reported with its paired-bootstrap interquartile range"*, and R1's criterion is written on a *"paired-bootstrap interval"*. **There is no bootstrap in that bracket.** | The bracket is an **inter-quartile range across the reportable fits** of the per-fit SF point estimates: `code/summarize_phase3.py:99`, `np.quantile(v, [.25, .5, .75])` → `results/phase3/sf_summary.csv` columns `q25 / median / q75`. **There is no CI column in that file.** The pre-registered 400-replicate / 100-quantile-block bootstrap (§3.6) emits **per-fit** CIs (`sf_n2n5n6_lo/hi` in `main_fits.csv`, median span [−0.415, +0.381]) — it emits **no interval on the median across fits**. **R1 is therefore to be read as: the IQR across reportable fits includes 0 and its upper quartile is below 0.50.** Nothing about M1's outcome changes (IQR [−0.017, 0.234] includes 0; q75 = 0.234). Genuine CIs in this project exist only for the composition-matched SFs (`compmatch_reruns.csv`, `median_sf_matched_lo/hi`) and the A7 section-clustered means. |
+| **C-5** | **§5, M1 benchmark table** | Marked **PROVISIONAL** and pre-C6, as intended — but it is being copied. | Frozen replacements, `results/phase3/m1_final_audit.txt` §3: naive amplitude **0.329** (was 0.326); SF N2+N5+N6 **0.088**, IQR **[−0.017, 0.234]** (was 0.082 [−0.099, 0.249]); SF N5 alone **0.115** (was 0.084); SF N1 **0.707** (was 0.716); SF N2 **0.952** (was 0.943); controlled amplitude **0.029** (was 0.027); 80 %-power bound **0.183**, SE 0.0654 (was 0.203, SE 0.073); λ̂ railed **60 % (189/315)** (was 63 %, 200/315); reportable fits **153** (was 160); corrected N3/N4 tile **0.971 / 0.924** (was 0.974 / 0.962) — and **N3-var 0.996 / N4-var 0.985 are now the primary corrected pair**, not the tile variants. |
+| **C-6** | **§13, deviation P15** | *"close to the median λ̂ of 12.8 µm"*, and *"1–63 of 38,080–108,375"*, *"27 µm (N3) and 25 µm (N4)"*, *"0.349 / 0.273"*. All pre-C6. | Frozen `results/phase3/null_destructiveness.csv`: **1–66** admissible offsets of 38,080–108,375; median displacement **28 µm (N3-occ)** and **25 µm (N4-occ)**; SFs **0.302 / 0.183**. And the pooled λ̂ to compare against is **14.7 µm**, not 12.8 — see C-7. P15's verdict (the 5 % variants are degenerate, not a corrected null) is unaffected. |
+| **C-7** | **project-wide, recorded here** | **λ̂ = 15.7 µm "pooled" is unsourced and is withdrawn.** It appears in six documents, is emitted by no file, and was back-derived from the claim it supported. This file never quotes 15.7, but its P15 quotes a different λ̂ vintage (12.8 µm). | **Authoritative: λ̂ = 14.7 µm**, the pooled median of `lam_naive` over the **315** primary fits (in-band × `tierA_p95` × `stratum == "all"`), printed by `code/summarize_phase3.py:221` into `results/phase3/summary_phase3.txt` §6, `tierA_p95` row, column `medlam`; re-derives as 14.7321 µm from `main_fits.csv`. **IQR [7.0, 50.0] µm, 60 % railed** — that caveat travels with it. This file's §5 position is unchanged and is the reason the value is only ever descriptive: **λ̂ is deliberately not the pre-registered estimand.** |
+
+**None of these corrections changes a pre-registered decision, a threshold, a stop condition,
+or the §18 outcome.** C-3 removes a forbidden claim; C-4 renames a bracket without moving a
+number; the rest are pre-C6 → frozen digit substitutions the file already flagged as
+PROVISIONAL.
+
+---
+
 ## 0. What is provisional in this draft
 
 Two agents were running while this was first drafted — the **M1 end-to-end re-run (task 8.7)** and
@@ -306,6 +330,13 @@ responses whose true amplitude is known to be zero. The reportable-fit filter th
 to three times more fits than its nominal rate implies, in both arms. This is stated in Methods,
 not in a footnote.
 
+***[Corrected 2026-08-27 — see §0.0 items C-2 and C-3. The list is pre-C6: the frozen values are
+0.091 / 0.103 / 0.109 / **0.145** / 0.164, and the range 9–16 % is unchanged. The sentence "the
+reportable-fit filter therefore admits two to three times more fits than its nominal rate
+implies" is **withdrawn** — it is a forbidden claim (audit R6). The filter admits 3.0–13.3 % on
+the naive design and 4.8 %, essentially nominal, on the full N6+N5 design; 9–16 % is the
+estimator's two-sided CI-exclusion rate, which is a different statistic.]***
+
 ### 3.7 Sender callers and their thresholds
 
 **§15 says "the four sender callers and their thresholds". The phrase is ambiguous in the code and
@@ -586,8 +617,9 @@ seven independently of whether it passes.**
 > The **surviving fraction of the naive distance-to-nearest-sender amplitude under the combined
 > N2 + N5 + N6 nuisance design**, at the primary sender call `tierA_p95` on the strict-33 Tier A,
 > taken as the **median over the arm's reportable fits** (positive naive amplitude, spatial
-> block-bootstrap CI excluding zero, ≥ 2,000 receivers), reported with its paired-bootstrap
-> interquartile range; **together with the controlled amplitude `|β| / sd(y)` in response-SD units,
+> block-bootstrap CI excluding zero, ≥ 2,000 receivers), reported with its **inter-quartile range
+> across those fits** *[wording corrected 2026-08-27 — see §0.0 item C-4; this read
+> "paired-bootstrap interquartile range", and there is no bootstrap in that bracket]*; **together with the controlled amplitude `|β| / sd(y)` in response-SD units,
 > compared against that arm's own 80 %-power detectable bound.**
 
 One number per arm, one sender definition, one design. The per-module Tier A sets are the
@@ -625,6 +657,13 @@ H1 is scored against these four criteria, fixed now. **All thresholds are absolu
 N2 + N5 + N6, at `tierA_p95`, over H1's reportable fits, has a **paired-bootstrap interval that
 includes 0** *and* an **upper limit below 0.50**. (M1: 0.082 [−0.099, 0.249] — includes 0, upper
 limit 0.249.)
+
+***[Corrected 2026-08-27 — see §0.0 item C-4. "Paired-bootstrap interval" is a misnomer: the
+bracket is the **inter-quartile range across the reportable fits** (`sf_summary.csv` `q25/q75`,
+`np.quantile`), and the pre-registered bootstrap emits no interval on the median across fits.
+**Read R1 as: the IQR across H1's reportable fits includes 0 and its upper quartile is below
+0.50.** The criterion, the threshold and M1's own outcome are unchanged; the frozen M1 values
+are 0.088, IQR [−0.017, 0.234].]***
 
 **R2 — amplitude (nothing above the bound).** H1's median controlled amplitude `|β|/sd(y)` under
 N2 + N5 + N6 is **below H1's own 80 %-power detectable bound**, computed from H1's own standard
@@ -744,6 +783,10 @@ frozen run order, not an afterthought (PI decision D6).
 These are consequences of measurements already made, and they bind both arms.
 
 1. **No naive distance kernel, and no N2-only kernel, may be reported as a distance effect.**
+   ***[Corrected 2026-08-27 — see §0.0 item C-1. The digits in this paragraph are the pre-C6
+   05:19 A7 file; paragraph 2 below is the frozen 09:06 file. Frozen values: naive −0.0744
+   [−0.1306, −0.0182] p = 0.0145; N2 −0.0642 [−0.1113, −0.0172] p = 0.0124, 86 % undiminished;
+   N5 +0.0038 [−0.0186, +0.0261] p = 0.715; conditioned biological amplitude +0.0310.]***
    A7 measured the mouse arm's negative-control response against distance to nearest sender:
    naive clustered mean **−0.070 SD [−0.128, −0.012], p = 0.023**, and the matched-decoy contrast
    leaves **−0.061 [−0.111, −0.012], p = 0.020** — 80 % undiminished. The N5 technical covariate
@@ -869,7 +912,7 @@ they cannot be confused with the `D*` gene-set rows.
 | **P12** | **`Lmnb1` is not usable as the D3 re-anchor**, contrary to §7 of the planning document. | It is a member of `B_downstream_arrest` and `B_secondary_senescence`. The primary anchor is an 8-gene proliferation set disjoint from every `A_*.txt` and `B_*.txt`, asserted at run time; `Lmnb1` is reported as a secondary. All anchor decisions are depth-partialled. §3.9. |
 | **P13** | **The consensus-of-callers anchor is unusable and is not offered.** | It disagrees with the published sign in 9 of 11 M1 sections because SenePy dominates it, and anchoring on it inflates DeepScence-vs-SenePy agreement to 2.793× chance — it manufactures the exact circularity D3 exists to remove, in the opposite direction. |
 | **P14** | **`N4_snap` is documented but not implemented.** The rotation family has five variants. | `phase3_null_geom.py:33` (prose) vs `:58` (`ROTATION`, 5 entries). `N4_swap` is itself rotate-then-snap. |
-| **P15** | **N3-occ / N4-occ at the specified 5 % tolerance are degenerate and are not a corrected null.** | On a liver section the criterion admits 1–63 of 38,080–108,375 candidate translations, all near-identity: median displacement 27 µm (N3) and 25 µm (N4), inside the 100 µm window and close to the median λ̂ of 12.8 µm; for section 7001 the only admissible translation is the identity. Values quoted (0.951 / 0.896) are the 15 %-tolerance variants; at the literal 5 % they are **0.349 / 0.273** and measure the null's degeneracy, not the effect. Holds for all six sender calls (0.121–0.673). |
+| **P15** | **N3-occ / N4-occ at the specified 5 % tolerance are degenerate and are not a corrected null.** | On a liver section the criterion admits 1–63 of 38,080–108,375 candidate translations, all near-identity: median displacement 27 µm (N3) and 25 µm (N4), inside the 100 µm window and close to the median λ̂ of 12.8 µm; for section 7001 the only admissible translation is the identity. Values quoted (0.951 / 0.896) are the 15 %-tolerance variants; at the literal 5 % they are **0.349 / 0.273** and measure the null's degeneracy, not the effect. ***[Corrected 2026-08-27 — see §0.0 items C-6 and C-7: frozen values are 1–66 admissible offsets, 28 µm (N3-occ) and 25 µm (N4-occ), SFs 0.302 / 0.183, against a pooled λ̂ of 14.7 µm. The verdict is unaffected.]*** Holds for all six sender calls (0.121–0.673). |
 | **P16** | **N3-swap reproduces N1 and is not a corrected torus shift.** | Median SF 0.721 vs N1's 0.716, per-fit Spearman ρ = 0.948, median absolute difference 0.0087; conditioning on the N5+N6+zonation block moves it to **0.999**, i.e. it removes nothing the nuisance model does not already remove. The identity is tight for the Tier A percentile calls (ρ 0.92–0.98) and only directional for SenePy (ρ 0.43–0.51), so the footnote reads "reproduces N1 **for the Tier A calls**". |
 | **P17** | **The §11 gate now runs automatically after any gene-set or panel change**, not only at freeze. | §4. `code/gate_genesets_guard.py` + a git `pre-commit` hook + a `PostToolUse` hook. The mouse B6 margin is the reason. |
 | **P18** | **Mouse B6's margin is one gene, but a one-gene trim does not fail the gate — a two-gene trim does.** Corrects `PREREG_PHASE8_genesets.md` §3.1 / D10. | §4, verified by falsification against the guard. The one-gene statement holds only under the CSV-only 5,006-gene panel definition. |

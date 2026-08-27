@@ -7,19 +7,54 @@
 > and §4 O1). **Moran's I has since been run** (`reports/CS_PHASE8_MORAN.md`,
 > `results/moran/`) and **the disagreement claim is falsified**: across the 12
 > control and module fields, |Moran's I| and |A7 naive amplitude| rank together at
-> **Spearman rho = +0.895 raw, +0.944 cell-type-centred**. Writing "the two tests
-> disagree" would be visible to any reviewer in a single plot.
+> **Spearman rho = +0.895 raw, +0.944 cell-type-centred** — both the section-clustered
+> mean per field under knn6 weights, over the 12 control and module fields. Writing "the
+> two tests disagree" would be visible to any reviewer in a single plot.
 >
 > **The replacement is stronger, because it is measured rather than asserted.**
 > Using the real lambda-hat: the entire A7 gradient contributes **Delta-I = 2.2e-4,
 > i.e. 0.83% of the observed control Moran's I**, and the smallest kernel amplitude
 > Moran's I could resolve is **0.362 SD** — five times the A7 control gradient
 > (0.074 SD) and **larger than the project's own naive biological amplitude
-> (0.291 SD)**. I verified that bound from `results/moran/moran_kernel_power.csv`.
+> (0.277 SD)**. I verified that bound from `results/moran/moran_kernel_power.csv`.
+> *(Corrected 2026-08-27, record reconciliation: this banner said 0.291 SD, which is the
+> **pre-C6** vintage of the section-clustered signed mean, and attributed it to
+> `moran_kernel_power.csv`, where it does not appear. The frozen value is **0.2767**, from
+> `results/phase3/a7_summary.csv`, row `BIOLOGICAL MODULES (reference)` / `design = base`,
+> column `clustered_mean`. The conclusion is unaffected: 0.362 exceeds all four values in
+> circulation.)*
 > **Moran's I could not have detected the paper's headline effect either.**
 >
 > So "different question" survives — but justified by **power, not orthogonality**.
 > Use that framing. Everything else in this report stands.
+>
+> **⚠ ATTACH THE AGGREGATION TO EVERY ρ (added 2026-08-27, record reconciliation).** The
+> Moran-vs-A7 rank correlation is **aggregation-dependent**, and four values are in circulation
+> because four defensible aggregations were used. All four reproduce exactly:
+>
+> | aggregation | ρ | p | emitted by |
+> |---|---|---|---|
+> | section-clustered **mean** per field, knn6 **raw**, 12 control+module fields | **+0.8951** | 8.37e-05 | `results/moran/moran_verdict.txt`; `code/summarize_moran.py:183` — **frozen; quote this one** |
+> | section-clustered **mean** per field, knn6 **cell-type-centred**, 12 fields | **+0.9441** | 3.93e-06 | same, `:184` — **frozen** |
+> | **median** per field, knn6 raw, 12 fields | +0.9231 | 1.86e-05 | **no file**; re-derivable from `moran_vs_a7.csv` |
+> | **per-row, no aggregation**, 12 fields × 11 sections = 132 pairs | +0.7104 | 1.43e-21 | **no file**; same |
+>
+> **The falsification survives at every one of them.** ρ is positive and significant under all
+> four aggregations, so "Moran's I and the A7 kernel do not disagree" is not a fragile finding —
+> only the digit is aggregation-dependent. **Say that explicitly.** Quote the frozen pair
+> (+0.895 raw / +0.944 cell-type-centred) and name the aggregation in the same clause.
+>
+> Not a competitor to these, and not to be swapped for them: **within the 5 control responses ×
+> 11 sections (55 pairs) ρ = +0.155, p = 0.259** — a different subset of the same data, and the
+> honest quantitative form of "the two statistics ask different questions".
+>
+> ```bash
+> python3 -c "
+> import pandas as pd; from scipy.stats import spearmanr
+> P=pd.read_csv('results/moran/moran_pooled.csv'); s=P[P.kind.isin(['control','module'])]
+> print(spearmanr(s.I_raw_mean.abs(), s.a7_base_mean.abs()))
+> print(spearmanr(s.I_ctcentred_mean.abs(), s.a7_base_mean.abs()))"
+> ```
 >
 > **A second, genuinely new point came out of the same run:** Voyager's
 > controls-vs-genes contrast is an **abundance** contrast. Genes matched to the
@@ -247,10 +282,19 @@ variable genes false positive rate`; `torus shift null spatial omics negative co
 2. **No paper reports which null removes the control gradient.** Your N2-vs-N5 result
    (`N2` leaves −0.061 SD, p=0.020, ~80% undiminished; `+N6+N5` gives +0.007 [−0.011, +0.025],
    p=0.41) is the most transferable thing in the whole repo and I found nothing like it anywhere.
-3. Moran's I ≈ 0 (Voyager's test) and a distance-kernel amplitude of −0.070 SD are **not the same
+3. ~~Moran's I ≈ 0 (Voyager's test) and a distance-kernel amplitude of −0.070 SD are **not the same
    test**. A signal with no global autocorrelation can still project onto a specific covariate.
    That is your defence against U1 and you should state it explicitly with a Moran's I of your own
-   controls alongside, so the reader can see the two tests disagree.
+   controls alongside, so the reader can see the two tests disagree.~~
+   **FALSIFIED — struck 2026-08-27 (see the banner at the head of this file).** Moran's I has
+   been run. The two statistics **rank together** — ρ = +0.895 raw / +0.944 cell-type-centred
+   (section-clustered mean per field, knn6, 12 control+module fields; `results/moran/moran_verdict.txt`),
+   and positively at every other aggregation tried (+0.9231 median-per-field, +0.7104 per-row).
+   Do not write "the two tests disagree" in any form. The defence that survives is **power**:
+   the whole A7 gradient moves Moran's I by 0.83 % of its observed control value, and the
+   smallest amplitude Moran's I could resolve here is 0.362 SD against a naive biological
+   amplitude of 0.277 SD. Also note the premise of the struck sentence is itself gone —
+   the aggregate control field is **not** near zero, I = +0.0455 [+0.0302, +0.0609].
 
 **Framing that survives review.** Kill "nobody reports it". Write instead:
 
@@ -300,9 +344,15 @@ neighbor graph, these cells [outside tissue] will also affect spatial analysis" 
 awareness of the mechanism, not of the null-model degeneracy.
 
 **Two things here are genuinely yours and should carry the section:**
-1. The **quantification on real tissue**: 23% of shifted cells in the void under a bounding-box
-   wrap; at ≤5% out-of-tissue tolerance only 1–63 of 38,080–108,375 candidate offsets are
-   admissible (0.001–0.17%), median displacement **27 µm** against a median λ̂ of **12.8 µm**, and
+1. The **quantification on real tissue** *(digits corrected 2026-08-27, record reconciliation:
+   this read "23% of shifted cells in the void", "1–63", "27 µm", "median λ̂ of 12.8 µm" — the
+   first is audit R3's column error and the rest are the pre-C6 file)*: **35.5 %** of shifted
+   senders land **out of tissue** under a bounding-box wrap (`1 − frac_in_occupancy`; the 22.8 %
+   figure is the different column `1 − frac_retaining_a_neighbour`, "left with no real cell inside
+   the 100 µm window" — never merge the two); at ≤5% out-of-tissue tolerance only **1–66** of
+   38,080–108,375 candidate offsets are
+   admissible (0.001–0.17%), median displacement **28 µm** against a pooled λ̂ of **14.7 µm**
+   (IQR 7.0–50.0 µm, 60 % of fits railed), and
    one of six sections admits only the identity (SF = −0.000 by construction). Nobody has published
    these numbers for spatial omics.
 2. The **FFT trick**: "which translations keep ≥x% of a point set inside a mask?" is a circular
@@ -475,7 +525,9 @@ nulls) are therefore not supporting material — **they are what makes this a re
 null experiment**. Prioritize them over anything else if time runs short.
 
 **The 1 mm problem.** Nelson 2012's in vitro spread is ~1 mm; your fitting window is 100 µm and
-your median λ̂ is 12.8 µm. A reviewer will ask whether you looked far enough. You need one sentence
+your pooled median λ̂ is **14.7 µm** *(corrected 2026-08-27: 12.8 µm was the pre-C6 reportable-fit
+median; the frozen pooled median over the 315 primary fits is 14.7 µm, IQR [7.0, 50.0], 60 %
+railed — `results/phase3/summary_phase3.txt` §6, `tierA_p95` row, `medlam`)*. A reviewer will ask whether you looked far enough. You need one sentence
 stating the distance range over which the bound applies — "no effect above 0.203 response-sd at 80%
 power **over 0–100 µm**" — and one sentence on why 100 µm (cytokine signalling is expected over
 tens of µm; the endometrium nearest-neighbour distances are 45–211 µm; a 100 µm window with
@@ -507,7 +559,7 @@ Ranking is novelty × defensibility × transferability, not by how much of the p
 | O2 | *"Your −0.070 SD is just cell size / sequencing depth. You have rediscovered normalization."* | `neg_probe_rate` flat naively (+0.014, p=0.079) → the gradient is detection efficiency, not probe binding; and that is precisely why N2 misses it. | **AVAILABLE**, `CS_PHASE8_CALLERS.md` §4.1. Must be promoted into the main text, not left in an appendix. |
 | O3 | *"Torus shifts on irregular windows are a solved problem — Lotwick & Silverman 1982, Mrkvička et al. 2021 variance correction. Why did you not use the standard fix?"* | Both citations, plus either an implemented variance-corrected N3 variant or an explicit justification for tiling. | **NOT DONE.** Second-highest priority; the variance-corrected run is cheap. |
 | O4 | *"You cite CellWHISPER as the source of the torus-shift null. It permutes within cell type."* | Fix the citation everywhere (plan §32, Related Work, Figure 4 caption). | **NOT DONE.** Verified error. Cheap to fix, expensive to be caught on. |
-| O5 | *"λ̂ = 12.8 µm is below your segmentation resolution and your window is 100 µm, but senescence spreads ~1 mm in vitro (Nelson 2012). You looked in the wrong place."* | State the bound's distance range explicitly; justify 100 µm against the endometrium 45–211 µm nearest-neighbour calibration and λ̂ ≈ 13 µm (≈8λ of window); ideally show the fit is stable to a wider window. | **PARTIALLY** — the calibration numbers are in plan §3; the range statement is not attached to the bound. |
+| O5 | *"λ̂ = 14.7 µm is below your segmentation resolution and your window is 100 µm, but senescence spreads ~1 mm in vitro (Nelson 2012). You looked in the wrong place."* *(λ̂ corrected 2026-08-27 from the pre-C6 12.8 µm.)* | State the bound's distance range explicitly; justify 100 µm against the endometrium 45–211 µm nearest-neighbour calibration and the pooled **λ̂ = 14.7 µm**, i.e. a window of **≈ 6.8 λ̂** — and in the same sentence give the railing caveat, IQR [7.0, 50.0] µm with 60 % of fits at a grid bound, so the window is 14× the 7 µm floor but only 2× the 50 µm ceiling; ideally show the fit is stable to a wider window. | **PARTIALLY** — the calibration numbers are in plan §3; the range statement is not attached to the bound. |
 | O6 | *"Your caller-agreement change is the gene set, not the coverage — your own patch file says Tier A went 25→33 and the numbers moved."* | 2-section vs 11-section agreement recomputed **on the frozen strict-33 Tier A on both**. | **NOT DONE / pending M1.** Until this exists, do not put the coverage claim in an abstract. |
 | O7 | *"The DeepScence sign flip is the method's documented CDKN1A anchoring rule, not a finding."* | Per-section CDKN1A correlation; reframe as a cross-section comparability caveat for users. | **NOT DONE.** |
 | O8 | *"This is a negative result about your estimator, not about biology."* | Figure 1 (identifiability regimes, synthetic ground truth) + Figure 4 (COMMOT/SpaTalk/CellChat under the same nulls) + CI-coverage on synthetic data (plan §24.7). | Fig 1 **DONE**; Fig 4 **DONE** but rests on the mis-cited null; coverage check status unclear. |

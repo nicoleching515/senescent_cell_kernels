@@ -478,8 +478,12 @@ that sentence are genuinely ours:
    inside the 100 µm window (22.8 % / 8.0 %). The two must not travel in one
    sentence (`AUDIT_PHASE8_FACTCHECK.md` R3). At a ≤5 % out-of-tissue tolerance
    only 1–66 of 38,080–108,375 candidate offsets are admissible, median
-   displacement 28 µm against a pooled λ̂ of 15.7 µm, and one section admits only
-   the identity.
+   displacement 28 µm against a **pooled λ̂ of 14.7 µm** (IQR [7.0, 50.0] µm,
+   60 % of fits railed at a grid bound), and one section admits only
+   the identity. *(λ̂ corrected 2026-08-27, record reconciliation: this read
+   "15.7 µm", which is emitted by no file and was back-derived from the claim it
+   supported. Source for 14.7: `results/phase3/summary_phase3.txt` §6,
+   `tierA_p95` row, column `medlam`.)*
 2. **A direct calibration measurement of what the violation costs**, which no
    spatial-omics paper has. On an irregular synthetic window under the null of
    independence, the **tiled** torus rejects at **0.080–0.118 against a nominal
@@ -499,8 +503,8 @@ that sentence are genuinely ours:
 tiling effect, not a type-I error number for the Phase 3 fits — the project's
 instrument for that is A7. And on the real data the tiled null looks slightly
 *more* conservative (SF 0.971 vs 0.999), because at a 1,200 µm tile side and
-λ̂ ≈ 15.7 µm the seams are ~76 λ̂ apart, so the affected fraction of cells is
-small. Say both; a reviewer who knows Mrkvička §2.1.4 needs to see that we did.
+**λ̂ = 14.7 µm the seams are ~81 λ̂ apart**, so the affected fraction of cells is
+small. *(Corrected 2026-08-27: was "λ̂ ≈ 15.7 µm … ~76 λ̂ apart".)* Say both; a reviewer who knows Mrkvička §2.1.4 needs to see that we did.
 
 ---
 
@@ -545,7 +549,9 @@ SenCID, SenePy, ICE, markeR and Ntintas et al. all report it.
 
 - **The central negative result stands, on both pre-registered Tier A
   definitions.** Post-C6: naive amplitude **0.329**, controlled (N2+N5+N6)
-  **0.029** [−0.007, 0.084], SF **0.088** [−0.017, 0.234], detectable bound at
+  **0.029** (IQR across fits [−0.007, 0.084]), SF **0.088** (IQR across fits
+  [−0.017, 0.234] — `sf_summary.csv` has `q25/median/q75` and **no CI column**;
+  never present either bracket as a confidence interval), detectable bound at
   80 % power **0.183**, 13 of 153 controlled fits positive with a CI excluding
   zero. The controlled amplitude remains far below the bound, so §18 outcome
   **A** stands. *(These are small updates from the published 0.326 / 0.027 /
@@ -603,7 +609,36 @@ Both are already measured, transferable, and cost nothing to state.
   > project onto a specific covariate. **Report your own Moran's I on the controls
   > alongside the kernel amplitude**.
     >
-  > **CORRECTED 2026-08-27 — DO NOT CLAIM THE TWO TESTS DISAGREE.** The claim that the two tests disagree is **FALSIFIED**. Moran's I has now been run (`reports/CS_PHASE8_MORAN.md`): across 12 control and module fields the two statistics rank **together**, Spearman rho **+0.923 raw / +0.944 cell-type-centred**, re-derived from `results/moran/moran_vs_a7.csv`. A reviewer would see it in a single plot. **The correct defence is POWER, not orthogonality:** the entire A7 gradient contributes **0.83%** of the observed control Moran's I, and the smallest amplitude Moran's I can resolve is **0.362 SD** — larger than the project's own naive biological amplitude (**0.291 SD**). **Moran's I could not have detected the headline effect either.** This gap is now CLOSED.
+  > **CORRECTED 2026-08-27 — DO NOT CLAIM THE TWO TESTS DISAGREE.** The claim that the two tests disagree is **FALSIFIED**. Moran's I has now been run (`reports/CS_PHASE8_MORAN.md`): across 12 control and module fields the two statistics rank **together**, Spearman rho **+0.895 raw / +0.944 cell-type-centred** — section-clustered mean per field, knn6 weights, over the 12 control and module fields (`results/moran/moran_verdict.txt`). *(Corrected 2026-08-27: this read "+0.923 raw". +0.923 is the **median**-per-field aggregation of the same data and is emitted by no file; see the block below.)* A reviewer would see it in a single plot. **The correct defence is POWER, not orthogonality:** the entire A7 gradient contributes **0.83%** of the observed control Moran's I, and the smallest amplitude Moran's I can resolve is **0.362 SD** — larger than the project's own naive biological amplitude (**0.277 SD**, the section-clustered signed mean of β/sd(y) over the 1,155 biological-module fits under `design = base`, `results/phase3/a7_summary.csv`). **Moran's I could not have detected the headline effect either.** *(Corrected 2026-08-27: 0.291 is the **pre-C6** value of the same estimator. The power argument is unaffected — 0.362 exceeds every version — but the number must be consistent and the estimator must be named.)* This gap is now CLOSED.
+
+> **⚠ ATTACH THE AGGREGATION TO EVERY ρ (added 2026-08-27, record reconciliation).** The
+> Moran-vs-A7 rank correlation is **aggregation-dependent**, and four values are in circulation
+> because four defensible aggregations were used. All four reproduce exactly:
+>
+> | aggregation | ρ | p | emitted by |
+> |---|---|---|---|
+> | section-clustered **mean** per field, knn6 **raw**, 12 control+module fields | **+0.8951** | 8.37e-05 | `results/moran/moran_verdict.txt`; `code/summarize_moran.py:183` — **frozen; quote this one** |
+> | section-clustered **mean** per field, knn6 **cell-type-centred**, 12 fields | **+0.9441** | 3.93e-06 | same, `:184` — **frozen** |
+> | **median** per field, knn6 raw, 12 fields | +0.9231 | 1.86e-05 | **no file**; re-derivable from `moran_vs_a7.csv` |
+> | **per-row, no aggregation**, 12 fields × 11 sections = 132 pairs | +0.7104 | 1.43e-21 | **no file**; same |
+>
+> **The falsification survives at every one of them.** ρ is positive and significant under all
+> four aggregations, so "Moran's I and the A7 kernel do not disagree" is not a fragile finding —
+> only the digit is aggregation-dependent. **Say that explicitly.** Quote the frozen pair
+> (+0.895 raw / +0.944 cell-type-centred) and name the aggregation in the same clause.
+>
+> Not a competitor to these, and not to be swapped for them: **within the 5 control responses ×
+> 11 sections (55 pairs) ρ = +0.155, p = 0.259** — a different subset of the same data, and the
+> honest quantitative form of "the two statistics ask different questions".
+>
+> ```bash
+> python3 -c "
+> import pandas as pd; from scipy.stats import spearmanr
+> P=pd.read_csv('results/moran/moran_pooled.csv'); s=P[P.kind.isin(['control','module'])]
+> print(spearmanr(s.I_raw_mean.abs(), s.a7_base_mean.abs()))
+> print(spearmanr(s.I_ctcentred_mean.abs(), s.a7_base_mean.abs()))"
+> ```
+
 
   **And say this in the same breath, or a reviewer will say it for you:**
   `neg_probe_rate` (probe counts ÷ transcript counts) is **flat naively**

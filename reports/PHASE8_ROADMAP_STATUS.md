@@ -74,7 +74,7 @@ Legend: DONE / RUN (in progress) / WAIT (blocked) / TODO
 | Item | Status | Note |
 |---|---|---|
 | Environment rebuild after container reset | DONE | Whole scientific stack was lost a 2nd time; rebuilt from pins. `kneed` + `openpyxl` were missing from `requirements.txt` |
-| C1 - N3/N4 in-tissue nulls, 3 variants each | DONE | Contribution 3 survives. N3-tile 0.974 vs published 1.000 |
+| C1 - N3/N4 in-tissue nulls, 3 variants each | DONE | Contribution 3 survives. **N3-tile 0.971 vs published 0.999** *(corrected 2026-08-27: 0.974 / 1.000 were the pre-C6 160-reportable-fit values; the frozen 153-fit values are 0.971 / 0.999, `results/phase3/sf_summary_c1.csv`, `m1_final_audit.txt`. N3-**var** 0.996, not N3-tile, is now the primary corrected N3.)* |
 | C1 - destructiveness diagnostics | DONE | `results/phase3/null_destructiveness.csv`. Bbox bug worse than recorded: **35.5% out of tissue** for N3 and 19.9% for N4 (`1 - frac_in_occupancy`), not ~20%. The often-quoted 23%/8% is a *different* column, `1 - frac_retaining_a_neighbour` = shifted senders left with no real cell inside the 100um window (22.8% / 8.0%). Audit item R3 - do not merge the two in one sentence |
 | C1 - `make_figure4.py` de-hardcoded | DONE | Byte-identical figure verified |
 | Job A - human Tier A-E + gate | DONE | §10 Tier A FAILS the gate; replaced |
@@ -124,7 +124,7 @@ Palette is fixed: `code/sasp_palette.py` + `apply_style()`. Every figure writes 
 | 8.4 | **Gate: did the caller-agreement headline move?** | CS + Bio | **DONE - YES, IT ROSE ABOVE CHANCE.** Pooled 1.03x (p=0.20) -> 1.118x (p=1.4e-30). "Statistically independent" must go. See below |
 | 8.5 | C7/D2 - resolve `denoise=False` | CS | **DONE - DCA INSTALLED.** §6 path 1 landed: DCA 0.3.4 / TF 2.4.4 in an isolated py3.8 venv, `denoise=True` run on 2 full sections. Cost of `denoise=False` is large and the OPPOSITE sign to §4 (D-b): denoising RAISES the depth loading (rho 0.32->0.53, 0.39->0.64), makes the top-5% calls ~100% hepatocyte, and is seed-unstable (1 of 3 seeds gave a disjoint sender set). Recommend freezing `denoise=False` as primary with `denoise=True` as the published-default sensitivity. See `reports/CS_PHASE8_D2_DENOISE.md` |
 | 8.6 | ~~C7/D3 re-anchor~~ | CS | **DONE**. `Lmnb1` (which §7 proposes) is itself in 2 Tier B modules - used a disjoint 8-gene proliferation set. Re-anchor = 1 sign bit/section, D1 untouched |
-| 8.5b | ~~A7 neg-control-probe kernel, MOUSE half~~ | CS | **DONE - GO, conditionally.** Raw assay is NOT flat on the **POOLED** control features (`all_controls` = 40 probes + 609 codewords + 21 genomic controls): -0.070 SD, p=0.023. **The 40 negative-control probes ALONE are flat (-0.018 [-0.045, +0.010], p=0.183)** - and they are the pre-registered primary A7 null (`PREREG_PHASE8_genesets.md` sec 11, Phase 9 item 9.4), so A7 passes on its own primary response; the gradient sits in the codewords (-0.055, p=0.039) and genomic controls (-0.034, p=0.0039). N5 removes it; N2 does NOT. Never report a naive or N2-only kernel. **Never call -0.070 a negative-control-PROBE number** (`AUDIT_PHASE8_FACTCHECK.md` R1; `results/phase3/a7_summary.csv`). **A7 was run 05:19 on PRE-C6 sender calls and must be re-run after 8.7** (`PREREG_PHASE8.md` P2) |
+| 8.5b | ~~A7 neg-control-probe kernel, MOUSE half~~ | CS | **DONE - GO, conditionally.** *(Digits corrected 2026-08-27, record reconciliation: this row quoted the **pre-C6 05:19** A7 file. A7 **was** re-run after 8.7; the frozen file is `results/phase3/a7_summary.csv` at 09:06 and its digits are below. Pre-C6 values struck through.)* Raw assay is NOT flat on the **POOLED** control features (`all_controls` = 40 probes + 609 codewords + 21 genomic controls): **-0.0744 SD [-0.1306, -0.0182], p=0.0145** ~~-0.070 SD, p=0.023~~. **The 40 negative-control probes ALONE are flat (-0.0225 [-0.0527, +0.0078], p=0.129)** ~~(-0.018 [-0.045, +0.010], p=0.183)~~ - and they are the pre-registered primary A7 null (`PREREG_PHASE8_genesets.md` sec 11, Phase 9 item 9.4), so A7 passes on its own primary response; the gradient sits in the codewords (**-0.0604, p=0.0188** ~~-0.055, p=0.039~~) and genomic controls (**-0.0307, p=0.0213** ~~-0.034, p=0.0039~~). N5 removes it (+0.0038, p=0.715); N2 does NOT (-0.0642, p=0.0124). Never report a naive or N2-only kernel. **Never call the pooled number a negative-control-PROBE number** (`AUDIT_PHASE8_FACTCHECK.md` R1). **And under the full +N6+N5 design every control family is now indistinguishable from zero** — including `neg_probe_rate`, **+0.0097 [-0.0060, +0.0253], p=0.199**, whose pre-C6 CI excluded zero. Audit R5's caveat is therefore **moot**: "every control family is flat under +N6+N5" is now simply true. |
 | 8.7 | M1 end-to-end re-run | CS | **RUNNING.** D5 unblocked it: `pre-c6-genesets` tagged, C6 sets promoted, gate re-verified PASS |
 | 8.8 | `reports/CORRECTIONS.md` - what moved and why | CS | folded into 8.7 |
 | 8.9 | `PREREG_PHASE8.md` + `git tag phase8-frozen` | **PI** | **PREREG IS DRAFTED AND COMPLETE** — 882 lines, only tag hashes outstanding. Blocked solely on the PI creating the tag and committing the (currently untracked) evidence base |
@@ -161,14 +161,23 @@ Palette is fixed: `code/sasp_palette.py` + `apply_style()`. Every figure writes 
 
 Independently reverified against `results/phase3/caller_coverage_gate{,_headline}.csv`.
 
-| Basis | 3-pair band | Pooled | z | p |
-|---|---|---|---|---|
-| 2-section (published) | **0.932-1.221** (= the published 0.93-1.22x) | 1.03x | 1.27 | 0.20 |
-| 11-section (D1) | **0.700-1.711** | **1.118x** | 11.5 | 1.4e-30 |
-| 6-section (in-band) | 0.775-1.374 | 1.115x | 8.99 | 2.6e-19 |
+> **⚠ CORRECTED 2026-08-27 (record reconciliation). Every row of the table below is PRE-C6
+> and all three rows were mislabelled "3-pair band" — the 6-section row's numbers were lifted
+> from `caller_coverage_gate_headline.csv`, which carries `n_pairs = 4` only.** The frozen
+> post-C6 table, all six labelled bases, is `results/phase3/caller_coverage_gate_headline.csv`;
+> the row to use is **`11-section, post-C6 Tier A (FROZEN)`: band 0.751–2.198, pooled 1.212×,
+> z = 21.92, p = 1.84e-106, 4 pairs**. The 4-pair post-C6 2-section value is 1.131× (p = 6.5e-9)
+> and the 6-section in-band value is 1.167× (p = 3.63e-39). Pre-C6 rows retained below as the
+> record of what the 8.4 gate saw.
 
-- **Tier A vs DeepScence is above chance in 11 of 11 sections** (pooled 1.248). That single pair breaks the independence claim.
-- Tier A vs SenePy stays **below** chance in 11 of 11 (0.914).
+| Basis *(all PRE-C6, SUPERSEDED)* | band | Pooled | z | p | pairs |
+|---|---|---|---|---|---|
+| 2-section (published), 3-pair | **0.932-1.221** (= the published 0.93-1.22x) | 1.03x | 1.27 | 0.20 | 3 |
+| 11-section (D1), 3-pair | **0.700-1.711** | **1.118x** | 11.5 | 1.4e-30 | 3 |
+| 6-section (in-band) — **mislabelled; this row is 4-pair** | 0.775-1.374 | 1.115x | 8.99 | 2.6e-19 | 4 |
+
+- **Tier A vs DeepScence is above chance in 11 of 11 sections** (pre-C6 pooled 1.248; **frozen 1.288**). That single pair breaks the independence claim.
+- ~~Tier A vs SenePy stays **below** chance in 11 of 11 (0.914).~~ **DEAD, 2026-08-27.** That is the pre-C6 value. Frozen: **0.972, z = −1.63, p = 0.104, above chance in 4 of 11** (`results/phase3/caller_coverage_gate.csv`). The "one pair genuinely below chance" plank does not survive C6; the below-chance pair that does survive is **SenePy × DeepScence, 0.737, z = −15.08**.
 - **SenePy vs DeepScence FLIPS**: 1.693 at 2 sections -> 0.737 at 11. The old base was not merely underpowered, it was unrepresentative.
 - The circular DeepScence-`Cdkn1a`+ pair (excluded from every pooled number) is *weaker* than published: median 1.071 vs the quoted 1.51-2.85x.
 
@@ -178,14 +187,21 @@ explains" is the defensible restatement (drafted verbatim in `CS_PHASE8_CALLERS.
 
 ## A7 gave a second unplanned result
 
-The estimator's **false-positive rate is 9-13% against a 5% nominal** - the first
-direct measurement, obtained free from the control features. (The often-quoted
-"9-16%" spans five responses that are **four overlapping views of one quantity**:
-`all_controls` is the sum of the probe, codeword and genomic responses and
-`neg_probe_rate` is a ratio of two of them. The 16% upper end is `neg_probe_rate`
-alone - the one response whose denominator is an N5 column and which is not a
-clean null. Clean-null subset: 0.091 / 0.103 / 0.109 / 0.127.
-`AUDIT_PHASE8_FACTCHECK.md` M3, `results/phase3/a7_summary.csv`.)
+The estimator's **false-positive rate is 9-16% against a 5% nominal** - the first
+direct measurement, obtained free from the control features. *(Corrected 2026-08-27,
+record reconciliation: this paragraph said "9-13%" with a clean-null subset of
+0.091 / 0.103 / 0.109 / **0.127**. Those are the **pre-C6 05:19** figures. The frozen 09:06
+values under N6+N5 are `neg_control_codeword` 0.091, `all_controls` 0.103,
+`genomic_control` 0.109, **`neg_control_probe` 0.145**, `neg_probe_rate` 0.164 —
+i.e. **9-16% overall and 9-15% on the four count-based responses**,
+`results/phase3/a7_summary.csv`.)* The caveat that must travel with it stands: the five
+responses are **four overlapping views of one quantity** - `all_controls` is the sum of the
+probe, codeword and genomic responses and `neg_probe_rate` is a ratio of two of them, so this
+is a range over correlated statistics, not five replications. Also do **not** write that the
+reportable-fit filter "admits two to three times more fits than its nominal rate implies"
+(audit R6, forbidden-claims item 22): the filter admits **3.0-13.3%** on the naive design and
+**4.8%, essentially nominal, on the full N6+N5 design**; 9-16% is the *estimator's* two-sided
+CI-exclusion rate. (`AUDIT_PHASE8_FACTCHECK.md` M3/R6, `results/phase3/a7_summary.csv`.)
 
 ## Figure policy (set by the PI 2026-08-27)
 
@@ -194,14 +210,15 @@ state; regenerated versions live in `figures/revised_candidates/` with `_REVISED
 suffixes and a README carrying the regeneration ledger. Everything is regenerated
 once, from the frozen configuration, at 8.7.
 
-**Guard scope, stated so it is not over-read:** `code/check_figures_guard.py` enumerates via
-`git ls-files figures/`, so it covers the **27 committed** figure artefacts of 45 on disk. The 18
-**untracked** outputs - `figure2e.{png,pdf}`, all of `figure_gs1`-`gs4`, `figure_phase8_callers`,
-`figure_phase8_d3` and their `_data.csv`s, i.e. precisely the new Phase 8 figures - are outside it,
-and `figures/.committed_manifest.json` is gitignored and re-baselineable with `--snapshot`.
-"`OK: all 27 committed figures match`" means the committed set is intact; it is **not**
-"all figures verified" (`AUDIT_PHASE8_FACTCHECK.md` M7). Committing the Phase 8 figures before the
-freeze tag is what would close this.
+**Guard scope — CLOSED 2026-08-27.** The Phase 8 figures have been committed, so
+`git ls-files figures/` now returns **52** and the guard covers all 52 artefacts on disk:
+`python3 code/check_figures_guard.py` prints "`OK: all 52 committed figures match`" and exits 0.
+Audit M7's scope criticism is therefore closed. *(This paragraph previously read "**27 committed**
+figure artefacts of 45 on disk" with 18 untracked Phase 8 outputs outside the guard — do not quote
+that as current.)* The standing discipline still applies: the guard enumerates `git ls-files
+figures/` and `figures/.committed_manifest.json` is gitignored and re-baselineable with
+`--snapshot`, so state the count the guard actually covers rather than writing "all figures
+verified" (`AUDIT_PHASE8_FACTCHECK.md` M7).
 
 **Note:** an agent regenerated `figure2b/2c` after the baseline was restored, and
 restated them as its own outputs. Restored again; PNGs verified identical to the
@@ -212,7 +229,7 @@ and nothing warns** - this needs a guard before 8.7.
 
 | # | Decision | Consequence |
 |---|---|---|
-| **Direction** | **STAY on the original research question.** "How far does senescence signalling reach?" is answered **in the negative, as a bound**: naive amplitude 0.326 -> controlled 0.027; SF 0.082 [-0.099, 0.249]; nothing above the 0.203 response-sd detectable bound at 80% power | The paper keeps its question. The audit battery (A7, corrected nulls, FPR 9-16%) is supporting evidence for *why* the bound is the honest answer, not a replacement thesis |
+| **Direction** | **STAY on the original research question.** "How far does senescence signalling reach?" is answered **in the negative, as a bound**: naive amplitude **0.329** -> controlled **0.029**; SF **0.088**, IQR across fits [-0.017, 0.234]; nothing above the **0.183** response-sd detectable bound at 80% power. *(Corrected 2026-08-27, record reconciliation: this row carried the **pre-C6** vector 0.326 / 0.027 / 0.082 [-0.099, 0.249] / 0.203, which contradicted this file's own top-of-file banner. The frozen post-C6 vector is `results/phase3/m1_final_audit.txt` §3. The brackets are **IQRs across the 153 reportable fits**, not confidence intervals — `sf_summary.csv` has `q25/median/q75` and no CI column.)* | The paper keeps its question. The audit battery (A7, corrected nulls, FPR 9-16%) is supporting evidence for *why* the bound is the honest answer, not a replacement thesis |
 | **D2** | `denoise=False`: **both paths in parallel** - measure the cost now, attempt DCA opportunistically | Freeze is never blocked on DCA. A measured caveat + a documented install failure satisfies §6 |
 | **D5** | **Tag then promote.** `git tag pre-c6-genesets` created; C6 mouse sets promoted into `genesets/` | Only 3 files changed: B7 38->108, strict Tier A 25->33, A_sender_for_secondary_senescence 55->74. Gate re-verified PASS on the authoritative 5,097-gene panel. 8.7 unblocked |
 | **D4** | Age is a **continuous covariate only**. No young-vs-old contrast, no age-stratified prevalence claim | Honest about n=2 above 55. H1's value is a human replication of the geometry, not an ageing result |

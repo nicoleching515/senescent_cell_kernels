@@ -2,6 +2,30 @@
 
 **Status: complete.**
 
+> ## ⚠ CORRECTED 2026-08-27 (record reconciliation) — two fixes applied to this file
+>
+> **1. λ̂ = 15.7 µm was never sourced and is withdrawn.** Every "141× the pooled λ̂ of
+> 15.7 µm" and "~76 λ̂ apart" in this file was computed against a value that no file
+> emits; its only provenance was this file's own "2,215 µm = 141× λ̂" (2215/141 = 15.71),
+> i.e. it was circular with the claim it supported. The authoritative value is
+> **λ̂ = 14.7 µm**, the pooled median of `lam_naive` over the 315 primary fits
+> (in-band × `tierA_p95` × `stratum == "all"`), printed by `code/summarize_phase3.py:221`
+> into `results/phase3/summary_phase3.txt` §6, `tierA_p95` row, column `medlam`;
+> re-derives as 14.7321 µm from `results/phase3/main_fits.csv`. **IQR [7.0, 50.0] µm,
+> 60 % of fits railed at a grid bound** — that caveat travels with every use.
+> Downstream: 2,215 µm = **150×** λ̂ (was 141×); the 1,200 µm tile seams are **~81 λ̂**
+> apart (was ~76); N4-var's 3,395 µm = 230× λ̂. **No conclusion changes — every
+> dependent claim moves in the direction that strengthens it.** See
+> `reports/RECORD_RECONCILIATION.md` §1.
+>
+> **2. Audit R3's column fix, never applied here, now is.** The §1 table and the §10
+> framing blockquote said "23 % in the void" / "8 % in the void". Out of tissue is
+> `1 − frac_in_occupancy` = **35.5 % (N3) / 19.9 % (N4)**; 22.8 % / 8.0 % is
+> `1 − frac_retaining_a_neighbour` — "left with no real cell inside the 100 µm window".
+> Two different columns of `results/phase3/null_destructiveness.csv`; never merge them
+> in one sentence. The §10 blockquote's "1–63" admissible offsets was also the pre-C6
+> file's value and is now **1–66**.
+
 **Verdict, in one line: the field-standard fix agrees with the project's own numbers on
 the real data — N3-var 0.996 against N3-tile 0.971 and a published 1.000 — but a direct
 synthetic calibration study says N3-tile is the wrong variant to present as primary,
@@ -26,7 +50,7 @@ Source: `results/phase3/sf_summary_var.csv`, produced by `code/summarize_phase3_
 
 | variant | what the move is | in tissue? | median displacement | senders keeping a neighbour ≤100 µm | **median SF** | IQR | SF, full N5+N6+zonation design |
 |---|---|---|---|---|---|---|---|
-| **N3 bbox (ORIGINAL, published)** | wrap on the bounding box | no — 23 % in the void | 2,910 µm | 0.772 | **0.999** | [0.989, 1.006] | 1.001 |
+| **N3 bbox (ORIGINAL, published)** | wrap on the bounding box | no — **35.5 % out of tissue** | 2,910 µm | 0.772 | **0.999** | [0.989, 1.006] | 1.001 |
 | N3 bbox (re-run in the C1 job) | " | " | 2,910 µm | 0.772 | 1.001 | [0.991, 1.008] | 0.999 |
 | **N3-tile** | wrap inside solid-tissue tiles | yes | 479 µm | 1.000 | **0.971** | [0.906, 1.009] | 0.972 |
 | **N3-occ** | bbox wrap, ≤5 % senders out of tissue | yes | **28 µm** | 1.000 | **0.302** | [0.000, 0.734] | 0.287 |
@@ -34,7 +58,7 @@ Source: `results/phase3/sf_summary_var.csv`, produced by `code/summarize_phase3_
 | **N3-swap** | senders → random real cell positions | yes | 3,241 µm | 1.000 | **0.695** | [0.392, 0.872] | 1.003 |
 | N3-snap | bbox wrap, then snap to nearest cell *(suppl.)* | yes | 2,977 µm | 1.000 | 0.993 | [0.950, 1.017] | 0.976 |
 | **N3-var — VARIANCE CORRECTION** | **Euclidean shift, drop what leaves W, standardise** | **yes, by construction** | **2,215 µm** | **1.000** | **0.996** | **[0.975, 1.007]** | **0.997** |
-| **N4 bbox (ORIGINAL, published)** | rotate on the bounding box | no — 8 % in the void | 3,194 µm | 0.920 | **0.947** | [0.804, 1.039] | 0.992 |
+| **N4 bbox (ORIGINAL, published)** | rotate on the bounding box | no — **19.9 % out of tissue** | 3,194 µm | 0.920 | **0.947** | [0.804, 1.039] | 0.992 |
 | N4 bbox (re-run in the C1 job) | " | " | 3,194 µm | 0.920 | 0.952 | [0.796, 1.048] | 1.001 |
 | **N4-tile** | rotate inside solid-tissue tiles | yes | 589 µm | 1.000 | **0.924** | [0.835, 1.049] | 0.994 |
 | **N4-occ** | ≤5 % out of tissue | yes | **25 µm** | 1.000 | **0.183** | [0.000, 0.559] | 0.198 |
@@ -102,7 +126,8 @@ The recommendation is therefore about **defensibility, not about the number**:
    variant that is simultaneously (a) in tissue by construction, (b) clustering- and
    autocorrelation-preserving (it is a rigid Euclidean translation, with no wrap and
    therefore no seam anywhere), and (c) actually displaces the senders — 2,215 µm median,
-   22× the 100 µm fitting window and 141× the pooled λ̂ of 15.7 µm. N3-occ fails (c);
+   22× the 100 µm fitting window and **150× the pooled λ̂ of 14.7 µm** (IQR 7.0–50.0 µm;
+   60 % of fits railed). N3-occ fails (c);
    N3-swap fails (b); N3-tile satisfies all three but introduces 4 seams per tile.
 
 **Concretely, for the paper.** Report N3-var as the primary N3 and N4-var as the primary
@@ -288,7 +313,7 @@ is *below* the bounding-box one (0.824) — i.e. on this data the tiled null loo
 more conservative, not more liberal. Two reasons that is not a contradiction. First, SF
 and a real-data rejection rate are not type I error. Second, liberality from seams scales
 with the fraction of cells lying within one correlation length of a seam: at a 1,200 µm
-tile side and a pooled λ̂ of 15.7 µm the seams are ~76 λ̂ apart, so the damage per seam is
+tile side and a pooled λ̂ of 14.7 µm the seams are **~81 λ̂** apart, so the damage per seam is
 real but the affected fraction of cells is small. The prediction is directionally
 confirmed in the regime where it can be measured and is quantitatively small in ours. Say
 both; a reviewer who knows §2.1.4 needs to see that we knew it too.
@@ -320,7 +345,7 @@ Read against the C1 table in `CS_PHASE7_C1.md` §0:
   because the retained shifted senders sit preferentially in W ∩ (W+v), whose boundary is
   denser in low-density edge tissue than the section interior.
 * **Displacement is 2,215 µm**, against 28 µm for N3-occ — 22× the 100 µm fitting window
-  and 141× the pooled λ̂ of 15.7 µm (IQR 7.0–50.0). N3-var does not have N3-occ's
+  and **150× the pooled λ̂ of 14.7 µm** (IQR 7.0–50.0 µm). N3-var does not have N3-occ's
   degeneracy, and the reason is structural, not a matter of tuning: the constraint is on
   the *data retained*, not on the *offset admitted*.
 * **The cost is 41 % of the receiver cells** (median 0.603 retained under N3-var, 0.836
@@ -405,7 +430,7 @@ than every other whole-section variant in the table.
   N3-var would behave the same.
 * **No sensitivity to the shift-disk radius.** The paper's half-the-shorter-side convention
   was adopted without varying it. A smaller radius retains more data and displaces less; at
-  the limit it approaches N3-occ's failure mode. The current radius displaces 141× λ̂, so
+  the limit it approaches N3-occ's failure mode. The current radius displaces **150× λ̂**, so
   the null is comfortably decoupled, but the sensitivity is not measured.
 * **The covariate-adjusted family is at 200 permutations, not 1,000.** The `*_full_sf`
   column for N3-var/N4-var (0.997 / 0.999) comes from `perm_nulls_var_full200.csv`, which
@@ -520,10 +545,12 @@ finding is **not** "we discovered that torus shifts break on non-convex tissue" 
 been known since 1982. It is:
 
 > A 40-year-old, documented limitation of the toroidal shift is being violated in current
-> spatial-omics practice. We quantify what the violation costs on real tissue (23 % of
-> shifted senders in the void; a 14.5 % thinning of the shifted sender's receiver
-> neighbourhood; at a ≤5 % out-of-tissue tolerance only 1–63 of 38,080–108,375 candidate
-> offsets are admissible and one of six sections admits only the identity), we give an
+> spatial-omics practice. We quantify what the violation costs on real tissue (**35.5 %
+> of shifted senders land out of tissue**, and 22.8 % are left with no real cell inside the
+> 100 µm window — two different columns, never merged; a 14.5 % thinning of the shifted
+> sender's receiver neighbourhood; at a ≤5 % out-of-tissue tolerance only **1–66** of
+> 38,080–108,375 candidate offsets are admissible and one of six sections admits only the
+> identity), we give an
 > exact FFT enumeration of the admissible offset set, and we adopt the remedy the classical
 > literature prescribes for irregular windows — the variance correction of Mrkvička et al.
 > (2021). Under it the surviving fraction is 0.996, so the conclusion is unchanged.
