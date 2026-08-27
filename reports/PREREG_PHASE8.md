@@ -25,7 +25,7 @@ be frozen as if it were settled.
 
 | Item | State |
 |---|---|
-| Frozen tag hash | **TBD — the tag does not exist yet.** §1 |
+| Frozen tag hash | **`926439629a07269a32c93f998da0f6e1cd20933c`** — tag `phase8-frozen`, created 2026-08-27 15:32 UTC. §1 |
 | Composition-matched rerun protocol | **RESOLVED and FILLED (PI decision D15): freeze both variants.** Implemented as `code/run_phase8_compmatch.py`, run on M1, gated on H1. All four previously-`TBD` fields transcribed from `reports/CS_PHASE8_COMPMATCH.md`. **The protocol is inert (1.6 %) where the same variables as covariates remove 85.4 %** — P23. §3.8 |
 | Fitting window | **RESOLVED (PI decision D16): frozen as `100 µm, fixed`**, with the 99th-percentile rule recorded as provenance. §3.2 |
 | Every pooled number in `results/phase3/caller_coverage_gate.csv` | **PROVISIONAL** — the file currently mixes a pre-C6 2-section base with a post-C6 11-section base. The M1 re-run agent is recomputing both bases under one sender definition and labelling the basis in the output. §13 P1 |
@@ -55,7 +55,7 @@ before the tag (§14 item 6).
 git tag -a phase8-frozen -m "Frozen for human replication, post C1, C7 and the C6 gene-set decision"
 ```
 
-**Tag commit hash: `TBD`.**
+**Tag commit hash: `926439629a07269a32c93f998da0f6e1cd20933c`** (`phase8-frozen`, 2026-08-27 15:32 UTC).
 
 This is deliberately left empty. The tag does not exist at the time of writing and inventing a
 hash would be worse than a gap. The PI fills it at the moment of tagging, together with:
@@ -63,9 +63,9 @@ hash would be worse than a gap. The PI fills it at the moment of tagging, togeth
 | Field | Value |
 |---|---|
 | Tag name | `phase8-frozen` |
-| Tag commit hash | **TBD** |
-| Tag date (UTC) | **TBD** |
-| Predecessor tag | `pre-c6-genesets` — captures the mouse gene sets **before** the C6 sets were promoted into `genesets/`. Already created (PI decision D5). Its hash: **TBD**, to be recorded here alongside |
+| Tag commit hash | **`926439629a07269a32c93f998da0f6e1cd20933c`** |
+| Tag date (UTC) | **2026-08-27 15:32 UTC** |
+| Predecessor tag | `pre-c6-genesets` — captures the mouse gene sets **before** the C6 sets were promoted into `genesets/`. Already created (PI decision D5). Its hash: **`c002ddda0d1e6402a85bf96abfcd2d3a6165287f`** |
 
 **Nothing in Phase 9 or Phase 10 may begin until this tag and this file are committed.**
 
