@@ -444,20 +444,23 @@ spleen confounds the two by design (PREREG §10.5).
 |---|---|---|---|---|
 | 1 | **Reportable fits** (naive β > 0 **and** block-bootstrap CI excludes 0) | **153 / 315 = 48.6 %** | **58 / 343 = 16.9 %** (merged call) · 61 / 343 = 17.8 % (frozen-literal) | `main_fits.csv`, both arms |
 | 2 | **SF under N2+N5+N6** (the primary outcome) | **0.0885** IQR [−0.0166, +0.2338] | **0.1582** IQR [+0.0074, +0.3837] | `sf_summary.csv` / `h1_headlines_*.json` |
-| 3 | **SF under N1**, the within-type sender-label permutation | **0.7074** — the permutation destroys 71 % of the amplitude | **0.3319** — it destroys only 33 %; **the permuted sender set reproduces two-thirds of the observed effect** | `perm_nulls.csv`, both arms |
+| 3 | **SF under N1**, the within-type sender-label permutation | **0.7074** — a random relabelling of senders within cell type reproduces **29 %** of the naive amplitude | **0.3319** — the same relabelling reproduces **67 %** of it | `perm_nulls.csv`, both arms |
 | 4 | **Ripley's K at 50 µm**, `tierA_p95` senders vs a within-type permutation null | **1.085** (1.009–1.160) over the 6 in-band sections, **1.136** (1.009–1.363) over all 11 | **1.012** (0.988–1.036); **3 of 7 sections below 1.0** | `results/phase3/ripley.csv`, `results/phase9_h1/a4_ripley.csv` |
 | 5 | **λ̂ geometry** | 60.0 % railed: **32.7 % at the 7 µm floor**, 27.3 % at the 50 µm ceiling; median λ̂ **14.73 µm** | 70.0 % railed: 25.1 % at the floor, **44.9 % at the ceiling**; median λ̂ **38.16 µm** | `main_fits.csv`, both arms |
 | 6 | **Local cell density**: median real cells within the 100 µm window of a sender | **140** | **476** — 3.4× denser | `null_destructiveness.csv`, `real_median_nbrs`, both arms |
 | 7 | **Sequencing depth**: median transcripts per cell, per section | **446 – 968** (in-band 6) | **42 – 273** — 3 to 10× shallower, and spanning **6.5×** within the arm | `results/section_qc_sender_summary.csv`; `results/phase9_h1/a1_sections.csv` |
 
-**Rows 3 and 4 are one mechanism, and it is the most consequential difference.** On H1 the
+**Rows 3 and 4 are one mechanism, and it is the most consequential difference.**
+*(Read the surviving fraction as PREREG §3.5 defines it for a perturbation null:
+SF = (β̂_obs − mean β̂_null)/β̂_obs, so **SF ≈ 1 means the null does NOT reproduce the observed
+amplitude** and SF ≈ 0 means it reproduces it entirely.)* On H1 the
 Tier A sender set is **not spatially aggregated beyond a random draw from the same cells of
-the same types** (Ripley 1.012). A within-cell-type label permutation therefore produces a
-distance-to-nearest-sender field that is nearly the observed one, so N1 leaves two-thirds of
-the amplitude standing where on M1 it leaves less than a third. **The H1 arm is a weaker
-starting point for a distance-to-sender analysis than M1 was, and the ~0.16 residual it
-carries after the full nuisance design should be read against that**, not as a stronger
-signal. It is the same amplitude structure with less of it attributable to sender geometry.
+the same types** (Ripley 1.012, and below 1.0 in 3 of 7 sections). A within-cell-type
+label permutation therefore produces a distance-to-nearest-sender field that is nearly the
+observed one, and **two-thirds of H1's naive amplitude is reproduced by randomly relabelling
+which cells are senders — against 29 % on M1.** **The H1 arm is a weaker starting point for a
+distance-to-sender analysis than M1 was, and the ~0.16 residual it carries after the full
+nuisance design must be read against that**, not as a stronger signal. It is the same amplitude structure with less of it attributable to sender geometry.
 
 **Row 5 is a real inversion.** M1's fitted length constants pile up at the *short* end of the
 grid; H1's pile up at the *long* end. This is not a resolution artefact in the usual direction:
