@@ -47,6 +47,32 @@ python3 code/gate_genesets_guard.py >/dev/null 2>&1 && say "gene-set gate" "ok" 
 n=$(git status --porcelain | grep -vc '^??'); n=${n:-0}
 [ "$n" -eq 0 ] && say "no uncommitted tracked changes" "ok" || bad "uncommitted tracked changes" "$n"
 
+echo "=== 5. the 2026-08-27 reproducibility repair is still in place ==="
+grep -q "^DS_ALIAS" code/caller_disagree.py 2>/dev/null \
+  && say "DS_ALIAS in caller_disagree.py" "ok" || bad "DS_ALIAS in caller_disagree.py" "absent"
+git ls-files --error-unmatch figures/.committed_manifest.json >/dev/null 2>&1 \
+  && say "figures/.committed_manifest.json tracked" "ok" \
+  || bad "figures/.committed_manifest.json" "untracked — the figure guard cannot verify from a clone"
+[ -f code/_env.sh ] && say "code/_env.sh (project interpreter)" "ok" \
+  || bad "code/_env.sh" "missing"
+[ -f code/_m1_stage1.sh ] && say "code/_m1_stage1.sh (pipeline head)" "ok" \
+  || bad "code/_m1_stage1.sh" "missing — nothing starts stage 1"
+n=$(for f in $(git ls-files 'code/*.sh'); do
+      case "$f" in *h1*|*_env.sh|*setup_dca_env.sh|*hook_geneset_gate.sh) continue ;; esac
+      grep -q '_env.sh' "$f" || echo "$f"
+    done | wc -l)
+[ "$n" -eq 0 ] && say "every driver sources _env.sh" "ok" \
+  || bad "drivers not sourcing _env.sh" "$n still call bare python3"
+python3 code/check_prohibitions.py --self-test >/dev/null 2>&1 \
+  && say "section-10 checker self-test" "ok" || bad "section-10 checker" "self-test fails"
+nb=$(python3 code/check_prohibitions.py 2>&1 | grep -c '^  reports/\|^  README\|^  results/')
+say "section-10 backlog in the committed corpus" "$nb (not blocking; ratchet is on new text)"
+if bash code/_repro_artefacts.sh --check >/dev/null 2>&1; then
+  say "B7 artefacts regenerate from committed producers" "ok"
+else
+  bad "B7 artefacts" "at least one no longer reproduces — run code/_repro_artefacts.sh --check"
+fi
+
 echo
 if [ "$fail" -eq 0 ]; then
   echo "  GATE PASS — safe to re-cut phase8-frozen."
