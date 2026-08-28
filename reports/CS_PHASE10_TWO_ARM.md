@@ -362,6 +362,14 @@ python3 code/h1_d2_analyse.py            # -> results/phase9_h1/d2_depth.csv (ro
 | SPLN44 | +0.3709 | −0.0609 | **−0.4317** | 0.0152 |
 | **M1 reference, 3 full sections** | 0.3891 / 0.3176 / 0.4096 | 0.6404 / 0.5314 / 0.5419 | **+0.13 … +0.25 (×1.32–1.67)** | 0.118 – 0.280 |
 
+**Its seed-stability companion, carried with the number as PREREG §10.10 / P26 requires:**
+every `denoise=True` value in the table above is a **single seed (`random_state = 0`)**, and on
+the same 20,000-cell panel the three `denoise=True` seeds agree at top-5 % **Jaccard 0.0444 /
+0.0510 / 0.0482** (P-vii) — i.e. the `denoise=True` call set is essentially unreproducible
+across seeds, and only the **direction** of Δρ should be read from these rows, never the
+magnitude. That is also why P-vi's falsifier was written on a sign and a count of sections
+rather than on an effect size.
+
 **Δρ ≤ 0 in 6 of 7 sections. The falsifier is ≥ 5 of 7. P-vi is FALSIFIED.** The one exception,
 SPLN14, is +0.0020 — a ratio of 1.012, i.e. no change rather than the predicted rise. In four
 of the seven sections `denoise=True` does not merely lower the depth loading, it **inverts its
