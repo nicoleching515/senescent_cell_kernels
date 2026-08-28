@@ -163,6 +163,19 @@ TIER_E = OrderedDict([
 # Genes belonging to ANY Tier A or Tier B set are EXCLUDED from the zonation covariate, so that
 # conditioning on zonation does not partially condition on the response (over-adjustment).
 # Full per-gene table: /workspace/results/zonation_gene_correlations_7250_sham.csv
+#
+# REPRODUCIBILITY GAP, recorded 2026-08-28 (AUDIT_REPRODUCIBILITY B7).  That per-gene table
+# is a gene-set-DEFINING INPUT -- the two lines below turn it into D_zonation_pericentral and
+# D_zonation_periportal -- and it has NO COMMITTED PRODUCER.  The method above pins the seed
+# axis, the 60% cut (0.6 x 236,905 = 142,143 rows of celltypes_7250..., confirmed), the panel
+# (all 5,106 genes) and the two thresholds, but NOT which hepatocyte-marker gene list scored
+# the cells for that cut, nor how (sc.tl.score_genes and with what ctrl_size), nor whether
+# `detection_rate` is over all cells or over the 142,143.  TIER_E['E2_hepatocyte_identity']
+# below is the plausible candidate but is nowhere stated to be it.  A rewrite would land close
+# but not exact, and a near-miss silently changes which genes end up in the zonation covariate.
+# So the table is treated as a pinned input, like the MSigDB JSON: it is tracked, it is read,
+# and it is not regenerated.  If it ever must be rebuilt, diff the resulting GENE LISTS, not
+# the r values.
 ZONATION_CSV = '/workspace/results/zonation_gene_correlations_7250_sham.csv'
 ZON_R_MIN, ZON_DET_MIN = 0.20, 0.05
 _zc = list(csv.DictReader(open(ZONATION_CSV)))

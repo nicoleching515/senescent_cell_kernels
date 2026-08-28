@@ -204,6 +204,10 @@ def main():
     ap.add_argument("--sender", default="tierA_p95")
     ap.add_argument("--n-jobs", type=int, default=24)
     ap.add_argument("--n-boot", type=int, default=300)
+    ap.add_argument("--force", action="store_true",
+                    help="recompute every (section, module) fit even if its checkpoint "
+                         "exists; the checkpoints in results/real/ are tracked, so without "
+                         "this a fresh clone recomputes nothing")
     args = ap.parse_args()
 
     os.makedirs(RESULTS, exist_ok=True)
@@ -225,9 +229,18 @@ def main():
 
     jobs = [(s, m) for s in samples for m in modules]
     todo = [(s, m) for s, m in jobs
-            if not os.path.exists(f"{RESULTS}/fit_{s}__{m}__{args.sender}.csv")]
-    print(f"{len(jobs)} jobs, {len(jobs)-len(todo)} already checkpointed",
-          flush=True)
+            if args.force
+            or not os.path.exists(f"{RESULTS}/fit_{s}__{m}__{args.sender}.csv")]
+    n_done = len(jobs) - len(todo)
+    print(f"{len(jobs)} jobs, {n_done} already checkpointed", flush=True)
+    # The checkpoints under results/real/ are TRACKED (35 of them), so on a fresh clone this
+    # loop recomputes NOTHING and the figure is rebuilt from committed fits regardless of any
+    # upstream change -- the same vacuous-regeneration pattern as figure2a's binned cache
+    # (AUDIT_REPRODUCIBILITY D1).  Say so, loudly, and offer --force.
+    if n_done and not args.force:
+        print(f"  NOTE: {n_done} of these are COMMITTED checkpoints in {RESULTS}; they are "
+              f"reused as-is,\n        not re-derived. Pass --force to recompute them.",
+              flush=True)
 
     def run(sm):
         s, m = sm
@@ -242,6 +255,11 @@ def main():
         delayed(run)(sm) for sm in todo)
     print("finished:", [d for d in done if d], flush=True)
 
+    # NB (2026-08-28): the ROW ORDER of real_fits.csv / real_curves.csv is os.listdir order,
+    # i.e. filesystem order, so a rebuild reproduces the committed CONTENT but not the
+    # committed byte stream -- verified: identical after sorting by (sample, module), and
+    # sorted(os.listdir(...)) does not reproduce the committed order either.  Left as it is
+    # rather than re-ordering the committed files; anyone diffing these two must sort first.
     fits = pd.concat([pd.read_csv(f"{RESULTS}/{f}") for f in os.listdir(RESULTS)
                       if f.startswith("fit_")], ignore_index=True)
     curves = pd.concat([pd.read_csv(f"{RESULTS}/{f}") for f in os.listdir(RESULTS)
