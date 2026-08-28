@@ -427,18 +427,64 @@ seed value is introduced. Configuration otherwise frozen: `denoise=False`, publi
 anchor, ≥ 20 counts/cell, native human panel, **full sections, no subsampling**.
 
 
-*Status at the time of writing — see §12 for the final count.* The five-seed panel is
-**35 full-section runs** (7 sections × 5 seeds) and only **two fit concurrently** in the
-57.7 GB cgroup. Measured rate under the Phase-10 load: **25–65 min per run**, i.e. roughly
-**1.5 h per completed seed across all 7 sections**. The seed count was **not** silently
-reduced; the producer pools over whatever exists, names the estimator `consensus_k<n>`, writes
-`n_seeds` into every output row, and **refuses to pool a section with fewer than 3 seeds**.
-The final per-section coverage is in `results/phase10_h1/deepscence_consensus_coverage.csv`.
+**Status.** The five-seed panel is **35 full-section runs** (7 sections × 5 seeds) and only
+**two fit concurrently** in the 57.7 GB cgroup. **22 of the 35 had completed** when this
+section was written, giving a **complete 7-section panel at k = 3–4 seeds**.
+The seed count was **not** silently reduced: the producer pools over whatever exists, names
+the estimator `consensus_k<n>`, writes `n_seeds` into every output row, and **refuses to
+pool a section with fewer than 3 seeds**. Measured rate under the Phase-10 load:
+**12–65 min per full-section run**, ~1.5 h per completed seed across all 7 sections, i.e.
+**~9 h for the full 35 at two concurrent** — and ~2 h of that was lost to the supervisor
+bugs recorded as T11. Per-section coverage:
+`results/phase10_h1/deepscence_consensus_coverage.csv`.
 
-**Until the consensus exists, no H1 DeepScence magnitude in this report is on the primary
-estimator**, and every one of them is marked as such (§3.3). The directions — P-i's positive
-depth loading, P-ii's stable anchor, P-v's bottom-of-depth selection, P-vi's inverted denoise
-effect — are seed-robust and are not affected.
+### 3.6 What the consensus found: **one seed's score is inverted**, and the call set barely agrees at all
+
+**A sign flip was found. It is reported, not silently corrected, and it is the single most
+consequential thing this phase measured about DeepScence.**
+
+| section | seeds | **seeds whose score was inverted** | per-cell score IQR across seeds (z-units), median | **mean pairwise top-5 % Jaccard** | range |
+|---|---|---|---|---|---|
+| SPLN07 | 3 | **1** | 0.056 | **0.274** | 0.120 – 0.449 |
+| SPLN14 | 3 | **0** | 0.283 | **0.111** | 0.066 – 0.193 |
+| SPLN21 | 4 | **0** | 0.036 | **0.394** | 0.105 – 0.769 |
+| SPLN24 | 3 | **0** | 0.043 | **0.772** | 0.739 – 0.808 |
+| SPLN30 | 3 | **0** | 0.258 | **0.206** | 0.138 – 0.296 |
+| SPLN43 | 3 | **0** | 0.322 | **0.200** | 0.167 – 0.223 |
+| SPLN44 | 3 | **0** | 0.106 | **0.262** | 0.003 – 0.776 |
+
+```
+python3 code/h1_deepscence_consensus.py --min-seeds 3
+python3 -c "import pandas as pd; print(pd.read_csv('results/phase10_h1/deepscence_consensus_sign.csv').to_string(index=False))"
+```
+
+**SPLN07, seed 20260903.** Its depth-partialled correlation with the published `CDKN1A` anchor is
+**-0.1492** against **+0.1845 and +0.2167** for the other 2 seeds of the same section — the score is
+**inverted**. The independent check agrees: the raw pairwise Pearson matrix, computed
+**before** any alignment, gives **-0.8432, -0.4763** for the pairs involving that seed and **+0.5700** for
+the pair that excludes it. **A per-cell median over those three scores without aligning
+them would have been a median over a mixture of two polarities**, which is exactly why
+D-A's rule puts sign alignment first and why the flip count is reported.
+
+**1 of the 22 completed runs pooled here is inverted.** Phase 9 measured the published
+`CDKN1A` anchor as
+**stable in 20 of 20 random folds in all seven sections** — but that is *within-run*
+fold-split stability at `random_state = 0`. **It does not imply between-run sign stability,
+and here it did not deliver it.** The two statements are about different things and the
+distinction is now measured rather than assumed.
+
+**The call-set dispersion is the number that matters downstream.** Mean pairwise top-5 %
+Jaccard across seeds is **0.111 – 0.772** (section medians), i.e. **23 – 89 % of the top-5 %
+sender set is a different set of cells from one seed to the next**, against **0.761** on M1.
+The per-cell score IQR across seeds is 0.036 – 0.322 z-units. **The two dispersions do not track
+each other** — SPLN24 has the tightest call set (mean Jaccard 0.772) while SPLN43 has the
+loosest score (IQR 0.322) — which is why D-A requires both to be reported.
+
+**Consequence for every H1 DeepScence number in §3.1–3.2.** They are at `random_state = 0`,
+a seed that is not even in this panel. Their *directions* are seed-robust; **their magnitudes
+are not, and P-iii's 1.102-against-1.10 verdict in particular cannot survive a call set that
+turns over by 68 % between seeds.** No consensus-derived magnitude is quoted anywhere in
+this report, because the panel is not yet complete at five seeds.
 
 ---
 
