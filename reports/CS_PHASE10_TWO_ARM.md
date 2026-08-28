@@ -945,6 +945,17 @@ printed beside it, and `results/phase10_h1/two_arm_table.csv` carries the absolu
 and the exact filter for every cell of the §17 table. §2's markdown is **generated** from that
 CSV by `code/two_arm_table_md.py`, so it cannot drift from it.
 
+**`python3 code/phase10_verify_report.py` re-reads every headline figure in this report from
+its file and exits non-zero if any has drifted — 68 checks, 0 failed.** It is the Phase-10
+analogue of Phase 9's `code/h1_verify_report.py` and exists for the same reason: this project
+has repeatedly found its own written numbers not to match the files behind them
+(`reports/AUDIT_PHASE8_FACTCHECK.md`). It covers both arms and both H1 sender calls — the fit
+counts, the naive and controlled amplitudes, each arm's own 80 %-power bound, the count of
+Tier B modules above it, SF under N1 / N3 / N4 / N3-var / N4-var / N3-tile / N4-tile / N2+N5+N6,
+the composition-matched SFs, A7's primary response, the Poisson identity, the intersected-panel
+SFs, the Phase-5 kernel and superposition results, and the §8 predictions P-ii, P-iii, P-iv and
+P-vi.
+
 **What Phase 10 wrote.** New paths only, with one declared exception:
 - `code/h1_phase10.py`, `h1_run_phase10.py`, `h1_cache_extend.py`, `h1_headlines.py`,
   `h1_a6_sensitivity.py`, `h1_caller_unconditioned.py`, `h1_run_phase5.py`,
