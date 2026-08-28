@@ -32,7 +32,7 @@ that runs against the tidy version of this result.
 | **C** | H1 fails A2 or A5 | **NOT TRIGGERED** | Phase 9: A2 byte-identical to the frozen log; A5 passes 35/35, max \|SMD\| after matching 0.0933. |
 | **D** | The confound structure differs but the null result does not | **SUPPORTED, and this is the informative half** | Seven structural differences, §4. The largest: the residual after the full nuisance design is **0.158 on H1 against 0.088 on M1**, the reportable-fit fraction is **16.9 % against 48.6 %**, and λ̂ rails at the **ceiling** on H1 (44.9 % of fits) where it rails at the **floor** on M1 (32.7 %). |
 | **E** | C1 changes M1's N3 result | **ALREADY RESOLVED, unchanged** | It does not. N3-var 0.9960, N4-var 0.9851, N3-tile 0.9706 against the published bounding-box 0.9989 / 0.9472. |
-| **F** | DeepScence's instability appears in H1 too | **SUPPORTED, and it is worse natively** | Full-section seed 0 vs 1 on H1: Pearson *r* **0.372**, top-5 % Jaccard **0.211**, against an M1 floor of **0.9955 / 0.7606** and an M1 same-seed determinism control of *r* = 0.9999991. |
+| **F** | DeepScence's instability appears in H1 too | **SUPPORTED, and it is worse natively than F anticipated** | Full-section seed 0 vs 1 on H1: Pearson *r* **0.372**, top-5 % Jaccard **0.211**, against an M1 floor of **0.9955 / 0.7606** and an M1 same-seed determinism control of *r* = 0.9999991. And on the five-seed panel D-A ordered, **one seed's score comes out inverted** — SPLN07 at seed 20260903, depth-partialled ρ with the published `CDKN1A` anchor **−0.149** against **+0.185 / +0.217** for the same section's other seeds, confirmed independently by a raw pairwise Pearson of **−0.84 / −0.48** against **+0.57** (§3.6). |
 
 ### 0.1 The pre-registered criteria do not resolve cleanly, and neither reading is chosen here
 
@@ -296,6 +296,18 @@ are **unaffected by ortholog remapping**:
    PREREG §10.7's prohibition stands: "1.51–2.85×" may never be quoted; the H1 figure is the
    pooled 6.436 with its range, and **this pair is excluded from every pooled cross-caller
    number**.
+
+**And a second thing must be said here, because it cuts against §3.1's own headline.**
+P-ii's falsifier is written on **one specific statistic — the depth-partialled fold-split sign
+stability, within a single run** — and on that statistic the anchor is 1.000 in all seven
+sections and the prediction is falsified. **But the anchor is not sign-stable *between runs*.**
+On the five-seed panel D-A ordered, **SPLN07's seed 20260903 comes out inverted** relative to
+the same section's other seeds (§3.6). P-ii's registered falsifier does not cover between-seed
+sign stability and cannot be read as having tested it. **So the honest statement is narrower
+than "the published anchor is fine on H1": it decides the polarity consistently across random
+folds of a given run, and it does not always decide it the same way across runs.** The first
+is what P-ii asked and the answer is no defect; the second is what a user of the tool actually
+depends on, and there the answer is that a defect exists. Both are reported.
 
 **And it does not vacate P12.** `LMNB1` remains excluded as the D3 primary anchor because it
 is a member of `B_downstream_arrest` and `B_secondary_senescence` — a gene-set-membership fact
