@@ -1093,3 +1093,57 @@ a pre-commit hook; **this report passes it with 0 violations** (`python3
 code/check_prohibitions.py --backlog`), after one real fix: §3.4's `denoise=True` table needed
 its seed-stability companion in the same paragraph (PREREG §10.10 / P26).
 
+
+---
+
+# R1 — the call, 2026-08-28
+
+**R1 IS NOT MET. Reported as not met.**
+
+R1 requires the surviving-fraction IQR under N2+N5+N6 to (a) include 0 and
+(b) have q75 < 0.50. On H1:
+
+| call | IQR under N2+N5+N6 | (a) includes 0 | (b) q75 < 0.50 |
+|---|---|---|---|
+| `tierA_p95` (frozen literal) | [+0.0040, 0.4759] | **NO**, by 0.0040 | yes |
+| `tierAmg_p95` (primary) | [+0.0074, 0.3837] | **NO**, by 0.0074 | yes |
+
+R4 (non-replication) is also not met: its second conjunct fails 0 of 7. **R1 and
+R4 are not exhaustive and this data falls between them. That is a defect in the
+pre-registration and it is recorded as one.**
+
+## Why not-met, rather than a reading that passes
+
+1. **It fails as written**, on both sender calls, on the full panel.
+2. **Any passing reading requires a choice made after seeing the result.** The
+   clause is panel-dependent — it passes at the frozen-literal call on the
+   intersected panel and fails at the merged one. Selecting the panel-and-call
+   combination that yields a pass is exactly the move the freeze exists to prevent.
+3. **A margin of 0.004–0.007 is far smaller than any quantity R1 discriminates.**
+   That makes the criterion uninformative here; it does not make it satisfied.
+4. **The substantive conclusion does not depend on R1 and is unaffected.**
+   Zero of seven response modules cross the 80 %-power detectable bound on either
+   arm, on either sender call, on either panel: M1 amplitude 0.0288 against a bound
+   of 0.1833; H1 0.0307 against 0.1094. The replication claim rests on that, and it
+   is unambiguous.
+
+## An observation about R1's construction — explicitly NOT grounds for a pass
+
+Under **N5 alone**, the IQR *does* include zero on both calls: [−0.0253, +0.4767]
+at `tierA_p95` and [−0.0245, +0.4016] at `tierAmg_p95`. It is the inclusion of
+**N2** in the composite that lifts q25 above zero — and N2 is the matched-decoy
+null this project demonstrates is close to inert (SF_N2 IQR [0.947, 0.989];
+composition-matched decoys remove 1.6 % where the same variables as covariates
+remove 85.4 %).
+
+So R1's failure is in part an artefact of a criterion built on a null that does not
+do what the field assumes it does. **That is a finding about the criterion, and it
+is reported as one. It is not offered as a reason to declare R1 satisfied** — the
+criterion was frozen in that form, and re-reading it favourably after seeing the
+result is precisely the failure mode the pre-registration exists to prevent.
+
+**Recommended wording for the paper:** the pre-registered replication criterion was
+not met, by a margin two orders of magnitude below the effect it was written to
+detect; the criterion is reported as non-exhaustive and partly mis-specified; and
+the replication claim rests instead on the detectable-bound comparison, which is
+unambiguous on both arms.
