@@ -219,7 +219,10 @@ running interpreter, then the project venv, then the overlay last — and raises
 candidates listed rather than guessing. The two copies of `coreGS_v2.csv` are byte-identical
 (`md5 b981b9e9e730217d339306a709ada201`), so no number moves; the only visible change is
 `gate_result_human.json`'s `corescence.source`, which now records the venv path. Verified:
-`gate_genesets_guard.py` still exits 0, mouse and human.
+`gate_genesets_guard.py` still exits 0, mouse and human, under **both** interpreters. Note
+the consequence: that one field now records whichever interpreter ran the gate, so running it
+with `/usr/bin/python3` rewrites the line back to the overlay path. The committed value is the
+venv one; every count in the file is interpreter-independent.
 
 **The DCA runners honour `DCA_ENV_ROOT` (D3).** Four of them hardcoded a per-session `/tmp`
 path that dies with the pod. The old path survives as the last fallback and a missing
