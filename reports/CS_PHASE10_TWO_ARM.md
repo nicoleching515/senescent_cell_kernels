@@ -970,5 +970,19 @@ CSV by `code/two_arm_table_md.py`, so it cannot drift from it.
 - `.gitignore` — `data/processed_m1_iso/` added, matching `data/processed_h1/`
 
 **Not written by Phase 10:** `results/phase3/`, `results/phase5/`, `genesets/`,
-`data/processed/`, `results/phase7_jobA/`. `git status` is clean for all five.
+`data/processed/`, `results/phase7_jobA/`. `git status` is clean for all five at the end of
+the phase.
+
+**Two concurrency facts, recorded because this repo had two agents in it at once.**
+*(i)* `results/phase3/window.csv` **was** truncated by some process at 22:09:14 UTC and was
+restored from git — deviation **T12**, and the reason that entry recommends a content-hash
+guard over `results/` on the pattern of `code/check_figures_guard.py`.
+*(ii)* A concurrent reproducibility agent committed `results/phase7_jobA/gate_result_human.json`
+during this phase (commit `47c1bcd`, recording the venv path the gate resolves). **The
+`corescence` block this report cites is unchanged by it** — `n_on_panel` 33,
+`frozen_n_in_any_B` 29, `frozen_frac` 0.8788, with `B_secondary_senescence` accounting for 18
+of the 29 — re-read after that commit. That agent also added `code/check_prohibitions.py` and
+a pre-commit hook; **this report passes it with 0 violations** (`python3
+code/check_prohibitions.py --backlog`), after one real fix: §3.4's `denoise=True` table needed
+its seed-stability companion in the same paragraph (PREREG §10.10 / P26).
 
