@@ -46,7 +46,11 @@ SF under N2+N5+N6 across reportable fits to **include 0** *and* to have an **upp
 below 0.50**. On H1 the IQR is **[+0.0074, +0.3837]** at the primary call and
 **[+0.0040, +0.4759]** at the frozen-literal call. The upper-quartile clause passes on both.
 **The "includes 0" clause fails on both — by 0.007 and 0.004 of a surviving fraction**, i.e.
-by less than one percent of the naive amplitude.
+by less than one percent of the naive amplitude. **And it is panel-dependent**: on the
+2,425-gene ortholog-intersected panel the same clause **passes** at the frozen-literal call
+(IQR [−0.0045, +0.4372]) and still fails at the merged call (§5.2). M1's IQR includes 0 on
+both panels. A criterion whose verdict flips with a gene-panel restriction that leaves the
+underlying score at ρ = 0.88 is a criterion sitting on noise.
 
 **R4, the pre-registered non-replication criterion, is not met either.** So H1 satisfies
 neither the replication criterion as literally written nor the non-replication criterion.
