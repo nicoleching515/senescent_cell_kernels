@@ -192,7 +192,7 @@
   "secondary_senescence": 116
  },
  "corescence": {
-  "source": "/usr/local/lib/python3.11/dist-packages/DeepScence/data/coreGS_v2.csv",
+  "source": "/workspace/envs/sasp311/lib/python3.11/site-packages/DeepScence/data/coreGS_v2.csv",
   "n_occ_ge5": 39,
   "n_on_panel": 33,
   "frozen_n_in_any_B": 29,
