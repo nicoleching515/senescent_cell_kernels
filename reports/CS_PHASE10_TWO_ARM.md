@@ -441,7 +441,8 @@ anchor, ≥ 20 counts/cell, native human panel, **full sections, no subsampling*
 
 **Status.** The five-seed panel is **35 full-section runs** (7 sections × 5 seeds) and only
 **two fit concurrently** in the 57.7 GB cgroup. **35 of the 35 had completed** when this
-section was written, giving a **complete 7-section panel at k = 5–5 seeds**.
+section was written, giving a **complete 7-section panel at k = 5 seeds** — the full
+pre-registered design.
 The seed count was **not** silently reduced: the producer pools over whatever exists, names
 the estimator `consensus_k<n>`, writes `n_seeds` into every output row, and **refuses to
 pool a section with fewer than 3 seeds**. Measured rate under the Phase-10 load:
