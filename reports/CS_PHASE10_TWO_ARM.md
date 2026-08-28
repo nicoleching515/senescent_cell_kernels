@@ -440,8 +440,8 @@ anchor, ≥ 20 counts/cell, native human panel, **full sections, no subsampling*
 
 
 **Status.** The five-seed panel is **35 full-section runs** (7 sections × 5 seeds) and only
-**two fit concurrently** in the 57.7 GB cgroup. **22 of the 35 had completed** when this
-section was written, giving a **complete 7-section panel at k = 3–4 seeds**.
+**two fit concurrently** in the 57.7 GB cgroup. **35 of the 35 had completed** when this
+section was written, giving a **complete 7-section panel at k = 5–5 seeds**.
 The seed count was **not** silently reduced: the producer pools over whatever exists, names
 the estimator `consensus_k<n>`, writes `n_seeds` into every output row, and **refuses to
 pool a section with fewer than 3 seeds**. Measured rate under the Phase-10 load:
@@ -457,28 +457,29 @@ consequential thing this phase measured about DeepScence.**
 
 | section | seeds | **seeds whose score was inverted** | per-cell score IQR across seeds (z-units), median | **mean pairwise top-5 % Jaccard** | range |
 |---|---|---|---|---|---|
-| SPLN07 | 3 | **1** | 0.056 | **0.274** | 0.120 – 0.449 |
-| SPLN14 | 3 | **0** | 0.283 | **0.111** | 0.066 – 0.193 |
-| SPLN21 | 4 | **0** | 0.036 | **0.394** | 0.105 – 0.769 |
-| SPLN24 | 3 | **0** | 0.043 | **0.772** | 0.739 – 0.808 |
-| SPLN30 | 3 | **0** | 0.258 | **0.206** | 0.138 – 0.296 |
-| SPLN43 | 3 | **0** | 0.322 | **0.200** | 0.167 – 0.223 |
-| SPLN44 | 3 | **0** | 0.106 | **0.262** | 0.003 – 0.776 |
+| SPLN07 | 5 | **1** | 0.021 | **0.293** | 0.120 – 0.563 |
+| SPLN14 | 5 | **0** | 0.125 | **0.157** | 0.029 – 0.423 |
+| SPLN21 | 5 | **0** | 0.040 | **0.367** | 0.105 – 0.769 |
+| SPLN24 | 5 | **0** | 0.046 | **0.698** | 0.532 – 0.810 |
+| SPLN30 | 5 | **0** | 0.220 | **0.205** | 0.116 – 0.438 |
+| SPLN43 | 5 | **0** | 0.217 | **0.242** | 0.115 – 0.430 |
+| SPLN44 | 5 | **0** | 0.082 | **0.263** | 0.003 – 0.874 |
 
 ```
-python3 code/h1_deepscence_consensus.py --min-seeds 3
+python3 code/h1_deepscence_consensus.py          # all five seeds, all seven sections
 python3 -c "import pandas as pd; print(pd.read_csv('results/phase10_h1/deepscence_consensus_sign.csv').to_string(index=False))"
 ```
 
 **SPLN07, seed 20260903.** Its depth-partialled correlation with the published `CDKN1A` anchor is
-**-0.1492** against **+0.1845 and +0.2167** for the other 2 seeds of the same section — the score is
+**-0.1492** against **+0.1845 and +0.2167 and +0.2179 and +0.2240** for the other 4 seeds of the same section — the score is
 **inverted**. The independent check agrees: the raw pairwise Pearson matrix, computed
-**before** any alignment, gives **-0.8432, -0.4763** for the pairs involving that seed and **+0.5700** for
-the pair that excludes it. **A per-cell median over those three scores without aligning
-them would have been a median over a mixture of two polarities**, which is exactly why
+**before** any alignment, is **negative in all 4 pairs that involve that seed**
+(-0.8432, -0.8052, -0.7703, -0.4763) and **positive in all 6 that do not** (+0.5107, +0.5700, +0.6081, +0.6265, +0.6899, +0.9557).
+**A per-cell median over the 5 scores without aligning them would have been a median
+over a mixture of two polarities**, which is exactly why
 D-A's rule puts sign alignment first and why the flip count is reported.
 
-**1 of the 22 completed runs pooled here is inverted.** Phase 9 measured the published
+**1 of the 35 completed runs pooled here is inverted.** Phase 9 measured the published
 `CDKN1A` anchor as
 **stable in 20 of 20 random folds in all seven sections** — but that is *within-run*
 fold-split stability at `random_state = 0`. **It does not imply between-run sign stability,
@@ -486,17 +487,22 @@ and here it did not deliver it.** The two statements are about different things 
 distinction is now measured rather than assumed.
 
 **The call-set dispersion is the number that matters downstream.** Mean pairwise top-5 %
-Jaccard across seeds is **0.111 – 0.772** (section medians), i.e. **23 – 89 % of the top-5 %
+Jaccard across seeds is **0.157 – 0.698** (section medians), i.e. **30 – 84 % of the top-5 %
 sender set is a different set of cells from one seed to the next**, against **0.761** on M1.
-The per-cell score IQR across seeds is 0.036 – 0.322 z-units. **The two dispersions do not track
-each other** — SPLN24 has the tightest call set (mean Jaccard 0.772) while SPLN43 has the
-loosest score (IQR 0.322) — which is why D-A requires both to be reported.
+The per-cell score IQR across seeds is 0.021 – 0.220 z-units. **The two dispersions do not track
+each other** — SPLN24 has the tightest call set (mean Jaccard 0.698) while SPLN43 has the
+loosest score (IQR 0.217) — which is why D-A requires both to be reported.
 
 **Consequence for every H1 DeepScence number in §3.1–3.2.** They are at `random_state = 0`,
-a seed that is not even in this panel. Their *directions* are seed-robust; **their magnitudes
-are not, and P-iii's 1.102-against-1.10 verdict in particular cannot survive a call set that
-turns over by 68 % between seeds.** No consensus-derived magnitude is quoted anywhere in
-this report, because the panel is not yet complete at five seeds.
+**a seed that is not even in this panel.** Their *directions* are seed-robust; **their
+magnitudes are not, and P-iii's 1.102-against-1.10 verdict in particular cannot survive a
+call set that turns over by an average of 68 % between seeds.** §3.1-3.2 are therefore
+left at `random_state = 0` and labelled as such, and are **NOT** silently restated on the
+consensus: re-deriving P-i…P-vii on `consensus_k5` is a different measurement against
+falsifiers that were registered for a different estimator, and whether the §8 predictions
+are re-scored on the estimator that replaced the one they were registered against is a PI
+decision. **That question is raised here and not answered.** What the consensus is used for
+in this report is exactly what D-A asks of it: the sign-flip count and the two dispersions.
 
 ---
 
@@ -936,10 +942,15 @@ and ceiling, which is where the arms visibly disagree.
 `figures/figure6_data.csv`). This carries §8.
 (a) Caller agreement at full coverage, both arms, **before and after** conditioning on cell
 type × depth decile — four series, log axis, chance at 1. The circular pair is drawn and
-labelled CIRCULAR. (b) The sign anchor per section per arm, which is where P-ii was falsified.
-(c) Score agreement against call-set agreement across seeds — the panel exists because the two
-are **not** the same quantity, and the figure shows M1 at (0.9955, 0.7606) and H1 at
-(0.372, 0.211).
+labelled CIRCULAR. (b) The sign anchor per section per arm, which is where P-ii was falsified
+*on the statistic it registered* — the panel title says so, and points at (c) for the
+between-run behaviour P-ii did not test. (c) Score agreement against call-set agreement across
+seeds — the panel exists because the two are **not** the same quantity: M1 sits at
+(0.9955, 0.7606), H1's seed-0-vs-1 full section at (0.372, 0.211), and the seven ★ are the
+five-seed panel per section, one of whose 35 runs came out sign-inverted. **(d) is a fourth
+panel not in §19's specification**, added because a second pre-registered prediction was
+falsified in this phase and Figure 6 is where §8 lives: it shows Δρ per section for
+`denoise=True`, three full mouse sections rising and six of seven human panels falling.
 
 **Figure guard.** `python3 code/check_figures_guard.py` reported **OK: all 52 committed
 figures match** before Phase 10 began and again after Figures 5 and 6 were written, because
@@ -995,6 +1006,22 @@ counts reclaimable page cache) and **not** `free`. Observed:
 **one full-section DeepScence run 45–65 min under Phase-10 load** (vs 16.5–41 min uncontended
 in Phase 9).
 
+**Disk.** `/workspace` is on a quota that this phase **exhausted** while writing the
+seven per-cell consensus files. Two consequences, both declared. *(i)* The consensus producer
+no longer writes the five per-seed z-scored columns into
+`data/processed_h1/deepscence_consensus_h1_<sec>.csv` — each is exactly
+`(x · flip − mean)/sd` of a per-seed score file already on disk, and
+`results/phase10_h1/deepscence_consensus_sign.csv` carries every flip needed to reconstruct
+them. *(ii)* `data/processed_m1_iso/` (238 MB of intersected-panel caches and per-cell tables
+for the mouse arm) was **deleted** to make room; it is gitignored and regenerable by
+`python3 code/m1_callers_iso.py && python3 code/m1_prep_cache_iso.py`, and the outputs that
+depend on it — `results/phase10_m1_iso/main_fits.csv`, `iso_sender_shift.csv` and the
+`iso_vs_full_headlines.csv` rows — are committed. **A third consequence was a near miss and is
+recorded as a warning: a quota-exceeded write TRUNCATED `code/h1_deepscence_consensus.py` to
+zero bytes** (Python opens for writing, truncates, then fails to flush). It was restored with
+`git checkout` because it had been committed minutes earlier. **On this box, commit before
+editing.**
+
 **`find` is `bfs` on this box and rejects relative timestamps**; every file listing here uses
 explicit paths or `git status`.
 
@@ -1004,14 +1031,15 @@ and the exact filter for every cell of the §17 table. §2's markdown is **gener
 CSV by `code/two_arm_table_md.py`, so it cannot drift from it.
 
 **`python3 code/phase10_verify_report.py` re-reads every headline figure in this report from
-its file and exits non-zero if any has drifted — 68 checks, 0 failed.** It is the Phase-10
+its file and exits non-zero if any has drifted — 73 checks, 0 failed.** It is the Phase-10
 analogue of Phase 9's `code/h1_verify_report.py` and exists for the same reason: this project
 has repeatedly found its own written numbers not to match the files behind them
 (`reports/AUDIT_PHASE8_FACTCHECK.md`). It covers both arms and both H1 sender calls — the fit
 counts, the naive and controlled amplitudes, each arm's own 80 %-power bound, the count of
 Tier B modules above it, SF under N1 / N3 / N4 / N3-var / N4-var / N3-tile / N4-tile / N2+N5+N6,
 the composition-matched SFs, A7's primary response, the Poisson identity, the intersected-panel
-SFs, the Phase-5 kernel and superposition results, and the §8 predictions P-ii, P-iii, P-iv and
+SFs, the Phase-5 kernel and superposition results, the five-seed consensus coverage, its
+sign-flip count and its call-set dispersion, and the §8 predictions P-ii, P-iii, P-iv and
 P-vi.
 
 **What Phase 10 wrote.** New paths only, with one declared exception:

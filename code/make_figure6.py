@@ -132,9 +132,10 @@ def main():
     ax.set_xticklabels([s.split("_")[0] for s in m.section] + list(h.section),
                        rotation=90, fontsize=6.5)
     ax.set_ylabel(r"depth-partialled $\rho$(score, $CDKN1A$)")
-    ax.set_title("(b)  P-ii, FALSIFIED.  The published anchor is stable in 20/20 folds in "
-                 "all 7 H1 sections\n(stability 1.00 everywhere) and positive everywhere; "
-                 "on the remapped mouse panel it is not.", loc="left")
+    ax.set_title("(b)  P-ii, FALSIFIED on the statistic it registered: WITHIN a run the "
+                 "published anchor is stable in 20/20 folds in all 7 H1\nsections and "
+                 "positive everywhere, where on the remapped mouse panel it is not.  "
+                 "BETWEEN runs it is not stable — see (c).", loc="left")
     ax.legend(loc="upper left", fontsize=7.5)
 
     # ---------------- (c) does the instability transfer? ------------------
@@ -160,26 +161,33 @@ def main():
         cc = pd.read_csv(p)
         cc = cc[cc.status == "OK"]
         for r in cc.itertuples():
-            pts.append(("H1 %s\n%d-seed consensus" % (r.section, r.n_seeds),
-                        np.nan, r.jaccard_top5_mean, PAL.SERIES[3], "*"))
+            pts.append(("H1 %s, %d-seed panel" % (r.section, r.n_seeds),
+                        getattr(r, "pearson_aligned_mean", np.nan),
+                        r.jaccard_top5_mean, PAL.SERIES[3], "*"))
     OFFS = {0: (-9, -22), 1: (9, 4), 2: (9, 10), 3: (9, -16), 4: (9, 2)}
+    LABEL_ONLY = {0, 1, 2, 3, 4}      # the seed-pair points; the panel stars are legended
     for _i, (lab, pr, jc, colr, mk) in enumerate(pts):
         ROWS.append(dict(panel="c", label=lab.replace("\n", " "),
                          pearson_r=None if pr != pr else round(float(pr), 5),
                          top5_jaccard=round(float(jc), 5)))
         if pr == pr:
             ax.plot([pr], [jc], mk, color=colr, ms=9, mec=PAL.SURFACE, mew=1.3, zorder=3)
-            dx, dy = OFFS.get(_i, (6, 6))
-            ax.annotate(lab, (pr, jc), textcoords="offset points", xytext=(dx, dy),
-                        fontsize=6.6, color=PAL.INK2,
-                        ha="right" if dx < 0 else "left")
+            if _i in LABEL_ONLY:
+                dx, dy = OFFS.get(_i, (6, 6))
+                ax.annotate(lab, (pr, jc), textcoords="offset points", xytext=(dx, dy),
+                            fontsize=6.6, color=PAL.INK2,
+                            ha="right" if dx < 0 else "left")
+    ax.plot([], [], "*", color=PAL.SERIES[3], ms=11, mec=PAL.SURFACE, mew=1.2,
+            label="H1, per section, the five-seed panel\n(mean pairwise, after sign alignment)")
+    ax.legend(loc="upper left", fontsize=6.8)
     ax.set_xlim(0, 1.12); ax.set_ylim(-0.06, 0.88)
     ax.plot([0, 1], [0, 1], "--", color=PAL.MUTED, lw=1)
     ax.set_xlabel("Pearson $r$ of the score between two seeds")
     ax.set_ylabel("Jaccard of the top-5 % call set")
-    ax.set_title("(c)  The instability transfers, and gets worse natively.\n"
-                 "Score agreement and call-set agreement are NOT the same quantity.",
-                 loc="left")
+    ax.set_title("(c)  The instability transfers and gets worse natively; score agreement and\n"
+                 "call-set agreement are NOT the same quantity.  ★ = the five-seed panel; "
+                 "one of its 35\nruns (SPLN07, seed 20260903) came out SIGN-INVERTED and was "
+                 "aligned before pooling.", loc="left")
 
     # ---------------- (d) P-vi: what denoising does to the depth loading ----
     ax = fig.add_subplot(gs[2, :])

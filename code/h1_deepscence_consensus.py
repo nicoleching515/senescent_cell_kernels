@@ -112,12 +112,16 @@ def run(section, min_seeds=3):
                               flipped=bool(inverted)))
     n_flipped = int(sum(1 for s in have if flip[s] < 0))
 
-    # independent check: the raw pairwise Pearson matrix, BEFORE any flip
+    # independent check: the raw pairwise Pearson matrix, BEFORE any flip; and the same
+    # matrix AFTER alignment, which is the score-side dispersion in the units Figure 6c
+    # plots against the call-set Jaccard.
     pear = []
     for a, b in itertools.combinations(have, 2):
         r = float(np.corrcoef(X[a].to_numpy(float), X[b].to_numpy(float))[0, 1])
+        ra = float(np.corrcoef(X[a].to_numpy(float) * flip[a],
+                               X[b].to_numpy(float) * flip[b])[0, 1])
         pear.append(dict(section=section, seed_a=a, seed_b=b,
-                         pearson_r_raw=round(r, 5)))
+                         pearson_r_raw=round(r, 5), pearson_r_aligned=round(ra, 5)))
 
     # --- 1. z-score within section, per aligned seed --------------------------
     Z = pd.DataFrame({s: (lambda v: (v - v.mean()) / (v.std() if v.std() > 1e-12 else 1.0))(
@@ -133,8 +137,11 @@ def run(section, min_seeds=3):
                         "deepscence_seed_iqr": np.round(iqr, 5)})
     for q in (90, 95, 99):
         out["consensus_flag_p%d" % q] = pct_flags(cons, types, q).astype(int)
-    for s in have:
-        out["z_seed%d" % s] = np.round(Z[s].to_numpy(float), 5)
+    # The per-seed z-scored columns are deliberately NOT written: each is exactly
+    # (x * flip - mean) / sd of a per-seed score file already on disk, and at 7 sections x
+    # 5 seeds they cost ~60 MB of a workspace quota this box exhausted (see §12).
+    # `results/phase10_h1/deepscence_consensus_sign.csv` carries every flip needed to
+    # reconstruct them.
     out.to_csv(PROC + "deepscence_consensus_h1_%s.csv" % section, index=False)
 
     # --- call-set dispersion: mean pairwise top-5 % Jaccard, with its range ----
@@ -160,6 +167,10 @@ def run(section, min_seeds=3):
                 jaccard_top5_max=round(float(jv.max()), 5),
                 pearson_raw_min=round(min(r["pearson_r_raw"] for r in pear), 5),
                 pearson_raw_max=round(max(r["pearson_r_raw"] for r in pear), 5),
+                pearson_aligned_mean=round(float(np.mean([r["pearson_r_aligned"]
+                                                          for r in pear])), 5),
+                pearson_aligned_min=round(min(r["pearson_r_aligned"] for r in pear), 5),
+                pearson_aligned_max=round(max(r["pearson_r_aligned"] for r in pear), 5),
                 n_senders_p95_consensus=int(out["consensus_flag_p95"].sum()),
                 status="OK")
     print("%s k=%d flips=%d  score IQR med %.3f  top5 Jaccard mean %.3f [%.3f, %.3f]"

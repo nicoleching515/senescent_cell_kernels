@@ -163,6 +163,26 @@ def main():
     chk("H10: full-section seed 0 vs 1 top-5% Jaccard", 0.2107, float(r.top5_jaccard),
         tol=1e-4, src=f"{R9}/d2_stability.csv")
 
+    # ---- the five-seed DeepScence consensus (D-A) ----
+    if os.path.exists(f"{RH}/deepscence_consensus_coverage.csv"):
+        cc = pd.read_csv(f"{RH}/deepscence_consensus_coverage.csv")
+        cc = cc[cc.status == "OK"]
+        chk("D-A: sections with a complete 5-seed panel", 7,
+            int((cc.n_seeds == 5).sum()), 0, f"{RH}/deepscence_consensus_coverage.csv")
+        chk("D-A: seeds whose score was SIGN-INVERTED", 1,
+            int(cc.n_seeds_sign_flipped.sum()), 0, f"{RH}/deepscence_consensus_coverage.csv")
+        chk("D-A: min mean pairwise top-5% Jaccard across seeds", 0.157,
+            float(cc.jaccard_top5_mean.min()), tol=1e-3,
+            src=f"{RH}/deepscence_consensus_coverage.csv")
+        chk("D-A: max mean pairwise top-5% Jaccard across seeds", 0.698,
+            float(cc.jaccard_top5_mean.max()), tol=1e-3,
+            src=f"{RH}/deepscence_consensus_coverage.csv")
+        sg = pd.read_csv(f"{RH}/deepscence_consensus_sign.csv")
+        f = sg[sg.flipped]
+        chk("D-A: the inverted run's anchor rho (SPLN07, seed 20260903)", -0.1492,
+            float(f.rho_partial_cdkn1a.iloc[0]), tol=1e-4,
+            src=f"{RH}/deepscence_consensus_sign.csv")
+
     # ---- the ortholog-intersected panel ----
     if os.path.exists(f"{RI}/iso_vs_full_headlines.csv"):
         d = pd.read_csv(f"{RI}/iso_vs_full_headlines.csv")
