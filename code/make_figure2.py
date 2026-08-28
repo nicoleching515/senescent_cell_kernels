@@ -5,6 +5,23 @@ thing you are going to test."  Panels a/b are that curve.  Panels c/d are what
 Phase 1 says you must show next to it: which kernel family you chose, how far the
 data actually reach, and how badly the standard iid CI understates uncertainty.
 """
+
+# SUPERSEDED PRODUCER -- GUARD, re-added 2026-08-28.
+# figure2a has TWO producers. This one is superseded; the live producer is
+#     python3 code/make_phase5_figs.py --which 2a
+# Running this one silently REPLACES the committed figure2a while its data
+# CSVs come back identical, so nothing warns. It has now done so twice:
+# once during the 8.7 re-run, and again on 2026-08-28 when a verification
+# test invoked it to check whether this very guard was present. The guard had
+# been reverted by an uncommitted-change revert both times -- hence this one
+# is committed.
+import os as _os, sys as _sys
+if _os.environ.get('ALLOW_SUPERSEDED_FIGURE2') != '1':
+    _sys.exit(
+        'REFUSING: code/make_figure2.py is the SUPERSEDED producer of figure2a.\n'
+        'Use:  python3 code/make_phase5_figs.py --which 2a\n'
+        'Set ALLOW_SUPERSEDED_FIGURE2=1 only if you deliberately want this one.')
+
 import os
 import numpy as np
 import pandas as pd
