@@ -113,5 +113,12 @@ else
   echo "  results/a3_fallback/gpl33762_count.xml"
 fi
 
+echo "== partial by design (informational; does not affect the exit status) =="
+# results/section_qc_sender_summary.csv reproduces 120 of 132 cells.  The 12 that differ are
+# n_analysable / n_cdkn1a_pos / cdkn1a_pos_pct_all on the four sections re-annotated after the
+# committed CSV was written, and portal_triad_valid's threshold is a reconstruction.  Its
+# --check mode prints the grid; it is NOT counted in the totals below.
+"$PY" "$R/code/section_qc_sender_summary.py" --check 2>&1 | tail -2 | sed 's/^/  /'
+
 echo "match=$OK  differ=$DIFF  skipped=$SKIP"
 [ "$DIFF" = 0 ]
