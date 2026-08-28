@@ -46,7 +46,10 @@ from scipy.stats import pearsonr, spearmanr, rankdata
 RAW = '/workspace/data/raw/'; PROC = '/workspace/data/processed/'
 RES = '/workspace/results/phase3/'; GS = '/workspace/genesets/'
 ORTH = GS + 'mouse_human_orthologs_MGI.csv'
-CORE = '/usr/local/lib/python3.11/dist-packages/DeepScence/data/coreGS_v2.csv'
+import sys as _sys, os as _os
+_sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+import _pkgdata   # resolves DeepScence/senepy package data; see AUDIT_REPRODUCIBILITY D2
+CORE = _pkgdata.core_gs(verbose=False)
 EXCL = {'Low_quality', 'Unknown'}
 
 # proliferation anchor: on the mouse panel, and absent from every A_*.txt and

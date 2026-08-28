@@ -19,7 +19,10 @@ warnings.filterwarnings('ignore'); sc.settings.verbosity=0
 PROC='/workspace/data/processed/'; RAW='/workspace/data/raw/'; OUT='/workspace/results/phase3/'
 EXCL={'Low_quality','Unknown'}
 
-core=pd.read_csv('/usr/local/lib/python3.11/dist-packages/DeepScence/data/coreGS_v2.csv')
+import sys as _sys, os as _os
+_sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+import _pkgdata   # resolves DeepScence/senepy package data; see AUDIT_REPRODUCIBILITY D2
+core=pd.read_csv(_pkgdata.core_gs())
 core['occurrence']=pd.to_numeric(core.occurrence,errors='coerce')
 core=core[core.occurrence>=5]
 orth={r['mouse_symbol']:r['human_symbol'] for r in

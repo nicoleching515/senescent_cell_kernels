@@ -74,6 +74,46 @@ ORDER = ["tnfa_nfkb_proximal", "il6_jak_stat3", "interferon_response",
 # Figure 2a data
 # ---------------------------------------------------------------------------
 
+def _ts(t):
+    import time
+    return time.strftime("%Y-%m-%d %H:%M", time.localtime(t))
+
+
+def _stale_inputs(cache):
+    """Inputs newer than the figure2a cache, newest first.
+
+    figure2a caches its own binned input in figures/, and that cache is TRACKED and is one
+    of the 52 artefacts check_figures_guard.py watches.  So `git clone` + this script
+    regenerates figure2a byte-identically from the committed cache no matter what happened
+    upstream, and the guard then reports OK -- its pass on figure2a is vacuous
+    (AUDIT_REPRODUCIBILITY D1).  The only mitigation used to be one `rm -f` line in
+    _m1_rerun_stage5.sh.  Compare mtimes instead, and refuse rather than warn.
+    """
+    import glob
+    if not os.path.exists(cache):
+        return []
+    t0 = os.path.getmtime(cache)
+    ins = (glob.glob(f"{P.CACHE3}/*.npz") + glob.glob("/workspace/genesets/*.txt")
+           + glob.glob("/workspace/data/processed/senders_*.csv"))
+    out = [(os.path.getmtime(x), x) for x in ins if os.path.getmtime(x) > t0]
+    return sorted(out, reverse=True)
+
+
+def check_cache_fresh(cache, accept_stale=False):
+    """Refuse to plot from a cache that is older than its inputs."""
+    stale = _stale_inputs(cache)
+    if stale and not accept_stale:
+        raise SystemExit(
+            "figure2a: the cached %s is OLDER than %d of its inputs, so the figure would be\n"
+            "drawn from superseded data -- and because the cache is itself a tracked,\n"
+            "guard-watched artefact, check_figures_guard.py would still report OK.\n"
+            "  newest stale input: %s (%s)\n"
+            "  cache mtime:        %s\n"
+            "Pass --rebuild to recompute it, or --accept-stale if you really mean it."
+            % (cache, len(stale), stale[0][1], _ts(stale[0][0]), _ts(os.path.getmtime(cache))))
+    return True
+
+
 def build_fig2a_data(sections, call=RN.PRIMARY_CALL):
     """Binned response vs distance, three ways:
 
@@ -447,16 +487,18 @@ if __name__ == "__main__":
     ap.add_argument("--rebuild", action="store_true",
                     help="recompute figure2a_stratified_curves.csv instead of "
                          "reusing the cached copy")
+    ap.add_argument("--accept-stale", action="store_true",
+                    help="draw figure2a from the cache even when an input is newer "
+                         "than it (default: refuse)")
     a = ap.parse_args()
     w = a.which.split(",")
     if "2a" in w:
         f = f"{FIG}/figure2a_stratified_curves.csv"
         if os.path.exists(f) and not a.rebuild:
+            check_cache_fresh(f, a.accept_stale)
             print("figure2a: REUSING the cached %s (mtime %s). It is NOT "
                   "rebuilt from the senders/genesets on disk -- pass --rebuild "
-                  "after any change to either." % (f, __import__("time")
-                  .strftime("%Y-%m-%d %H:%M", __import__("time")
-                            .localtime(os.path.getmtime(f)))))
+                  "after any change to either." % (f, _ts(os.path.getmtime(f))))
             df = pd.read_csv(f)
         else:
             df = build_fig2a_data(P.IN_BAND)

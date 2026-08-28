@@ -18,7 +18,10 @@ import csv, json, os, pickle, sys
 sys.path.insert(0, '/workspace/code')
 import human_symbols as HS
 
-D   = '/usr/local/lib/python3.11/dist-packages/senepy/data/'
+import sys as _sys, os as _os
+_sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+import _pkgdata   # resolves DeepScence/senepy package data; see AUDIT_REPRODUCIBILITY D2
+D   = _pkgdata.senepy_data(verbose=False)
 OUT = '/workspace/results/a3_fallback'
 MIN_ON_PANEL = 10
 PANELS = {

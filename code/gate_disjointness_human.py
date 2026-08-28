@@ -44,7 +44,10 @@ import corescence_circularity as CC
 GS    = '/workspace/genesets'
 HUM   = GS + '/human'
 OUT   = '/workspace/results/phase7_jobA'
-CORE  = '/usr/local/lib/python3.11/dist-packages/DeepScence/data/coreGS_v2.csv'
+import sys as _sys, os as _os
+_sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+import _pkgdata   # resolves DeepScence/senepy package data; see AUDIT_REPRODUCIBILITY D2
+CORE  = _pkgdata.core_gs(verbose=False)
 os.makedirs(OUT, exist_ok=True)
 
 PANEL = {r['gene_name'] for r in csv.DictReader(open(GS + '/h1_candidate/GSE326743_gene_panel_5093.csv'))}

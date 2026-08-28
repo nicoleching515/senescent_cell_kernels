@@ -36,7 +36,10 @@ os.makedirs(RES, exist_ok=True)
 N_RAND = 200
 N_BINS = 25
 CTRL_SIZE = 50
-CORE_GS = "/usr/local/lib/python3.11/dist-packages/DeepScence/data/coreGS_v2.csv"
+import sys as _sys, os as _os
+_sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+import _pkgdata   # resolves DeepScence/senepy package data; see AUDIT_REPRODUCIBILITY D2
+CORE_GS = _pkgdata.core_gs(verbose=False)
 ORTHO = "/workspace/genesets/mouse_human_orthologs_MGI.csv"
 
 

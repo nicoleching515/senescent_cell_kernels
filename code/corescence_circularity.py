@@ -38,6 +38,7 @@ Run: python3 /workspace/code/corescence_circularity.py
 """
 from __future__ import annotations
 
+import sys
 import csv
 import gzip
 import json
@@ -46,7 +47,10 @@ import subprocess
 
 W = "/workspace"
 RES = W + "/results/phase7_jobA"
-CORE_GS = "/usr/local/lib/python3.11/dist-packages/DeepScence/data/coreGS_v2.csv"
+import sys as _sys, os as _os
+_sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+import _pkgdata   # resolves DeepScence/senepy package data; see AUDIT_REPRODUCIBILITY D2
+CORE_GS = _pkgdata.core_gs(verbose=False)
 ORTHO_CSV = W + "/genesets/mouse_human_orthologs_MGI.csv"
 MODS = ["tnfa_nfkb_proximal", "il6_jak_stat3", "interferon_response", "downstream_arrest",
         "emt_ecm", "oxidative_stress", "secondary_senescence"]
@@ -150,10 +154,23 @@ def reference_string(d=None, config="pre_C6", conv=None):
     return "%d/%d = %.0f%%" % (c["n_in_any_B"], c["n_on_panel"], 100 * c["frac"])
 
 
-def load(path=None):
-    """Read the derived JSON, or derive it if it has not been written yet."""
+def load(path=None, fresh=False):
+    """Read the derived JSON, or derive it if it has not been written yet.
+
+    The JSON is TRACKED, so every caller -- including gate_disjointness_human.py, which is
+    the human half of gate_genesets_guard.py and therefore of the pre-commit hook -- has
+    been comparing against a committed cache rather than a fresh derivation, silently
+    (AUDIT_REPRODUCIBILITY D1).  The cache is still the default, because the gate must keep
+    working when CoreScence's package data is absent, but the reuse is now stated on stderr
+    and `fresh=True` (or SASP_CORESCENCE_FRESH=1) re-derives.
+    """
     path = path or (RES + "/corescence_circularity_mouse.json")
+    if fresh or os.environ.get("SASP_CORESCENCE_FRESH") == "1":
+        return derive()
     if os.path.exists(path):
+        print("corescence_circularity: reusing the COMMITTED cache %s -- not re-derived "
+              "from the CoreScence package data.  Set SASP_CORESCENCE_FRESH=1 to re-derive."
+              % path, file=sys.stderr)
         return json.load(open(path))
     return derive()
 

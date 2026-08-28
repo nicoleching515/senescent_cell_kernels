@@ -18,7 +18,10 @@ A=A[np.asarray(A.X.sum(1)).ravel()>=20].copy()
 hs=np.array([orth.get(g,'') for g in A.var_names])
 n_map=(hs!='').sum(); print('mouse genes mapped to 1:1 human ortholog: %d / %d'%(n_map,A.n_vars))
 A=A[:, hs!=''].copy(); A.var_names=hs[hs!='']; A.var_names_make_unique()
-core=pd.read_csv('/usr/local/lib/python3.11/dist-packages/DeepScence/data/coreGS_v2.csv')
+import sys as _sys, os as _os
+_sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+import _pkgdata   # resolves DeepScence/senepy package data; see AUDIT_REPRODUCIBILITY D2
+core=pd.read_csv(_pkgdata.core_gs())
 c5=core[core.occurrence>=5]
 print('CoreScence(occurrence>=5): %d genes; on our ortholog-mapped panel: %d'
       %(len(c5), c5.gene_symbol.isin(A.var_names).sum()))
