@@ -105,7 +105,7 @@ session (Phase 10 imports them live), so this is **documented, not fixed**: the 
 `--calls all9 | all | tierA_pm` expand from constants in the script and are order-stable, and
 `code/_m1_stage1.sh` uses them and says so. A free-form comma list is still a hazard.
 
-### 1.9 22 pre-existing section-10 violations in the committed corpus
+### 1.9 ~20 pre-existing section-10 violations in the committed corpus
 
 The new checker finds them; the pre-commit ratchet stops the count growing but does not fix
 what is already there. They are prose fixes for the authors, not code fixes, and rewriting
@@ -273,10 +273,13 @@ Exercised, not assumed:
    require a value in [0,1) or a percentage; the self-test still passes.
 4. It caught a violation the **pipeline itself was generating**: see §4.4.
 
-### 4.3 The backlog: 22 pre-existing violations, unfixed
+### 4.3 The backlog: 22 pre-existing violations at the time of writing, unfixed
 
 Not blocking, listed so they are not lost. `python3 code/check_prohibitions.py --backlog`
-reproduces this.
+reproduces the current list, which moves as authors fix them — it stood at 22 when this table
+was built and at 21 an hour later, after the Phase 10 author put the seed-stability companion
+back beside three `denoise=True` numbers in `CS_PHASE10_TWO_ARM.md` (commit `2e46e8c`) in
+response to the new pre-commit ratchet. That is the mechanism working on live text.
 
 | rule | count | files |
 |---|---|---|
